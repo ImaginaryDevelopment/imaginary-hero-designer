@@ -1,5 +1,6 @@
 {
-  "Description": "Scirocco has taught you the ancient powers of the Mu. In their eternal struggle against the Oranbega, the Mu have unlocked many mystical powers, including their very signature crimson lightning.  Now you posses these their secrets. MOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
+  "IsModified": true,
+  "Description": "Scirocco has taught you the ancient powers of the Mu. In their eternal struggle against the Oranbega, the Mu have unlocked many mystical powers, including their very signature crimson lightning.  Now you posses these their secrets.",
   "SetName": "Sentinel_Mu_Mastery",
   "FullName": "Epic.Sentinel_Mu_Mastery",
   "ImageName": "PatronHold.png",
@@ -11,7 +12,7 @@
     4324
   ],
   "SetType": 3,
-  "DisplayName": "Moo Mastery",
+  "DisplayName": "Mu Mastery",
   "nArchetype": 7,
   "nID": 2758,
   "SubName": "",
