@@ -222,7 +222,6 @@ namespace midsControls
             Rectangle rectangle = default;
             Font font = new Font(DefaultFont.FontFamily, FontScale(DefaultFont.SizeInPoints), DefaultFont.Style, GraphicsUnit.Point);
             int slotChk = MidsContext.Character.SlotCheck(iSlot);
-            bool indicating = false;
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
             bool drawNewSlot = iSlot.Power != null && (iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) && iSlot.Slots.Length < 6 && singleDraw && iSlot.Power.Slottable & InterfaceMode != Enums.eInterfaceMode.PowerToggle;
@@ -291,7 +290,6 @@ namespace midsControls
                 }
                 else
                 {
-                    indicating = true;
                     grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
                     imageAttr = GreySlot(grey);
                 }
@@ -700,10 +698,9 @@ namespace midsControls
         {
             checked
             {
-                bool result;
                 if (MidsContext.Character.CurrentBuild.Powers.Count < 1)
                 {
-                    result = false;
+                    return false;
                 }
                 else
                 {
