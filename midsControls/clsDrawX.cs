@@ -702,56 +702,54 @@ namespace midsControls
                 {
                     return false;
                 }
-                else
+
+                if (Highlight == idx && !Force) return false;
+                if (idx != -1)
                 {
-                    if (Highlight == idx && !Force) return false;
-                    if (idx != -1)
+                    Build currentBuild;
+                    PowerEntry value;
+                    Point point2;
+                    Rectangle iValue;
+                    Rectangle rectangle;
+                    if (Highlight != -1 && Highlight < MidsContext.Character.CurrentBuild.Powers.Count)
                     {
-                        Build currentBuild;
-                        PowerEntry value;
-                        Point point2;
-                        Rectangle iValue;
-                        Rectangle rectangle;
-                        if (Highlight != -1 && Highlight < MidsContext.Character.CurrentBuild.Powers.Count)
-                        {
-                            currentBuild = MidsContext.Character.CurrentBuild;
-                            List<PowerEntry> powers = currentBuild.Powers;
-                            int highlight = Highlight;
-                            value = powers[highlight];
-                            Point point = DrawPowerSlot(ref value);
-                            currentBuild.Powers[highlight] = value;
-                            point2 = point;
-                            iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
-                            rectangle = ScaleDown(iValue);
-                            DrawSplit();
-                            Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
-                        }
-                        Highlight = idx;
                         currentBuild = MidsContext.Character.CurrentBuild;
-                        value = currentBuild.Powers[idx];
-                        Point point3 = DrawPowerSlot(ref value, true);
-                        currentBuild.Powers[idx] = value;
-                        point2 = point3;
+                        List<PowerEntry> powers = currentBuild.Powers;
+                        int highlight = Highlight;
+                        value = powers[highlight];
+                        Point point = DrawPowerSlot(ref value);
+                        currentBuild.Powers[highlight] = value;
+                        point2 = point;
                         iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
                         rectangle = ScaleDown(iValue);
                         DrawSplit();
                         Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
                     }
-                    else if (Highlight != -1)
-                    {
-                        Build currentBuild = MidsContext.Character.CurrentBuild;
-                        List<PowerEntry> powers2 = currentBuild.Powers;
-                        int highlight = Highlight;
-                        PowerEntry value = powers2[highlight];
-                        Point point4 = DrawPowerSlot(ref value);
-                        currentBuild.Powers[highlight] = value;
-                        Point point2 = point4;
-                        Rectangle iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
-                        Rectangle rectangle = ScaleDown(iValue);
-                        DrawSplit();
-                        Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
-                        Highlight = idx;
-                    }
+                    Highlight = idx;
+                    currentBuild = MidsContext.Character.CurrentBuild;
+                    value = currentBuild.Powers[idx];
+                    Point point3 = DrawPowerSlot(ref value, true);
+                    currentBuild.Powers[idx] = value;
+                    point2 = point3;
+                    iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
+                    rectangle = ScaleDown(iValue);
+                    DrawSplit();
+                    Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
+                }
+                else if (Highlight != -1)
+                {
+                    Build currentBuild = MidsContext.Character.CurrentBuild;
+                    List<PowerEntry> powers2 = currentBuild.Powers;
+                    int highlight = Highlight;
+                    PowerEntry value = powers2[highlight];
+                    Point point4 = DrawPowerSlot(ref value);
+                    currentBuild.Powers[highlight] = value;
+                    Point point2 = point4;
+                    Rectangle iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
+                    Rectangle rectangle = ScaleDown(iValue);
+                    DrawSplit();
+                    Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
+                    Highlight = idx;
                 }
                 return false;
             }
