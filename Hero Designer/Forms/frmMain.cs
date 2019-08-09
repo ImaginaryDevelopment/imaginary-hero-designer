@@ -98,10 +98,9 @@ namespace Hero_Designer
         #endregion
 
         public int GetPrimaryBottom() => cbPrimary.Top + cbPrimary.Height;
+        internal OpenFileDialog DlgOpen => dlgOpen;
 
-        internal OpenFileDialog DlgOpen { get; private set; }
-
-        internal SaveFileDialog DlgSave { get; private set; }
+        internal SaveFileDialog DlgSave => dlgSave;
 
         ComboBoxT<string> GetCbOrigin() => new ComboBoxT<string>(cbOrigin);
 
