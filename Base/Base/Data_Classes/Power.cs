@@ -1329,7 +1329,7 @@ namespace Base.Data_Classes
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Power Import: Fixed stupid Hide bug.");
+                    Console.WriteLine($@"Power Import: Fixed stupid Hide bug. {ex.Message}");
                 }
                 if (array.Length < 93)
                 {
