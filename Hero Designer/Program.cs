@@ -4,7 +4,7 @@ using Base.Master_Classes;
 
 namespace Hero_Designer
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -22,11 +22,12 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 var exTarget = ex;
-                while (exTarget.InnerException != null)
+                while (exTarget?.InnerException != null)
                 {
                     exTarget = ex.InnerException;
                 }
-                MessageBox.Show(exTarget.Message, exTarget.GetType().Name);
+
+                if (exTarget != null) MessageBox.Show(exTarget.Message, exTarget.GetType().Name);
                 throw;
             }
         }
