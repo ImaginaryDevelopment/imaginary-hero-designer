@@ -22,7 +22,6 @@
   "Powers": [
     {
       "CastTimeReal": 1.17,
-      "IsModified": true,
       "PowerIndex": 6570,
       "PowerSetID": 3196,
       "StaticIndex": 10773,
@@ -122,6 +121,7 @@
           "Reward": "Doublehit",
           "EffectId": "Ones",
           "Special": "",
+          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "Pets_Savage_Assault_Feral_Charge",

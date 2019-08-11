@@ -1612,8 +1612,12 @@
       "VariableName": "",
       "NIDSubPower": [],
       "UIDSubPower": [],
-      "IgnoreEnh": [],
-      "Ignore_Buff": [],
+      "IgnoreEnh": [
+        14
+      ],
+      "Ignore_Buff": [
+        14
+      ],
       "MutexAuto": true,
       "ForcedClass": "",
       "Effects": [
