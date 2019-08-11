@@ -1336,6 +1336,7 @@
       "IgnoreEnh": [],
       "Ignore_Buff": [],
       "MutexAuto": true,
+      "AbsorbSummonEffects": true,
       "ForcedClass": "",
       "Effects": [
         {
@@ -1350,8 +1351,8 @@
           "EffectId": "Levelminus",
           "Special": "",
           "EffectType": 38,
-          "Summon": "MastermindPets_Protector_Bot",
-          "nSummon": -1,
+          "Summon": "Pets_Protector_Bot1",
+          "nSummon": 429,
           "DelayedTime": 2.0,
           "UIDClassName": "",
           "nIDClassName": -1,

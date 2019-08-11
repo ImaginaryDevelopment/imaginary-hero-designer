@@ -2383,6 +2383,7 @@
       "IgnoreEnh": [],
       "Ignore_Buff": [],
       "MutexAuto": true,
+      "AbsorbSummonEffects": true,
       "ForcedClass": "",
       "Effects": [
         {
@@ -2397,8 +2398,8 @@
           "EffectId": "Levelminus",
           "Special": "",
           "EffectType": 38,
-          "Summon": "MastermindPets_Ember_Demon",
-          "nSummon": -1,
+          "Summon": "Pets_Ember_Demon1",
+          "nSummon": 428,
           "DelayedTime": 3.5,
           "UIDClassName": "",
           "nIDClassName": -1,
