@@ -231,8 +231,8 @@ namespace Hero_Designer
                     MidsContext.Config.MasterMode = true;
                 MainModule.MidsController.LoadData(ref iFrm);
                 dvAnchored.VisibleSize = MidsContext.Config.DvState;
-                SetTitleBar(true);
-                NewToon(true, false);
+                SetTitleBar();
+                NewToon();
                 dvAnchored.Init();
                 cbAT.SelectedItem = MidsContext.Character.Archetype;
                 lblATLocked.Location = cbAT.Location;
@@ -442,7 +442,7 @@ namespace Hero_Designer
                             message = "";
                             var iItem2 = new ListLabelV2.ListLabelItemV2(powerset.Powers[iIDXPower].DisplayName,
                                 MainModule.MidsController.Toon.PowerState(powerset.Powers[iIDXPower].PowerIndex,
-                                    ref message), Powerset.nIDTrunkSet, iIDXPower, powerset.Powers[iIDXPower].PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
+                                    ref message), Powerset.nIDTrunkSet, iIDXPower, powerset.Powers[iIDXPower].PowerIndex, "", ListLabelV2.LLFontFlags.Bold)
                             {
                                 Bold = MidsContext.Config.RtFont.PairedBold
                             };
@@ -466,7 +466,7 @@ namespace Hero_Designer
                             targetPs,
                             Powerset.nID,
                             iIDXPower,
-                            power.PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
+                            power.PowerIndex, "", ListLabelV2.LLFontFlags.Bold)
                         {
                             Bold = MidsContext.Config.RtFont.PairedBold
                         };
@@ -539,15 +539,15 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || cbAT.SelectedIndex < 0)
                 return;
-            ShowPopup(-1, CbtAT.Value.SelectedItem.Idx, cbAT.Bounds, "");
+            ShowPopup(-1, CbtAT.Value.SelectedItem.Idx, cbAT.Bounds);
         }
 
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (NoUpdate)
                 return;
-            NewToon(false, false);
-            SetFormHeight(false);
+            NewToon(false);
+            SetFormHeight();
             SetAncilPoolHeight();
             GetBestDamageValues();
         }
@@ -893,7 +893,7 @@ namespace Hero_Designer
             if (MessageBox.Show("Copy the build data on the forum to the clipboard. When that's done, click on OK.", "Standing By", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK)
                 return;
             string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
-            NewToon(true, false);
+            NewToon();
             try
             {
                 if (str.Length < 1)
@@ -917,24 +917,24 @@ namespace Hero_Designer
                     if (loaded)
                     {
                         drawing.Highlight = -1;
-                        NewDraw(false);
+                        NewDraw();
                         myDataView.Clear();
                         PowerModified(markModified: true);
                         UpdateControls(true);
-                        SetFormHeight(false);
+                        SetFormHeight();
                     }
                     else
                     {
-                        NewToon(true, false);
+                        NewToon();
                         myDataView.Clear();
                         PowerModified(markModified: true);
                     }
                     GetBestDamageValues();
                     if (drawing != null)
                         DoRedraw();
-                    UpdateColours(false);
+                    UpdateColours();
                     FloatTop(true);
-                    SetTitleBar(true);
+                    SetTitleBar();
                 }
             }
             catch (Exception ex)
@@ -954,12 +954,12 @@ namespace Hero_Designer
                     return;
             }
             DataViewLocked = false;
-            NewToon(false, false);
+            NewToon(false);
             MidsContext.Config.LastFileName = "";
             LastFileName = "";
             PowerModified(markModified: false);
             FileModified = false;
-            SetTitleBar(true);
+            SetTitleBar();
             myDataView.Clear();
         }
 
@@ -1022,7 +1022,7 @@ namespace Hero_Designer
             Point point1 = new Point();
             Build currentBuild = MidsContext.Character.CurrentBuild;
             PowerEntry power = currentBuild.Powers[FlipPowerID];
-            Point point2 = drawing.DrawPowerSlot(ref power, false);
+            Point point2 = drawing.DrawPowerSlot(ref power);
             int index = -1;
             int Enh1 = -1;
             int Enh2 = -1;
@@ -1117,7 +1117,7 @@ namespace Hero_Designer
                 GameImport(fName);
             else if (!MainModule.MidsController.Toon.Load(fName, ref mStream))
             {
-                NewToon(true, false);
+                NewToon();
                 LastFileName = "";
                 MidsContext.Config.LastFileName = "";
             }
@@ -1129,17 +1129,17 @@ namespace Hero_Designer
             }
             FileModified = false;
             drawing.Highlight = -1;
-            NewDraw(false);
-            UpdateControls(false);
-            SetFormHeight(false);
+            NewDraw();
+            UpdateControls();
+            SetFormHeight();
             myDataView.Clear();
             MidsContext.Character.ResetLevel();
             PowerModified(markModified: false);
             UpdateControls(true);
-            SetTitleBar(true);
+            SetTitleBar();
             Application.DoEvents();
             GetBestDamageValues();
-            UpdateColours(false);
+            UpdateColours();
             FloatUpdate(true);
             return true;
         }
@@ -1249,7 +1249,7 @@ namespace Hero_Designer
                     FileModified = false;
                     LastFileName = dlgSave.FileName;
                     MidsContext.Config.LastFileName = dlgSave.FileName;
-                    SetTitleBar(true);
+                    SetTitleBar();
                     FloatTop(true);
                     return true;
                 }
@@ -1435,7 +1435,7 @@ namespace Hero_Designer
                 }
                 fData.SetLocation();
                 fData.Show();
-                FloatUpdate(false);
+                FloatUpdate();
                 fData.Activate();
             }
             else
@@ -1456,7 +1456,7 @@ namespace Hero_Designer
                     fRecipe = new frmRecipeViewer(this);
                 fRecipe.SetLocation();
                 fRecipe.Show();
-                FloatUpdate(false);
+                FloatUpdate();
                 fRecipe.Activate();
             }
             else
@@ -1477,7 +1477,7 @@ namespace Hero_Designer
                     fDPSCalc = new frmDPSCalc(this);
                 fDPSCalc.SetLocation();
                 fDPSCalc.Show();
-                FloatUpdate(false);
+                FloatUpdate();
                 fDPSCalc.Activate();
             }
             else
@@ -1519,7 +1519,7 @@ namespace Hero_Designer
                 }
                 fSets.SetLocation();
                 fSets.Show();
-                FloatUpdate(false);
+                FloatUpdate();
                 fSets.Activate();
             }
             else
@@ -1741,7 +1741,7 @@ namespace Hero_Designer
             }
             if (!NoResizeEvent & MainModule.MidsController.IsAppInitialized & Visible)
                 MidsContext.Config.LastSize = Size;
-            UpdateControls(false);
+            UpdateControls();
         }
 
         internal void DoCalcOptUpdates()
@@ -1756,7 +1756,7 @@ namespace Hero_Designer
                 Info_Power(dvLastPower, dvLastEnh, dvLastNoLev, DataViewLocked);
             if (drawing != null)
                 DoRedraw();
-            UpdateColours(false);
+            UpdateColours();
         }
 
         void GetBestDamageValues()
@@ -1853,8 +1853,8 @@ namespace Hero_Designer
                 }
             }
             drawing.ColourSwitch();
-            SetTitleBar(true);
-            UpdateColours(false);
+            SetTitleBar();
+            UpdateColours();
             DoRedraw();
         }
 
@@ -1881,7 +1881,7 @@ namespace Hero_Designer
             if (EnhancingSlot <= -1)
                 return;
             bool enhChanged = false;
-            if (MidsContext.Character.CurrentBuild.EnhancementTest(EnhancingSlot, EnhancingPower, e.Enh, false) | e.Enh < 0)
+            if (MidsContext.Character.CurrentBuild.EnhancementTest(EnhancingSlot, EnhancingPower, e.Enh) | e.Enh < 0)
             {
                 var power = MidsContext.Character.CurrentBuild.Powers[EnhancingPower];
                 if (e.Enh != power.Slots[EnhancingSlot].Enhancement.Enh)
@@ -1905,7 +1905,7 @@ namespace Hero_Designer
                 I9Picker.Visible = false;
                 PowerModified(markModified: true);
                 if (EnhancingPower > -1)
-                    RefreshTabs(MidsContext.Character.CurrentBuild.Powers[EnhancingPower].NIDPower, e, -1);
+                    RefreshTabs(MidsContext.Character.CurrentBuild.Powers[EnhancingPower].NIDPower, e);
             }
             I9Picker.Visible = false;
             EnhancingSlot = -1;
@@ -1932,7 +1932,7 @@ namespace Hero_Designer
                 RelativeLevel = I9Picker.UI.View.RelLevel
             };
             myDataView.SetEnhancementPicker(i9Slot);
-            ShowPopup(PickerHID, -1, -1, new Point(), I9Picker.Bounds, i9Slot, -1);
+            ShowPopup(PickerHID, -1, -1, new Point(), I9Picker.Bounds, i9Slot);
         }
 
         void I9Picker_HoverSet(int e)
@@ -2048,7 +2048,7 @@ namespace Hero_Designer
             }
             DataViewLocked = Lock;
             if (num1 > -1)
-                myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1, -1), MainModule.MidsController.Toon.GetEnhancedPower(num1), NoLevel, DataViewLocked, num1);
+                myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1), MainModule.MidsController.Toon.GetEnhancedPower(num1), NoLevel, DataViewLocked, num1);
             else
                 myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1, powerIdx), null, NoLevel, DataViewLocked, num1);
             if (!Lock || dvAnchored.Visible)
@@ -2062,7 +2062,7 @@ namespace Hero_Designer
                 return;
             MainModule.MidsController.Toon.GenerateBuffedPowerArray();
             myDataView.DisplayTotals();
-            FloatUpdate(false);
+            FloatUpdate();
         }
 
         void lblATLocked_MouseLeave(object sender, EventArgs e) => HidePopup();
@@ -2178,8 +2178,8 @@ namespace Hero_Designer
             }
             else
             {
-                Info_Power(Item.nIDPower, -1, false, false);
-                ShowPopup(-1, Item.nIDPower, -1, new Point(), llAncillary.Bounds, null, -1);
+                Info_Power(Item.nIDPower);
+                ShowPopup(-1, Item.nIDPower, -1, new Point(), llAncillary.Bounds);
             }
         }
 
@@ -2201,8 +2201,8 @@ namespace Hero_Designer
         {
             LastIndex = -1;
             LastEnhIndex = -1;
-            Info_Power(Item.nIDPower, -1, false, false);
-            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool0.Bounds, null, -1);
+            Info_Power(Item.nIDPower);
+            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool0.Bounds);
         }
 
         void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2223,8 +2223,8 @@ namespace Hero_Designer
         {
             LastIndex = -1;
             LastEnhIndex = -1;
-            Info_Power(Item.nIDPower, -1, false, false);
-            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool1.Bounds, null, -1);
+            Info_Power(Item.nIDPower);
+            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool1.Bounds);
         }
 
         void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2245,8 +2245,8 @@ namespace Hero_Designer
         {
             LastIndex = -1;
             LastEnhIndex = -1;
-            Info_Power(Item.nIDPower, -1, false, false);
-            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool2.Bounds, null, -1);
+            Info_Power(Item.nIDPower);
+            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool2.Bounds);
         }
 
         void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2267,8 +2267,8 @@ namespace Hero_Designer
         {
             LastIndex = -1;
             LastEnhIndex = -1;
-            Info_Power(Item.nIDPower, -1, false, false);
-            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool3.Bounds, null, -1);
+            Info_Power(Item.nIDPower);
+            ShowPopup(-1, Item.nIDPower, -1, new Point(), llPool3.Bounds);
         }
 
         void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2296,8 +2296,8 @@ namespace Hero_Designer
             }
             else
             {
-                Info_Power(Item.nIDPower, -1, false, false);
-                ShowPopup(-1, Item.nIDPower, -1, new Point(), llPrimary.Bounds, null, -1);
+                Info_Power(Item.nIDPower);
+                ShowPopup(-1, Item.nIDPower, -1, new Point(), llPrimary.Bounds);
             }
         }
 
@@ -2326,8 +2326,8 @@ namespace Hero_Designer
             }
             else
             {
-                Info_Power(Item.nIDPower, -1, false, false);
-                ShowPopup(-1, Item.nIDPower, -1, new Point(), llSecondary.Bounds, null, -1);
+                Info_Power(Item.nIDPower);
+                ShowPopup(-1, Item.nIDPower, -1, new Point(), llSecondary.Bounds);
             }
         }
 
@@ -2380,7 +2380,7 @@ namespace Hero_Designer
                 MainModule.MidsController.Toon = new clsToonX();
             else if (init)
             {
-                MidsContext.Character.Reset(null, 0);
+                MidsContext.Character.Reset();
             }
             else
             {
@@ -2397,9 +2397,9 @@ namespace Hero_Designer
             if (fIncarnate != null && !fIncarnate.IsDisposed)
                 fIncarnate.Dispose();
             NewDraw(skipDraw);
-            UpdateControls(false);
+            UpdateControls();
             SetTitleBar(MidsContext.Character.IsHero());
-            UpdateColours(false);
+            UpdateColours();
             info_Totals();
             FileModified = false;
         }
@@ -2539,7 +2539,7 @@ namespace Hero_Designer
         void pnlGFX_MouseLeave(object sender, EventArgs e)
         {
             HidePopup();
-            drawing.HighlightSlot(-1, false);
+            drawing.HighlightSlot(-1);
         }
 
         void pnlGFX_MouseMove(object sender, MouseEventArgs e)
@@ -2569,7 +2569,7 @@ namespace Hero_Designer
                     dataObject.SetText("This is some filler power text right here");
                     HidePopup();
                     pnlGFX.Cursor = Cursors.Default;
-                    drawing.HighlightSlot(-1, false);
+                    drawing.HighlightSlot(-1);
                     Application.DoEvents();
                     ibPopup.DoDragDrop(dataObject, DragDropEffects.Move);
                 }
@@ -2585,10 +2585,10 @@ namespace Hero_Designer
                 else
                 {
                     Point e1 = new Point(e.X, e.Y);
-                    ShowPopup(index, -1, sIDX, e1, new Rectangle(), null, -1);
+                    ShowPopup(index, -1, sIDX, e1, new Rectangle());
                     if (MidsContext.Character.CanPlaceSlot & MainModule.MidsController.Toon.SlotCheck(MidsContext.Character.CurrentBuild.Powers[index]) > -1)
                     {
-                        drawing.HighlightSlot(index, false);
+                        drawing.HighlightSlot(index);
                         if (index > -1 & drawing.InterfaceMode != Enums.eInterfaceMode.PowerToggle)
                             pnlGFX.Cursor = Cursors.Hand;
                         else
@@ -2597,7 +2597,7 @@ namespace Hero_Designer
                     else
                     {
                         pnlGFX.Cursor = Cursors.Default;
-                        drawing.HighlightSlot(-1, false);
+                        drawing.HighlightSlot(-1);
                     }
                     if (index > -1 && index != LastIndex | LastEnhIndex != sIDX)
                     {
@@ -2606,7 +2606,7 @@ namespace Hero_Designer
                         if (sIDX > -1)
                             RefreshTabs(MidsContext.Character.CurrentBuild.Powers[index].NIDPower, MidsContext.Character.CurrentBuild.Powers[index].Slots[sIDX].Enhancement, MidsContext.Character.CurrentBuild.Powers[index].Slots[sIDX].Level);
                         else
-                            RefreshTabs(MidsContext.Character.CurrentBuild.Powers[index].NIDPower, new I9Slot(), -1);
+                            RefreshTabs(MidsContext.Character.CurrentBuild.Powers[index].NIDPower, new I9Slot());
                     }
                 }
             }
@@ -2638,7 +2638,7 @@ namespace Hero_Designer
                                 }
                                 else
                                 {
-                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(hIDPower, false, false);
+                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(hIDPower);
                                     if (eMutex == Enums.eMutex.NoConflict | eMutex == Enums.eMutex.NoGroup)
                                         MidsContext.Character.CurrentBuild.Powers[hIDPower].StatInclude = true;
                                 }
@@ -2656,7 +2656,7 @@ namespace Hero_Designer
                                 }
                                 else
                                 {
-                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(hIDPower, false, false);
+                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(hIDPower);
                                     if (eMutex == Enums.eMutex.NoConflict | eMutex == Enums.eMutex.NoGroup)
                                         MidsContext.Character.CurrentBuild.Powers[hIDPower].StatInclude = true;
                                 }
@@ -2667,7 +2667,7 @@ namespace Hero_Designer
                         }
                         else if (e.Button == MouseButtons.Left & ModifierKeys == Keys.Alt)
                         {
-                            MainModule.MidsController.Toon.BuildPower(MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPowerset, MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower, false);
+                            MainModule.MidsController.Toon.BuildPower(MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPowerset, MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower);
                             PowerModified(markModified: true);
                             LastClickPlacedSlot = false;
                         }
@@ -2698,7 +2698,7 @@ namespace Hero_Designer
                                 }
                                 else
                                 {
-                                    if (MainModule.MidsController.Toon.BuildSlot(hIDPower, -1) > -1)
+                                    if (MainModule.MidsController.Toon.BuildSlot(hIDPower) > -1)
                                     {
                                         // adding a slot by itself doesn't really change the build substantially without an enh going into it
                                         PowerModified(markModified: false);
@@ -2780,15 +2780,15 @@ namespace Hero_Designer
             {
                 index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(MainModule.MidsController.Toon.RequestedLevel);
                 if (index < 0)
-                    index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(0);
+                    index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex();
             }
             else if (DatabaseAPI.Database.Levels[MidsContext.Character.Level].LevelType() == Enums.dmItem.Power)
             {
-                index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(0);
-                drawing.HighlightSlot(-1, false);
+                index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex();
+                drawing.HighlightSlot(-1);
             }
             if (MainModule.MidsController.Toon.Complete)
-                drawing.HighlightSlot(-1, false);
+                drawing.HighlightSlot(-1);
             int[] slotCounts = MainModule.MidsController.Toon.GetSlotCounts();
             ibAccolade.TextOff = slotCounts[0] <= 0 ? "No slots left" : slotCounts[0] + " slots to go";
             ibAccolade.TextOn = slotCounts[1] <= 0 ? "No slots placed" : slotCounts[1] + " slots placed";
@@ -2797,7 +2797,7 @@ namespace Hero_Designer
             MidsContext.Character.Validate();
             DoRedraw();
             Application.DoEvents();
-            UpdateControls(false);
+            UpdateControls();
             RefreshInfo();
             UpdateDynamicModeInfo();
             pbDynMode.Refresh();
@@ -2899,7 +2899,7 @@ namespace Hero_Designer
                     }
                 }
             }
-            PowerEntry powerEntry = tp[start].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[start].NIDPower]) : new PowerEntry(-1, null, false);
+            PowerEntry powerEntry = tp[start].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[start].NIDPower]) : new PowerEntry();
             powerEntry.Slots = (SlotEntry[])tp[start].Slots.Clone();
             powerEntry.Level = tp[start].Level;
             clearPower(tp, start);
@@ -3022,7 +3022,7 @@ namespace Hero_Designer
 
         void PowerPicked(Enums.PowersetType SetID, int nIDPower)
         {
-            MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
+            MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower);
             PowerModified(markModified: true);
             /* Disabled
              * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
@@ -3031,7 +3031,7 @@ namespace Hero_Designer
 
         void PowerPicked(int nIDPowerset, int nIDPower)
         {
-            MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
+            MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower);
             PowerModified(markModified: true);
             /* Disabled
              * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
@@ -3675,11 +3675,11 @@ namespace Hero_Designer
         {
             if (iEnh.Enh > -1)
             {
-                Info_Power(iPower, iLevel, false, false);
+                Info_Power(iPower, iLevel);
                 Info_Enhancement(iEnh, iLevel);
             }
             else
-                Info_Power(iPower, iLevel, true, false);
+                Info_Power(iPower, iLevel, true);
         }
 
         void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
@@ -3707,7 +3707,7 @@ namespace Hero_Designer
             drawing.Columns = columns;
             DoResize();
             DoRedraw();
-            SetFormWidth(false);
+            SetFormWidth();
             tsView4Col.Checked = columns == 4;
             tsView3Col.Checked = columns == 3;
             tsView2Col.Checked = columns == 2;
@@ -4169,7 +4169,7 @@ namespace Hero_Designer
             int num = FlipSlotState.Length - 1;
             for (int index = 0; index <= num; ++index)
                 FlipSlotState[index] = -(FlipStepDelay * index);
-            FlipGP = new PowerEntry(-1, null, false);
+            FlipGP = new PowerEntry();
             FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
             FlipGP.Slots = Array.Empty<SlotEntry>();
             if (tmrGfx == null)
@@ -4229,7 +4229,7 @@ namespace Hero_Designer
                 return false;
             Rectangle rectangle2 = new Rectangle()
             {
-                Location = drawing.PowerPosition(MidsContext.Character.CurrentBuild.Powers[hID], -1),
+                Location = drawing.PowerPosition(MidsContext.Character.CurrentBuild.Powers[hID]),
                 Size = drawing.bxPower[0].Size
             };
             rectangle1.Height = 15;
@@ -4305,7 +4305,7 @@ namespace Hero_Designer
             frmCalcOpt frmCalcOpt = new frmCalcOpt(ref iParent);
             if (frmCalcOpt.ShowDialog(this) == DialogResult.OK)
             {
-                UpdateControls(false);
+                UpdateControls();
                 UpdateOtherFormsFonts();
             }
             frmCalcOpt.Dispose();
@@ -4506,7 +4506,7 @@ namespace Hero_Designer
             MainModule.MidsController.Toon.FlipAllSlots();
             DoRedraw();
             RefreshInfo();
-            FloatUpdate(false);
+            FloatUpdate();
         }
 
         void tsHelp_Click(object sender, EventArgs e)
@@ -5045,7 +5045,7 @@ namespace Hero_Designer
             float height2 = bFont.GetHeight(dmBuffer.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)((pbDynMode.Height - (double)height2) / 2.0), pbDynMode.Width, height2);
             Graphics graphics = dmBuffer.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics);
         }
 
         void UpdateDynamicModeInfo()
@@ -5135,7 +5135,7 @@ namespace Hero_Designer
         {
             llPower.SuspendRedraw = true;
             if (llPower.Items.Length == 0)
-                llPower.AddItem(new ListLabelV2.ListLabelItemV2("Nothing", ListLabelV2.LLItemState.Disabled, -1, -1, -1, string.Empty, ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+                llPower.AddItem(new ListLabelV2.ListLabelItemV2("Nothing", ListLabelV2.LLItemState.Disabled, -1, -1, -1, string.Empty));
             int num = llPower.Items.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
@@ -5309,7 +5309,7 @@ namespace Hero_Designer
                     IPower powerByName = DatabaseAPI.GetPowerByName(buildFileLinesArray[index3].powerName);
                     if (!powerByName.FullName.Contains("Incarnate"))
                     {
-                        PowerEntry powerEntry = new PowerEntry(-1, null, false);
+                        PowerEntry powerEntry = new PowerEntry();
                         powerEntry.Level = buildFileLinesArray[index3].powerLevel;
                         powerEntry.StatInclude = false;
                         powerEntry.VariableValue = 0;
