@@ -3778,10 +3778,8 @@ namespace Hero_Designer
                         switch (drawing.EpicColumns)
                         {
                             case false:
-                                iVal2 = raGreater(bottom, llAncillary.Top + llAncillary.ActualLineHeight * llAncillary.Items.Length) + 4 + num;
                                 break;
                             case true:
-                                iVal2 = raGreater(bottom, iVal2) + 4 + num;
                                 break;
                         }
                         return;
@@ -3837,7 +3835,7 @@ namespace Hero_Designer
 
         void SetPopupLocation(Rectangle ObjectBounds, bool PowerListing = false, bool Picker = false)
         {
-            int y = 0;
+            int y;
             int top = ObjectBounds.Top;
             int num1 = ClientSize.Height - ObjectBounds.Bottom;
             int left = ObjectBounds.Left;
