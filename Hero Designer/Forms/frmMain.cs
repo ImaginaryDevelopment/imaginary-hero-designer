@@ -1187,7 +1187,7 @@ namespace Hero_Designer
             int num6 = (int)Math.Round(drawingArea.Height * scale);
             pnlGFX.Width = num5;
             pnlGFX.Height = num6;
-            if (drawing.Scaling && scale == 1.0 || scale != 1.0)
+            if (drawing.Scaling && Math.Abs(scale - 1.0) < float.Epsilon || scale != 1.0)
             {
                 drawing.bxBuffer.Size = pnlGFX.Size;
                 Control pnlGfx = pnlGFX;
@@ -1902,7 +1902,7 @@ namespace Hero_Designer
                 {
                     if (e.Enh > -1)
                     {
-                        if (!hasProc && power.HasProc() && (DatabaseAPI.Database.Enhancements[e.Enh].Probability == 0.0 || DatabaseAPI.Database.Enhancements[e.Enh].Probability == 1.0))
+                        if (!hasProc && power.HasProc() && (Math.Abs(DatabaseAPI.Database.Enhancements[e.Enh].Probability) < float.Epsilon || Math.Abs(DatabaseAPI.Database.Enhancements[e.Enh].Probability - 1.0) < float.Epsilon))
                             power.StatInclude = true;
                         else if (!power.CanIncludeForStats())
                             power.StatInclude = false;
