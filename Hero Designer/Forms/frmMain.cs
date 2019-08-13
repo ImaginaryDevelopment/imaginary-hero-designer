@@ -2933,7 +2933,6 @@ namespace Hero_Designer
                         if (!flag2)
                         {
                             start = index;
-                            break;
                         }
                         break;
                     }
