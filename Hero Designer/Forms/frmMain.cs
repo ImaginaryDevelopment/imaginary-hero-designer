@@ -901,7 +901,7 @@ namespace Hero_Designer
             NewToon();
             try
             {
-                if (str.Length < 1)
+                if (str != null && str.Length < 1)
                 {
                     int num = (int)MessageBox.Show("No data. Please check that you copied the build data from the forum correctly and that it's a valid format.", "Forum Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -1187,7 +1187,7 @@ namespace Hero_Designer
             int num6 = (int)Math.Round(drawingArea.Height * scale);
             pnlGFX.Width = num5;
             pnlGFX.Height = num6;
-            if (drawing.Scaling && Math.Abs(scale - 1.0) < float.Epsilon || scale != 1.0)
+            if (drawing.Scaling && Math.Abs(scale - 1.0) < float.Epsilon || Math.Abs(scale - 1.0) > float.Epsilon)
             {
                 drawing.bxBuffer.Size = pnlGFX.Size;
                 Control pnlGfx = pnlGFX;
@@ -4286,7 +4286,11 @@ namespace Hero_Designer
                 pri = MidsContext.Character.Powersets[0].DisplayName;
                 sec = MidsContext.Character.Powersets[1].DisplayName;
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                // ignored
+            }
+
             clsXMLUpdate.BugReport(at, pri, sec, string.Empty);
         }
 
@@ -5244,7 +5248,7 @@ namespace Hero_Designer
                             str3 = str3 + strArray5[index2] + ".";
                         string str4 = str3.TrimEnd('.');
                         string str5 = str3 + strArray5[strArray5.Length - 1];
-                        buildFileLinesArray[index1].powerSetName = str4;
+                        buildFileLinesArray[index1].PowerSetName = str4;
                         buildFileLinesArray[index1].powerName = str5;
                         buildFileLinesArray[index1].powerLevel = Convert.ToInt32(strArray5[0].Trim());
                         if (str2 != str4)
@@ -5445,7 +5449,7 @@ namespace Hero_Designer
 
         struct BuildFileLines
         {
-            public string powerSetName;
+            public string PowerSetName { get; set; }
             public string powerName;
             public int powerLevel;
             public int powerSlotsAmount;
