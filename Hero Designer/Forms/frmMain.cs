@@ -3414,7 +3414,6 @@ namespace Hero_Designer
 
         bool raToFloat()
         {
-            bool flag = false;
             llPool0.Height = llPool0.DesiredHeight;
             llPool1.Height = llPool1.DesiredHeight;
             llPool2.Height = llPool2.DesiredHeight;
@@ -3440,7 +3439,7 @@ namespace Hero_Designer
             raMovePool(4, poolRect3.Left, poolRect3.Top);
             poolRect3.X = llSecondary.Left;
             raMovePool(3, poolRect3.Left, poolRect3.Top);
-            return flag;
+            return false;
         }
 
         bool raToNormal()
