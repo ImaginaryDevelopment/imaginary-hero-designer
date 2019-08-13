@@ -3068,8 +3068,6 @@ namespace Hero_Designer
                             if (dragdropScenarioAction[7] == 2)
                                 return 1;
                             break;
-                        default:
-                            break;
                     }
                 }
             }
