@@ -260,12 +260,7 @@ namespace Hero_Designer
                     int hasValidLastSize = MaximumSize.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
                     int hasValidBoth = hasMaxSize & hasValidLastSize;
                     int needsWidthReduction = Screen.PrimaryScreen.WorkingArea.Width > MaximumSize.Width ? 1 : 0;
-                    if ((hasValidBoth & needsWidthReduction) != 0)
-                    {
-                        width1 = MaximumSize.Width;
-                    }
-                    else
-                        width1 = MidsContext.Config.LastSize.Width;
+                    width1 = (hasValidBoth & needsWidthReduction) != 0 ? MaximumSize.Width : MidsContext.Config.LastSize.Width;
                 }
                 else if (Screen.PrimaryScreen.WorkingArea.Width <= MidsContext.Config.LastSize.Width)
                 {
@@ -1196,10 +1191,7 @@ namespace Hero_Designer
                 pnlGFX.Image = drawing.bxBuffer.Bitmap;
             }
             NoResizeEvent = true;
-            if (scale < 1.0)
-                drawing.SetScaling(pnlGFX.Size);
-            else
-                drawing.SetScaling(drawing.bxBuffer.Size);
+            drawing.SetScaling(scale < 1.0 ? pnlGFX.Size : drawing.bxBuffer.Size);
             NoResizeEvent = false;
             ReArrange(false);
         }
@@ -1275,9 +1267,9 @@ namespace Hero_Designer
             FloatingDataForm = new frmFloatingStats(this)
             {
                 Left = Left + dvAnchored.Left,
-                Top = Top + dvAnchored.Top
+                Top = Top + dvAnchored.Top,
+                dvFloat = {VisibleSize = dvAnchored.VisibleSize}
             };
-            FloatingDataForm.dvFloat.VisibleSize = dvAnchored.VisibleSize;
             myDataView = FloatingDataForm.dvFloat;
             myDataView.TabPage = dvAnchored.TabPage;
             FloatingDataForm.dvFloat.Init();
@@ -1328,8 +1320,11 @@ namespace Hero_Designer
             int num1 = MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length - 1;
             for (int index = 0; index <= num1; ++index)
                 iPowers.Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers[index].nIDPower]);
-            frmAccolade frmAccolade = new frmAccolade(this, iPowers);
-            frmAccolade.Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower].DisplayName;
+            frmAccolade frmAccolade = new frmAccolade(this, iPowers)
+            {
+                Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower]
+                    .DisplayName
+            };
             frmAccolade.ShowDialog(this);
             EnhancementModified();
             LastClickPlacedSlot = false;
@@ -1685,21 +1680,13 @@ namespace Hero_Designer
 
         void FloatUpdate(bool newData = false)
         {
-            if (fSets != null)
-                fSets.UpdateData();
-            if (fGraphStats != null)
-                fGraphStats.UpdateData(newData);
-            if (fTotals != null)
-                fTotals.UpdateData();
-            if (fGraphCompare != null)
-                fGraphCompare.UpdateData();
-            if (fRecipe != null)
-                fRecipe.UpdateData();
-            if (fDPSCalc != null)
-                fDPSCalc.UpdateData();
-            if (fData == null)
-                return;
-            fData.UpdateData(dvLastPower);
+            fSets?.UpdateData();
+            fGraphStats?.UpdateData(newData);
+            fTotals?.UpdateData();
+            fGraphCompare?.UpdateData();
+            fRecipe?.UpdateData();
+            fDPSCalc?.UpdateData();
+            fData?.UpdateData(dvLastPower);
         }
 
         void frmMain_Closed(object sender, EventArgs e)
@@ -1758,8 +1745,7 @@ namespace Hero_Designer
             RefreshInfo();
             DisplayName();
             I9Picker.LastLevel = MidsContext.Config.I9.DefaultIOLevel + 1;
-            if (myDataView != null)
-                myDataView.SetFontData();
+            myDataView?.SetFontData();
             if (dvLastPower > -1)
                 Info_Power(dvLastPower, dvLastEnh, dvLastNoLev, DataViewLocked);
             if (drawing != null)
@@ -2039,8 +2025,7 @@ namespace Hero_Designer
             dvLastEnh = iEnhLvl;
             dvLastPower = powerIdx;
             dvLastNoLev = NoLevel;
-            if (fData != null)
-                fData.UpdateData(dvLastPower);
+            fData?.UpdateData(dvLastPower);
             int num1 = -1;
             if (MainModule.MidsController.Toon.Locked)
             {
@@ -2459,10 +2444,7 @@ namespace Hero_Designer
 
         void pnlGFX_DragEnter(object sender, DragEventArgs e)
         {
-            if (sender.Equals(pnlGFX))
-                e.Effect = DragDropEffects.Move;
-            else
-                e.Effect = DragDropEffects.None;
+            e.Effect = sender.Equals(pnlGFX) ? DragDropEffects.Move : DragDropEffects.None;
         }
 
         void pnlGFX_DragOver(object sender, DragEventArgs e)
@@ -4402,14 +4384,20 @@ namespace Hero_Designer
             MidsContext.Config.LongExport = false;
             var frmForum1 = new frmForum
             {
-                BackColor = BackColor
+                BackColor = BackColor,
+                IBCancel =
+                {
+                    IA = drawing.pImageAttributes,
+                    ImageOff = drawing.bxPower[2].Bitmap,
+                    ImageOn = drawing.bxPower[3].Bitmap
+                },
+                IBExport =
+                {
+                    IA = drawing.pImageAttributes,
+                    ImageOff = drawing.bxPower[2].Bitmap,
+                    ImageOn = drawing.bxPower[3].Bitmap
+                }
             };
-            frmForum1.IBCancel.IA = drawing.pImageAttributes;
-            frmForum1.IBCancel.ImageOff = drawing.bxPower[2].Bitmap;
-            frmForum1.IBCancel.ImageOn = drawing.bxPower[3].Bitmap;
-            frmForum1.IBExport.IA = drawing.pImageAttributes;
-            frmForum1.IBExport.ImageOff = drawing.bxPower[2].Bitmap;
-            frmForum1.IBExport.ImageOn = drawing.bxPower[3].Bitmap;
             frmForum1.ShowDialog(this);
             FloatTop(true);
         }
@@ -4470,14 +4458,20 @@ namespace Hero_Designer
             MidsContext.Config.LongExport = true;
             frmForum frmForum1 = new frmForum
             {
-                BackColor = BackColor
+                BackColor = BackColor,
+                IBCancel =
+                {
+                    IA = drawing.pImageAttributes,
+                    ImageOff = drawing.bxPower[2].Bitmap,
+                    ImageOn = drawing.bxPower[3].Bitmap
+                },
+                IBExport =
+                {
+                    IA = drawing.pImageAttributes,
+                    ImageOff = drawing.bxPower[2].Bitmap,
+                    ImageOn = drawing.bxPower[3].Bitmap
+                }
             };
-            frmForum1.IBCancel.IA = drawing.pImageAttributes;
-            frmForum1.IBCancel.ImageOff = drawing.bxPower[2].Bitmap;
-            frmForum1.IBCancel.ImageOn = drawing.bxPower[3].Bitmap;
-            frmForum1.IBExport.IA = drawing.pImageAttributes;
-            frmForum1.IBExport.ImageOff = drawing.bxPower[2].Bitmap;
-            frmForum1.IBExport.ImageOn = drawing.bxPower[3].Bitmap;
             frmForum1.ShowDialog(this);
             FloatTop(true);
             MidsContext.Config.LongExport = false;
@@ -4793,8 +4787,7 @@ namespace Hero_Designer
 
         internal void UnSetMiniList()
         {
-            if (fMini != null)
-                fMini.Dispose();
+            fMini?.Dispose();
             fMini = null;
             GC.Collect();
         }
@@ -4906,18 +4899,12 @@ namespace Hero_Designer
             }
             if (cbOrigin.SelectedIndex != MidsContext.Character.Origin)
             {
-                if (MidsContext.Character.Origin < cbOrigin.Items.Count)
-                    cbOrigin.SelectedIndex = MidsContext.Character.Origin;
-                else
-                    cbOrigin.SelectedIndex = 0;
+                cbOrigin.SelectedIndex = MidsContext.Character.Origin < cbOrigin.Items.Count ? MidsContext.Character.Origin : 0;
                 I9Gfx.SetOrigin(cbOrigin.SelectedItem);
             }
             ComboCheckPS(CbtPrimary.Value, Enums.PowersetType.Primary, Enums.ePowerSetType.Primary);
             ComboCheckPS(CbtSecondary.Value, Enums.PowersetType.Secondary, Enums.ePowerSetType.Secondary);
-            if (MidsContext.Character.Powersets[0].nIDLinkSecondary > -1)
-                cbSecondary.Enabled = false;
-            else
-                cbSecondary.Enabled = true;
+            cbSecondary.Enabled = MidsContext.Character.Powersets[0].nIDLinkSecondary <= -1;
             ComboCheckPool(CbtPool0.Value, Enums.ePowerSetType.Pool);
             ComboCheckPool(CbtPool1.Value, Enums.ePowerSetType.Pool);
             ComboCheckPool(CbtPool2.Value, Enums.ePowerSetType.Pool);
@@ -4928,14 +4915,8 @@ namespace Hero_Designer
             cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5]?.nID ?? -1);
             cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6]?.nID ?? -1);
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Ancillary);
-            if (MidsContext.Character.Powersets[7] != null)
-                cbAncillary.SelectedIndex = DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[7], powersetIndexes);
-            else
-                cbAncillary.SelectedIndex = 0;
-            if (MidsContext.Character.Powersets[7] == null)
-                cbAncillary.Enabled = false;
-            else
-                cbAncillary.Enabled = true;
+            cbAncillary.SelectedIndex = MidsContext.Character.Powersets[7] != null ? DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[7], powersetIndexes) : 0;
+            cbAncillary.Enabled = MidsContext.Character.Powersets[7] != null;
             UpdatePowerLists();
             DisplayName();
             cbAT.Enabled = !MainModule.MidsController.Toon.Locked;
@@ -5321,11 +5302,13 @@ namespace Hero_Designer
                     IPower powerByName = DatabaseAPI.GetPowerByName(buildFileLinesArray[index3].powerName);
                     if (!powerByName.FullName.Contains("Incarnate"))
                     {
-                        PowerEntry powerEntry = new PowerEntry();
-                        powerEntry.Level = buildFileLinesArray[index3].powerLevel;
-                        powerEntry.StatInclude = false;
-                        powerEntry.VariableValue = 0;
-                        powerEntry.Slots = new SlotEntry[buildFileLinesArray[index3].powerSlotsAmount];
+                        PowerEntry powerEntry = new PowerEntry
+                        {
+                            Level = buildFileLinesArray[index3].powerLevel,
+                            StatInclude = false,
+                            VariableValue = 0,
+                            Slots = new SlotEntry[buildFileLinesArray[index3].powerSlotsAmount]
+                        };
                         if (buildFileLinesArray[index3].powerSlotsAmount > 0)
                         {
                             for (int index2 = 0; index2 < powerEntry.Slots.Length; ++index2)
@@ -5339,8 +5322,11 @@ namespace Hero_Designer
                                 };
                                 if (buildFileLinesArray[index3].enhancementName != "Empty")
                                 {
-                                    I9Slot i9Slot = new I9Slot();
-                                    i9Slot.Enh = DatabaseAPI.GetEnhancementByUIDName(buildFileLinesArray[index3].enhancementName);
+                                    I9Slot i9Slot = new I9Slot
+                                    {
+                                        Enh = DatabaseAPI.GetEnhancementByUIDName(buildFileLinesArray[index3]
+                                            .enhancementName)
+                                    };
                                     str1 = buildFileLinesArray[index3].enhancementName;
                                     if (i9Slot.Enh == -1)
                                     {
@@ -5389,35 +5375,35 @@ namespace Hero_Designer
                     ++index3;
                 }
                 List<PowerEntry> powerEntryList = sortPowerEntryList(listPowerEntry);
-                for (int index1 = 0; index1 < powerEntryList.Count; ++index1)
+                foreach (var t in powerEntryList)
                 {
-                    if (!powerEntryList[index1].PowerSet.FullName.Contains("Inherent"))
-                        PowerPicked(powerEntryList[index1].NIDPowerset, powerEntryList[index1].NIDPower);
+                    if (!t.PowerSet.FullName.Contains("Inherent"))
+                        PowerPicked(t.NIDPowerset, t.NIDPower);
                 }
                 List<SlotEntry> slotEntryList = new List<SlotEntry>();
-                for (int index1 = 0; index1 < MidsContext.Character.CurrentBuild.Powers.Count; ++index1)
+                foreach (var t in MidsContext.Character.CurrentBuild.Powers)
                 {
                     bool flag = false;
                     for (int index2 = 0; index2 < powerEntryList.Count; ++index2)
                     {
-                        if (powerEntryList[index2].Power.FullName == MidsContext.Character.CurrentBuild.Powers[index1].Power.FullName)
+                        if (powerEntryList[index2].Power.FullName == t.Power.FullName)
                         {
                             if (powerEntryList[index2].Slots.Length > 0)
                                 slotEntryList.Add(powerEntryList[index2].Slots[0]);
                             for (int index4 = 0; index4 < powerEntryList[index2].Slots.Length - 1; ++index4)
                             {
                                 slotEntryList.Add(powerEntryList[index2].Slots[index4 + 1]);
-                                MidsContext.Character.CurrentBuild.Powers[index1].AddSlot(49);
+                                t.AddSlot(49);
                             }
                             break;
                         }
                     }
                 }
                 int num5 = 0;
-                for (int index1 = 0; index1 < MidsContext.Character.CurrentBuild.Powers.Count; ++index1)
+                foreach (var t in MidsContext.Character.CurrentBuild.Powers)
                 {
-                    for (int index2 = 0; index2 < MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length; ++index2)
-                        MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2] = slotEntryList[num5++];
+                    for (int index2 = 0; index2 < t.Slots.Length; ++index2)
+                        t.Slots[index2] = slotEntryList[num5++];
                 }
                 MidsContext.Archetype = MidsContext.Character.Archetype;
                 MidsContext.Character.Validate();
