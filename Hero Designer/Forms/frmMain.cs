@@ -120,13 +120,13 @@ namespace Hero_Designer
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
                 ConfigData.Initialize(My.MyApplication.GetSerializer());
-                this.Load += new EventHandler(this.frmMain_Load);
-                this.Closed += new EventHandler(this.frmMain_Closed);
-                this.FormClosing += new FormClosingEventHandler(this.frmMain_Closing);
-                this.ResizeEnd += new EventHandler(this.frmMain_Resize);
-                this.KeyDown += new KeyEventHandler(this.frmMain_KeyDown);
-                this.Resize += new EventHandler(this.frmMain_Maximize);
-                this.MouseWheel += new MouseEventHandler(this.frmMain_MouseWheel);
+                this.Load += this.frmMain_Load;
+                this.Closed += this.frmMain_Closed;
+                this.FormClosing += this.frmMain_Closing;
+                this.ResizeEnd += this.frmMain_Resize;
+                this.KeyDown += this.frmMain_KeyDown;
+                this.Resize += this.frmMain_Maximize;
+                this.MouseWheel += this.frmMain_MouseWheel;
                 this.NoUpdate = false;
                 this.EnhancingSlot = -1;
                 this.EnhancingPower = -1;
@@ -161,7 +161,7 @@ namespace Hero_Designer
             this.tsDonate.Visible = false;
             this.tsDonate.Enabled = false;
 
-            this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
+            this.tmrGfx.Tick += tmrGfx_Tick;
             //adding events
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
@@ -178,14 +178,14 @@ namespace Hero_Designer
                 this.dvAnchored.Size = new System.Drawing.Size(300, 347);
                 this.dvAnchored.TabIndex = 69;
                 this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
-                this.dvAnchored.MouseWheel += new System.Windows.Forms.MouseEventHandler(frmMain_MouseWheel);
-                this.dvAnchored.SizeChange += new Hero_Designer.DataView.SizeChangeEventHandler(dvAnchored_SizeChange);
-                this.dvAnchored.FloatChange += new Hero_Designer.DataView.FloatChangeEventHandler(dvAnchored_Float);
-                this.dvAnchored.Unlock_Click += new Hero_Designer.DataView.Unlock_ClickEventHandler(dvAnchored_Unlock);
-                this.dvAnchored.SlotUpdate += new Hero_Designer.DataView.SlotUpdateEventHandler(DataView_SlotUpdate);
-                this.dvAnchored.SlotFlip += new Hero_Designer.DataView.SlotFlipEventHandler(DataView_SlotFlip);
-                this.dvAnchored.Moved += new Hero_Designer.DataView.MovedEventHandler(dvAnchored_Move);
-                this.dvAnchored.TabChanged += new Hero_Designer.DataView.TabChangedEventHandler(dvAnchored_TabChanged);
+                this.dvAnchored.MouseWheel += frmMain_MouseWheel;
+                this.dvAnchored.SizeChange += dvAnchored_SizeChange;
+                this.dvAnchored.FloatChange += dvAnchored_Float;
+                this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
+                this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
+                this.dvAnchored.SlotFlip += DataView_SlotFlip;
+                this.dvAnchored.Moved += dvAnchored_Move;
+                this.dvAnchored.TabChanged += dvAnchored_TabChanged;
                 var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
                 var icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 this.Icon = icon;
