@@ -935,6 +935,7 @@ namespace Hero_Designer
                         this.DoRedraw();
                     this.UpdateColours(false);
                     this.FloatTop(true);
+                    SetTitleBar(true);
                 }
             }
             catch (Exception ex)
@@ -3948,7 +3949,8 @@ namespace Hero_Designer
             }
             else
             {
-                this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
+                //this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
+                this.Text = $"{str2} v{MidsContext.AppAssemblyVersion} (Database Issue: {DatabaseAPI.Database.Issue}, Version: {DatabaseAPI.Database.Version.ToString()})";
             }
         }
 
