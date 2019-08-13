@@ -108,7 +108,7 @@ public static class Files
                 return Files.FNameConfig;
             return OS.GetApplicationPath() + "Data\\Config.mhd";
         }
-        catch (Exception ex)
+        catch
         {
             MessageBox.Show("Config folder doesn't exist. Creating new one.");
         }
