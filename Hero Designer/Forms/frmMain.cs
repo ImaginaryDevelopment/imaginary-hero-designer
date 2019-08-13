@@ -5402,8 +5402,6 @@ namespace Hero_Designer
                             }
                             break;
                         }
-                        if (flag)
-                            break;
                     }
                 }
                 int num5 = 0;
