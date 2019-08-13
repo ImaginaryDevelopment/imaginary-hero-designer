@@ -907,7 +907,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (str.Contains("MxDz") || str.Contains("MxDu"))
+                    if (str != null && (str.Contains("MxDz") || str.Contains("MxDu")))
                     {
                         Stream mStream = new MemoryStream(new ASCIIEncoding().GetBytes(str));
                         loaded = MainModule.MidsController.Toon.Load("", ref mStream);
