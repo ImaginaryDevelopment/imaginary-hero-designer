@@ -454,27 +454,32 @@ namespace Hero_Designer
                     var iItem = new ListLabelV2.ListLabelItemV2(Powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nID, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
                     llPower.AddItem(iItem);
                 }
-                for (int iIDXPower = 0; iIDXPower <= Powerset.Powers.Length - 1; ++iIDXPower)
-                {
-                    if (Powerset.Powers[iIDXPower].Level > 0)
+
+                if (Powerset.Powers != null)
+                    for (int iIDXPower = 0; iIDXPower <= Powerset.Powers.Length - 1; ++iIDXPower)
                     {
-                        message = "";
-                        var targetPs = MainModule.MidsController.Toon.PowerState(Powerset.Powers[iIDXPower].PowerIndex, ref message);
-                        var power = Powerset.Powers[iIDXPower];
-                        var iItem = new ListLabelV2.ListLabelItemV2(
-                            Powerset.Powers[iIDXPower].DisplayName,
-                            targetPs,
-                            Powerset.nID,
-                            iIDXPower,
-                            power.PowerIndex, "", ListLabelV2.LLFontFlags.Bold)
+                        if (Powerset.Powers[iIDXPower].Level > 0)
                         {
-                            Bold = MidsContext.Config.RtFont.PairedBold
-                        };
-                        if (iItem.ItemState == ListLabelV2.LLItemState.Invalid)
-                            iItem.Italic = true;
-                        llPower.AddItem(iItem);
+                            message = "";
+                            var targetPs =
+                                MainModule.MidsController.Toon.PowerState(Powerset.Powers[iIDXPower].PowerIndex,
+                                    ref message);
+                            var power = Powerset.Powers[iIDXPower];
+                            var iItem = new ListLabelV2.ListLabelItemV2(
+                                Powerset.Powers[iIDXPower].DisplayName,
+                                targetPs,
+                                Powerset.nID,
+                                iIDXPower,
+                                power.PowerIndex, "", ListLabelV2.LLFontFlags.Bold)
+                            {
+                                Bold = MidsContext.Config.RtFont.PairedBold
+                            };
+                            if (iItem.ItemState == ListLabelV2.LLItemState.Invalid)
+                                iItem.Italic = true;
+                            llPower.AddItem(iItem);
+                        }
                     }
-                }
+
                 llPower.SuspendRedraw = false;
             }
         }
@@ -892,7 +897,7 @@ namespace Hero_Designer
             bool loaded = false;
             if (MessageBox.Show("Copy the build data on the forum to the clipboard. When that's done, click on OK.", "Standing By", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK)
                 return;
-            string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
+            string str = Clipboard.GetDataObject()?.GetData("System.String", true).ToString();
             NewToon();
             try
             {
@@ -1087,7 +1092,10 @@ namespace Hero_Designer
                     if (index > -1)
                     {
                         Graphics graphics = drawing.bxBuffer.Graphics;
-                        I9Gfx.DrawFlippingEnhancement(ref graphics, rectangle1, num2, DatabaseAPI.Database.Enhancements[index].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[index].TypeID, i9Slot1.Grade));
+                        if (i9Slot1 != null)
+                            I9Gfx.DrawFlippingEnhancement(ref graphics, rectangle1, num2,
+                                DatabaseAPI.Database.Enhancements[index].ImageIdx,
+                                I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[index].TypeID, i9Slot1.Grade));
                     }
                     else
                         drawing.bxBuffer.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
@@ -4044,7 +4052,7 @@ namespace Hero_Designer
                         Point e1 = new Point(drawing.ScaleUp(e.X), drawing.ScaleUp(e.Y));
                         if (drawing.WithinPowerBar(rectangle, e1))
                         {
-                            if (powerEntry.NIDPower > 0)
+                            if (powerEntry != null && powerEntry.NIDPower > 0)
                                 iPopup = MainModule.MidsController.Toon.PopPowerInfo(hIDX, powerEntry.NIDPower);
                             flag = true;
                         }
@@ -4052,7 +4060,9 @@ namespace Hero_Designer
                     else if (sIDX > -1)
                     {
                         rectangle = drawing.PowerBoundsUnScaled(hIDX);
-                        iPopup = Character.PopEnhInfo(powerEntry.Slots[sIDX].Enhancement, powerEntry.Slots[sIDX].Level, powerEntry);
+                        if (powerEntry != null)
+                            iPopup = Character.PopEnhInfo(powerEntry.Slots[sIDX].Enhancement,
+                                powerEntry.Slots[sIDX].Level, powerEntry);
                         flag = true;
                     }
                     else if (pIDX > -1)
