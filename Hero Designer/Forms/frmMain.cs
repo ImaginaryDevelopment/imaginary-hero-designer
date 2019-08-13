@@ -4844,7 +4844,7 @@ namespace Hero_Designer
                 colorItem.BackColor = lblATLocked.BackColor;
             }
 
-            var ibs = new ImageButton[]
+            var ibs = new[]
             {
                 ibSets,
                 ibPvX,
