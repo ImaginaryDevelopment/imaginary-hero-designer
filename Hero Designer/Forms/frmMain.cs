@@ -2688,7 +2688,7 @@ namespace Hero_Designer
                             {
                                 if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic & flag)
                                 {
-                                    if (flag & MidsContext.Character.CurrentBuild.Powers[hIDPower].Level > -1)
+                                    if (true & MidsContext.Character.CurrentBuild.Powers[hIDPower].Level > -1)
                                     {
                                         MainModule.MidsController.Toon.RequestedLevel = MidsContext.Character.CurrentBuild.Powers[hIDPower].Level;
                                         UpdatePowerLists();
