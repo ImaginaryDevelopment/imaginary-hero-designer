@@ -3886,7 +3886,7 @@ namespace Hero_Designer
                 else
                     y = num1 < I9Popup.Height ? (top < I9Popup.Height ? ObjectBounds.Bottom : ObjectBounds.Top - I9Popup.Height) : ObjectBounds.Bottom;
             }
-            else if (PowerListing)
+            else if (true)
             {
                 y = (int)Math.Round(ObjectBounds.Top + ObjectBounds.Height / 2.0 - I9Popup.Height / 2.0);
                 if (y < 0)
