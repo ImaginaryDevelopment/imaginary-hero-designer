@@ -333,7 +333,6 @@ namespace Hero_Designer
                 Show();
                 iFrm.Hide();
                 iFrm.Close();
-                iFrm = null;
                 Refresh();
                 dvAnchored.SetScreenBounds(ClientRectangle);
                 Point iLocation = new Point();
