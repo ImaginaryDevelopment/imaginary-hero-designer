@@ -253,7 +253,6 @@ namespace Hero_Designer
                 lblLockedAncillary.Location = cbAncillary.Location;
                 lblLockedAncillary.Size = cbAncillary.Size;
                 lblLockedAncillary.Visible = false;
-                Size size1;
                 if (Screen.PrimaryScreen.WorkingArea.Width > MidsContext.Config.LastSize.Width & MidsContext.Config.LastSize.Width >= MinimumSize.Width)
                 {
                     int hasMaxSize = MaximumSize.Width > 0 ? 1 : 0;
@@ -334,7 +333,7 @@ namespace Hero_Designer
                 ref Point local = ref iLocation;
                 int left = llPrimary.Left;
                 int top = llPrimary.Top;
-                size1 = llPrimary.SizeNormal;
+                var size1 = llPrimary.SizeNormal;
                 int height5 = size1.Height;
                 int y = top + height5 + 5;
                 local = new Point(left, y);
@@ -1010,7 +1009,7 @@ namespace Hero_Designer
             if (MidsContext.Config.ExempLow < MidsContext.Config.ExempHigh)
                 str4 = str4 + " - Exemped from " + MidsContext.Config.ExempHigh + " to " + MidsContext.Config.ExempLow;
             lblHero.Text = str4;
-            if (!(txtName.Text != ch.Name))
+            if (txtName.Text == ch.Name)
                 return;
             txtName.Text = ch.Name;
         }
@@ -3931,7 +3930,7 @@ namespace Hero_Designer
             else
             {
                 //this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
-                Text = $"{str2} v{MidsContext.AppAssemblyVersion} (Database Issue: {DatabaseAPI.Database.Issue}, Version: {DatabaseAPI.Database.Version.ToString()})";
+                Text = $@"{str2} v{MidsContext.AppAssemblyVersion} (Database Issue: {DatabaseAPI.Database.Issue}, Version: {DatabaseAPI.Database.Version.ToString(CultureInfo.InvariantCulture)})";
             }
         }
 
@@ -5384,15 +5383,15 @@ namespace Hero_Designer
                 foreach (var t in MidsContext.Character.CurrentBuild.Powers)
                 {
                     bool flag = false;
-                    for (int index2 = 0; index2 < powerEntryList.Count; ++index2)
+                    foreach (var t1 in powerEntryList)
                     {
-                        if (powerEntryList[index2].Power.FullName == t.Power.FullName)
+                        if (t1.Power.FullName == t.Power.FullName)
                         {
-                            if (powerEntryList[index2].Slots.Length > 0)
-                                slotEntryList.Add(powerEntryList[index2].Slots[0]);
-                            for (int index4 = 0; index4 < powerEntryList[index2].Slots.Length - 1; ++index4)
+                            if (t1.Slots.Length > 0)
+                                slotEntryList.Add(t1.Slots[0]);
+                            for (int index4 = 0; index4 < t1.Slots.Length - 1; ++index4)
                             {
-                                slotEntryList.Add(powerEntryList[index2].Slots[index4 + 1]);
+                                slotEntryList.Add(t1.Slots[index4 + 1]);
                                 t.AddSlot(49);
                             }
                             break;
