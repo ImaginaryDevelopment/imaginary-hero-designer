@@ -3756,9 +3756,8 @@ namespace Hero_Designer
 
         void SetFormHeight(bool Force = false)
         {
-            int iVal2 = 0;
+            int iVal2;
             int num = Height - ClientSize.Height;
-            int bottom = dvAnchored.SnapLocation.Bottom;
             if (!dvAnchored.Visible)
             {
                 iVal2 = llPool3.Top + llPool3.Height * 2 + 4 + num;
@@ -3768,7 +3767,8 @@ namespace Hero_Designer
                 switch (dvAnchored.VisibleSize)
                 {
                     case Enums.eVisibleSize.Full:
-                        iVal2 = raGreater(dvAnchored.SnapLocation.Bottom, llAncillary.Top + llAncillary.ActualLineHeight * llAncillary.Items.Length) + 4 + num;
+                        var dvAnchoredSnapLocation = dvAnchored.SnapLocation;
+                        iVal2 = raGreater(dvAnchoredSnapLocation.Bottom, llAncillary.Top + llAncillary.ActualLineHeight * llAncillary.Items.Length) + 4 + num;
                         break;
                     case Enums.eVisibleSize.Small:
                         return;
