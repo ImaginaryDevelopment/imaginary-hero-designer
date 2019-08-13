@@ -569,7 +569,7 @@ namespace Hero_Designer
                 RectangleF destRect = new RectangleF();
                 ref RectangleF local1 = ref destRect;
                 local1 = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
-                RectangleF srcRect = new RectangleF((float)(nId * 16), 0.0f, 16f, 16f);
+                RectangleF srcRect = new RectangleF(nId * 16, 0.0f, 16f, 16f);
                 if ((e.State & DrawItemState.ComboBoxEdit) > DrawItemState.None)
                 {
                     if (e.Graphics.MeasureString(target[e.Index], e.Font).Width <= e.Bounds.Width - 10)
@@ -599,14 +599,14 @@ namespace Hero_Designer
             if (e.Index > -1)
             {
                 var cmbOrigin = GetCbOrigin();
-                RectangleF destRect = new RectangleF((float)(e.Bounds.X + 1), (float)e.Bounds.Y, 16f, 16f);
-                RectangleF srcRect = new RectangleF((float)(DatabaseAPI.GetOriginIDByName(cmbOrigin[e.Index]) * 16), 0.0f, 16f, 16f);
-                e.Graphics.DrawImage((Image)I9Gfx.Origins.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                RectangleF destRect = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
+                RectangleF srcRect = new RectangleF(DatabaseAPI.GetOriginIDByName(cmbOrigin[e.Index]) * 16, 0.0f, 16f, 16f);
+                e.Graphics.DrawImage(I9Gfx.Origins.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
                 };
-                RectangleF layoutRectangle = new RectangleF((float)e.Bounds.X + destRect.X + destRect.Width, (float)e.Bounds.Y, (float)e.Bounds.Width - (destRect.X + destRect.Width), (float)e.Bounds.Height);
+                RectangleF layoutRectangle = new RectangleF(e.Bounds.X + destRect.X + destRect.Width, e.Bounds.Y, e.Bounds.Width - (destRect.X + destRect.Width), e.Bounds.Height);
                 e.Graphics.DrawString(cmbOrigin[e.Index], e.Font, solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
@@ -2335,13 +2335,13 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || MidsContext.Character.Powersets[(int)iId] == null)
                 return;
-            RectangleF destRect = new RectangleF(1f, (float)(lblLocked0.Height - 16) / 2f, 16f, 16f);
+            RectangleF destRect = new RectangleF(1f, (lblLocked0.Height - 16) / 2f, 16f, 16f);
             --destRect.Y;
-            RectangleF srcRect = new RectangleF((float)(MidsContext.Character.Powersets[(int)iId].nID * 16), 0.0f, 16f, 16f);
+            RectangleF srcRect = new RectangleF(MidsContext.Character.Powersets[(int)iId].nID * 16, 0.0f, 16f, 16f);
             Graphics graphics = e.Graphics;
-            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
-            destRect.X = (float)(lblLocked0.Width - 19);
-            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            destRect.X = lblLocked0.Width - 19;
+            graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
         }
 
         void MovePopup(Rectangle rBounds)
@@ -3182,7 +3182,7 @@ namespace Hero_Designer
                     while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 || tp[index].SlotCount > 4 && integer2 != 23)
                         tp[index].Slots = tp[index].Slots.RemoveLast(); // (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
                 }
-                else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (dragdropScenarioAction[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (dragdropScenarioAction[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && dragdropScenarioAction[9] == (short)3)
+                else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (dragdropScenarioAction[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (dragdropScenarioAction[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && dragdropScenarioAction[9] == 3)
                 {
                     int index1 = start <= finish ? start : finish;
                     if (start == 23 | finish == 23)
@@ -3867,12 +3867,12 @@ namespace Hero_Designer
                 else if (num2 >= I9Popup.Width)
                 {
                     x = ObjectBounds.Right;
-                    y = (int)Math.Round((double)ObjectBounds.Top + (double)ObjectBounds.Height / 2.0 - (double)I9Popup.Height / 2.0);
+                    y = (int)Math.Round(ObjectBounds.Top + ObjectBounds.Height / 2.0 - I9Popup.Height / 2.0);
                 }
                 else if (left >= I9Popup.Width)
                 {
                     x = ObjectBounds.Left - I9Popup.Width;
-                    y = (int)Math.Round((double)ObjectBounds.Top + (double)ObjectBounds.Height / 2.0 - (double)I9Popup.Height / 2.0);
+                    y = (int)Math.Round(ObjectBounds.Top + ObjectBounds.Height / 2.0 - I9Popup.Height / 2.0);
                 }
                 else
                     y = ObjectBounds.Bottom;
@@ -3894,7 +3894,7 @@ namespace Hero_Designer
             }
             else if (PowerListing)
             {
-                y = (int)Math.Round((double)ObjectBounds.Top + (double)ObjectBounds.Height / 2.0 - (double)I9Popup.Height / 2.0);
+                y = (int)Math.Round(ObjectBounds.Top + ObjectBounds.Height / 2.0 - I9Popup.Height / 2.0);
                 if (y < 0)
                     y = 0;
                 int num3 = y + I9Popup.Height;
@@ -3909,10 +3909,10 @@ namespace Hero_Designer
             }
             if (x < 0)
             {
-                x = (int)Math.Round((double)ObjectBounds.Left + (double)ObjectBounds.Width / 2.0 - (double)I9Popup.Width / 2.0);
-                if ((double)left < (double)(I9Popup.Width - ObjectBounds.Width) / 2.0)
+                x = (int)Math.Round(ObjectBounds.Left + ObjectBounds.Width / 2.0 - I9Popup.Width / 2.0);
+                if (left < (I9Popup.Width - ObjectBounds.Width) / 2.0)
                     x = left;
-                else if ((double)num2 < (double)(I9Popup.Width - ObjectBounds.Width) / 2.0)
+                else if (num2 < (I9Popup.Width - ObjectBounds.Width) / 2.0)
                 {
                     clientSize = ClientSize;
                     x = clientSize.Width - I9Popup.Width;
@@ -4133,7 +4133,7 @@ namespace Hero_Designer
             if (MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level < MidsContext.Character.CurrentBuild.Powers[sourcePower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[sourcePower].NIDPower].AllowFrontLoading)
             {
                 CheckInitDdsaValue(14, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                if (dragdropScenarioAction[14] == (short)1)
+                if (dragdropScenarioAction[14] == 1)
                     return;
             }
             int level = MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level;
@@ -4584,7 +4584,7 @@ namespace Hero_Designer
                     }
                 };
                 FloatTop(false);
-                frmReadme.ShowDialog((IWin32Window)this);
+                frmReadme.ShowDialog(this);
                 FloatTop(true);
             }
             else
@@ -4801,15 +4801,15 @@ namespace Hero_Designer
             {
                 draw = I9Picker.ForeColor.R != byte.MaxValue;
                 BackColor = Color.FromArgb(0, 0, 0);
-                lblATLocked.BackColor = Color.FromArgb((int)byte.MaxValue, 128, 128);
-                I9Picker.ForeColor = Color.FromArgb((int)byte.MaxValue, 0, 0);
+                lblATLocked.BackColor = Color.FromArgb(byte.MaxValue, 128, 128);
+                I9Picker.ForeColor = Color.FromArgb(byte.MaxValue, 0, 0);
             }
             else
             {
-                draw = I9Picker.ForeColor.R != (byte)96;
+                draw = I9Picker.ForeColor.R != 96;
                 BackColor = Color.FromArgb(0, 0, 0);
-                lblATLocked.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-                I9Picker.ForeColor = Color.FromArgb(96, 48, (int)byte.MaxValue);
+                lblATLocked.BackColor = Color.FromArgb(128, 128, byte.MaxValue);
+                I9Picker.ForeColor = Color.FromArgb(96, 48, byte.MaxValue);
             }
             I9Picker.BackColor = BackColor;
             I9Popup.BackColor = Color.Black;
@@ -5045,11 +5045,11 @@ namespace Hero_Designer
             stringFormat.Alignment = StringAlignment.Center;
             stringFormat.LineAlignment = StringAlignment.Center;
             if (ePowerState == Enums.ePowerState.Open)
-                dmBuffer.Graphics.DrawImage((Image)drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel);
+                dmBuffer.Graphics.DrawImage(drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel);
             else
-                dmBuffer.Graphics.DrawImage((Image)drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel, drawing.pImageAttributes);
+                dmBuffer.Graphics.DrawImage(drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel, drawing.pImageAttributes);
             float height2 = bFont.GetHeight(dmBuffer.Graphics) + 2f;
-            RectangleF Bounds = new RectangleF(0.0f, (float)(((double)pbDynMode.Height - (double)height2) / 2.0), (float)pbDynMode.Width, height2);
+            RectangleF Bounds = new RectangleF(0.0f, (float)((pbDynMode.Height - (double)height2) / 2.0), pbDynMode.Width, height2);
             Graphics graphics = dmBuffer.Graphics;
             clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
         }
@@ -5104,13 +5104,13 @@ namespace Hero_Designer
                     fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
                     fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
                     fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb(byte.MaxValue, 0, 0));
                     fIncarnate.LLLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
                     fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
                     fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
                     fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
                     fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb(byte.MaxValue, 0, 0));
                     fIncarnate.LLRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
                     int num1 = fIncarnate.LLLeft.Items.Length - 1;
                     for (int index = 0; index <= num1; ++index)
@@ -5431,7 +5431,7 @@ namespace Hero_Designer
 
         List<PowerEntry> sortPowerEntryList(List<PowerEntry> listPowerEntry)
         {
-            listPowerEntry.Sort((Comparison<PowerEntry>)((p1, p2) => p1.Level.CompareTo(p2.Level)));
+            listPowerEntry.Sort((p1, p2) => p1.Level.CompareTo(p2.Level));
             return listPowerEntry;
         }
 
