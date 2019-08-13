@@ -170,7 +170,7 @@ namespace Hero_Designer
                 dvAnchored.BackColor = Color.Black;
                 dvAnchored.DrawVillain = false;
                 dvAnchored.Floating = false;
-                dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+                dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
 
                 dvAnchored.Location = new Point(16, 391);
                 dvAnchored.Name = "dvAnchored";
