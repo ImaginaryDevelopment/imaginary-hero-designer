@@ -4875,7 +4875,7 @@ namespace Hero_Designer
         void UpdateControls(bool ForceComplete = false)
         {
             NoUpdate = true;
-            Archetype[] all = Array.FindAll(DatabaseAPI.Database.Classes, new Predicate<Archetype>(GetPlayableClasses));
+            Archetype[] all = Array.FindAll(DatabaseAPI.Database.Classes, GetPlayableClasses);
             var cbAT = new ComboBoxT<Archetype>(this.cbAT);
             if (ComboCheckAT(all))
             {
