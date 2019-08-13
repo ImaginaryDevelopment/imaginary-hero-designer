@@ -3444,7 +3444,6 @@ namespace Hero_Designer
 
         bool raToNormal()
         {
-            bool flag = false;
             llPool0.SuspendRedraw = true;
             llPool1.SuspendRedraw = true;
             llPool2.SuspendRedraw = true;
@@ -3507,7 +3506,7 @@ namespace Hero_Designer
             llPool2.SuspendRedraw = false;
             llPool3.SuspendRedraw = false;
             llAncillary.SuspendRedraw = false;
-            return flag;
+            return false;
         }
 
         bool ReArrange(bool Init)
