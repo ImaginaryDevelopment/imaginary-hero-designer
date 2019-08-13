@@ -3511,7 +3511,6 @@ namespace Hero_Designer
 
         bool ReArrange(bool Init)
         {
-            bool flag1 = false;
             bool flag2;
             if (drawing == null)
             {
@@ -3531,7 +3530,7 @@ namespace Hero_Designer
                     else
                         raToFloat();
                     SetAncilPoolHeight();
-                    flag2 = flag1;
+                    flag2 = false;
                 }
             }
             return flag2;
