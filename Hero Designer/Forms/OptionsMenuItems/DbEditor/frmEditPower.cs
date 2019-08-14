@@ -56,12 +56,12 @@ namespace Hero_Designer
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
             {
-                Interaction.MsgBox("Import successful.", MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox("Import successful.");
                 refresh_PowerData();
             }
             else
             {
-                Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox("Import failed. No changes made.");
             }
         }
 
@@ -110,7 +110,7 @@ namespace Hero_Designer
             IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
             power2.Effects = effectArray;
             power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
-            RefreshFXData(0);
+            RefreshFXData();
             lvFX.SelectedIndex = lvFX.Items.Count - 1;
         }
 
@@ -121,14 +121,13 @@ namespace Hero_Designer
             int selectedIndex = lvFX.SelectedIndices[0];
             if (selectedIndex <= myPower.Effects.Length - 2)
             {
-                IEffect[] effectArray = new IEffect[2]
-                {
+                IEffect[] effectArray = {
                       (IEffect) myPower.Effects[selectedIndex].Clone(),
                       (IEffect) myPower.Effects[selectedIndex + 1].Clone()
                 };
                 myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
                 myPower.Effects[selectedIndex + 1] = (IEffect)effectArray[0].Clone();
-                RefreshFXData(0);
+                RefreshFXData();
                 lvFX.SelectedIndex = selectedIndex + 1;
             }
         }
@@ -146,7 +145,7 @@ namespace Hero_Designer
                 IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
                 power2.Effects = effectArray;
                 power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
-                RefreshFXData(0);
+                RefreshFXData();
                 lvFX.SelectedIndex = lvFX.Items.Count - 1;
             }
         }
@@ -161,7 +160,7 @@ namespace Hero_Designer
             if (frmPowerEffect.ShowDialog() == DialogResult.OK)
             {
                 myPower.Effects[selectedIndex] = (IEffect)frmPowerEffect.myFX.Clone();
-                RefreshFXData(0);
+                RefreshFXData();
                 lvFX.SelectedIndex = selectedIndex;
             }
         }
@@ -186,7 +185,7 @@ namespace Hero_Designer
                     ++index1;
                 }
             }
-            RefreshFXData(0);
+            RefreshFXData();
             if (lvFX.Items.Count > selectedIndex)
                 lvFX.SelectedIndex = selectedIndex;
             else if (lvFX.Items.Count > selectedIndex - 1)
@@ -205,14 +204,14 @@ namespace Hero_Designer
                 effectArray[1] = (IEffect)myPower.Effects[selectedIndex - 1].Clone();
                 myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
                 myPower.Effects[selectedIndex - 1] = (IEffect)effectArray[0].Clone();
-                RefreshFXData(0);
+                RefreshFXData();
                 lvFX.SelectedIndex = selectedIndex - 1;
             }
         }
 
         void btnMutexAdd_Click(object sender, EventArgs e)
         {
-            string b = Interaction.InputBox("Please enter a new group name. It must be different to all the others", "Add Mutex Group", "New_Group", -1, -1).Replace(" ", "_");
+            string b = Interaction.InputBox("Please enter a new group name. It must be different to all the others", "Add Mutex Group", "New_Group").Replace(" ", "_");
             int count = clbMutex.Items.Count;
             int index = 0;
             if (index > count)
@@ -236,7 +235,7 @@ namespace Hero_Designer
             {
                 Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
-            else if (!PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
+            else if (!PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex)))
             {
                 Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
@@ -739,7 +738,7 @@ namespace Hero_Designer
             lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
             if (power.GroupName == "" | power.SetName == "" | power.PowerName == "")
                 lblNameUnique.Text = "This name is invalid.";
-            else if (PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
+            else if (PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex)))
                 lblNameUnique.Text = "This name is unique.";
             else
                 lblNameUnique.Text = "This name is NOT unique.";
@@ -1094,7 +1093,7 @@ namespace Hero_Designer
 
         void FillTab_Effects()
         {
-            RefreshFXData(0);
+            RefreshFXData();
         }
 
         void FillTab_Enhancements()
@@ -1300,13 +1299,13 @@ namespace Hero_Designer
 
         void lblStaticIndex_Click(object sender, EventArgs e)
         {
-            string s = Interaction.InputBox("Insert new static index for this power.", "", Conversions.ToString(myPower.StaticIndex), -1, -1);
+            string s = Interaction.InputBox("Insert new static index for this power.", "", Conversions.ToString(myPower.StaticIndex));
             try
             {
                 int num1 = int.Parse(s);
                 if (num1 < 0)
                 {
-                    Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
+                    Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation);
                 }
                 else
                 {
@@ -1317,7 +1316,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox(ex.Message);
                 ProjectData.ClearProjectError();
             }
         }

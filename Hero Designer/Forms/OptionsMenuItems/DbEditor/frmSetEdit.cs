@@ -153,7 +153,7 @@ namespace Hero_Designer
         void btnPaste_Click(object sender, EventArgs e)
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
-            char[] chArray = new char[1] { '^' };
+            char[] chArray = { '^' };
             string[] strArray1 = str.Replace("\r\n", Conversions.ToString(chArray[0])).Split(chArray);
             chArray[0] = '\t';
             mySet.InitBonus();
@@ -247,7 +247,7 @@ namespace Hero_Designer
                     }
                 }
                 if (mySet.Bonus[index1].Index.Length > 0)
-                    str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, false, false));
+                    str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, false));
                 if (mySet.Bonus[index1].PvMode == Enums.ePvX.PvP)
                     str1 += "(PvP)";
                 if (mySet.Bonus[index1].Index.Length > 0)
@@ -272,7 +272,7 @@ namespace Hero_Designer
                             str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
                         }
                     }
-                    str1 = str3 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, true, false)) + RTF.Crlf();
+                    str1 = str3 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, true)) + RTF.Crlf();
                 }
                 if (mySet.SpecialBonus[index1].Index.Length > 0)
                     str1 += RTF.Crlf();
@@ -378,7 +378,7 @@ namespace Hero_Designer
             {
                 items[1] = "";
                 if (DatabaseAPI.Database.Power[SetBonusList[index]].Effects.Length > 0)
-                    items[1] = DatabaseAPI.Database.Power[SetBonusList[index]].Effects[0].BuildEffectStringShort(false, true, false);
+                    items[1] = DatabaseAPI.Database.Power[SetBonusList[index]].Effects[0].BuildEffectStringShort(false, true);
                 items[0] = DatabaseAPI.Database.Power[SetBonusList[index]].PowerName;
                 lvBonusList.Items.Add(new ListViewItem(items)
                 {
@@ -390,7 +390,7 @@ namespace Hero_Designer
             {
                 items[1] = "";
                 if (DatabaseAPI.Database.Power[SetBonusListPVP[index]].Effects.Length > 0)
-                    items[1] = DatabaseAPI.Database.Power[SetBonusListPVP[index]].Effects[0].BuildEffectStringShort(false, true, false);
+                    items[1] = DatabaseAPI.Database.Power[SetBonusListPVP[index]].Effects[0].BuildEffectStringShort(false, true);
                 items[0] = DatabaseAPI.Database.Power[SetBonusListPVP[index]].PowerName + " (PVP Only)";
                 lvBonusList.Items.Add(new ListViewItem(items)
                 {
@@ -447,8 +447,8 @@ namespace Hero_Designer
         {
             if (MidsContext.Config.MasterMode)
                 btnPaste.Visible = true;
-            SetBonusList = DatabaseAPI.NidPowers("set_bonus.set_bonus", "");
-            SetBonusListPVP = DatabaseAPI.NidPowers("set_bonus.pvp_set_bonus", "");
+            SetBonusList = DatabaseAPI.NidPowers("set_bonus.set_bonus");
+            SetBonusListPVP = DatabaseAPI.NidPowers("set_bonus.pvp_set_bonus");
             if (mySet.Bonus.Length < 1)
                 mySet.InitBonus();
             FillComboBoxes();
@@ -536,7 +536,7 @@ namespace Hero_Designer
             int index = (int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(lvBonusList.SelectedItems[0].Tag)));
             if (index < 0)
             {
-                int num = (int)Interaction.MsgBox("Tag was < 0!", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Tag was < 0!");
             }
             else
             {

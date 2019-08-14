@@ -69,7 +69,7 @@ namespace Hero_Designer
 
         public (eCheckResponse, string) UpdateCheck()
         {
-            string response = null;
+            string response;
             try
             {
                 using (var client = new HttpClient())

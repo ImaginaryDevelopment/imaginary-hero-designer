@@ -77,7 +77,7 @@ namespace Hero_Designer
                 }
             }
             BusyMsg("Re-Indexing && Saving...");
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             BusyHide();
@@ -143,15 +143,15 @@ namespace Hero_Designer
             try
             {
                 int FileNumber = FileSystem.FreeFile();
-                FileSystem.FileOpen(FileNumber, "StaticIndexes.txt", OpenMode.Output, OpenAccess.Default, OpenShare.Default, -1);
+                FileSystem.FileOpen(FileNumber, "StaticIndexes.txt", OpenMode.Output);
                 FileSystem.WriteLine(FileNumber, text);
                 FileSystem.FileClose(FileNumber);
-                int num = (int)Interaction.MsgBox("Copied to clipboard and saved in StaticIndexes.txt", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Copied to clipboard and saved in StaticIndexes.txt");
             }
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox("Copied to clipboard only", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Copied to clipboard only");
                 ProjectData.ClearProjectError();
             }
         }

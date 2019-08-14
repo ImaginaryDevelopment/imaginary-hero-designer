@@ -328,7 +328,7 @@ namespace midsControls
             Font font = Font;
             float outlineSpace = 1f;
             Graphics graphics6 = bxOut.Graphics;
-            DrawOutlineText(iStr, bounds3, whiteSmoke, outline, font, outlineSpace, ref graphics6, false, false);
+            DrawOutlineText(iStr, bounds3, whiteSmoke, outline, font, outlineSpace, ref graphics6);
         }
 
         // Token: 0x060001BF RID: 447 RVA: 0x00010E10 File Offset: 0x0000F010

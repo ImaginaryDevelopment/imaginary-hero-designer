@@ -138,21 +138,21 @@ namespace Hero_Designer
                             }
                         }
                     }
-                    int index3 = popupData.Add(null);
+                    int index3 = popupData.Add();
                     if (Mini)
                         iIndent = 0;
                     lblHeader.Text = "Shopping List";
                     if (lvPower.CheckedIndices.Count == 1)
                     {
                         if (!lvPower.Items[0].Checked)
-                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title);
                         else
-                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title);
                     }
                     else
-                        popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title);
                     if (!chkRecipe.Checked)
-                        popupData.Sections[index3].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index3].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title);
                     if (Mini)
                     {
                         string str = "Buy:";
@@ -192,8 +192,8 @@ namespace Hero_Designer
                     if (chkRecipe.Checked)
                     {
                         RecipeInfo.ColumnPosition = 0.75f;
-                        int index1 = popupData.Add(null);
-                        popupData.Sections[index1].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        int index1 = popupData.Add();
+                        popupData.Sections[index1].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title);
                         int num7 = numArray2.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
@@ -234,9 +234,9 @@ namespace Hero_Designer
                         popupData.ColPos = 0.15f;
                         popupData.ColRight = false;
                     }
-                    int index5 = popupData.Add(null);
+                    int index5 = popupData.Add();
                     string iText1 = !Mini ? Conversions.ToString(num4) + " Salvage Items:" : Conversions.ToString(num4) + " Items:";
-                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title);
                     int num9 = numArray1.Length - 1;
                     for (int index1 = 0; index1 <= num9; ++index1)
                     {
@@ -256,7 +256,7 @@ namespace Hero_Designer
                                     break;
                             }
                             if (Mini)
-                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, FontStyle.Bold, 0);
+                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f);
                             else
                                 popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, FontStyle.Bold, 1);
                         }
@@ -264,15 +264,15 @@ namespace Hero_Designer
                     popupData.Sections[index5].Content = sortPopupStrings(Mini, 1, popupData.Sections[index5].Content);
                     if (nonRecipeCount != 1)
                     {
-                        int index1 = popupData.Add(null);
+                        int index1 = popupData.Add();
                         string iText2 = !Mini ? Conversions.ToString(nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(nonRecipeCount - 1) + " Enhs:";
-                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title);
                         int num7 = tl.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
                             Color common = PopUp.Colors.Common;
                             if (Mini)
-                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, FontStyle.Bold, 0);
+                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f);
                             else
                                 popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, FontStyle.Bold, 1);
                         }
@@ -287,7 +287,7 @@ namespace Hero_Designer
                 DrawIcon(Conversions.ToInteger(lvDPA.SelectedItems[0].Tag));
                 if (rIdx > -1)
                 {
-                    int index1 = popupData.Add(null);
+                    int index1 = popupData.Add();
                     popupData.Sections[index1] = Character.PopRecipeInfo(rIdx, Conversions.ToInteger(lvDPA.SelectedItems[0].SubItems[1].Text) - 1);
                     if (popupData.Sections[index1].Content != null && popupData.Sections[index1].Content.Length > 0)
                     {
@@ -519,7 +519,7 @@ namespace Hero_Designer
             }
             if (num1 < 0)
             {
-                iLevel = Enhancement.GranularLevelZb(iLevel, 0, 49, 5);
+                iLevel = Enhancement.GranularLevelZb(iLevel, 0, 49);
                 int num5 = DatabaseAPI.Database.Recipes[rIDX].Item.Length - 1;
                 for (int index = 0; index <= num5; ++index)
                 {

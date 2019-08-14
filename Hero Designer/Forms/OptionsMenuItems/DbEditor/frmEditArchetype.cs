@@ -120,7 +120,7 @@ namespace Hero_Designer
                 if (num3 < 1.0)
                 {
                     num3 = 1f;
-                    int num4 = (int)Interaction.MsgBox("Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, null);
+                    int num4 = (int)Interaction.MsgBox("Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information);
                 }
                 MyAT.Hitpoints = (int)Math.Round(num3);
                 float num5 = (float)Conversion.Val(txtHPCap.Text);

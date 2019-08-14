@@ -108,8 +108,7 @@ namespace Hero_Designer
             int selectedIndex = lvSets.SelectedIndices[0];
             if (selectedIndex < lvSets.Items.Count - 1)
             {
-                EnhancementSet[] enhancementSetArray = new EnhancementSet[2]
-                {
+                EnhancementSet[] enhancementSetArray = {
           new EnhancementSet(DatabaseAPI.Database.EnhancementSets[selectedIndex]),
           new EnhancementSet(DatabaseAPI.Database.EnhancementSets[selectedIndex + 1])
                 };
@@ -172,8 +171,7 @@ namespace Hero_Designer
             int selectedIndex = lvSets.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
-                EnhancementSet[] enhancementSetArray = new EnhancementSet[2]
-                {
+                EnhancementSet[] enhancementSetArray = {
           new EnhancementSet(DatabaseAPI.Database.EnhancementSets[selectedIndex]),
           new EnhancementSet(DatabaseAPI.Database.EnhancementSets[selectedIndex - 1])
                 };

@@ -363,26 +363,26 @@ namespace Hero_Designer
             float rechargeTime = enhancedPower.RechargeTime;
             float num1 = (float)(Math.Ceiling(enhancedPower.CastTimeReal / 0.131999999284744) + 1.0) * 0.132f;
             float endCost = enhancedPower.EndCost;
-            Enums.ShortFX effectMag1 = enhancedPower.GetEffectMag(Enums.eEffectType.DamageBuff, Enums.eToWho.Self, false);
-            Enums.ShortFX effectMag2 = enhancedPower.GetEffectMag(Enums.eEffectType.Resistance, Enums.eToWho.Target, false);
+            Enums.ShortFX effectMag1 = enhancedPower.GetEffectMag(Enums.eEffectType.DamageBuff, Enums.eToWho.Self);
+            Enums.ShortFX effectMag2 = enhancedPower.GetEffectMag(Enums.eEffectType.Resistance, Enums.eToWho.Target);
             effectMag1.Multiply();
             effectMag2.Multiply();
             float num2 = damageValue / num1;
             string[] strArray;
             if (damageValue != 0.0)
-                strArray = new string[8]
+                strArray = new[]
                 {
-          num2.ToString(),
-          damageValue.ToString(),
-          rechargeTime.ToString(),
-          num1.ToString(),
-          endCost.ToString(),
-          effectMag1.Sum.ToString(),
-          effectMag2.Sum.ToString(),
-          powerLocation.ToString()
+                    num2.ToString(),
+                    damageValue.ToString(),
+                    rechargeTime.ToString(),
+                    num1.ToString(),
+                    endCost.ToString(),
+                    effectMag1.Sum.ToString(),
+                    effectMag2.Sum.ToString(),
+                    powerLocation.ToString()
                 };
             else
-                strArray = new string[8]
+                strArray = new[]
                 {
                       "-",
                       "-",
@@ -429,7 +429,7 @@ namespace Hero_Designer
                             array[length].Damage = float.Parse(lvPower.Items[index].SubItems[2].Text);
                             if (!chkDamageBuffs.Checked)
                             {
-                                IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text), -1);
+                                IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text));
                                 array[length].Damage += basePower.FXGetDamageValue() * (GlobalDamageBuff / 100f);
                             }
                             array[length].DPA = float.Parse(lvPower.Items[index].SubItems[1].Text);
@@ -443,7 +443,7 @@ namespace Hero_Designer
                         array[length].RechargeTimer = -1f;
                         if (array[length].DamageBuff > 0.0 && array[length].DPA != 0.0)
                         {
-                            IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text), -1);
+                            IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text));
                             array[length].HidenDPA = basePower.FXGetDamageValue();
                             array[length].HidenDPA = array[length].HidenDPA * (array[length].DamageBuff / array[length].Recharge) / array[length].Animation;
                         }

@@ -199,7 +199,7 @@ namespace Hero_Designer
         {
             MoveDisable = false;
             TabPage = 0;
-            Pages = new string[4]
+            Pages = new[]
             {
                 "Info",
                 "Effects",
@@ -363,7 +363,7 @@ namespace Hero_Designer
         void Display_EDFigures()
         {
             Enh_Title.Text = pBase.DisplayName;
-            enhListing.Clear(false);
+            enhListing.Clear();
             if (MidsContext.Character == null)
             {
                 enhListing.Draw();
@@ -397,7 +397,7 @@ namespace Hero_Designer
                         numArray1[index] = 0.0f;
                         numArray2[index] = 0.0f;
                         numArray3[index] = 0.0f;
-                        schedule1[index] = Enhancement.GetSchedule((Enums.eEnhance)index, -1);
+                        schedule1[index] = Enhancement.GetSchedule((Enums.eEnhance)index);
                         schedule2[index] = schedule1[index];
                         schedule3[index] = schedule1[index];
                     }
@@ -452,7 +452,7 @@ namespace Hero_Designer
                         if (MidsContext.Character.CurrentBuild.Powers[index1].Power != null && MidsContext.Character.CurrentBuild.Powers[index1].StatInclude)
                         {
                             IPower power1 = new Power(MidsContext.Character.CurrentBuild.Powers[index1].Power);
-                            power1.AbsorbPetEffects(-1);
+                            power1.AbsorbPetEffects();
                             power1.ApplyGrantPowerEffects();
                             foreach (IEffect effect in power1.Effects)
                             {
@@ -642,7 +642,7 @@ namespace Hero_Designer
             info_txtSmall.Rtf = RTF.StartRTF() + RTF.ToRTF(pBase.DescShort) + RTF.EndRTF();
             info_txtLarge.Rtf = RTF.StartRTF() + RTF.ToRTF(pBase.DescLong) + RTF.EndRTF();
             string Suffix1 = pBase.PowerType != Enums.ePowerType.Toggle ? string.Empty : "/s";
-            info_DataList.Clear(false);
+            info_DataList.Clear();
             string Tip1 = string.Empty;
             if (pBase.PowerType == Enums.ePowerType.Click)
             {
@@ -728,7 +728,7 @@ namespace Hero_Designer
             {
                 info_DataList.AddItem(new ctlPairedList.ItemPair("Effect:", Enum.GetName(Enums.eMez.None.GetType(), pBase.Effects[durationEffectId].MezType), false, pBase.Effects[durationEffectId].Probability < 1.0, pBase.Effects[durationEffectId].SpecialCase != Enums.eSpecialCase.None, durationEffectId));
                 bool iAlternate = pBase.Effects[durationEffectId].Mag != (double)pEnh.Effects[durationEffectId].Mag;
-                info_DataList.AddItem(new ctlPairedList.ItemPair("Mag:", Conversions.ToString(pEnh.Effects[durationEffectId].Mag), iAlternate, pBase.Effects[durationEffectId].Probability < 1.0, false, -1));
+                info_DataList.AddItem(new ctlPairedList.ItemPair("Mag:", Conversions.ToString(pEnh.Effects[durationEffectId].Mag), iAlternate, pBase.Effects[durationEffectId].Probability < 1.0));
                 num3 -= 2;
             }
             int[] rankedEffects = pBase.GetRankedEffects();
@@ -885,21 +885,19 @@ namespace Hero_Designer
                 GFXLabel fxTitle = fx_Title;
                 fxTitle.Text = fxTitle.Text + " (Slot Level " + Conversions.ToString(iEnhLvl + 1) + ")";
             }
-            ctlPairedList[] ctlPairedListArray = new ctlPairedList[3]
-            {
+            ctlPairedList[] ctlPairedListArray = {
                 fx_List1,
                 fx_List2,
                 fx_List3
             };
-            Label[] labelArray = new Label[3]
-            {
+            Label[] labelArray = {
                 fx_lblHead1,
                 fx_lblHead2,
                 fx_LblHead3
             };
-            fx_List1.Clear(false);
-            fx_List2.Clear(false);
-            fx_List3.Clear(false);
+            fx_List1.Clear();
+            fx_List2.Clear();
+            fx_List3.Clear();
             fx_lblHead1.Text = string.Empty;
             fx_lblHead2.Text = string.Empty;
             fx_LblHead3.Text = string.Empty;
@@ -909,14 +907,14 @@ namespace Hero_Designer
             bool flag2 = false;
             if (index < ctlPairedListArray.Length)
             {
-                ctlPairedListArray[index].Clear(false);
+                ctlPairedListArray[index].Clear();
                 num1 = effects_Heal(labelArray[index], ctlPairedListArray[index]);
                 if (num1 > 0)
                 {
                     flag2 = true;
                     ++index;
                     if (index < ctlPairedListArray.Length)
-                        ctlPairedListArray[index].Clear(false);
+                        ctlPairedListArray[index].Clear();
                 }
             }
             if (index < ctlPairedListArray.Length)
@@ -928,7 +926,7 @@ namespace Hero_Designer
                 {
                     ++index;
                     if (index < ctlPairedListArray.Length)
-                        ctlPairedListArray[index].Clear(false);
+                        ctlPairedListArray[index].Clear();
                 }
             }
             if (!flag1 & flag2 & num1 < 3)
@@ -937,7 +935,7 @@ namespace Hero_Designer
             {
                 ++index;
                 if (index < ctlPairedListArray.Length)
-                    ctlPairedListArray[index].Clear(false);
+                    ctlPairedListArray[index].Clear();
             }
             if (index < ctlPairedListArray.Length)
                 index += effects_Movement(labelArray[index], ctlPairedListArray[index]);
@@ -1027,7 +1025,7 @@ namespace Hero_Designer
                                 Bounds.Y -= 3f;
                                 Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
@@ -1036,7 +1034,7 @@ namespace Hero_Designer
                                 Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                         }
                     }
@@ -1057,7 +1055,7 @@ namespace Hero_Designer
                                 Bounds.Y -= 3f;
                                 Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
@@ -1066,7 +1064,7 @@ namespace Hero_Designer
                                 Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                         }
                     }
@@ -1087,12 +1085,11 @@ namespace Hero_Designer
             if (MidsContext.Character == null)
                 return;
             string[] names = Enum.GetNames(Enums.eDamage.None.GetType());
-            total_Misc.Clear(false);
+            total_Misc.Clear();
             Statistics displayStats = MidsContext.Character.DisplayStats;
             gDef1.Clear();
             gDef2.Clear();
-            int[] numArray1 = new int[16]
-            {
+            int[] numArray1 = {
                 0, 0, 0, 1,
                 1, 0, 0, 1,
                 0, 0, 1, 1,
@@ -1121,8 +1118,7 @@ namespace Hero_Designer
             string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((float)(MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
             gRes1.Clear();
             gRes2.Clear();
-            int[] numArray2 = new int[13]
-            {
+            int[] numArray2 = {
                 0, 0, 0, 1,
                 1, 0, 0, 1,
                 1, 0, 1, 1,
@@ -1259,25 +1255,25 @@ namespace Hero_Designer
 
         int effects_BuffDebuff(Label iLabel, ctlPairedList iList)
         {
-            Enums.ShortFX effectMagSum1 = pBase.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
-            Enums.ShortFX effectMagSum2 = pEnh.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
-            Enums.ShortFX effectMagSum3 = pEnh.GetEffectMagSum(Enums.eEffectType.DamageBuff, false, false, false, false);
-            Enums.ShortFX effectMagSum4 = pBase.GetEffectMagSum(Enums.eEffectType.PerceptionRadius, false, false, false, false);
-            Enums.ShortFX effectMagSum5 = pEnh.GetEffectMagSum(Enums.eEffectType.PerceptionRadius, false, false, false, false);
-            Enums.ShortFX effectMagSum6 = pBase.GetEffectMagSum(Enums.eEffectType.StealthRadius, false, false, false, false);
-            Enums.ShortFX effectMagSum7 = pEnh.GetEffectMagSum(Enums.eEffectType.StealthRadius, false, false, false, false);
-            Enums.ShortFX effectMag1 = pBase.GetEffectMag(Enums.eEffectType.ThreatLevel, Enums.eToWho.Unspecified, false);
-            Enums.ShortFX effectMag2 = pEnh.GetEffectMag(Enums.eEffectType.ThreatLevel, Enums.eToWho.Unspecified, false);
-            Enums.ShortFX effectMag3 = pBase.GetEffectMag(Enums.eEffectType.DropToggles, Enums.eToWho.Unspecified, false);
-            Enums.ShortFX effectMag4 = pEnh.GetEffectMag(Enums.eEffectType.DropToggles, Enums.eToWho.Unspecified, false);
-            Enums.ShortFX effectMag5 = pBase.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Self, false);
-            Enums.ShortFX effectMag6 = pEnh.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Self, false);
-            Enums.ShortFX effectMag7 = pBase.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Target, false);
-            Enums.ShortFX effectMag8 = pEnh.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Target, false);
-            Enums.ShortFX effectMagSum8 = pBase.GetEffectMagSum(Enums.eEffectType.ResEffect, false, false, false, false);
-            Enums.ShortFX effectMagSum9 = pEnh.GetEffectMagSum(Enums.eEffectType.ResEffect, false, false, false, false);
-            Enums.ShortFX effectMagSum10 = pBase.GetEffectMagSum(Enums.eEffectType.Enhancement, false, false, false, false);
-            Enums.ShortFX effectMagSum11 = pEnh.GetEffectMagSum(Enums.eEffectType.Enhancement, false, false, false, false);
+            Enums.ShortFX effectMagSum1 = pBase.GetEffectMagSum(Enums.eEffectType.ToHit);
+            Enums.ShortFX effectMagSum2 = pEnh.GetEffectMagSum(Enums.eEffectType.ToHit);
+            Enums.ShortFX effectMagSum3 = pEnh.GetEffectMagSum(Enums.eEffectType.DamageBuff);
+            Enums.ShortFX effectMagSum4 = pBase.GetEffectMagSum(Enums.eEffectType.PerceptionRadius);
+            Enums.ShortFX effectMagSum5 = pEnh.GetEffectMagSum(Enums.eEffectType.PerceptionRadius);
+            Enums.ShortFX effectMagSum6 = pBase.GetEffectMagSum(Enums.eEffectType.StealthRadius);
+            Enums.ShortFX effectMagSum7 = pEnh.GetEffectMagSum(Enums.eEffectType.StealthRadius);
+            Enums.ShortFX effectMag1 = pBase.GetEffectMag(Enums.eEffectType.ThreatLevel);
+            Enums.ShortFX effectMag2 = pEnh.GetEffectMag(Enums.eEffectType.ThreatLevel);
+            Enums.ShortFX effectMag3 = pBase.GetEffectMag(Enums.eEffectType.DropToggles);
+            Enums.ShortFX effectMag4 = pEnh.GetEffectMag(Enums.eEffectType.DropToggles);
+            Enums.ShortFX effectMag5 = pBase.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Self);
+            Enums.ShortFX effectMag6 = pEnh.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Self);
+            Enums.ShortFX effectMag7 = pBase.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Target);
+            Enums.ShortFX effectMag8 = pEnh.GetEffectMag(Enums.eEffectType.RechargeTime, Enums.eToWho.Target);
+            Enums.ShortFX effectMagSum8 = pBase.GetEffectMagSum(Enums.eEffectType.ResEffect);
+            Enums.ShortFX effectMagSum9 = pEnh.GetEffectMagSum(Enums.eEffectType.ResEffect);
+            Enums.ShortFX effectMagSum10 = pBase.GetEffectMagSum(Enums.eEffectType.Enhancement);
+            Enums.ShortFX effectMagSum11 = pEnh.GetEffectMagSum(Enums.eEffectType.Enhancement);
             effectMagSum1.Multiply();
             effectMagSum2.Multiply();
             effectMagSum3.Multiply();
@@ -1328,7 +1324,7 @@ namespace Hero_Designer
                             }
                         }
                         if (flag)
-                            iList.AddItem(new ctlPairedList.ItemPair("Defiance:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, false, false, pEnh.Effects[shortFxArray[index1].Index[0]].BuildEffectString(false, "Damage Buff (Defiance)", false, false, false)));
+                            iList.AddItem(new ctlPairedList.ItemPair("Defiance:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, false, false, pEnh.Effects[shortFxArray[index1].Index[0]].BuildEffectString(false, "Damage Buff (Defiance)")));
                         else
                             iList.AddItem(new ctlPairedList.ItemPair("DmgBuff:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, pEnh.Effects[shortFxArray[index1].Index[0]].SpecialCase == Enums.eSpecialCase.Combo, false, Power.SplitFXGroupTip(ref shortFxArray[index1], ref pEnh, false)));
                         if (pEnh.Effects[shortFxArray[index1].Index[0]].isEnhancementEffect)
@@ -1340,7 +1336,7 @@ namespace Hero_Designer
                 if (sFXCheck(effectMagSum4))
                     iList.SetUnique();
                 if (effectMagSum6.Present)
-                    iList.AddItem(new ctlPairedList.ItemPair("Stealth", Conversions.ToString(effectMagSum6.Sum) + "ft", false, false, false, pEnh.Effects[effectMagSum7.Index[0]].BuildEffectString(false, "Stealth Radius", false, false, false)));
+                    iList.AddItem(new ctlPairedList.ItemPair("Stealth", Conversions.ToString(effectMagSum6.Sum) + "ft", false, false, false, pEnh.Effects[effectMagSum7.Index[0]].BuildEffectString(false, "Stealth Radius")));
                 if (sFXCheck(effectMagSum6))
                     iList.SetUnique();
                 if (effectMag1.Present)
@@ -1394,7 +1390,7 @@ namespace Hero_Designer
                                     str5 = " (Self)";
                                 if (str4.IndexOf("Jump", StringComparison.OrdinalIgnoreCase) <= -1)
                                 {
-                                    iList.AddItem(new ctlPairedList.ItemPair("+" + str4 + ":", Conversions.ToString(effectMagSum10.Value[index]) + "%" + str5, false, false, false, pEnh.Effects[effectMagSum10.Index[index]].BuildEffectString(false, "", false, false, false)));
+                                    iList.AddItem(new ctlPairedList.ItemPair("+" + str4 + ":", Conversions.ToString(effectMagSum10.Value[index]) + "%" + str5, false, false, false, pEnh.Effects[effectMagSum10.Index[index]].BuildEffectString()));
                                     if (pEnh.Effects[effectMagSum10.Index[index]].isEnhancementEffect)
                                         iList.SetUnique();
                                 }
@@ -1414,7 +1410,7 @@ namespace Hero_Designer
                                         str4 = " (Tgt)";
                                     if (pEnh.Effects[effectMagSum10.Index[iIndex]].ToWho == Enums.eToWho.Self)
                                         str4 = " (Self)";
-                                    iList.AddItem(new ctlPairedList.ItemPair("+RechRdx:", Conversions.ToString(effectMagSum10.Value[iIndex]) + "%" + str4, false, false, false, pEnh.Effects[effectMagSum10.Index[iIndex]].BuildEffectString(false, "", false, false, false)));
+                                    iList.AddItem(new ctlPairedList.ItemPair("+RechRdx:", Conversions.ToString(effectMagSum10.Value[iIndex]) + "%" + str4, false, false, false, pEnh.Effects[effectMagSum10.Index[iIndex]].BuildEffectString()));
                                     if (pEnh.Effects[effectMagSum10.Index[iIndex]].isEnhancementEffect)
                                         iList.SetUnique();
                                     effectMagSum10.Remove(iIndex);
@@ -1511,7 +1507,7 @@ namespace Hero_Designer
                         if (startIndex < pEnh.Effects[index].Summon.Length)
                             iValue = pEnh.Effects[index].Summon.Substring(startIndex);
                     }
-                    string iTip = pEnh.Effects[index].BuildEffectString(false, "", false, false, false);
+                    string iTip = pEnh.Effects[index].BuildEffectString();
                     if ((pBase.Effects[index].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                         iValue = "(suppressed)";
                     ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("GrantPwr:", iValue, false, pBase.Effects[index].Probability < 1.0, false, iTip);
@@ -1547,24 +1543,24 @@ namespace Hero_Designer
             Enums.ShortFX BaseSFX9 = new Enums.ShortFX();
             Enums.ShortFX EnhSFX9 = new Enums.ShortFX();
             Enums.ShortFX shortFx = new Enums.ShortFX();
-            BaseSFX1.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false));
-            EnhSFX1.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false));
-            BaseSFX2.Assign(pBase.GetEffectMagSum(Enums.eEffectType.HitPoints, false, false, false, false));
-            EnhSFX2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.HitPoints, false, false, false, false));
-            BaseSFX3.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Absorb, false, false, false, false));
-            EnhSFX3.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Absorb, false, false, false, false));
-            BaseSFX5.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, false, true, false, false));
-            EnhSFX5.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, false, true, false, false));
-            BaseSFX4.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, true, false, true, false));
-            EnhSFX4.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, true, false, true, false));
-            BaseSFX6.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Recovery, true, true, false, false));
-            EnhSFX6.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Recovery, true, true, false, false));
-            BaseSFX7.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Recovery, true, false, true, false));
-            EnhSFX7.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Recovery, true, false, true, false));
-            BaseSFX8.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, true, true, false, false));
-            EnhSFX8.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, true, true, false, false));
-            BaseSFX9.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, true, false, true, false));
-            EnhSFX9.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, true, false, true, false));
+            BaseSFX1.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Heal));
+            EnhSFX1.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Heal));
+            BaseSFX2.Assign(pBase.GetEffectMagSum(Enums.eEffectType.HitPoints));
+            EnhSFX2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.HitPoints));
+            BaseSFX3.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Absorb));
+            EnhSFX3.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Absorb));
+            BaseSFX5.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, false, true));
+            EnhSFX5.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, false, true));
+            BaseSFX4.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, true, false, true));
+            EnhSFX4.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, true, false, true));
+            BaseSFX6.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Recovery, true, true));
+            EnhSFX6.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Recovery, true, true));
+            BaseSFX7.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Recovery, true, false, true));
+            EnhSFX7.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Recovery, true, false, true));
+            BaseSFX8.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, true, true));
+            EnhSFX8.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, true, true));
+            BaseSFX9.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, true, false, true));
+            EnhSFX9.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, true, false, true));
             BaseSFX3.Multiply();
             EnhSFX3.Multiply();
             BaseSFX5.Multiply();
@@ -1613,9 +1609,9 @@ namespace Hero_Designer
                     shortFx.ReSum();
                     iList.AddItem(FastItem("Damage", shortFx, shortFx, " (Self)", shortFx));
                 }
-                SplitFX_AddToList(ref BaseSFX1, ref EnhSFX1, ref iList, "");
-                SplitFX_AddToList(ref BaseSFX2, ref EnhSFX2, ref iList, "");
-                SplitFX_AddToList(ref BaseSFX3, ref EnhSFX3, ref iList, "");
+                SplitFX_AddToList(ref BaseSFX1, ref EnhSFX1, ref iList);
+                SplitFX_AddToList(ref BaseSFX2, ref EnhSFX2, ref iList);
+                SplitFX_AddToList(ref BaseSFX3, ref EnhSFX3, ref iList);
                 SplitFX_AddToList(ref BaseSFX5, ref EnhSFX5, ref iList, "Regen(S)");
                 SplitFX_AddToList(ref BaseSFX4, ref EnhSFX4, ref iList, "Regen(T)");
                 SplitFX_AddToList(ref BaseSFX6, ref EnhSFX6, ref iList, "Recvry(S)");
@@ -1636,7 +1632,7 @@ namespace Hero_Designer
             {
                 if (pBase.Effects[index].EffectType == Enums.eEffectType.GlobalChanceMod & pBase.Effects[index].Probability > 0.0)
                 {
-                    string iTip = string.Empty + pEnh.Effects[index].BuildEffectString(false, "", false, false, false);
+                    string iTip = string.Empty + pEnh.Effects[index].BuildEffectString();
                     string iValue = Conversions.ToString(pBase.Effects[index].MagPercent) + "%";
                     if ((pBase.Effects[index].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                         iValue = "(suppressed)";
@@ -1666,16 +1662,16 @@ namespace Hero_Designer
             Enums.ShortFX shortFx8 = new Enums.ShortFX();
             Enums.ShortFX shortFx9 = new Enums.ShortFX();
             Enums.ShortFX shortFx10 = new Enums.ShortFX();
-            shortFx2.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, false, false, false));
-            s2_1.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, false, false, false));
-            shortFx1.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Fly, false, false, false, false));
-            shortFx3.Assign(pBase.GetEffectMagSum(Enums.eEffectType.JumpHeight, false, false, false, false));
-            s2_2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.JumpHeight, false, false, false, false));
-            shortFx4.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedJumping, false, false, false, false));
-            s2_3.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedJumping, false, false, false, false));
-            shortFx5.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedRunning, false, false, false, false));
-            s2_4.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedRunning, false, false, false, false));
-            shortFx6.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Enhancement, false, false, false, false));
+            shortFx2.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying));
+            s2_1.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedFlying));
+            shortFx1.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Fly));
+            shortFx3.Assign(pBase.GetEffectMagSum(Enums.eEffectType.JumpHeight));
+            s2_2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.JumpHeight));
+            shortFx4.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedJumping));
+            s2_3.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedJumping));
+            shortFx5.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedRunning));
+            s2_4.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedRunning));
+            shortFx6.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Enhancement));
             shortFx8.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, false, false, true));
             shortFx9.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedJumping, false, false, false, true));
             shortFx10.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedRunning, false, false, false, true));
@@ -1755,8 +1751,8 @@ namespace Hero_Designer
             Enums.ShortFX shortFx3 = new Enums.ShortFX();
             Enums.ShortFX shortFx4 = new Enums.ShortFX();
             int num1 = 0;
-            shortFx1.Assign(pBase.GetEffectMag(Enums.eEffectType.MezResist, Enums.eToWho.Unspecified, false));
-            shortFx2.Assign(pEnh.GetEffectMag(Enums.eEffectType.MezResist, Enums.eToWho.Unspecified, false));
+            shortFx1.Assign(pBase.GetEffectMag(Enums.eEffectType.MezResist));
+            shortFx2.Assign(pEnh.GetEffectMag(Enums.eEffectType.MezResist));
             shortFx3.Assign(pBase.GetEffectMag(Enums.eEffectType.Mez, Enums.eToWho.Unspecified, true));
             shortFx4.Assign(pEnh.GetEffectMag(Enums.eEffectType.Mez, Enums.eToWho.Unspecified, true));
             shortFx1.Multiply();
@@ -1853,7 +1849,7 @@ namespace Hero_Designer
                         iValue = iValue.Replace("Pets_", string.Empty);
                     if (iValue.StartsWith("Villain_Pets_"))
                         iValue = iValue.Replace("Villain_Pets_", string.Empty);
-                    string iTip = pEnh.Effects[index].BuildEffectString(false, "", false, false, false);
+                    string iTip = pEnh.Effects[index].BuildEffectString();
                     if ((pBase.Effects[index].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                         iValue = "(suppressed)";
                     ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("Summon:", iValue, false, pBase.Effects[index].Probability < 1.0, false, iTip);
@@ -1870,7 +1866,7 @@ namespace Hero_Designer
 
         void EffectsDef()
         {
-            Enums.ShortFX effectMagSum = pEnh.GetEffectMagSum(Enums.eEffectType.Defense, true, false, false, false);
+            Enums.ShortFX effectMagSum = pEnh.GetEffectMagSum(Enums.eEffectType.Defense, true);
             if (effectMagSum.Value == null)
                 return;
             Enums.eDamage eDamage = Enums.eDamage.None;
@@ -2093,10 +2089,10 @@ namespace Hero_Designer
             string iValue = Utilities.FixDP(s2.Sum) + Suffix;
             ctlPairedList.ItemPair itemPair;
             if (s1.Sum == 0.0 & !AlwaysShow)
-                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
             else if (s1.Sum == 0.0)
             {
-                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
@@ -2128,10 +2124,10 @@ namespace Hero_Designer
             string iValue = Utilities.FixDP(s2) + Suffix;
             ctlPairedList.ItemPair itemPair;
             if (s1 == 0.0 & !AlwaysShow)
-                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
             else if (s1 == 0.0)
             {
-                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
@@ -2163,10 +2159,10 @@ namespace Hero_Designer
             string iValue = Utilities.FixDP(s2) + Suffix;
             ctlPairedList.ItemPair itemPair;
             if (s1 == 0.0 & !AlwaysShow)
-                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
             else if (s1 == 0.0)
             {
-                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
@@ -2200,7 +2196,7 @@ namespace Hero_Designer
             ctlPairedList.ItemPair itemPair;
             if (s1 == 0.0 & !AlwaysShow)
             {
-                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
+                itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
             }
             else
             {
@@ -2311,8 +2307,8 @@ namespace Hero_Designer
                 Title = pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Enhancement ? (pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Mez ? names[(int)pBase.Effects[Index[ID]].EffectType] : Enums.GetMezName((Enums.eMezShort)pBase.Effects[Index[ID]].MezType)) : (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.EnduranceDiscount ? (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.RechargeTime ? (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Defense ? (pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Resistance ? CapString(Enum.GetName(pBase.Effects[Index[ID]].ETModifies.GetType(), pBase.Effects[Index[ID]].ETModifies), 7) : "Enh(Res)") : "Enh(Def)") : "Enh(" + Enum.GetName(Enums.eMezShort.None.GetType(), pBase.Effects[Index[ID]].MezType) + ")") : "+Effects") : "+Rechg") : "+EndRdx");
                 if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.HitPoints)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                     shortFx.Sum = (float)(shortFx.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     s2.Sum = (float)(s2.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
@@ -2320,8 +2316,8 @@ namespace Hero_Designer
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Heal)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                     shortFx.Sum = (float)(shortFx.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     s2.Sum = (float)(s2.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
@@ -2329,22 +2325,22 @@ namespace Hero_Designer
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Absorb)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                     Suffix = "%";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Endurance)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                     Suffix = "%";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Regeneration)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                     Suffix = "%";
                 }
@@ -2357,15 +2353,15 @@ namespace Hero_Designer
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.SpeedFlying)
                 {
-                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget, false));
-                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget, false));
+                    shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget));
+                    s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget));
                     Tag.Assign(shortFx);
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.DamageBuff | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Defense | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Resistance | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.ResEffect | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Enhancement)
                 {
                     shortFx.Add(Index[ID], pBase.Effects[Index[ID]].Mag);
                     s2.Add(Index[ID], pEnh.Effects[Index[ID]].Mag);
-                    Tag.Assign(pEnh.GetEffectMagSum(pBase.Effects[Index[ID]].EffectType, false, onlySelf, onlyTarget, false));
+                    Tag.Assign(pEnh.GetEffectMagSum(pBase.Effects[Index[ID]].EffectType, false, onlySelf, onlyTarget));
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.SilentKill)
                 {
@@ -3207,7 +3203,7 @@ namespace Hero_Designer
                     {
                         string empty3 = string.Empty;
                         int[] returnMask = new int[0];
-                        power.GetEffectStringGrouped(Tag.Index[index1], ref empty3, ref returnMask, false, false, false);
+                        power.GetEffectStringGrouped(Tag.Index[index1], ref empty3, ref returnMask, false, false);
                         if (returnMask.Length > 0)
                         {
                             if (empty2 != string.Empty)
@@ -3226,15 +3222,15 @@ namespace Hero_Designer
                     {
                         if (empty2 != string.Empty)
                             empty2 += "\r\n";
-                        empty2 += power.Effects[Tag.Index[index]].BuildEffectString(false, "", false, false, false);
+                        empty2 += power.Effects[Tag.Index[index]].BuildEffectString();
                     }
                 }
                 str1 = empty1 + empty2;
             }
             else
                 str1 = "No Valid Tip";
-            object[] Arguments = new object[1] { str1 };
-            bool[] CopyBack = new bool[1] { true };
+            object[] Arguments = { str1 };
+            bool[] CopyBack = { true };
             NewLateBinding.LateCall(Sender, null, "SetTip", Arguments, null, null, CopyBack, true);
             if (!CopyBack[0])
                 return;
@@ -3431,7 +3427,7 @@ namespace Hero_Designer
                     {
                         if (iTip != string.Empty)
                             iTip += "\r\n";
-                        string str = pEnh.Effects[index].BuildEffectString(false, "", false, false, false);
+                        string str = pEnh.Effects[index].BuildEffectString();
                         if (pEnh.Effects[index].isEnhancementEffect & pEnh.PowerType == Enums.ePowerType.Toggle)
                         {
                             ++num1;
@@ -3470,7 +3466,7 @@ namespace Hero_Designer
             pEnh = iEnhanced != null ? (iEnhanced.Effects.Length == iBase.Effects.Length ? new Power(iEnhanced) : new Power(iBase)) : new Power(iBase);
             HistoryIDX = iHistoryIDX;
             SetDamageTip();
-            DisplayData(noLevel, -1);
+            DisplayData(noLevel);
             SizeRefresh();
         }
 
@@ -3522,7 +3518,7 @@ namespace Hero_Designer
                 string iStr2;
                 if (DatabaseAPI.Database.Enhancements[iEnh.Enh].TypeID == Enums.eType.SetO)
                 {
-                    iStr2 = str2 + GetEnhancementStringLongRTF(iEnh) + "\r\n" + EnhancementSetCollection.GetSetInfoLongRTF(DatabaseAPI.Database.Enhancements[iEnh.Enh].nIDSet, -1);
+                    iStr2 = str2 + GetEnhancementStringLongRTF(iEnh) + "\r\n" + EnhancementSetCollection.GetSetInfoLongRTF(DatabaseAPI.Database.Enhancements[iEnh.Enh].nIDSet);
                 }
                 else
                 {
@@ -3568,7 +3564,7 @@ namespace Hero_Designer
             string iStr2;
             if (DatabaseAPI.Database.Enhancements[iEnh.Enh].TypeID == Enums.eType.SetO)
             {
-                iStr2 = str1 + GetEnhancementStringLongRTF(iEnh) + RTF.Size(RTF.SizeID.Tiny) + "\r\n" + EnhancementSetCollection.GetSetInfoLongRTF(DatabaseAPI.Database.Enhancements[iEnh.Enh].nIDSet, -1);
+                iStr2 = str1 + GetEnhancementStringLongRTF(iEnh) + RTF.Size(RTF.SizeID.Tiny) + "\r\n" + EnhancementSetCollection.GetSetInfoLongRTF(DatabaseAPI.Database.Enhancements[iEnh.Enh].nIDSet);
             }
             else
             {
@@ -3685,7 +3681,7 @@ namespace Hero_Designer
                     str1 += RTF.Crlf();
                 string str2 = DatabaseAPI.Database.EnhancementSets[iSet].LevelMin != DatabaseAPI.Database.EnhancementSets[iSet].LevelMax ? Conversions.ToString(DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + 1) + " to " + Conversions.ToString(DatabaseAPI.Database.EnhancementSets[iSet].LevelMax + 1) : Conversions.ToString(DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + 1);
                 info_txtSmall.Rtf = RTF.StartRTF() + (str1 + RTF.Color(RTF.ElementID.Invention) + "Level: " + str2 + RTF.Color(RTF.ElementID.Text)) + RTF.EndRTF();
-                info_txtLarge.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(iSet, -1) + RTF.EndRTF();
+                info_txtLarge.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(iSet) + RTF.EndRTF();
             }
         }
 

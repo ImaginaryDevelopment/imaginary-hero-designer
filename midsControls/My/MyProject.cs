@@ -134,9 +134,10 @@ namespace midsControls.My
 			// Token: 0x06000012 RID: 18 RVA: 0x00002214 File Offset: 0x00000414
 			[DebuggerHidden]
 			private void Dispose__Instance__<T>(ref T instance)
-			{
-				instance = default;
-			}
+            {
+                if (instance == null) throw new ArgumentNullException(nameof(instance));
+                instance = default;
+            }
 
 			// Token: 0x06000013 RID: 19 RVA: 0x0000221E File Offset: 0x0000041E
 			[EditorBrowsable(EditorBrowsableState.Never)]

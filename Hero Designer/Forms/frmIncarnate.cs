@@ -166,7 +166,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num1; ++index)
             {
                 ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]) ? (!(myPowers[index].DisplayName == "Nothing") ? ListLabelV2.LLItemState.Enabled : ListLabelV2.LLItemState.Disabled) : ListLabelV2.LLItemState.Selected;
-                ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left) : new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left);
+                ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState) : new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold);
                 if (index >= myPowers.Length / 2.0)
                     llRight.AddItem(iItem);
                 else
@@ -209,9 +209,9 @@ namespace Hero_Designer
             ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
             ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
             PopUp.PopupData iPopup = new PopUp.PopupData();
-            int index = iPopup.Add(null);
-            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
+            int index = iPopup.Add();
+            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title);
+            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f);
             PopInfo.SetPopup(iPopup);
             ChangedScrollFrameContents();
             FillLists();
@@ -388,7 +388,7 @@ namespace Hero_Designer
             if (Locked)
                 return;
             IPower power1 = new Power(myPowers[pIDX]);
-            power1.AbsorbPetEffects(-1);
+            power1.AbsorbPetEffects();
             power1.ApplyGrantPowerEffects();
             PopUp.PopupData iPopup = new PopUp.PopupData();
             if (pIDX < 0)
@@ -398,7 +398,7 @@ namespace Hero_Designer
             }
             else
             {
-                int index1 = iPopup.Add(null);
+                int index1 = iPopup.Add();
                 string str1 = "";
                 switch (power1.PowerType)
                 {
@@ -415,11 +415,11 @@ namespace Hero_Designer
                         str1 = "(Toggle)";
                         break;
                 }
-                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                iPopup.Sections[index1].Add(str1 + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
+                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title);
+                iPopup.Sections[index1].Add(str1 + " " + power1.DescShort, PopUp.Colors.Text, 0.9f);
                 string str2 = power1.DescLong.Replace("<br>", "\r\n");
-                iPopup.Sections[index1].Add(str1 + " " + str2, PopUp.Colors.Common, 1f, FontStyle.Regular, 0);
-                int index2 = iPopup.Add(null);
+                iPopup.Sections[index1].Add(str1 + " " + str2, PopUp.Colors.Common, 1f, FontStyle.Regular);
+                int index2 = iPopup.Add();
                 if (power1.EndCost > 0.0)
                 {
                     if (power1.ActivatePeriod > 0.0)
@@ -448,16 +448,16 @@ namespace Hero_Designer
                 IPower power2 = power1;
                 if (power2.Effects.Length > 0)
                 {
-                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                    char[] chArray = new char[1] { '^' };
+                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title);
+                    char[] chArray = { '^' };
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
                         if ((power2.Effects[index3].EffectType != Enums.eEffectType.GrantPower | power2.Effects[index3].Absorbed_Effect) & power2.Effects[index3].EffectType != Enums.eEffectType.RevokePower & power2.Effects[index3].EffectType != Enums.eEffectType.SetMode)
                         {
-                            int index4 = iPopup.Add(null);
+                            int index4 = iPopup.Add();
                             power1.Effects[index3].SetPower(power1);
-                            string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
+                            string[] strArray = power1.Effects[index3].BuildEffectString().Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
                             int num2 = strArray.Length - 1;
                             for (int index5 = 0; index5 <= num2; ++index5)
                             {

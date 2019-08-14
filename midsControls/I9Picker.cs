@@ -236,7 +236,7 @@ namespace midsControls
                 iRect.Height = (int)Math.Round(font.GetHeight(_myBx.Graphics));
                 _headerHeight = iRect.Height + _nPad;
                 RectangleF layoutRectangle = new RectangleF(iRect.X, iRect.Y, iRect.Width, iRect.Height);
-                _myBx.Graphics.DrawRectangle(pen, Dilate(iRect, 2));
+                _myBx.Graphics.DrawRectangle(pen, Dilate(iRect));
                 if (_nPowerIDX > -1)
                 {
                     text = "Enhancing: " + DatabaseAPI.Database.Power[_nPowerIDX].DisplayName;
@@ -262,7 +262,7 @@ namespace midsControls
                 rectBounds = GetRectBounds(4, _rows + 1);
                 rectBounds.Y += 2;
                 rectBounds.Height = Height - (rectBounds.Y + _nPad);
-                _myBx.Graphics.DrawRectangle(pen, Dilate(rectBounds, 2));
+                _myBx.Graphics.DrawRectangle(pen, Dilate(rectBounds));
                 stringFormat = new StringFormat(StringFormatFlags.NoWrap | StringFormatFlags.NoClip);
                 stringFormat.Alignment = StringAlignment.Center;
                 stringFormat.Trimming = StringTrimming.None;
@@ -361,7 +361,7 @@ namespace midsControls
                 num = 0.5f;
             }
             Font font = new Font(Name, Font.Size * num, FontStyle.Bold, Font.Unit, 0);
-            _myBx.Graphics.DrawRectangle(pen, Dilate(iRect, 2));
+            _myBx.Graphics.DrawRectangle(pen, Dilate(iRect));
             if (Operators.CompareString(_hoverTitle, "", false) != 0)
             {
                 _myBx.Graphics.DrawString(_hoverTitle, font, brush, layoutRectangle);
@@ -712,7 +712,7 @@ namespace midsControls
                 iRect.Y = _headerHeight + _nPad * 2 + _nSize;
                 iRect.Width = _nSize * 4 + _nPad * 3;
                 iRect.Height = _nSize * _rows + _nPad * (_rows - 1);
-                _myBx.Graphics.DrawRectangle(pen, Dilate(iRect, 2));
+                _myBx.Graphics.DrawRectangle(pen, Dilate(iRect));
             }
         }
 
@@ -721,7 +721,7 @@ namespace midsControls
             Rectangle rectBounds = GetRectBounds(4, 1);
             Pen pen = new Pen(ForeColor);
             rectBounds.Height = checked(_nSize * _rows + _nPad * (_rows - 1));
-            _myBx.Graphics.DrawRectangle(pen, Dilate(rectBounds, 2));
+            _myBx.Graphics.DrawRectangle(pen, Dilate(rectBounds));
         }
 
         void DrawHighlight(int x, int y)
@@ -947,7 +947,7 @@ namespace midsControls
             CheckAndFixIOLevel();
             checked
             {
-                if (((UI.View.IOLevel != UI.Initial.IOLevel & UI.View.IOLevel != _userLevel) | _userLevel == -1) && !(UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49, 5) == UI.View.IOLevel))
+                if (((UI.View.IOLevel != UI.Initial.IOLevel & UI.View.IOLevel != _userLevel) | _userLevel == -1) && !(UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49) == UI.View.IOLevel))
                     _levelCapped = true;
                 switch (UI.View.TabID)
                 {
@@ -999,7 +999,7 @@ namespace midsControls
                 }
                 if ((UI.View.TabID == Enums.eType.SetO | UI.View.TabID == Enums.eType.InventO) & !_levelCapped)
                 {
-                    if (UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49, 5) == UI.View.IOLevel)
+                    if (UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49) == UI.View.IOLevel)
                         LastLevel = _userLevel;
                     else
                         LastLevel = UI.View.IOLevel;
@@ -1040,7 +1040,7 @@ namespace midsControls
         {
             Point location = new Point(e.X, e.Y);
             Point cellXY = GetCellXY(location);
-            DoHover(cellXY, false);
+            DoHover(cellXY);
             if (e.Button == MouseButtons.Left)
             {
                 Point point = new Point(e.X, e.Y);
@@ -1299,8 +1299,8 @@ namespace midsControls
             UI.SpecialTypes = (int[])Enum.GetValues(eSubtype.GetType());
             Enums.eEnhGrade eEnhGrade = 0;
             UI.NOGrades = (int[])Enum.GetValues(eEnhGrade.GetType());
-            UI.NO = GetValidEnhancements(_nPowerIDX, Enums.eType.Normal, 0);
-            UI.IO = GetValidEnhancements(_nPowerIDX, Enums.eType.InventO, 0);
+            UI.NO = GetValidEnhancements(_nPowerIDX, Enums.eType.Normal);
+            UI.IO = GetValidEnhancements(_nPowerIDX, Enums.eType.InventO);
             UI.Initial.GradeID = _lastGrade;
             UI.Initial.RelLevel = _lastRelativeLevel;
             UI.Initial.SpecialID = _lastSpecial;
@@ -1522,7 +1522,7 @@ namespace midsControls
                 {
                     if (ioMax > IOMax)
                         ioMax = IOMax;
-                    var nextLevel = Enhancement.GranularLevelZb(UI.View.IOLevel - 1, ioMin - 1, ioMax - 1, 5) + 1;
+                    var nextLevel = Enhancement.GranularLevelZb(UI.View.IOLevel - 1, ioMin - 1, ioMax - 1) + 1;
                     UI.View.IOLevel = nextLevel;
                 }
             }
@@ -1562,7 +1562,7 @@ namespace midsControls
                     {
                         ioMax = 50;
                     }
-                    fixedLevel = Enhancement.GranularLevelZb(fixedLevel - 1, ioMin - 1, ioMax - 1, 5) + 1;
+                    fixedLevel = Enhancement.GranularLevelZb(fixedLevel - 1, ioMin - 1, ioMax - 1) + 1;
                 }
                 return fixedLevel;
             }

@@ -74,7 +74,7 @@ public class Build
         PowerEntry powerEntry = GetPowerEntry(power);
         if (powerEntry == null)
         {
-            powerEntry = new PowerEntry(specialLevel, power, false);
+            powerEntry = new PowerEntry(specialLevel, power);
             Powers.Add(powerEntry);
         }
         powerEntry.ValidateSlots();
@@ -261,17 +261,17 @@ public class Build
                                 int levelMax = DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].LevelMax;
                                 if (newVal >= levelMin1 & newVal <= levelMax)
                                 {
-                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(newVal, levelMin1, levelMax, 5);
+                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(newVal, levelMin1, levelMax);
                                     break;
                                 }
                                 if (newVal > levelMax)
                                 {
-                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(levelMax, levelMin1, levelMax, 5);
+                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(levelMax, levelMin1, levelMax);
                                     break;
                                 }
                                 if (newVal < levelMin1)
                                 {
-                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(levelMin1, levelMin1, levelMax, 5);
+                                    slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(levelMin1, levelMin1, levelMax);
                                 }
                                 break;
                             case Enums.eType.SetO:
@@ -402,9 +402,9 @@ public class Build
     public PopUp.PopupData GetRespecHelper(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = new PopUp.PopupData();
-        HistoryMap[] historyMapArray = BuildHistoryMap(true, true);
-        int index1 = popupData.Add(null);
-        popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
+        HistoryMap[] historyMapArray = BuildHistoryMap(true);
+        int index1 = popupData.Add();
+        popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f);
         foreach (HistoryMap historyMap in historyMapArray)
         {
             if (historyMap.HID > -1 && DatabaseAPI.Database.Levels[historyMap.Level].Powers > 0 && historyMap.Level <= iLevel)
@@ -412,13 +412,13 @@ public class Build
                 PowerEntry power = Powers[historyMap.HID];
                 if (power.Slots.Length > 0)
                 {
-                    int index2 = popupData.Add(null);
+                    int index2 = popupData.Add();
                     string iText1;
                     if (power.Power != null)
                         iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
                     else
                         iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
-                    popupData.Sections[index2].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                    popupData.Sections[index2].Add(iText1, PopUp.Colors.Text);
                     int slots = SlotsAtLevel(historyMap.HID, iLevel);
                     if (slots > 0)
                     {
@@ -450,14 +450,14 @@ public class Build
     public PopUp.PopupData GetRespecHelper2(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = new PopUp.PopupData();
-        HistoryMap[] historyMapArray = BuildHistoryMap(true, true);
-        int index = popupData.Add(null);
-        popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
+        HistoryMap[] historyMapArray = BuildHistoryMap(true);
+        int index = popupData.Add();
+        popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f);
         int histLvl = 0;
         foreach (HistoryMap historyMap in historyMapArray)
         {
             if (histLvl != historyMap.Level)
-                index = popupData.Add(null);
+                index = popupData.Add();
             histLvl = historyMap.Level;
             if (historyMap.HID >= 0)
             {
@@ -471,7 +471,7 @@ public class Build
                             iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
                         else
                             iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
-                        popupData.Sections[index].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index].Add(iText1, PopUp.Colors.Text);
                         if (longFormat)
                         {
                             string empty = string.Empty;
@@ -492,7 +492,7 @@ public class Build
                 {
                     string str = historyMap.SID != 0 ? "Level " + (historyMap.Level + 1) + ": Added Slot To " : "Level " + (historyMap.Level + 1) + ": Received Slot - ";
                     string iText1 = power.Power == null ? str + "[Empty]" : str + power.Power.DisplayName;
-                    popupData.Sections[index].Add(iText1, PopUp.Colors.Effect, 1f, FontStyle.Bold, 0);
+                    popupData.Sections[index].Add(iText1, PopUp.Colors.Effect);
                     if (longFormat)
                     {
                         string iText2;
@@ -658,7 +658,7 @@ public class Build
         {
             if (power.Power != null && power.PowerSet != null && !power.Chosen && (power.PowerSet.SetType == Enums.ePowerSetType.Inherent || power.PowerSet.SetType == Enums.ePowerSetType.Primary || power.PowerSet.SetType == Enums.ePowerSetType.Secondary))
             {
-                if (power.Power.Level > maxLevel + 1 || !MeetsRequirement(power.Power, maxLevel, -1) || !power.Power.IncludeFlag)
+                if (power.Power.Level > maxLevel + 1 || !MeetsRequirement(power.Power, maxLevel) || !power.Power.IncludeFlag)
                 {
                     power.Tag = true;
                     flag = true;
@@ -744,17 +744,15 @@ public class Build
         {
             foreach (int nIDPower in numArray)
             {
-                if (nIDPower > -1)
-                {
-                    int histIdx = -1;
-                    if (nIDPower != nIdSkip)
-                        histIdx = FindInToonHistory(nIDPower);
-                    if (histIdx > -1)
-                        return false;
-                }
+                if (nIDPower <= -1) continue;
+                int histIdx = -1;
+                if (nIDPower != nIdSkip)
+                    histIdx = FindInToonHistory(nIDPower);
+                if (histIdx > -1)
+                    return false;
             }
         }
-        return valid;
+        return true;
     }
 
     public int FindInToonHistory(int nIDPower)
@@ -787,7 +785,7 @@ public class Build
                 foreach (IPower power in powerset.Powers)
                 {
                     int val2 = 0;
-                    if (power.IncludeFlag && power.Level <= maxLevel + 1 && !PowerUsed(power) && MeetsRequirement(power, maxLevel + 1, -1))
+                    if (power.IncludeFlag && power.Level <= maxLevel + 1 && !PowerUsed(power) && MeetsRequirement(power, maxLevel + 1))
                     {
                         if (power.Requires.NPowerID.Length > 0)
                         {
@@ -1022,7 +1020,7 @@ public class Build
         IPower power1 = new Power();
         if (MidsContext.Config.I9.IgnoreSetBonusFX)
             return power1;
-        var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
+        var nidPowers = DatabaseAPI.NidPowers("set_bonus");
         int[] setCount = new int[nidPowers.Length];
         for (int index = 0; index < setCount.Length; ++index)
             setCount[index] = 0;

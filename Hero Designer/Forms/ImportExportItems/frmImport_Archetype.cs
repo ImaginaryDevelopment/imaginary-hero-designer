@@ -114,9 +114,8 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Archetype Class CSV Not Opened");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             int num3 = 0;
             int num4 = 0;
@@ -146,9 +145,8 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream.Close();
                 int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Archetype Class CSV Parse Error");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             iStream.Close();
             int num5 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nBad: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
@@ -158,7 +156,6 @@ namespace Hero_Designer
         bool ProcessImport()
 
         {
-            bool flag = false;
             int num1 = 0;
             int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2; ++index)
@@ -176,7 +173,7 @@ namespace Hero_Designer
             DatabaseAPI.SaveMainDatabase(serializer);
             int num3 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " classes completed!"), MsgBoxStyle.Information, "Done");
             DisplayInfo();
-            return flag;
+            return false;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Hero_Designer
 
         public void AddListItem(int Index)
         {
-            lvPowers.Items.Add(new ListViewItem(new string[3]
+            lvPowers.Items.Add(new ListViewItem(new[]
             {
                 Conversions.ToString(DatabaseAPI.Database.Power[myPS.Power[Index]].Level),
                 DatabaseAPI.Database.Power[myPS.Power[Index]].DisplayName,
@@ -60,7 +60,7 @@ namespace Hero_Designer
             {
                 int num1 = (int)Interaction.MsgBox(("Powerset name '" + ps.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
-            else if (!PowersetFullNameIsUnique(Conversions.ToString(ps.nID), -1))
+            else if (!PowersetFullNameIsUnique(Conversions.ToString(ps.nID)))
             {
                 int num2 = (int)Interaction.MsgBox(("Powerset name '" + ps.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
@@ -242,7 +242,7 @@ namespace Hero_Designer
             lblNameFull.Text = BuildFullName();
             if (ps.GroupName == "" | ps.SetName == "")
                 lblNameUnique.Text = "This name is invalid.";
-            else if (PowersetFullNameIsUnique(Conversions.ToString(ps.nID), -1))
+            else if (PowersetFullNameIsUnique(Conversions.ToString(ps.nID)))
                 lblNameUnique.Text = "This name is unique.";
             else
                 lblNameUnique.Text = "This name is NOT unique.";

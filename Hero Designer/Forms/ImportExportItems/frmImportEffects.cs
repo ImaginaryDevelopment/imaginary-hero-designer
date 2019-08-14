@@ -67,7 +67,7 @@ namespace Hero_Designer
                 if (_importBuffer[index].IsValid)
                     _importBuffer[index].IsNew = true;
             }
-            int num3 = (int)Interaction.MsgBox("All power effects removed!", MsgBoxStyle.OkOnly, null);
+            int num3 = (int)Interaction.MsgBox("All power effects removed!");
         }
 
         void btnFile_Click(object sender, EventArgs e)
@@ -206,7 +206,7 @@ namespace Hero_Designer
                 lstImport.Items[0].EnsureVisible();
             lstImport.EndUpdate();
             HideUnchanged.Text = "Hide Unchanged";
-            int num6 = (int)Interaction.MsgBox(("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3) + "\r\nRe-Indexed: " + Conversions.ToString(num4)), MsgBoxStyle.OkOnly, null);
+            int num6 = (int)Interaction.MsgBox(("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3) + "\r\nRe-Indexed: " + Conversions.ToString(num4)));
         }
 
         void frmImportEffects_Load(object sender, EventArgs e)
@@ -352,7 +352,6 @@ namespace Hero_Designer
         bool ProcessImport()
 
         {
-            bool flag = false;
             int num1 = 0;
             int num2 = 0;
             BusyMsg("Applying...");
@@ -380,13 +379,13 @@ namespace Hero_Designer
             DatabaseAPI.Database.PowerEffectVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.PowerEffectVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.PowerEffectVersion.Revision = Convert.ToInt32(udRevision.Value);
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             BusyHide();
             int num5 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!\r\nOf these, " + Conversions.ToString(num3) + " records were found read-only."), MsgBoxStyle.Information, "Done");
             DisplayInfo();
-            return flag;
+            return false;
         }
     }
 }

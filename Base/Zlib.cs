@@ -205,7 +205,7 @@ public class Zlib
         string str;
         if (bookend)
         {
-            char[] chArray = new char[2] { '\n', '\r' };
+            char[] chArray = { '\n', '\r' };
             string[] strArray = iString.Split(chArray);
             for (int index1 = 0; index1 <= strArray.Length - 1; ++index1)
             {

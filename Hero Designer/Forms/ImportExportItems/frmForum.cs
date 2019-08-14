@@ -159,7 +159,7 @@ namespace Hero_Designer
             Exporter = new clsOutput();
             string str1 = "";
             //this creates the data link
-            string iDataLink = MidsCharacterFileFormat.MxDBuildSaveHyperlink(!Exporter.HTML, false);
+            string iDataLink = MidsCharacterFileFormat.MxDBuildSaveHyperlink(!Exporter.HTML);
             if (!chkChunkOnly.Checked)
                 str1 = Exporter.Build(iDataLink);
 

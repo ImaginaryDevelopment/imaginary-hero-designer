@@ -112,7 +112,7 @@ namespace Hero_Designer
         void FillEffectView()
         {
             string str1 = "";
-            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
+            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus").Length - 1 + 1];
             bool hasOvercap = false;
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
@@ -204,7 +204,7 @@ namespace Hero_Designer
             {
                 if (iStr != "")
                     iStr += RTF.Crlf();
-                string str2 = cumulativeSetBonuses[index].BuildEffectString(true, "", false, false, false);
+                string str2 = cumulativeSetBonuses[index].BuildEffectString(true);
                 if (!str2.StartsWith("+"))
                     str2 = "+" + str2;
                 if (str2.IndexOf("Endurance") > -1)

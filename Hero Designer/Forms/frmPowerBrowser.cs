@@ -45,7 +45,7 @@ namespace Hero_Designer
         {
             BusyMsg("Discarding Changes...");
             DatabaseAPI.LoadMainDatabase();
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             BusyHide();
             DialogResult = DialogResult.Cancel;
             Hide();
@@ -68,7 +68,7 @@ namespace Hero_Designer
             database.Classes = archetypeArray;
             DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
             DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
-            UpdateLists(lvGroup.Items.Count - 1, -1, -1);
+            UpdateLists(lvGroup.Items.Count - 1);
         }
 
         void btnClassClone_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace Hero_Designer
                     database.Classes = archetypeArray;
                     DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
                     DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
-                    UpdateLists(lvGroup.Items.Count - 1, -1, -1);
+                    UpdateLists(lvGroup.Items.Count - 1);
                 }
             }
         }
@@ -136,7 +136,7 @@ namespace Hero_Designer
                         Group = num2 - 1;
                 }
                 BusyMsg("Re-Indexing...");
-                DatabaseAPI.MatchAllIDs(null);
+                DatabaseAPI.MatchAllIDs();
                 RefreshLists(Group, 0, 0);
                 BusyHide();
             }
@@ -149,15 +149,14 @@ namespace Hero_Designer
             int selectedIndex = lvGroup.SelectedIndices[0];
             if (selectedIndex < lvGroup.Items.Count - 1)
             {
-                Archetype[] archetypeArray = new Archetype[2]
-                {
+                Archetype[] archetypeArray = {
                   new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
                   new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
                 };
                 DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
                 DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
                 BusyMsg("Re-Indexing...");
-                DatabaseAPI.MatchAllIDs(null);
+                DatabaseAPI.MatchAllIDs();
                 List_Groups(selectedIndex + 1);
                 BusyHide();
             }
@@ -181,7 +180,7 @@ namespace Hero_Designer
                     DatabaseAPI.Database.Classes[index] = new Archetype(frmEditArchetype.MyAT);
                     DatabaseAPI.Database.Classes[index].IsModified = true;
                     if (DatabaseAPI.Database.Classes[index].ClassName != className)
-                        RefreshLists(-1, -1, -1);
+                        RefreshLists();
                 }
             }
         }
@@ -190,8 +189,8 @@ namespace Hero_Designer
         {
             BusyMsg("Discarding Changes...");
             Array.Sort(DatabaseAPI.Database.Classes);
-            DatabaseAPI.MatchAllIDs(null);
-            UpdateLists(-1, -1, -1);
+            DatabaseAPI.MatchAllIDs();
+            UpdateLists();
             BusyHide();
         }
 
@@ -202,15 +201,14 @@ namespace Hero_Designer
             int selectedIndex = lvGroup.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
-                Archetype[] archetypeArray = new Archetype[2]
-                {
+                Archetype[] archetypeArray = {
                   new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
                   new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
                 };
                 DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
                 DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
                 BusyMsg("Re-Indexing...");
-                DatabaseAPI.MatchAllIDs(null);
+                DatabaseAPI.MatchAllIDs();
                 List_Groups(selectedIndex - 1);
                 BusyHide();
             }
@@ -222,7 +220,7 @@ namespace Hero_Designer
             Array.Sort(DatabaseAPI.Database.Power);
             var serializer = MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer, false);
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             DatabaseAPI.SaveMainDatabase(serializer);
             BusyHide();
             DialogResult = DialogResult.OK;
@@ -248,7 +246,7 @@ namespace Hero_Designer
             database.Power = powerArray;
             DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
             DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
-            UpdateLists(-1, -1, -1);
+            UpdateLists();
         }
 
         void btnPowerClone_Click(object sender, EventArgs e)
@@ -271,7 +269,7 @@ namespace Hero_Designer
                     database.Power = powerArray;
                     DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
                     DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
-                    UpdateLists(-1, -1, -1);
+                    UpdateLists();
                 }
             }
         }
@@ -334,7 +332,7 @@ namespace Hero_Designer
                     DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
                     DatabaseAPI.Database.Power[index2] = new Power(template);
                     BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs(null);
+                    DatabaseAPI.MatchAllIDs();
                     List_Powers(SelIDX);
                     BusyHide();
                 }
@@ -372,9 +370,9 @@ namespace Hero_Designer
                         {
                             string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
                             Clipboard.SetDataObject(str2, true);
-                            int num4 = (int)Interaction.MsgBox(str2, MsgBoxStyle.OkOnly, null);
+                            int num4 = (int)Interaction.MsgBox(str2);
                         }
-                        RefreshLists(-1, -1, -1);
+                        RefreshLists();
                     }
                 }
             }
@@ -384,8 +382,8 @@ namespace Hero_Designer
         {
             BusyMsg("Re-Indexing...");
             Array.Sort(DatabaseAPI.Database.Power);
-            DatabaseAPI.MatchAllIDs(null);
-            UpdateLists(-1, -1, -1);
+            DatabaseAPI.MatchAllIDs();
+            UpdateLists();
             BusyHide();
         }
 
@@ -409,7 +407,7 @@ namespace Hero_Designer
                     DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
                     DatabaseAPI.Database.Power[index2] = new Power(template);
                     BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs(null);
+                    DatabaseAPI.MatchAllIDs();
                     List_Powers(SelIDX);
                     BusyHide();
                 }
@@ -436,7 +434,7 @@ namespace Hero_Designer
                     DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
                     DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
                     BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs(null);
+                    DatabaseAPI.MatchAllIDs();
                     List_Sets(SelIDX);
                     BusyHide();
                 }
@@ -464,7 +462,7 @@ namespace Hero_Designer
                     DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
                     DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
                     BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs(null);
+                    DatabaseAPI.MatchAllIDs();
                     List_Sets(SelIDX);
                     BusyHide();
                 }
@@ -492,7 +490,7 @@ namespace Hero_Designer
             DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] = new Powerset(frmEditPowerset.myPS);
             DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].IsNew = true;
             DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].nID = DatabaseAPI.Database.Powersets.Length - 1;
-            UpdateLists(-1, -1, -1);
+            UpdateLists();
         }
 
         void btnSetDelete_Click(object sender, EventArgs e)
@@ -538,8 +536,8 @@ namespace Hero_Designer
                             Powerset = index1 - 1;
                     }
                     BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs(null);
-                    RefreshLists(-1, Powerset, -1);
+                    DatabaseAPI.MatchAllIDs();
+                    RefreshLists(-1, Powerset);
                     BusyHide();
                 }
             }
@@ -566,8 +564,8 @@ namespace Hero_Designer
                     if (DatabaseAPI.Database.Powersets[Powerset].FullName != fullName)
                     {
                         BusyMsg("Re-Indexing...");
-                        DatabaseAPI.MatchAllIDs(null);
-                        RefreshLists(-1, Powerset, -1);
+                        DatabaseAPI.MatchAllIDs();
+                        RefreshLists(-1, Powerset);
                         BusyHide();
                     }
                 }
@@ -579,8 +577,8 @@ namespace Hero_Designer
         {
             BusyMsg("Re-Indexing...");
             Array.Sort(DatabaseAPI.Database.Powersets);
-            DatabaseAPI.MatchAllIDs(null);
-            UpdateLists(-1, -1, -1);
+            DatabaseAPI.MatchAllIDs();
+            UpdateLists();
             BusyHide();
         }
 
@@ -705,7 +703,7 @@ namespace Hero_Designer
         {
             if (Updating)
                 return;
-            UpdateLists(-1, -1, -1);
+            UpdateLists();
         }
 
         public int[] ConcatArray(int[] iArray1, int[] iArray2)
@@ -863,7 +861,7 @@ namespace Hero_Designer
             if (cbFilter.SelectedIndex == 0)
             {
                 if (lvSet.SelectedItems.Count > 0)
-                    iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text, "");
+                    iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text);
             }
             else if (cbFilter.SelectedIndex == 1)
             {
@@ -880,9 +878,9 @@ namespace Hero_Designer
                 if (lvSet.SelectedItems.Count > 0)
                 {
                     if (lvSet.SelectedItems[0].SubItems[3].Text != "")
-                        iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text, "");
+                        iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text);
                     else if (lvSet.SelectedItems[0].SubItems[4].Text != "")
-                        iPowers1 = DatabaseAPI.NidPowers((int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text)), -1);
+                        iPowers1 = DatabaseAPI.NidPowers((int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text)));
                 }
             }
             else if (cbFilter.SelectedIndex == 4)
@@ -974,7 +972,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Powersets[index].GetGroup() == null | string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))
                     {
-                        int[] iArray2 = new int[1] { index };
+                        int[] iArray2 = { index };
                         numArray3 = ConcatArray(numArray3, iArray2);
                     }
                 }

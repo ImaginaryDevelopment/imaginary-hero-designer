@@ -150,7 +150,7 @@ namespace Hero_Designer
             float height2 = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)((tab0.Height - (double)height2) / 2.0), tab0.Width, height2);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics);
             e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -184,7 +184,7 @@ namespace Hero_Designer
             float height = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)((tab0.Height - (double)height) / 2.0), tab0.Width, height);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics);
             e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -404,7 +404,7 @@ namespace Hero_Designer
             float height = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)((tab0.Height - (double)height) / 2.0), tab0.Width, height);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iString, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
+            clsDrawX.DrawOutlineText(iString, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics);
             e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -603,8 +603,7 @@ namespace Hero_Designer
             string str10 = "\r\nStatus resistance reduces the time you are affected by a status effect such as" + "\r\na Hold. Note that 100% resistance would make a 10s effect last 5s, and not 0s.";
             graphSProt.Clear();
             graphSRes.Clear();
-            Enums.eMez[] eMezArray = new Enums.eMez[11]
-            {
+            Enums.eMez[] eMezArray = {
                 Enums.eMez.Held,
                 Enums.eMez.Stunned,
                 Enums.eMez.Sleep,
@@ -661,8 +660,7 @@ namespace Hero_Designer
             graphSRes.Max = num3;
             graphSRes.Draw();
             graphSDeb.Clear();
-            Enums.eEffectType[] eEffectTypeArray = new Enums.eEffectType[7]
-            {
+            Enums.eEffectType[] eEffectTypeArray = {
                 Enums.eEffectType.Defense,
                 Enums.eEffectType.Endurance,
                 Enums.eEffectType.Recovery,

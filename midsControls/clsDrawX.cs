@@ -143,7 +143,7 @@ namespace midsControls
                         List<PowerEntry> powers2 = currentBuild.Powers;
                         int index = i;
                         PowerEntry value = powers2[index];
-                        DrawPowerSlot(ref value, false);
+                        DrawPowerSlot(ref value);
                         currentBuild.Powers[index] = value;
                     }
                     else if (MidsContext.Character.CurrentBuild.Powers[i].Power != null && (Operators.CompareString(MidsContext.Character.CurrentBuild.Powers[i].Power.GroupName, "Incarnate", false) == 0 | MidsContext.Character.CurrentBuild.Powers[i].Power.IncludeFlag))
@@ -152,7 +152,7 @@ namespace midsControls
                         List<PowerEntry> powers3 = currentBuild.Powers;
                         int index = i;
                         PowerEntry value = powers3[index];
-                        DrawPowerSlot(ref value, false);
+                        DrawPowerSlot(ref value);
                         currentBuild.Powers[index] = value;
                     }
                 }
@@ -182,7 +182,7 @@ namespace midsControls
                     Color outline = Color.FromArgb(128, 0, 0, 0);
                     float outlineSpace = 1f;
                     g = bxBuffer.Graphics;
-                    DrawOutlineText(iStr, bounds, cyan, outline, font, outlineSpace, g, false, false);
+                    DrawOutlineText(iStr, bounds, cyan, outline, font, outlineSpace, g);
                 }
                 else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal
                     | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SpecialO))
@@ -213,7 +213,7 @@ namespace midsControls
                     Color outline2 = Color.FromArgb(128, 0, 0, 0);
                     Font bFont2 = font;
                     float outlineSpace2 = 1f;
-                    DrawOutlineText(relativeString, bounds2, text3, outline2, bFont2, outlineSpace2, g, false, false);
+                    DrawOutlineText(relativeString, bounds2, text3, outline2, bFont2, outlineSpace2, g);
                 }
             }
         }
@@ -236,7 +236,7 @@ namespace midsControls
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
             bool drawNewSlot = iSlot.Power != null && (iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) && iSlot.Slots.Length < 6 && singleDraw && iSlot.Power.Slottable & InterfaceMode != Enums.eInterfaceMode.PowerToggle;
-            Point result = PowerPosition(iSlot, -1);
+            Point result = PowerPosition(iSlot);
             Point point = default;
             checked
             {
@@ -291,11 +291,11 @@ namespace midsControls
                     else if (iSlot.CanIncludeForStats())
                     {
                         grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
-                        imageAttr = GreySlot(grey, false);
+                        imageAttr = GreySlot(grey);
                     }
                     else
                     {
-                        imageAttr = GreySlot(true, false);
+                        imageAttr = GreySlot(true);
                         grey = true;
                     }
                 }
@@ -303,7 +303,7 @@ namespace midsControls
                 {
                     indicating = true;
                     grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
-                    imageAttr = GreySlot(grey, false);
+                    imageAttr = GreySlot(grey);
                 }
                 Rectangle iValue = new Rectangle(result.X, result.Y, bxPower[(int)ePowerState].Size.Width, bxPower[(int)ePowerState].Size.Height);
                 if (ePowerState == Enums.ePowerState.Used || toggling)
@@ -332,7 +332,7 @@ namespace midsControls
                     clipRect = bxPower[(int)ePowerState].ClipRect;
                     graphics3.DrawImage(bitmap2, destRect2, srcX2, srcY2, width2, clipRect.Height, GraphicsUnit.Pixel);
                 }
-                if ((indicating || toggling) && iSlot.CanIncludeForStats())
+                if (iSlot.CanIncludeForStats())
                 {
                     rectangle.Height = 15;
                     rectangle.Width = rectangle.Height;
@@ -421,7 +421,7 @@ namespace midsControls
                     iValue2.Height = DefaultFont.GetHeight(bxBuffer.Graphics);
                     iValue2.Y += (szSlot.Height - iValue2.Height) / 2f;
                     DrawOutlineText(Conversions.ToString(slotChk + 1), ScaleDown(iValue2),
-                        Color.FromArgb(0, 255, 255), Color.FromArgb(192, 0, 0, 0), font, 1f, bxBuffer.Graphics, false, false);
+                        Color.FromArgb(0, 255, 255), Color.FromArgb(192, 0, 0, 0), font, 1f, bxBuffer.Graphics);
                 }
                 solidBrush = new SolidBrush(Color.Black);
                 stringFormat = new StringFormat();
@@ -720,75 +720,70 @@ namespace midsControls
         {
             checked
             {
-                bool result;
-                if (MidsContext.Character.CurrentBuild.Powers.Count < 1)
+                if (MidsContext.Character.CurrentBuild.Powers.Count >= 1)
                 {
-                    result = false;
-                }
-                else
-                {
-                    if (Highlight != idx || Force)
+                    if (Highlight == idx && !Force) return false;
+                    if (idx != -1)
                     {
-                        if (idx != -1)
+                        Build currentBuild;
+                        PowerEntry value;
+                        Point point2;
+                        Rectangle iValue;
+                        Rectangle rectangle;
+                        if (Highlight != -1 && Highlight < MidsContext.Character.CurrentBuild.Powers.Count)
                         {
-                            Build currentBuild;
-                            PowerEntry value;
-                            Point point2;
-                            Rectangle iValue;
-                            Rectangle rectangle;
-                            if (Highlight != -1 && Highlight < MidsContext.Character.CurrentBuild.Powers.Count)
-                            {
-                                currentBuild = MidsContext.Character.CurrentBuild;
-                                List<PowerEntry> powers = currentBuild.Powers;
-                                int highlight = Highlight;
-                                value = powers[highlight];
-                                Point point = DrawPowerSlot(ref value, false);
-                                currentBuild.Powers[highlight] = value;
-                                point2 = point;
-                                iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
-                                rectangle = ScaleDown(iValue);
-                                DrawSplit();
-                                Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
-                            }
-                            Highlight = idx;
                             currentBuild = MidsContext.Character.CurrentBuild;
-                            value = currentBuild.Powers[idx];
-                            Point point3 = DrawPowerSlot(ref value, true);
-                            currentBuild.Powers[idx] = value;
-                            point2 = point3;
+                            List<PowerEntry> powers = currentBuild.Powers;
+                            int highlight = Highlight;
+                            value = powers[highlight];
+                            Point point = DrawPowerSlot(ref value);
+                            currentBuild.Powers[highlight] = value;
+                            point2 = point;
                             iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
                             rectangle = ScaleDown(iValue);
                             DrawSplit();
                             Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
                         }
-                        else if (Highlight != -1)
-                        {
-                            Build currentBuild = MidsContext.Character.CurrentBuild;
-                            List<PowerEntry> powers2 = currentBuild.Powers;
-                            int highlight = Highlight;
-                            PowerEntry value = powers2[highlight];
-                            Point point4 = DrawPowerSlot(ref value, false);
-                            currentBuild.Powers[highlight] = value;
-                            Point point2 = point4;
-                            Rectangle iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
-                            Rectangle rectangle = ScaleDown(iValue);
-                            DrawSplit();
-                            Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
-                            Highlight = idx;
-                        }
+
+                        Highlight = idx;
+                        currentBuild = MidsContext.Character.CurrentBuild;
+                        value = currentBuild.Powers[idx];
+                        Point point3 = DrawPowerSlot(ref value, true);
+                        currentBuild.Powers[idx] = value;
+                        point2 = point3;
+                        iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
+                        rectangle = ScaleDown(iValue);
+                        DrawSplit();
+                        Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
                     }
-                    result = false;
+                    else if (Highlight != -1)
+                    {
+                        Build currentBuild = MidsContext.Character.CurrentBuild;
+                        List<PowerEntry> powers2 = currentBuild.Powers;
+                        int highlight = Highlight;
+                        PowerEntry value = powers2[highlight];
+                        Point point4 = DrawPowerSlot(ref value);
+                        currentBuild.Powers[highlight] = value;
+                        Point point2 = point4;
+                        Rectangle iValue = new Rectangle(point2.X, point2.Y, SzPower.Width, SzPower.Height + 17);
+                        Rectangle rectangle = ScaleDown(iValue);
+                        DrawSplit();
+                        Output(ref bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
+                        Highlight = idx;
+                    }
                 }
-                return result;
+                else
+                {
+                    return false;
+                }
+
+                return false;
             }
         }
 
         void Blank()
         {
-            if (bxBuffer != null)
-            {
-                bxBuffer.Graphics.Clear(BackColor);
-            }
+            bxBuffer?.Graphics.Clear(BackColor);
         }
 
         public void SetScaling(Size iSize)
@@ -1090,7 +1085,7 @@ namespace midsControls
 
         Point PowerPosition(int powerEntryIdx)
         {
-            return PowerPosition(MidsContext.Character.CurrentBuild.Powers[powerEntryIdx], -1);
+            return PowerPosition(MidsContext.Character.CurrentBuild.Powers[powerEntryIdx]);
         }
 
         int[][] GetInherentGrid()
@@ -1281,25 +1276,22 @@ namespace midsControls
                             displayLocation = powerEntry.Power.DisplayLocation;
                         }
                     }
-                    if (displayLocation > -1)
+
+                    if (displayLocation <= -1) return CRtoXY(iCol, iRow);
+                    iRow = vcRowsPowers;
+                    for (int i = 0; i <= inherentGrid.Length - 1; i++)
                     {
-                        iRow = vcRowsPowers;
-                        for (int i = 0; i <= inherentGrid.Length - 1; i++)
+                        for (int k = 0; k <= inherentGrid[i].Length - 1; k++)
                         {
-                            for (int k = 0; k <= inherentGrid[i].Length - 1; k++)
-                            {
-                                if (!flag && displayLocation == inherentGrid[i][k])
-                                {
-                                    iRow += i;
-                                    iCol = k;
-                                    flag = true;
-                                    break;
-                                }
-                            }
-                            if (flag)
-                            {
-                                break;
-                            }
+                            if (displayLocation != inherentGrid[i][k]) continue;
+                            iRow += i;
+                            iCol = k;
+                            flag = true;
+                            break;
+                        }
+                        if (flag)
+                        {
+                            break;
                         }
                     }
                 }

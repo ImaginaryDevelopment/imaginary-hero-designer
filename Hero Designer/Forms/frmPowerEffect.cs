@@ -47,7 +47,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox(ex.Message);
                 ProjectData.ClearProjectError();
                 return;
             }
@@ -645,7 +645,7 @@ namespace Hero_Designer
         {
             if (Loading)
                 return;
-            lblEffectDescription.Text = myFX.BuildEffectString(false, "", false, false, false);
+            lblEffectDescription.Text = myFX.BuildEffectString();
         }
 
         public void UpdateSubSubList()

@@ -56,7 +56,7 @@ namespace Hero_Designer
         void AddSetString(int nIDSet, int BonusID)
 
         {
-            lvSet.Items.Add(new ListViewItem(new string[4]
+            lvSet.Items.Add(new ListViewItem(new[]
             {
         DatabaseAPI.Database.EnhancementSets[nIDSet].DisplayName,
         Conversions.ToString(DatabaseAPI.Database.EnhancementSets[nIDSet].LevelMin + 1) + " - " + Conversions.ToString(DatabaseAPI.Database.EnhancementSets[nIDSet].LevelMax + 1),
@@ -240,7 +240,7 @@ namespace Hero_Designer
         void frmSetFind_Load(object sender, EventArgs e)
 
         {
-            setBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus", "");
+            setBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus");
             BackColor = myParent.BackColor;
             ibClose.IA = myParent.Drawing.pImageAttributes;
             ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
@@ -281,7 +281,7 @@ namespace Hero_Designer
                     {
                         if (str1 != "")
                             str1 += ", ";
-                        string str3 = Strings.Trim(DatabaseAPI.Database.Power[nIDPower].Effects[index1].BuildEffectString(true, "", true, false, false));
+                        string str3 = Strings.Trim(DatabaseAPI.Database.Power[nIDPower].Effects[index1].BuildEffectString(true, "", true));
                         if (str3.Contains("Res("))
                             str3 = str3.Replace("Res(", "Resistance(");
                         if (str3.Contains("Def("))
@@ -334,7 +334,7 @@ namespace Hero_Designer
         {
             if (lvSet.SelectedItems.Count <= 0)
                 return;
-            SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(lvSet.SelectedItems[0].Tag), null));
+            SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(lvSet.SelectedItems[0].Tag)));
         }
     }
 }

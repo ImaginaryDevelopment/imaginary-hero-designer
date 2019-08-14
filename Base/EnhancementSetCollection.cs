@@ -24,7 +24,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
         string str3 = str2 + RTF.Color(RTF.ElementID.Text);
         for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets[iSet].Bonus.Length - 1; ++index)
         {
-            string effectString = DatabaseAPI.Database.EnhancementSets[iSet].GetEffectString(index, false, false);
+            string effectString = DatabaseAPI.Database.EnhancementSets[iSet].GetEffectString(index, false);
             if (!string.IsNullOrEmpty(effectString))
             {
                 if (DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP)
@@ -37,7 +37,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
         }
         for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets[iSet].SpecialBonus.Length - 1; ++index)
         {
-            string effectString = DatabaseAPI.Database.EnhancementSets[iSet].GetEffectString(index, true, false);
+            string effectString = DatabaseAPI.Database.EnhancementSets[iSet].GetEffectString(index, true);
             if (!string.IsNullOrEmpty(effectString))
                 str3 = str3 + RTF.Crlf() + RTF.Color(RTF.ElementID.Enhancement) + RTF.Bold("  " + DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.EnhancementSets[iSet].Enhancements[index]].Name + ": ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
         }

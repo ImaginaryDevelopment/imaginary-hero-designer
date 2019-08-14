@@ -158,7 +158,7 @@ namespace Hero_Designer
                 lstImport.Items[0].EnsureVisible();
             lstImport.EndUpdate();
             HideUnchanged.Text = "Hide Unchanged";
-            int num5 = (int)Interaction.MsgBox(("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)), MsgBoxStyle.OkOnly, null);
+            int num5 = (int)Interaction.MsgBox(("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)));
         }
 
         void frmImportEnhSets_Load(object sender, EventArgs e)
@@ -228,7 +228,6 @@ namespace Hero_Designer
 
         bool ProcessImport()
         {
-            bool flag = false;
             int num1 = 0;
             BusyMsg("Applying...");
             Enabled = false;
@@ -253,7 +252,7 @@ namespace Hero_Designer
             BusyHide();
             Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             DisplayInfo();
-            return flag;
+            return false;
         }
     }
 }

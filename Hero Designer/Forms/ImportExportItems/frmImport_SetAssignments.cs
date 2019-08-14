@@ -130,9 +130,8 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             int num3 = 0;
             int num4 = 0;
@@ -184,9 +183,8 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream.Close();
                 int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "IO CSV Parse Error");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             iStream.Close();
             DatabaseAPI.Database.IOAssignmentVersion.SourceFile = dlgBrowse.FileName;

@@ -189,6 +189,7 @@ namespace Hero_Designer
 
         static int FindValue(string needle, string[] haystack, ref string dest)
         {
+            if (dest == null) throw new ArgumentNullException(nameof(dest));
             for (int index = 0; index <= haystack.Length - 1; ++index)
             {
                 if (haystack[index].StartsWith(needle))
@@ -212,14 +213,14 @@ namespace Hero_Designer
             try
             {
                 iPost = PowerNameFix(iPost);
-                char[] chArray = new char[1] { '`' };
+                char[] chArray = { '`' };
                 iPost = iPost.Replace("\r\n", "`");
                 iPost = iPost.Replace("\n", "`");
                 iPost = iPost.Replace("\r", "`");
                 string[] haystack = iPost.Split(chArray);
                 int num1 = 0;
                 string dest = "";
-                MidsContext.Character.Reset(null, 0);
+                MidsContext.Character.Reset();
                 Character character = MidsContext.Character;
                 string name = character.Name;
                 character.Name = name;
@@ -309,7 +310,7 @@ namespace Hero_Designer
                     if (!flag2)
                     {
                         MainModule.MidsController.Toon.RequestedLevel = sPowerLineArray[index1].Level - 1;
-                        MainModule.MidsController.Toon.BuildPower(power.Powerset, power.Power, false);
+                        MainModule.MidsController.Toon.BuildPower(power.Powerset, power.Power);
                         if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Pool)
                         {
                             int num2 = MainModule.MidsController.Toon.PoolLocked.Length - 2;
@@ -490,15 +491,12 @@ namespace Hero_Designer
                 start = 0;
             for (int index = start; index <= iStr.Length - 1; ++index)
             {
-                if ((!char.IsLetterOrDigit(iStr, index) || iStr.Substring(index, 1) == " ") && iStr.Substring(index, 1) != "'")
-                {
-                    if (!(iStr.Length > index + 1 & readAhead))
-                        return index;
-                    if (!char.IsLetterOrDigit(iStr, index + 1))
-                        return index;
-                    if (!readAhead)
-                        return index;
-                }
+                if ((char.IsLetterOrDigit(iStr, index) && iStr.Substring(index, 1) != " ") ||
+                    iStr.Substring(index, 1) == "'") continue;
+                if (!(iStr.Length > index + 1 & readAhead))
+                    return index;
+                if (!char.IsLetterOrDigit(iStr, index + 1))
+                    return index;
             }
             return -1;
         }
@@ -517,11 +515,11 @@ namespace Hero_Designer
 
         static string[] SmartBreak(string iStr, int nAT)
         {
-            string[] strArray = new string[3] { "", "", "" };
+            string[] strArray = { "", "", "" };
             int num1 = SeekNumber(iStr, 0);
             if (num1 > -1)
             {
-                int start1 = SeekSep(iStr, num1, true);
+                int start1 = SeekSep(iStr, num1);
                 if (start1 > -1)
                 {
                     strArray[0] = iStr.Substring(num1, start1 - num1).Trim();
@@ -534,7 +532,7 @@ namespace Hero_Designer
                         start2 = num2 + displayName.Length;
                     }
                     else
-                        start2 = SeekSep(iStr, num2, true);
+                        start2 = SeekSep(iStr, num2);
                     if (num2 > -1 & start2 > -1)
                         strArray[1] = iStr.Substring(num2, start2 - num2).Trim();
                     int startIndex = SeekAn(iStr, start2);

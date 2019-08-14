@@ -66,7 +66,7 @@ namespace Hero_Designer
                 if (ImportBuffer[index].IsValid)
                     ImportBuffer[index].IsNew = true;
             }
-            int num2 = (int)Interaction.MsgBox("All powers removed!", MsgBoxStyle.OkOnly, null);
+            int num2 = (int)Interaction.MsgBox("All powers removed!");
         }
 
         void btnFile_Click(object sender, EventArgs e)
@@ -181,7 +181,7 @@ namespace Hero_Designer
             int num3;
             if (index1 != powerArray.Length)
             {
-                int num2 = (int)Interaction.MsgBox(("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."), MsgBoxStyle.OkOnly, null);
+                int num2 = (int)Interaction.MsgBox(("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."));
                 num3 = 0;
             }
             else
@@ -256,9 +256,8 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             int num3 = 0;
             int num4 = 0;
@@ -296,9 +295,8 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream.Close();
                 Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
-                bool flag = false;
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             iStream.Close();
             Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
@@ -307,7 +305,6 @@ namespace Hero_Designer
 
         bool ProcessImport()
         {
-            bool flag = false;
             int num1 = 0;
             int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2 - 1; ++index)
@@ -327,12 +324,12 @@ namespace Hero_Designer
             DatabaseAPI.Database.PowerVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.PowerVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.PowerVersion.Revision = Convert.ToInt32(udRevision.Value);
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             DisplayInfo();
-            return flag;
+            return false;
         }
     }
 }

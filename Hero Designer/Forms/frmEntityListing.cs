@@ -52,7 +52,7 @@ namespace Hero_Designer
         {
             BusyMsg("Re-Indexing...");
             DatabaseAPI.LoadMainDatabase();
-            DatabaseAPI.MatchAllIDs(null);
+            DatabaseAPI.MatchAllIDs();
             BusyHide();
             Hide();
         }
@@ -109,8 +109,7 @@ namespace Hero_Designer
             int selectedIndex = lvEntity.SelectedIndices[0];
             if (selectedIndex < lvEntity.Items.Count - 1)
             {
-                SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
-                {
+                SummonedEntity[] summonedEntityArray = {
                     new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
                     new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex + 1])
                 };
@@ -150,8 +149,7 @@ namespace Hero_Designer
             int selectedIndex = lvEntity.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
-                SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
-                {
+                SummonedEntity[] summonedEntityArray = {
                     new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
                     new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex - 1])
                 };
@@ -203,7 +201,7 @@ namespace Hero_Designer
 
         public void ListAddItem(int Index)
         {
-            lvEntity.Items.Add(new ListViewItem(new string[3]
+            lvEntity.Items.Add(new ListViewItem(new[]
             {
                 DatabaseAPI.Database.Entities[Index].UID,
                 DatabaseAPI.Database.Entities[Index].DisplayName,
@@ -215,8 +213,7 @@ namespace Hero_Designer
 
         public void ListUpdateItem(int Index)
         {
-            string[] strArray = new string[3]
-            {
+            string[] strArray = {
                 DatabaseAPI.Database.Entities[Index].UID,
                 DatabaseAPI.Database.Entities[Index].DisplayName,
                 Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(),  DatabaseAPI.Database.Entities[Index].EntityType)

@@ -200,7 +200,7 @@ public class I9Slot : ICloneable
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append(", ");
-                            stringBuilder.Append(power.Effects[index2].BuildEffectString(true, "", false, false, false));
+                            stringBuilder.Append(power.Effects[index2].BuildEffectString(true));
                         }
                         str2 = "Effect: " + stringBuilder;
                     }
@@ -294,14 +294,14 @@ public class I9Slot : ICloneable
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append("\n");
-                            stringBuilder.Append(power.Effects[index1].BuildEffectString(true, "", false, false, false));
+                            stringBuilder.Append(power.Effects[index1].BuildEffectString(true));
                             string empty = string.Empty;
                             for (int idEffect = 0; idEffect <= power.Effects.Length - 1; ++idEffect)
                             {
                                 power.Effects[idEffect].Stacking = Enums.eStacking.Yes;
                                 power.Effects[idEffect].Buffable = true;
                                 if (power.Effects[idEffect].Absorbed_EffectID == index1)
-                                    power.GetEffectStringGrouped(idEffect, ref empty, ref returnMask, false, false, false);
+                                    power.GetEffectStringGrouped(idEffect, ref empty, ref returnMask, false, false);
                                 if (returnMask.Length > 0)
                                 {
                                     if (stringBuilder.Length > 0)
@@ -327,7 +327,7 @@ public class I9Slot : ICloneable
                                         stringBuilder.Append("\n");
                                     power.Effects[index2].Stacking = Enums.eStacking.Yes;
                                     power.Effects[index2].Buffable = true;
-                                    stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString(false, "", false, false, false));
+                                    stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString());
                                 }
                             }
                         }
@@ -335,7 +335,7 @@ public class I9Slot : ICloneable
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append("\n");
-                            stringBuilder.Append(power.Effects[index1].BuildEffectString(true, "", false, false, false));
+                            stringBuilder.Append(power.Effects[index1].BuildEffectString(true));
                         }
                     }
                     str1 = stringBuilder.ToString().Replace("Slf", "Self").Replace("Tgt", "Target");

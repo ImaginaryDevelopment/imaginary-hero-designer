@@ -291,14 +291,14 @@ namespace midsControls
             MyItems = new ItemPair[0];
             myGFX = CreateGraphics();
             bxBuffer = new ExtendedBitmap(Width, Height);
-            AddItem(new ItemPair("Item 1:", "Value", false, false, false, -1));
-            AddItem(new ItemPair("Item 2:", "Alternate", true, false, false, -1));
-            AddItem(new ItemPair("Item 3:", "1000", false, false, false, -1));
-            AddItem(new ItemPair("Item 4:", "1,000", false, false, false, -1));
-            AddItem(new ItemPair("1234567890:", "12345678901234567890", false, false, false, -1));
-            AddItem(new ItemPair("1234567890:", "12345678901234567890", true, false, false, -1));
-            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", false, false, false, -1));
-            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", true, false, false, -1));
+            AddItem(new ItemPair("Item 1:", "Value", false));
+            AddItem(new ItemPair("Item 2:", "Alternate", true));
+            AddItem(new ItemPair("Item 3:", "1000", false));
+            AddItem(new ItemPair("Item 4:", "1,000", false));
+            AddItem(new ItemPair("1234567890:", "12345678901234567890", false));
+            AddItem(new ItemPair("1234567890:", "12345678901234567890", true));
+            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", false));
+            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", true));
             Draw();
         }
 

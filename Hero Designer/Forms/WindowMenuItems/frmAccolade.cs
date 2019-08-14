@@ -94,7 +94,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num; ++index)
             {
                 ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(_myPowers[index]) ? (!(_myPowers[index].PowerType != Enums.ePowerType.Click | _myPowers[index].ClickBuff) ? (!_myPowers[index].SubIsAltColour ? ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Invalid) : ListLabelV2.LLItemState.Enabled) : ListLabelV2.LLItemState.Selected;
-                ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(_myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left) : new ListLabelV2.ListLabelItemV2(_myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left);
+                ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(_myPowers[index].DisplayName, iState) : new ListLabelV2.ListLabelItemV2(_myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold);
                 if (index >= _myPowers.Count / 2.0)
                     llRight.AddItem(iItem);
                 else
@@ -120,9 +120,9 @@ namespace Hero_Designer
             ibClose.ImageOff = _myParent.Drawing.bxPower[2].Bitmap;
             ibClose.ImageOn = _myParent.Drawing.bxPower[3].Bitmap;
             PopUp.PopupData iPopup = new PopUp.PopupData();
-            int index = iPopup.Add(null);
-            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
+            int index = iPopup.Add();
+            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title);
+            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f);
             PopInfo.SetPopup(iPopup);
             ChangedScrollFrameContents();
             FillLists();
@@ -159,7 +159,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    MidsContext.Character.CurrentBuild.AddPower(_myPowers[Item.Index], -1).StatInclude = true;
+                    MidsContext.Character.CurrentBuild.AddPower(_myPowers[Item.Index]).StatInclude = true;
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
                 llLeft.Refresh();
@@ -200,7 +200,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    MidsContext.Character.CurrentBuild.AddPower(_myPowers[pIDX], -1).StatInclude = true;
+                    MidsContext.Character.CurrentBuild.AddPower(_myPowers[pIDX]).StatInclude = true;
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
                 llRight.Refresh();
@@ -231,7 +231,7 @@ namespace Hero_Designer
             }
             else
             {
-                int index1 = iPopup.Add(null);
+                int index1 = iPopup.Add();
                 string str = string.Empty;
                 switch (power1.PowerType)
                 {
@@ -248,9 +248,9 @@ namespace Hero_Designer
                         str = "(Toggle)";
                         break;
                 }
-                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
-                int index2 = iPopup.Add(null);
+                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title);
+                iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f);
+                int index2 = iPopup.Add();
                 if (power1.EndCost > 0.0)
                 {
                     if (power1.ActivatePeriod > 0.0)
@@ -279,14 +279,14 @@ namespace Hero_Designer
                 IPower power2 = power1;
                 if (power2.Effects.Length > 0)
                 {
-                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                    char[] chArray = new char[1] { '^' };
+                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title);
+                    char[] chArray = { '^' };
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
-                        int index4 = iPopup.Add(null);
+                        int index4 = iPopup.Add();
                         power1.Effects[index3].SetPower(power1);
-                        string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", string.Empty).Replace("]", string.Empty).Split(chArray);
+                        string[] strArray = power1.Effects[index3].BuildEffectString().Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", string.Empty).Replace("]", string.Empty).Split(chArray);
                         int num2 = strArray.Length - 1;
                         for (int index5 = 0; index5 <= num2; ++index5)
                         {

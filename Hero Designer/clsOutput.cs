@@ -9,7 +9,7 @@ namespace Hero_Designer
 {
     public class clsOutput
     {
-        string[] BBWhite = new string[2] { " ", "\t" };
+        string[] BBWhite = { " ", "\t" };
 
         public bool HTML;
         public int idFormat = MidsContext.Config.ExportTarget;
@@ -260,7 +260,7 @@ namespace Hero_Designer
 
         {
             string str1 = formatColor(formatUnderline(formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + LineBreak();
-            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
+            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus").Length - 1 + 1];
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -318,7 +318,7 @@ namespace Hero_Designer
             int num = cumulativeSetBonuses.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                string str = cumulativeSetBonuses[index].BuildEffectString(true, "", false, false, false);
+                string str = cumulativeSetBonuses[index].BuildEffectString(true);
                 if (str.IndexOf("Endurance") > -1)
                     str = str.Replace("Endurance", "Max Endurance");
                 iText = iText + ListItemOn() + str + ListItemOff();

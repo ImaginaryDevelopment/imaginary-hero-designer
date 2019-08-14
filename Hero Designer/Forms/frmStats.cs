@@ -855,10 +855,10 @@ namespace Hero_Designer
             int num2 = BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 if (nBase != 0.0)
                 {
-                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                     string displayName = BaseArray[index].DisplayName;
                     if (num1 < (double)nEnh)
                         num1 = nEnh;
@@ -898,10 +898,10 @@ namespace Hero_Designer
             int num2 = BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 if (nBase != 0.0)
                 {
-                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                     if (EnhArray[index].EndCost > 0.0)
                     {
                         nBase /= BaseArray[index].EndCost;
@@ -946,10 +946,10 @@ namespace Hero_Designer
             int num2 = BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 if (nBase != 0.0)
                 {
-                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                     if (BaseArray[index].PowerType == Enums.ePowerType.Click)
                     {
                         if (EnhArray[index].RechargeTime + (double)EnhArray[index].CastTime + EnhArray[index].InterruptTime > 0.0)
@@ -1086,10 +1086,10 @@ namespace Hero_Designer
             int num3 = BaseArray.Length - 1;
             for (int index = 0; index <= num3; ++index)
             {
-                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration, false, false, false, false).Sum;
+                float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration).Sum;
                 if (nBase != 0.0)
                 {
-                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration, false, false, false, false).Sum;
+                    float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration).Sum;
                     float num4 = (float)(num2 / 12.0 * (0.05 + 0.05 * ((nBase - 100.0) / 100.0)));
                     float num5 = (float)(num4 / (double)num2 * 100.0);
                     float num6 = (float)(num2 / 12.0 * (0.05 + 0.05 * ((nEnh - 100.0) / 100.0)));

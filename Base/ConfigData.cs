@@ -60,8 +60,7 @@ public class ConfigData
     public bool DisableAlphaPopup { get; set; }
     public bool DisableRepeatOnMiddleClick { get; set; }
     public bool DisableExportHex { get; set; }
-    public readonly short[] DragDropScenarioAction = new short[20]
-        {
+    public readonly short[] DragDropScenarioAction = {
             3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
         };
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;

@@ -197,7 +197,7 @@ public static class Enums
         }
         else
         {
-            char[] chArray = new char[1] { ',' };
+            char[] chArray = { ',' };
             iStr = iStr.Replace(", ", ",");
             string[] array = iStr.Split(chArray);
             Array.Sort(array);

@@ -9,7 +9,7 @@ public static class CSV
     public static string[] ToArray(string iLine)
     {
         string[] strArray = Reg.Split(iLine);
-        char[] chArray = new char[1] { '"' };
+        char[] chArray = { '"' };
         for (int index = 0; index < strArray.Length; ++index)
             strArray[index] = strArray[index].Trim(chArray);
         return strArray;

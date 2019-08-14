@@ -207,8 +207,7 @@ namespace Hero_Designer
                 int num2 = -1;
                 if (slotIDX > -1)
                 {
-                    string message = string.Empty;
-                    if (CurrentBuild.Powers[powerIDX].CanRemoveSlot(slotIDX, out message))
+                    if (CurrentBuild.Powers[powerIDX].CanRemoveSlot(slotIDX, out var message))
                     {
                         CurrentBuild.RemoveSlotFromPower(powerIDX, slotIDX);
                         if (!CurrentBuild.Powers[powerIDX].Chosen & CurrentBuild.Powers[powerIDX].Slots.Length == 0)
@@ -289,7 +288,7 @@ namespace Hero_Designer
                                 shortFx.Assign(tPwr.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, false, false, true));
                                 break;
                             default:
-                                shortFx.Assign(tPwr.GetEffectMagSum(iEffect, false, false, false, false));
+                                shortFx.Assign(tPwr.GetEffectMagSum(iEffect));
                                 break;
                         }
                     }
@@ -636,7 +635,7 @@ namespace Hero_Designer
 
         static void HandleGrantPowerIncarnate(ref IPower powerMath, IEffect effect1, IPower[] buffedPowers, int effIdx, Archetype at, int hIDX)
         {
-            powerMath.AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx, -1);
+            powerMath.AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx);
             for (int index2 = 0; index2 <= powerMath.Effects.Length - 1; ++index2)
             {
                 powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
@@ -648,7 +647,7 @@ namespace Hero_Designer
             if (hIDX > -1)
             {
                 int length2 = buffedPowers[hIDX].Effects.Length;
-                buffedPowers[hIDX].AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx, -1);
+                buffedPowers[hIDX].AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx);
                 for (int index2 = length2; index2 <= buffedPowers[hIDX].Effects.Length - 1; ++index2)
                 {
                     buffedPowers[hIDX].Effects[index2].ToWho = effect1.ToWho;
@@ -889,7 +888,7 @@ namespace Hero_Designer
                                     }
                                     if (flag6)
                                     {
-                                        Enums.eEnhance iEffect = !flag7 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType2.GetType(), eEffectType2), eEnhance, false) : Enums.eEnhance.Accuracy;
+                                        Enums.eEnhance iEffect = !flag7 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType2.GetType(), eEffectType2), eEnhance) : Enums.eEnhance.Accuracy;
                                         float num7 = eEffectType2 != Enums.eEffectType.Mez ? (!(eEffectType2 == Enums.eEffectType.ResEffect & powerMath.Effects[effIdx].ETModifies == Enums.eEffectType.Defense) ? enhancement.GetEnhancementEffect(iEffect, -1, _buffedPower[hIDX].Effects[effIdx].Math_Mag) : enhancement.GetEnhancementEffect(Enums.eEnhance.Defense, -1, _buffedPower[hIDX].Effects[effIdx].Math_Mag)) : enhancement.GetEnhancementEffect(iEffect, (int)powerMath.Effects[effIdx].MezType, _buffedPower[hIDX].Effects[effIdx].Math_Mag);
                                         if (eEffectType2 == Enums.eEffectType.Damage & powerMath.Effects[effIdx].DamageType == Enums.eDamage.Special)
                                             num7 = 0.0f;
@@ -921,11 +920,11 @@ namespace Hero_Designer
 
         static bool GBPA_Pass2_ApplyED(ref IPower powerMath)
         {
-            powerMath.Accuracy = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Accuracy, -1), powerMath.Accuracy);
-            powerMath.EndCost = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.EnduranceDiscount, -1), powerMath.EndCost);
-            powerMath.InterruptTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Interrupt, -1), powerMath.InterruptTime);
-            powerMath.Range = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Range, -1), powerMath.Range);
-            powerMath.RechargeTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.RechargeTime, -1), powerMath.RechargeTime);
+            powerMath.Accuracy = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Accuracy), powerMath.Accuracy);
+            powerMath.EndCost = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.EnduranceDiscount), powerMath.EndCost);
+            powerMath.InterruptTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Interrupt), powerMath.InterruptTime);
+            powerMath.Range = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Range), powerMath.Range);
+            powerMath.RechargeTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.RechargeTime), powerMath.RechargeTime);
             foreach (var eff in powerMath.Effects)
             {
                 if (!eff.isEnhancementEffect)
@@ -951,14 +950,14 @@ namespace Hero_Designer
                             }
                             if (isOk)
                             {
-                                Enums.eEnhance iEnh = !isSpecial ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance, false) : Enums.eEnhance.Accuracy;
+                                Enums.eEnhance iEnh = !isSpecial ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance) : Enums.eEnhance.Accuracy;
                                 if (eEffectType == Enums.eEffectType.Mez)
                                 {
                                     eff.Math_Mag = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)eff.MezType), eff.Math_Mag);
                                     eff.Math_Duration = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)eff.MezType), eff.Math_Duration);
                                 }
                                 else
-                                    eff.Math_Mag = !(eEffectType == Enums.eEffectType.ResEffect & eff.ETModifies == Enums.eEffectType.Defense) ? Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, -1), eff.Math_Mag) : Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Defense, -1), eff.Math_Mag);
+                                    eff.Math_Mag = !(eEffectType == Enums.eEffectType.ResEffect & eff.ETModifies == Enums.eEffectType.Defense) ? Enhancement.ApplyED(Enhancement.GetSchedule(iEnh), eff.Math_Mag) : Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Defense), eff.Math_Mag);
                             }
                         }
                     }
@@ -1167,10 +1166,10 @@ namespace Hero_Designer
                     if (enhancementPass)
                     {
                         if (_buffedPower[i] != null)
-                            GBD_Stage(ref _buffedPower[i], ref nBuffs, enhancementPass);
+                            GBD_Stage(ref _buffedPower[i], ref nBuffs, true);
                     }
                     else if (_buffedPower[i] != null)
-                        GBD_Stage(ref _buffedPower[i], ref nBuffs, enhancementPass);
+                        GBD_Stage(ref _buffedPower[i], ref nBuffs, false);
                 }
             }
             IPower bonusVirtualPower = CurrentBuild.SetBonusVirtualPower;
@@ -1327,7 +1326,7 @@ namespace Hero_Designer
                 var indexLookup = new int[count + 1];
                 for (int index2 = 0; index2 <= count; ++index2)
                 {
-                    PowerEntry tPower = new PowerEntry(-1, null, false)
+                    PowerEntry tPower = new PowerEntry()
                     {
                         Level = (int)Math.Round(Conversion.Val(data[offset]))
                     };
@@ -1388,7 +1387,7 @@ namespace Hero_Designer
                         int nSlotID = 0;
                         int inToonHistory = CurrentBuild.FindInToonHistory(idxLookup[tPowerID]); // AKA nPowerID
                         if (tSlotIdx > 0)
-                            nSlotID = BuildSlot(inToonHistory, -1);
+                            nSlotID = BuildSlot(inToonHistory);
                         else if (tSlotIdx == 0)
                             nSlotID = tSlotIdx;
                         if (inToonHistory > -1 & inToonHistory < CurrentBuild.Powers.Count && CurrentBuild.Powers[inToonHistory].Slots.Length > nSlotID & nSlotID > -1)
@@ -1414,13 +1413,13 @@ namespace Hero_Designer
             Enums.dmItem buildOption = MidsContext.Config.BuildOption;
             MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
             MidsContext.Config.BuildOption = Enums.dmItem.Slot;
-            string[] ret = IoGrab2(iStream, ";", char.MinValue);
+            string[] ret = IoGrab2(iStream);
             Name = ret[0];
             Archetype = DatabaseAPI.GetArchetypeByName(ret[2]);
             Origin = DatabaseAPI.GetOriginByName(Archetype, ret[1]);
 
             { // stage: powersets
-                var setData = IoGrab2(iStream, ";", char.MinValue);
+                var setData = IoGrab2(iStream);
                 for (int index = 0; index <= Powersets.Length - 1; ++index)
                 {
                     Powersets[index] = DatabaseAPI.GetPowersetByName(setData[index], Archetype.DisplayName);
@@ -1430,20 +1429,20 @@ namespace Hero_Designer
             }
 
             { // stage: poolLocks
-                var poolData = IoGrab2(iStream, ";", char.MinValue);
+                var poolData = IoGrab2(iStream);
                 for (int index = 0; index <= PoolLocked.Length - 1; ++index)
                     PoolLocked[index] = Conversion.Val(poolData[index + 1]) != 0.0;
             }
 
             // fast forward stream
-            IoGrab2(iStream, ";", char.MinValue);
+            IoGrab2(iStream);
             // fast forward stream
-            IoGrab2(iStream, ";", char.MinValue);
+            IoGrab2(iStream);
             NewBuild(); // NewHistory()
             // stage: read powerEntries
-            var lookup = readPowerEntries(IoGrab2(iStream, ";", char.MinValue));
+            var lookup = readPowerEntries(IoGrab2(iStream));
             // stage: read slots
-            readSlotEntries(IoGrab2(iStream, ";", char.MinValue), lookup);
+            readSlotEntries(IoGrab2(iStream), lookup);
             // stage: wrap up
             if (Archetype == null)
                 Archetype = DatabaseAPI.Database.Classes[0];
@@ -1523,8 +1522,8 @@ namespace Hero_Designer
                 pIDX = CurrentBuild.Powers[hIDX].NIDPower;
             }
             IPower power = DatabaseAPI.Database.Power[pIDX];
-            int index1 = popupData.Add(null);
-            popupData.Sections[index1].Add(power.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
+            int index1 = popupData.Add();
+            popupData.Sections[index1].Add(power.DisplayName, PopUp.Colors.Title, 1.25f);
             if (power.PowerSetID > -1)
                 popupData.Sections[index1].Add("Powerset: " + DatabaseAPI.Database.Powersets[power.PowerSetID].DisplayName, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
             if (hIDX > -1)
@@ -1539,15 +1538,15 @@ namespace Hero_Designer
             }
             else
                 popupData.Sections[index1].Add("Available: Level " + Conversions.ToString(power.Level), PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
-            popupData.Sections[index1].Add(power.DescShort, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+            popupData.Sections[index1].Add(power.DescShort, PopUp.Colors.Text);
             bool flag1 = false;
             if (hIDX < 0 & pIDX > -1)
             {
                 if (DatabaseAPI.Database.Power[pIDX].NIDSubPower.Length > 0)
                 {
-                    index1 = popupData.Add(null);
+                    index1 = popupData.Add();
                     popupData.Sections[index1] = new PopUp.Section();
-                    popupData.Sections[index1].Add("Powers:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    popupData.Sections[index1].Add("Powers:", PopUp.Colors.Title);
                     if (pIDX > -1)
                     {
                         int num = DatabaseAPI.Database.Power[pIDX].NIDSubPower.Length - 1;
@@ -1560,7 +1559,7 @@ namespace Hero_Designer
                 }
                 if (!DatabaseAPI.Database.Power[pIDX].Requires.ClassOk(Archetype.Idx))
                 {
-                    index1 = popupData.Add(null);
+                    index1 = popupData.Add();
                     popupData.Sections[index1].Add("You cannot take this power because you are a " + Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                 }
             }
@@ -1573,13 +1572,13 @@ namespace Hero_Designer
                     {
                         if (DatabaseAPI.Database.Power[CurrentBuild.Powers[hIDX].NIDPower].NIDSubPower.Length > 0)
                         {
-                            index1 = popupData.Add(null);
+                            index1 = popupData.Add();
                             popupData.Sections[index1] = CurrentBuild.Powers[hIDX].PopSubPowerListing("Powers:", PopUp.Colors.Text, PopUp.Colors.Text);
                         }
                     }
                     else if (DatabaseAPI.Database.Power[CurrentBuild.Powers[hIDX].NIDPower].NIDSubPower.Length > 0)
                     {
-                        index1 = popupData.Add(null);
+                        index1 = popupData.Add();
                         popupData.Sections[index1] = CurrentBuild.Powers[hIDX].PopSubPowerListing("Powers:", PopUp.Colors.Disabled, PopUp.Colors.Effect);
                     }
                 }
@@ -1592,7 +1591,7 @@ namespace Hero_Designer
                     }
                     if (hasEnhEffect)
                     {
-                        index1 = popupData.Add(null);
+                        index1 = popupData.Add();
                         popupData.Sections[index1] = PopSlottedEnhInfo(hIDX);
                     }
                 }
@@ -1605,12 +1604,12 @@ namespace Hero_Designer
                             if (!flag1)
                             {
                                 flag1 = true;
-                                index1 = popupData.Add(null);
-                                popupData.Sections[index1].Add("Active Enhancement Sets:", PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                                index1 = popupData.Add();
+                                popupData.Sections[index1].Add("Active Enhancement Sets:", PopUp.Colors.Text);
                             }
                             I9SetData.sSetInfo[] setInfo = CurrentBuild.SetBonus[index2].SetInfo;
                             EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[CurrentBuild.SetBonus[index2].SetInfo[senInfoIdx].SetIDX];
-                            popupData.Sections[index1].Add(enhancementSet.DisplayName + " (" + Conversions.ToString(setInfo[senInfoIdx].SlottedCount) + "/" + Conversions.ToString(enhancementSet.Enhancements.Length) + ")", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                            popupData.Sections[index1].Add(enhancementSet.DisplayName + " (" + Conversions.ToString(setInfo[senInfoIdx].SlottedCount) + "/" + Conversions.ToString(enhancementSet.Enhancements.Length) + ")", PopUp.Colors.Title);
                             for (int bonusIdx = 0; bonusIdx <= enhancementSet.Bonus.Length - 1; ++bonusIdx)
                             {
                                 if (setInfo[senInfoIdx].SlottedCount >= enhancementSet.Bonus[bonusIdx].Slotted & (enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.Any))
@@ -1627,18 +1626,18 @@ namespace Hero_Designer
                 }
                 if (DatabaseAPI.Database.Power[CurrentBuild.Powers[hIDX].NIDPower].UIDSubPower.Length > 0)
                 {
-                    int index2 = popupData.Add(null);
+                    int index2 = popupData.Add();
                     string iText = "This virtual power contains additional powers which can be individually selected.\r\n" + "To change which powers are selected, either Control+Shift+Click or Double-Click on this power.\r\n\r\nRemember that the selected powers will only be active if this power's toggle button is switched on.";
                     popupData.Sections[index2].Add(iText, PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
                 }
                 string empty = string.Empty;
                 if (PowerState(CurrentBuild.Powers[hIDX].NIDPower, ref empty) == ListLabelV2.LLItemState.Invalid && empty != "")
                 {
-                    int index2 = popupData.Add(null);
-                    popupData.Sections[index2].Add(empty, PopUp.Colors.Alert, 1f, FontStyle.Bold, 0);
+                    int index2 = popupData.Add();
+                    popupData.Sections[index2].Add(empty, PopUp.Colors.Alert);
                     if (!DatabaseAPI.Database.Power[CurrentBuild.Powers[hIDX].NIDPower].Requires.ClassOk(Archetype.Idx))
                     {
-                        int index3 = popupData.Add(null);
+                        int index3 = popupData.Add();
                         popupData.Sections[index3].Add("You cannot take this power because you are a " + Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                     }
                 }
@@ -1650,30 +1649,30 @@ namespace Hero_Designer
         {
             PopUp.PopupData popupData = new PopUp.PopupData();
             IPowerset powerset = DatabaseAPI.Database.Powersets[nIDPowerset];
-            int index1 = popupData.Add(null);
-            popupData.Sections[index1].Add(powerset.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
+            int index1 = popupData.Add();
+            popupData.Sections[index1].Add(powerset.DisplayName, PopUp.Colors.Title, 1.25f);
             if (powerset.nArchetype > -1)
                 popupData.Sections[index1].Add("Archetype: " + DatabaseAPI.Database.Classes[powerset.nArchetype].DisplayName, PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             else
                 popupData.Sections[index1].Add("Archetype: All", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             popupData.Sections[index1].Add("Set Type: " + Enum.GetName(powerset.SetType.GetType(), powerset.SetType), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
-            popupData.Sections[index1].Add(powerset.Description, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+            popupData.Sections[index1].Add(powerset.Description, PopUp.Colors.Text);
             if (extraString != "")
             {
-                int index2 = popupData.Add(null);
+                int index2 = popupData.Add();
                 popupData.Sections[index2].Add(extraString, PopUp.Colors.Invention, 1f, FontStyle.Bold, 1);
             }
             if (powerset.Powers.Length > 0)
             {
                 if (!powerset.Powers[0].Requires.ClassOk(Archetype.Idx))
                 {
-                    int index2 = popupData.Add(null);
+                    int index2 = popupData.Add();
                     popupData.Sections[index2].Add("You cannot take powers from this pool because you are a " + Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                 }
                 else if (PowersetMutexClash(Powersets[0].Power[0]))
                 {
-                    int index2 = popupData.Add(null);
-                    popupData.Sections[index2].Add("You cannot take the " + Powersets[0].DisplayName + " and " + Powersets[1].DisplayName + " sets together.", PopUp.Colors.Alert, 1f, FontStyle.Bold, 0);
+                    int index2 = popupData.Add();
+                    popupData.Sections[index2].Add("You cannot take the " + Powersets[0].DisplayName + " and " + Powersets[1].DisplayName + " sets together.", PopUp.Colors.Alert);
                 }
             }
             return popupData;
@@ -1683,7 +1682,7 @@ namespace Hero_Designer
 
         {
             PopUp.Section section = new PopUp.Section();
-            section.Add("Buff/Debuff", PopUp.Colors.Text, "Value", PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+            section.Add("Buff/Debuff", PopUp.Colors.Text, "Value", PopUp.Colors.Text);
             if (hIDX >= 0)
             {
                 Enums.eEnhance eEnhance = Enums.eEnhance.None;
@@ -1705,7 +1704,7 @@ namespace Hero_Designer
                     nBuff[index] = 0.0f;
                     nDebuff[index] = 0.0f;
                     nAny[index] = 0.0f;
-                    schedBuff[index] = Enhancement.GetSchedule((Enums.eEnhance)index, -1);
+                    schedBuff[index] = Enhancement.GetSchedule((Enums.eEnhance)index);
                     schedDebuff[index] = schedBuff[index];
                     schedAny[index] = schedBuff[index];
                 }
@@ -1758,7 +1757,7 @@ namespace Hero_Designer
                         if (CurrentBuild.Powers[index1].Power != null && CurrentBuild.Powers[index1].StatInclude)
                         {
                             IPower power1 = new Power(CurrentBuild.Powers[index1].Power);
-                            power1.AbsorbPetEffects(-1);
+                            power1.AbsorbPetEffects();
                             power1.ApplyGrantPowerEffects();
                             for (int index2 = 0; index2 <= power1.Effects.Length - 1; ++index2)
                             {
@@ -1944,7 +1943,7 @@ namespace Hero_Designer
                 if (flag1)
                     nLevel = CurrentBuild.Powers[inToonHistory].Level;
                 message = "";
-                bool flag2 = CurrentBuild.MeetsRequirement(power, nLevel, -1);
+                bool flag2 = CurrentBuild.MeetsRequirement(power, nLevel);
                 if (PowersetMutexClash(nIDPower))
                 {
                     message = "You cannot take the " + Powersets[0].DisplayName + " and " + Powersets[1].DisplayName + " sets together.";
@@ -2059,7 +2058,7 @@ namespace Hero_Designer
                 int num2 = (int)Math.Round(Conversion.Val(strArray[3]));
                 MemoryStream memoryStream = new MemoryStream();
                 BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
-                byte[] iBytes = (byte[])Utils.CopyArray(Zlib.UUDecodeBytes((byte[])Utils.CopyArray(asciiEncoding.GetBytes(Zlib.UnbreakString(iStream.ReadToEnd(), false)), new byte[num2 - 1 + 1])), new byte[num1 - 1 + 1]);
+                byte[] iBytes = (byte[])Utils.CopyArray(Zlib.UUDecodeBytes((byte[])Utils.CopyArray(asciiEncoding.GetBytes(Zlib.UnbreakString(iStream.ReadToEnd())), new byte[num2 - 1 + 1])), new byte[num1 - 1 + 1]);
                 iBytes = Zlib.UncompressChunk(ref iBytes, outSize);
                 binaryWriter.Write(iBytes);
                 memoryStream.Seek(0L, SeekOrigin.Begin);
@@ -2082,7 +2081,7 @@ namespace Hero_Designer
             string[] strArray1;
             do
             {
-                strArray1 = IoGrab2(iStream, "|", char.MinValue);
+                strArray1 = IoGrab2(iStream, "|");
             }
             while (strArray1[0] != Files.Headers.Save.Uncompressed);
             strArray1[1] = strArray1[1].Replace(",", ".");
@@ -2102,18 +2101,18 @@ namespace Hero_Designer
                 {
                     int num2 = (int)Interaction.MsgBox(("The data being loaded was saved by a newer version of the application (File format v" + Strings.Format(nVer, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + ", expected " + Strings.Format(1.4f, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + "). It may not load correctly."), MsgBoxStyle.Information, "Just FYI");
                 }
-                string[] strArray2 = IoGrab2(iStream, "|", char.MinValue);
+                string[] strArray2 = IoGrab2(iStream, "|");
                 Name = strArray2[0];
                 Archetype = DatabaseAPI.GetArchetypeByName(strArray2[2]);
                 Origin = DatabaseAPI.GetOriginByName(Archetype, strArray2[1]);
-                string[] strArray3 = IoGrab2(iStream, "|", char.MinValue);
+                string[] strArray3 = IoGrab2(iStream, "|");
                 for (int index = 0; index <= Powersets.Length - 1; ++index)
                 {
                     Powersets[index] = DatabaseAPI.GetPowersetByName(FixSpelling(strArray3[index]), Archetype.DisplayName);
                     if (strArray3[index].IndexOf("Inherent", StringComparison.Ordinal) > -1)
                         Powersets[index] = DatabaseAPI.GetInherentPowerset();
                 }
-                string[] strArray4 = IoGrab2(iStream, "|", char.MinValue);
+                string[] strArray4 = IoGrab2(iStream, "|");
                 NewBuild();
                 int index1 = 0;
                 var tIDX = CurrentBuild.Powers.Count - (nVer < BuildFormatChange2 ? 2 : 1);
@@ -2281,9 +2280,8 @@ namespace Hero_Designer
                 {
                     ProjectData.SetProjectError(ex);
                     Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
-                    bool flag2 = false;
                     ProjectData.ClearProjectError();
-                    return flag2;
+                    return false;
                 }
                 try
                 {
@@ -2311,11 +2309,10 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
+                    Interaction.MsgBox(ex.Message);
                     streamWriter.Close();
-                    bool flag2 = false;
                     ProjectData.ClearProjectError();
-                    return flag2;
+                    return false;
                 }
                 Stream mStream = null;
                 if (Load(FileIO.AddSlash(Application.StartupPath) + "import.tmp", ref mStream))

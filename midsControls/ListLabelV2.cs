@@ -163,7 +163,7 @@ namespace midsControls
                     }
                     if (!Expanded)
                     {
-                        Recalculate(false);
+                        Recalculate();
                         Draw();
                     }
                 }
@@ -241,7 +241,7 @@ namespace midsControls
                 {
                     ScrollWidth = value;
                 }
-                Recalculate(false);
+                Recalculate();
                 Draw();
             }
         }
@@ -341,7 +341,7 @@ namespace midsControls
         // Token: 0x060001F7 RID: 503 RVA: 0x0001191B File Offset: 0x0000FB1B
         void ListLabelV2_FontChanged(object sender, EventArgs e)
         {
-            Recalculate(false);
+            Recalculate();
             Draw();
         }
 
@@ -351,7 +351,7 @@ namespace midsControls
             szNormal = Size;
             DisableRedraw = true;
             InitBuffer();
-            Recalculate(false);
+            Recalculate();
             FillDefaultItems();
             DisableRedraw = false;
         }
@@ -361,28 +361,28 @@ namespace midsControls
         {
             ClearItems();
             AddItem(new ListLabelItemV2("Header Item", LLItemState.Heading, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Center));
-            AddItem(new ListLabelItemV2("Enabled", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Disabled Item", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Selected Item", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold | LLFontFlags.Italic, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("SD Item", LLItemState.SelectedDisabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Invalid Item", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Automatic multiline Item", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
+            AddItem(new ListLabelItemV2("Enabled", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Disabled Item", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Selected Item", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold | LLFontFlags.Italic));
+            AddItem(new ListLabelItemV2("SD Item", LLItemState.SelectedDisabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Invalid Item", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Automatic multiline Item", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
             AddItem(new ListLabelItemV2("Scrollable", LLItemState.Heading, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Center));
-            AddItem(new ListLabelItemV2("Item 1", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 2", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 3", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 4", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 5", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 6", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 7", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 8", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 9", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 10", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 11", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 12", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 13", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 14", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
-            AddItem(new ListLabelItemV2("Item 15", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Left));
+            AddItem(new ListLabelItemV2("Item 1", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 2", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 3", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 4", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 5", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 6", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 7", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 8", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 9", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 10", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 11", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 12", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 13", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 14", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 15", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
             Draw();
         }
 
@@ -787,7 +787,7 @@ namespace midsControls
         {
             if (!(ScrollWidth < 1 | !canScroll | ScrollSteps < 1))
             {
-                SolidBrush brush = new SolidBrush(scBarColor);
+                SolidBrush brush;
                 Pen pen = new Pen(scBarColor);
                 Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
                 Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
@@ -831,7 +831,7 @@ namespace midsControls
         {
             if (!(!canExpand | (!Expanded & ScrollSteps < 1)))
             {
-                SolidBrush brush = new SolidBrush(scButtonColor);
+                SolidBrush brush;
                 Pen pen = new Pen(scBarColor);
                 Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
                 Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
@@ -950,7 +950,7 @@ namespace midsControls
                 {
                     DisableEvents = false;
                     DisableRedraw = false;
-                    Recalculate(false);
+                    Recalculate();
                     Draw();
                     Graphics graphics = CreateGraphics();
                     Pen powderBlue = Pens.PowderBlue;
@@ -1044,7 +1044,7 @@ namespace midsControls
                                     DisableRedraw = true;
                                     Height = szNormal.Height;
                                     Expanded = false;
-                                    Recalculate(false);
+                                    Recalculate();
                                     DisableRedraw = false;
                                     Draw();
                                 }
@@ -1070,7 +1070,7 @@ namespace midsControls
                 DisableRedraw = true;
                 Height = szNormal.Height;
                 Expanded = false;
-                Recalculate(false);
+                Recalculate();
                 DisableRedraw = false;
                 Draw();
             }
@@ -1091,7 +1091,7 @@ namespace midsControls
                 }
                 DisableRedraw = true;
                 Height = num;
-                Recalculate(false);
+                Recalculate();
                 DisableRedraw = false;
                 Draw();
             }
@@ -1156,11 +1156,7 @@ namespace midsControls
                                     HoverIndex = itemAtY;
                                 }
                                 Draw();
-                                var itemHoverEvent = ItemHover;
-                                if (itemHoverEvent != null)
-                                {
-                                    itemHoverEvent(Items[itemAtY]);
-                                }
+                                ItemHover?.Invoke(Items[itemAtY]);
                                 goto IL_3EA;
                             }
                         case eMouseTarget.UpButton:
@@ -1169,10 +1165,7 @@ namespace midsControls
                                 Draw();
                             }
                             emptyHoverEvent = EmptyHover;
-                            if (emptyHoverEvent != null)
-                            {
-                                emptyHoverEvent();
-                            }
+                            emptyHoverEvent?.Invoke();
                             goto IL_3EA;
                         case eMouseTarget.DownButton:
                             if (LastMouseMovetarget != mouseTarget)
@@ -1263,7 +1256,7 @@ namespace midsControls
         void ListLabelV2_Resize(object sender, EventArgs e)
         {
             ScrollOffset = 0;
-            Recalculate(false);
+            Recalculate();
             Draw();
         }
 

@@ -661,7 +661,7 @@ namespace Hero_Designer
             Enums.eEnhance integer = (Enums.eEnhance)Conversions.ToInteger(Enum.Parse(eEnhance.GetType(), Conversions.ToString(lstAvailable.Items[lstAvailable.SelectedIndex])));
             if (integer == Enums.eEnhance.Mez)
             {
-                tSub = MezPicker(1);
+                tSub = MezPicker();
                 int num = myEnh.Effect.Length - 1;
                 for (int index1 = 0; index1 <= num; ++index1)
                 {
@@ -806,7 +806,7 @@ namespace Hero_Designer
                     lstSelected.Items.Add(str);
                 }
                 else
-                    lstSelected.Items.Add(("Special: " + myEnh.Effect[index].FX.BuildEffectString(false, "", false, false, false)));
+                    lstSelected.Items.Add(("Special: " + myEnh.Effect[index].FX.BuildEffectString()));
             }
             lstSelected.EndUpdate();
         }

@@ -55,7 +55,7 @@ public class EnhancementSet
                     return string.Empty;
                 string empty2 = string.Empty;
                 int[] returnMask = new int[0];
-                DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].GetEffectStringGrouped(0, ref empty2, ref returnMask, !longForm, true, false);
+                DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].GetEffectStringGrouped(0, ref empty2, ref returnMask, !longForm, true);
                 if (!string.IsNullOrEmpty(empty2))
                     empty1 += empty2;
                 for (int index2 = 0; index2 <= DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects.Length - 1; ++index2)
@@ -70,7 +70,7 @@ public class EnhancementSet
                     {
                         if (!string.IsNullOrEmpty(empty1))
                             empty1 += ", ";
-                        string str2 = longForm ? DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectString(true, "", false, false, false) : DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectStringShort(false, true, false);
+                        string str2 = longForm ? DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectString(true) : DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectStringShort(false, true);
                         if (str2.Contains("EndRec"))
                             str2 = str2.Replace("EndRec", "Recovery");
                         empty1 += str2;

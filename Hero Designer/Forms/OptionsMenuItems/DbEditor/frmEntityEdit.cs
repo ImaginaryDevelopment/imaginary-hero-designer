@@ -74,7 +74,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvPower.SelectedIndices[0];
             int index = selectedIndex + 1;
-            var strArray2 = new string[2]
+            var strArray2 = new[]
             {
                 myEntity.PowersetFullName[selectedIndex],
                 myEntity.PowersetFullName[index]
@@ -92,8 +92,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvPower.SelectedIndices[0];
             int index = selectedIndex - 1;
-            string[] strArray2 = new string[2]
-            {
+            string[] strArray2 = {
                 myEntity.PowersetFullName[selectedIndex],
                 myEntity.PowersetFullName[index]
             };
@@ -136,8 +135,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvUpgrade.SelectedIndices[0];
             int index = selectedIndex + 1;
-            string[] strArray2 = new string[2]
-            {
+            string[] strArray2 = {
                 myEntity.UpgradePowerFullName[selectedIndex],
                 myEntity.UpgradePowerFullName[index]
             };
@@ -154,8 +152,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvUpgrade.SelectedIndices[0];
             int index = selectedIndex - 1;
-            string[] strArray2 = new string[2]
-            {
+            string[] strArray2 = {
                 myEntity.UpgradePowerFullName[selectedIndex],
                 myEntity.UpgradePowerFullName[index]
             };
