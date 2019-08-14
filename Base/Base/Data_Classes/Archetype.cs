@@ -108,7 +108,7 @@ namespace Base.Data_Classes
             Hitpoints = 5000;
             ClassType = Enums.eClassType.None;
             DisplayName = string.Empty;
-            Origin = new string[5]
+            Origin = new[]
             {
                 "Magic",
                 "Mutation",
