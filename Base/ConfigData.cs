@@ -403,11 +403,11 @@ public class ConfigData
                     DefaultSaveFolderOverride = null;
                     if (FileIO.CopyFolder(defaultSaveFolder, GetSaveFolder()))
                     {
-                        MessageBox.Show("Save folder was moved!", "All Done", MessageBoxButtons.OK);
+                        MessageBox.Show(@"Save folder was moved!", "All Done", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        MessageBox.Show("Save folder couldn't be moved! Using old save folder instead.", "Whoops", MessageBoxButtons.OK);
+                        MessageBox.Show(@"Save folder couldn't be moved! Using old save folder instead.", "Whoops", MessageBoxButtons.OK);
                         DefaultSaveFolderOverride = defaultSaveFolder;
                     }
                 }

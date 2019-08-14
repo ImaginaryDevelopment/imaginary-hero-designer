@@ -548,7 +548,10 @@ public class Build
                 display = "+5";
                 break;
         }
-        if (MessageBox.Show(string.Format("Really set all placed enhancements to a relative level of {0}?\n\nNote: Normal and Special enhancements cannot go above +3, and Inventions cannot go below +0.", display), "Are you sure?", MessageBoxButtons.YesNo) != DialogResult.Yes)
+        if (MessageBox.Show(
+                $@"Really set all placed enhancements to a relative level of {display}?
+
+Note: Normal and Special enhancements cannot go above +3, and Inventions cannot go below +0.", @"Are you sure?", MessageBoxButtons.YesNo) != DialogResult.Yes)
             return false;
         foreach (PowerEntry power in Powers)
         {

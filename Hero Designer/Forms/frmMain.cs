@@ -2815,7 +2815,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
-                        MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
+                        MessageBox.Show(@"You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                     int lvl = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1;
@@ -2873,7 +2873,7 @@ namespace Hero_Designer
                     }
                     if (finish != index)
                     {
-                        MessageBox.Show("None of the powers can be shifted, so the power was not moved.", null, MessageBoxButtons.OK);
+                        MessageBox.Show(@"None of the powers can be shifted, so the power was not moved.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                 }
@@ -2950,7 +2950,7 @@ namespace Hero_Designer
                         --num8;
                         break;
                     case 0:
-                        MessageBox.Show("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", null, MessageBoxButtons.OK);
+                        MessageBox.Show(@"Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", null, MessageBoxButtons.OK);
                         return 0;
                     case 1:
                         if (flag1)
@@ -3074,7 +3074,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
-                        MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
+                        MessageBox.Show(@"You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                     int lvl = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1;
@@ -3589,7 +3589,7 @@ namespace Hero_Designer
             }
             if (!(flag1 & notifyUser))
                 return;
-            MessageBox.Show("The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", null, MessageBoxButtons.OK);
+            MessageBox.Show(@"The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", null, MessageBoxButtons.OK);
         }
 
         void RedrawUnderPopup(Rectangle RectRedraw)
@@ -4232,13 +4232,13 @@ namespace Hero_Designer
             {
                 MidsContext.Config.IsInitialized = true;
                 MidsContext.Config.SaveFolderChecked = true;
-                MessageBox.Show("Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
+                MessageBox.Show(@"Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
             }
             else
             {
                 MidsContext.Config.IsInitialized = false;
                 MidsContext.Config.SaveFolderChecked = false;
-                MessageBox.Show("Fresh Install flag has been set!", null, MessageBoxButtons.OK);
+                MessageBox.Show(@"Fresh Install flag has been set!", null, MessageBoxButtons.OK);
             }
             tsAdvFreshInstall.Checked = !MidsContext.Config.IsInitialized;
             FloatTop(true);

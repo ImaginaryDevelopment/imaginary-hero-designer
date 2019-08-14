@@ -318,9 +318,9 @@ namespace midsControls
         {
             StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
-                LineAlignment = StringAlignment.Near
+                LineAlignment = StringAlignment.Near,
+                Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center
             };
-            stringFormat.Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center;
             SolidBrush brush = new SolidBrush(Outline);
             RectangleF layoutRectangle = Bounds;
             RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(Target));

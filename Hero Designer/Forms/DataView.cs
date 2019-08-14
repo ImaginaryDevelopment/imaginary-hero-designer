@@ -3191,8 +3191,7 @@ namespace Hero_Designer
             if (inToonHistory > -1)
             {
                 SlotFlipEventHandler slotFlip = SlotFlip;
-                if (slotFlip != null)
-                    slotFlip(inToonHistory);
+                slotFlip?.Invoke(inToonHistory);
             }
         }
 
@@ -3218,8 +3217,7 @@ namespace Hero_Designer
             if (inToonHistory > -1)
             {
                 SlotFlipEventHandler slotFlip = SlotFlip;
-                if (slotFlip != null)
-                    slotFlip(inToonHistory);
+                slotFlip?.Invoke(inToonHistory);
             }
         }
 
@@ -3251,8 +3249,7 @@ namespace Hero_Designer
             if (Index != TabPage)
             {
                 TabChangedEventHandler tabChanged = TabChanged;
-                if (tabChanged != null)
-                    tabChanged(Index);
+                tabChanged?.Invoke(Index);
             }
             TabPage = Index;
             pnlTabs_Paint(this, new PaintEventArgs(pnlTabs.CreateGraphics(), clipRect));
@@ -3277,8 +3274,7 @@ namespace Hero_Designer
             pLastScaleVal = num;
             MainModule.MidsController.Toon.GenerateBuffedPowerArray();
             SlotUpdateEventHandler slotUpdate = SlotUpdate;
-            if (slotUpdate != null)
-                slotUpdate();
+            slotUpdate?.Invoke();
         }
 
         void RedrawFlip()
@@ -3325,8 +3321,7 @@ namespace Hero_Designer
             if (!(Size != size))
                 return;
             SizeChangeEventHandler sizeChange = SizeChange;
-            if (sizeChange != null)
-                sizeChange(Size, Compact);
+            sizeChange?.Invoke(Size, Compact);
         }
 
         void SetBackColor()
