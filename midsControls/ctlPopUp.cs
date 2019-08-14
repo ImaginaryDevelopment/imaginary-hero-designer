@@ -222,8 +222,8 @@ namespace midsControls
 									{
 										stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
 									}
-									SizeF sizeF;
-                                    sizeF = myBX.Graphics.MeasureString(Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0 ? "Null String" : pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
+
+                                    var sizeF = myBX.Graphics.MeasureString(Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0 ? "Null String" : pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
                                     SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
 									layoutRectangle.Height = sizeF.Height + 1f;
 									layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - pScroll, layoutRectangle.Width, layoutRectangle.Height);
