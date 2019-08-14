@@ -62,8 +62,8 @@ namespace Hero_Designer
             this.Label2 = new System.Windows.Forms.Label();
             this.GroupBox5 = new System.Windows.Forms.GroupBox();
             this.pbTitle = new System.Windows.Forms.PictureBox();
-            this.ibCancel = new midsControls.ImageButton();
-            this.ibExport = new midsControls.ImageButton();
+            this.IBCancel = new midsControls.ImageButton();
+            this.IBExport = new midsControls.ImageButton();
             this.lblRecess = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -352,31 +352,31 @@ namespace Hero_Designer
             // 
             // ibCancel
             // 
-            this.ibCancel.Checked = false;
-            this.ibCancel.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-            this.ibCancel.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-            this.ibCancel.Location = new System.Drawing.Point(52, 431);
-            this.ibCancel.Name = "ibCancel";
-            this.ibCancel.Size = new System.Drawing.Size(105, 22);
-            this.ibCancel.TabIndex = 14;
-            this.ibCancel.TextOff = "Cancel";
-            this.ibCancel.TextOn = "Alt Text";
-            this.ibCancel.Toggle = false;
-            this.ibCancel.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibCancel_ButtonClicked);
+            this.IBCancel.Checked = false;
+            this.IBCancel.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
+            this.IBCancel.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
+            this.IBCancel.Location = new System.Drawing.Point(52, 431);
+            this.IBCancel.Name = "IBCancel";
+            this.IBCancel.Size = new System.Drawing.Size(105, 22);
+            this.IBCancel.TabIndex = 14;
+            this.IBCancel.TextOff = "Cancel";
+            this.IBCancel.TextOn = "Alt Text";
+            this.IBCancel.Toggle = false;
+            this.IBCancel.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibCancel_ButtonClicked);
             // 
             // ibExport
             // 
-            this.ibExport.Checked = false;
-            this.ibExport.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-            this.ibExport.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-            this.ibExport.Location = new System.Drawing.Point(246, 431);
-            this.ibExport.Name = "ibExport";
-            this.ibExport.Size = new System.Drawing.Size(105, 22);
-            this.ibExport.TabIndex = 13;
-            this.ibExport.TextOff = "Export Now";
-            this.ibExport.TextOn = "Alt Text";
-            this.ibExport.Toggle = false;
-            this.ibExport.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibExport_ButtonClicked);
+            this.IBExport.Checked = false;
+            this.IBExport.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
+            this.IBExport.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
+            this.IBExport.Location = new System.Drawing.Point(246, 431);
+            this.IBExport.Name = "IBExport";
+            this.IBExport.Size = new System.Drawing.Size(105, 22);
+            this.IBExport.TabIndex = 13;
+            this.IBExport.TextOff = "Export Now";
+            this.IBExport.TextOn = "Alt Text";
+            this.IBExport.Toggle = false;
+            this.IBExport.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibExport_ButtonClicked);
             this.lblRecess.BackColor = System.Drawing.Color.Black;
             this.lblRecess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
@@ -391,8 +391,8 @@ namespace Hero_Designer
 
             this.ClientSize = new System.Drawing.Size(640, 480);
             this.Controls.Add((System.Windows.Forms.Control)this.pbTitle);
-            this.Controls.Add((System.Windows.Forms.Control)this.ibCancel);
-            this.Controls.Add((System.Windows.Forms.Control)this.ibExport);
+            this.Controls.Add((System.Windows.Forms.Control)this.IBCancel);
+            this.Controls.Add((System.Windows.Forms.Control)this.IBExport);
             this.Controls.Add((System.Windows.Forms.Control)this.GroupBox5);
             this.Controls.Add((System.Windows.Forms.Control)this.GroupBox4);
             this.Controls.Add((System.Windows.Forms.Control)this.GroupBox3);
@@ -448,8 +448,7 @@ namespace Hero_Designer
         System.Windows.Forms.ListBox lstCodes;
         System.Windows.Forms.PictureBox pbTitle;
         System.Windows.Forms.ToolTip ToolTip1;
-        midsControls.ImageButton ibCancel;
-        midsControls.ImageButton ibExport;
+
         #endregion
     }
 }

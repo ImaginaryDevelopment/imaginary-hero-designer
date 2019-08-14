@@ -107,152 +107,152 @@ namespace Import
         bool flag2 = false;
         if (iEffect.EffectType != Data.EffectType)
         {
-          message += string.Format("EffectType: {0} => {1}",  iEffect.EffectType,  Data.EffectType);
+          message += $"EffectType: {iEffect.EffectType} => {Data.EffectType}";
           flag2 = true;
         }
         if (iEffect.DisplayPercentage != Data.DisplayPercentage)
         {
-          message += string.Format("DisplayPercentage: {0} => {1}",  iEffect.DisplayPercentage,  Data.DisplayPercentage);
+          message += $"DisplayPercentage: {iEffect.DisplayPercentage} => {Data.DisplayPercentage}";
           flag2 = true;
         }
         if (iEffect.DamageType != Data.DamageType)
         {
-          message += string.Format("DamageType: {0} => {1}",  iEffect.DamageType,  Data.DamageType);
+          message += $"DamageType: {iEffect.DamageType} => {Data.DamageType}";
           flag2 = true;
         }
         if (iEffect.MezType != Data.MezType)
         {
-          message += string.Format("MezType: {0} => {1}",  iEffect.MezType,  Data.MezType);
+          message += $"MezType: {iEffect.MezType} => {Data.MezType}";
           flag2 = true;
         }
         if (iEffect.ETModifies != Data.ETModifies)
         {
-          message += string.Format("ETModifies: {0} => {1}",  iEffect.ETModifies,  Data.ETModifies);
+          message += $"ETModifies: {iEffect.ETModifies} => {Data.ETModifies}";
           flag2 = true;
         }
         if (iEffect.Summon != Data.Summon)
         {
-          message += string.Format("Summon: {0} => {1}",  iEffect.Summon,  Data.Summon);
+          message += $"Summon: {iEffect.Summon} => {Data.Summon}";
           flag2 = true;
         }
         if (iEffect.Ticks != Data.Ticks)
         {
-          message += string.Format("Ticks: {0} => {1}",  iEffect.Ticks,  Data.Ticks);
+          message += $"Ticks: {iEffect.Ticks} => {Data.Ticks}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.DelayedTime - Data.DelayedTime) > 0.001)
         {
-          message += string.Format("DelayedTime: {0} => {1}",  iEffect.DelayedTime,  Data.DelayedTime);
+          message += $"DelayedTime: {iEffect.DelayedTime} => {Data.DelayedTime}";
           flag2 = true;
         }
         if (iEffect.Stacking != Data.Stacking)
         {
-          message += string.Format("Stacking: {0} => {1}",  iEffect.Stacking,  Data.Stacking);
+          message += $"Stacking: {iEffect.Stacking} => {Data.Stacking}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.BaseProbability - Data.BaseProbability) > 0.001)
         {
-          message += string.Format("BaseProbability: {0} => {1}",  iEffect.BaseProbability,  Data.BaseProbability);
+          message += $"BaseProbability: {iEffect.BaseProbability} => {Data.BaseProbability}";
           flag2 = true;
         }
         if (iEffect.CancelOnMiss != Data.CancelOnMiss)
         {
-          message += string.Format("CancelOnMiss: {0} => {1}",  iEffect.CancelOnMiss,  Data.CancelOnMiss);
+          message += $"CancelOnMiss: {iEffect.CancelOnMiss} => {Data.CancelOnMiss}";
           flag2 = true;
         }
         if (iEffect.Suppression != Data.Suppression)
         {
-          message += string.Format("Suppression: {0} => {1}",  iEffect.Suppression,  Data.Suppression);
+          message += $"Suppression: {iEffect.Suppression} => {Data.Suppression}";
           flag2 = true;
         }
         if (iEffect.Buffable != Data.Buffable)
         {
-          message += string.Format("Buffable: {0} => {1}",  iEffect.Buffable,  Data.Buffable);
+          message += $"Buffable: {iEffect.Buffable} => {Data.Buffable}";
           flag2 = true;
         }
         if (iEffect.Resistible != Data.Resistible)
         {
-          message += string.Format("Resistible: {0} => {1}",  iEffect.Resistible,  Data.Resistible);
+          message += $"Resistible: {iEffect.Resistible} => {Data.Resistible}";
           flag2 = true;
         }
         if (iEffect.SpecialCase != Data.SpecialCase)
         {
-          message += string.Format("SpecialCase: {0} => {1}",  iEffect.SpecialCase,  Data.SpecialCase);
+          message += $"SpecialCase: {iEffect.SpecialCase} => {Data.SpecialCase}";
           flag2 = true;
         }
         if (iEffect.PvMode != Data.PvMode)
         {
-          message += string.Format("PvMode: {0} => {1}",  iEffect.PvMode,  Data.PvMode);
+          message += $"PvMode: {iEffect.PvMode} => {Data.PvMode}";
           flag2 = true;
         }
         if (iEffect.ToWho != Data.ToWho)
         {
-          message += string.Format("ToWho: {0} => {1}",  iEffect.ToWho,  Data.ToWho);
+          message += $"ToWho: {iEffect.ToWho} => {Data.ToWho}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.Scale - Data.Scale) > 0.001)
         {
-          message += string.Format("Scale: {0} => {1}",  iEffect.Scale,  Data.Scale);
+          message += $"Scale: {iEffect.Scale} => {Data.Scale}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.nMagnitude - Data.nMagnitude) > 0.001)
         {
-          message += string.Format("nMagnitude: {0} => {1}",  iEffect.nMagnitude,  Data.nMagnitude);
+          message += $"nMagnitude: {iEffect.nMagnitude} => {Data.nMagnitude}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.nDuration - Data.nDuration) > 0.001)
         {
-          message += string.Format("nDuration: {0} => {1}",  iEffect.nDuration,  Data.nDuration);
+          message += $"nDuration: {iEffect.nDuration} => {Data.nDuration}";
           flag2 = true;
         }
         if (iEffect.AttribType != Data.AttribType)
         {
-          message += string.Format("AttribType: {0} => {1}",  iEffect.AttribType,  Data.AttribType);
+          message += $"AttribType: {iEffect.AttribType} => {Data.AttribType}";
           flag2 = true;
         }
         if (iEffect.Aspect != Data.Aspect)
         {
-          message += string.Format("Aspect: {0} => {1}",  iEffect.Aspect,  Data.Aspect);
+          message += $"Aspect: {iEffect.Aspect} => {Data.Aspect}";
           flag2 = true;
         }
         if (iEffect.ModifierTable != Data.ModifierTable)
         {
-          message += string.Format("ModifierTable: {0} => {1}",  iEffect.ModifierTable,  Data.ModifierTable);
+          message += $"ModifierTable: {iEffect.ModifierTable} => {Data.ModifierTable}";
           flag2 = true;
         }
         if (iEffect.NearGround != Data.NearGround)
         {
-          message += string.Format("NearGround: {0} => {1}",  iEffect.NearGround,  Data.NearGround);
+          message += $"NearGround: {iEffect.NearGround} => {Data.NearGround}";
           flag2 = true;
         }
         if (iEffect.Reward != Data.Reward)
         {
-          message += string.Format("Reward: {0} => {1}",  iEffect.Reward,  Data.Reward);
+          message += $"Reward: {iEffect.Reward} => {Data.Reward}";
           flag2 = true;
         }
         if (iEffect.EffectId != Data.EffectId)
         {
-          message += string.Format("EffectId: {0} => {1}",  iEffect.EffectId,  Data.EffectId);
+          message += $"EffectId: {iEffect.EffectId} => {Data.EffectId}";
           flag2 = true;
         }
         if (iEffect.IgnoreED != Data.IgnoreED)
         {
-          message += string.Format("IgnoreED: {0} => {1}",  iEffect.IgnoreED,  Data.IgnoreED);
+          message += $"IgnoreED: {iEffect.IgnoreED} => {Data.IgnoreED}";
           flag2 = true;
         }
         if (iEffect.Override != Data.Override)
         {
-          message += string.Format("Override: {0} => {1}",  iEffect.Override,  Data.Override);
+          message += $"Override: {iEffect.Override} => {Data.Override}";
           flag2 = true;
         }
         if (iEffect.MagnitudeExpression != Data.MagnitudeExpression)
         {
-          message += string.Format("MagnitudeExpression: {0} => {1}",  iEffect.MagnitudeExpression,  Data.MagnitudeExpression);
+          message += $"MagnitudeExpression: {iEffect.MagnitudeExpression} => {Data.MagnitudeExpression}";
           flag2 = true;
         }
         if (Math.Abs(iEffect.ProcsPerMinute - Data.ProcsPerMinute) > 1.40129846432482E-45)
         {
-          message += string.Format("PPM: {0} => {1}",  iEffect.ProcsPerMinute,  Data.ProcsPerMinute);
+          message += $"PPM: {iEffect.ProcsPerMinute} => {Data.ProcsPerMinute}";
           flag1 = true;
         }
         else

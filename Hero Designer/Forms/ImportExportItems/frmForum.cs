@@ -15,17 +15,9 @@ namespace Hero_Designer
         public clsOutput Exporter;
         Point mouse_offset;
 
-        internal ImageButton IBCancel
-        {
-            get => ibCancel;
-            private set => ibCancel = value;
-        }
+        internal ImageButton IBCancel { get; private set; }
 
-        internal ImageButton IBExport
-        {
-            get => ibExport;
-            private set => ibExport = value;
-        }
+        internal ImageButton IBExport { get; private set; }
 
         public frmForum()
         {

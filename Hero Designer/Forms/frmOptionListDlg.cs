@@ -43,17 +43,14 @@ namespace Hero_Designer
           string descript,
           params string[] OptionList)
         {
-            var frm = new frmOptionListDlg();
-            frm.chkRemember.Enabled = AllowRemember;
-            frm.chkRemember.Visible = AllowRemember;
-            frm.chkRemember.Checked = false;
-            frm.lblDescript.Text = descript;
+            var frm = new frmOptionListDlg
+            {
+                chkRemember = {Enabled = AllowRemember, Visible = AllowRemember, Checked = false},
+                lblDescript = {Text = descript}
+            };
             frm.cmbAction.Items.Clear();
             frm.cmbAction.Items.AddRange(OptionList);
-            if (DefaultOption < frm.cmbAction.Items.Count - 1)
-                frm.cmbAction.SelectedIndex = DefaultOption;
-            else
-                frm.cmbAction.SelectedIndex = 0;
+            frm.cmbAction.SelectedIndex = DefaultOption < frm.cmbAction.Items.Count - 1 ? DefaultOption : 0;
             var result = frm.ShowDialog();
             return (result, frm.remember);
         }

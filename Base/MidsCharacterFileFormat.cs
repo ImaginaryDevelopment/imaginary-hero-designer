@@ -49,8 +49,9 @@ public static class MidsCharacterFileFormat
         writer.Write((int)MidsContext.Character.Alignment);
         writer.Write(MidsContext.Character.Name);
         writer.Write(MidsContext.Character.Powersets.Length - 1);
-        for (int index = 0; index < MidsContext.Character.Powersets.Length; ++index)
-            writer.Write(MidsContext.Character.Powersets[index] != null ? MidsContext.Character.Powersets[index].FullName : string.Empty);
+        foreach (var index in MidsContext.Character.Powersets)
+            writer.Write(index != null ? index.FullName : string.Empty);
+
         writer.Write(MidsContext.Character.CurrentBuild.LastPower + 1);
         writer.Write(MidsContext.Character.CurrentBuild.Powers.Count - 1);
         foreach (var power in MidsContext.Character.CurrentBuild.Powers)
@@ -66,13 +67,13 @@ public static class MidsCharacterFileFormat
                 writer.Write(Convert.ToBoolean(power.StatInclude));
                 writer.Write(power.VariableValue);
                 writer.Write(Convert.ToSByte(power.SubPowers.Length - 1));
-                for (int index2 = 0; index2 < power.SubPowers.Length; ++index2)
+                foreach (var index2 in power.SubPowers)
                 {
-                    if (power.SubPowers[index2].nIDPower > -1)
-                        writer.Write(DatabaseAPI.Database.Power[power.SubPowers[index2].nIDPower].StaticIndex);
+                    if (index2.nIDPower > -1)
+                        writer.Write(DatabaseAPI.Database.Power[index2.nIDPower].StaticIndex);
                     else
                         writer.Write(-1);
-                    writer.Write(power.SubPowers[index2].StatInclude);
+                    writer.Write(index2.StatInclude);
                 }
             }
             writer.Write(Convert.ToSByte(power.Slots.Length - 1));

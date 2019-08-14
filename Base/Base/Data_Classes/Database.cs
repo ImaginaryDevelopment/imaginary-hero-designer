@@ -8,25 +8,6 @@ namespace Base.Data_Classes
 {
     public sealed class Database : IDatabase
     {
-        static readonly Database _instance = new Database();
-
-        Enums.VersionData _powerVersion = new Enums.VersionData();
-
-        Enums.VersionData _powerEffectVersion = new Enums.VersionData();
-
-        Enums.VersionData _powerLevelVersion = new Enums.VersionData();
-
-        Enums.VersionData _powersetVersion = new Enums.VersionData();
-
-        Enums.VersionData _archetypeVersion = new Enums.VersionData();
-
-        Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
-
-        SummonedEntity[] _entities = new SummonedEntity[0];
-
-        ArrayList _effectIds = new ArrayList();
-
-
         public float Version { get; set; }
 
         public int Issue { get; set; }
@@ -35,39 +16,19 @@ namespace Base.Data_Classes
 
         public IPower[] Power { get; set; }
 
-        public Enums.VersionData PowerVersion
-        {
-            get => _powerVersion;
-            set => _powerVersion = value;
-        }
+        public Enums.VersionData PowerVersion { get; set; } = new Enums.VersionData();
 
-        public Enums.VersionData PowerEffectVersion
-        {
-            get => _powerEffectVersion;
-            set => _powerEffectVersion = value;
-        }
+        public Enums.VersionData PowerEffectVersion { get; set; } = new Enums.VersionData();
 
-        public Enums.VersionData PowerLevelVersion
-        {
-            get => _powerLevelVersion;
-            set => _powerLevelVersion = value;
-        }
+        public Enums.VersionData PowerLevelVersion { get; set; } = new Enums.VersionData();
 
         public IPowerset[] Powersets { get; set; }
 
-        public Enums.VersionData PowersetVersion
-        {
-            get => _powersetVersion;
-            set => _powersetVersion = value;
-        }
+        public Enums.VersionData PowersetVersion { get; set; } = new Enums.VersionData();
 
         public Archetype[] Classes { get; set; }
 
-        public Enums.VersionData ArchetypeVersion
-        {
-            get => _archetypeVersion;
-            set => _archetypeVersion = value;
-        }
+        public Enums.VersionData ArchetypeVersion { get; set; } = new Enums.VersionData();
 
         public IEnhancement[] Enhancements { get; set; }
 
@@ -93,17 +54,9 @@ namespace Base.Data_Classes
 
         public object I9 { get; set; }
 
-        public Enums.VersionData IOAssignmentVersion
-        {
-            get => _ioAssignmentVersion;
-            set => _ioAssignmentVersion = value;
-        }
+        public Enums.VersionData IOAssignmentVersion { get; set; } = new Enums.VersionData();
 
-        public SummonedEntity[] Entities
-        {
-            get => _entities;
-            set => _entities = value;
-        }
+        public SummonedEntity[] Entities { get; set; } = new SummonedEntity[0];
 
         public Modifiers AttribMods { get; set; }
 
@@ -111,13 +64,9 @@ namespace Base.Data_Classes
 
         public int[] Levels_MainPowers { get; set; }
 
-        public ArrayList EffectIds
-        {
-            get => _effectIds;
-            set => _effectIds = value;
-        }
+        public ArrayList EffectIds { get; set; } = new ArrayList();
 
-        public static Database Instance => _instance;
+        public static Database Instance { get; } = new Database();
 
         public float VersionEnhDb { get; set; }
 

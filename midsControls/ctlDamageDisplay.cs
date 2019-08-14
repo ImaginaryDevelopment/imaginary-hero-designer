@@ -272,9 +272,9 @@ namespace midsControls
         // Token: 0x0600006E RID: 110 RVA: 0x000069AC File Offset: 0x00004BAC
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -284,10 +284,7 @@ namespace midsControls
         private void InitializeComponent()
         {
             components = new Container();
-            myTip = new ToolTip(components);
-            myTip.AutoPopDelay = 20000;
-            myTip.InitialDelay = 350;
-            myTip.ReshowDelay = 100;
+            myTip = new ToolTip(components) {AutoPopDelay = 20000, InitialDelay = 350, ReshowDelay = 100};
             Name = "ctlDamageDisplay";
             Size size = new Size(312, 104);
             Size = size;

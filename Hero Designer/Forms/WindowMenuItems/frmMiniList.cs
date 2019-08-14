@@ -9,16 +9,10 @@ namespace Hero_Designer
 {
     public partial class frmMiniList : Form
     {
-        ctlPopUp pInfo;
-
         VScrollBar VScrollBar1;
 
         readonly frmMain myParent;
-        internal ctlPopUp PInfo
-        {
-            get => pInfo;
-            private set => pInfo = value;
-        }
+        internal ctlPopUp PInfo { get; private set; }
 
         public frmMiniList(frmMain iParent)
         {

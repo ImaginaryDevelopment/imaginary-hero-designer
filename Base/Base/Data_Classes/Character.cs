@@ -419,16 +419,16 @@ namespace Base.Data_Classes
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(Archetype, Enums.ePowerSetType.Pool);
             List<int> intList = new List<int>();
-            for (int index1 = 0; index1 < powersetIndexes.Length; ++index1)
+            foreach (var index1 in powersetIndexes)
             {
                 bool available = false;
                 for (int index2 = 3; index2 <= 6; ++index2)
                 {
-                    if (index2 == iPool || !(PoolLocked[index2 - 3] && powersetIndexes[index1].nID == Powersets[index2].nID))
+                    if (index2 == iPool || !(PoolLocked[index2 - 3] && index1.nID == Powersets[index2].nID))
                         available = true;
                 }
                 if (available)
-                    intList.Add(powersetIndexes[index1].nID);
+                    intList.Add(index1.nID);
             }
             return intList;
         }
@@ -542,11 +542,7 @@ namespace Base.Data_Classes
                         string[] strArray3 = BreakByNewLine(iSlot.GetEnhancementStringLong());
                         for (int index3 = 0; index3 <= strArray3.Length - 1; ++index3)
                         {
-                            string[] strArray2;
-                            if (!enhancement.HasPowerEffect)
-                                strArray2 = BreakByBracket(strArray3[index3]);
-                            else
-                                strArray2 = new[] { strArray3[index3], string.Empty };
+                            var strArray2 = !enhancement.HasPowerEffect ? BreakByBracket(strArray3[index3]) : new[] { strArray3[index3], string.Empty };
                             string[] strArray4 = strArray2;
                             popupData1.Sections[index4].Add(strArray4[0], Color.FromArgb(0, byte.MaxValue, 0), strArray4[1], Color.FromArgb(0, byte.MaxValue, 0), 0.9f);
                         }
@@ -766,11 +762,11 @@ namespace Base.Data_Classes
                 str = " - " + DatabaseAPI.Database.Enhancements[recipe.EnhIdx].LongName;
             section1.Add("Recipe" + str, PopUp.Colors.Title);
             if (recipeEntry.BuyCost > 0)
-                section1.Add("Buy Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", recipeEntry.BuyCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
+                section1.Add("Buy Cost:", PopUp.Colors.Invention, $"{recipeEntry.BuyCost:###,###,##0}", PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
             if (recipeEntry.CraftCost > 0)
-                section1.Add("Craft Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", recipeEntry.CraftCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
+                section1.Add("Craft Cost:", PopUp.Colors.Invention, $"{recipeEntry.CraftCost:###,###,##0}", PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
             if (recipeEntry.CraftCostM > 0)
-                section1.Add("Craft Cost (Memorized):", PopUp.Colors.Effect, string.Format("{0:###,###,##0}", recipeEntry.CraftCostM), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
+                section1.Add("Craft Cost (Memorized):", PopUp.Colors.Effect, $"{recipeEntry.CraftCostM:###,###,##0}", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             for (int index2 = 0; index2 <= recipeEntry.Salvage.Length - 1 && (index2 == 0 || recipeEntry.SalvageIdx[index2] != recipeEntry.SalvageIdx[0]); ++index2)
             {
                 if (recipeEntry.SalvageIdx[index2] >= 0)
@@ -943,17 +939,7 @@ namespace Base.Data_Classes
 
         bool PowersetUsed(IPowerset powerset)
         {
-            if (powerset == null)
-            {
-                return false;
-            }
-
-            for (int index = 0; index < CurrentBuild.Powers.Count; ++index)
-            {
-                if (CurrentBuild.Powers[index].NIDPowerset == powerset.nID & CurrentBuild.Powers[index].IDXPower > -1)
-                    return true;
-            }
-            return false;
+            return powerset != null && CurrentBuild.Powers.Any(t => t.NIDPowerset == powerset.nID & t.IDXPower > -1);
         }
 
         protected bool CanRemovePower(int index, bool allowSecondary, out string message)

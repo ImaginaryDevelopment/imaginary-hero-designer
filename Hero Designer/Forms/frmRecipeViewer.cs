@@ -144,10 +144,14 @@ namespace Hero_Designer
                     lblHeader.Text = "Shopping List";
                     if (lvPower.CheckedIndices.Count == 1)
                     {
-                        if (!lvPower.Items[0].Checked)
-                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title);
-                        else
-                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title);
+                        popupData.Sections[index3].Add(
+                            !lvPower.Items[0].Checked
+                                ? DatabaseAPI.Database
+                                    .Power[
+                                        MidsContext.Character.CurrentBuild
+                                            .Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower]
+                                    .DisplayName
+                                : "All Powers", PopUp.Colors.Title);
                     }
                     else
                         popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title);
@@ -698,11 +702,13 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmRecipe.X;
-            rectangle.Y = MainModule.MidsController.SzFrmRecipe.Y;
-            rectangle.Width = MainModule.MidsController.SzFrmRecipe.Width;
-            rectangle.Height = MainModule.MidsController.SzFrmRecipe.Height;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmRecipe.X,
+                Y = MainModule.MidsController.SzFrmRecipe.Y,
+                Width = MainModule.MidsController.SzFrmRecipe.Width,
+                Height = MainModule.MidsController.SzFrmRecipe.Height
+            };
             if (rectangle.Width < 1)
                 rectangle.Width = Width;
             if (rectangle.Height < 1)

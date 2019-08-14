@@ -85,7 +85,7 @@ public class Build
     {
         foreach (PowerEntry power in Powers)
         {
-            if (power != null && power.Power != null && power.Power.PowerIndex == powerToRemove.PowerIndex)
+            if (power?.Power != null && power.Power.PowerIndex == powerToRemove.PowerIndex)
             {
                 power.Reset();
                 break;
@@ -215,7 +215,7 @@ public class Build
                 str = "Single";
                 break;
         }
-        if (MessageBox.Show(string.Format("Really set all placed Regular enhancements to {0} Origin?\n\nThis will not affect any Invention or Special enhancements.", str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        if (MessageBox.Show($@"Really set all placed Regular enhancements to {str} Origin?\n\nThis will not affect any Invention or Special enhancements.", @"Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
             foreach (PowerEntry power in Powers)
             {
@@ -388,11 +388,11 @@ public class Build
     public int SlotsPlacedAtLevel(int level)
     {
         int slotsPlacedAtLevel = 0;
-        for (int powerIdx = 0; powerIdx < Powers.Count; ++powerIdx)
+        foreach (var powerIdx in Powers)
         {
-            for (int slotIdx = 0; slotIdx < Powers[powerIdx].Slots.Length; ++slotIdx)
+            for (int slotIdx = 0; slotIdx < powerIdx.Slots.Length; ++slotIdx)
             {
-                if (Powers[powerIdx].Slots[slotIdx].Level == level)
+                if (powerIdx.Slots[slotIdx].Level == level)
                     ++slotsPlacedAtLevel;
             }
         }
@@ -1034,9 +1034,7 @@ public class Build
                     ++setCount[power];
                     if (setCount[power] < 6)
                     {
-                        for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
-                            effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
-
+                        effectList.AddRange(DatabaseAPI.Database.Power[power].Effects.Select(t => (IEffect) t.Clone()));
                     }
                 }
 
@@ -1048,20 +1046,20 @@ public class Build
     {
         IPower bonusVirtualPower = SetBonusVirtualPower;
         IEffect[] array = Array.Empty<IEffect>();
-        for (int effIdx = 0; effIdx < bonusVirtualPower.Effects.Length; ++effIdx)
+        foreach (var effIdx in bonusVirtualPower.Effects)
         {
-            if (bonusVirtualPower.Effects[effIdx].EffectType != Enums.eEffectType.None || !string.IsNullOrEmpty(bonusVirtualPower.Effects[effIdx].Special))
+            if (effIdx.EffectType != Enums.eEffectType.None || !string.IsNullOrEmpty(effIdx.Special))
             {
-                int index2 = GcsbCheck(array, bonusVirtualPower.Effects[effIdx]);
+                int index2 = GcsbCheck(array, effIdx);
                 if (index2 < 0)
                 {
                     Array.Resize(ref array, array.Length + 1);
                     int index3 = array.Length - 1;
-                    array[index3] = (IEffect)bonusVirtualPower.Effects[effIdx].Clone();
-                    array[index3].Math_Mag = bonusVirtualPower.Effects[effIdx].Mag;
+                    array[index3] = (IEffect)effIdx.Clone();
+                    array[index3].Math_Mag = effIdx.Mag;
                 }
                 else
-                    array[index2].Math_Mag += bonusVirtualPower.Effects[effIdx].Mag;
+                    array[index2].Math_Mag += effIdx.Mag;
             }
         }
         return array;

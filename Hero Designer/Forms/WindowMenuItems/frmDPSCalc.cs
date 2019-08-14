@@ -191,19 +191,11 @@ namespace Hero_Designer
                 lvPower.Items[0].Selected = true;
                 if (GlobalPowerList.Length > 0)
                 {
-                    string powerName1;
-                    if (!chkSortByLevel.Checked)
-                        powerName1 = GlobalPowerList[0].PowerName;
-                    else
-                        powerName1 = GlobalPowerList[0].PowerName.Split('-')[1];
+                    var powerName1 = !chkSortByLevel.Checked ? GlobalPowerList[0].PowerName : GlobalPowerList[0].PowerName.Split('-')[1];
                     tbDPSOutput.Text = powerName1;
                     for (int index = 1; index < GlobalPowerList.Length; ++index)
                     {
-                        string powerName2;
-                        if (!chkSortByLevel.Checked)
-                            powerName2 = GlobalPowerList[index].PowerName;
-                        else
-                            powerName2 = GlobalPowerList[index].PowerName.Split('-')[1];
+                        var powerName2 = !chkSortByLevel.Checked ? GlobalPowerList[index].PowerName : GlobalPowerList[index].PowerName.Split('-')[1];
                         TextBox tbDpsOutput = tbDPSOutput;
                         tbDpsOutput.Text = tbDpsOutput.Text + " --> " + powerName2;
                     }
@@ -256,11 +248,7 @@ namespace Hero_Designer
                 for (int index = 0; index < globalPowerList.Length; ++index)
                     GlobalPowerList[index] = globalPowerList[index];
                 GlobalPowerList[GlobalPowerList.Length - 1].PowerName = e.Item.Text;
-                string text;
-                if (!chkSortByLevel.Checked)
-                    text = e.Item.Text;
-                else
-                    text = e.Item.Text.Split('-')[1];
+                var text = !chkSortByLevel.Checked ? e.Item.Text : e.Item.Text.Split('-')[1];
                 if (tbDPSOutput.Text == "")
                 {
                     tbDPSOutput.Text = text;
@@ -304,11 +292,13 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmRecipe.X;
-            rectangle.Y = MainModule.MidsController.SzFrmRecipe.Y;
-            rectangle.Width = 800;
-            rectangle.Height = MainModule.MidsController.SzFrmRecipe.Height;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmRecipe.X,
+                Y = MainModule.MidsController.SzFrmRecipe.Y,
+                Width = 800,
+                Height = MainModule.MidsController.SzFrmRecipe.Height
+            };
             if (rectangle.Width < 1)
                 rectangle.Width = Width;
             if (rectangle.Height < 1)

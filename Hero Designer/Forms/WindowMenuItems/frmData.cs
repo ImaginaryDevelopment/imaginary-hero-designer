@@ -47,11 +47,13 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmData.X;
-            rectangle.Y = MainModule.MidsController.SzFrmData.Y;
-            rectangle.Width = MainModule.MidsController.SzFrmData.Width;
-            rectangle.Height = MainModule.MidsController.SzFrmData.Height;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmData.X,
+                Y = MainModule.MidsController.SzFrmData.Y,
+                Width = MainModule.MidsController.SzFrmData.Width,
+                Height = MainModule.MidsController.SzFrmData.Height
+            };
             if (rectangle.Width < 1)
                 rectangle.Width = Width;
             if (rectangle.Height < 1)

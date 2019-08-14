@@ -24,11 +24,12 @@ namespace midsControls
         // Token: 0x17000021 RID: 33
         // (get) Token: 0x0600007D RID: 125 RVA: 0x00007554 File Offset: 0x00005754
         // (set) Token: 0x0600007E RID: 126 RVA: 0x0000756C File Offset: 0x0000576C
+        [field: AccessedThroughProperty("tTip")]
         internal virtual ToolTip tTip
         {
-            get => _tTip;
+            get;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set => _tTip = value;
+            set;
         }
 
         // Token: 0x17000022 RID: 34
@@ -408,9 +409,9 @@ namespace midsControls
         // Token: 0x060000B3 RID: 179 RVA: 0x00007C60 File Offset: 0x00005E60
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -420,10 +421,7 @@ namespace midsControls
         private void InitializeComponent()
         {
             components = new Container();
-            tTip = new ToolTip(components);
-            tTip.AutoPopDelay = 10000;
-            tTip.InitialDelay = 500;
-            tTip.ReshowDelay = 100;
+            tTip = new ToolTip(components) {AutoPopDelay = 10000, InitialDelay = 500, ReshowDelay = 100};
             Name = "ctlMultiGraph";
             Size size = new Size(332, 156);
             Size = size;
@@ -495,10 +493,12 @@ namespace midsControls
                             LinearGradientBrush brush = new LinearGradientBrush(rectangle, pBlendColor1, pBlendColor2, 0f);
                             SolidBrush brush2 = new SolidBrush(ForeColor);
                             Pen pen = new Pen(pLineColor, 1f);
-                            StringFormat stringFormat = new StringFormat();
-                            stringFormat.Alignment = StringAlignment.Far;
-                            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                            stringFormat.Trimming = StringTrimming.None;
+                            StringFormat stringFormat = new StringFormat
+                            {
+                                Alignment = StringAlignment.Far,
+                                FormatFlags = StringFormatFlags.NoWrap,
+                                Trimming = StringTrimming.None
+                            };
                             bxBuffer.Graphics.FillRectangle(brush, rectangle);
                             Draw_Scale(ref rectangle);
                             Draw_Highlight(rectangle);
@@ -637,14 +637,9 @@ namespace midsControls
                             layoutRectangle.X = num3 - num;
                             stringFormat.Alignment = StringAlignment.Far;
                         }
-                        if (num5 > 0)
-                        {
-                            bxBuffer.Graphics.DrawString(Strings.Format(pMaxValue / 10f * num5, style), Font, brush, layoutRectangle, stringFormat);
-                        }
-                        else
-                        {
-                            bxBuffer.Graphics.DrawString("0", Font, brush, layoutRectangle, stringFormat);
-                        }
+
+                        bxBuffer.Graphics.DrawString(num5 > 0 ? Strings.Format(pMaxValue / 10f * num5, style) : "0",
+                            Font, brush, layoutRectangle, stringFormat);
                         num3 += num;
                         num5++;
                     }
@@ -659,10 +654,12 @@ namespace midsControls
             SolidBrush brush = new SolidBrush(pBaseColor);
             Pen pen = new Pen(pLineColor, 1f);
             SolidBrush brush2 = new SolidBrush(ForeColor);
-            StringFormat stringFormat = new StringFormat();
-            stringFormat.Alignment = StringAlignment.Far;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-            stringFormat.Trimming = StringTrimming.None;
+            StringFormat stringFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Far,
+                FormatFlags = StringFormatFlags.NoWrap,
+                Trimming = StringTrimming.None
+            };
             checked
             {
                 int width = (int)Math.Round(Bounds.Width * (Items[Index].valueBase / pMaxValue));
@@ -710,10 +707,12 @@ namespace midsControls
             SolidBrush brush = new SolidBrush(pEnhColor);
             Pen pen = new Pen(pLineColor, 1f);
             SolidBrush brush2 = new SolidBrush(ForeColor);
-            StringFormat stringFormat = new StringFormat();
-            stringFormat.Alignment = StringAlignment.Far;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-            stringFormat.Trimming = StringTrimming.None;
+            StringFormat stringFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Far,
+                FormatFlags = StringFormatFlags.NoWrap,
+                Trimming = StringTrimming.None
+            };
             checked
             {
                 int width = (int)Math.Round(Bounds.Width * (Items[Index].valueEnh / pMaxValue));
@@ -793,10 +792,7 @@ namespace midsControls
                 {
                     float valueAtXY = GetValueAtXY(e.X, e.Y);
                     BarClickEventHandler barClickEvent = BarClick;
-                    if (barClickEvent != null)
-                    {
-                        barClickEvent(valueAtXY);
-                    }
+                    barClickEvent?.Invoke(valueAtXY);
                 }
                 else if (!(e.X == oldMouseX & e.Y == oldMouseY))
                 {
@@ -1034,8 +1030,6 @@ namespace midsControls
         private IContainer components;
 
         // Token: 0x0400003D RID: 61
-        [AccessedThroughProperty("tTip")]
-        private ToolTip _tTip;
 
         // Token: 0x0400003E RID: 62
         protected float[] Scales;

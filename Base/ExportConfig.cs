@@ -279,8 +279,7 @@ public class ExportConfig
                 {
                     int index1 = -1;
                     FormatCodes iFc = new FormatCodes();
-                    string dest;
-                    flag = GrabString(out iFc.Name, ref reader) | GrabString(out iFc.Notes, ref reader) | GrabString(out iFc.ColourOn, ref reader) | GrabString(out iFc.ColourOff, ref reader) | GrabString(out iFc.SizeOn, ref reader) | GrabString(out iFc.SizeOff, ref reader) | GrabString(out iFc.BoldOn, ref reader) | GrabString(out iFc.BoldOff, ref reader) | GrabString(out iFc.ItalicOn, ref reader) | GrabString(out iFc.ItalicOff, ref reader) | GrabString(out iFc.UnderlineOn, ref reader) | GrabString(out iFc.UnderlineOff, ref reader) | GrabString(out dest, ref reader);
+                    flag = GrabString(out iFc.Name, ref reader) | GrabString(out iFc.Notes, ref reader) | GrabString(out iFc.ColourOn, ref reader) | GrabString(out iFc.ColourOff, ref reader) | GrabString(out iFc.SizeOn, ref reader) | GrabString(out iFc.SizeOff, ref reader) | GrabString(out iFc.BoldOn, ref reader) | GrabString(out iFc.BoldOff, ref reader) | GrabString(out iFc.ItalicOn, ref reader) | GrabString(out iFc.ItalicOff, ref reader) | GrabString(out iFc.UnderlineOn, ref reader) | GrabString(out iFc.UnderlineOff, ref reader) | GrabString(out var dest, ref reader);
                     iFc.Space = dest.IndexOf(" ", StringComparison.Ordinal) > -1 ? WhiteSpace.Space : WhiteSpace.Tab;
                     if (!flag)
                     {

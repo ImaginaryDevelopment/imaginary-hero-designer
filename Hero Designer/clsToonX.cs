@@ -767,8 +767,7 @@ namespace Hero_Designer
                     if (ret.Effects[index].EffectType == Enums.eEffectType.PowerRedirect && ret.Effects[index].nOverride > -1 & Math.Abs(ret.Effects[index].Probability - 1f) < 0.01 & ret.Effects[index].CanInclude())
                     {
                         int level = ret.Level;
-                        ret = new Power(DatabaseAPI.Database.Power[ret.Effects[index].nOverride]);
-                        ret.Level = level;
+                        ret = new Power(DatabaseAPI.Database.Power[ret.Effects[index].nOverride]) {Level = level};
                         return ret;
                     }
                 }

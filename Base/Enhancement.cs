@@ -34,9 +34,7 @@ public class Enhancement : IEnhancement
     public string UIDSet { get; set; }
     public IPower GetPower()
     {
-        if (_power == null)
-            _power = DatabaseAPI.GetPowerByName("Boosts." + UID + "." + UID);
-        return _power;
+        return _power ?? (_power = DatabaseAPI.GetPowerByName("Boosts." + UID + "." + UID));
     }
 
     void IEnhancement.SetPower(IPower power) => _power = power;

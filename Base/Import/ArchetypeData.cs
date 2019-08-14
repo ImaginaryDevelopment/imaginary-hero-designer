@@ -73,57 +73,59 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.Classes[_index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DisplayName,  Data.DisplayName);
+        message += $"DisplayName: {DatabaseAPI.Database.Classes[_index].DisplayName} => {Data.DisplayName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Hero != Data.Hero)
       {
-        message += string.Format("isHero: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Hero,  Data.Hero);
+        message += $"isHero: {DatabaseAPI.Database.Classes[_index].Hero} => {Data.Hero}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Epic != Data.Epic)
       {
-        message += string.Format("isEpic: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Epic,  Data.Epic);
+        message += $"isEpic: {DatabaseAPI.Database.Classes[_index].Epic} => {Data.Epic}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].DescLong != Data.DescLong)
       {
-        message += string.Format("Description: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DescLong,  Data.DescLong);
+        message += $"Description: {DatabaseAPI.Database.Classes[_index].DescLong} => {Data.DescLong}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].DescShort != Data.DescShort)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DescShort,  Data.DescShort);
+        message += $"Fullname: {DatabaseAPI.Database.Classes[_index].DescShort} => {Data.DescShort}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Origin.Length != Data.Origin.Length)
       {
-        message += string.Format("Origins: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Origin.Length,  Data.Origin.Length);
+        message += $"Origins: {DatabaseAPI.Database.Classes[_index].Origin.Length} => {Data.Origin.Length}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].ClassName != Data.ClassName)
       {
-        message += string.Format("ClassID: {0} => {1}",  DatabaseAPI.Database.Classes[_index].ClassName,  Data.ClassName);
+        message += $"ClassID: {DatabaseAPI.Database.Classes[_index].ClassName} => {Data.ClassName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Column != Data.Column)
       {
-        message += string.Format("ColumnIndex: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Column,  Data.Column);
+        message += $"ColumnIndex: {DatabaseAPI.Database.Classes[_index].Column} => {Data.Column}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower() != Data.PrimaryGroup.ToLower())
       {
-        message += string.Format("Primary: {0} => {1}",  DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower(),  Data.PrimaryGroup.ToLower());
+        message +=
+            $"Primary: {DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower()} => {Data.PrimaryGroup.ToLower()}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower() != Data.SecondaryGroup.ToLower())
       {
-        message += string.Format("Secondary: {0} => {1}",  DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower(),  Data.SecondaryGroup.ToLower());
+        message +=
+            $"Secondary: {DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower()} => {Data.SecondaryGroup.ToLower()}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Playable != Data.Playable)
       {
-        message += string.Format("Playable: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Playable,  Data.Playable);
+        message += $"Playable: {DatabaseAPI.Database.Classes[_index].Playable} => {Data.Playable}";
         flag = true;
       }
       else

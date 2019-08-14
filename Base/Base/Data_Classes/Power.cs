@@ -1618,10 +1618,10 @@ namespace Base.Data_Classes
 
         public void SetMathMag()
         {
-            for (int index = 0; index < Effects.Length; ++index)
+            foreach (var index in Effects)
             {
-                Effects[index].Math_Duration = Effects[index].Duration;
-                Effects[index].Math_Mag = Effects[index].Mag;
+                index.Math_Duration = index.Duration;
+                index.Math_Mag = index.Mag;
             }
         }
 

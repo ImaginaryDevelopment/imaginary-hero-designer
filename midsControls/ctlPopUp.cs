@@ -100,9 +100,9 @@ namespace midsControls
 		{
 			try
 			{
-				if (disposing && components != null)
+				if (disposing)
 				{
-					components.Dispose();
+					components?.Dispose();
 				}
 			}
 			finally
@@ -223,15 +223,8 @@ namespace midsControls
 										stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
 									}
 									SizeF sizeF;
-									if (Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0)
-									{
-										sizeF = myBX.Graphics.MeasureString("Null String", font, layoutRectangle.Size, stringFormat);
-									}
-									else
-									{
-										sizeF = myBX.Graphics.MeasureString(pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
-									}
-									SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
+                                    sizeF = myBX.Graphics.MeasureString(Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0 ? "Null String" : pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
+                                    SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
 									layoutRectangle.Height = sizeF.Height + 1f;
 									layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - pScroll, layoutRectangle.Width, layoutRectangle.Height);
 									myBX.Graphics.DrawString(pData.Sections[i].Content[j].Text, font, brush, layoutRectangle, stringFormat);

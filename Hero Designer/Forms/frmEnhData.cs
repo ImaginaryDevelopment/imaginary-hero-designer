@@ -191,9 +191,8 @@ namespace Hero_Designer
             frmEditPower frmEditPower = new frmEditPower(power);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
                 return;
-            power = new Power(frmEditPower.myPower);
+            power = new Power(frmEditPower.myPower) {IsModified = true};
             // could really use structural equality here, but since we don't have it... we'll mark it as modified just because :/
-            power.IsModified = true;
             int num = power.Effects.Length - 1;
             for (int index = 0; index <= num; ++index)
                 power.Effects[index].PowerFullName = power.FullName;
@@ -442,10 +441,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (myEnh.Effect[selectedIndex].Enhance.ID == 12)
-                        btnEdit.Enabled = true;
-                    else
-                        btnEdit.Enabled = false;
+                    btnEdit.Enabled = myEnh.Effect[selectedIndex].Enhance.ID == 12;
                     gbMod.Enabled = true;
                     cbSched.Enabled = true;
                     switch (myEnh.Effect[selectedIndex].Multiplier.ToString(CultureInfo.InvariantCulture))
@@ -921,10 +917,7 @@ namespace Hero_Designer
             int index = num1 + num2 * 2;
             if (index < myEnh.ClassID.Length & num1 > -1 & num2 > -1)
             {
-                if (gbClass.Width < 100)
-                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].ShortName;
-                else
-                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].Name;
+                lblClass.Text = gbClass.Width < 100 ? DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].ShortName : DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].Name;
             }
             else
                 lblClass.Text = "";

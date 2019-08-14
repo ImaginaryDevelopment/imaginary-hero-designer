@@ -425,9 +425,8 @@ namespace Hero_Designer
                         EnhArray = (IPower[])Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
                         int index = BaseArray.Length - 1;
                         BaseArray[index] = new Power(MidsContext.Character.Powersets[(int)SetType].Powers[iPower]);
-                        EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));
-                        if (EnhArray[index] == null)
-                            EnhArray[index] = new Power(BaseArray[index]);
+                        EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower)) ??
+                                          new Power(BaseArray[index]);
                     }
                 }
             }
@@ -1222,11 +1221,13 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmStats.X;
-            rectangle.Y = MainModule.MidsController.SzFrmStats.Y;
-            rectangle.Width = MainModule.MidsController.SzFrmStats.Width;
-            rectangle.Height = MainModule.MidsController.SzFrmStats.Height;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmStats.X,
+                Y = MainModule.MidsController.SzFrmStats.Y,
+                Width = MainModule.MidsController.SzFrmStats.Width,
+                Height = MainModule.MidsController.SzFrmStats.Height
+            };
             if (rectangle.Width < 1)
                 rectangle.Width = Width;
             if (rectangle.Height < 1)

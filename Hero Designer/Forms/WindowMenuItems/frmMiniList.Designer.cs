@@ -32,22 +32,22 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            this.pInfo = new midsControls.ctlPopUp();
+            this.PInfo = new midsControls.ctlPopUp();
             this.VScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
-            this.pInfo.BXHeight = 2048;
-            this.pInfo.ColumnPosition = 0.5f;
-            this.pInfo.ColumnRight = true;
-            this.pInfo.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-            this.pInfo.InternalPadding = 3;
+            this.PInfo.BXHeight = 2048;
+            this.PInfo.ColumnPosition = 0.5f;
+            this.PInfo.ColumnRight = true;
+            this.PInfo.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
+            this.PInfo.InternalPadding = 3;
 
-            this.pInfo.Location = new System.Drawing.Point(0, 0);
-            this.pInfo.Name = "pInfo";
-            this.pInfo.ScrollY = 0.0f;
-            this.pInfo.SectionPadding = 8;
+            this.PInfo.Location = new System.Drawing.Point(0, 0);
+            this.PInfo.Name = "PInfo";
+            this.PInfo.ScrollY = 0.0f;
+            this.PInfo.SectionPadding = 8;
 
-            this.pInfo.Size = new System.Drawing.Size(230, 227);
-            this.pInfo.TabIndex = 0;
+            this.PInfo.Size = new System.Drawing.Size(230, 227);
+            this.PInfo.TabIndex = 0;
 
             this.VScrollBar1.Location = new System.Drawing.Point(233, 0);
             this.VScrollBar1.Name = "VScrollBar1";
@@ -60,7 +60,7 @@ namespace Hero_Designer
 
             this.ClientSize = new System.Drawing.Size(249, 284);
             this.Controls.Add((System.Windows.Forms.Control)this.VScrollBar1);
-            this.Controls.Add((System.Windows.Forms.Control)this.pInfo);
+            this.Controls.Add((System.Windows.Forms.Control)this.PInfo);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, 0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 

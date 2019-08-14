@@ -326,8 +326,7 @@ namespace Hero_Designer
                     string powerFullName = myFX.PowerFullName;
                     IPower power = myFX.GetPower();
                     IEnhancement enhancement = myFX.Enhancement;
-                    myFX = new Effect(reader);
-                    myFX.PowerFullName = powerFullName;
+                    myFX = new Effect(reader) {PowerFullName = powerFullName};
                     myFX.SetPower(power);
                     myFX.Enhancement = enhancement;
                     DisplayEffectData();

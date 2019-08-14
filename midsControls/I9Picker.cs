@@ -56,10 +56,6 @@ namespace midsControls
 
         IContainer components;
 
-        [AccessedThroughProperty("tTip")]
-        ToolTip _tTip;
-
-
 
         public I9Picker()
         {
@@ -88,11 +84,8 @@ namespace midsControls
             InitializeComponent();
         }
 
-        ToolTip tTip
-        {
-            get => _tTip;
-            set => _tTip = value;
-        }
+        [field: AccessedThroughProperty("tTip")]
+        private ToolTip tTip { get; set; }
 
         public Color Highlight
         {
@@ -148,9 +141,9 @@ namespace midsControls
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -260,9 +253,10 @@ namespace midsControls
                 rectBounds.Y += 2;
                 rectBounds.Height = Height - (rectBounds.Y + _nPad);
                 _myBx.Graphics.DrawRectangle(pen, Dilate(rectBounds));
-                stringFormat = new StringFormat(StringFormatFlags.NoWrap | StringFormatFlags.NoClip);
-                stringFormat.Alignment = StringAlignment.Center;
-                stringFormat.Trimming = StringTrimming.None;
+                stringFormat = new StringFormat(StringFormatFlags.NoWrap | StringFormatFlags.NoClip)
+                {
+                    Alignment = StringAlignment.Center, Trimming = StringTrimming.None
+                };
                 layoutRectangle = new RectangleF(rectBounds.X, rectBounds.Y, rectBounds.Width, rectBounds.Height);
                 _myBx.Graphics.DrawString("LVL", font, brush, layoutRectangle, stringFormat);
             }
@@ -1408,10 +1402,7 @@ namespace midsControls
                 UI.View = new cTracking.cLocation(UI.Initial);
                 if (UI.View.TabID == 0)
                 {
-                    if (_lastTab != 0)
-                        UI.View.TabID = _lastTab;
-                    else
-                        UI.View.TabID = Enums.eType.Normal;
+                    UI.View.TabID = _lastTab != 0 ? _lastTab : Enums.eType.Normal;
                     if (UI.View.TabID == Enums.eType.SetO & UI.SetTypes.Length > _lastSet)
                         UI.View.SetTypeID = _lastSet;
                 }

@@ -105,12 +105,9 @@ namespace Base.Display
         return;
       _isNew = false;
       _isInitialised = false;
-      if (_surface != null)
-        _surface.Dispose();
-      if (_bits != null)
-        _bits.Dispose();
-      if (Cache.Clip != null)
-        Cache.Clip.Dispose();
+      _surface?.Dispose();
+      _bits?.Dispose();
+      Cache.Clip?.Dispose();
       _isDisposed = true;
     }
 
@@ -146,10 +143,8 @@ namespace Base.Display
       }
       else
       {
-        if (_surface != null)
-          _surface.Dispose();
-        if (_bits != null)
-          _bits.Dispose();
+          _surface?.Dispose();
+          _bits?.Dispose();
         _bits = new Bitmap(Cache.Size.Width, Cache.Size.Height, Cache.BitDepth);
         _surface = Graphics.FromImage(_bits);
         Cache.Update(ref _bits);
@@ -165,10 +160,8 @@ namespace Base.Display
     void Initialise(string fileName)
 
     {
-      if (_surface != null)
-        _surface.Dispose();
-      if (_bits != null)
-        _bits.Dispose();
+        _surface?.Dispose();
+        _bits?.Dispose();
       if (!File.Exists(fileName))
       {
         Cache = new PropertyCache
@@ -241,8 +234,7 @@ namespace Base.Display
 
       public void Update(ref Graphics args)
       {
-        if (Clip != null)
-          Clip.Dispose();
+          Clip?.Dispose();
         Clip = args.Clip;
         ClipRect = RectConvert(args.ClipBounds);
       }

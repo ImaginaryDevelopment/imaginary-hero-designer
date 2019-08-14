@@ -197,7 +197,7 @@ public static class DatabaseAPI
             return null;
 
         if (strArray.Length > 2)
-            iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
+            iName = $"{strArray[0]}.{strArray[1]}";
         string key = strArray[0];
         if (!Database.PowersetGroups.ContainsKey(key))
             return null;
@@ -646,8 +646,8 @@ public static class DatabaseAPI
             writer.Write("BEGIN:ARCHETYPES");
             Database.ArchetypeVersion.StoreTo(writer);
             writer.Write(Database.Classes.Length - 1);
-            for (int index = 0; index < Database.Classes.Length; ++index)
-                Database.Classes[index].StoreTo(ref writer);
+            foreach (var index in Database.Classes)
+                index.StoreTo(ref writer);
 
             writer.Write("BEGIN:POWERSETS");
             Database.PowersetVersion.StoreTo(writer);
@@ -661,8 +661,8 @@ public static class DatabaseAPI
             Database.PowerEffectVersion.StoreTo(writer);
             Database.IOAssignmentVersion.StoreTo(writer);
             writer.Write(Database.Power.Length - 1);
-            for (int index = 0; index < Database.Power.Length; ++index)
-                Database.Power[index].StoreTo(ref writer);
+            foreach (var index in Database.Power)
+                index.StoreTo(ref writer);
 
             writer.Write("BEGIN:SUMMONS");
             Database.StoreEntities(writer);
@@ -1665,8 +1665,8 @@ public static class DatabaseAPI
                 if (flag)
                 {
                     power.BuffMode = Enums.eBuffMode.Debuff;
-                    for (int index = 0; index < power.Effects.Length; ++index)
-                        power.Effects[index].buffMode = Enums.eBuffMode.Debuff;
+                    foreach (var index in power.Effects)
+                        index.buffMode = Enums.eBuffMode.Debuff;
                 }
             }
             foreach (IEffect effect in power.Effects)

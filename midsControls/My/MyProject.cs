@@ -106,18 +106,10 @@ namespace midsControls.My
 			// Token: 0x06000011 RID: 17 RVA: 0x000021E8 File Offset: 0x000003E8
 			[DebuggerHidden]
 			private static T Create__Instance__<T>(T instance) where T : new()
-			{
-				T result;
-				if (instance == null)
-				{
-					result = Activator.CreateInstance<T>();
-				}
-				else
-				{
-					result = instance;
-				}
-				return result;
-			}
+            {
+                var result = instance == null ? Activator.CreateInstance<T>() : instance;
+                return result;
+            }
 
 			// Token: 0x06000012 RID: 18 RVA: 0x00002214 File Offset: 0x00000414
 			[DebuggerHidden]

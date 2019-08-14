@@ -11,7 +11,6 @@ namespace Hero_Designer
 {
     public partial class frmReadme : Form
     {
-        ImageButton btnClose;
         PictureBox pbBackground;
         PictureBox pbBottom;
         RichTextBox rtfRead;
@@ -22,11 +21,7 @@ namespace Hero_Designer
         int rtH;
         int rtW;
 
-        internal ImageButton BtnClose
-        {
-            get => btnClose;
-            private set => btnClose = value;
-        }
+        internal ImageButton BtnClose { get; private set; }
 
         public frmReadme(string iFile)
         {

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 public static class Enums
 {
@@ -97,11 +98,7 @@ public static class Enums
     {
         int num1 = 0;
         iStr = iStr.ToUpper();
-        string[] strArray1;
-        if (!iStr.Contains(","))
-            strArray1 = iStr.Split(' ');
-        else
-            strArray1 = StringToArray(iStr);
+        var strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
         string[] strArray2 = strArray1;
         int num2;
         if (strArray2.Length < 1)
@@ -114,11 +111,11 @@ public static class Enums
             Array values = Enum.GetValues(eEnum.GetType());
             for (int index = 0; index < names.Length; ++index)
                 names[index] = names[index].ToUpper();
-            for (int index1 = 0; index1 < strArray2.Length; ++index1)
+            foreach (var index1 in strArray2)
             {
-                if (strArray2[index1].Length > 0)
+                if (index1.Length > 0)
                 {
-                    int index2 = Array.IndexOf(names, strArray2[index1]);
+                    int index2 = Array.IndexOf(names, index1);
                     if (index2 > -1)
                     {
                         if (noFlag)
@@ -136,11 +133,7 @@ public static class Enums
     {
         List<T> objList = new List<T>();
         iStr = iStr.ToUpper();
-        string[] strArray1;
-        if (!iStr.Contains(","))
-            strArray1 = iStr.Split(' ');
-        else
-            strArray1 = StringToArray(iStr);
+        var strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
         string[] strArray2 = strArray1;
         T[] array;
         if (strArray2.Length < 1)
@@ -153,15 +146,7 @@ public static class Enums
             Array values = Enum.GetValues(eEnum);
             for (int index = 0; index < names.Length; ++index)
                 names[index] = names[index].ToUpper();
-            for (int index1 = 0; index1 < strArray2.Length; ++index1)
-            {
-                if (strArray2[index1].Length > 0)
-                {
-                    int index2 = Array.IndexOf(names, strArray2[index1]);
-                    if (index2 > -1)
-                        objList.Add((T)values.GetValue(index2));
-                }
-            }
+            objList.AddRange(from t in strArray2 where t.Length > 0 select Array.IndexOf(names, t) into index2 where index2 > -1 select (T) values.GetValue(index2));
             array = objList.ToArray();
         }
         return array;
@@ -1334,8 +1319,8 @@ public static class Enums
         public void ReSum()
         {
             Sum = 0.0f;
-            for (int index = 0; index < Value.Length; ++index)
-                Sum += Value[index];
+            foreach (var index in Value)
+                Sum += index;
         }
     }
 

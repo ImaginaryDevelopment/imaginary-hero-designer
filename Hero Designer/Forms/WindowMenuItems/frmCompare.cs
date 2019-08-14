@@ -335,13 +335,9 @@ namespace Hero_Designer
             tTip.SetToolTip(chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
         }
 
-        void frmCompare_Move(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
-        {
-            StoreLocation();
-        });
+        void frmCompare_Move(object sender, EventArgs e) => this.EventHandlerWithCatch(StoreLocation);
 
-        void frmCompare_Resize(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
-            StoreLocation());
+        void frmCompare_Resize(object sender, EventArgs e) => this.EventHandlerWithCatch(StoreLocation);
 
         void frmCompare_VisibleChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
             Graph.BackColor = BackColor);

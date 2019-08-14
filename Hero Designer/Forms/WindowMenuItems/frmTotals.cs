@@ -129,7 +129,7 @@ namespace Hero_Designer
 
         void PbClosePaint(object sender, PaintEventArgs e)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             string iStr = "Close";
             Rectangle rectangle = new Rectangle();
@@ -163,7 +163,7 @@ namespace Hero_Designer
 
         void PbTopMostPaint(object sender, PaintEventArgs e)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             int index = 2;
             if (_keepOnTop)
@@ -384,7 +384,7 @@ namespace Hero_Designer
 
         void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             int index = 2;
             if (iState)

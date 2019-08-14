@@ -89,9 +89,7 @@ namespace Hero_Designer
             {
                 MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name));
                 BinaryReader reader = new BinaryReader(memoryStream);
-                myPower = new Power(reader);
-                myPower.GroupName = groupName;
-                myPower.SetName = setName;
+                myPower = new Power(reader) {GroupName = groupName, SetName = setName};
                 SetFullName();
                 refresh_PowerData();
                 reader.Close();
@@ -1654,10 +1652,7 @@ namespace Hero_Designer
         {
             if (sender.GetType() == rbPrPowerB.GetType() && ((Control)sender).Text == "Power B")
                 return;
-            if (rbPrPowerA.Checked)
-                btnPrSetNone.Text = "Set Power A to None";
-            else
-                btnPrSetNone.Text = "Set Power B to None";
+            btnPrSetNone.Text = rbPrPowerA.Checked ? "Set Power A to None" : "Set Power B to None";
             Req_Listing_IndexChanged();
         }
 

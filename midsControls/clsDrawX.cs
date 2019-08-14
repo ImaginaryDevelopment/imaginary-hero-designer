@@ -450,14 +450,7 @@ namespace midsControls
                                 break;
                         }
                         solidBrush = new SolidBrush(Color.Black);
-                        if (iSlot.Virtual)
-                        {
-                            text = iSlot.Name;
-                        }
-                        else
-                        {
-                            text = string.Concat("(", Conversions.ToString(iSlot.Level + 1), ") ", iSlot.Name, " ", text2);
-                        }
+                        text = iSlot.Virtual ? iSlot.Name : string.Concat("(", Conversions.ToString(iSlot.Level + 1), ") ", iSlot.Name, " ", text2);
                         break;
                     case Enums.ePowerState.Open:
                         solidBrush = new SolidBrush(Color.Yellow);
@@ -815,14 +808,7 @@ namespace midsControls
 
         void ResetTarget()
         {
-            if (ScaleValue > 1.125)
-            {
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-            }
-            else
-            {
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-            }
+            bxBuffer.Graphics.TextRenderingHint = ScaleValue > 1.125 ? TextRenderingHint.ClearTypeGridFit : TextRenderingHint.AntiAliasGridFit;
             gTarget.Dispose();
             gTarget = cTarget.CreateGraphics();
             gTarget.CompositingQuality = CompositingQuality.AssumeLinear;

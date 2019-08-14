@@ -31,7 +31,7 @@ public class PowerEntry : ICloneable
 
     public bool Virtual => !Chosen && SubPowers.Length > 0;
 
-    public int SlotCount => Slots == null ? 0 : Slots.Length;
+    public int SlotCount => Slots?.Length ?? 0;
 
     public PowerEntry(IPower power)
     {
@@ -148,10 +148,10 @@ public class PowerEntry : ICloneable
             var power = enh.GetPower();
             if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
             {
-                for (int index2 = 0; index2 < power.Effects.Length; ++index2)
+                foreach (var index2 in power.Effects)
                 {
                     int num;
-                    switch (power.Effects[index2].EffectType)
+                    switch (index2.EffectType)
                     {
                         case Enums.eEffectType.None:
                         case Enums.eEffectType.Damage:
@@ -161,12 +161,12 @@ public class PowerEntry : ICloneable
                             num = 1;
                             break;
                         case Enums.eEffectType.Mez:
-                            if (power.Effects[index2].Mag > 0.0)
+                            if (index2.Mag > 0.0)
                                 goto case Enums.eEffectType.None;
                             else
                                 goto default;
                         default:
-                            num = power.Effects[index2].ToWho == Enums.eToWho.Target ? 1 : 0;
+                            num = index2.ToWho == Enums.eToWho.Target ? 1 : 0;
                             break;
                     }
                     if (num == 0)

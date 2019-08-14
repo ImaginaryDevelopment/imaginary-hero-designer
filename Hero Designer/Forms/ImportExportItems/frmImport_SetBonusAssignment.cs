@@ -120,11 +120,11 @@ namespace Hero_Designer
                 int num2 = DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2] = new EnhancementSet.BonusItem();
-                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2].Name = new string[0];
-                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2].Index = new int[0];
-                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2].AltString = "";
-                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2].Special = -1;
+                    DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus[index2] =
+                        new EnhancementSet.BonusItem
+                        {
+                            Name = new string[0], Index = new int[0], AltString = "", Special = -1
+                        };
                 }
             }
             try

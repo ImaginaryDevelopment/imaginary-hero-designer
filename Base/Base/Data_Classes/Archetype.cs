@@ -175,8 +175,9 @@ namespace Base.Data_Classes
             writer.Write(DescLong);
             writer.Write(ResCap);
             writer.Write(Origin.Length - 1);
-            for (int index = 0; index < Origin.Length; ++index)
-                writer.Write(Origin[index]);
+            foreach (var index in Origin)
+                writer.Write(index);
+
             writer.Write(ClassName);
             writer.Write((int)ClassType);
             writer.Write(Column);

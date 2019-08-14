@@ -60,27 +60,27 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.EnhancementSets[Index].Uid != Data.Uid)
       {
-        message += string.Format("Uid: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].Uid,  Data.Uid);
+        message += $"Uid: {DatabaseAPI.Database.EnhancementSets[Index].Uid} => {Data.Uid}";
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[Index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].DisplayName,  Data.DisplayName);
+        message += $"DisplayName: {DatabaseAPI.Database.EnhancementSets[Index].DisplayName} => {Data.DisplayName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[Index].LevelMin != Data.LevelMin)
       {
-        message += string.Format("LevelMin: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].LevelMin,  Data.LevelMin);
+        message += $"LevelMin: {DatabaseAPI.Database.EnhancementSets[Index].LevelMin} => {Data.LevelMin}";
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[Index].LevelMax != Data.LevelMax)
       {
-        message += string.Format("LevelMax: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].LevelMax,  Data.LevelMax);
+        message += $"LevelMax: {DatabaseAPI.Database.EnhancementSets[Index].LevelMax} => {Data.LevelMax}";
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[Index].ShortName != Data.ShortName)
       {
-        message += string.Format("ShortName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].ShortName,  Data.ShortName);
+        message += $"ShortName: {DatabaseAPI.Database.EnhancementSets[Index].ShortName} => {Data.ShortName}";
         flag = true;
       }
       else

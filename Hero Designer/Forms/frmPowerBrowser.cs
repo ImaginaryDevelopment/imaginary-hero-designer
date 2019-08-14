@@ -66,8 +66,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
             database.Classes = archetypeArray;
-            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
-            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
+            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] =
+                new Archetype(frmEditArchetype.MyAT) {IsNew = true};
             UpdateLists(lvGroup.Items.Count - 1);
         }
 
@@ -93,8 +93,8 @@ namespace Hero_Designer
                     IDatabase database = DatabaseAPI.Database;
                     Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
                     database.Classes = archetypeArray;
-                    DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
-                    DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
+                    DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] =
+                        new Archetype(frmEditArchetype.MyAT) {IsNew = true};
                     UpdateLists(lvGroup.Items.Count - 1);
                 }
             }
@@ -177,8 +177,7 @@ namespace Hero_Designer
                 frmEditArchetype frmEditArchetype = new frmEditArchetype(ref DatabaseAPI.Database.Classes[index]);
                 if (frmEditArchetype.ShowDialog() == DialogResult.OK)
                 {
-                    DatabaseAPI.Database.Classes[index] = new Archetype(frmEditArchetype.MyAT);
-                    DatabaseAPI.Database.Classes[index].IsModified = true;
+                    DatabaseAPI.Database.Classes[index] = new Archetype(frmEditArchetype.MyAT) {IsModified = true};
                     if (DatabaseAPI.Database.Classes[index].ClassName != className)
                         RefreshLists();
                 }
@@ -244,8 +243,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
             database.Power = powerArray;
-            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
-            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
+            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] =
+                new Power(frmEditPower.myPower) {IsNew = true};
             UpdateLists();
         }
 
@@ -267,8 +266,8 @@ namespace Hero_Designer
                     IDatabase database = DatabaseAPI.Database;
                     IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
                     database.Power = powerArray;
-                    DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
-                    DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
+                    DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] =
+                        new Power(frmEditPower.myPower) {IsNew = true};
                     UpdateLists();
                 }
             }
@@ -354,8 +353,7 @@ namespace Hero_Designer
                 frmEditPower frmEditPower = new frmEditPower(DatabaseAPI.Database.Power[index1]);
                 if (frmEditPower.ShowDialog() == DialogResult.OK)
                 {
-                    DatabaseAPI.Database.Power[index1] = new Power(frmEditPower.myPower);
-                    DatabaseAPI.Database.Power[index1].IsModified = true;
+                    DatabaseAPI.Database.Power[index1] = new Power(frmEditPower.myPower) {IsModified = true};
                     if (text != DatabaseAPI.Database.Power[index1].FullName)
                     {
                         int num2 = DatabaseAPI.Database.Power[index1].Effects.Length - 1;
@@ -487,9 +485,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             IPowerset[] powersetArray = (IPowerset[])Utils.CopyArray(database.Powersets, new IPowerset[DatabaseAPI.Database.Powersets.Length + 1]);
             database.Powersets = powersetArray;
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] = new Powerset(frmEditPowerset.myPS);
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].IsNew = true;
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].nID = DatabaseAPI.Database.Powersets.Length - 1;
+            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] =
+                new Powerset(frmEditPowerset.myPS) {IsNew = true, nID = DatabaseAPI.Database.Powersets.Length - 1};
             UpdateLists();
         }
 
@@ -524,8 +521,7 @@ namespace Hero_Designer
                     int num3 = DatabaseAPI.Database.Powersets.Length - 1;
                     for (int index3 = 0; index3 <= num3; ++index3)
                     {
-                        DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]);
-                        DatabaseAPI.Database.Powersets[index3].nID = index3;
+                        DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]) {nID = index3};
                     }
                     int Powerset = -1;
                     if (lvSet.Items.Count > 0)
@@ -559,8 +555,7 @@ namespace Hero_Designer
                 frmEditPowerset frmEditPowerset = new frmEditPowerset(ref powerset);
                 if (frmEditPowerset.ShowDialog() == DialogResult.OK)
                 {
-                    DatabaseAPI.Database.Powersets[Powerset] = new Powerset(frmEditPowerset.myPS);
-                    DatabaseAPI.Database.Powersets[Powerset].IsModified = true;
+                    DatabaseAPI.Database.Powersets[Powerset] = new Powerset(frmEditPowerset.myPS) {IsModified = true};
                     if (DatabaseAPI.Database.Powersets[Powerset].FullName != fullName)
                     {
                         BusyMsg("Re-Indexing...");

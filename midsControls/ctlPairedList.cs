@@ -26,11 +26,12 @@ namespace midsControls
         // Token: 0x1700003D RID: 61
         // (get) Token: 0x060000DA RID: 218 RVA: 0x000095E0 File Offset: 0x000077E0
         // (set) Token: 0x060000DB RID: 219 RVA: 0x000095F8 File Offset: 0x000077F8
+        [field: AccessedThroughProperty("myTip")]
         public virtual ToolTip myTip
         {
-            get => _myTip;
+            get;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set => _myTip = value;
+            set;
         }
 
         // Token: 0x1700003E RID: 62
@@ -180,9 +181,9 @@ namespace midsControls
         // Token: 0x060000F4 RID: 244 RVA: 0x000098D8 File Offset: 0x00007AD8
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -441,10 +442,7 @@ namespace midsControls
                 if (num3 > -1)
                 {
                     ItemClickEventHandler itemClickEvent = ItemClick;
-                    if (itemClickEvent != null)
-                    {
-                        itemClickEvent(num3, e.Button);
-                    }
+                    itemClickEvent?.Invoke(num3, e.Button);
                 }
             }
         }
@@ -576,8 +574,6 @@ namespace midsControls
         private IContainer components;
 
         // Token: 0x04000077 RID: 119
-        [AccessedThroughProperty("myTip")]
-        private ToolTip _myTip;
 
         // Token: 0x02000010 RID: 16
         public class ItemPair

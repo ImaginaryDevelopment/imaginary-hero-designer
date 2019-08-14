@@ -470,8 +470,10 @@ namespace Hero_Designer
                 for (int index = num; index <= nMax; ++index)
                 {
                     DatabaseAPI.Database.Recipes[RecipeID()].Item = (Recipe.RecipeEntry[])Utils.CopyArray(DatabaseAPI.Database.Recipes[RecipeID()].Item, new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length + 1]);
-                    DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 2]);
-                    DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level = index;
+                    DatabaseAPI.Database.Recipes[RecipeID()]
+                            .Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1] =
+                        new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[RecipeID()]
+                            .Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 2]) {Level = index};
                     DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].CraftCost = GetCostByLevel(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level);
                 }
                 ShowRecipeInfo(RecipeID());

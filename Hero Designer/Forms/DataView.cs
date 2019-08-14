@@ -111,10 +111,7 @@ namespace Hero_Designer
                 VillainColour = value;
                 if (MidsContext.Config.DisableVillainColours)
                     VillainColour = false;
-                if (VillainColour)
-                    pnlInfo.BackColor = Color.Maroon;
-                else
-                    pnlInfo.BackColor = Color.Navy;
+                pnlInfo.BackColor = VillainColour ? Color.Maroon : Color.Navy;
                 DoPaint();
             }
         }
@@ -679,15 +676,15 @@ namespace Hero_Designer
             }
             info_DataList.AddItem(FastItem(ShortStr("Duration", "Durtn"), s1, s2, "s"));
             info_DataList.AddItem(FastItem(ShortStr("Range", "Range"), pBase.Range, pEnh.Range, string.Empty));
-            if (pBase.Arc > 0)
-                info_DataList.AddItem(FastItem("Arc", pBase.Arc, pEnh.Arc, "°"));
-            else
-                info_DataList.AddItem(FastItem("Radius", pBase.Radius, pEnh.Radius, string.Empty));
+            info_DataList.AddItem(pBase.Arc > 0
+                ? FastItem("Arc", pBase.Arc, pEnh.Arc, "°")
+                : FastItem("Radius", pBase.Radius, pEnh.Radius, string.Empty));
             info_DataList.AddItem(FastItem(ShortStr("Cast Time", "Cast"), pBase.CastTime, pEnh.CastTime, "s", false, true, false, false, -1, 3));
-            if (pBase.PowerType == Enums.ePowerType.Toggle)
-                info_DataList.AddItem(FastItem(ShortStr("Activate", "Act"), pBase.ActivatePeriod, pEnh.ActivatePeriod, "s", "The effects of this toggle power are applied at this interval."));
-            else
-                info_DataList.AddItem(FastItem(ShortStr("Interrupt", "Intrpt"), pBase.InterruptTime, pEnh.InterruptTime, "s", "After activating this power, it can be interrupted for this amount of time."));
+            info_DataList.AddItem(pBase.PowerType == Enums.ePowerType.Toggle
+                ? FastItem(ShortStr("Activate", "Act"), pBase.ActivatePeriod, pEnh.ActivatePeriod, "s",
+                    "The effects of this toggle power are applied at this interval.")
+                : FastItem(ShortStr("Interrupt", "Intrpt"), pBase.InterruptTime, pEnh.InterruptTime, "s",
+                    "After activating this power, it can be interrupted for this amount of time."));
             int num3 = 2;
             if (num3 > 1 && durationEffectId > -1 && pBase.Effects[durationEffectId].EffectType == Enums.eEffectType.Mez & pBase.Effects[durationEffectId].MezType != Enums.eMez.Taunt)
             {
@@ -1137,8 +1134,8 @@ namespace Hero_Designer
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
-                components.Dispose();
+            if (disposing)
+                components?.Dispose();
             try
             {
                 bxFlip?.Dispose();
@@ -1288,10 +1285,16 @@ namespace Hero_Designer
                                 break;
                             }
                         }
-                        if (flag)
-                            iList.AddItem(new ctlPairedList.ItemPair("Defiance:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, false, false, pEnh.Effects[shortFxArray[index1].Index[0]].BuildEffectString(false, "Damage Buff (Defiance)")));
-                        else
-                            iList.AddItem(new ctlPairedList.ItemPair("DmgBuff:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, pEnh.Effects[shortFxArray[index1].Index[0]].SpecialCase == Enums.eSpecialCase.Combo, false, Power.SplitFXGroupTip(ref shortFxArray[index1], ref pEnh, false)));
+
+                        iList.AddItem(flag
+                            ? new ctlPairedList.ItemPair("Defiance:",
+                                Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, false, false,
+                                pEnh.Effects[shortFxArray[index1].Index[0]]
+                                    .BuildEffectString(false, "Damage Buff (Defiance)"))
+                            : new ctlPairedList.ItemPair("DmgBuff:",
+                                Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false,
+                                pEnh.Effects[shortFxArray[index1].Index[0]].SpecialCase == Enums.eSpecialCase.Combo,
+                                false, Power.SplitFXGroupTip(ref shortFxArray[index1], ref pEnh, false)));
                         if (pEnh.Effects[shortFxArray[index1].Index[0]].isEnhancementEffect)
                             iList.SetUnique();
                     }
@@ -1668,10 +1671,7 @@ namespace Hero_Designer
                 bool flag = shortFx2.Present & pBase.AffectsTarget(Enums.eEffectType.SpeedFlying) | shortFx3.Present & pBase.AffectsTarget(Enums.eEffectType.JumpHeight) | shortFx4.Present & pBase.AffectsTarget(Enums.eEffectType.SpeedJumping) | shortFx5.Present & pBase.AffectsTarget(Enums.eEffectType.SpeedRunning);
                 if (iList.ItemCount == 0)
                 {
-                    if (flag)
-                        iLabel.Text = "Movement (Target)";
-                    else
-                        iLabel.Text = "Movement (Self)";
+                    iLabel.Text = flag ? "Movement (Target)" : "Movement (Self)";
                 }
                 if (shortFx1.Present)
                     iList.AddItem(FastItem("Fly", shortFx1, shortFx1, string.Empty, shortFx1));
@@ -1849,10 +1849,7 @@ namespace Hero_Designer
             float[] def1 = pBase.GetDef(buffDebuff);
             float[] def2 = pEnh.GetDef(buffDebuff);
             string[] names = Enum.GetNames(eDamage.GetType());
-            if (pBase.AffectsTarget(Enums.eEffectType.Defense))
-                fx_lblHead1.Text = "Defence (Target)";
-            else
-                fx_lblHead1.Text = "Defence (Self)";
+            fx_lblHead1.Text = pBase.AffectsTarget(Enums.eEffectType.Defense) ? "Defence (Target)" : "Defence (Self)";
             fx_List1.ValueWidth = 55;
             int num2 = def1.Length - 1;
             for (int index = 0; index <= num2; ++index)
@@ -1957,10 +1954,7 @@ namespace Hero_Designer
                 label = fx_lblHead2;
                 ctlPairedList = fx_List2;
             }
-            if (pBase.AffectsTarget(Enums.eEffectType.Resistance))
-                label.Text = "Resistance (Target)";
-            else
-                label.Text = "Resistance (Self)";
+            label.Text = pBase.AffectsTarget(Enums.eEffectType.Resistance) ? "Resistance (Target)" : "Resistance (Self)";
             fx_List2.ValueWidth = 55;
             Enums.ShortFX shortFx = new Enums.ShortFX();
             shortFx.Multiply();
@@ -2008,15 +2002,6 @@ namespace Hero_Designer
             Enums.eDamage iSub8 = Enums.eDamage.Toxic;
             shortFx.Assign(pEnh.GetDamageMagSum(Enums.eEffectType.Resistance, iSub8, true));
             ctlPairedList.AddItem(FastItem(names[(int)iSub8], res1[(int)iSub8], res2[(int)iSub8], "%", false, true, false, false, shortFx));
-        }
-
-        static ctlPairedList.ItemPair FastItem(
-          string Title,
-          float s1,
-          float s2,
-          string Suffix)
-        {
-            return FastItem(Title, s1, s2, Suffix, false, false, false, false, -1, -1);
         }
 
         static ctlPairedList.ItemPair FastItem(
@@ -2149,12 +2134,12 @@ namespace Hero_Designer
           float s1,
           float s2,
           string Suffix,
-          bool SkipBase,
-          bool AlwaysShow,
-          bool isChance,
-          bool isSpecial,
-          int TagID,
-          int maxDecimal)
+          bool SkipBase = false,
+          bool AlwaysShow = false,
+          bool isChance = false,
+          bool isSpecial = false,
+          int TagID = -1,
+          int maxDecimal = -1)
         {
             string iValue = maxDecimal < 0 ? Utilities.FixDP(s2) + Suffix : Utilities.FixDP(s2, maxDecimal) + Suffix;
             ctlPairedList.ItemPair itemPair;
@@ -3103,17 +3088,14 @@ namespace Hero_Designer
 
         {
             FloatChangeEventHandler floatChange = FloatChange;
-            if (floatChange == null)
-                return;
-            floatChange();
+            floatChange?.Invoke();
         }
 
         void lblLock_Click(object sender, EventArgs e)
 
         {
             Unlock_ClickEventHandler unlockClick = Unlock_Click;
-            if (unlockClick != null)
-                unlockClick();
+            unlockClick?.Invoke();
             lblLock.Visible = false;
             pnlTabs.Select();
         }
@@ -3775,8 +3757,7 @@ namespace Hero_Designer
             {
                 Location = point2;
                 MovedEventHandler moved = Moved;
-                if (moved != null)
-                    moved();
+                moved?.Invoke();
             }
         }
 

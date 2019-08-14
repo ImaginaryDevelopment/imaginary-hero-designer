@@ -269,9 +269,9 @@ namespace midsControls
         {
             try
             {
-                if (disposing && Components != null)
+                if (disposing)
                 {
-                    Components.Dispose();
+                    Components?.Dispose();
                 }
             }
             finally
@@ -542,14 +542,7 @@ namespace midsControls
                         InitBuffer();
                         if (!(Width == 0 | Height == 0))
                         {
-                            if (Expanded)
-                            {
-                                bxBuffer.Graphics.Clear(Color.Black);
-                            }
-                            else
-                            {
-                                bxBuffer.Graphics.Clear(BackColor);
-                            }
+                            bxBuffer.Graphics.Clear(Expanded ? Color.Black : BackColor);
                             int scrollOffset = ScrollOffset;
                             int num = Items.Length - 1;
                             for (int i = scrollOffset; i <= num; i++)
@@ -1124,25 +1117,16 @@ namespace midsControls
                                 Draw();
                             }
                             emptyHoverEvent = EmptyHover;
-                            if (emptyHoverEvent != null)
-                            {
-                                emptyHoverEvent();
-                            }
+                            emptyHoverEvent?.Invoke();
                             goto IL_3EA;
                         case eMouseTarget.ExpandButton:
                             HoverIndex = -1;
                             emptyHoverEvent = EmptyHover;
-                            if (emptyHoverEvent != null)
-                            {
-                                emptyHoverEvent();
-                            }
+                            emptyHoverEvent?.Invoke();
                             goto IL_3EA;
                     }
                     emptyHoverEvent = EmptyHover;
-                    if (emptyHoverEvent != null)
-                    {
-                        emptyHoverEvent();
-                    }
+                    emptyHoverEvent?.Invoke();
                 }
                 else if (e.Button == MouseButtons.None)
                 {
@@ -1165,10 +1149,7 @@ namespace midsControls
                         Draw();
                     }
                     EmptyHoverEventHandler emptyHoverEvent = EmptyHover;
-                    if (emptyHoverEvent != null)
-                    {
-                        emptyHoverEvent();
-                    }
+                    emptyHoverEvent?.Invoke();
                 }
             IL_3EA:
                 if (flag)

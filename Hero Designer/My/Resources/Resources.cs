@@ -33,14 +33,8 @@ namespace Hero_Designer.My.Resources
         internal static Bitmap Gradient => (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static ResourceManager ResourceManager
-        {
-            get
-            {
-                if (ReferenceEquals(resourceMan, null))
-                    resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Resources).Assembly);
-                return resourceMan;
-            }
-        }
+        internal static ResourceManager ResourceManager =>
+            resourceMan ??
+            (resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Resources).Assembly));
     }
 }

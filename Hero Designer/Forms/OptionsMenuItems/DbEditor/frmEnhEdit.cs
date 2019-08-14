@@ -69,9 +69,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
             database.Enhancements = enhancementArray;
-            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = new Enhancement(frmEnhData.myEnh);
-            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;
-            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].StaticIndex = -1;
+            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] =
+                new Enhancement(frmEnhData.myEnh) {IsNew = true, StaticIndex = -1};
             ImageUpdate();
             AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
         }
@@ -92,9 +91,8 @@ namespace Hero_Designer
                 IDatabase database = DatabaseAPI.Database;
                 IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
                 database.Enhancements = enhancementArray;
-                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = new Enhancement(frmEnhData.myEnh);
-                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;
-                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].StaticIndex = -1;
+                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] =
+                    new Enhancement(frmEnhData.myEnh) {IsNew = true, StaticIndex = -1};
                 ImageUpdate();
                 AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
             }
@@ -164,8 +162,8 @@ namespace Hero_Designer
             int num = (int)frmEnhData.ShowDialog();
             if (frmEnhData.DialogResult == DialogResult.OK)
             {
-                DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]] = new Enhancement(frmEnhData.myEnh);
-                DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]].IsModified = true;
+                DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]] =
+                    new Enhancement(frmEnhData.myEnh) {IsModified = true};
                 ImageUpdate();
                 UpdateListItem(selectedIndex);
             }

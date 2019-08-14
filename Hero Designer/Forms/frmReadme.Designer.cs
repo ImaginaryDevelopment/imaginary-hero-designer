@@ -33,7 +33,7 @@ namespace Hero_Designer
             this.rtfRead = new System.Windows.Forms.RichTextBox();
             this.pbBackground = new System.Windows.Forms.PictureBox();
             this.pbBottom = new System.Windows.Forms.PictureBox();
-            this.btnClose = new midsControls.ImageButton();
+            this.BtnClose = new midsControls.ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottom)).BeginInit();
             this.SuspendLayout();
@@ -76,26 +76,26 @@ namespace Hero_Designer
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(143)))), ((int)(((byte)(233)))));
-            this.btnClose.Checked = false;
-            this.btnClose.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnClose.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-            this.btnClose.Location = new System.Drawing.Point(268, 449);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(105, 22);
-            this.btnClose.TabIndex = 100;
-            this.btnClose.TextOff = "Close";
-            this.btnClose.TextOn = "Alt Text";
-            this.btnClose.Toggle = false;
-            this.btnClose.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(this.btnClose_ButtonClicked);
-            this.btnClose.Load += new System.EventHandler(this.btnClose_Load);
+            this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(143)))), ((int)(((byte)(233)))));
+            this.BtnClose.Checked = false;
+            this.BtnClose.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.BtnClose.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
+            this.BtnClose.Location = new System.Drawing.Point(268, 449);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(105, 22);
+            this.BtnClose.TabIndex = 100;
+            this.BtnClose.TextOff = "Close";
+            this.BtnClose.TextOn = "Alt Text";
+            this.BtnClose.Toggle = false;
+            this.BtnClose.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(this.btnClose_ButtonClicked);
+            this.BtnClose.Load += new System.EventHandler(this.btnClose_Load);
             // 
             // frmReadme
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(642, 480);
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.rtfRead);
             this.Controls.Add(this.pbBottom);
             this.Controls.Add(this.pbBackground);

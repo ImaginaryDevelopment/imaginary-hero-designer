@@ -58,7 +58,7 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                while (ex.InnerException != null && ex.InnerException.Message != null)
+                while (ex.InnerException?.Message != null)
                     ex = ex.InnerException;
                 MessageBox.Show(string.IsNullOrWhiteSpace(titlingOpt) ? ex.Message : (titlingOpt + ":" + ex.Message), captionOpt ?? ex.GetType().Name);
             }
