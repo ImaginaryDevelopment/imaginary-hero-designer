@@ -18,11 +18,8 @@ namespace midsControls
 		// (set) Token: 0x06000115 RID: 277 RVA: 0x0000A5BC File Offset: 0x000087BC
 		public int BXHeight
 		{
-			get
-			{
-				return pBXHeight;
-			}
-			set
+			get => pBXHeight;
+            set
 			{
 				pBXHeight = value;
 				NewBX();
@@ -34,11 +31,8 @@ namespace midsControls
 		// (set) Token: 0x06000117 RID: 279 RVA: 0x0000A5E8 File Offset: 0x000087E8
 		public float ColumnPosition
 		{
-			get
-			{
-				return pColumnPosition;
-			}
-			set
+			get => pColumnPosition;
+            set
 			{
 				pColumnPosition = value;
 				Draw();
@@ -50,11 +44,8 @@ namespace midsControls
 		// (set) Token: 0x06000119 RID: 281 RVA: 0x0000A614 File Offset: 0x00008814
 		public bool ColumnRight
 		{
-			get
-			{
-				return pRightAlignColumn;
-			}
-			set
+			get => pRightAlignColumn;
+            set
 			{
 				pRightAlignColumn = value;
 				Draw();
@@ -66,11 +57,8 @@ namespace midsControls
 		// (set) Token: 0x0600011B RID: 283 RVA: 0x0000A640 File Offset: 0x00008840
 		public int SectionPadding
 		{
-			get
-			{
-				return pSectionPadding;
-			}
-			set
+			get => pSectionPadding;
+            set
 			{
 				pSectionPadding = value;
 				Draw();
@@ -82,11 +70,8 @@ namespace midsControls
 		// (set) Token: 0x0600011D RID: 285 RVA: 0x0000A66C File Offset: 0x0000886C
 		public int InternalPadding
 		{
-			get
-			{
-				return pInternalPadding;
-			}
-			set
+			get => pInternalPadding;
+            set
 			{
 				pInternalPadding = value;
 				Draw();
@@ -98,11 +83,8 @@ namespace midsControls
 		// (set) Token: 0x0600011F RID: 287 RVA: 0x0000A698 File Offset: 0x00008898
 		public float ScrollY
 		{
-			get
-			{
-				return pScroll;
-			}
-			set
+			get => pScroll;
+            set
 			{
 				if (pScroll != value)
 				{

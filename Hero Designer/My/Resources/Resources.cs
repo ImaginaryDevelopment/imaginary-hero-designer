@@ -26,23 +26,11 @@ namespace Hero_Designer.My.Resources
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static CultureInfo Culture
         {
-            get
-            {
-                return resourceCulture;
-            }
-            set
-            {
-                resourceCulture = value;
-            }
+            get => resourceCulture;
+            set => resourceCulture = value;
         }
 
-        internal static Bitmap Gradient
-        {
-            get
-            {
-                return (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
-            }
-        }
+        internal static Bitmap Gradient => (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static ResourceManager ResourceManager

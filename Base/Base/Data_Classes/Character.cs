@@ -52,13 +52,7 @@ namespace Base.Data_Classes
         Build[] Builds { get; set; }
 
 
-        public Build CurrentBuild
-        {
-            get
-            {
-                return Builds.Length > 0 ? Builds[0] : null;
-            }
-        }
+        public Build CurrentBuild => Builds.Length > 0 ? Builds[0] : null;
 
         public Archetype Archetype
         {
@@ -86,18 +80,13 @@ namespace Base.Data_Classes
         {
             get
             {
-                if (!_completeCache.HasValue)
-                {
-                    int num1 = CurrentBuild.TotalSlotsAvailable - CurrentBuild.SlotsPlaced;
-                    int num2 = CurrentBuild.LastPower + 1 - CurrentBuild.PowersPlaced;
-                    _completeCache = num1 < 1 && num2 < 1;
-                }
+                if (_completeCache.HasValue) return _completeCache.GetValueOrDefault();
+                int num1 = CurrentBuild.TotalSlotsAvailable - CurrentBuild.SlotsPlaced;
+                int num2 = CurrentBuild.LastPower + 1 - CurrentBuild.PowersPlaced;
+                _completeCache = num1 < 1 && num2 < 1;
                 return _completeCache.GetValueOrDefault();
             }
-            set
-            {
-                _completeCache = value ? _completeCache : new bool?();
-            }
+            set => _completeCache = value ? _completeCache : new bool?();
         }
 
         public int ActiveComboLevel { get; private set; }

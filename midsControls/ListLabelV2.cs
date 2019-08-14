@@ -24,13 +24,7 @@ namespace midsControls
         public event EmptyHoverEventHandler EmptyHover;
         public event ExpandChangedEventHandler ExpandChanged;
 
-        public bool isExpanded
-        {
-            get
-            {
-                return Expanded;
-            }
-        }
+        public bool isExpanded => Expanded;
 
         public Color TextColor
         {
@@ -86,10 +80,7 @@ namespace midsControls
 
         public override Color BackColor
         {
-            get
-            {
-                return bgColor;
-            }
+            get => bgColor;
             set
             {
                 bgColor = value;
@@ -99,10 +90,7 @@ namespace midsControls
 
         public Color HoverColor
         {
-            get
-            {
-                return hvrColor;
-            }
+            get => hvrColor;
             set
             {
                 hvrColor = value;
@@ -172,10 +160,7 @@ namespace midsControls
 
         public bool Scrollable
         {
-            get
-            {
-                return canScroll;
-            }
+            get => canScroll;
             set
             {
                 canScroll = value;
@@ -209,10 +194,7 @@ namespace midsControls
         // (set) Token: 0x060001EB RID: 491 RVA: 0x00011728 File Offset: 0x0000F928
         public int MaxHeight
         {
-            get
-            {
-                return expandMaxY;
-            }
+            get => expandMaxY;
             set
             {
                 if (value >= szNormal.Height)
@@ -231,10 +213,7 @@ namespace midsControls
         // (set) Token: 0x060001ED RID: 493 RVA: 0x00011788 File Offset: 0x0000F988
         public int ScrollBarWidth
         {
-            get
-            {
-                return ScrollWidth;
-            }
+            get => ScrollWidth;
             set
             {
                 if (value > 0 & value < Width / 2.0)
@@ -251,10 +230,7 @@ namespace midsControls
         // (set) Token: 0x060001EF RID: 495 RVA: 0x000117E8 File Offset: 0x0000F9E8
         public Color ScrollBarColor
         {
-            get
-            {
-                return scBarColor;
-            }
+            get => scBarColor;
             set
             {
                 scBarColor = value;
@@ -267,10 +243,7 @@ namespace midsControls
         // (set) Token: 0x060001F1 RID: 497 RVA: 0x00011814 File Offset: 0x0000FA14
         public Color ScrollButtonColor
         {
-            get
-            {
-                return scButtonColor;
-            }
+            get => scButtonColor;
             set
             {
                 scButtonColor = value;
@@ -280,33 +253,15 @@ namespace midsControls
 
         // Token: 0x17000073 RID: 115
         // (get) Token: 0x060001F2 RID: 498 RVA: 0x00011828 File Offset: 0x0000FA28
-        public int ContentHeight
-        {
-            get
-            {
-                return Height;
-            }
-        }
+        public int ContentHeight => Height;
 
         // Token: 0x17000074 RID: 116
         // (get) Token: 0x060001F3 RID: 499 RVA: 0x00011840 File Offset: 0x0000FA40
-        public int DesiredHeight
-        {
-            get
-            {
-                return checked(GetTotalLineCount() * LineHeight);
-            }
-        }
+        public int DesiredHeight => checked(GetTotalLineCount() * LineHeight);
 
         // Token: 0x17000075 RID: 117
         // (get) Token: 0x060001F4 RID: 500 RVA: 0x00011860 File Offset: 0x0000FA60
-        public int ActualLineHeight
-        {
-            get
-            {
-                return LineHeight;
-            }
-        }
+        public int ActualLineHeight => LineHeight;
 
         // Token: 0x060001F5 RID: 501 RVA: 0x00011878 File Offset: 0x0000FA78
         [DebuggerNonUserCode]
@@ -1484,14 +1439,8 @@ namespace midsControls
             // (set) Token: 0x06000215 RID: 533 RVA: 0x0001409C File Offset: 0x0001229C
             public string Text
             {
-                get
-                {
-                    return Txt;
-                }
-                set
-                {
-                    Txt = value;
-                }
+                get => Txt;
+                set => Txt = value;
             }
 
             // Token: 0x17000077 RID: 119
@@ -1499,14 +1448,8 @@ namespace midsControls
             // (set) Token: 0x06000217 RID: 535 RVA: 0x000140C0 File Offset: 0x000122C0
             public LLItemState ItemState
             {
-                get
-                {
-                    return State;
-                }
-                set
-                {
-                    State = value;
-                }
+                get => State;
+                set => State = value;
             }
 
             // Token: 0x17000078 RID: 120
@@ -1514,10 +1457,7 @@ namespace midsControls
             // (set) Token: 0x06000219 RID: 537 RVA: 0x000140EC File Offset: 0x000122EC
             public bool Bold
             {
-                get
-                {
-                    return (FontFlags & LLFontFlags.Bold) > LLFontFlags.Normal;
-                }
+                get => (FontFlags & LLFontFlags.Bold) > LLFontFlags.Normal;
                 set
                 {
                     checked
@@ -1542,10 +1482,7 @@ namespace midsControls
             // (set) Token: 0x0600021B RID: 539 RVA: 0x00014170 File Offset: 0x00012370
             public bool Italic
             {
-                get
-                {
-                    return (FontFlags & LLFontFlags.Italic) > LLFontFlags.Normal;
-                }
+                get => (FontFlags & LLFontFlags.Italic) > LLFontFlags.Normal;
                 set
                 {
                     checked
@@ -1570,10 +1507,7 @@ namespace midsControls
             // (set) Token: 0x0600021D RID: 541 RVA: 0x000141F4 File Offset: 0x000123F4
             public bool Underline
             {
-                get
-                {
-                    return (FontFlags & LLFontFlags.Underline) > LLFontFlags.Normal;
-                }
+                get => (FontFlags & LLFontFlags.Underline) > LLFontFlags.Normal;
                 set
                 {
                     checked
@@ -1598,10 +1532,7 @@ namespace midsControls
             // (set) Token: 0x0600021F RID: 543 RVA: 0x00014278 File Offset: 0x00012478
             public bool Strikethrough
             {
-                get
-                {
-                    return (FontFlags & LLFontFlags.Strikethrough) > LLFontFlags.Normal;
-                }
+                get => (FontFlags & LLFontFlags.Strikethrough) > LLFontFlags.Normal;
                 set
                 {
                     checked
@@ -1626,14 +1557,8 @@ namespace midsControls
             // (set) Token: 0x06000221 RID: 545 RVA: 0x000142F4 File Offset: 0x000124F4
             public LLTextAlign TextAlign
             {
-                get
-                {
-                    return Alignment;
-                }
-                set
-                {
-                    Alignment = value;
-                }
+                get => Alignment;
+                set => Alignment = value;
             }
 
             // Token: 0x06000222 RID: 546 RVA: 0x00014300 File Offset: 0x00012500

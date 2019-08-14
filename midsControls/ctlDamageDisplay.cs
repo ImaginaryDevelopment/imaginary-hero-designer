@@ -15,10 +15,7 @@ namespace midsControls
 
         public int PaddingV
         {
-            get
-            {
-                return pvPadding;
-            }
+            get => pvPadding;
             set
             {
                 if (value >= 0 & checked(value * 2 < Height - 5))
@@ -31,10 +28,7 @@ namespace midsControls
 
         public int PaddingH
         {
-            get
-            {
-                return phPadding;
-            }
+            get => phPadding;
             set
             {
                 if (value >= 0 & checked(value * 2 < Width - 5))
@@ -47,10 +41,7 @@ namespace midsControls
 
         public Color ColorBackStart
         {
-            get
-            {
-                return pFadeBackStart;
-            }
+            get => pFadeBackStart;
             set
             {
                 pFadeBackStart = value;
@@ -60,10 +51,7 @@ namespace midsControls
 
         public Color ColorBackEnd
         {
-            get
-            {
-                return pFadeBackEnd;
-            }
+            get => pFadeBackEnd;
             set
             {
                 pFadeBackEnd = value;
@@ -76,10 +64,7 @@ namespace midsControls
         // (set) Token: 0x06000052 RID: 82 RVA: 0x0000664C File Offset: 0x0000484C
         public Color ColorBaseStart
         {
-            get
-            {
-                return pFadeBaseStart;
-            }
+            get => pFadeBaseStart;
             set
             {
                 pFadeBaseStart = value;
@@ -92,10 +77,7 @@ namespace midsControls
         // (set) Token: 0x06000054 RID: 84 RVA: 0x00006678 File Offset: 0x00004878
         public Color ColorBaseEnd
         {
-            get
-            {
-                return pFadeBaseEnd;
-            }
+            get => pFadeBaseEnd;
             set
             {
                 pFadeBaseEnd = value;
@@ -108,10 +90,7 @@ namespace midsControls
         // (set) Token: 0x06000056 RID: 86 RVA: 0x000066A4 File Offset: 0x000048A4
         public Color ColorEnhStart
         {
-            get
-            {
-                return pFadeEnhStart;
-            }
+            get => pFadeEnhStart;
             set
             {
                 pFadeEnhStart = value;
@@ -124,10 +103,7 @@ namespace midsControls
         // (set) Token: 0x06000058 RID: 88 RVA: 0x000066D0 File Offset: 0x000048D0
         public Color ColorEnhEnd
         {
-            get
-            {
-                return pFadeEnhEnd;
-            }
+            get => pFadeEnhEnd;
             set
             {
                 pFadeEnhEnd = value;
@@ -140,10 +116,7 @@ namespace midsControls
         // (set) Token: 0x0600005A RID: 90 RVA: 0x000066FC File Offset: 0x000048FC
         public Color TextColor
         {
-            get
-            {
-                return pTextColor;
-            }
+            get => pTextColor;
             set
             {
                 pTextColor = value;
@@ -156,10 +129,7 @@ namespace midsControls
         // (set) Token: 0x0600005C RID: 92 RVA: 0x00006728 File Offset: 0x00004928
         public Enums.eDDAlign TextAlign
         {
-            get
-            {
-                return pAlign;
-            }
+            get => pAlign;
             set
             {
                 pAlign = value;
@@ -172,10 +142,7 @@ namespace midsControls
         // (set) Token: 0x0600005E RID: 94 RVA: 0x00006754 File Offset: 0x00004954
         public Enums.eDDStyle Style
         {
-            get
-            {
-                return pStyle;
-            }
+            get => pStyle;
             set
             {
                 pStyle = value;
@@ -188,10 +155,7 @@ namespace midsControls
         // (set) Token: 0x06000060 RID: 96 RVA: 0x00006780 File Offset: 0x00004980
         public Enums.eDDGraph GraphType
         {
-            get
-            {
-                return pGraph;
-            }
+            get => pGraph;
             set
             {
                 pGraph = value;
@@ -204,10 +168,7 @@ namespace midsControls
         // (set) Token: 0x06000062 RID: 98 RVA: 0x000067AC File Offset: 0x000049AC
         public float nBaseVal
         {
-            get
-            {
-                return nBase;
-            }
+            get => nBase;
             set
             {
                 nBase = value;
@@ -220,10 +181,7 @@ namespace midsControls
         // (set) Token: 0x06000064 RID: 100 RVA: 0x000067D8 File Offset: 0x000049D8
         public float nEnhVal
         {
-            get
-            {
-                return nEnhanced;
-            }
+            get => nEnhanced;
             set
             {
                 nEnhanced = value;
@@ -236,10 +194,7 @@ namespace midsControls
         // (set) Token: 0x06000066 RID: 102 RVA: 0x00006804 File Offset: 0x00004A04
         public float nMaxEnhVal
         {
-            get
-            {
-                return nMaxEnhanced;
-            }
+            get => nMaxEnhanced;
             set
             {
                 nMaxEnhanced = value;
@@ -252,10 +207,7 @@ namespace midsControls
         // (set) Token: 0x06000068 RID: 104 RVA: 0x00006830 File Offset: 0x00004A30
         public float nHighBase
         {
-            get
-            {
-                return nHighestBase;
-            }
+            get => nHighestBase;
             set
             {
                 nHighestBase = value;
@@ -268,10 +220,7 @@ namespace midsControls
         // (set) Token: 0x0600006A RID: 106 RVA: 0x0000685C File Offset: 0x00004A5C
         public float nHighEnh
         {
-            get
-            {
-                return nHighestEnhanced;
-            }
+            get => nHighestEnhanced;
             set
             {
                 nHighestEnhanced = value;
@@ -284,10 +233,7 @@ namespace midsControls
         // (set) Token: 0x0600006C RID: 108 RVA: 0x00006888 File Offset: 0x00004A88
         public override string Text
         {
-            get
-            {
-                return pString;
-            }
+            get => pString;
             set
             {
                 pString = value;

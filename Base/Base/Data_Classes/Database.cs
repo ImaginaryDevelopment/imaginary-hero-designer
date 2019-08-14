@@ -37,66 +37,36 @@ namespace Base.Data_Classes
 
         public Enums.VersionData PowerVersion
         {
-            get
-            {
-                return _powerVersion;
-            }
-            set
-            {
-                _powerVersion = value;
-            }
+            get => _powerVersion;
+            set => _powerVersion = value;
         }
 
         public Enums.VersionData PowerEffectVersion
         {
-            get
-            {
-                return _powerEffectVersion;
-            }
-            set
-            {
-                _powerEffectVersion = value;
-            }
+            get => _powerEffectVersion;
+            set => _powerEffectVersion = value;
         }
 
         public Enums.VersionData PowerLevelVersion
         {
-            get
-            {
-                return _powerLevelVersion;
-            }
-            set
-            {
-                _powerLevelVersion = value;
-            }
+            get => _powerLevelVersion;
+            set => _powerLevelVersion = value;
         }
 
         public IPowerset[] Powersets { get; set; }
 
         public Enums.VersionData PowersetVersion
         {
-            get
-            {
-                return _powersetVersion;
-            }
-            set
-            {
-                _powersetVersion = value;
-            }
+            get => _powersetVersion;
+            set => _powersetVersion = value;
         }
 
         public Archetype[] Classes { get; set; }
 
         public Enums.VersionData ArchetypeVersion
         {
-            get
-            {
-                return _archetypeVersion;
-            }
-            set
-            {
-                _archetypeVersion = value;
-            }
+            get => _archetypeVersion;
+            set => _archetypeVersion = value;
         }
 
         public IEnhancement[] Enhancements { get; set; }
@@ -125,26 +95,14 @@ namespace Base.Data_Classes
 
         public Enums.VersionData IOAssignmentVersion
         {
-            get
-            {
-                return _ioAssignmentVersion;
-            }
-            set
-            {
-                _ioAssignmentVersion = value;
-            }
+            get => _ioAssignmentVersion;
+            set => _ioAssignmentVersion = value;
         }
 
         public SummonedEntity[] Entities
         {
-            get
-            {
-                return _entities;
-            }
-            set
-            {
-                _entities = value;
-            }
+            get => _entities;
+            set => _entities = value;
         }
 
         public Modifiers AttribMods { get; set; }
@@ -155,23 +113,11 @@ namespace Base.Data_Classes
 
         public ArrayList EffectIds
         {
-            get
-            {
-                return _effectIds;
-            }
-            set
-            {
-                _effectIds = value;
-            }
+            get => _effectIds;
+            set => _effectIds = value;
         }
 
-        public static Database Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
+        public static Database Instance => _instance;
 
         public float VersionEnhDb { get; set; }
 

@@ -17,23 +17,11 @@ namespace midsControls
     {
         // Token: 0x1700000A RID: 10
         // (get) Token: 0x0600001B RID: 27 RVA: 0x000022E0 File Offset: 0x000004E0
-        public bool EpicColumns
-        {
-            get
-            {
-                return MidsContext.Character != null && MidsContext.Character.Archetype != null && MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic;
-            }
-        }
+        public bool EpicColumns => MidsContext.Character != null && MidsContext.Character.Archetype != null && MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic;
 
         // Token: 0x1700000B RID: 11
         // (get) Token: 0x0600001C RID: 28 RVA: 0x0000231C File Offset: 0x0000051C
-        public bool Scaling
-        {
-            get
-            {
-                return ScaleEnabled;
-            }
-        }
+        public bool Scaling => ScaleEnabled;
 
         public int Columns
         {
@@ -933,14 +921,14 @@ namespace midsControls
         void OutputUnscaled(ref ExtendedBitmap Buffer, Point Location)
             => gTarget.DrawImageUnscaled(Buffer.Bitmap, Location);
 
-        public readonly static float[][] heroMatrix = {
+        public static readonly float[][] heroMatrix = {
                 new[] { 1f, 0f, 0f, 0f, 0f },
                 new[] { 0f, 1f, 0f, 0f, 0f },
                 new[] { 0f, 0f, 1f, 0f, 0f },
                 new[] { 0f, 0f, 0f, 1f, 0f },
                 new[] { 0f, 0f, 0f, 0f, 1f }
         };
-        readonly static float[][] villainMatrix = {
+        static readonly float[][] villainMatrix = {
                 new[] {0.45f, 0, 0, 0, 0},
                 new[] {0, 0.35f, 0, 0, 0},
                 new[] {0.75f, 0, 0, 0.175f, 0, 0},

@@ -26,15 +26,9 @@ namespace midsControls
         // (set) Token: 0x0600007E RID: 126 RVA: 0x0000756C File Offset: 0x0000576C
         internal virtual ToolTip tTip
         {
-            get
-            {
-                return _tTip;
-            }
+            get => _tTip;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                _tTip = value;
-            }
+            set => _tTip = value;
         }
 
         // Token: 0x17000022 RID: 34
@@ -42,10 +36,7 @@ namespace midsControls
         // (set) Token: 0x06000080 RID: 128 RVA: 0x00007590 File Offset: 0x00005790
         public Color ColorBase
         {
-            get
-            {
-                return pBaseColor;
-            }
+            get => pBaseColor;
             set
             {
                 pBaseColor = value;
@@ -58,10 +49,7 @@ namespace midsControls
         // (set) Token: 0x06000082 RID: 130 RVA: 0x000075BC File Offset: 0x000057BC
         public Color ColorEnh
         {
-            get
-            {
-                return pEnhColor;
-            }
+            get => pEnhColor;
             set
             {
                 pEnhColor = value;
@@ -74,10 +62,7 @@ namespace midsControls
         // (set) Token: 0x06000084 RID: 132 RVA: 0x000075E8 File Offset: 0x000057E8
         public Color ColorFadeStart
         {
-            get
-            {
-                return pBlendColor1;
-            }
+            get => pBlendColor1;
             set
             {
                 pBlendColor1 = value;
@@ -90,10 +75,7 @@ namespace midsControls
         // (set) Token: 0x06000086 RID: 134 RVA: 0x00007614 File Offset: 0x00005814
         public Color ColorFadeEnd
         {
-            get
-            {
-                return pBlendColor2;
-            }
+            get => pBlendColor2;
             set
             {
                 pBlendColor2 = value;
@@ -106,10 +88,7 @@ namespace midsControls
         // (set) Token: 0x06000088 RID: 136 RVA: 0x00007640 File Offset: 0x00005840
         public Color ColorLines
         {
-            get
-            {
-                return pLineColor;
-            }
+            get => pLineColor;
             set
             {
                 pLineColor = value;
@@ -122,10 +101,7 @@ namespace midsControls
         // (set) Token: 0x0600008A RID: 138 RVA: 0x0000766C File Offset: 0x0000586C
         public Color ColorHighlight
         {
-            get
-            {
-                return pHighlightColor;
-            }
+            get => pHighlightColor;
             set
             {
                 pHighlightColor = value;
@@ -138,10 +114,7 @@ namespace midsControls
         // (set) Token: 0x0600008C RID: 140 RVA: 0x00007698 File Offset: 0x00005898
         public Color ColorMarkerInner
         {
-            get
-            {
-                return pMarkerColor;
-            }
+            get => pMarkerColor;
             set
             {
                 pMarkerColor = value;
@@ -154,14 +127,8 @@ namespace midsControls
         // (set) Token: 0x0600008E RID: 142 RVA: 0x000076C4 File Offset: 0x000058C4
         public float MarkerValue
         {
-            get
-            {
-                return pMarkerValue;
-            }
-            set
-            {
-                pMarkerValue = value;
-            }
+            get => pMarkerValue;
+            set => pMarkerValue = value;
         }
 
         // Token: 0x1700002A RID: 42
@@ -169,10 +136,7 @@ namespace midsControls
         // (set) Token: 0x06000090 RID: 144 RVA: 0x000076E8 File Offset: 0x000058E8
         public Color ColorMarkerOuter
         {
-            get
-            {
-                return pMarkerColor2;
-            }
+            get => pMarkerColor2;
             set
             {
                 pMarkerColor2 = value;
@@ -185,10 +149,7 @@ namespace midsControls
         // (set) Token: 0x06000092 RID: 146 RVA: 0x00007714 File Offset: 0x00005914
         public float Max
         {
-            get
-            {
-                return pMaxValue;
-            }
+            get => pMaxValue;
             set
             {
                 SetBestScale(value);
@@ -201,10 +162,7 @@ namespace midsControls
         // (set) Token: 0x06000094 RID: 148 RVA: 0x00007741 File Offset: 0x00005941
         public float PaddingX
         {
-            get
-            {
-                return xPadding;
-            }
+            get => xPadding;
             set
             {
                 xPadding = checked((int)Math.Round(value));
@@ -217,10 +175,7 @@ namespace midsControls
         // (set) Token: 0x06000096 RID: 150 RVA: 0x00007775 File Offset: 0x00005975
         public float PaddingY
         {
-            get
-            {
-                return yPadding;
-            }
+            get => yPadding;
             set
             {
                 yPadding = checked((int)Math.Round(value));
@@ -233,10 +188,7 @@ namespace midsControls
         // (set) Token: 0x06000098 RID: 152 RVA: 0x000077A8 File Offset: 0x000059A8
         public int TextWidth
         {
-            get
-            {
-                return nameWidth;
-            }
+            get => nameWidth;
             set
             {
                 nameWidth = value;
@@ -249,10 +201,7 @@ namespace midsControls
         // (set) Token: 0x0600009A RID: 154 RVA: 0x000077D4 File Offset: 0x000059D4
         public int ItemHeight
         {
-            get
-            {
-                return pItemHeight;
-            }
+            get => pItemHeight;
             set
             {
                 pItemHeight = value;
@@ -265,10 +214,7 @@ namespace midsControls
         // (set) Token: 0x0600009C RID: 156 RVA: 0x00007800 File Offset: 0x00005A00
         public bool Lines
         {
-            get
-            {
-                return pDrawLines;
-            }
+            get => pDrawLines;
             set
             {
                 pDrawLines = value;
@@ -281,10 +227,7 @@ namespace midsControls
         // (set) Token: 0x0600009E RID: 158 RVA: 0x0000782C File Offset: 0x00005A2C
         public bool Border
         {
-            get
-            {
-                return pBorder;
-            }
+            get => pBorder;
             set
             {
                 pBorder = value;
@@ -297,10 +240,7 @@ namespace midsControls
         // (set) Token: 0x060000A0 RID: 160 RVA: 0x00007858 File Offset: 0x00005A58
         public bool ShowScale
         {
-            get
-            {
-                return pShowScale;
-            }
+            get => pShowScale;
             set
             {
                 pShowScale = value;
@@ -313,10 +253,7 @@ namespace midsControls
         // (set) Token: 0x060000A2 RID: 162 RVA: 0x00007884 File Offset: 0x00005A84
         public bool Highlight
         {
-            get
-            {
-                return pShowHighlight;
-            }
+            get => pShowHighlight;
             set
             {
                 pShowHighlight = value;
@@ -329,10 +266,7 @@ namespace midsControls
         // (set) Token: 0x060000A4 RID: 164 RVA: 0x000078B0 File Offset: 0x00005AB0
         public int ScaleHeight
         {
-            get
-            {
-                return pScaleHeight;
-            }
+            get => pScaleHeight;
             set
             {
                 pScaleHeight = value;
@@ -345,10 +279,7 @@ namespace midsControls
         // (set) Token: 0x060000A6 RID: 166 RVA: 0x000078DC File Offset: 0x00005ADC
         public bool Dual
         {
-            get
-            {
-                return DualName;
-            }
+            get => DualName;
             set
             {
                 DualName = value;
@@ -361,10 +292,7 @@ namespace midsControls
         // (set) Token: 0x060000A8 RID: 168 RVA: 0x00007908 File Offset: 0x00005B08
         public Enums.GraphStyle Style
         {
-            get
-            {
-                return pStyle;
-            }
+            get => pStyle;
             set
             {
                 pStyle = value;
@@ -377,10 +305,7 @@ namespace midsControls
         // (set) Token: 0x060000AA RID: 170 RVA: 0x0000793C File Offset: 0x00005B3C
         public int ScaleIndex
         {
-            get
-            {
-                return WhichScale(pMaxValue);
-            }
+            get => WhichScale(pMaxValue);
             set
             {
                 if (value > -1 & value < Scales.Length)
@@ -393,43 +318,22 @@ namespace midsControls
 
         // Token: 0x17000038 RID: 56
         // (get) Token: 0x060000AB RID: 171 RVA: 0x00007978 File Offset: 0x00005B78
-        public float ScaleValue
-        {
-            get
-            {
-                return pMaxValue;
-            }
-        }
+        public float ScaleValue => pMaxValue;
 
         // Token: 0x17000039 RID: 57
         // (get) Token: 0x060000AC RID: 172 RVA: 0x00007990 File Offset: 0x00005B90
-        public int ItemCount
-        {
-            get
-            {
-                return Items.Length;
-            }
-        }
+        public int ItemCount => Items.Length;
 
         // Token: 0x1700003A RID: 58
         // (get) Token: 0x060000AD RID: 173 RVA: 0x000079AC File Offset: 0x00005BAC
-        public int ScaleCount
-        {
-            get
-            {
-                return Scales.Length;
-            }
-        }
+        public int ScaleCount => Scales.Length;
 
         // Token: 0x1700003B RID: 59
         // (get) Token: 0x060000AE RID: 174 RVA: 0x000079C8 File Offset: 0x00005BC8
         // (set) Token: 0x060000AF RID: 175 RVA: 0x000079E4 File Offset: 0x00005BE4
         public float ForcedMax
         {
-            get
-            {
-                return pForcedMax;
-            }
+            get => pForcedMax;
             set
             {
                 pForcedMax = checked((int)Math.Round(value));
@@ -450,14 +354,8 @@ namespace midsControls
         // (set) Token: 0x060000B1 RID: 177 RVA: 0x00007A50 File Offset: 0x00005C50
         public bool Clickable
         {
-            get
-            {
-                return pClickable;
-            }
-            set
-            {
-                pClickable = value;
-            }
+            get => pClickable;
+            set => pClickable = value;
         }
 
         // Token: 0x060000B2 RID: 178 RVA: 0x00007A5C File Offset: 0x00005C5C

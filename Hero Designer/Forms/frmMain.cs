@@ -363,10 +363,7 @@ namespace Hero_Designer
                     i9Picker.Height = 315;
                 return i9Picker;
             }
-            set
-            {
-                i9Picker = value;
-            }
+            set => i9Picker = value;
         }
 
         internal void ChildRequestedRedraw()

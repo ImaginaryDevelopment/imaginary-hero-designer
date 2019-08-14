@@ -6,13 +6,7 @@ public class I9SetData
     public sSetInfo[] SetInfo = new sSetInfo[0];
     public int PowerIndex;
 
-    public bool Empty
-    {
-        get
-        {
-            return SetInfo.Length < 1;
-        }
-    }
+    public bool Empty => SetInfo.Length < 1;
 
     public I9SetData()
     {

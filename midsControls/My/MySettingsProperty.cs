@@ -16,12 +16,6 @@ namespace midsControls.My
 		// Token: 0x17000009 RID: 9
 		// (get) Token: 0x06000019 RID: 25 RVA: 0x000022C0 File Offset: 0x000004C0
 		[HelpKeyword("My.Settings")]
-		internal static MySettings Settings
-		{
-			get
-			{
-				return MySettings.Default;
-			}
-		}
-	}
+		internal static MySettings Settings => MySettings.Default;
+    }
 }

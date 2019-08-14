@@ -26,7 +26,7 @@ namespace Hero_Designer
         public T SelectedItem { get => (T)_cb.SelectedItem; set => _cb.SelectedItem = value; }
         public Rectangle Bounds => _cb.Bounds;
         public int Count => _cb.Items.Count;
-        public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList()); }
+        public IReadOnlyCollection<T> Items => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList());
         public void BeginUpdate() => _cb.BeginUpdate();
         public void Clear() => _cb.Items.Clear();
         public void AddRange(IEnumerable<T> items)

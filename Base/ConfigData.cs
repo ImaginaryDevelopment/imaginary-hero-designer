@@ -92,7 +92,7 @@ public class ConfigData
 
     public string DefaultSaveFolderOverride
     {
-        get { return _defaultSaveFolderOverride; }
+        get => _defaultSaveFolderOverride;
         set
         {
             var osDefault = OS.GetDefaultSaveFolder();

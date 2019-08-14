@@ -17,11 +17,8 @@ namespace midsControls
 		// (set) Token: 0x0600012F RID: 303 RVA: 0x0000AF50 File Offset: 0x00009150
 		public override string Text
 		{
-			get
-			{
-				return myText;
-			}
-			set
+			get => myText;
+            set
 			{
 				if (Operators.CompareString(value, myText, false) != 0)
 				{
@@ -36,11 +33,8 @@ namespace midsControls
 		// (set) Token: 0x06000131 RID: 305 RVA: 0x0000AF9C File Offset: 0x0000919C
 		public string InitialText
 		{
-			get
-			{
-				return myText;
-			}
-			set
+			get => myText;
+            set
 			{
 				if (Operators.CompareString(value, myText, false) != 0)
 				{
@@ -55,11 +49,8 @@ namespace midsControls
 		// (set) Token: 0x06000133 RID: 307 RVA: 0x0000AFE8 File Offset: 0x000091E8
 		public ContentAlignment TextAlign
 		{
-			get
-			{
-				return myAlign;
-			}
-			set
+			get => myAlign;
+            set
 			{
 				myAlign = value;
 				Draw();

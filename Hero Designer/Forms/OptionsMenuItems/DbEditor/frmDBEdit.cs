@@ -59,10 +59,7 @@ namespace Hero_Designer
         bool Initialized;
         NumericUpDown UdIssue
         {
-            get
-            {
-                return udIssue;
-            }
+            get => udIssue;
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {

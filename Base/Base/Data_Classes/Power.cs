@@ -501,14 +501,8 @@ namespace Base.Data_Classes
 
         public float CastTime
         {
-            get
-            {
-                return !MidsContext.Config.UseArcanaTime ? CastTimeReal : (float)(Math.Ceiling(CastTimeReal / 0.132f) + 1.0) * 0.132f;
-            }
-            set
-            {
-                CastTimeReal = value;
-            }
+            get => !MidsContext.Config.UseArcanaTime ? CastTimeReal : (float)(Math.Ceiling(CastTimeReal / 0.132f) + 1.0) * 0.132f;
+            set => CastTimeReal = value;
         }
         public bool Slottable
         {
@@ -523,24 +517,12 @@ namespace Base.Data_Classes
                         || ps.SetType == Enums.ePowerSetType.Pool);
             }
         }
-        public float AoEModifier
-        {
-            get
-            {
-                return EffectArea != Enums.eEffectArea.Cone ? (EffectArea != Enums.eEffectArea.Sphere ? 1f : (float)(1.0 + Radius * 0.150000005960464)) : (float)(1.0 + Radius * 0.150000005960464 - Radius * 0.000366669992217794 * (360 - Arc));
-            }
-        }
+        public float AoEModifier => EffectArea != Enums.eEffectArea.Cone ? (EffectArea != Enums.eEffectArea.Sphere ? 1f : (float)(1.0 + Radius * 0.150000005960464)) : (float)(1.0 + Radius * 0.150000005960464 - Radius * 0.000366669992217794 * (360 - Arc));
 
         public int DisplayLocation
         {
-            get
-            {
-                return LocationIndex;
-            }
-            set
-            {
-                LocationIndex = value;
-            }
+            get => LocationIndex;
+            set => LocationIndex = value;
         }
 
         public bool HasMutexID(int index)

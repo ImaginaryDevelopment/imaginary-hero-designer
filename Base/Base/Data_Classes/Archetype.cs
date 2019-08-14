@@ -65,21 +65,9 @@ namespace Base.Data_Classes
 
         public float BaseThreat { get; set; }
 
-        public bool Hero
-        {
-            get
-            {
-                return ClassType == Enums.eClassType.Hero || ClassType == Enums.eClassType.HeroEpic;
-            }
-        }
+        public bool Hero => ClassType == Enums.eClassType.Hero || ClassType == Enums.eClassType.HeroEpic;
 
-        public bool Epic
-        {
-            get
-            {
-                return ClassType == Enums.eClassType.HeroEpic || ClassType == Enums.eClassType.VillainEpic;
-            }
-        }
+        public bool Epic => ClassType == Enums.eClassType.HeroEpic || ClassType == Enums.eClassType.VillainEpic;
 
         public Archetype()
         {

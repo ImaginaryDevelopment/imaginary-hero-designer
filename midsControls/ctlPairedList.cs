@@ -28,15 +28,9 @@ namespace midsControls
         // (set) Token: 0x060000DB RID: 219 RVA: 0x000095F8 File Offset: 0x000077F8
         public virtual ToolTip myTip
         {
-            get
-            {
-                return _myTip;
-            }
+            get => _myTip;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                _myTip = value;
-            }
+            set => _myTip = value;
         }
 
         // Token: 0x1700003E RID: 62
@@ -44,10 +38,7 @@ namespace midsControls
         // (set) Token: 0x060000DD RID: 221 RVA: 0x0000961C File Offset: 0x0000781C
         public int Columns
         {
-            get
-            {
-                return myColumns;
-            }
+            get => myColumns;
             set
             {
                 if (value >= 0 & value < 10)
@@ -63,10 +54,7 @@ namespace midsControls
         // (set) Token: 0x060000DF RID: 223 RVA: 0x00009668 File Offset: 0x00007868
         public int ValueWidth
         {
-            get
-            {
-                return myValueWidth;
-            }
+            get => myValueWidth;
             set
             {
                 if (myColumns < 1)
@@ -85,10 +73,7 @@ namespace midsControls
         // (set) Token: 0x060000E1 RID: 225 RVA: 0x000096C4 File Offset: 0x000078C4
         public bool DoHighlight
         {
-            get
-            {
-                return Highlightable;
-            }
+            get => Highlightable;
             set
             {
                 Highlightable = value;
@@ -101,14 +86,8 @@ namespace midsControls
         // (set) Token: 0x060000E3 RID: 227 RVA: 0x000096F0 File Offset: 0x000078F0
         public Color HighlightColor
         {
-            get
-            {
-                return myHighlightColor;
-            }
-            set
-            {
-                myHighlightColor = value;
-            }
+            get => myHighlightColor;
+            set => myHighlightColor = value;
         }
 
         // Token: 0x17000042 RID: 66
@@ -116,14 +95,8 @@ namespace midsControls
         // (set) Token: 0x060000E5 RID: 229 RVA: 0x00009714 File Offset: 0x00007914
         public Color HighlightTextColor
         {
-            get
-            {
-                return myHighlightTextColor;
-            }
-            set
-            {
-                myHighlightTextColor = value;
-            }
+            get => myHighlightTextColor;
+            set => myHighlightTextColor = value;
         }
 
         // Token: 0x17000043 RID: 67
@@ -131,14 +104,8 @@ namespace midsControls
         // (set) Token: 0x060000E7 RID: 231 RVA: 0x00009738 File Offset: 0x00007938
         public Color NameColor
         {
-            get
-            {
-                return NameColour;
-            }
-            set
-            {
-                NameColour = value;
-            }
+            get => NameColour;
+            set => NameColour = value;
         }
 
         // Token: 0x17000044 RID: 68
@@ -146,14 +113,8 @@ namespace midsControls
         // (set) Token: 0x060000E9 RID: 233 RVA: 0x0000975C File Offset: 0x0000795C
         public Color ItemColor
         {
-            get
-            {
-                return ValueColor;
-            }
-            set
-            {
-                ValueColor = value;
-            }
+            get => ValueColor;
+            set => ValueColor = value;
         }
 
         // Token: 0x17000045 RID: 69
@@ -161,14 +122,8 @@ namespace midsControls
         // (set) Token: 0x060000EB RID: 235 RVA: 0x00009780 File Offset: 0x00007980
         public Color ItemColorAlt
         {
-            get
-            {
-                return ValueColorA;
-            }
-            set
-            {
-                ValueColorA = value;
-            }
+            get => ValueColorA;
+            set => ValueColorA = value;
         }
 
         // Token: 0x17000046 RID: 70
@@ -176,14 +131,8 @@ namespace midsControls
         // (set) Token: 0x060000ED RID: 237 RVA: 0x000097A4 File Offset: 0x000079A4
         public Color ItemColorSpecial
         {
-            get
-            {
-                return ValueColorB;
-            }
-            set
-            {
-                ValueColorB = value;
-            }
+            get => ValueColorB;
+            set => ValueColorB = value;
         }
 
         // Token: 0x17000047 RID: 71
@@ -191,35 +140,20 @@ namespace midsControls
         // (set) Token: 0x060000EF RID: 239 RVA: 0x000097C8 File Offset: 0x000079C8
         public Color ItemColorSpecCase
         {
-            get
-            {
-                return ValueColorC;
-            }
-            set
-            {
-                ValueColorC = value;
-            }
+            get => ValueColorC;
+            set => ValueColorC = value;
         }
 
         // Token: 0x17000048 RID: 72
         // (get) Token: 0x060000F0 RID: 240 RVA: 0x000097D4 File Offset: 0x000079D4
-        public int ItemCount
-        {
-            get
-            {
-                return MyItems.Length;
-            }
-        }
+        public int ItemCount => MyItems.Length;
 
         // Token: 0x17000049 RID: 73
         // (get) Token: 0x060000F1 RID: 241 RVA: 0x000097F0 File Offset: 0x000079F0
         // (set) Token: 0x060000F2 RID: 242 RVA: 0x00009808 File Offset: 0x00007A08
         public bool ForceBold
         {
-            get
-            {
-                return myForceBold;
-            }
+            get => myForceBold;
             set
             {
                 myForceBold = value;

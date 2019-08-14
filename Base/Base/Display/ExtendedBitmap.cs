@@ -41,13 +41,7 @@ namespace Base.Display
       }
     }
 
-    public Bitmap Bitmap
-    {
-      get
-      {
-        return !_isInitialised ? (Initialise() ? _bits : null) : _bits;
-      }
-    }
+    public Bitmap Bitmap => !_isInitialised ? (Initialise() ? _bits : null) : _bits;
 
     bool CanInitialise
 
@@ -73,10 +67,7 @@ namespace Base.Display
 
     public Size Size
     {
-      get
-      {
-        return _isInitialised ? Cache.Size : new Size();
-      }
+      get => _isInitialised ? Cache.Size : new Size();
       set
       {
         if (value.Width == Cache.Size.Width && value.Height == Cache.Size.Height)
@@ -89,10 +80,7 @@ namespace Base.Display
     Region Clip
 
     {
-      get
-      {
-        return _isInitialised ? Cache.Clip : new Region();
-      }
+      get => _isInitialised ? Cache.Clip : new Region();
       set
       {
         if (!_isInitialised)
@@ -103,13 +91,7 @@ namespace Base.Display
       }
     }
 
-    public Rectangle ClipRect
-    {
-      get
-      {
-        return _isInitialised ? Cache.ClipRect : new Rectangle();
-      }
-    }
+    public Rectangle ClipRect => _isInitialised ? Cache.ClipRect : new Rectangle();
 
     public void Dispose()
     {

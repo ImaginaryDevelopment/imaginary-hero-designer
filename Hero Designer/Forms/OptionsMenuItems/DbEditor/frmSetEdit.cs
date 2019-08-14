@@ -23,10 +23,7 @@ namespace Hero_Designer
 
         ListView lvBonusList
         {
-            get
-            {
-                return _lvBonusList;
-            }
+            get => _lvBonusList;
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -44,10 +41,7 @@ namespace Hero_Designer
 
         NumericUpDown udMaxLevel
         {
-            get
-            {
-                return _udMaxLevel;
-            }
+            get => _udMaxLevel;
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
@@ -68,10 +62,7 @@ namespace Hero_Designer
 
         NumericUpDown udMinLevel
         {
-            get
-            {
-                return _udMinLevel;
-            }
+            get => _udMinLevel;
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {

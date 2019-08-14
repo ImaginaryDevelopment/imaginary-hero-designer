@@ -30,13 +30,7 @@ namespace Base.Display
       public string TextColumn;
       public Color tColorColumn;
 
-      public bool HasColumn
-      {
-        get
-        {
-          return !string.IsNullOrEmpty(TextColumn);
-        }
-      }
+      public bool HasColumn => !string.IsNullOrEmpty(TextColumn);
     }
 
     public class Section
@@ -91,10 +85,7 @@ namespace Base.Display
 
       public float ColPos
       {
-        get
-        {
-          return _columnPosition;
-        }
+        get => _columnPosition;
         set
         {
           _columnPosition = value;
@@ -104,10 +95,7 @@ namespace Base.Display
 
       public bool ColRight
       {
-        get
-        {
-          return _rightAlignColumn;
-        }
+        get => _rightAlignColumn;
         set
         {
           _rightAlignColumn = value;

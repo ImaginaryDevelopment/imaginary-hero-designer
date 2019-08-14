@@ -24,11 +24,8 @@ namespace midsControls.My
 		internal static MyComputer Computer
 		{
 			[DebuggerHidden]
-			get
-			{
-				return m_ComputerObjectProvider.GetInstance;
-			}
-		}
+			get => m_ComputerObjectProvider.GetInstance;
+        }
 
 		// Token: 0x17000004 RID: 4
 		// (get) Token: 0x06000008 RID: 8 RVA: 0x000020F4 File Offset: 0x000002F4
@@ -36,11 +33,8 @@ namespace midsControls.My
 		internal static MyApplication Application
 		{
 			[DebuggerHidden]
-			get
-			{
-				return m_AppObjectProvider.GetInstance;
-			}
-		}
+			get => m_AppObjectProvider.GetInstance;
+        }
 
 		// Token: 0x17000005 RID: 5
 		// (get) Token: 0x06000009 RID: 9 RVA: 0x00002110 File Offset: 0x00000310
@@ -48,11 +42,8 @@ namespace midsControls.My
 		internal static User User
 		{
 			[DebuggerHidden]
-			get
-			{
-				return m_UserObjectProvider.GetInstance;
-			}
-		}
+			get => m_UserObjectProvider.GetInstance;
+        }
 
 		// Token: 0x17000006 RID: 6
 		// (get) Token: 0x0600000A RID: 10 RVA: 0x0000212C File Offset: 0x0000032C
@@ -60,11 +51,8 @@ namespace midsControls.My
 		internal static MyWebServices WebServices
 		{
 			[DebuggerHidden]
-			get
-			{
-				return m_MyWebServicesObjectProvider.GetInstance;
-			}
-		}
+			get => m_MyWebServicesObjectProvider.GetInstance;
+        }
 
 		// Token: 0x04000003 RID: 3
 		private static readonly ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new ThreadSafeObjectProvider<MyComputer>();

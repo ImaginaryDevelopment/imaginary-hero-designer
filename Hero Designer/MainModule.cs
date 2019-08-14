@@ -24,14 +24,8 @@ namespace Hero_Designer
 
             public static clsToonX Toon
             {
-                get
-                {
-                    return (clsToonX)MidsContext.Character;
-                }
-                set
-                {
-                    MidsContext.Character = value;
-                }
+                get => (clsToonX)MidsContext.Character;
+                set => MidsContext.Character = value;
             }
 
             public static void LoadData(ref frmLoading iFrm)

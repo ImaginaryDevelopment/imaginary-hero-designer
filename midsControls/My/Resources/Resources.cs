@@ -39,15 +39,9 @@ namespace midsControls.My.Resources
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		internal static CultureInfo Culture
 		{
-			get
-			{
-				return resourceCulture;
-			}
-			set
-			{
-				resourceCulture = value;
-			}
-		}
+			get => resourceCulture;
+            set => resourceCulture = value;
+        }
 
 		// Token: 0x04000001 RID: 1
 		private static ResourceManager resourceMan;

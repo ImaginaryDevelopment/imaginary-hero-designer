@@ -26,10 +26,7 @@ namespace midsControls
         // (set) Token: 0x060001AA RID: 426 RVA: 0x000105B4 File Offset: 0x0000E7B4
         public string TextOff
         {
-            get
-            {
-                return pTextOff;
-            }
+            get => pTextOff;
             set
             {
                 pTextOff = value;
@@ -42,10 +39,7 @@ namespace midsControls
         // (set) Token: 0x060001AC RID: 428 RVA: 0x000105E0 File Offset: 0x0000E7E0
         public string TextOn
         {
-            get
-            {
-                return pTextOn;
-            }
+            get => pTextOn;
             set
             {
                 pTextOn = value;
@@ -58,10 +52,7 @@ namespace midsControls
         // (set) Token: 0x060001AE RID: 430 RVA: 0x0001060C File Offset: 0x0000E80C
         public bool Toggle
         {
-            get
-            {
-                return pToggle;
-            }
+            get => pToggle;
             set
             {
                 pToggle = value;
@@ -74,10 +65,7 @@ namespace midsControls
         // (set) Token: 0x060001B0 RID: 432 RVA: 0x00010638 File Offset: 0x0000E838
         public bool Checked
         {
-            get
-            {
-                return pAltState;
-            }
+            get => pAltState;
             set
             {
                 pAltState = value;
@@ -89,10 +77,7 @@ namespace midsControls
         // (set) Token: 0x060001B1 RID: 433 RVA: 0x00010649 File Offset: 0x0000E849
         public ImageAttributes IA
         {
-            set
-            {
-                myIA = value;
-            }
+            set => myIA = value;
         }
 
         // Token: 0x1700005E RID: 94
@@ -137,10 +122,7 @@ namespace midsControls
         // (set) Token: 0x060001B6 RID: 438 RVA: 0x00010770 File Offset: 0x0000E970
         public Point KnockoutLocationPoint
         {
-            get
-            {
-                return KnockoutLocation;
-            }
+            get => KnockoutLocation;
             set
             {
                 KnockoutLocation = value;

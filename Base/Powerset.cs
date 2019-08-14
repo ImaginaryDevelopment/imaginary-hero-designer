@@ -20,10 +20,7 @@ public class Powerset : IPowerset, IComparable
 
     public string FullName
     {
-        get
-        {
-            return _fullName;
-        }
+        get => _fullName;
         set
         {
             _fullName = value;
@@ -72,10 +69,7 @@ public class Powerset : IPowerset, IComparable
                 str = _groupName = FullName.Contains(".") ? FullName.Substring(0, FullName.IndexOf(".", StringComparison.Ordinal)) : string.Empty;
             return str;
         }
-        set
-        {
-            _groupName = value;
-        }
+        set => _groupName = value;
     }
 
     public IPower[] Powers { get; set; }

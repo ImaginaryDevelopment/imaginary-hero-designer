@@ -39,10 +39,7 @@ namespace Base.Data_Classes
                     num1 = 0.0f;
                 return num1;
             }
-            set
-            {
-                BaseProbability = value;
-            }
+            set => BaseProbability = value;
         }
 
         public float Mag
@@ -81,13 +78,7 @@ namespace Base.Data_Classes
             }
         }
 
-        public float MagPercent
-        {
-            get
-            {
-                return !DisplayPercentage ? Mag : Mag * 100f;
-            }
-        }
+        public float MagPercent => !DisplayPercentage ? Mag : Mag * 100f;
 
         public float Duration
         {
@@ -201,13 +192,7 @@ namespace Base.Data_Classes
             }
         }
 
-        public bool InherentSpecial
-        {
-            get
-            {
-                return SpecialCase == Enums.eSpecialCase.Assassination || SpecialCase == Enums.eSpecialCase.Hidden || (SpecialCase == Enums.eSpecialCase.Containment || SpecialCase == Enums.eSpecialCase.CriticalHit) || SpecialCase == Enums.eSpecialCase.Domination || SpecialCase == Enums.eSpecialCase.Scourge;
-            }
-        }
+        public bool InherentSpecial => SpecialCase == Enums.eSpecialCase.Assassination || SpecialCase == Enums.eSpecialCase.Hidden || (SpecialCase == Enums.eSpecialCase.Containment || SpecialCase == Enums.eSpecialCase.CriticalHit) || SpecialCase == Enums.eSpecialCase.Domination || SpecialCase == Enums.eSpecialCase.Scourge;
 
         public float BaseProbability { get; set; }
 
@@ -248,10 +233,7 @@ namespace Base.Data_Classes
                     SummonId = EffectType == Enums.eEffectType.EntCreate ? DatabaseAPI.NidFromUidEntity(Summon) : DatabaseAPI.NidFromUidPower(Summon);
                 return SummonId.Value;
             }
-            set
-            {
-                SummonId = value;
-            }
+            set => SummonId = value;
         }
 
         int? SummonId { get; set; }
@@ -335,10 +317,7 @@ namespace Base.Data_Classes
                     OverrideId = DatabaseAPI.NidFromUidPower(Override);
                 return OverrideId.Value;
             }
-            set
-            {
-                OverrideId = value;
-            }
+            set => OverrideId = value;
         }
 
         int? OverrideId { get; set; }

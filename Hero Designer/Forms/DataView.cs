@@ -105,10 +105,7 @@ namespace Hero_Designer
 
         public bool DrawVillain
         {
-            get
-            {
-                return VillainColour;
-            }
+            get => VillainColour;
             set
             {
                 VillainColour = value;
@@ -124,10 +121,7 @@ namespace Hero_Designer
 
         public bool Floating
         {
-            get
-            {
-                return bFloating;
-            }
+            get => bFloating;
             set
             {
                 bFloating = value;
@@ -146,51 +140,24 @@ namespace Hero_Designer
 
         internal ctlDamageDisplay Info_Damage
         {
-            get
-            {
-                return info_Damage;
-            }
+            get => info_Damage;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            private set
-            {
-                info_Damage = value;
-            }
+            private set => info_Damage = value;
         }
         internal RichTextBox Info_txtLarge
         {
-            get
-            {
-                return info_txtLarge;
-            }
+            get => info_txtLarge;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                info_txtLarge = value;
-            }
+            set => info_txtLarge = value;
         }
 
-        public bool IsDocked
-        {
-            get
-            {
-                return SnapLocation.X == Location.X & SnapLocation.Y == Location.Y;
-            }
-        }
+        public bool IsDocked => SnapLocation.X == Location.X & SnapLocation.Y == Location.Y;
 
-        public int TabPageIndex
-        {
-            get
-            {
-                return TabPage;
-            }
-        }
+        public int TabPageIndex => TabPage;
 
         public Enums.eVisibleSize VisibleSize
         {
-            get
-            {
-                return !Compact ? Enums.eVisibleSize.Full : Enums.eVisibleSize.Compact;
-            }
+            get => !Compact ? Enums.eVisibleSize.Full : Enums.eVisibleSize.Compact;
             // why is this ignored?
             set { }
         }

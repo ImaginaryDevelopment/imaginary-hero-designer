@@ -91,10 +91,7 @@ namespace midsControls
         ToolTip tTip
         {
             get => _tTip;
-            set
-            {
-                _tTip = value;
-            }
+            set => _tTip = value;
         }
 
         public Color Highlight

@@ -1244,21 +1244,9 @@ public static class Enums
         public float[] Value;
         public float Sum;
 
-        public bool Present
-        {
-            get
-            {
-                return Index != null && Index.Length >= 1 && Index[0] != -1;
-            }
-        }
+        public bool Present => Index != null && Index.Length >= 1 && Index[0] != -1;
 
-        public bool Multiple
-        {
-            get
-            {
-                return Index != null && Index.Length > 1;
-            }
-        }
+        public bool Multiple => Index != null && Index.Length > 1;
 
         public int Max
         {
