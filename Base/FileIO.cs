@@ -79,7 +79,6 @@ public static class FileIO
 
     public static bool CopyFolder(string src, string dest)
     {
-        bool flag;
         if (!Directory.Exists(src))
             return false;
 

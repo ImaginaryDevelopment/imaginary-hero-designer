@@ -26,7 +26,9 @@ namespace Hero_Designer
 
         void ApplyPvpDr()
         {
-            if (!MidsContext.Config.Inc.DisablePvE) ;
+            if (!MidsContext.Config.Inc.DisablePvE)
+            {
+            }
         }
 
         static PopUp.StringValue BuildEDItem(

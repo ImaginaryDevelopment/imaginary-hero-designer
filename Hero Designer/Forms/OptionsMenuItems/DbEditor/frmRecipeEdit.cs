@@ -282,7 +282,7 @@ namespace Hero_Designer
                 {
                     lblEnh.Text = DatabaseAPI.Database.Enhancements[recipe.EnhIdx].LongName;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     lblEnh.Text = string.Empty;
                 }

@@ -38,7 +38,7 @@ namespace Hero_Designer
         readonly string[] DisplayValueStrings;
         float GraphMax;
         bool Loaded;
-        Enums.CompMap Map;
+        public Enums.CompMap Map;
         bool Matching;
         readonly frmMain myParent;
         readonly IPower[][] Powers;

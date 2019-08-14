@@ -669,7 +669,7 @@ public static class DatabaseAPI
             writer.Close();
             fileStream.Close();
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             writer.Close();
             fileStream.Close();
@@ -816,7 +816,7 @@ public static class DatabaseAPI
                         }
                         num1 = binaryReader.ReadSingle();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         num1 = -1f;
                     }

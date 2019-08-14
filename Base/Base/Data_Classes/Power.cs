@@ -1279,7 +1279,7 @@ namespace Base.Data_Classes
                     if (array[0].Split(".".ToCharArray())[2].StartsWith("Hide"))
                         array = CSV.ToArray(iCSV.Replace("'Hidden" + char.ConvertFromUtf32(34) + char.ConvertFromUtf32(34), "'Hidden'"));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Console.WriteLine("Power Import: Fixed stupid Hide bug.");
                 }

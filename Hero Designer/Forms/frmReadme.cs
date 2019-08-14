@@ -72,7 +72,7 @@ namespace Hero_Designer
             {
                 rtfRead.LoadFile(myFile);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 rtfRead.Text = "Unable to find " + myFile + "!";
             }

@@ -930,7 +930,7 @@ namespace Hero_Designer
                     SetTitleBar();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 FloatTop(true);
             }
@@ -4257,7 +4257,7 @@ namespace Hero_Designer
                 pri = MidsContext.Character.Powersets[0].DisplayName;
                 sec = MidsContext.Character.Powersets[1].DisplayName;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // ignored
             }
@@ -5372,7 +5372,6 @@ namespace Hero_Designer
                 List<SlotEntry> slotEntryList = new List<SlotEntry>();
                 foreach (var t in MidsContext.Character.CurrentBuild.Powers)
                 {
-                    bool flag = false;
                     foreach (var t1 in powerEntryList)
                     {
                         if (t1.Power.FullName == t.Power.FullName)

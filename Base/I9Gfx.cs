@@ -194,7 +194,7 @@ public static class I9Gfx
                 {
                     Enhancements[index] = new Bitmap(GetEnhancementsPath() + DatabaseAPI.Database.Enhancements[index].Image);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Enhancements[index] = new Bitmap(30, 30, PixelFormat.Format32bppArgb);
                 }

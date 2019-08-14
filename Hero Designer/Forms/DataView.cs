@@ -1738,7 +1738,6 @@ namespace Hero_Designer
                 {
                     if (pBase.Effects[iTagID].EffectType == Enums.eEffectType.Mez & pBase.Effects[iTagID].Probability > 0.0 & pBase.Effects[iTagID].CanInclude() && pEnh.Effects[iTagID].PvXInclude())
                     {
-                        bool iAlternate1 = false;
                         string str = !(pEnh.Effects[iTagID].Duration < 2.0 | pBase.PowerType == Enums.ePowerType.Auto_) ? " - " + Strings.Format(pEnh.Effects[iTagID].Duration, "#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "s" : string.Empty;
                         if (pBase.Effects[iTagID].Mag > 0.0)
                         {

@@ -163,9 +163,9 @@ namespace midsControls
         {
             try
             {
-                if (disposing && components != null)
+                if (disposing && Components != null)
                 {
-                    components.Dispose();
+                    Components.Dispose();
                 }
             }
             finally
@@ -443,7 +443,7 @@ namespace midsControls
         }
 
         // Token: 0x040000CA RID: 202
-        private IContainer components;
+        public IContainer Components { get; }
 
         // Token: 0x040000CB RID: 203
         private ExtendedBitmap bxImage;

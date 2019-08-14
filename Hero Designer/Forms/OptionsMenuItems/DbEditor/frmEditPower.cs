@@ -427,7 +427,9 @@ namespace Hero_Designer
                 int num3 = lvSPSelected.Items.Count - 1;
             }
             else if (num2 >= 0)
-                ;
+            {
+            }
+
             SPFillList();
             if (lvSPSelected.Items.Count > 0)
             {
