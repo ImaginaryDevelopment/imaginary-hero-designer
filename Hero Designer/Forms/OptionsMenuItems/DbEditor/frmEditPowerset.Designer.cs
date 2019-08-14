@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmEditPowerset
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -489,48 +492,48 @@ namespace Hero_Designer
             this.ResumeLayout(false);
         }
         #endregion
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnClearIcon;
-        System.Windows.Forms.Button btnClose;
-        System.Windows.Forms.Button btnIcon;
-        System.Windows.Forms.ComboBox cbAT;
-        System.Windows.Forms.ComboBox cbLinkGroup;
-        System.Windows.Forms.ComboBox cbLinkSet;
-        System.Windows.Forms.ComboBox cbMutexGroup;
-        System.Windows.Forms.ComboBox cbNameGroup;
-        System.Windows.Forms.ComboBox cbSetType;
-        System.Windows.Forms.ComboBox cbTrunkGroup;
-        System.Windows.Forms.ComboBox cbTrunkSet;
-        System.Windows.Forms.CheckBox chkNoLink;
-        System.Windows.Forms.CheckBox chkNoTrunk;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.GroupBox gbLink;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.GroupBox GroupBox3;
-        System.Windows.Forms.GroupBox GroupBox4;
-        System.Windows.Forms.GroupBox GroupBox5;
-        System.Windows.Forms.OpenFileDialog ImagePicker;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label22;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label31;
-        System.Windows.Forms.Label Label33;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label lblNameFull;
-        System.Windows.Forms.Label lblNameUnique;
-        System.Windows.Forms.ListBox lvMutexSets;
-        System.Windows.Forms.ListView lvPowers;
-        System.Windows.Forms.PictureBox picIcon;
-        System.Windows.Forms.TextBox txtDesc;
-        System.Windows.Forms.TextBox txtName;
-        System.Windows.Forms.TextBox txtNameSet;
+        Button btnCancel;
+        Button btnClearIcon;
+        Button btnClose;
+        Button btnIcon;
+        ComboBox cbAT;
+        ComboBox cbLinkGroup;
+        ComboBox cbLinkSet;
+        ComboBox cbMutexGroup;
+        ComboBox cbNameGroup;
+        ComboBox cbSetType;
+        ComboBox cbTrunkGroup;
+        ComboBox cbTrunkSet;
+        CheckBox chkNoLink;
+        CheckBox chkNoTrunk;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        GroupBox gbLink;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label2;
+        Label Label22;
+        Label Label3;
+        Label Label31;
+        Label Label33;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label lblNameFull;
+        Label lblNameUnique;
+        ListBox lvMutexSets;
+        ListView lvPowers;
+        PictureBox picIcon;
+        TextBox txtDesc;
+        TextBox txtName;
+        TextBox txtNameSet;
     }
 }

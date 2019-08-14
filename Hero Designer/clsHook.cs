@@ -5,8 +5,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Base;
-using Base.Data_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -137,7 +135,7 @@ namespace Hero_Designer
 
                     case "Export Failed":
                         {
-                            string message = $"Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
+                            string message = "Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
                             string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
@@ -145,7 +143,7 @@ namespace Hero_Designer
 
                     case "Failed to add export to queue":
                         {
-                            string message = $"Submission Failed: Possible server error, please contact the RebornTeam.";
+                            string message = "Submission Failed: Possible server error, please contact the RebornTeam.";
                             string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;

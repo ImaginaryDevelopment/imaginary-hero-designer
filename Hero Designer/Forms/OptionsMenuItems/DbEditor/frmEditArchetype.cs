@@ -1,14 +1,11 @@
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Globalization;
+using System.Windows.Forms;
 using Base.Data_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Hero_Designer
 {
@@ -81,125 +78,125 @@ namespace Hero_Designer
 
         public frmEditArchetype(ref Archetype iAT)
         {
-            this.Load += new EventHandler(this.frmEditArchetype_Load);
-            this.Loading = true;
-            this.OriginalName = "";
-            this.ONDuplicate = false;
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditArchetype));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmEditArchetype);
-            this.MyAT = new Archetype(iAT);
-            this.OriginalName = this.MyAT.ClassName;
+            Load += frmEditArchetype_Load;
+            Loading = true;
+            OriginalName = "";
+            ONDuplicate = false;
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmEditArchetype));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmEditArchetype);
+            MyAT = new Archetype(iAT);
+            OriginalName = MyAT.ClassName;
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (index != this.MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, this.OriginalName, StringComparison.OrdinalIgnoreCase))
-                    this.ONDuplicate = true;
+                if (index != MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, OriginalName, StringComparison.OrdinalIgnoreCase))
+                    ONDuplicate = true;
             }
         }
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Hide();
+            DialogResult = DialogResult.Cancel;
+            Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
         {
-            if (!this.CheckClassName())
+            if (!CheckClassName())
                 return;
-            if (this.clbOrigin.CheckedItems.Count < 1)
+            if (clbOrigin.CheckedItems.Count < 1)
             {
                 int num1 = (int)Interaction.MsgBox("An archetype class must have at least one valid origin!", MsgBoxStyle.Information, "Oops.");
             }
-            else if (this.cbPriGroup.Text == "" | this.cbSecGroup.Text == "")
+            else if (cbPriGroup.Text == "" | cbSecGroup.Text == "")
             {
                 int num2 = (int)Interaction.MsgBox("You must set a Primary and Secondary Powerset Group!", MsgBoxStyle.Information, "Oops.");
             }
             else
             {
-                float num3 = (float)Conversion.Val(this.txtHP.Text);
-                if ((double)num3 < 1.0)
+                float num3 = (float)Conversion.Val(txtHP.Text);
+                if (num3 < 1.0)
                 {
                     num3 = 1f;
                     int num4 = (int)Interaction.MsgBox("Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, null);
                 }
-                this.MyAT.Hitpoints = (int)Math.Round((double)num3);
-                float num5 = (float)Conversion.Val(this.txtHPCap.Text);
-                if ((double)num5 < 1.0)
+                MyAT.Hitpoints = (int)Math.Round(num3);
+                float num5 = (float)Conversion.Val(txtHPCap.Text);
+                if (num5 < 1.0)
                     num5 = 1f;
-                if ((double)num5 < (double)this.MyAT.Hitpoints)
-                    num5 = (float)this.MyAT.Hitpoints;
-                this.MyAT.HPCap = num5;
-                float num6 = (float)Conversion.Val(this.txtResCap.Text);
-                if ((double)num6 < 1.0)
+                if (num5 < (double)MyAT.Hitpoints)
+                    num5 = MyAT.Hitpoints;
+                MyAT.HPCap = num5;
+                float num6 = (float)Conversion.Val(txtResCap.Text);
+                if (num6 < 1.0)
                     num6 = 1f;
-                this.MyAT.ResCap = num6 / 100f;
-                float num7 = (float)Conversion.Val(this.txtDamCap.Text);
-                if ((double)num7 < 1.0)
+                MyAT.ResCap = num6 / 100f;
+                float num7 = (float)Conversion.Val(txtDamCap.Text);
+                if (num7 < 1.0)
                     num7 = 1f;
-                this.MyAT.DamageCap = num7 / 100f;
-                float num8 = (float)Conversion.Val(this.txtRechargeCap.Text);
-                if ((double)num8 < 1.0)
+                MyAT.DamageCap = num7 / 100f;
+                float num8 = (float)Conversion.Val(txtRechargeCap.Text);
+                if (num8 < 1.0)
                     num8 = 1f;
-                this.MyAT.RechargeCap = num8 / 100f;
-                float num9 = (float)Conversion.Val(this.txtRecCap.Text);
-                if ((double)num9 < 1.0)
+                MyAT.RechargeCap = num8 / 100f;
+                float num9 = (float)Conversion.Val(txtRecCap.Text);
+                if (num9 < 1.0)
                     num9 = 1f;
-                this.MyAT.RecoveryCap = num9 / 100f;
-                float num10 = (float)Conversion.Val(this.txtRegCap.Text);
-                if ((double)num10 < 1.0)
+                MyAT.RecoveryCap = num9 / 100f;
+                float num10 = (float)Conversion.Val(txtRegCap.Text);
+                if (num10 < 1.0)
                     num10 = 1f;
-                this.MyAT.RegenCap = num10 / 100f;
-                float num11 = (float)Conversion.Val(this.txtBaseRec.Text);
-                if ((double)num11 < 0.0)
+                MyAT.RegenCap = num10 / 100f;
+                float num11 = (float)Conversion.Val(txtBaseRec.Text);
+                if (num11 < 0.0)
                     num11 = 0.0f;
-                if ((double)num11 > 100.0)
+                if (num11 > 100.0)
                     num11 = 1.67f;
-                this.MyAT.BaseRecovery = num11;
-                float num12 = (float)Conversion.Val(this.txtBaseRegen.Text);
-                if ((double)num12 < 0.0)
+                MyAT.BaseRecovery = num11;
+                float num12 = (float)Conversion.Val(txtBaseRegen.Text);
+                if (num12 < 0.0)
                     num12 = 0.0f;
-                if ((double)num12 > 100.0)
+                if (num12 > 100.0)
                     num12 = 100f;
-                this.MyAT.BaseRegen = num12;
-                float num13 = (float)Conversion.Val(this.txtPerceptionCap.Text);
-                if ((double)num13 < 0.0)
+                MyAT.BaseRegen = num12;
+                float num13 = (float)Conversion.Val(txtPerceptionCap.Text);
+                if (num13 < 0.0)
                     num13 = 0.0f;
-                if ((double)num13 > 10000.0)
+                if (num13 > 10000.0)
                     num13 = 1153f;
-                this.MyAT.PerceptionCap = num13;
-                this.MyAT.PrimaryGroup = this.cbPriGroup.Text;
-                this.MyAT.SecondaryGroup = this.cbSecGroup.Text;
-                this.MyAT.Origin = new string[this.clbOrigin.CheckedItems.Count - 1 + 1];
-                int num14 = this.clbOrigin.CheckedItems.Count - 1;
+                MyAT.PerceptionCap = num13;
+                MyAT.PrimaryGroup = cbPriGroup.Text;
+                MyAT.SecondaryGroup = cbSecGroup.Text;
+                MyAT.Origin = new string[clbOrigin.CheckedItems.Count - 1 + 1];
+                int num14 = clbOrigin.CheckedItems.Count - 1;
                 for (int index = 0; index <= num14; ++index)
-                    this.MyAT.Origin[index] = Conversions.ToString(this.clbOrigin.CheckedItems[index]);
-                this.MyAT.Column = Decimal.Compare(this.udColumn.Value, new Decimal(0)) >= 0 ? Convert.ToInt32(this.udColumn.Value) : 0;
-                this.MyAT.BaseThreat = Decimal.Compare(this.udThreat.Value, new Decimal(0)) >= 0 ? Convert.ToSingle(this.udThreat.Value) : 0.0f;
-                this.DialogResult = DialogResult.OK;
-                this.Hide();
+                    MyAT.Origin[index] = Conversions.ToString(clbOrigin.CheckedItems[index]);
+                MyAT.Column = Decimal.Compare(udColumn.Value, new Decimal(0)) >= 0 ? Convert.ToInt32(udColumn.Value) : 0;
+                MyAT.BaseThreat = Decimal.Compare(udThreat.Value, new Decimal(0)) >= 0 ? Convert.ToSingle(udThreat.Value) : 0.0f;
+                DialogResult = DialogResult.OK;
+                Hide();
             }
         }
 
         void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.ClassType = (Enums.eClassType)this.cbClassType.SelectedIndex;
+            MyAT.ClassType = (Enums.eClassType)cbClassType.SelectedIndex;
         }
 
         bool CheckClassName()
         {
-            if (!this.ONDuplicate)
+            if (!ONDuplicate)
             {
                 int num1 = DatabaseAPI.Database.Classes.Length - 1;
                 for (int index = 0; index <= num1; ++index)
                 {
-                    if (index != this.MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, this.txtClassName.Text, StringComparison.OrdinalIgnoreCase))
+                    if (index != MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, txtClassName.Text, StringComparison.OrdinalIgnoreCase))
                     {
-                        int num2 = (int)Interaction.MsgBox((this.txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, "Name in Use");
+                        int num2 = (int)Interaction.MsgBox((txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, "Name in Use");
                         return false;
                     }
                 }
@@ -209,101 +206,101 @@ namespace Hero_Designer
 
         void chkPlayable_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.Playable = this.chkPlayable.Checked;
+            MyAT.Playable = chkPlayable.Checked;
         }
 
         void DisplayData()
         {
-            this.Text = "Edit Class (" + this.MyAT.ClassName + " - " + this.MyAT.DisplayName + ")";
-            this.txtName.Text = this.MyAT.DisplayName;
-            this.txtClassName.Text = this.MyAT.ClassName;
-            this.cbClassType.BeginUpdate();
-            this.cbClassType.Items.Clear();
-            this.cbClassType.Items.AddRange((object[])Enum.GetNames(this.MyAT.ClassType.GetType()));
-            if (this.MyAT.ClassType > ~Enums.eClassType.None & this.MyAT.ClassType < (Enums.eClassType)this.cbClassType.Items.Count)
-                this.cbClassType.SelectedIndex = (int)this.MyAT.ClassType;
+            Text = "Edit Class (" + MyAT.ClassName + " - " + MyAT.DisplayName + ")";
+            txtName.Text = MyAT.DisplayName;
+            txtClassName.Text = MyAT.ClassName;
+            cbClassType.BeginUpdate();
+            cbClassType.Items.Clear();
+            cbClassType.Items.AddRange(Enum.GetNames(MyAT.ClassType.GetType()));
+            if (MyAT.ClassType > ~Enums.eClassType.None & MyAT.ClassType < (Enums.eClassType)cbClassType.Items.Count)
+                cbClassType.SelectedIndex = (int)MyAT.ClassType;
             else
-                this.cbClassType.SelectedIndex = 0;
-            this.cbClassType.EndUpdate();
-            this.udColumn.Value = !(Decimal.Compare(new Decimal(this.MyAT.Column + 2), this.udColumn.Maximum) <= 0 & Decimal.Compare(new Decimal(this.MyAT.Column), this.udColumn.Minimum) >= 0) ? this.udColumn.Minimum : new Decimal(this.MyAT.Column);
-            this.udThreat.Value = !((double)this.MyAT.BaseThreat > (double)Convert.ToSingle(this.udThreat.Maximum) | (double)this.MyAT.BaseThreat < (double)Convert.ToSingle(this.udThreat.Minimum)) ? new Decimal(this.MyAT.BaseThreat) : new Decimal(0);
-            this.chkPlayable.Checked = this.MyAT.Playable;
-            this.txtHP.Text = Conversions.ToString(this.MyAT.Hitpoints);
-            this.txtHPCap.Text = Conversions.ToString(this.MyAT.HPCap);
-            this.txtResCap.Text = Conversions.ToString(this.MyAT.ResCap * 100f);
-            this.txtDamCap.Text = Conversions.ToString(this.MyAT.DamageCap * 100f);
-            this.txtRechargeCap.Text = Conversions.ToString(this.MyAT.RechargeCap * 100f);
-            this.txtRecCap.Text = Conversions.ToString(this.MyAT.RecoveryCap * 100f);
-            this.txtRegCap.Text = Conversions.ToString(this.MyAT.RegenCap * 100f);
-            this.txtBaseRec.Text = Strings.Format(this.MyAT.BaseRecovery, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
-            this.txtBaseRegen.Text = Strings.Format(this.MyAT.BaseRegen, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
-            this.txtPerceptionCap.Text = Conversions.ToString(this.MyAT.PerceptionCap);
-            this.cbPriGroup.BeginUpdate();
-            this.cbSecGroup.BeginUpdate();
-            this.cbPriGroup.Items.Clear();
-            this.cbSecGroup.Items.Clear();
-            foreach (string key in (IEnumerable<string>)DatabaseAPI.Database.PowersetGroups.Keys)
+                cbClassType.SelectedIndex = 0;
+            cbClassType.EndUpdate();
+            udColumn.Value = !(Decimal.Compare(new Decimal(MyAT.Column + 2), udColumn.Maximum) <= 0 & Decimal.Compare(new Decimal(MyAT.Column), udColumn.Minimum) >= 0) ? udColumn.Minimum : new Decimal(MyAT.Column);
+            udThreat.Value = !(MyAT.BaseThreat > (double)Convert.ToSingle(udThreat.Maximum) | MyAT.BaseThreat < (double)Convert.ToSingle(udThreat.Minimum)) ? new Decimal(MyAT.BaseThreat) : new Decimal(0);
+            chkPlayable.Checked = MyAT.Playable;
+            txtHP.Text = Conversions.ToString(MyAT.Hitpoints);
+            txtHPCap.Text = Conversions.ToString(MyAT.HPCap);
+            txtResCap.Text = Conversions.ToString(MyAT.ResCap * 100f);
+            txtDamCap.Text = Conversions.ToString(MyAT.DamageCap * 100f);
+            txtRechargeCap.Text = Conversions.ToString(MyAT.RechargeCap * 100f);
+            txtRecCap.Text = Conversions.ToString(MyAT.RecoveryCap * 100f);
+            txtRegCap.Text = Conversions.ToString(MyAT.RegenCap * 100f);
+            txtBaseRec.Text = Strings.Format(MyAT.BaseRecovery, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
+            txtBaseRegen.Text = Strings.Format(MyAT.BaseRegen, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
+            txtPerceptionCap.Text = Conversions.ToString(MyAT.PerceptionCap);
+            cbPriGroup.BeginUpdate();
+            cbSecGroup.BeginUpdate();
+            cbPriGroup.Items.Clear();
+            cbSecGroup.Items.Clear();
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
             {
-                this.cbPriGroup.Items.Add(key);
-                this.cbSecGroup.Items.Add(key);
+                cbPriGroup.Items.Add(key);
+                cbSecGroup.Items.Add(key);
             }
-            this.cbPriGroup.SelectedValue = this.MyAT.PrimaryGroup;
-            this.cbSecGroup.SelectedValue = this.MyAT.SecondaryGroup;
-            this.cbPriGroup.EndUpdate();
-            this.cbSecGroup.EndUpdate();
-            this.udColumn.Value = new Decimal(this.MyAT.Column);
-            this.clbOrigin.BeginUpdate();
-            this.clbOrigin.Items.Clear();
+            cbPriGroup.SelectedValue = MyAT.PrimaryGroup;
+            cbSecGroup.SelectedValue = MyAT.SecondaryGroup;
+            cbPriGroup.EndUpdate();
+            cbSecGroup.EndUpdate();
+            udColumn.Value = new Decimal(MyAT.Column);
+            clbOrigin.BeginUpdate();
+            clbOrigin.Items.Clear();
             foreach (Origin origin in DatabaseAPI.Database.Origins)
             {
                 bool isChecked = false;
-                int num = this.MyAT.Origin.Length - 1;
+                int num = MyAT.Origin.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (origin.Name.ToLower() == this.MyAT.Origin[index].ToLower())
+                    if (origin.Name.ToLower() == MyAT.Origin[index].ToLower())
                         isChecked = true;
                 }
-                this.clbOrigin.Items.Add(origin.Name, isChecked);
+                clbOrigin.Items.Add(origin.Name, isChecked);
             }
-            this.clbOrigin.EndUpdate();
-            this.txtDescShort.Text = this.MyAT.DescShort;
-            this.txtDescLong.Text = this.MyAT.DescLong;
+            clbOrigin.EndUpdate();
+            txtDescShort.Text = MyAT.DescShort;
+            txtDescLong.Text = MyAT.DescLong;
         }
 
         void frmEditArchetype_Load(object sender, EventArgs e)
         {
-            this.DisplayData();
-            this.Loading = false;
+            DisplayData();
+            Loading = false;
         }
 
         void txtClassName_TextChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.ClassName = this.txtClassName.Text;
+            MyAT.ClassName = txtClassName.Text;
         }
 
         void txtDescLong_TextChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.DescLong = this.txtDescLong.Text;
+            MyAT.DescLong = txtDescLong.Text;
         }
 
         void txtDescShort_TextChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.DescShort = this.txtDescShort.Text;
+            MyAT.DescShort = txtDescShort.Text;
         }
 
         void txtName_TextChanged(object sender, EventArgs e)
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.MyAT.DisplayName = this.txtName.Text;
+            MyAT.DisplayName = txtName.Text;
         }
     }
 }

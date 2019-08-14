@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace Hero_Designer.My
 {
@@ -14,19 +15,19 @@ namespace Hero_Designer.My
                 _serializeFunc = serializeFunc;
             }
             public string Serialize(object o) => _serializeFunc(o);
-            public T Deserialize<T>(string x) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(x);
+            public T Deserialize<T>(string x) => JsonConvert.DeserializeObject<T>(x);
         }
         public static ISerialize GetSerializer()
         {
             return new Serializer(x =>
-                Newtonsoft.Json.JsonConvert.SerializeObject(x,
-                    Newtonsoft.Json.Formatting.Indented
-                    , settings: new Newtonsoft.Json.JsonSerializerSettings()
+                JsonConvert.SerializeObject(x,
+                    Formatting.Indented
+                    , settings: new JsonSerializerSettings
                     {
-                        NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
-                        PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None,
-                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore,
-                        DefaultValueHandling = Newtonsoft.Json.DefaultValueHandling.Ignore,
+                        NullValueHandling = NullValueHandling.Ignore,
+                        PreserveReferencesHandling = PreserveReferencesHandling.None,
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        DefaultValueHandling = DefaultValueHandling.Ignore
 
                     }
                     ), "json");

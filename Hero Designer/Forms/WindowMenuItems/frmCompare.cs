@@ -1,16 +1,14 @@
 
-using Base.Data_Classes;
-using Base.Master_Classes;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
-using midsControls;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Base.Master_Classes;
+using midsControls;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -49,19 +47,19 @@ namespace Hero_Designer
 
         public frmCompare(ref frmMain iFrm)
         {
-            this.Load += new EventHandler(this.frmCompare_Load);
-            this.KeyDown += new KeyEventHandler(this.frmCompare_KeyDown);
-            this.VisibleChanged += new EventHandler(this.frmCompare_VisibleChanged);
-            this.Resize += new EventHandler(this.frmCompare_Resize);
-            this.Move += new EventHandler(this.frmCompare_Move);
-            this.FormClosed += new FormClosedEventHandler(this.frmCompare_FormClosed);
-            this.Powers = new IPower[2][];
-            this.Values = new float[2][];
-            this.Tips = new string[2][];
-            this.GraphMax = 1f;
-            this.Matching = false;
-            this.Loaded = false;
-            this.DisplayValueStrings = new string[23]
+            Load += frmCompare_Load;
+            KeyDown += frmCompare_KeyDown;
+            VisibleChanged += frmCompare_VisibleChanged;
+            Resize += frmCompare_Resize;
+            Move += frmCompare_Move;
+            FormClosed += frmCompare_FormClosed;
+            Powers = new IPower[2][];
+            Values = new float[2][];
+            Tips = new string[2][];
+            GraphMax = 1f;
+            Matching = false;
+            Loaded = false;
+            DisplayValueStrings = new string[23]
             {
                 "Base Accuracy",
                 "Damage",
@@ -87,183 +85,183 @@ namespace Hero_Designer
                 "ToHit Buff",
                 "ToHit Debuff"
             };
-            this.InitializeComponent();
-            this.Name = nameof(frmCompare);
-            this.myParent = iFrm;
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCompare));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            InitializeComponent();
+            Name = nameof(frmCompare);
+            myParent = iFrm;
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmCompare));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_ButtonClicked()
-            => this.Close();
+            => Close();
 
         void btnTweakMatch_Click(object sender, EventArgs e)
         {
             new frmTweakMatching().ShowDialog(this);
-            this.DisplayGraph();
+            DisplayGraph();
         }
 
         void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets(0);
+            List_Sets(0);
         }
 
         void cbAT2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets(1);
+            List_Sets(1);
         }
 
         void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.ResetScale();
-            this.DisplayGraph();
+            ResetScale();
+            DisplayGraph();
         }
 
         void cbSet2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.ResetScale();
-            this.DisplayGraph();
+            ResetScale();
+            DisplayGraph();
         }
 
         void cbType1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets(0);
+            List_Sets(0);
         }
 
         void cbType2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets(1);
+            List_Sets(1);
         }
 
         void chkMatching_CheckedChanged(object sender, EventArgs e)
         {
-            this.Matching = this.chkMatching.Checked;
-            if (!this.Loaded)
+            Matching = chkMatching.Checked;
+            if (!Loaded)
                 return;
-            this.DisplayGraph();
+            DisplayGraph();
         }
 
         void chkOnTop_CheckedChanged()
         {
-            this.TopMost = this.chkOnTop.Checked;
+            TopMost = chkOnTop.Checked;
         }
 
         public void DisplayGraph()
         {
-            if (this.lstDisplay.SelectedIndex < 0)
+            if (lstDisplay.SelectedIndex < 0)
                 return;
-            this.Graph.BeginUpdate();
-            this.Graph.Clear();
-            this.GetPowers();
-            if (this.Matching)
-                this.map_Advanced();
+            Graph.BeginUpdate();
+            Graph.Clear();
+            GetPowers();
+            if (Matching)
+                map_Advanced();
             else
-                this.map_Simple();
-            switch (this.lstDisplay.SelectedIndex)
+                map_Simple();
+            switch (lstDisplay.SelectedIndex)
             {
                 case 0:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0);
-                    this.values_Accuracy();
+                    Graph.ColorFadeEnd = Color.FromArgb(byte.MaxValue, byte.MaxValue, 0);
+                    values_Accuracy();
                     break;
                 case 1:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
-                    this.values_Damage();
+                    Graph.ColorFadeEnd = Color.Red;
+                    values_Damage();
                     break;
                 case 2:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
-                    this.values_DPA();
+                    Graph.ColorFadeEnd = Color.Red;
+                    values_DPA();
                     break;
                 case 3:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
-                    this.values_DPS();
+                    Graph.ColorFadeEnd = Color.Red;
+                    values_DPS();
                     break;
                 case 4:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
-                    this.values_DPE();
+                    Graph.ColorFadeEnd = Color.Red;
+                    values_DPE();
                     break;
                 case 5:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 0);
-                    this.Values_Universal(Enums.eEffectType.DamageBuff, false, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(192, 0, 0);
+                    Values_Universal(Enums.eEffectType.DamageBuff, false, false);
                     break;
                 case 6:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 192);
-                    this.Values_Universal(Enums.eEffectType.Defense, false, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(192, 0, 192);
+                    Values_Universal(Enums.eEffectType.Defense, false, false);
                     break;
                 case 7:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, 128);
-                    this.Values_Universal(Enums.eEffectType.Defense, false, true);
+                    Graph.ColorFadeEnd = Color.FromArgb(128, 0, 128);
+                    Values_Universal(Enums.eEffectType.Defense, false, true);
                     break;
                 case 8:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, (int)byte.MaxValue);
-                    this.values_Duration();
+                    Graph.ColorFadeEnd = Color.FromArgb(128, 0, byte.MaxValue);
+                    values_Duration();
                     break;
                 case 9:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
-                    this.values_End();
+                    Graph.ColorFadeEnd = Color.FromArgb(192, 192, byte.MaxValue);
+                    values_End();
                     break;
                 case 10:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
-                    this.values_EPS();
+                    Graph.ColorFadeEnd = Color.FromArgb(192, 192, byte.MaxValue);
+                    values_EPS();
                     break;
                 case 11:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.values_Heal();
+                    Graph.ColorFadeEnd = Color.FromArgb(96, byte.MaxValue, 96);
+                    values_Heal();
                     break;
                 case 12:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.values_HPS();
+                    Graph.ColorFadeEnd = Color.FromArgb(96, byte.MaxValue, 96);
+                    values_HPS();
                     break;
                 case 13:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.values_HPE();
+                    Graph.ColorFadeEnd = Color.FromArgb(96, byte.MaxValue, 96);
+                    values_HPE();
                     break;
                 case 14:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.HitPoints, true, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(96, byte.MaxValue, 96);
+                    Values_Universal(Enums.eEffectType.HitPoints, true, false);
                     break;
                 case 15:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(64, 128, 128);
-                    this.values_MaxTargets();
+                    Graph.ColorFadeEnd = Color.FromArgb(64, 128, 128);
+                    values_MaxTargets();
                     break;
                 case 16:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, 128, 96);
-                    this.values_Range();
+                    Graph.ColorFadeEnd = Color.FromArgb(96, 128, 96);
+                    values_Range();
                     break;
                 case 17:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, 192, 128);
-                    this.values_Recharge();
+                    Graph.ColorFadeEnd = Color.FromArgb(byte.MaxValue, 192, 128);
+                    values_Recharge();
                     break;
                 case 18:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.Regeneration, true, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(96, byte.MaxValue, 96);
+                    Values_Universal(Enums.eEffectType.Regeneration, true, false);
                     break;
                 case 19:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 192, 192);
-                    this.Values_Universal(Enums.eEffectType.Resistance, false, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(0, 192, 192);
+                    Values_Universal(Enums.eEffectType.Resistance, false, false);
                     break;
                 case 20:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 128, 128);
-                    this.Values_Universal(Enums.eEffectType.Resistance, false, true);
+                    Graph.ColorFadeEnd = Color.FromArgb(0, 128, 128);
+                    Values_Universal(Enums.eEffectType.Resistance, false, true);
                     break;
                 case 21:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.ToHit, true, false);
+                    Graph.ColorFadeEnd = Color.FromArgb(byte.MaxValue, byte.MaxValue, 96);
+                    Values_Universal(Enums.eEffectType.ToHit, true, false);
                     break;
                 case 22:
-                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, 64);
-                    this.Values_Universal(Enums.eEffectType.ToHit, true, true);
+                    Graph.ColorFadeEnd = Color.FromArgb(192, 192, 64);
+                    Values_Universal(Enums.eEffectType.ToHit, true, true);
                     break;
             }
             int index1 = 0;
@@ -275,25 +273,25 @@ namespace Hero_Designer
                 int mapIdx = 0;
                 do
                 {
-                    if (this.Map.Map[index1, mapIdx] > -1)
+                    if (Map.Map[index1, mapIdx] > -1)
                     {
-                        powerDisplays[mapIdx] = this.Powers[mapIdx][this.Map.Map[index1, mapIdx]].DisplayName;
-                        values[mapIdx] = this.Values[mapIdx][this.Map.Map[index1, mapIdx]];
-                        if (iTip != "" & this.Tips[mapIdx][this.Map.Map[index1, mapIdx]] != "")
+                        powerDisplays[mapIdx] = Powers[mapIdx][Map.Map[index1, mapIdx]].DisplayName;
+                        values[mapIdx] = Values[mapIdx][Map.Map[index1, mapIdx]];
+                        if (iTip != "" & Tips[mapIdx][Map.Map[index1, mapIdx]] != "")
                             iTip += "\r\n----------\r\n";
-                        iTip += this.Tips[mapIdx][this.Map.Map[index1, mapIdx]];
+                        iTip += Tips[mapIdx][Map.Map[index1, mapIdx]];
                     }
                     ++mapIdx;
                 }
                 while (mapIdx <= 1);
-                this.Graph.AddItemPair(powerDisplays[0], powerDisplays[1], values[0], values[1], iTip);
+                Graph.AddItemPair(powerDisplays[0], powerDisplays[1], values[0], values[1], iTip);
                 ++index1;
             }
             while (index1 <= 20);
-            this.Graph.Max = this.GraphMax;
-            this.tbScaleX.Value = this.Graph.ScaleIndex;
-            this.SetScaleLabel();
-            this.Graph.EndUpdate();
+            Graph.Max = GraphMax;
+            tbScaleX.Value = Graph.ScaleIndex;
+            SetScaleLabel();
+            Graph.EndUpdate();
         }
 
         void FillDisplayList()
@@ -301,59 +299,59 @@ namespace Hero_Designer
             ListBox lstDisplay = this.lstDisplay;
             lstDisplay.BeginUpdate();
             lstDisplay.Items.Clear();
-            lstDisplay.Items.AddRange((object[])this.DisplayValueStrings);
+            lstDisplay.Items.AddRange(DisplayValueStrings);
             this.lstDisplay.SelectedIndex = 0;
             lstDisplay.EndUpdate();
         }
 
         void frmCompare_FormClosed(object sender, FormClosedEventArgs e) => this.EventHandlerWithCatch(() =>
-            this.myParent.FloatCompareGraph(false));
+            myParent.FloatCompareGraph(false));
 
         void frmCompare_KeyDown(object sender, KeyEventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (!(e.Control & e.Shift & e.KeyCode == System.Windows.Forms.Keys.T))
+            if (!(e.Control & e.Shift & e.KeyCode == Keys.T))
                 return;
-            this.btnTweakMatch.Visible = true;
+            btnTweakMatch.Visible = true;
         });
 
         void frmCompare_Load(object sender, EventArgs e)
         {
-            this.FillDisplayList();
-            this.UpdateData();
-            this.list_AT();
+            FillDisplayList();
+            UpdateData();
+            list_AT();
             if (MidsContext.Character.Archetype.Idx > -1)
-                this.cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
+                cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
             if (MidsContext.Character.Archetype.Idx > -1)
-                this.cbAT2.SelectedIndex = MidsContext.Character.Archetype.Idx;
-            this.tbScaleX.Minimum = 0;
-            this.tbScaleX.Maximum = this.Graph.ScaleCount - 1;
-            this.list_Type();
-            this.List_Sets(0);
-            this.List_Sets(1);
-            this.Map.Init();
-            this.chkMatching.Checked = this.Matching;
-            this.Loaded = true;
-            this.DisplayGraph();
-            this.tTip.SetToolTip(chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
+                cbAT2.SelectedIndex = MidsContext.Character.Archetype.Idx;
+            tbScaleX.Minimum = 0;
+            tbScaleX.Maximum = Graph.ScaleCount - 1;
+            list_Type();
+            List_Sets(0);
+            List_Sets(1);
+            Map.Init();
+            chkMatching.Checked = Matching;
+            Loaded = true;
+            DisplayGraph();
+            tTip.SetToolTip(chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
         }
 
         void frmCompare_Move(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            this.StoreLocation();
+            StoreLocation();
         });
 
         void frmCompare_Resize(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
-            this.StoreLocation());
+            StoreLocation());
 
         void frmCompare_VisibleChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
-            this.Graph.BackColor = this.BackColor);
+            Graph.BackColor = BackColor);
 
         int getAT(int idx)
         {
             switch (idx)
             {
-                case 0: return this.cbAT1.SelectedIndex;
-                case 1: return this.cbAT2.SelectedIndex;
+                case 0: return cbAT1.SelectedIndex;
+                case 1: return cbAT2.SelectedIndex;
                 default: return 0;
             }
         }
@@ -364,7 +362,7 @@ namespace Hero_Designer
         int GetNextFreeSlot()
         {
             int index = 0;
-            while (this.Map.Map[index, 1] != -1)
+            while (Map.Map[index, 1] != -1)
             {
                 ++index;
                 if (index > 20)
@@ -379,21 +377,21 @@ namespace Hero_Designer
             int Index = 0;
             do
             {
-                numArray[Index] = this.getSetIndex(Index);
-                this.Powers[Index] = new IPower[DatabaseAPI.Database.Powersets[numArray[Index]].Powers.Length - 1 + 1];
-                this.Values[Index] = new float[this.Powers[Index].Length + 1];
-                this.Tips[Index] = new string[this.Powers[Index].Length + 1];
-                int nIDClass = Index != 0 ? this.cbAT2.SelectedIndex : this.cbAT1.SelectedIndex;
-                int num = this.Powers[Index].Length - 1;
+                numArray[Index] = getSetIndex(Index);
+                Powers[Index] = new IPower[DatabaseAPI.Database.Powersets[numArray[Index]].Powers.Length - 1 + 1];
+                Values[Index] = new float[Powers[Index].Length + 1];
+                Tips[Index] = new string[Powers[Index].Length + 1];
+                int nIDClass = Index != 0 ? cbAT2.SelectedIndex : cbAT1.SelectedIndex;
+                int num = Powers[Index].Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    this.Powers[Index][index] = new Power(DatabaseAPI.Database.Powersets[numArray[Index]].Powers[index]);
-                    this.Powers[Index][index].AbsorbPetEffects(-1);
-                    this.Powers[Index][index].ApplyGrantPowerEffects();
+                    Powers[Index][index] = new Power(DatabaseAPI.Database.Powersets[numArray[Index]].Powers[index]);
+                    Powers[Index][index].AbsorbPetEffects(-1);
+                    Powers[Index][index].ApplyGrantPowerEffects();
                     if (nIDClass > -1)
                     {
-                        this.Powers[Index][index].ForcedClassID = nIDClass;
-                        this.Powers[Index][index].ForcedClass = DatabaseAPI.UidFromNidClass(nIDClass);
+                        Powers[Index][index].ForcedClassID = nIDClass;
+                        Powers[Index][index].ForcedClass = DatabaseAPI.UidFromNidClass(nIDClass);
                     }
                 }
                 ++Index;
@@ -407,15 +405,15 @@ namespace Hero_Designer
             switch (Index)
             {
                 case 0:
-                    comboBox = this.cbSet1;
+                    comboBox = cbSet1;
                     break;
                 case 1:
-                    comboBox = this.cbSet2;
+                    comboBox = cbSet2;
                     break;
                 default:
                     return 0;
             }
-            return DatabaseAPI.GetPowersetIndexes(this.getAT(Index), this.getSetType(Index))[comboBox.SelectedIndex].nID;
+            return DatabaseAPI.GetPowersetIndexes(getAT(Index), getSetType(Index))[comboBox.SelectedIndex].nID;
         }
 
         Enums.ePowerSetType getSetType(int Index)
@@ -424,10 +422,10 @@ namespace Hero_Designer
             switch (Index)
             {
                 case 0:
-                    comboBox = this.cbType1;
+                    comboBox = cbType1;
                     break;
                 case 1:
-                    comboBox = this.cbType2;
+                    comboBox = cbType2;
                     break;
                 default:
                     return Enums.ePowerSetType.Primary;
@@ -459,7 +457,7 @@ namespace Hero_Designer
             {
                 int[] numArray = new int[0];
                 string str3 = "";
-                IPower power = (IPower)new Power(iPower);
+                IPower power = new Power(iPower);
                 int num1 = iSFX.Index.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
@@ -500,23 +498,23 @@ namespace Hero_Designer
 
         void list_AT()
         {
-            this.cbAT1.BeginUpdate();
-            this.cbAT1.Items.Clear();
-            this.cbAT2.BeginUpdate();
-            this.cbAT2.Items.Clear();
+            cbAT1.BeginUpdate();
+            cbAT1.Items.Clear();
+            cbAT2.BeginUpdate();
+            cbAT2.Items.Clear();
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
                 if (DatabaseAPI.Database.Classes[index].Playable)
                 {
-                    this.cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
-                    this.cbAT2.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
+                    cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
+                    cbAT2.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
                 }
             }
-            this.cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
-            this.cbAT2.SelectedIndex = MidsContext.Character.Archetype.Idx;
-            this.cbAT1.EndUpdate();
-            this.cbAT2.EndUpdate();
+            cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
+            cbAT2.SelectedIndex = MidsContext.Character.Archetype.Idx;
+            cbAT1.EndUpdate();
+            cbAT2.EndUpdate();
         }
 
         public void List_Sets(int Index)
@@ -527,15 +525,15 @@ namespace Hero_Designer
             int selectedIndex;
             if (Index == 0)
             {
-                comboBox1 = this.cbSet1;
-                comboBox2 = this.cbType1;
-                selectedIndex = this.cbAT1.SelectedIndex;
+                comboBox1 = cbSet1;
+                comboBox2 = cbType1;
+                selectedIndex = cbAT1.SelectedIndex;
             }
             else
             {
-                comboBox1 = this.cbSet2;
-                comboBox2 = this.cbType2;
-                selectedIndex = this.cbAT2.SelectedIndex;
+                comboBox1 = cbSet2;
+                comboBox2 = cbType2;
+                selectedIndex = cbAT2.SelectedIndex;
             }
             switch (comboBox2.SelectedIndex)
             {
@@ -562,243 +560,243 @@ namespace Hero_Designer
 
         public void list_Type()
         {
-            this.cbType1.BeginUpdate();
-            this.cbType1.Items.Clear();
-            this.cbType2.BeginUpdate();
-            this.cbType2.Items.Clear();
-            this.cbType1.Items.Add("Primary");
-            this.cbType1.Items.Add("Secondary");
-            this.cbType1.Items.Add("Ancillary");
-            this.cbType2.Items.Add("Primary");
-            this.cbType2.Items.Add("Secondary");
-            this.cbType2.Items.Add("Ancillary");
-            this.cbType1.SelectedIndex = 0;
-            this.cbType2.SelectedIndex = 0;
-            this.cbType1.EndUpdate();
-            this.cbType2.EndUpdate();
+            cbType1.BeginUpdate();
+            cbType1.Items.Clear();
+            cbType2.BeginUpdate();
+            cbType2.Items.Clear();
+            cbType1.Items.Add("Primary");
+            cbType1.Items.Add("Secondary");
+            cbType1.Items.Add("Ancillary");
+            cbType2.Items.Add("Primary");
+            cbType2.Items.Add("Secondary");
+            cbType2.Items.Add("Ancillary");
+            cbType1.SelectedIndex = 0;
+            cbType2.SelectedIndex = 0;
+            cbType1.EndUpdate();
+            cbType2.EndUpdate();
         }
 
         void lstDisplay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.ResetScale();
-            this.DisplayGraph();
+            ResetScale();
+            DisplayGraph();
         }
 
         void map_Advanced()
         {
-            bool[] Placed = new bool[this.Powers[1].Length - 1 + 1];
+            bool[] Placed = new bool[Powers[1].Length - 1 + 1];
             int num1 = Placed.Length - 1;
             for (int index = 0; index <= num1; ++index)
                 Placed[index] = false;
-            this.Map.Init();
-            int num2 = this.getMax(this.Powers[0].Length, this.Powers[1].Length);
+            Map.Init();
+            int num2 = getMax(Powers[0].Length, Powers[1].Length);
             if (num2 > 20)
                 num2 = 20;
             int num3 = num2;
             for (int index = 0; index <= num3; ++index)
             {
-                if (this.Powers[0].Length > index)
-                    this.Map.Map[index, 0] = index;
+                if (Powers[0].Length > index)
+                    Map.Map[index, 0] = index;
             }
-            int num4 = this.Powers[1].Length - 1;
+            int num4 = Powers[1].Length - 1;
             for (int index1 = 0; index1 <= num4; ++index1)
             {
-                string displayName = this.Powers[1][index1].DisplayName;
-                int num5 = this.Powers[0].Length - 1;
+                string displayName = Powers[1][index1].DisplayName;
+                int num5 = Powers[0].Length - 1;
                 for (int index2 = 0; index2 <= num5; ++index2)
                 {
-                    if (string.Equals(this.Powers[0][index2].DisplayName, displayName, StringComparison.OrdinalIgnoreCase) & !Placed[index1])
+                    if (string.Equals(Powers[0][index2].DisplayName, displayName, StringComparison.OrdinalIgnoreCase) & !Placed[index1])
                     {
-                        this.Map.Map[index2, 1] = index1;
+                        Map.Map[index2, 1] = index1;
                         Placed[index1] = true;
                         break;
                     }
                 }
             }
-            this.mapOverride();
-            this.mapDescString(new string[1] { "summon" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "smash" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "energy" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "fire" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "ranged" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "melee" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+def", "aoe" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "smash" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "energy" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "fire" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "ranged" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "melee" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+def", "aoe" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+res", "smash" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+res", "energy" }, ref Placed);
-            this.mapDescString(new string[3] { "toggle", "+res", "fire" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+res", "smash" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+res", "energy" }, ref Placed);
-            this.mapDescString(new string[3] { "auto", "+res", "fire" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "+def" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "+res" }, ref Placed);
-            this.mapDescString(new string[2] { "auto", "+def" }, ref Placed);
-            this.mapDescString(new string[2] { "auto", "+res" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "disorient" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "stun" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "hold" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "sleep" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapOverride();
+            mapDescString(new string[1] { "summon" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "smash" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "energy" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "fire" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "ranged" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "melee" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+def", "aoe" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "smash" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "energy" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "fire" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "ranged" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "melee" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+def", "aoe" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+res", "smash" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+res", "energy" }, ref Placed);
+            mapDescString(new string[3] { "toggle", "+res", "fire" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+res", "smash" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+res", "energy" }, ref Placed);
+            mapDescString(new string[3] { "auto", "+res", "fire" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "+def" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "+res" }, ref Placed);
+            mapDescString(new string[2] { "auto", "+def" }, ref Placed);
+            mapDescString(new string[2] { "auto", "+res" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "disorient" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "stun" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "hold" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "sleep" }, ref Placed);
+            mapDescString(new string[2]
             {
         "AoE",
         "immobilize"
             }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "confuse" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "fear" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "AoE", "confuse" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "fear" }, ref Placed);
+            mapDescString(new string[2]
             {
         "Cone",
         "disorient"
             }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "stun" }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "hold" }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "sleep" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "Cone", "stun" }, ref Placed);
+            mapDescString(new string[2] { "Cone", "hold" }, ref Placed);
+            mapDescString(new string[2] { "Cone", "sleep" }, ref Placed);
+            mapDescString(new string[2]
             {
         "Cone",
         "immobilize"
             }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "confuse" }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "fear" }, ref Placed);
-            this.mapDescString(new string[1] { "snipe" }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[2] { "Cone", "confuse" }, ref Placed);
+            mapDescString(new string[2] { "Cone", "fear" }, ref Placed);
+            mapDescString(new string[1] { "snipe" }, ref Placed);
+            mapDescString(new string[3]
             {
         "AoE",
         "Extreme",
         "Self -Recovery"
             }, ref Placed);
-            this.mapDescString(new string[2] { "close", "high" }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[2] { "close", "high" }, ref Placed);
+            mapDescString(new string[3]
             {
         "ranged",
         "disorient",
         "minor"
             }, ref Placed);
-            this.mapDescString(new string[2] { "ranged", "hold" }, ref Placed);
-            this.mapDescString(new string[2] { "cone", "extreme" }, ref Placed);
-            this.mapDescString(new string[2] { "cone", "superior" }, ref Placed);
-            this.mapDescString(new string[2] { "cone", "high" }, ref Placed);
-            this.mapDescString(new string[2] { "cone", "moderate" }, ref Placed);
-            this.mapDescString(new string[2] { "cone", "minor" }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[2] { "ranged", "hold" }, ref Placed);
+            mapDescString(new string[2] { "cone", "extreme" }, ref Placed);
+            mapDescString(new string[2] { "cone", "superior" }, ref Placed);
+            mapDescString(new string[2] { "cone", "high" }, ref Placed);
+            mapDescString(new string[2] { "cone", "moderate" }, ref Placed);
+            mapDescString(new string[2] { "cone", "minor" }, ref Placed);
+            mapDescString(new string[3]
             {
         "ranged",
         "AoE",
         "extreme"
             }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[3]
             {
         "ranged",
         "AoE",
         "superior"
             }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[3]
             {
         "ranged",
         "AoE",
         "high"
             }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[3]
             {
         "ranged",
         "AoE",
         "moderate"
             }, ref Placed);
-            this.mapDescString(new string[3]
+            mapDescString(new string[3]
             {
         "ranged",
         "AoE",
         "minor"
             }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "extreme" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "superior" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "high" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "moderate" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "minor" }, ref Placed);
-            this.mapDescString(new string[2] { "melee", "extreme" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "AoE", "extreme" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "superior" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "high" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "moderate" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "minor" }, ref Placed);
+            mapDescString(new string[2] { "melee", "extreme" }, ref Placed);
+            mapDescString(new string[2]
             {
         "melee",
         "superior"
             }, ref Placed);
-            this.mapDescString(new string[2] { "melee", "high" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "melee", "high" }, ref Placed);
+            mapDescString(new string[2]
             {
         "melee",
         "moderate"
             }, ref Placed);
-            this.mapDescString(new string[2] { "melee", "minor" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "melee", "minor" }, ref Placed);
+            mapDescString(new string[2]
             {
         "melee",
         "disorient"
             }, ref Placed);
-            this.mapDescString(new string[2] { "melee", "stun" }, ref Placed);
-            this.mapDescString(new string[2] { "melee", "hold" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "knockback" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "knockup" }, ref Placed);
-            this.mapDescString(new string[2]
+            mapDescString(new string[2] { "melee", "stun" }, ref Placed);
+            mapDescString(new string[2] { "melee", "hold" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "knockback" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "knockup" }, ref Placed);
+            mapDescString(new string[2]
             {
         "Cone",
         "knockback"
             }, ref Placed);
-            this.mapDescString(new string[2] { "Cone", "knockup" }, ref Placed);
-            this.mapDescString(new string[2] { "AoE", "stealth" }, ref Placed);
-            this.mapDescString(new string[1] { "stealth" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "-def" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "-res" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "-acc" }, ref Placed);
-            this.mapDescString(new string[2] { "toggle", "-dmg" }, ref Placed);
-            this.mapDescString(new string[1] { "-def" }, ref Placed);
-            this.mapDescString(new string[1] { "-res" }, ref Placed);
-            this.mapDescString(new string[1] { "-acc" }, ref Placed);
-            this.mapDescString(new string[1] { "-dmg" }, ref Placed);
-            this.mapDescString(new string[1] { "+dmg" }, ref Placed);
-            this.mapDescString(new string[1] { "+acc" }, ref Placed);
-            this.mapDescString(new string[2] { "heal", "team" }, ref Placed);
-            this.mapDescString(new string[2] { "heal", "ally" }, ref Placed);
-            this.mapDescString(new string[1] { "heal" }, ref Placed);
-            this.mapDescString(new string[1] { "+recovery" }, ref Placed);
-            this.mapDescString(new string[1] { "-recovery" }, ref Placed);
-            this.mapDescString(new string[1] { "-regen" }, ref Placed);
-            this.mapDescString(new string[1] { "extreme" }, ref Placed);
-            this.mapDescString(new string[1] { "superior" }, ref Placed);
-            this.mapDescString(new string[1] { "high" }, ref Placed);
-            this.mapDescString(new string[1] { "moderate" }, ref Placed);
-            this.mapDescString(new string[1] { "minor" }, ref Placed);
-            this.mapDescString(new string[1] { "disorient" }, ref Placed);
-            this.mapDescString(new string[1] { "stun" }, ref Placed);
-            this.mapDescString(new string[1] { "hold" }, ref Placed);
-            this.mapDescString(new string[1] { "sleep" }, ref Placed);
-            this.mapDescString(new string[1] { "immobilize" }, ref Placed);
-            this.mapDescString(new string[1] { "confuse" }, ref Placed);
-            this.mapDescString(new string[1] { "fear" }, ref Placed);
-            this.mapDescString(new string[1] { "cone" }, ref Placed);
-            this.mapDescString(new string[1] { "aoe" }, ref Placed);
-            this.mapDescString(new string[1] { "melee" }, ref Placed);
-            this.mapDescString(new string[1] { "ranged" }, ref Placed);
-            int num6 = this.Powers[1].Length - 1;
+            mapDescString(new string[2] { "Cone", "knockup" }, ref Placed);
+            mapDescString(new string[2] { "AoE", "stealth" }, ref Placed);
+            mapDescString(new string[1] { "stealth" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "-def" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "-res" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "-acc" }, ref Placed);
+            mapDescString(new string[2] { "toggle", "-dmg" }, ref Placed);
+            mapDescString(new string[1] { "-def" }, ref Placed);
+            mapDescString(new string[1] { "-res" }, ref Placed);
+            mapDescString(new string[1] { "-acc" }, ref Placed);
+            mapDescString(new string[1] { "-dmg" }, ref Placed);
+            mapDescString(new string[1] { "+dmg" }, ref Placed);
+            mapDescString(new string[1] { "+acc" }, ref Placed);
+            mapDescString(new string[2] { "heal", "team" }, ref Placed);
+            mapDescString(new string[2] { "heal", "ally" }, ref Placed);
+            mapDescString(new string[1] { "heal" }, ref Placed);
+            mapDescString(new string[1] { "+recovery" }, ref Placed);
+            mapDescString(new string[1] { "-recovery" }, ref Placed);
+            mapDescString(new string[1] { "-regen" }, ref Placed);
+            mapDescString(new string[1] { "extreme" }, ref Placed);
+            mapDescString(new string[1] { "superior" }, ref Placed);
+            mapDescString(new string[1] { "high" }, ref Placed);
+            mapDescString(new string[1] { "moderate" }, ref Placed);
+            mapDescString(new string[1] { "minor" }, ref Placed);
+            mapDescString(new string[1] { "disorient" }, ref Placed);
+            mapDescString(new string[1] { "stun" }, ref Placed);
+            mapDescString(new string[1] { "hold" }, ref Placed);
+            mapDescString(new string[1] { "sleep" }, ref Placed);
+            mapDescString(new string[1] { "immobilize" }, ref Placed);
+            mapDescString(new string[1] { "confuse" }, ref Placed);
+            mapDescString(new string[1] { "fear" }, ref Placed);
+            mapDescString(new string[1] { "cone" }, ref Placed);
+            mapDescString(new string[1] { "aoe" }, ref Placed);
+            mapDescString(new string[1] { "melee" }, ref Placed);
+            mapDescString(new string[1] { "ranged" }, ref Placed);
+            int num6 = Powers[1].Length - 1;
             for (int index = 0; index <= num6; ++index)
             {
-                if (!Placed[index] && this.Map.Map[index, 1] == -1)
+                if (!Placed[index] && Map.Map[index, 1] == -1)
                 {
-                    this.Map.Map[index, 1] = index;
+                    Map.Map[index, 1] = index;
                     Placed[index] = true;
                 }
             }
-            int num7 = this.Powers[1].Length - 1;
+            int num7 = Powers[1].Length - 1;
             for (int index = 0; index <= num7; ++index)
             {
                 if (!Placed[index])
                 {
-                    this.Map.Map[this.GetNextFreeSlot(), 1] = index;
+                    Map.Map[GetNextFreeSlot(), 1] = index;
                     Placed[index] = true;
                 }
             }
@@ -806,52 +804,52 @@ namespace Hero_Designer
 
         public void map_Simple()
         {
-            this.Map.Init();
+            Map.Init();
             int Index = 0;
             do
             {
-                this.Map.IdxAT[Index] = this.getAT(Index);
-                this.Map.IdxSet[Index] = this.getSetIndex(Index);
+                Map.IdxAT[Index] = getAT(Index);
+                Map.IdxSet[Index] = getSetIndex(Index);
                 ++Index;
             }
             while (Index <= 1);
-            int num1 = this.getMax(this.Powers[0].Length, this.Powers[1].Length);
+            int num1 = getMax(Powers[0].Length, Powers[1].Length);
             if (num1 > 20)
                 num1 = 20;
             int num2 = num1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (this.Powers[0].Length > index)
-                    this.Map.Map[index, 0] = index;
-                if (this.Powers[1].Length > index)
-                    this.Map.Map[index, 1] = index;
+                if (Powers[0].Length > index)
+                    Map.Map[index, 0] = index;
+                if (Powers[1].Length > index)
+                    Map.Map[index, 1] = index;
             }
         }
 
         public int mapDescString(string[] iStrings, ref bool[] placed)
         {
             int num1 = 0;
-            for (int powerIdx = 0; powerIdx <= this.Powers[1].Length - 1; ++powerIdx)
+            for (int powerIdx = 0; powerIdx <= Powers[1].Length - 1; ++powerIdx)
             {
                 bool flag1 = true;
                 for (int index2 = 0; index2 <= iStrings.Length - 1; ++index2)
                 {
-                    if (this.Powers[1][powerIdx].DescShort.IndexOf(iStrings[index2], StringComparison.OrdinalIgnoreCase) < 0)
+                    if (Powers[1][powerIdx].DescShort.IndexOf(iStrings[index2], StringComparison.OrdinalIgnoreCase) < 0)
                         flag1 = false;
                 }
                 if (flag1 & !placed[powerIdx])
                 {
-                    for (int index2 = 0; index2 <= this.Powers[0].Length - 1; ++index2)
+                    for (int index2 = 0; index2 <= Powers[0].Length - 1; ++index2)
                     {
-                        bool flag2 = this.Map.Map[index2, 1] < 0;
+                        bool flag2 = Map.Map[index2, 1] < 0;
                         for (int index3 = 0; index3 <= iStrings.Length - 1; ++index3)
                         {
-                            if (this.Powers[0][index2].DescShort.IndexOf(iStrings[index3], StringComparison.OrdinalIgnoreCase) < 0)
+                            if (Powers[0][index2].DescShort.IndexOf(iStrings[index3], StringComparison.OrdinalIgnoreCase) < 0)
                                 flag2 = false;
                         }
                         if (flag2)
                         {
-                            this.Map.Map[index2, 1] = powerIdx;
+                            Map.Map[index2, 1] = powerIdx;
                             placed[powerIdx] = true;
                             return powerIdx;
                         }
@@ -866,7 +864,7 @@ namespace Hero_Designer
             for (int index1 = 0; index1 <= MidsContext.Config.CompOverride.Length - 1; ++index1)
             {
                 Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
-                this.mapOverrideDo(compOverride[index1].Powerset, compOverride[index1].Power, compOverride[index1].Override);
+                mapOverrideDo(compOverride[index1].Powerset, compOverride[index1].Power, compOverride[index1].Override);
             }
         }
 
@@ -875,11 +873,11 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num = this.Powers[index1].Length - 1;
+                int num = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num; ++index2)
                 {
-                    if (this.Powers[index1][index2].PowerSetID > -1 && string.Equals(this.Powers[index1][index2].DisplayName, iPower, StringComparison.OrdinalIgnoreCase) & string.Equals(DatabaseAPI.Database.Powersets[this.Powers[index1][index2].PowerSetID].DisplayName, iSet, StringComparison.OrdinalIgnoreCase))
-                        this.Powers[index1][index2].DescShort = iNewStr.ToUpper();
+                    if (Powers[index1][index2].PowerSetID > -1 && string.Equals(Powers[index1][index2].DisplayName, iPower, StringComparison.OrdinalIgnoreCase) & string.Equals(DatabaseAPI.Database.Powersets[Powers[index1][index2].PowerSetID].DisplayName, iSet, StringComparison.OrdinalIgnoreCase))
+                        Powers[index1][index2].DescShort = iNewStr.ToUpper();
                 }
                 ++index1;
             }
@@ -888,9 +886,9 @@ namespace Hero_Designer
 
         void ResetScale()
         {
-            this.tbScaleX.Value = 10;
-            this.Graph.Max = this.GraphMax;
-            this.SetScaleLabel();
+            tbScaleX.Value = 10;
+            Graph.Max = GraphMax;
+            SetScaleLabel();
         }
 
         public void SetLocation()
@@ -901,44 +899,44 @@ namespace Hero_Designer
                 Y = MainModule.MidsController.SzFrmCompare.Y
             };
             if (rectangle.X < 1)
-                rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2.0);
+                rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - Width) / 2.0);
             if (rectangle.Y < 32)
-                rectangle.Y = (int)Math.Round((Screen.PrimaryScreen.Bounds.Height - this.Height) / 2.0);
-            this.Top = rectangle.Y;
-            this.Left = rectangle.X;
+                rectangle.Y = (int)Math.Round((Screen.PrimaryScreen.Bounds.Height - Height) / 2.0);
+            Top = rectangle.Y;
+            Left = rectangle.X;
         }
 
         void SetScaleLabel()
         {
-            this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
+            lblScale.Text = "Scale: 0 - " + Conversions.ToString(Graph.ScaleValue);
         }
 
         void StoreLocation()
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
-            MainModule.MidsController.SzFrmCompare.X = this.Left;
-            MainModule.MidsController.SzFrmCompare.Y = this.Top;
+            MainModule.MidsController.SzFrmCompare.X = Left;
+            MainModule.MidsController.SzFrmCompare.Y = Top;
         }
 
         void tbScaleX_Scroll(object sender, EventArgs e)
         {
-            this.Graph.ScaleIndex = this.tbScaleX.Value;
-            this.SetScaleLabel();
+            Graph.ScaleIndex = tbScaleX.Value;
+            SetScaleLabel();
         }
 
         public void UpdateData()
         {
-            this.btnClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.btnClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.btnClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.chkOnTop.IA = this.myParent.Drawing.pImageAttributes;
-            this.chkOnTop.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.chkOnTop.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            if (!this.Loaded)
+            btnClose.IA = myParent.Drawing.pImageAttributes;
+            btnClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            btnClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            chkOnTop.IA = myParent.Drawing.pImageAttributes;
+            chkOnTop.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            chkOnTop.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            if (!Loaded)
                 return;
-            this.ResetScale();
-            this.DisplayGraph();
+            ResetScale();
+            DisplayGraph();
         }
 
         void values_Accuracy()
@@ -947,43 +945,43 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     bool flag = false;
-                    int num3 = this.Powers[index1][index2].Effects.Length - 1;
+                    int num3 = Powers[index1][index2].Effects.Length - 1;
                     for (int index3 = 0; index3 <= num3; ++index3)
                     {
-                        if (this.Powers[index1][index2].Effects[index3].RequiresToHitCheck)
+                        if (Powers[index1][index2].Effects[index3].RequiresToHitCheck)
                             flag = true;
                     }
-                    this.Values[index1][index2] = !(this.Powers[index1][index2].EntitiesAutoHit == Enums.eEntity.None | flag) ? 0.0f : (float)(Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = !(Powers[index1][index2].EntitiesAutoHit == Enums.eEntity.None | flag) ? 0.0f : (float)(Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(this.Values[index1][index2], "##0.##") + "% base Accuracy";
-                        string[][] tips2 = this.Tips;
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(Values[index1][index2], "##0.##") + "% base Accuracy";
+                        string[][] tips2 = Tips;
                         int index7 = index1;
                         int index8 = index2;
-                        tips2[index7][index8] = tips2[index7][index8] + "\r\n  (Real Numbers style: " + Strings.Format(this.Powers[index1][index2].Accuracy, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x)";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips2[index7][index8] = tips2[index7][index8] + "\r\n  (Real Numbers style: " + Strings.Format(Powers[index1][index2].Accuracy, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x)";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         void values_Damage()
@@ -994,39 +992,39 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].FXGetDamageString();
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString();
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
+                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
                         {
-                            string[][] tips2 = this.Tips;
+                            string[][] tips2 = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips2[index3][index4] = tips2[index3][index4] + "\r\n  (Applied every " + Conversions.ToString(this.Powers[index1][index2].ActivatePeriod) + "s)";
+                            tips2[index3][index4] = tips2[index3][index4] + "\r\n  (Applied every " + Conversions.ToString(Powers[index1][index2].ActivatePeriod) + "s)";
                         }
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
@@ -1038,29 +1036,29 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                for (int index2 = 0; index2 <= this.Powers[index1].Length - 1; ++index2)
+                for (int index2 = 0; index2 <= Powers[index1].Length - 1; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
-                            tips[index1][index2] = tips[index1][index2] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            string[][] tips = Tips;
+                            tips[index1][index2] = tips[index1][index2] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].FXGetDamageString() + "/s";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
@@ -1072,26 +1070,26 @@ namespace Hero_Designer
             int powIdx = 0;
             do
             {
-                for (int subPowIdx = 0; subPowIdx <= this.Powers[powIdx].Length - 1; ++subPowIdx)
+                for (int subPowIdx = 0; subPowIdx <= Powers[powIdx].Length - 1; ++subPowIdx)
                 {
-                    this.Values[powIdx][subPowIdx] = this.Powers[powIdx][subPowIdx].FXGetDamageValue();
-                    if (this.Values[powIdx][subPowIdx] != 0.0)
+                    Values[powIdx][subPowIdx] = Powers[powIdx][subPowIdx].FXGetDamageValue();
+                    if (Values[powIdx][subPowIdx] != 0.0)
                     {
-                        if (this.Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
-                            this.Values[powIdx][subPowIdx] /= this.Powers[powIdx][subPowIdx].EndCost;
-                        this.Tips[powIdx][subPowIdx] = DatabaseAPI.Database.Classes[this.Powers[powIdx][subPowIdx].ForcedClassID].DisplayName + ":" + this.Powers[powIdx][subPowIdx].DisplayName;
-                        if (this.Matching)
-                            this.Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " [Level " + Conversions.ToString(this.Powers[powIdx][subPowIdx].Level) + "]";
-                        this.Tips[powIdx][subPowIdx] = this.Tips[powIdx][subPowIdx] + "\r\n  " + this.Powers[powIdx][subPowIdx].FXGetDamageString();
-                        if (num1 < (double)this.Values[powIdx][subPowIdx])
-                            num1 = this.Values[powIdx][subPowIdx];
-                        this.Tips[powIdx][subPowIdx] = this.Tips[powIdx][subPowIdx] + " - DPE: " + Strings.Format(this.Values[powIdx][subPowIdx], "##0.##");
+                        if (Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
+                            Values[powIdx][subPowIdx] /= Powers[powIdx][subPowIdx].EndCost;
+                        Tips[powIdx][subPowIdx] = DatabaseAPI.Database.Classes[Powers[powIdx][subPowIdx].ForcedClassID].DisplayName + ":" + Powers[powIdx][subPowIdx].DisplayName;
+                        if (Matching)
+                            Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " [Level " + Conversions.ToString(Powers[powIdx][subPowIdx].Level) + "]";
+                        Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + "\r\n  " + Powers[powIdx][subPowIdx].FXGetDamageString();
+                        if (num1 < (double)Values[powIdx][subPowIdx])
+                            num1 = Values[powIdx][subPowIdx];
+                        Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " - DPE: " + Strings.Format(Values[powIdx][subPowIdx], "##0.##");
                     }
                 }
                 ++powIdx;
             }
             while (powIdx <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
@@ -1103,32 +1101,32 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].FXGetDamageString() + "/s";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
@@ -1138,36 +1136,36 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int powerCount = this.Powers[index1].Length - 1;
+                int powerCount = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= powerCount; ++index2)
                 {
-                    int durationEffectId = this.Powers[index1][index2].GetDurationEffectID();
+                    int durationEffectId = Powers[index1][index2].GetDurationEffectID();
                     if (durationEffectId > -1)
                     {
-                        this.Values[index1][index2] = this.Powers[index1][index2].Effects[durationEffectId].Duration;
-                        if (this.Values[index1][index2] != 0.0)
+                        Values[index1][index2] = Powers[index1][index2].Effects[durationEffectId].Duration;
+                        if (Values[index1][index2] != 0.0)
                         {
-                            this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                            if (this.Matching)
+                            Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                            if (Matching)
                             {
-                                string[][] tips = this.Tips;
+                                string[][] tips = Tips;
                                 int index3 = index1;
                                 int index4 = index2;
-                                tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                                tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                             }
-                            string[][] tips1 = this.Tips;
+                            string[][] tips1 = Tips;
                             int index5 = index1;
                             int index6 = index2;
-                            tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].Effects[durationEffectId].BuildEffectString(false, "", false, false, false);
-                            if (num1 < (double)this.Values[index1][index2])
-                                num1 = this.Values[index1][index2];
+                            tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[durationEffectId].BuildEffectString(false, "", false, false, false);
+                            if (num1 < (double)Values[index1][index2])
+                                num1 = Values[index1][index2];
                         }
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void values_End()
@@ -1176,39 +1174,39 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].EndCost;
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].EndCost;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(this.Powers[index1][index2].EndCost, "##0.##");
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Powers[index1][index2].EndCost, "##0.##");
+                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
                         {
-                            string[][] tips2 = this.Tips;
+                            string[][] tips2 = Tips;
                             int index3 = index1;
                             int index4 = index2;
                             tips2[index3][index4] = tips2[index3][index4] + " (Per Second)";
                         }
-                        if ((double)num1 < this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        if ((double)num1 < Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void values_EPS()
@@ -1217,43 +1215,43 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].EndCost;
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].EndCost;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click)
+                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Click)
                         {
-                            if (Powers[index1][index2].RechargeTime + (double)this.Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
-                                this.Values[index1][index2] = this.Powers[index1][index2].EndCost / (this.Powers[index1][index2].RechargeTime + this.Powers[index1][index2].CastTime + this.Powers[index1][index2].InterruptTime);
+                            if (Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
+                                Values[index1][index2] = Powers[index1][index2].EndCost / (Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime);
                         }
-                        else if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
-                            this.Values[index1][index2] = this.Powers[index1][index2].EndCost / this.Powers[index1][index2].ActivatePeriod;
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        else if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                            Values[index1][index2] = Powers[index1][index2].EndCost / Powers[index1][index2].ActivatePeriod;
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(this.Values[index1][index2], "##0.##");
-                        string[][] tips2 = this.Tips;
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Values[index1][index2], "##0.##");
+                        string[][] tips2 = Tips;
                         int index7 = index1;
                         int index8 = index2;
                         tips2[index7][index8] = tips2[index7][index8] + "/s";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void values_Heal()
@@ -1263,34 +1261,34 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
-                    this.Values[index1][index2] = effectMagSum.Sum;
-                    if (this.Values[index1][index2] != 0.0)
+                    MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
+                    Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    Values[index1][index2] = effectMagSum.Sum;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = MidsContext.Archetype.DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = MidsContext.Archetype.DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].Effects[effectMagSum.Index[0]].BuildEffectString(false, "", false, false, false);
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[effectMagSum.Index[0]].BuildEffectString(false, "", false, false, false);
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Archetype = archetype;
         }
 
@@ -1301,36 +1299,36 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
-                    this.Values[index1][index2] = effectMagSum.Sum;
-                    if (this.Values[index1][index2] != 0.0)
+                    MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
+                    Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    Values[index1][index2] = effectMagSum.Sum;
+                    if (Values[index1][index2] != 0.0)
                     {
                         if (Powers[index1][index2].EndCost > 0.0)
-                            this.Values[index1][index2] /= this.Powers[index1][index2].EndCost;
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                            Values[index1][index2] /= Powers[index1][index2].EndCost;
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(this.Values[index1][index2], "##0.##") + " HP per unit of end.";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP per unit of end.";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Archetype = archetype;
         }
 
@@ -1341,36 +1339,36 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
-                    this.Values[index1][index2] = effectMagSum.Sum;
-                    if (this.Values[index1][index2] != 0.0)
+                    MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
+                    Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    Values[index1][index2] = effectMagSum.Sum;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].RechargeTime + (double)this.Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
-                            this.Values[index1][index2] /= this.Powers[index1][index2].RechargeTime + this.Powers[index1][index2].CastTime + this.Powers[index1][index2].InterruptTime;
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
+                            Values[index1][index2] /= Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime;
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(this.Values[index1][index2], "##0.##") + " HP/s";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP/s";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Archetype = archetype;
         }
 
@@ -1380,42 +1378,42 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = (float)this.Powers[index1][index2].MaxTargets;
-                    if (this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].MaxTargets;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        if (this.Values[index1][index2] > 1.0)
+                        if (Values[index1][index2] > 1.0)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(this.Values[index1][index2]) + " Targets Max.";
+                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Targets Max.";
                         }
                         else
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(this.Values[index1][index2]) + " Target Max.";
+                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Target Max.";
                         }
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void values_Range()
@@ -1424,65 +1422,65 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     string str = "";
-                    switch (this.Powers[index1][index2].EffectArea)
+                    switch (Powers[index1][index2].EffectArea)
                     {
                         case Enums.eEffectArea.Character:
-                            str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range.";
-                            this.Values[index1][index2] = this.Powers[index1][index2].Range;
+                            str = Conversions.ToString(Powers[index1][index2].Range) + "ft range.";
+                            Values[index1][index2] = Powers[index1][index2].Range;
                             break;
                         case Enums.eEffectArea.Sphere:
-                            this.Values[index1][index2] = this.Powers[index1][index2].Radius;
+                            Values[index1][index2] = Powers[index1][index2].Radius;
                             if (Powers[index1][index2].Range > 0.0)
                             {
-                                str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, ";
-                                this.Values[index1][index2] = this.Powers[index1][index2].Range;
+                                str = Conversions.ToString(Powers[index1][index2].Range) + "ft range, ";
+                                Values[index1][index2] = Powers[index1][index2].Range;
                             }
-                            str = str + Conversions.ToString(this.Powers[index1][index2].Radius) + "ft radius.";
+                            str = str + Conversions.ToString(Powers[index1][index2].Radius) + "ft radius.";
                             break;
                         case Enums.eEffectArea.Cone:
-                            this.Values[index1][index2] = this.Powers[index1][index2].Range;
-                            str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(this.Powers[index1][index2].Arc) + " degree cone.";
+                            Values[index1][index2] = Powers[index1][index2].Range;
+                            str = Conversions.ToString(Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(Powers[index1][index2].Arc) + " degree cone.";
                             break;
                         case Enums.eEffectArea.Location:
-                            this.Values[index1][index2] = this.Powers[index1][index2].Range;
-                            str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(this.Powers[index1][index2].Radius) + "ft radius.";
+                            Values[index1][index2] = Powers[index1][index2].Range;
+                            str = Conversions.ToString(Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(Powers[index1][index2].Radius) + "ft radius.";
                             break;
                         case Enums.eEffectArea.Volume:
-                            this.Values[index1][index2] = this.Powers[index1][index2].Radius;
+                            Values[index1][index2] = Powers[index1][index2].Radius;
                             if (Powers[index1][index2].Range > 0.0)
                             {
-                                str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, ";
-                                this.Values[index1][index2] = this.Powers[index1][index2].Range;
+                                str = Conversions.ToString(Powers[index1][index2].Range) + "ft range, ";
+                                Values[index1][index2] = Powers[index1][index2].Range;
                             }
-                            str = str + Conversions.ToString(this.Powers[index1][index2].Radius) + "ft radius.";
+                            str = str + Conversions.ToString(Powers[index1][index2].Radius) + "ft radius.";
                             break;
                     }
-                    if (this.Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
                         tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + str;
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void values_Recharge()
@@ -1491,32 +1489,32 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].RechargeTime;
-                    if ((double)this.Values[index1][index2] != 0.0)
+                    Values[index1][index2] = Powers[index1][index2].RechargeTime;
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index3 = index1;
                             int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
-                        string[][] tips1 = this.Tips;
+                        string[][] tips1 = Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(this.Values[index1][index2], "##0.##") + "s";
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(Values[index1][index2], "##0.##") + "s";
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
         }
 
         public void Values_Universal(Enums.eEffectType iEffectType, bool Sum, bool Debuff)
@@ -1527,11 +1525,11 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
+                int num2 = Powers[index1].Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(iEffectType, false, false, false, false);
+                    MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
+                    Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(iEffectType, false, false, false, false);
                     int index3 = 0;
                     if (effectMagSum.Present)
                     {
@@ -1564,27 +1562,27 @@ namespace Hero_Designer
                     {
                         if (effectMagSum.Present)
                         {
-                            str = this.GetUniversalTipString(effectMagSum, ref this.Powers[index1][index2]);
-                            this.Values[index1][index2] = effectMagSum.Value[index3];
-                            if (this.Powers[index1][index2].Effects[effectMagSum.Index[index3]].DisplayPercentage)
-                                this.Values[index1][index2] *= 100f;
+                            str = GetUniversalTipString(effectMagSum, ref Powers[index1][index2]);
+                            Values[index1][index2] = effectMagSum.Value[index3];
+                            if (Powers[index1][index2].Effects[effectMagSum.Index[index3]].DisplayPercentage)
+                                Values[index1][index2] *= 100f;
                         }
                     }
                     else
                     {
-                        if (effectMagSum.Present && this.Powers[index1][index2].Effects[effectMagSum.Index[index3]].DisplayPercentage)
+                        if (effectMagSum.Present && Powers[index1][index2].Effects[effectMagSum.Index[index3]].DisplayPercentage)
                             effectMagSum.Multiply();
-                        this.Values[index1][index2] = effectMagSum.Sum;
+                        Values[index1][index2] = effectMagSum.Sum;
                     }
-                    if (this.Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] != 0.0)
                     {
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
-                        if (this.Matching)
+                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                        if (Matching)
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index4 = index1;
                             int index5 = index2;
-                            tips[index4][index5] = tips[index4][index5] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index4][index5] = tips[index4][index5] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                         }
                         if (Sum)
                         {
@@ -1594,28 +1592,28 @@ namespace Hero_Designer
                             {
                                 if (str != "")
                                     str += "\r\n";
-                                str = str + "  " + this.Powers[index1][index2].Effects[effectMagSum.Index[index4]].BuildEffectString(false, "", false, false, false).Replace("\r\n", "\r\n  ");
+                                str = str + "  " + Powers[index1][index2].Effects[effectMagSum.Index[index4]].BuildEffectString(false, "", false, false, false).Replace("\r\n", "\r\n  ");
                             }
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index5 = index1;
                             int index6 = index2;
                             tips[index5][index6] = tips[index5][index6] + "\r\n" + str;
                         }
                         else
                         {
-                            string[][] tips = this.Tips;
+                            string[][] tips = Tips;
                             int index4 = index1;
                             int index5 = index2;
                             tips[index4][index5] = tips[index4][index5] + "\r\n  " + str;
                         }
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
+                        if (num1 < (double)Values[index1][index2])
+                            num1 = Values[index1][index2];
                     }
                 }
                 ++index1;
             }
             while (index1 <= 1);
-            this.GraphMax = num1 * 1.025f;
+            GraphMax = num1 * 1.025f;
             MidsContext.Archetype = archetype;
         }
 
@@ -1643,7 +1641,7 @@ namespace Hero_Designer
             Resistance,
             ResistanceDebuff,
             ToHitBuff,
-            ToHitDeBuff,
+            ToHitDeBuff
         }
     }
 }

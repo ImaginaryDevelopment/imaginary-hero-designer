@@ -16,16 +16,16 @@ namespace Import
     {
       if (string.IsNullOrEmpty(iString))
         return;
-      this._csvString = iString;
-      this.Data = new EnhancementSet();
-      this.IsValid = this.Data.ImportFromCSV(iString);
-      this.IsNew = true;
+      _csvString = iString;
+      Data = new EnhancementSet();
+      IsValid = Data.ImportFromCSV(iString);
+      IsNew = true;
       for (int index = 0; index < DatabaseAPI.Database.EnhancementSets.Count; ++index)
       {
-        if (!string.IsNullOrEmpty(DatabaseAPI.Database.EnhancementSets[index].Uid) && string.Equals(DatabaseAPI.Database.EnhancementSets[index].Uid, this.Data.Uid, StringComparison.OrdinalIgnoreCase))
+        if (!string.IsNullOrEmpty(DatabaseAPI.Database.EnhancementSets[index].Uid) && string.Equals(DatabaseAPI.Database.EnhancementSets[index].Uid, Data.Uid, StringComparison.OrdinalIgnoreCase))
         {
-          this.IsNew = false;
-          this.Index = index;
+          IsNew = false;
+          Index = index;
           break;
         }
       }
@@ -33,54 +33,54 @@ namespace Import
 
     public void Apply()
     {
-      if (!this.IsValid)
+      if (!IsValid)
         return;
-      if (this.IsNew)
+      if (IsNew)
       {
         EnhancementSet enhancementSet = new EnhancementSet();
-        enhancementSet.ImportFromCSV(this._csvString);
+        enhancementSet.ImportFromCSV(_csvString);
         DatabaseAPI.Database.EnhancementSets.Add(enhancementSet);
       }
-      else if (this.Index > -1)
-        DatabaseAPI.Database.EnhancementSets[this.Index].ImportFromCSV(this._csvString);
+      else if (Index > -1)
+        DatabaseAPI.Database.EnhancementSets[Index].ImportFromCSV(_csvString);
     }
 
     public bool CheckDifference(out string message)
     {
       message = string.Empty;
       bool flag;
-      if (!this.IsValid)
+      if (!IsValid)
         flag = false;
-      else if (this.IsNew)
+      else if (IsNew)
       {
         message = "New";
         flag = true;
       }
-      else if (this.Index < 0 | this.Index > DatabaseAPI.Database.EnhancementSets.Count - 1)
+      else if (Index < 0 | Index > DatabaseAPI.Database.EnhancementSets.Count - 1)
         flag = true;
-      else if (DatabaseAPI.Database.EnhancementSets[this.Index].Uid != this.Data.Uid)
+      else if (DatabaseAPI.Database.EnhancementSets[Index].Uid != Data.Uid)
       {
-        message += string.Format("Uid: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].Uid,  this.Data.Uid);
-        flag = true;
-      }
-      else if (DatabaseAPI.Database.EnhancementSets[this.Index].DisplayName != this.Data.DisplayName)
-      {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].DisplayName,  this.Data.DisplayName);
+        message += string.Format("Uid: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].Uid,  Data.Uid);
         flag = true;
       }
-      else if (DatabaseAPI.Database.EnhancementSets[this.Index].LevelMin != this.Data.LevelMin)
+      else if (DatabaseAPI.Database.EnhancementSets[Index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("LevelMin: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].LevelMin,  this.Data.LevelMin);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].DisplayName,  Data.DisplayName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.EnhancementSets[this.Index].LevelMax != this.Data.LevelMax)
+      else if (DatabaseAPI.Database.EnhancementSets[Index].LevelMin != Data.LevelMin)
       {
-        message += string.Format("LevelMax: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].LevelMax,  this.Data.LevelMax);
+        message += string.Format("LevelMin: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].LevelMin,  Data.LevelMin);
         flag = true;
       }
-      else if (DatabaseAPI.Database.EnhancementSets[this.Index].ShortName != this.Data.ShortName)
+      else if (DatabaseAPI.Database.EnhancementSets[Index].LevelMax != Data.LevelMax)
       {
-        message += string.Format("ShortName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].ShortName,  this.Data.ShortName);
+        message += string.Format("LevelMax: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].LevelMax,  Data.LevelMax);
+        flag = true;
+      }
+      else if (DatabaseAPI.Database.EnhancementSets[Index].ShortName != Data.ShortName)
+      {
+        message += string.Format("ShortName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[Index].ShortName,  Data.ShortName);
         flag = true;
       }
       else

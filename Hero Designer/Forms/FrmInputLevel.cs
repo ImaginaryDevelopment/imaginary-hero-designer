@@ -1,12 +1,9 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Hero_Designer
 {
@@ -21,33 +18,33 @@ namespace Hero_Designer
 
         public FrmInputLevel(frmMain iParent, bool iLF, bool iMode2)
         {
-            this.InitializeComponent();
-            this.Name = nameof(FrmInputLevel);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(FrmInputLevel));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.myparent = iParent;
-            this.longFormat = iLF;
-            this.mode2 = iMode2;
+            InitializeComponent();
+            Name = nameof(FrmInputLevel);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(FrmInputLevel));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            myparent = iParent;
+            longFormat = iLF;
+            mode2 = iMode2;
         }
 
         void btnOK_Click(object sender, EventArgs e)
         {
             int num;
-            if (Conversion.Val(this.udLevel.Text) != Convert.ToDouble(this.udLevel.Value))
+            if (Conversion.Val(udLevel.Text) != Convert.ToDouble(udLevel.Value))
             {
-                num = (int)Math.Round(Conversion.Val(this.udLevel.Text));
-                if (Decimal.Compare(new Decimal(num), this.udLevel.Minimum) < 0)
-                    num = Convert.ToInt32(this.udLevel.Minimum);
-                if (Decimal.Compare(new Decimal(num), this.udLevel.Maximum) > 0)
-                    num = Convert.ToInt32(this.udLevel.Maximum);
+                num = (int)Math.Round(Conversion.Val(udLevel.Text));
+                if (Decimal.Compare(new Decimal(num), udLevel.Minimum) < 0)
+                    num = Convert.ToInt32(udLevel.Minimum);
+                if (Decimal.Compare(new Decimal(num), udLevel.Maximum) > 0)
+                    num = Convert.ToInt32(udLevel.Maximum);
             }
             else
-                num = Convert.ToInt32(this.udLevel.Value);
-            if (this.longFormat)
-                this.myparent.smlRespecLong(num - 1, this.mode2);
+                num = Convert.ToInt32(udLevel.Value);
+            if (longFormat)
+                myparent.smlRespecLong(num - 1, mode2);
             else
-                this.myparent.smlRespecShort(num - 1, this.mode2);
-            this.Close();
+                myparent.smlRespecShort(num - 1, mode2);
+            Close();
         }
 
         void FrmInputLevel_Load(object sender, EventArgs e)
@@ -56,7 +53,7 @@ namespace Hero_Designer
 
         void udLevel_Leave(object sender, EventArgs e)
         {
-            this.udLevel.Validate();
+            udLevel.Validate();
         }
     }
 }

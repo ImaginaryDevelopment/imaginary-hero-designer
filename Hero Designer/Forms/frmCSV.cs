@@ -1,14 +1,13 @@
 
-using Base.Data_Classes;
-using Base.IO_Classes;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Base.Master_Classes;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -19,28 +18,28 @@ namespace Hero_Designer
 
         public frmCSV()
         {
-            this.Load += new EventHandler(this.frmCSV_Load);
-            this.InitializeComponent();
-            this.Name = nameof(frmCSV);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCSV));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmCSV_Load;
+            InitializeComponent();
+            Name = nameof(frmCSV);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmCSV));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void frmCSV_Load(object sender, EventArgs e)
         {
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void at_Import_Click(object sender, EventArgs e)
         {
             new frmImport_Archetype().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnBonusLookup_Click(object sender, EventArgs e)
         {
             new frmImport_SetBonusAssignment().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnClearSI_Click(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace Hero_Designer
 
         void btnDefiance_Click(object sender, EventArgs e)
         {
-            this.BusyMsg("Working...");
+            BusyMsg("Working...");
             int num1 = DatabaseAPI.Database.Powersets.Length - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -71,56 +70,56 @@ namespace Hero_Designer
                         for (int index3 = 0; index3 <= num3; ++index3)
                         {
                             IEffect effect = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects[index3];
-                            if (effect.EffectType == Enums.eEffectType.DamageBuff && (double)effect.Mag < 0.4 & (double)effect.Mag > 0.0 & effect.ToWho == Enums.eToWho.Self & effect.SpecialCase == Enums.eSpecialCase.None)
+                            if (effect.EffectType == Enums.eEffectType.DamageBuff && effect.Mag < 0.4 & effect.Mag > 0.0 & effect.ToWho == Enums.eToWho.Self & effect.SpecialCase == Enums.eSpecialCase.None)
                                 effect.SpecialCase = Enums.eSpecialCase.Defiance;
                         }
                     }
                 }
             }
-            this.BusyMsg("Re-Indexing && Saving...");
+            BusyMsg("Re-Indexing && Saving...");
             DatabaseAPI.MatchAllIDs(null);
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            this.BusyHide();
+            BusyHide();
         }
 
         void btnEnhEffects_Click(object sender, EventArgs e)
         {
             new frmImport_EnhancementEffects().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnEntities_Click(object sender, EventArgs e)
         {
             new frmImport_Entities().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnImportRecipes_Click(object sender, EventArgs e)
         {
             new frmImport_Recipe().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnIOLevels_Click(object sender, EventArgs e)
         {
-            this.BusyMsg("Working...");
+            BusyMsg("Working...");
             SetEnhancementLevels();
-            this.BusyMsg("Saving...");
-            var serializer = My.MyApplication.GetSerializer();
+            BusyMsg("Saving...");
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.BusyHide();
+            BusyHide();
         }
 
         void btnSalvageUpdate_Click(object sender, EventArgs e)
         {
             new frmImport_SalvageReq().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         static void btnStaticExport_Click(object sender, EventArgs e)
         {
-            string str1 = "Static Indexes, App version " + Base.Master_Classes.MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
+            string str1 = "Static Indexes, App version " + MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
             foreach (Power power in DatabaseAPI.Database.Power)
             {
                 if (power.GetPowerSet().SetType != Enums.ePowerSetType.Boost)
@@ -159,100 +158,100 @@ namespace Hero_Designer
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show();
+                bFrm = new frmBusy();
+                bFrm.Show();
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         void Button2_Click(object sender, EventArgs e)
         {
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer, true);
             Interaction.MsgBox("Static Index values assigned.", MsgBoxStyle.Information, "Indexing Complete");
         }
 
         void DisplayInfo()
         {
-            this.mod_Date.Text = Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.mod_Revision.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Revision);
-            this.mod_Count.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
-            this.at_Date.Text = Strings.Format(DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.at_Revision.Text = Conversions.ToString(DatabaseAPI.Database.ArchetypeVersion.Revision);
-            this.at_Count.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
-            this.set_Date.Text = Strings.Format(DatabaseAPI.Database.PowersetVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.set_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowersetVersion.Revision);
-            this.set_Count.Text = Conversions.ToString(DatabaseAPI.Database.Powersets.Length);
-            this.pow_Date.Text = Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.pow_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerVersion.Revision);
-            this.pow_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
-            this.lev_date.Text = Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.lev_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerLevelVersion.Revision);
-            this.lev_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
-            this.fx_Date.Text = Strings.Format(DatabaseAPI.Database.PowerEffectVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.fx_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerEffectVersion.Revision);
-            this.fx_Count.Text = "Many Lots";
-            this.invent_Date.Text = Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.invent_Revision.Text = Conversions.ToString(DatabaseAPI.Database.IOAssignmentVersion.Revision);
-            this.invent_RecipeDate.Text = Strings.Format(DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
+            mod_Date.Text = Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            mod_Revision.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Revision);
+            mod_Count.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
+            at_Date.Text = Strings.Format(DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            at_Revision.Text = Conversions.ToString(DatabaseAPI.Database.ArchetypeVersion.Revision);
+            at_Count.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
+            set_Date.Text = Strings.Format(DatabaseAPI.Database.PowersetVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            set_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowersetVersion.Revision);
+            set_Count.Text = Conversions.ToString(DatabaseAPI.Database.Powersets.Length);
+            pow_Date.Text = Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            pow_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerVersion.Revision);
+            pow_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
+            lev_date.Text = Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            lev_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerLevelVersion.Revision);
+            lev_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
+            fx_Date.Text = Strings.Format(DatabaseAPI.Database.PowerEffectVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            fx_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerEffectVersion.Revision);
+            fx_Count.Text = "Many Lots";
+            invent_Date.Text = Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            invent_Revision.Text = Conversions.ToString(DatabaseAPI.Database.IOAssignmentVersion.Revision);
+            invent_RecipeDate.Text = Strings.Format(DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
         }
 
         void fx_Import_Click(object sender, EventArgs e)
         {
             int num = (int)new frmImportEffects().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void invent_Import_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImport_SetAssignments().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void inventSetImport_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImportEnhSets().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void level_import_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImportPowerLevels().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void mod_Import_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImport_mod().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void pow_Import_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImport_Power().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void set_Import_Click(object sender, EventArgs e)
 
         {
             int num = (int)new frmImport_Powerset().ShowDialog();
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         static void SetEnhancementLevels()

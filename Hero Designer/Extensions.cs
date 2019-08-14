@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -14,7 +13,7 @@ namespace Hero_Designer
         readonly ListBox _lb;
         public T SelectedItem { get => (T)_lb.SelectedItem; set => _lb.SelectedItem = value; }
         public void AddItem(T item) => _lb.Items.Add(item);
-        public ListBoxT(ListBox lb) => this._lb = lb;
+        public ListBoxT(ListBox lb) => _lb = lb;
 
     }
 
@@ -22,11 +21,11 @@ namespace Hero_Designer
     {
         readonly ComboBox _cb;
 
-        public ComboBoxT(ComboBox cb) => this._cb = cb;
+        public ComboBoxT(ComboBox cb) => _cb = cb;
 
         public T SelectedItem { get => (T)_cb.SelectedItem; set => _cb.SelectedItem = value; }
-        public Rectangle Bounds => this._cb.Bounds;
-        public int Count => this._cb.Items.Count;
+        public Rectangle Bounds => _cb.Bounds;
+        public int Count => _cb.Items.Count;
         public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList()); }
         public void BeginUpdate() => _cb.BeginUpdate();
         public void Clear() => _cb.Items.Clear();
@@ -42,8 +41,8 @@ namespace Hero_Designer
         public ComboBox Value => _cb;
         public T this[int x]
         {
-            get => (T)this._cb.Items[x];
-            set => this._cb.Items[x] = value;
+            get => (T)_cb.Items[x];
+            set => _cb.Items[x] = value;
         }
     }
 

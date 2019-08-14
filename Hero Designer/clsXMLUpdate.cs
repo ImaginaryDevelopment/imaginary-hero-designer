@@ -1,20 +1,11 @@
 
-using Base;
-using Base.IO_Classes;
-using Base.Master_Classes;
-using Hero_Designer.My;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Diagnostics;
-using System.IO;
-using System.Net;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml;
+using Base;
+using Base.Master_Classes;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -23,9 +14,6 @@ namespace Hero_Designer
 
         public bool RestartNeeded = false;
 
-        public clsXMLUpdate()
-        {
-        }
         public static void BugReport(string at, string pri, string sec, string sData = "")
         {
             var targetUrl = "https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues";
@@ -37,7 +25,7 @@ namespace Hero_Designer
                     if (sData.Length > 96)
                         sData = sData.Substring(0, 96);
                 }
-                string str = "?" + "body=" + Strings.Format(Base.Master_Classes.MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format(DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
+                string str = "?" + "body=" + Strings.Format(MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format(DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
                 if (sData != "")
                     str = str + "&data=" + sData;
                 Process.Start(targetUrl);
@@ -57,11 +45,11 @@ namespace Hero_Designer
         }
 
         public static void GoToCoHPlanner() =>
-                clsXMLUpdate.LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/");
+                LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/");
 
         public static void GoToForums()
         {
-            clsXMLUpdate.LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,6298.0.html");
+            LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,6298.0.html");
         }
 
         static void LaunchBrowser(string iURI)
@@ -123,8 +111,8 @@ namespace Hero_Designer
             {
                 var runningVer = typeof(frmMain).Assembly.GetName().Version;
                 // I don't trust that != isn't reference comparison for the version type
-                if (runningVer.CompareTo(availVer) < 0) return (eCheckResponse.Updates, $"Version {remoteversion}, installed is {runningVer.ToString()}");
-                return (eCheckResponse.NoUpdates, $"Installed is {runningVer.ToString()}, remote is Version {remoteversion}");
+                if (runningVer.CompareTo(availVer) < 0) return (eCheckResponse.Updates, $"Version {remoteversion}, installed is {runningVer}");
+                return (eCheckResponse.NoUpdates, $"Installed is {runningVer}, remote is Version {remoteversion}");
             }
             catch (Exception ex)
             {
@@ -137,14 +125,14 @@ namespace Hero_Designer
         {
             NoUpdates,
             Updates,
-            FailedWithMessage,
+            FailedWithMessage
         }
 
         protected enum eUpdateType
         {
             None,
             AppUpdate,
-            DBUpdate,
+            DBUpdate
         }
     }
 }

@@ -1,6 +1,4 @@
 
-using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 
 public partial class ZStatus : Form
@@ -14,10 +12,10 @@ public partial class ZStatus : Form
     {
         set
         {
-            if (!(value != this.lblStatus1.Text))
+            if (!(value != lblStatus1.Text))
                 return;
-            this.lblStatus1.Text = value;
-            this.lblStatus1.Refresh();
+            lblStatus1.Text = value;
+            lblStatus1.Refresh();
         }
     }
 
@@ -25,15 +23,15 @@ public partial class ZStatus : Form
     {
         set
         {
-            if (!(value != this.lblStatus2.Text))
+            if (!(value != lblStatus2.Text))
                 return;
-            this.lblStatus2.Text = value;
-            this.lblStatus2.Refresh();
+            lblStatus2.Text = value;
+            lblStatus2.Refresh();
         }
     }
 
     public ZStatus()
     {
-        this.InitializeComponent();
+        InitializeComponent();
     }
 }

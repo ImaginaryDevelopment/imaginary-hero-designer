@@ -1,8 +1,5 @@
 
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -13,8 +10,8 @@ namespace Hero_Designer
 
         public frmEnhMiniPick()
         {
-            this.InitializeComponent();
-            this.Name = nameof(frmEnhMiniPick);
+            InitializeComponent();
+            Name = nameof(frmEnhMiniPick);
         }
 
         public static int MezPicker(int startIndex)
@@ -36,14 +33,14 @@ namespace Hero_Designer
         void btnOK_Click(object sender, EventArgs e)
 
         {
-            this.DialogResult = DialogResult.OK;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+            Hide();
         }
 
         void lbList_DoubleClick(object sender, EventArgs e)
 
         {
-            this.btnOK_Click(RuntimeHelpers.GetObjectValue(sender), e);
+            btnOK_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
     }
 }

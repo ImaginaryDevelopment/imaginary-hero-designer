@@ -12,11 +12,11 @@ public class LevelMap
     {
         try
         {
-            if (!int.TryParse(ioString[1], out this.Powers))
-                this.Powers = 0;
-            if (ioString.Count <= 2 || int.TryParse(ioString[2], out this.Slots))
+            if (!int.TryParse(ioString[1], out Powers))
+                Powers = 0;
+            if (ioString.Count <= 2 || int.TryParse(ioString[2], out Slots))
                 return;
-            this.Slots = 0;
+            Slots = 0;
         }
         catch (Exception ex)
         {
@@ -27,6 +27,6 @@ public class LevelMap
 
     public Enums.dmItem LevelType()
     {
-        return this.Powers <= 0 ? (this.Slots <= 0 ? Enums.dmItem.None : Enums.dmItem.Slot) : Enums.dmItem.Power;
+        return Powers <= 0 ? (Slots <= 0 ? Enums.dmItem.None : Enums.dmItem.Slot) : Enums.dmItem.Power;
     }
 }

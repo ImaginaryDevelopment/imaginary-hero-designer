@@ -1,12 +1,9 @@
 
-using Base.Data_Classes;
-using Base.IO_Classes;
+using System;
+using System.Drawing;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Drawing;
-using System.Runtime.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -14,7 +11,7 @@ namespace Hero_Designer
     {
         public class MidsController
         {
-            static bool _appInitialized = false;
+            static bool _appInitialized;
 
             public static Rectangle SzFrmCompare = new Rectangle();
             public static Rectangle SzFrmData = new Rectangle();
@@ -23,7 +20,7 @@ namespace Hero_Designer
             public static Rectangle SzFrmStats = new Rectangle();
             public static Rectangle SzFrmTotals = new Rectangle();
 
-            public static bool IsAppInitialized => MainModule.MidsController._appInitialized;
+            public static bool IsAppInitialized => _appInitialized;
 
             public static clsToonX Toon
             {
@@ -40,7 +37,7 @@ namespace Hero_Designer
             public static void LoadData(ref frmLoading iFrm)
             {
                 DatabaseAPI.LoadDatabaseVersion();
-                MainModule.MidsController._appInitialized = true;
+                _appInitialized = true;
                 if (iFrm != null)
                     iFrm.SetMessage("Loading Data...");
                 if (iFrm != null)

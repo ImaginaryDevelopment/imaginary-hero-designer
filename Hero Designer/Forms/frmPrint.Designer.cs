@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmPrint
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -212,22 +215,22 @@ namespace Hero_Designer
 
         }
         #endregion
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnLayout;
+        Button btnCancel;
+        Button btnLayout;
 
-        System.Windows.Forms.Button btnPrint;
+        Button btnPrint;
 
-        System.Windows.Forms.Button btnPrinter;
+        Button btnPrinter;
 
-        System.Windows.Forms.CheckBox chkPrintHistory;
-        System.Windows.Forms.CheckBox chkPrintHistoryEnh;
-        System.Windows.Forms.CheckBox chkProfileEnh;
-        System.Windows.Forms.PageSetupDialog dlgSetup;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.Label lblPrinter;
-        System.Windows.Forms.RadioButton rbProfileLong;
-        System.Windows.Forms.RadioButton rbProfileNone;
-        System.Windows.Forms.RadioButton rbProfileShort;
+        CheckBox chkPrintHistory;
+        CheckBox chkPrintHistoryEnh;
+        CheckBox chkProfileEnh;
+        PageSetupDialog dlgSetup;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label lblPrinter;
+        RadioButton rbProfileLong;
+        RadioButton rbProfileNone;
+        RadioButton rbProfileShort;
     }
 }

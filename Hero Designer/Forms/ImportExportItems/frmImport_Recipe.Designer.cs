@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmImport_Recipe
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -160,16 +163,16 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnAttribIndex;
-        System.Windows.Forms.Button btnAttribLoad;
-        System.Windows.Forms.Button btnAttribTable;
-        System.Windows.Forms.Button Button1;
-        System.Windows.Forms.OpenFileDialog dlgBrowse;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label lblAttribDate;
-        System.Windows.Forms.Label lblAttribIndex;
-        System.Windows.Forms.Label lblAttribTableCount;
-        System.Windows.Forms.Label lblAttribTables;
+        Button btnAttribIndex;
+        Button btnAttribLoad;
+        Button btnAttribTable;
+        Button Button1;
+        OpenFileDialog dlgBrowse;
+        Label Label3;
+        Label Label4;
+        Label lblAttribDate;
+        Label lblAttribIndex;
+        Label lblAttribTableCount;
+        Label lblAttribTables;
     }
 }

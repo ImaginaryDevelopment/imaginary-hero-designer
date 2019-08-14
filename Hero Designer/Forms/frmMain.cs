@@ -1,23 +1,26 @@
-using AutoUpdaterDotNET;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using AutoUpdaterDotNET;
 using Base;
 using Base.Data_Classes;
 using Base.Display;
-using Base.IO_Classes;
 using Base.Master_Classes;
+using Hero_Designer.Forms;
+using Hero_Designer.My;
 using midsControls;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Hero_Designer
 {
@@ -117,9 +120,9 @@ namespace Hero_Designer
 
         public frmMain()
         {
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            if (!Debugger.IsAttached || !this.IsInDesignMode() || !Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
-                ConfigData.Initialize(My.MyApplication.GetSerializer());
+                ConfigData.Initialize(MyApplication.GetSerializer());
                 Load += frmMain_Load;
                 Closed += frmMain_Closed;
                 FormClosing += frmMain_Closing;
@@ -163,7 +166,7 @@ namespace Hero_Designer
 
             tmrGfx.Tick += tmrGfx_Tick;
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            if (!Debugger.IsAttached || !this.IsInDesignMode() || !Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
                 dvAnchored = new DataView();
                 Controls.Add(dvAnchored);
@@ -186,7 +189,7 @@ namespace Hero_Designer
                 dvAnchored.SlotFlip += DataView_SlotFlip;
                 dvAnchored.Moved += dvAnchored_Move;
                 dvAnchored.TabChanged += dvAnchored_TabChanged;
-                var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+                var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
                 var icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 Icon = icon;
                 Name = nameof(frmMain);
@@ -743,7 +746,7 @@ namespace Hero_Designer
 
         void ChangeSets()
         {
-            Forms.MainUILogic.ChangeSets(MainModule.MidsController.Toon, MidsContext.Character,
+            MainUILogic.ChangeSets(MainModule.MidsController.Toon, MidsContext.Character,
                 primaryIndex: cbPrimary.SelectedIndex,
                 secondaryIndex: cbSecondary.SelectedIndex,
                 pool0Index: cbPool0.SelectedIndex,
@@ -778,30 +781,28 @@ namespace Hero_Designer
             {
                 return false;
             }
-            else
+
+            if (MainModule.MidsController.Toon.Locked & FileModified)
             {
-                if (MainModule.MidsController.Toon.Locked & FileModified)
+                FloatTop(false);
+                var msgBoxResult = MessageBox.Show("Do you wish to save your hero/villain data before quitting?", "Question", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                FloatTop(true);
+                int num;
+                switch (msgBoxResult)
                 {
-                    FloatTop(false);
-                    var msgBoxResult = MessageBox.Show("Do you wish to save your hero/villain data before quitting?", "Question", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    FloatTop(true);
-                    int num;
-                    switch (msgBoxResult)
-                    {
-                        case DialogResult.Cancel:
-                            return true;
-                        case DialogResult.Yes:
-                            num = doSave() ? 1 : 0;
-                            break;
-                        default:
-                            num = 1;
-                            break;
-                    }
-                    if (num == 0)
+                    case DialogResult.Cancel:
                         return true;
+                    case DialogResult.Yes:
+                        num = doSave() ? 1 : 0;
+                        break;
+                    default:
+                        num = 1;
+                        break;
                 }
-                return false;
+                if (num == 0)
+                    return true;
             }
+            return false;
         }
 
         bool ComboCheckAT(Archetype[] playableClasses)
@@ -811,16 +812,14 @@ namespace Hero_Designer
             {
                 return true;
             }
-            else
+
+            int num = playableClasses.Length - 1;
+            for (int index = 0; index <= num; ++index)
             {
-                int num = playableClasses.Length - 1;
-                for (int index = 0; index <= num; ++index)
-                {
-                    if (cbtAT[index].Idx != playableClasses[index].Idx)
-                        return true;
-                }
-                return false;
+                if (cbtAT[index].Idx != playableClasses[index].Idx)
+                    return true;
             }
+            return false;
         }
 
         bool ComboCheckOrigin()
@@ -830,19 +829,17 @@ namespace Hero_Designer
             {
                 return true;
             }
-            else
+
+            if (cbtOrigin.Count <= 1)
             {
-                if (cbtOrigin.Count <= 1)
+                int num = MidsContext.Character.Archetype.Origin.Length - 1;
+                for (int index = 0; index <= num; ++index)
                 {
-                    int num = MidsContext.Character.Archetype.Origin.Length - 1;
-                    for (int index = 0; index <= num; ++index)
-                    {
-                        if (cbtOrigin[index] != MidsContext.Character.Archetype.Origin[index])
-                            return true;
-                    }
+                    if (cbtOrigin[index] != MidsContext.Character.Archetype.Origin[index])
+                        return true;
                 }
-                return false;
             }
+            return false;
         }
 
         static void ComboCheckPool(ComboBoxT<string> iCB, Enums.ePowerSetType iSetType)
@@ -1199,19 +1196,17 @@ namespace Hero_Designer
         {
             if (LastFileName == string.Empty)
                 return doSaveAs();
-            else if (LastFileName.Length > 3 && LastFileName.ToUpper().EndsWith(".TXT"))
+            if (LastFileName.Length > 3 && LastFileName.ToUpper().EndsWith(".TXT"))
             {
                 return doSaveAs();
             }
-            else
+
+            if (MainModule.MidsController.Toon.Save(LastFileName))
             {
-                if (MainModule.MidsController.Toon.Save(LastFileName))
-                {
-                    FileModified = false;
-                    return true;
-                }
-                return false;
+                FileModified = false;
+                return true;
             }
+            return false;
         }
 
         bool doSaveAs()
@@ -1254,11 +1249,9 @@ namespace Hero_Designer
                 }
                 return false;
             }
-            else
-            {
-                FloatTop(true);
-                return false;
-            }
+
+            FloatTop(true);
+            return false;
         }
 
         void dvAnchored_Float()
@@ -1691,7 +1684,7 @@ namespace Hero_Designer
         void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = Size;
-            MidsContext.Config.SaveConfig(My.MyApplication.GetSerializer());
+            MidsContext.Config.SaveConfig(MyApplication.GetSerializer());
         }
 
         void frmMain_Closing(object sender, FormClosingEventArgs e)
@@ -1917,7 +1910,7 @@ namespace Hero_Designer
 
         void I9Picker_HoverEnhancement(int e)
         {
-            I9Slot i9Slot = new I9Slot()
+            I9Slot i9Slot = new I9Slot
             {
                 Enh = e,
                 IOLevel = I9Picker.CheckAndReturnIOLevel() - 1,
@@ -4162,7 +4155,7 @@ namespace Hero_Designer
             FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
             FlipGP.Slots = Array.Empty<SlotEntry>();
             if (tmrGfx == null)
-                tmrGfx = new System.Windows.Forms.Timer(Container);
+                tmrGfx = new Timer(Container);
             tmrGfx.Interval = FlipInterval;
             FlipActive = true;
             tmrGfx.Enabled = true;
@@ -4216,7 +4209,7 @@ namespace Hero_Designer
                 return false;
             if (MidsContext.Character.CurrentBuild.Powers[hID].IDXPower < 0)
                 return false;
-            Rectangle rectangle2 = new Rectangle()
+            Rectangle rectangle2 = new Rectangle
             {
                 Location = drawing.PowerPosition(MidsContext.Character.CurrentBuild.Powers[hID]),
                 Size = drawing.bxPower[0].Size
@@ -4427,7 +4420,7 @@ namespace Hero_Designer
             if (string.IsNullOrWhiteSpace(MidsContext.Config.DChannel))
             {
                 // tired of typing this
-                if (System.Diagnostics.Debugger.IsAttached) MidsContext.Config.DChannel = "feature-testing";
+                if (Debugger.IsAttached) MidsContext.Config.DChannel = "feature-testing";
                 ShowConfigError("Channel");
                 return;
             }
@@ -4820,7 +4813,7 @@ namespace Hero_Designer
                 llPool0, llPool1, llPool2, llPool3,
                 llAncillary,
                 lblName, lblAT, lblOrigin, lblHero,
-                pnlGFX,
+                pnlGFX
             };
             foreach (var colorItem in toColor)
             {
@@ -4856,7 +4849,7 @@ namespace Hero_Designer
                 ibSlotLevels,
                 ibPopup,
                 ibRecipe,
-                ibAccolade,
+                ibAccolade
             };
             foreach (var ib in ibs)
                 ib.SetImages(drawing.pImageAttributes, drawing.bxPower[2].Bitmap, drawing.bxPower[3].Bitmap);
@@ -5313,7 +5306,7 @@ namespace Hero_Designer
                             for (int index2 = 0; index2 < powerEntry.Slots.Length; ++index2)
                             {
                                 ++index3;
-                                powerEntry.Slots[index2] = new SlotEntry()
+                                powerEntry.Slots[index2] = new SlotEntry
                                 {
                                     Level = 49,
                                     Enhancement = new I9Slot(),

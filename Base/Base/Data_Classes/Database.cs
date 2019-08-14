@@ -39,11 +39,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._powerVersion;
+                return _powerVersion;
             }
             set
             {
-                this._powerVersion = value;
+                _powerVersion = value;
             }
         }
 
@@ -51,11 +51,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._powerEffectVersion;
+                return _powerEffectVersion;
             }
             set
             {
-                this._powerEffectVersion = value;
+                _powerEffectVersion = value;
             }
         }
 
@@ -63,11 +63,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._powerLevelVersion;
+                return _powerLevelVersion;
             }
             set
             {
-                this._powerLevelVersion = value;
+                _powerLevelVersion = value;
             }
         }
 
@@ -77,11 +77,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._powersetVersion;
+                return _powersetVersion;
             }
             set
             {
-                this._powersetVersion = value;
+                _powersetVersion = value;
             }
         }
 
@@ -91,11 +91,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._archetypeVersion;
+                return _archetypeVersion;
             }
             set
             {
-                this._archetypeVersion = value;
+                _archetypeVersion = value;
             }
         }
 
@@ -113,7 +113,7 @@ namespace Base.Data_Classes
 
         public string RecipeSource2 { get; set; }
 
-        public global::Salvage[] Salvage { get; set; }
+        public Salvage[] Salvage { get; set; }
 
         public List<Origin> Origins { get; set; }
 
@@ -127,11 +127,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._ioAssignmentVersion;
+                return _ioAssignmentVersion;
             }
             set
             {
-                this._ioAssignmentVersion = value;
+                _ioAssignmentVersion = value;
             }
         }
 
@@ -139,11 +139,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._entities;
+                return _entities;
             }
             set
             {
-                this._entities = value;
+                _entities = value;
             }
         }
 
@@ -157,11 +157,11 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this._effectIds;
+                return _effectIds;
             }
             set
             {
-                this._effectIds = value;
+                _effectIds = value;
             }
         }
 
@@ -169,7 +169,7 @@ namespace Base.Data_Classes
         {
             get
             {
-                return Database._instance;
+                return _instance;
             }
         }
 
@@ -203,16 +203,16 @@ namespace Base.Data_Classes
 
         public void LoadEntities(BinaryReader reader)
         {
-            this.Entities = new SummonedEntity[reader.ReadInt32() + 1];
-            for (int index = 0; index <= this.Entities.Length - 1; ++index)
-                this.Entities[index] = new SummonedEntity(reader);
+            Entities = new SummonedEntity[reader.ReadInt32() + 1];
+            for (int index = 0; index <= Entities.Length - 1; ++index)
+                Entities[index] = new SummonedEntity(reader);
         }
 
         public void StoreEntities(BinaryWriter writer)
         {
-            writer.Write(this.Entities.Length - 1);
-            for (int index = 0; index <= this.Entities.Length - 1; ++index)
-                this.Entities[index].StoreTo(writer);
+            writer.Write(Entities.Length - 1);
+            for (int index = 0; index <= Entities.Length - 1; ++index)
+                Entities[index].StoreTo(writer);
         }
     }
 }

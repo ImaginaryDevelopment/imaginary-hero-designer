@@ -1,5 +1,4 @@
-﻿using System;
-using System.CodeDom.Compiler;
+﻿using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
@@ -25,12 +24,12 @@ namespace midsControls.My.Resources
 		{
 			get
 			{
-				if (object.ReferenceEquals(Resources.resourceMan, null))
+				if (ReferenceEquals(resourceMan, null))
 				{
 					ResourceManager resourceManager = new ResourceManager("midsControls.Resources", typeof(Resources).Assembly);
-					Resources.resourceMan = resourceManager;
+					resourceMan = resourceManager;
 				}
-				return Resources.resourceMan;
+				return resourceMan;
 			}
 		}
 
@@ -42,11 +41,11 @@ namespace midsControls.My.Resources
 		{
 			get
 			{
-				return Resources.resourceCulture;
+				return resourceCulture;
 			}
 			set
 			{
-				Resources.resourceCulture = value;
+				resourceCulture = value;
 			}
 		}
 

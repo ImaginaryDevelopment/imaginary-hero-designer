@@ -1,13 +1,12 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -19,65 +18,65 @@ namespace Hero_Designer
 
         public frmImport_Entities()
         {
-            this.Load += this.frmImport_Entities_Load;
-            this.FullFileName = "";
-            this.InitializeComponent();
+            Load += frmImport_Entities_Load;
+            FullFileName = "";
+            InitializeComponent();
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_Entities));
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_Entities);
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmImport_Entities);
         }
 
         void frmImport_Entities_Load(object sender, EventArgs e)
         {
-            this.FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
+            DisplayInfo();
         }
 
 
         void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.FullFileName = this.dlgBrowse.FileName;
-            this.BusyHide();
-            this.DisplayInfo();
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
+                FullFileName = dlgBrowse.FileName;
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
         {
-            this.ParseClasses(this.FullFileName);
-            this.BusyHide();
-            this.DisplayInfo();
+            ParseClasses(FullFileName);
+            BusyHide();
+            DisplayInfo();
         }
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show(this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
-            this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.udRevision.Value = new Decimal(DatabaseAPI.Database.IOAssignmentVersion.Revision);
+            lblFile.Text = FileIO.StripPath(FullFileName);
+            lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            udRevision.Value = new Decimal(DatabaseAPI.Database.IOAssignmentVersion.Revision);
         }
 
         bool ParseClasses(string iFileName)
@@ -111,7 +110,7 @@ namespace Hero_Designer
                             ++num5;
                             if (num5 >= 9)
                             {
-                                this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                                BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                                 num5 = 0;
                             }
                             string[] array = CSV.ToArray(iLine);
@@ -153,9 +152,9 @@ namespace Hero_Designer
                 return false;
             }
             iStream.Close();
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            this.DisplayInfo();
+            DisplayInfo();
             Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }

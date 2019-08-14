@@ -1,13 +1,13 @@
 
-using Base.Data_Classes;
-using Base.Display;
-using Base.Master_Classes;
-using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Base.Display;
+using Base.Master_Classes;
+using HeroDesigner.Schema;
 
 public class Build
 {
@@ -24,8 +24,8 @@ public class Build
         get
         {
             IPower power;
-            if ((power = this._setBonusVirtualPower) == null)
-                power = this._setBonusVirtualPower = this.GetSetBonusVirtualPower();
+            if ((power = _setBonusVirtualPower) == null)
+                power = _setBonusVirtualPower = GetSetBonusVirtualPower();
             return power;
         }
     }
@@ -35,7 +35,7 @@ public class Build
         get
         {
             int pplaced = 0;
-            foreach (PowerEntry power in this.Powers)
+            foreach (PowerEntry power in Powers)
             {
                 if (power.Chosen && power.Power != null)
                     ++pplaced;
@@ -49,7 +49,7 @@ public class Build
         get
         {
             int placed = 0;
-            foreach (PowerEntry power in this.Powers)
+            foreach (PowerEntry power in Powers)
             {
                 if (power.Slots.Length > 1)
                     placed += power.Slots.Length - 1;
@@ -71,11 +71,11 @@ public class Build
 
     public PowerEntry AddPower(IPower power, int specialLevel = -1)
     {
-        PowerEntry powerEntry = this.GetPowerEntry(power);
+        PowerEntry powerEntry = GetPowerEntry(power);
         if (powerEntry == null)
         {
             powerEntry = new PowerEntry(specialLevel, power, false);
-            this.Powers.Add(powerEntry);
+            Powers.Add(powerEntry);
         }
         powerEntry.ValidateSlots();
         return powerEntry;
@@ -83,7 +83,7 @@ public class Build
 
     public void RemovePower(IPower powerToRemove)
     {
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             if (power != null && power.Power != null && power.Power.PowerIndex == powerToRemove.PowerIndex)
             {
@@ -95,7 +95,7 @@ public class Build
 
     PowerEntry GetPowerEntry(IPower power)
     {
-        foreach (PowerEntry power1 in this.Powers)
+        foreach (PowerEntry power1 in Powers)
         {
             if (power1.Power != null && power1.Power.PowerIndex == power.PowerIndex)
                 return power1;
@@ -105,45 +105,45 @@ public class Build
 
     public Build(Character owner, IList<LevelMap> iLevels)
     {
-        this._character = owner;
-        this.Powers = new List<PowerEntry>()
+        _character = owner;
+        Powers = new List<PowerEntry>
         {
           new PowerEntry(0, null, true)
         };
-        this.SetBonus = new List<I9SetData>();
-        this.LastPower = 0;
+        SetBonus = new List<I9SetData>();
+        LastPower = 0;
         for (int iLevel = 0; iLevel < iLevels.Count; ++iLevel)
         {
             for (int index = 0; index < iLevels[iLevel].Powers; ++index)
             {
-                this.Powers.Add(new PowerEntry(iLevel, null, true));
-                ++this.LastPower;
+                Powers.Add(new PowerEntry(iLevel, null, true));
+                ++LastPower;
             }
         }
     }
 
     public void RemoveSlotFromPower(int powerIdx, int slotIdx)
     {
-        if (powerIdx < 0 || powerIdx > this.Powers.Count - 1 || (slotIdx < 0 || slotIdx > this.Powers[powerIdx].Slots.Length - 1))
+        if (powerIdx < 0 || powerIdx > Powers.Count - 1 || (slotIdx < 0 || slotIdx > Powers[powerIdx].Slots.Length - 1))
             return;
         int index1 = -1;
-        SlotEntry[] slotEntryArray = new SlotEntry[this.Powers[powerIdx].Slots.Length - 1];
-        for (int i = 0; i <= this.Powers[powerIdx].Slots.Length - 1; ++i)
+        SlotEntry[] slotEntryArray = new SlotEntry[Powers[powerIdx].Slots.Length - 1];
+        for (int i = 0; i <= Powers[powerIdx].Slots.Length - 1; ++i)
         {
             if (i != slotIdx)
             {
                 ++index1;
-                slotEntryArray[index1].Assign(this.Powers[powerIdx].Slots[i]);
+                slotEntryArray[index1].Assign(Powers[powerIdx].Slots[i]);
             }
         }
-        this.Powers[powerIdx].Slots = new SlotEntry[slotEntryArray.Length];
-        for (int index2 = 0; index2 <= this.Powers[powerIdx].Slots.Length - 1; ++index2)
-            this.Powers[powerIdx].Slots[index2].Assign(slotEntryArray[index2]);
+        Powers[powerIdx].Slots = new SlotEntry[slotEntryArray.Length];
+        for (int index2 = 0; index2 <= Powers[powerIdx].Slots.Length - 1; ++index2)
+            Powers[powerIdx].Slots[index2].Assign(slotEntryArray[index2]);
     }
 
     void FillMissingSubPowers()
     {
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             if (power.Power != null && power.Power.NIDSubPower.Length > 0)
             {
@@ -153,7 +153,7 @@ public class Build
                 {
                     if (power.SubPowers[index]?.nIDPower != power.Power.NIDSubPower[index])
                     {
-                        power.SubPowers[index] = new PowerSubEntry()
+                        power.SubPowers[index] = new PowerSubEntry
                         {
                             nIDPower = power.Power.NIDSubPower[index]
                         };
@@ -175,7 +175,7 @@ public class Build
 
     void ValidateEnhancements()
     {
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             foreach (SlotEntry slot in power.Slots)
             {
@@ -217,7 +217,7 @@ public class Build
         }
         if (MessageBox.Show(string.Format("Really set all placed Regular enhancements to {0} Origin?\n\nThis will not affect any Invention or Special enhancements.", str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
-            foreach (PowerEntry power in this.Powers)
+            foreach (PowerEntry power in Powers)
             {
                 foreach (SlotEntry slot in power.Slots)
                 {
@@ -227,8 +227,8 @@ public class Build
             }
             return true;
         }
-        else
-            return false;
+
+        return false;
     }
 
     public bool SetIOLevels(int newVal, bool iSetMin, bool iSetMax)
@@ -248,7 +248,7 @@ public class Build
         }
         if (MessageBox.Show(text, "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
-            foreach (PowerEntry power in this.Powers)
+            foreach (PowerEntry power in Powers)
             {
                 foreach (SlotEntry slot in power.Slots)
                 {
@@ -272,7 +272,6 @@ public class Build
                                 if (newVal < levelMin1)
                                 {
                                     slot.Enhancement.IOLevel = Enhancement.GranularLevelZb(levelMin1, levelMin1, levelMax, 5);
-                                    break;
                                 }
                                 break;
                             case Enums.eType.SetO:
@@ -293,7 +292,6 @@ public class Build
                                 if (newVal < levelMin2)
                                 {
                                     slot.Enhancement.IOLevel = levelMin2;
-                                    break;
                                 }
                                 break;
                         }
@@ -302,8 +300,8 @@ public class Build
             }
             return true;
         }
-        else
-            return false;
+
+        return false;
     }
 
     public HistoryMap[] BuildHistoryMap(bool enhNames, bool ioLevel = true)
@@ -311,12 +309,12 @@ public class Build
         var historyMapList = new List<HistoryMap>();
         for (int lvlIdx = 0; lvlIdx <= DatabaseAPI.Database.Levels.Length - 1; ++lvlIdx)
         {
-            for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
+            for (int powerIdx = 0; powerIdx <= Powers.Count - 1; ++powerIdx)
             {
-                PowerEntry power = this.Powers[powerIdx];
+                PowerEntry power = Powers[powerIdx];
                 if ((power.Chosen || power.SubPowers.Length == 0 || power.SlotCount == 0) && power.Level == lvlIdx && power.Power != null)
                 {
-                    var historyMap = new HistoryMap()
+                    var historyMap = new HistoryMap
                     {
                         Level = lvlIdx,
                         HID = powerIdx
@@ -341,14 +339,14 @@ public class Build
                     historyMapList.Add(historyMap);
                 }
             }
-            for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
+            for (int powerIdx = 0; powerIdx <= Powers.Count - 1; ++powerIdx)
             {
-                PowerEntry power = this.Powers[powerIdx];
+                PowerEntry power = Powers[powerIdx];
                 for (int slotIdx = 1; slotIdx <= power.Slots.Length - 1; ++slotIdx)
                 {
                     if (power.Slots[slotIdx].Level == lvlIdx)
                     {
-                        HistoryMap historyMap = new HistoryMap()
+                        HistoryMap historyMap = new HistoryMap
                         {
                             Level = lvlIdx,
                             HID = powerIdx,
@@ -379,7 +377,7 @@ public class Build
         if (powerEntryId < 0)
             return 0;
         int slotsAtLevel = 0;
-        foreach (SlotEntry slot in this.Powers[powerEntryId].Slots)
+        foreach (SlotEntry slot in Powers[powerEntryId].Slots)
         {
             if (slot.Level <= iLevel)
                 ++slotsAtLevel;
@@ -390,11 +388,11 @@ public class Build
     public int SlotsPlacedAtLevel(int level)
     {
         int slotsPlacedAtLevel = 0;
-        for (int powerIdx = 0; powerIdx < this.Powers.Count; ++powerIdx)
+        for (int powerIdx = 0; powerIdx < Powers.Count; ++powerIdx)
         {
-            for (int slotIdx = 0; slotIdx < this.Powers[powerIdx].Slots.Length; ++slotIdx)
+            for (int slotIdx = 0; slotIdx < Powers[powerIdx].Slots.Length; ++slotIdx)
             {
-                if (this.Powers[powerIdx].Slots[slotIdx].Level == level)
+                if (Powers[powerIdx].Slots[slotIdx].Level == level)
                     ++slotsPlacedAtLevel;
             }
         }
@@ -404,14 +402,14 @@ public class Build
     public PopUp.PopupData GetRespecHelper(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = new PopUp.PopupData();
-        HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
+        HistoryMap[] historyMapArray = BuildHistoryMap(true, true);
         int index1 = popupData.Add(null);
         popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         foreach (HistoryMap historyMap in historyMapArray)
         {
             if (historyMap.HID > -1 && DatabaseAPI.Database.Levels[historyMap.Level].Powers > 0 && historyMap.Level <= iLevel)
             {
-                PowerEntry power = this.Powers[historyMap.HID];
+                PowerEntry power = Powers[historyMap.HID];
                 if (power.Slots.Length > 0)
                 {
                     int index2 = popupData.Add(null);
@@ -421,7 +419,7 @@ public class Build
                     else
                         iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
                     popupData.Sections[index2].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
-                    int slots = this.SlotsAtLevel(historyMap.HID, iLevel);
+                    int slots = SlotsAtLevel(historyMap.HID, iLevel);
                     if (slots > 0)
                     {
                         popupData.Sections[index2].Add("Slots: " + slots, PopUp.Colors.Text, 1f, FontStyle.Regular, 1);
@@ -452,7 +450,7 @@ public class Build
     public PopUp.PopupData GetRespecHelper2(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = new PopUp.PopupData();
-        HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
+        HistoryMap[] historyMapArray = BuildHistoryMap(true, true);
         int index = popupData.Add(null);
         popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         int histLvl = 0;
@@ -463,7 +461,7 @@ public class Build
             histLvl = historyMap.Level;
             if (historyMap.HID >= 0)
             {
-                PowerEntry power = this.Powers[historyMap.HID];
+                PowerEntry power = Powers[historyMap.HID];
                 if (DatabaseAPI.Database.Levels[historyMap.Level].Powers > 0 & historyMap.Level <= iLevel)
                 {
                     if (power.Slots.Length > 0)
@@ -552,7 +550,7 @@ public class Build
         }
         if (MessageBox.Show(string.Format("Really set all placed enhancements to a relative level of {0}?\n\nNote: Normal and Special enhancements cannot go above +3, and Inventions cannot go below +0.", display), "Are you sure?", MessageBoxButtons.YesNo) != DialogResult.Yes)
             return false;
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             foreach (SlotEntry slot in power.Slots)
             {
@@ -579,7 +577,7 @@ public class Build
 
     void CheckAndFixAllEnhancements()
     {
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             foreach (SlotEntry slot in power.Slots)
             {
@@ -609,29 +607,29 @@ public class Build
                 }
             }
         }
-        this.ValidateEnhancements();
+        ValidateEnhancements();
     }
 
     void CheckAllVariableBounds()
     {
-        for (int index = 0; index <= this.Powers.Count - 1; ++index)
-            this.Powers[index].CheckVariableBounds();
+        for (int index = 0; index <= Powers.Count - 1; ++index)
+            Powers[index].CheckVariableBounds();
     }
 
     internal void Validate()
     {
-        this.ClearInvisibleSlots();
-        this.ScanAndCleanAutomaticallyGrantedPowers();
-        this.AddAutomaticGrantedPowers();
-        this.FillMissingSubPowers();
-        this.CheckAndFixAllEnhancements();
-        this.CheckAllVariableBounds();
+        ClearInvisibleSlots();
+        ScanAndCleanAutomaticallyGrantedPowers();
+        AddAutomaticGrantedPowers();
+        FillMissingSubPowers();
+        CheckAndFixAllEnhancements();
+        CheckAllVariableBounds();
     }
 
     public int GetMaxLevel()
     {
         int maxLevel = 0;
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             if (power.Level > maxLevel)
                 maxLevel = power.Level;
@@ -646,7 +644,7 @@ public class Build
 
     void ClearInvisibleSlots()
     {
-        foreach (PowerEntry power in this.Powers)
+        foreach (PowerEntry power in Powers)
         {
             power.ClearInvisibleSlots();
         }
@@ -655,12 +653,12 @@ public class Build
     void ScanAndCleanAutomaticallyGrantedPowers()
     {
         bool flag = false;
-        int maxLevel = this.GetMaxLevel();
-        foreach (PowerEntry power in this.Powers)
+        int maxLevel = GetMaxLevel();
+        foreach (PowerEntry power in Powers)
         {
             if (power.Power != null && power.PowerSet != null && !power.Chosen && (power.PowerSet.SetType == Enums.ePowerSetType.Inherent || power.PowerSet.SetType == Enums.ePowerSetType.Primary || power.PowerSet.SetType == Enums.ePowerSetType.Secondary))
             {
-                if (power.Power.Level > maxLevel + 1 || !this.MeetsRequirement(power.Power, maxLevel, -1) || !power.Power.IncludeFlag)
+                if (power.Power.Level > maxLevel + 1 || !MeetsRequirement(power.Power, maxLevel, -1) || !power.Power.IncludeFlag)
                 {
                     power.Tag = true;
                     flag = true;
@@ -672,15 +670,15 @@ public class Build
         if (!flag)
             return;
         int powerIdx = 0;
-        while (powerIdx < this.Powers.Count)
+        while (powerIdx < Powers.Count)
         {
-            if (this.Powers[powerIdx].Tag)
+            if (Powers[powerIdx].Tag)
             {
-                this.Powers[powerIdx].Reset();
-                if (!this.Powers[powerIdx].Chosen)
+                Powers[powerIdx].Reset();
+                if (!Powers[powerIdx].Chosen)
                 {
-                    this.Powers[powerIdx].Level = -1;
-                    this.Powers[powerIdx].Slots = Array.Empty<SlotEntry>();
+                    Powers[powerIdx].Level = -1;
+                    Powers[powerIdx].Slots = Array.Empty<SlotEntry>();
                 }
             }
             else
@@ -694,8 +692,8 @@ public class Build
             return false;
 
         int nIdSkip = -1;
-        if (skipIdx > -1 & skipIdx < this.Powers.Count)
-            nIdSkip = this.Powers[skipIdx].Power == null ? -1 : this.Powers[skipIdx].Power.PowerIndex;
+        if (skipIdx > -1 & skipIdx < Powers.Count)
+            nIdSkip = Powers[skipIdx].Power == null ? -1 : Powers[skipIdx].Power.PowerIndex;
         if (nLevel + 1 < power.Level)
             return false;
         if (power.Requires.NClassName.Length == 0 & power.Requires.NClassNameNot.Length == 0 & power.Requires.NPowerID.Length == 0 & power.Requires.NPowerIDNot.Length == 0)
@@ -727,10 +725,10 @@ public class Build
                 {
                     int index = -1;
                     if (nIDPower != nIdSkip)
-                        index = this.FindInToonHistory(nIDPower);
+                        index = FindInToonHistory(nIDPower);
                     if (index < 0)
                         doubleValid = false;
-                    else if (this.Powers[index].Level > nLevel)
+                    else if (Powers[index].Level > nLevel)
                         doubleValid = false;
                 }
             }
@@ -750,7 +748,7 @@ public class Build
                 {
                     int histIdx = -1;
                     if (nIDPower != nIdSkip)
-                        histIdx = this.FindInToonHistory(nIDPower);
+                        histIdx = FindInToonHistory(nIDPower);
                     if (histIdx > -1)
                         return false;
                 }
@@ -761,20 +759,20 @@ public class Build
 
     public int FindInToonHistory(int nIDPower)
     {
-        for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
+        for (int powerIdx = 0; powerIdx <= Powers.Count - 1; ++powerIdx)
         {
-            if (this.Powers[powerIdx].Power != null && this.Powers[powerIdx].Power.PowerIndex == nIDPower)
+            if (Powers[powerIdx].Power != null && Powers[powerIdx].Power.PowerIndex == nIDPower)
                 return powerIdx;
         }
         return -1;
     }
 
     public bool PowerUsed(IPower power)
-        => this.FindInToonHistory(power.PowerIndex) > -1;
+        => FindInToonHistory(power.PowerIndex) > -1;
 
     void AddAutomaticGrantedPowers()
     {
-        int maxLevel = this.GetMaxLevel();
+        int maxLevel = GetMaxLevel();
         List<IPowerset> powersetList = new List<IPowerset>();
         powersetList.AddRange(_character.Powersets);
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -789,15 +787,15 @@ public class Build
                 foreach (IPower power in powerset.Powers)
                 {
                     int val2 = 0;
-                    if (power.IncludeFlag && power.Level <= maxLevel + 1 && !this.PowerUsed(power) && this.MeetsRequirement(power, maxLevel + 1, -1))
+                    if (power.IncludeFlag && power.Level <= maxLevel + 1 && !PowerUsed(power) && MeetsRequirement(power, maxLevel + 1, -1))
                     {
                         if (power.Requires.NPowerID.Length > 0)
                         {
-                            int inToonHistory = this.FindInToonHistory(power.Requires.NPowerID[0][0]);
+                            int inToonHistory = FindInToonHistory(power.Requires.NPowerID[0][0]);
                             if (inToonHistory > -1)
-                                val2 = this.Powers[inToonHistory].Level;
+                                val2 = Powers[inToonHistory].Level;
                         }
-                        this.AddPower(power, Math.Max(power.Level - 1, val2));
+                        AddPower(power, Math.Max(power.Level - 1, val2));
                     }
                 }
             }
@@ -917,108 +915,106 @@ public class Build
         {
             return false;
         }
-        else
+
+        IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iEnh];
+        bool foundMutex = false;
+        bool foundInPower = false;
+        if (enhancement.TypeID == Enums.eType.SetO && enhancement.nIDSet > -1 && hIdx > -1 && Powers[hIdx].Power != null)
         {
-            IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iEnh];
-            bool foundMutex = false;
-            bool foundInPower = false;
-            if (enhancement.TypeID == Enums.eType.SetO && enhancement.nIDSet > -1 && hIdx > -1 && this.Powers[hIdx].Power != null)
+            bool allowedSet = false;
+            Enums.eSetType setType = DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType;
+            for (int index = 0; index <= Powers[hIdx].Power.SetTypes.Length - 1; ++index)
             {
-                bool allowedSet = false;
-                Enums.eSetType setType = DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType;
-                for (int index = 0; index <= this.Powers[hIdx].Power.SetTypes.Length - 1; ++index)
+                if (Powers[hIdx].Power.SetTypes[index] == setType)
                 {
-                    if (this.Powers[hIdx].Power.SetTypes[index] == setType)
+                    allowedSet = true;
+                    break;
+                }
+            }
+            if (!allowedSet)
+                return false;
+        }
+
+        for (int powerIdx = 0; powerIdx <= Powers.Count - 1; ++powerIdx)
+        {
+            for (int slotIndex = 0; slotIndex <= Powers[powerIdx].Slots.Length - 1; ++slotIndex)
+            {
+                if ((slotIndex != iSlotID || powerIdx != hIdx) && Powers[powerIdx].Slots[slotIndex].Enhancement.Enh > -1)
+                {
+                    if (enhancement.Unique && Powers[powerIdx].Slots[slotIndex].Enhancement.Enh == iEnh)
                     {
-                        allowedSet = true;
+                        if (!silent)
+                            MessageBox.Show(enhancement.LongName + " is a unique enhancement. You can only slot one of these across your entire build.", "Can't Slot Enhancement");
+                        return false;
+                    }
+                    if (enhancement.MutExID != Enums.eEnhMutex.None && DatabaseAPI.Database.Enhancements[Powers[powerIdx].Slots[slotIndex].Enhancement.Enh].MutExID == enhancement.MutExID)
+                    { //6/29/19 Pine: Added checker for ATO Mutex
+                        if (enhancement.MutExID == Enums.eEnhMutex.ArchetypeA ||
+                            enhancement.MutExID == Enums.eEnhMutex.ArchetypeB ||
+                            enhancement.MutExID == Enums.eEnhMutex.ArchetypeC ||
+                            enhancement.MutExID == Enums.eEnhMutex.ArchetypeD ||
+                            enhancement.MutExID == Enums.eEnhMutex.ArchetypeE ||
+                            enhancement.MutExID == Enums.eEnhMutex.ArchetypeF)
+                        {
+                            string compareStringSlottedEnh = DatabaseAPI.Database.Enhancements[Powers[powerIdx].Slots[slotIndex].Enhancement.Enh].LongName;
+                            if (compareStringSlottedEnh.Contains("Superior"))
+                                compareStringSlottedEnh = compareStringSlottedEnh.Remove(0, 9);
+                            string compareStringSlottingEnh = enhancement.LongName;
+                            if (compareStringSlottingEnh.Contains("Superior"))
+                                compareStringSlottingEnh = compareStringSlottingEnh.Remove(0, 9);
+                            if (compareStringSlottedEnh != compareStringSlottingEnh)
+                                break;
+                        }
+
+                        foundMutex = true;
+                        break;
+                    }
+                    if (enhancement.nIDSet > -1 && powerIdx == hIdx && Powers[powerIdx].Slots[slotIndex].Enhancement.Enh == iEnh)
+                    {
+                        foundInPower = true;
                         break;
                     }
                 }
-                if (!allowedSet)
-                    return false;
             }
-
-            for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
-            {
-                for (int slotIndex = 0; slotIndex <= this.Powers[powerIdx].Slots.Length - 1; ++slotIndex)
-                {
-                    if ((slotIndex != iSlotID || powerIdx != hIdx) && this.Powers[powerIdx].Slots[slotIndex].Enhancement.Enh > -1)
-                    {
-                        if (enhancement.Unique && this.Powers[powerIdx].Slots[slotIndex].Enhancement.Enh == iEnh)
-                        {
-                            if (!silent)
-                                MessageBox.Show(enhancement.LongName + " is a unique enhancement. You can only slot one of these across your entire build.", "Can't Slot Enhancement");
-                            return false;
-                        }
-                        if (enhancement.MutExID != Enums.eEnhMutex.None && DatabaseAPI.Database.Enhancements[this.Powers[powerIdx].Slots[slotIndex].Enhancement.Enh].MutExID == enhancement.MutExID)
-                        { //6/29/19 Pine: Added checker for ATO Mutex
-                            if (enhancement.MutExID == Enums.eEnhMutex.ArchetypeA ||
-                                enhancement.MutExID == Enums.eEnhMutex.ArchetypeB ||
-                                enhancement.MutExID == Enums.eEnhMutex.ArchetypeC ||
-                                enhancement.MutExID == Enums.eEnhMutex.ArchetypeD ||
-                                enhancement.MutExID == Enums.eEnhMutex.ArchetypeE ||
-                                enhancement.MutExID == Enums.eEnhMutex.ArchetypeF)
-                            {
-                                string compareStringSlottedEnh = DatabaseAPI.Database.Enhancements[this.Powers[powerIdx].Slots[slotIndex].Enhancement.Enh].LongName;
-                                if (compareStringSlottedEnh.Contains("Superior"))
-                                    compareStringSlottedEnh = compareStringSlottedEnh.Remove(0, 9);
-                                string compareStringSlottingEnh = enhancement.LongName;
-                                if (compareStringSlottingEnh.Contains("Superior"))
-                                    compareStringSlottingEnh = compareStringSlottingEnh.Remove(0, 9);
-                                if (compareStringSlottedEnh != compareStringSlottingEnh)
-                                    break;
-                            }
-
-                            foundMutex = true;
-                            break;
-                        }
-                        if (enhancement.nIDSet > -1 && powerIdx == hIdx && this.Powers[powerIdx].Slots[slotIndex].Enhancement.Enh == iEnh)
-                        {
-                            foundInPower = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (foundMutex)
-            {
-                if (!silent)
-                {
-                    MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
-                }
-                return false;
-            }
-            if (foundInPower)
-            {
-                if (!silent)
-                {
-                    MessageBox.Show(enhancement.LongName + " is already slotted in this power. You can only slot one of each enhancement from the set in a given power.", "Can't Slot Enhancement");
-                }
-                return false;
-            }
-            return true;
         }
+        if (foundMutex)
+        {
+            if (!silent)
+            {
+                MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
+            }
+            return false;
+        }
+        if (foundInPower)
+        {
+            if (!silent)
+            {
+                MessageBox.Show(enhancement.LongName + " is already slotted in this power. You can only slot one of each enhancement from the set in a given power.", "Can't Slot Enhancement");
+            }
+            return false;
+        }
+        return true;
     }
 
     public void GenerateSetBonusData()
     {
-        this.SetBonus.Clear();
-        for (int index1 = 0; index1 < this.Powers.Count; ++index1)
+        SetBonus.Clear();
+        for (int index1 = 0; index1 < Powers.Count; ++index1)
         {
-            I9SetData i9SetData = new I9SetData()
+            I9SetData i9SetData = new I9SetData
             {
                 PowerIndex = index1
             };
-            if (this.Powers[index1].Level <= MidsContext.Config.ForceLevel)
+            if (Powers[index1].Level <= MidsContext.Config.ForceLevel)
             {
-                for (int index2 = 0; index2 < this.Powers[index1].SlotCount; ++index2)
-                    i9SetData.Add(ref this.Powers[index1].Slots[index2].Enhancement);
+                for (int index2 = 0; index2 < Powers[index1].SlotCount; ++index2)
+                    i9SetData.Add(ref Powers[index1].Slots[index2].Enhancement);
             }
             i9SetData.BuildEffects(!MidsContext.Config.Inc.DisablePvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
             if (!i9SetData.Empty)
-                this.SetBonus.Add(i9SetData);
+                SetBonus.Add(i9SetData);
         }
-        this._setBonusVirtualPower = null;
+        _setBonusVirtualPower = null;
     }
 
     IPower GetSetBonusVirtualPower()
@@ -1031,7 +1027,7 @@ public class Build
         for (int index = 0; index < setCount.Length; ++index)
             setCount[index] = 0;
         var effectList = new List<IEffect>();
-        foreach (var setBonus in this.SetBonus)
+        foreach (var setBonus in SetBonus)
             foreach (var setInfo in setBonus.SetInfo)
                 foreach (var power in setInfo.Powers.Where(x => x > -1))
                 {
@@ -1052,16 +1048,16 @@ public class Build
 
     public IEffect[] GetCumulativeSetBonuses()
     {
-        IPower bonusVirtualPower = this.SetBonusVirtualPower;
+        IPower bonusVirtualPower = SetBonusVirtualPower;
         IEffect[] array = Array.Empty<IEffect>();
         for (int effIdx = 0; effIdx < bonusVirtualPower.Effects.Length; ++effIdx)
         {
             if (bonusVirtualPower.Effects[effIdx].EffectType != Enums.eEffectType.None || !string.IsNullOrEmpty(bonusVirtualPower.Effects[effIdx].Special))
             {
-                int index2 = Build.GcsbCheck(array, bonusVirtualPower.Effects[effIdx]);
+                int index2 = GcsbCheck(array, bonusVirtualPower.Effects[effIdx]);
                 if (index2 < 0)
                 {
-                    Array.Resize<IEffect>(ref array, array.Length + 1);
+                    Array.Resize(ref array, array.Length + 1);
                     int index3 = array.Length - 1;
                     array[index3] = (IEffect)bonusVirtualPower.Effects[effIdx].Clone();
                     array[index3].Math_Mag = bonusVirtualPower.Effects[effIdx].Mag;
@@ -1077,14 +1073,12 @@ public class Build
     {
         for (int index = 0; index < fxList.Length; ++index)
         {
-            if (fxList[index].EffectType == testFX.EffectType && ((double)fxList[index].Mag > 0.0 & (double)testFX.Mag > 0.0 || (double)fxList[index].Mag < 0.0 & (double)testFX.Mag < 0.0 || (double)Math.Abs(fxList[index].Mag - ((double)testFX.Mag > 0.0 ? 1f : 0.0f)) < 0.001))
+            if (fxList[index].EffectType == testFX.EffectType && (fxList[index].Mag > 0.0 & testFX.Mag > 0.0 || fxList[index].Mag < 0.0 & testFX.Mag < 0.0 || Math.Abs(fxList[index].Mag - ((double)testFX.Mag > 0.0 ? 1f : 0.0f)) < 0.001))
             {
                 if ((testFX.EffectType == Enums.eEffectType.Mez || testFX.EffectType == Enums.eEffectType.MezResist) && fxList[index].MezType == testFX.MezType || (testFX.EffectType == Enums.eEffectType.Damage && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.Defense && testFX.DamageType == fxList[index].DamageType) || (testFX.EffectType == Enums.eEffectType.Resistance && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.DamageBuff && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.Enhancement && testFX.ETModifies == fxList[index].ETModifies && (testFX.DamageType == fxList[index].DamageType && testFX.MezType == fxList[index].MezType)) || testFX.EffectType == Enums.eEffectType.ResEffect && testFX.ETModifies == fxList[index].ETModifies || testFX.EffectType == Enums.eEffectType.None && testFX.Special == fxList[index].Special && testFX.Special.IndexOf("DEBT", StringComparison.OrdinalIgnoreCase) > -1)
                     return index;
-                else if (testFX.EffectType != Enums.eEffectType.Mez & testFX.EffectType != Enums.eEffectType.MezResist & testFX.EffectType != Enums.eEffectType.Damage & testFX.EffectType != Enums.eEffectType.Defense & testFX.EffectType != Enums.eEffectType.Resistance & testFX.EffectType != Enums.eEffectType.DamageBuff & testFX.EffectType != Enums.eEffectType.Enhancement & testFX.EffectType != Enums.eEffectType.ResEffect & testFX.EffectType == fxList[index].EffectType)
+                if (testFX.EffectType != Enums.eEffectType.Mez & testFX.EffectType != Enums.eEffectType.MezResist & testFX.EffectType != Enums.eEffectType.Damage & testFX.EffectType != Enums.eEffectType.Defense & testFX.EffectType != Enums.eEffectType.Resistance & testFX.EffectType != Enums.eEffectType.DamageBuff & testFX.EffectType != Enums.eEffectType.Enhancement & testFX.EffectType != Enums.eEffectType.ResEffect & testFX.EffectType == fxList[index].EffectType)
                     return index;
-                else
-                    continue;
             }
         }
         return -1;
@@ -1093,13 +1087,13 @@ public class Build
     public Enums.eMutex MutexV2(int hIdx, bool silent = false, bool doDetoggle = false)
     {
         Enums.eMutex eMutex;
-        if (hIdx < 0 || hIdx > this.Powers.Count || this.Powers[hIdx].Power == null)
+        if (hIdx < 0 || hIdx > Powers.Count || Powers[hIdx].Power == null)
         {
             eMutex = Enums.eMutex.NoGroup;
         }
         else
         {
-            IPower power1 = this.Powers[hIdx].Power;
+            IPower power1 = Powers[hIdx].Power;
             if (power1.MutexIgnore)
             {
                 eMutex = Enums.eMutex.NoGroup;
@@ -1118,7 +1112,7 @@ public class Build
                     }
                 }
                 bool flag2 = power1.HasMutexID(index1);
-                foreach (PowerEntry power2 in this.Powers)
+                foreach (PowerEntry power2 in Powers)
                 {
                     if (power2.Power != null && power2.Power.PowerIndex != power1.PowerIndex)
                     {
@@ -1162,8 +1156,8 @@ public class Build
                 }
                 else
                 {
-                    if (doDetoggle && mutexAuto && this.Powers[hIdx].StatInclude)
-                        this.Powers[hIdx].StatInclude = false;
+                    if (doDetoggle && mutexAuto && Powers[hIdx].StatInclude)
+                        Powers[hIdx].StatInclude = false;
                     if (!silent && powerEntryList.Count > 0)
                     {
                         string empty = string.Empty;
@@ -1175,7 +1169,7 @@ public class Build
                             empty += powerEntry.Power.DisplayName;
                         }
                         string str2 = str1 + empty;
-                        MessageBox.Show(!doDetoggle || !power1.MutexAuto || !this.Powers[hIdx].StatInclude ? str2 + "\n\nYou should turn off the powers listed before turning this one on." : str2 + "\n\nThe listed powers have been turned off.", "Power Conflict");
+                        MessageBox.Show(!doDetoggle || !power1.MutexAuto || !Powers[hIdx].StatInclude ? str2 + "\n\nYou should turn off the powers listed before turning this one on." : str2 + "\n\nThe listed powers have been turned off.", "Power Conflict");
                     }
                     eMutex = powerEntryList.Count > 0 ? (!power1.MutexAuto ? (!mutexAuto ? Enums.eMutex.MutexFound : Enums.eMutex.DetoggleSlave) : Enums.eMutex.DetoggleMaster) : Enums.eMutex.NoConflict;
                 }
@@ -1186,9 +1180,9 @@ public class Build
 
     public void FullMutexCheck()
     {
-        for (int hIdx = this.Powers.Count - 1; hIdx >= 0; hIdx += -1)
+        for (int hIdx = Powers.Count - 1; hIdx >= 0; hIdx += -1)
         {
-            this.MutexV2(hIdx, true, true);
+            MutexV2(hIdx, true, true);
         }
     }
 }

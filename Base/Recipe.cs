@@ -7,8 +7,8 @@ public class Recipe
     public string ExternalName = string.Empty;
     public string Enhancement = string.Empty;
     public int EnhIdx = -1;
-    public Recipe.RecipeEntry[] Item = new Recipe.RecipeEntry[0];
-    public Recipe.RecipeRarity Rarity;
+    public RecipeEntry[] Item = new RecipeEntry[0];
+    public RecipeRarity Rarity;
 
     public Recipe()
     {
@@ -16,14 +16,14 @@ public class Recipe
 
     public Recipe(BinaryReader reader)
     {
-        this.Rarity = (Recipe.RecipeRarity)reader.ReadInt32();
-        this.InternalName = reader.ReadString();
-        this.ExternalName = reader.ReadString();
-        this.Enhancement = reader.ReadString();
-        this.Item = new Recipe.RecipeEntry[reader.ReadInt32() + 1];
-        for (int index1 = 0; index1 < this.Item.Length; ++index1)
+        Rarity = (RecipeRarity)reader.ReadInt32();
+        InternalName = reader.ReadString();
+        ExternalName = reader.ReadString();
+        Enhancement = reader.ReadString();
+        Item = new RecipeEntry[reader.ReadInt32() + 1];
+        for (int index1 = 0; index1 < Item.Length; ++index1)
         {
-            this.Item[index1] = new Recipe.RecipeEntry()
+            Item[index1] = new RecipeEntry
             {
                 Level = reader.ReadInt32(),
                 BuyCost = reader.ReadInt32(),
@@ -32,29 +32,29 @@ public class Recipe
                 CraftCostM = reader.ReadInt32()
             };
             int num = reader.ReadInt32();
-            this.Item[index1].Salvage = new string[num + 1];
-            this.Item[index1].Count = new int[num + 1];
-            this.Item[index1].SalvageIdx = new int[num + 1];
-            for (int index2 = 0; index2 < this.Item[index1].Salvage.Length; ++index2)
+            Item[index1].Salvage = new string[num + 1];
+            Item[index1].Count = new int[num + 1];
+            Item[index1].SalvageIdx = new int[num + 1];
+            for (int index2 = 0; index2 < Item[index1].Salvage.Length; ++index2)
             {
-                this.Item[index1].Salvage[index2] = reader.ReadString();
-                this.Item[index1].Count[index2] = reader.ReadInt32();
-                this.Item[index1].SalvageIdx[index2] = reader.ReadInt32();
+                Item[index1].Salvage[index2] = reader.ReadString();
+                Item[index1].Count[index2] = reader.ReadInt32();
+                Item[index1].SalvageIdx[index2] = reader.ReadInt32();
             }
         }
     }
 
     public Recipe(ref Recipe iRecipe)
     {
-        this.Rarity = iRecipe.Rarity;
-        this.InternalName = iRecipe.InternalName;
-        this.ExternalName = iRecipe.ExternalName;
-        this.Enhancement = iRecipe.Enhancement;
-        this.EnhIdx = iRecipe.EnhIdx;
-        this.Item = new Recipe.RecipeEntry[iRecipe.Item.Length];
+        Rarity = iRecipe.Rarity;
+        InternalName = iRecipe.InternalName;
+        ExternalName = iRecipe.ExternalName;
+        Enhancement = iRecipe.Enhancement;
+        EnhIdx = iRecipe.EnhIdx;
+        Item = new RecipeEntry[iRecipe.Item.Length];
         for (int index1 = 0; index1 < iRecipe.Item.Length; ++index1)
         {
-            this.Item[index1] = new Recipe.RecipeEntry()
+            Item[index1] = new RecipeEntry
             {
                 Level = iRecipe.Item[index1].Level,
                 BuyCost = iRecipe.Item[index1].BuyCost,
@@ -65,11 +65,11 @@ public class Recipe
                 SalvageIdx = new int[iRecipe.Item[index1].Salvage.Length],
                 Count = new int[iRecipe.Item[index1].Salvage.Length]
             };
-            for (int index2 = 0; index2 <= this.Item[index1].Salvage.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= Item[index1].Salvage.Length - 1; ++index2)
             {
-                this.Item[index1].Salvage[index2] = iRecipe.Item[index1].Salvage[index2];
-                this.Item[index1].SalvageIdx[index2] = iRecipe.Item[index1].SalvageIdx[index2];
-                this.Item[index1].Count[index2] = iRecipe.Item[index1].Count[index2];
+                Item[index1].Salvage[index2] = iRecipe.Item[index1].Salvage[index2];
+                Item[index1].SalvageIdx[index2] = iRecipe.Item[index1].SalvageIdx[index2];
+                Item[index1].Count[index2] = iRecipe.Item[index1].Count[index2];
             }
         }
     }
@@ -77,24 +77,24 @@ public class Recipe
     public void StoreTo(BinaryWriter writer)
     {
 
-        writer.Write((int)this.Rarity);
-        writer.Write(this.InternalName);
-        writer.Write(this.ExternalName);
-        writer.Write(this.Enhancement);
-        writer.Write(this.Item.Length - 1);
-        for (int index1 = 0; index1 <= this.Item.Length - 1; ++index1)
+        writer.Write((int)Rarity);
+        writer.Write(InternalName);
+        writer.Write(ExternalName);
+        writer.Write(Enhancement);
+        writer.Write(Item.Length - 1);
+        for (int index1 = 0; index1 <= Item.Length - 1; ++index1)
         {
-            writer.Write(this.Item[index1].Level);
-            writer.Write(this.Item[index1].BuyCost);
-            writer.Write(this.Item[index1].CraftCost);
-            writer.Write(this.Item[index1].BuyCostM);
-            writer.Write(this.Item[index1].CraftCostM);
-            writer.Write(this.Item[index1].Salvage.Length - 1);
-            for (int index2 = 0; index2 <= this.Item[index1].Salvage.Length - 1; ++index2)
+            writer.Write(Item[index1].Level);
+            writer.Write(Item[index1].BuyCost);
+            writer.Write(Item[index1].CraftCost);
+            writer.Write(Item[index1].BuyCostM);
+            writer.Write(Item[index1].CraftCostM);
+            writer.Write(Item[index1].Salvage.Length - 1);
+            for (int index2 = 0; index2 <= Item[index1].Salvage.Length - 1; ++index2)
             {
-                writer.Write(this.Item[index1].Salvage[index2]);
-                writer.Write(this.Item[index1].Count[index2]);
-                writer.Write(this.Item[index1].SalvageIdx[index2]);
+                writer.Write(Item[index1].Salvage[index2]);
+                writer.Write(Item[index1].Count[index2]);
+                writer.Write(Item[index1].SalvageIdx[index2]);
             }
         }
     }
@@ -104,7 +104,7 @@ public class Recipe
         Common,
         Uncommon,
         Rare,
-        UltraRare,
+        UltraRare
     }
 
     public class RecipeEntry
@@ -122,27 +122,27 @@ public class Recipe
         {
             for (int index = 0; index <= 6; ++index)
             {
-                this.Salvage[index] = string.Empty;
-                this.SalvageIdx[index] = -1;
-                this.Count[index] = 0;
+                Salvage[index] = string.Empty;
+                SalvageIdx[index] = -1;
+                Count[index] = 0;
             }
         }
 
-        public RecipeEntry(Recipe.RecipeEntry iRe)
+        public RecipeEntry(RecipeEntry iRe)
         {
-            this.Level = iRe.Level;
-            this.BuyCost = iRe.BuyCost;
-            this.CraftCost = iRe.CraftCost;
-            this.BuyCostM = iRe.BuyCostM;
-            this.CraftCostM = iRe.CraftCostM;
-            this.Salvage = new string[iRe.Salvage.Length];
-            this.SalvageIdx = new int[iRe.Salvage.Length];
-            this.Count = new int[iRe.Salvage.Length];
+            Level = iRe.Level;
+            BuyCost = iRe.BuyCost;
+            CraftCost = iRe.CraftCost;
+            BuyCostM = iRe.BuyCostM;
+            CraftCostM = iRe.CraftCostM;
+            Salvage = new string[iRe.Salvage.Length];
+            SalvageIdx = new int[iRe.Salvage.Length];
+            Count = new int[iRe.Salvage.Length];
             for (int index = 0; index < iRe.Salvage.Length; ++index)
             {
-                this.Salvage[index] = iRe.Salvage[index];
-                this.SalvageIdx[index] = iRe.SalvageIdx[index];
-                this.Count[index] = iRe.Count[index];
+                Salvage[index] = iRe.Salvage[index];
+                SalvageIdx[index] = iRe.SalvageIdx[index];
+                Count[index] = iRe.Count[index];
             }
         }
     }

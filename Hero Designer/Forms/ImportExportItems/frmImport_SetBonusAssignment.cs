@@ -1,13 +1,13 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -27,68 +27,68 @@ namespace Hero_Designer
 
         public frmImport_SetBonusAssignment()
         {
-            this.Load += new EventHandler(this.frmImport_SetBonusAssignment_Load);
-            this.FullFileName = "";
-            this.InitializeComponent();
-            this.Name = nameof(frmImport_SetBonusAssignment);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SetBonusAssignment));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmImport_SetBonusAssignment_Load;
+            FullFileName = "";
+            InitializeComponent();
+            Name = nameof(frmImport_SetBonusAssignment);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_SetBonusAssignment));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_Click(object sender, EventArgs e)
 
         {
-            this.Close();
+            Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
 
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.FullFileName = this.dlgBrowse.FileName;
-            this.BusyHide();
-            this.DisplayInfo();
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
+                FullFileName = dlgBrowse.FileName;
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
 
         {
-            this.ParseClasses(this.FullFileName);
-            this.BusyHide();
-            this.DisplayInfo();
+            ParseClasses(FullFileName);
+            BusyHide();
+            DisplayInfo();
         }
 
         void BusyHide()
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
+            lblFile.Text = FileIO.StripPath(FullFileName);
         }
 
         void frmImport_SetBonusAssignment_Load(object sender, EventArgs e)
 
         {
-            this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets2", "boostsets4");
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets2", "boostsets4");
+            DisplayInfo();
         }
 
         [DebuggerStepThrough]
@@ -139,7 +139,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 9)
                         {
-                            this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             num5 = 0;
                         }
                         string[] array = CSV.ToArray(iLine);
@@ -157,7 +157,7 @@ namespace Hero_Designer
                             string[] strArray2 = array[2].Split(" ".ToCharArray());
                             if (array[2] == "")
                             {
-                                DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray(DatabaseAPI.Database.EnhancementSets[index1].Bonus, (Array)new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
+                                DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray(DatabaseAPI.Database.EnhancementSets[index1].Bonus, new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
                                 DatabaseAPI.Database.EnhancementSets[index1].Bonus[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1] = new EnhancementSet.BonusItem();
                                 EnhancementSet.BonusItem[] bonus = DatabaseAPI.Database.EnhancementSets[index1].Bonus;
                                 int index2 = DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1;
@@ -233,9 +233,9 @@ namespace Hero_Designer
                 return flag;
             }
             iStream.Close();
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.DisplayInfo();
+            DisplayInfo();
             int num10 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }

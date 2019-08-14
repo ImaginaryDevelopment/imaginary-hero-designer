@@ -1,14 +1,13 @@
 
-using Base.Data_Classes;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -19,62 +18,62 @@ namespace Hero_Designer
 
         public frmImport_EnhancementEffects()
         {
-            this.Load += new EventHandler(this.frmImport_EnhancementEffects_Load);
-            this.FullFileName = "";
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_EnhancementEffects));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_EnhancementEffects);
+            Load += frmImport_EnhancementEffects_Load;
+            FullFileName = "";
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_EnhancementEffects));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmImport_EnhancementEffects);
         }
 
         void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.FullFileName = this.dlgBrowse.FileName;
-            this.BusyHide();
-            this.DisplayInfo();
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
+                FullFileName = dlgBrowse.FileName;
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
         {
-            this.ParseClasses(this.FullFileName);
-            this.BusyHide();
-            this.DisplayInfo();
+            ParseClasses(FullFileName);
+            BusyHide();
+            DisplayInfo();
         }
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show(this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
+            lblFile.Text = FileIO.StripPath(FullFileName);
         }
 
         void frmImport_EnhancementEffects_Load(object sender, EventArgs e)
         {
-            this.FullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
+            DisplayInfo();
         }
 
         bool ParseClasses(string iFileName)
@@ -91,8 +90,8 @@ namespace Hero_Designer
                 ProjectData.ClearProjectError();
                 return false;
             }
-            this.BusyMsg("Working...");
-            this.Enabled = false;
+            BusyMsg("Working...");
+            Enabled = false;
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
@@ -114,7 +113,7 @@ namespace Hero_Designer
                     ++num3;
                     if (num3 >= 101)
                     {
-                        this.BusyMsg(Strings.Format(num1, "###,##0") + " records parsed.");
+                        BusyMsg(Strings.Format(num1, "###,##0") + " records parsed.");
                         Application.DoEvents();
                         num3 = 0;
                     }
@@ -154,11 +153,11 @@ namespace Hero_Designer
             iStream.Close();
             Clipboard.SetDataObject(str1);
             Interaction.MsgBox(("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, "Import Done");
-            this.Enabled = true;
-            this.BusyHide();
-            var serializer = My.MyApplication.GetSerializer();
+            Enabled = true;
+            BusyHide();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.DisplayInfo();
+            DisplayInfo();
             return true;
         }
     }

@@ -1,13 +1,11 @@
 
-using Base.Master_Classes;
-using Microsoft.VisualBasic.CompilerServices;
-using midsControls;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Master_Classes;
+using midsControls;
 
 namespace Hero_Designer
 {
@@ -20,129 +18,129 @@ namespace Hero_Designer
 
         public frmColourSettings()
         {
-            this.Load += new EventHandler(this.frmColourSettings_Load);
-            this.InitializeComponent();
-            this.Listlabel1.ItemClick += this.Listlabel1_ItemClick;
-            this.Name = nameof(frmColourSettings);
+            Load += frmColourSettings_Load;
+            InitializeComponent();
+            Listlabel1.ItemClick += Listlabel1_ItemClick;
+            Name = nameof(frmColourSettings);
             var componentResourceManager = new ComponentResourceManager(typeof(frmColourSettings));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.myFS.Assign(MidsContext.Config.RtFont);
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            myFS.Assign(MidsContext.Config.RtFont);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
 
         {
-            this.Hide();
+            Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
 
         {
-            MidsContext.Config.RtFont.Assign(this.myFS);
-            this.Hide();
+            MidsContext.Config.RtFont.Assign(myFS);
+            Hide();
         }
 
         void btnReset_Click(object sender, EventArgs e)
 
         {
-            this.myFS.SetDefault();
-            this.updateColours();
+            myFS.SetDefault();
+            updateColours();
         }
 
         void csAlert_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorWarning;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorWarning = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorWarning;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorWarning = cPicker.Color;
+            updateColours();
         }
 
         void csEnh_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorEnhancement;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorEnhancement = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorEnhancement;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorEnhancement = cPicker.Color;
+            updateColours();
         }
 
         void csFade_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorFaded;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorFaded = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorFaded;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorFaded = cPicker.Color;
+            updateColours();
         }
 
         void csHero_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorBackgroundHero;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorBackgroundHero = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorBackgroundHero;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorBackgroundHero = cPicker.Color;
+            updateColours();
         }
 
         void csInv_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorInvention;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorInvention = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorInvention;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorInvention = cPicker.Color;
+            updateColours();
         }
 
         void csInvInv_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorInventionInv;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorInventionInv = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorInventionInv;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorInventionInv = cPicker.Color;
+            updateColours();
         }
 
         void csSpecial_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorPlSpecial;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorPlSpecial = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorPlSpecial;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorPlSpecial = cPicker.Color;
+            updateColours();
         }
 
         void csText_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorText;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorText = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorText;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorText = cPicker.Color;
+            updateColours();
         }
 
         void csValue_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorPlName;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorPlName = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorPlName;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorPlName = cPicker.Color;
+            updateColours();
         }
 
         void csVillain_Click(object sender, EventArgs e)
 
         {
-            this.cPicker.Color = this.myFS.ColorBackgroundVillain;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myFS.ColorBackgroundVillain = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myFS.ColorBackgroundVillain;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myFS.ColorBackgroundVillain = cPicker.Color;
+            updateColours();
         }
 
         void frmColourSettings_Load(object sender, EventArgs e)
 
         {
-            this.updateColours();
+            updateColours();
         }
 
         [DebuggerStepThrough]
@@ -153,86 +151,81 @@ namespace Hero_Designer
             switch (Item.Index)
             {
                 case 0:
-                    this.cPicker.Color = this.myFS.ColorPowerAvailable;
-                    if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
+                    cPicker.Color = myFS.ColorPowerAvailable;
+                    if (cPicker.ShowDialog(this) == DialogResult.OK)
                     {
-                        this.myFS.ColorPowerAvailable = this.cPicker.Color;
-                        break;
+                        myFS.ColorPowerAvailable = cPicker.Color;
                     }
                     break;
                 case 1:
-                    this.cPicker.Color = this.myFS.ColorPowerTaken;
-                    if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
+                    cPicker.Color = myFS.ColorPowerTaken;
+                    if (cPicker.ShowDialog(this) == DialogResult.OK)
                     {
-                        this.myFS.ColorPowerTaken = this.cPicker.Color;
-                        break;
+                        myFS.ColorPowerTaken = cPicker.Color;
                     }
                     break;
                 case 2:
-                    this.cPicker.Color = this.myFS.ColorPowerTakenDark;
-                    if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
+                    cPicker.Color = myFS.ColorPowerTakenDark;
+                    if (cPicker.ShowDialog(this) == DialogResult.OK)
                     {
-                        this.myFS.ColorPowerTakenDark = this.cPicker.Color;
-                        break;
+                        myFS.ColorPowerTakenDark = cPicker.Color;
                     }
                     break;
                 case 3:
-                    this.cPicker.Color = this.myFS.ColorPowerDisabled;
-                    if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
+                    cPicker.Color = myFS.ColorPowerDisabled;
+                    if (cPicker.ShowDialog(this) == DialogResult.OK)
                     {
-                        this.myFS.ColorPowerDisabled = this.cPicker.Color;
-                        break;
+                        myFS.ColorPowerDisabled = cPicker.Color;
                     }
                     break;
                 case 4:
-                    this.cPicker.Color = this.myFS.ColorPowerHighlight;
-                    if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
+                    cPicker.Color = myFS.ColorPowerHighlight;
+                    if (cPicker.ShowDialog(this) == DialogResult.OK)
                     {
-                        this.myFS.ColorPowerHighlight = this.cPicker.Color;
-                        break;
+                        myFS.ColorPowerHighlight = cPicker.Color;
                     }
                     break;
             }
-            this.updateColours();
+            updateColours();
         }
 
         public void updateColours()
         {
             ConfigData.FontSettings iFs = new ConfigData.FontSettings();
-            this.csHero.BackColor = this.myFS.ColorBackgroundHero;
-            this.csVillain.BackColor = this.myFS.ColorBackgroundVillain;
-            this.csText.BackColor = this.myFS.ColorText;
-            this.csInv.BackColor = this.myFS.ColorInvention;
-            this.csInvInv.BackColor = this.myFS.ColorInventionInv;
-            this.csFade.BackColor = this.myFS.ColorFaded;
-            this.csEnh.BackColor = this.myFS.ColorEnhancement;
-            this.csAlert.BackColor = this.myFS.ColorWarning;
-            this.csValue.BackColor = this.myFS.ColorPlName;
-            this.csSpecial.BackColor = this.myFS.ColorPlSpecial;
+            csHero.BackColor = myFS.ColorBackgroundHero;
+            csVillain.BackColor = myFS.ColorBackgroundVillain;
+            csText.BackColor = myFS.ColorText;
+            csInv.BackColor = myFS.ColorInvention;
+            csInvInv.BackColor = myFS.ColorInventionInv;
+            csFade.BackColor = myFS.ColorFaded;
+            csEnh.BackColor = myFS.ColorEnhancement;
+            csAlert.BackColor = myFS.ColorWarning;
+            csValue.BackColor = myFS.ColorPlName;
+            csSpecial.BackColor = myFS.ColorPlSpecial;
             iFs.Assign(MidsContext.Config.RtFont);
-            MidsContext.Config.RtFont.Assign(this.myFS);
-            this.rtPreview.BackColor = this.myFS.ColorBackgroundHero;
-            MidsContext.Config.RtFont.ColorBackgroundHero = this.myFS.ColorPlName;
-            MidsContext.Config.RtFont.ColorBackgroundVillain = this.myFS.ColorPlSpecial;
-            this.rtPreview.Rtf = RTF.StartRTF() + RTF.Color(RTF.ElementID.Invention) + RTF.Underline("Invention Name") + RTF.Crlf() + RTF.Color(RTF.ElementID.Enhancement) + RTF.Italic("Enhancement Text") + RTF.Color(RTF.ElementID.Warning) + " (Alert)" + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "  Regular Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "  Regular Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.Faded) + "  Faded Text" + RTF.Crlf() + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Text) + "Normal Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.BackgroundVillain) + "Special Case" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Enhancement) + "Enahnced value" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Invention) + "Invention Effect" + RTF.Crlf() + RTF.EndRTF();
-            this.Listlabel1.SuspendRedraw = true;
-            this.Listlabel1.ClearItems();
-            this.Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Available Power", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
-            this.Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Taken Power", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
-            this.Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Taken Power (Dark)", ListLabelV2.LLItemState.SelectedDisabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
-            this.Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Unavailable Power", ListLabelV2.LLItemState.Disabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
-            this.Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Highlight Colour", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
-            this.Listlabel1.HoverColor = this.myFS.ColorPowerHighlight;
-            this.Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Enabled, this.myFS.ColorPowerAvailable);
-            this.Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Selected, this.myFS.ColorPowerTaken);
-            this.Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, this.myFS.ColorPowerTakenDark);
-            this.Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Disabled, this.myFS.ColorPowerDisabled);
-            this.Listlabel1.Font = new System.Drawing.Font(this.Listlabel1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase);
-            int num = this.Listlabel1.Items.Length - 1;
+            MidsContext.Config.RtFont.Assign(myFS);
+            rtPreview.BackColor = myFS.ColorBackgroundHero;
+            MidsContext.Config.RtFont.ColorBackgroundHero = myFS.ColorPlName;
+            MidsContext.Config.RtFont.ColorBackgroundVillain = myFS.ColorPlSpecial;
+            rtPreview.Rtf = RTF.StartRTF() + RTF.Color(RTF.ElementID.Invention) + RTF.Underline("Invention Name") + RTF.Crlf() + RTF.Color(RTF.ElementID.Enhancement) + RTF.Italic("Enhancement Text") + RTF.Color(RTF.ElementID.Warning) + " (Alert)" + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "  Regular Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "  Regular Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.Faded) + "  Faded Text" + RTF.Crlf() + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Text) + "Normal Text" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.BackgroundVillain) + "Special Case" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Enhancement) + "Enahnced value" + RTF.Crlf() + RTF.Color(RTF.ElementID.BackgroundHero) + RTF.Bold("Value Name: ") + RTF.Color(RTF.ElementID.Invention) + "Invention Effect" + RTF.Crlf() + RTF.EndRTF();
+            Listlabel1.SuspendRedraw = true;
+            Listlabel1.ClearItems();
+            Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Available Power", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+            Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Taken Power", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+            Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Taken Power (Dark)", ListLabelV2.LLItemState.SelectedDisabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+            Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Unavailable Power", ListLabelV2.LLItemState.Disabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+            Listlabel1.AddItem(new ListLabelV2.ListLabelItemV2("Highlight Colour", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left));
+            Listlabel1.HoverColor = myFS.ColorPowerHighlight;
+            Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Enabled, myFS.ColorPowerAvailable);
+            Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Selected, myFS.ColorPowerTaken);
+            Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, myFS.ColorPowerTakenDark);
+            Listlabel1.UpdateTextColors(ListLabelV2.LLItemState.Disabled, myFS.ColorPowerDisabled);
+            Listlabel1.Font = new Font(Listlabel1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase);
+            int num = Listlabel1.Items.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.Listlabel1.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-            this.Listlabel1.SuspendRedraw = false;
-            this.Listlabel1.Refresh();
+                Listlabel1.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+            Listlabel1.SuspendRedraw = false;
+            Listlabel1.Refresh();
             MidsContext.Config.RtFont.Assign(iFs);
         }
     }

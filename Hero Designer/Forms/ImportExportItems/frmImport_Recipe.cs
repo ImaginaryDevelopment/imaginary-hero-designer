@@ -1,12 +1,12 @@
 
-using Microsoft.VisualBasic;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
 
 namespace Hero_Designer
 {
@@ -17,27 +17,27 @@ namespace Hero_Designer
 
         public frmImport_Recipe()
         {
-            this.Load += new EventHandler(this.frmImport_Recipe_Load);
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Recipe));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_Recipe);
+            Load += frmImport_Recipe_Load;
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_Recipe));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmImport_Recipe);
         }
 
         void btnAttribIndex_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.lblAttribIndex.Text;
-            if (this.dlgBrowse.ShowDialog(this) != DialogResult.OK)
+            dlgBrowse.FileName = lblAttribIndex.Text;
+            if (dlgBrowse.ShowDialog(this) != DialogResult.OK)
                 return;
-            this.lblAttribIndex.Text = this.dlgBrowse.FileName;
+            lblAttribIndex.Text = dlgBrowse.FileName;
         }
 
         void btnAttribLoad_Click(object sender, EventArgs e)
         {
-            if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
+            if (lblAttribIndex.Text != "" & lblAttribTables.Text != "")
             {
-                if (File.Exists(this.lblAttribIndex.Text) & File.Exists(this.lblAttribTables.Text))
-                    this.ImportRecipeCSV(this.lblAttribIndex.Text, this.lblAttribTables.Text);
+                if (File.Exists(lblAttribIndex.Text) & File.Exists(lblAttribTables.Text))
+                    ImportRecipeCSV(lblAttribIndex.Text, lblAttribTables.Text);
                 else
                     Interaction.MsgBox("Files cannot be found!", MsgBoxStyle.Exclamation, "No Can Do");
             }
@@ -47,33 +47,33 @@ namespace Hero_Designer
 
         void btnAttribTable_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.lblAttribTables.Text;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) != DialogResult.OK)
+            dlgBrowse.FileName = lblAttribTables.Text;
+            if (dlgBrowse.ShowDialog(this) != DialogResult.OK)
                 return;
-            this.lblAttribTables.Text = this.dlgBrowse.FileName;
+            lblAttribTables.Text = dlgBrowse.FileName;
         }
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show();
+                bFrm = new frmBusy();
+                bFrm.Show();
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         void Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void frmImport_Recipe_Load(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace Hero_Designer
                         ++num4;
                         if (num4 >= 18)
                         {
-                            this.BusyMsg(Strings.Format(num1, "###,##0") + " Recipes Created.");
+                            BusyMsg(Strings.Format(num1, "###,##0") + " Recipes Created.");
                             num4 = 0;
                         }
                         string[] array = CSV.ToArray(iLine1);
@@ -185,7 +185,7 @@ namespace Hero_Designer
                         ++num4;
                         if (num4 >= 18)
                         {
-                            this.BusyMsg(Strings.Format(num5, "###,##0") + " Recipes Created.");
+                            BusyMsg(Strings.Format(num5, "###,##0") + " Recipes Created.");
                             num4 = 0;
                         }
                         string[] array = CSV.ToArray(iLine2);
@@ -253,14 +253,14 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream1.Close();
                 iStream2.Close();
-                this.BusyHide();
+                BusyHide();
                 Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "CSV Parse Error");
                 return false;
             }
-            this.BusyHide();
+            BusyHide();
             iStream2.Close();
-            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + num5.ToString() + "\r\nGood: " + num2.ToString() + "\r\nRejected: " + num3.ToString()), MsgBoxStyle.Information, "File Parsed");
-            var serializer = My.MyApplication.GetSerializer();
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + num5 + "\r\nGood: " + num2 + "\r\nRejected: " + num3), MsgBoxStyle.Information, "File Parsed");
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveRecipes(serializer);
             DatabaseAPI.SaveEnhancementDb(serializer);
             return true;

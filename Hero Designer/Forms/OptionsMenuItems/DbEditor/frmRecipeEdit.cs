@@ -1,11 +1,12 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -16,11 +17,11 @@ namespace Hero_Designer
 
         public frmRecipeEdit()
         {
-            this.Load += new EventHandler(this.frmRecipeEdit_Load);
-            this.NoUpdate = true;
-            this.InitializeComponent();
-            var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipeEdit));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmRecipeEdit_Load;
+            NoUpdate = true;
+            InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmRecipeEdit));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void AddListItem(int Index)
@@ -28,7 +29,7 @@ namespace Hero_Designer
             if (!(Index > -1 & Index < DatabaseAPI.Database.Recipes.Length))
                 return;
             var recipe = DatabaseAPI.Database.Recipes[Index];
-            this.lvDPA.Items.Add(new ListViewItem(new string[4]
+            lvDPA.Items.Add(new ListViewItem(new string[4]
             {
                 recipe.InternalName,
                 recipe.EnhIdx <= -1 ? "None" : recipe.Enhancement + " (" + Conversions.ToString(recipe.EnhIdx) + ")",
@@ -52,50 +53,50 @@ namespace Hero_Designer
 
         void btnAdd_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
          {
-             if (this.RecipeID() < 0)
+             if (RecipeID() < 0)
                  return;
-             var recipe = DatabaseAPI.Database.Recipes[this.RecipeID()];
+             var recipe = DatabaseAPI.Database.Recipes[RecipeID()];
              recipe.Item = recipe.Item.Append(new Recipe.RecipeEntry
              {
                  Level = 9
              }).ToArray();
-             this.ShowRecipeInfo(this.RecipeID());
-             this.UpdateListItem(this.RecipeID());
+             ShowRecipeInfo(RecipeID());
+             UpdateListItem(RecipeID());
          });
 
         void btnCancel_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
          {
              DatabaseAPI.LoadRecipes();
-             this.Close();
+             Close();
          });
 
         // this delete button is supposed to remove a specific level of recipe, not the whole recipe.
         void btnDel_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
          {
-             var recipeid = this.RecipeID();
-             if (recipeid < 0 || this.lstItems.SelectedIndex < 0 || this.lstItems.Items.Count < 2)
+             var recipeid = RecipeID();
+             if (recipeid < 0 || lstItems.SelectedIndex < 0 || lstItems.Items.Count < 2)
                  return;
              var recipe = DatabaseAPI.Database.Recipes[recipeid];
-             var recipeItemId = this.lstItems.SelectedIndex;
+             var recipeItemId = lstItems.SelectedIndex;
              recipe.Item = recipe.Item.Where((ri, i) => i != recipeItemId).ToArray();
-             this.ShowRecipeInfo(this.RecipeID());
+             ShowRecipeInfo(RecipeID());
          });
 
         void btnGuessCost_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
          {
-             if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
+             if (NoUpdate || RecipeID() < 0 || EntryID() < 0)
                  return;
-             DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCost = this.GetCostByLevel(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Level);
-             this.udCraft.Value = new decimal(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCost);
+             DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].CraftCost = GetCostByLevel(DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].Level);
+             udCraft.Value = new decimal(DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].CraftCost);
          });
 
-        void btnI20_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => this.IncrementX(19));
+        void btnI20_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => IncrementX(19));
 
-        void btnI25_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => this.IncrementX(24));
+        void btnI25_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => IncrementX(24));
 
-        void btnI40_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => this.IncrementX(39));
+        void btnI40_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => IncrementX(39));
 
-        void btnI50_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => this.IncrementX(49));
+        void btnI50_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() => IncrementX(49));
 
         void btnImport_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
@@ -118,7 +119,7 @@ namespace Hero_Designer
                     if (recipe1 == null)
                     {
                         recipe1 =
-                            new Recipe()
+                            new Recipe
                             {
                                 InternalName = iName,
                                 ExternalName = !(strArray2[14] == "") ? "" : strArray2[1],
@@ -131,7 +132,7 @@ namespace Hero_Designer
                     int num2 = recipe1.Item.Length - 1;
                     for (int index3 = 0; index3 <= num2; ++index3)
                     {
-                        if ((double)recipe1.Item[index3].Level == Conversion.Val(strArray2[16]) - 1.0)
+                        if (recipe1.Item[index3].Level == Conversion.Val(strArray2[16]) - 1.0)
                             index2 = index3;
                     }
                     if (index2 < 0)
@@ -168,31 +169,31 @@ namespace Hero_Designer
             DatabaseAPI.AssignRecipeSalvageIDs();
             DatabaseAPI.GuessRecipes();
             DatabaseAPI.AssignRecipeIDs();
-            this.FillList();
+            FillList();
             Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
         });
 
         void btnIncrement_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.RecipeID() < 0 || DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53)
+            if (RecipeID() < 0 || DatabaseAPI.Database.Recipes[RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[RecipeID()].Item.Length > 53)
                 return;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item = (Recipe.RecipeEntry[])Utils.CopyArray(DatabaseAPI.Database.Recipes[RecipeID()].Item, new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length + 1]);
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 2]);
-            ++DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].Level;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].CraftCost = this.GetCostByLevel(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].Level);
-            this.ShowRecipeInfo(this.RecipeID());
-            this.lstItems.SelectedIndex = this.lstItems.Items.Count - 1;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item = (Recipe.RecipeEntry[])Utils.CopyArray(DatabaseAPI.Database.Recipes[RecipeID()].Item, new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length + 1]);
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 2]);
+            ++DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].CraftCost = GetCostByLevel(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level);
+            ShowRecipeInfo(RecipeID());
+            lstItems.SelectedIndex = lstItems.Items.Count - 1;
         });
 
         void btnOK_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            frmRecipeEdit.AssignNewRecipes();
+            AssignNewRecipes();
             DatabaseAPI.AssignRecipeSalvageIDs();
             DatabaseAPI.AssignRecipeIDs();
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveRecipes(serializer);
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.Close();
+            Close();
         });
 
         void btnRAdd_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
@@ -203,18 +204,18 @@ namespace Hero_Designer
             //Recipe[] recipeArray = (Recipe[])Utils.CopyArray(database.Recipes, new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);
             //database.Recipes = recipeArray;
             //DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1] = new Recipe();
-            this.AddListItem(DatabaseAPI.Database.Recipes.Length - 1);
-            this.lvDPA.Items[this.lvDPA.Items.Count - 1].Selected = true;
-            this.lvDPA.Items[this.lvDPA.Items.Count - 1].EnsureVisible();
-            this.cbEnh.Select();
-            this.cbEnh.SelectAll();
+            AddListItem(DatabaseAPI.Database.Recipes.Length - 1);
+            lvDPA.Items[lvDPA.Items.Count - 1].Selected = true;
+            lvDPA.Items[lvDPA.Items.Count - 1].EnsureVisible();
+            cbEnh.Select();
+            cbEnh.SelectAll();
         });
 
         void btnRDel_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
             {
-                if (this.RecipeID() < 0)
+                if (RecipeID() < 0)
                     return;
-                int recipeId = this.RecipeID();
+                int recipeId = RecipeID();
                 Recipe[] recipeArray = new Recipe[DatabaseAPI.Database.Recipes.Length - 1];
                 int recipeCount = -1;
                 for (int recipeIdx = 0; recipeIdx <= DatabaseAPI.Database.Recipes.Length - 1; ++recipeIdx)
@@ -228,13 +229,13 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes = new Recipe[recipeArray.Length - 1 + 1];
                 for (int recipeIdx = 0; recipeIdx <= DatabaseAPI.Database.Recipes.Length - 1; ++recipeIdx)
                     DatabaseAPI.Database.Recipes[recipeIdx] = new Recipe(ref recipeArray[recipeIdx]);
-                this.FillList();
-                if (this.lvDPA.Items.Count > recipeId)
-                    this.lvDPA.Items[recipeId].Selected = true;
-                else if (this.lvDPA.Items.Count > recipeId - 1)
-                    this.lvDPA.Items[recipeId - 1].Selected = true;
-                else if (this.lvDPA.Items.Count > 0)
-                    this.lvDPA.Items[0].Selected = true;
+                FillList();
+                if (lvDPA.Items.Count > recipeId)
+                    lvDPA.Items[recipeId].Selected = true;
+                else if (lvDPA.Items.Count > recipeId - 1)
+                    lvDPA.Items[recipeId - 1].Selected = true;
+                else if (lvDPA.Items.Count > 0)
+                    lvDPA.Items[0].Selected = true;
             });
 
         void btnRunSeq_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
@@ -251,13 +252,13 @@ namespace Hero_Designer
                         InternalName = DatabaseAPI.Database.Enhancements[index].UID
                     }
                     ).ToArray();
-                    this.AddListItem(DatabaseAPI.Database.Recipes.Length - 1);
+                    AddListItem(DatabaseAPI.Database.Recipes.Length - 1);
                 }
             }
-            this.lvDPA.Items[this.lvDPA.Items.Count - 1].Selected = true;
-            this.lvDPA.Items[this.lvDPA.Items.Count - 1].EnsureVisible();
-            this.cbEnh.Select();
-            this.cbEnh.SelectAll();
+            lvDPA.Items[lvDPA.Items.Count - 1].Selected = true;
+            lvDPA.Items[lvDPA.Items.Count - 1].EnsureVisible();
+            cbEnh.Select();
+            cbEnh.SelectAll();
         });
 
         void Button1_Click(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
@@ -268,174 +269,174 @@ namespace Hero_Designer
 
         void cbEnh_SelectedIndexChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() <= -1 || this.cbEnh.SelectedIndex <= -1)
+            if (NoUpdate || RecipeID() <= -1 || cbEnh.SelectedIndex <= -1)
                 return;
-            var recipe = DatabaseAPI.Database.Recipes[this.RecipeID()];
-            recipe.EnhIdx = this.cbEnh.SelectedIndex - 1;
+            var recipe = DatabaseAPI.Database.Recipes[RecipeID()];
+            recipe.EnhIdx = cbEnh.SelectedIndex - 1;
             if (recipe.EnhIdx > -1)
             {
-                recipe.Enhancement = this.cbEnh.Text;
-                recipe.InternalName = this.cbEnh.Text;
-                this.txtRecipeName.Text = this.cbEnh.Text;
+                recipe.Enhancement = cbEnh.Text;
+                recipe.InternalName = cbEnh.Text;
+                txtRecipeName.Text = cbEnh.Text;
                 try
                 {
-                    this.lblEnh.Text = DatabaseAPI.Database.Enhancements[recipe.EnhIdx].LongName;
+                    lblEnh.Text = DatabaseAPI.Database.Enhancements[recipe.EnhIdx].LongName;
                 }
                 catch (Exception ex)
                 {
-                    this.lblEnh.Text = string.Empty;
+                    lblEnh.Text = string.Empty;
                 }
             }
             else
                 recipe.Enhancement = "";
-            this.UpdateListItem(this.RecipeID());
+            UpdateListItem(RecipeID());
         });
 
         void cbRarity_SelectedIndexChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() <= -1 || this.cbRarity.SelectedIndex <= -1)
+            if (NoUpdate || RecipeID() <= -1 || cbRarity.SelectedIndex <= -1)
                 return;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Rarity = (Recipe.RecipeRarity)this.cbRarity.SelectedIndex;
-            this.UpdateListItem(this.RecipeID());
+            DatabaseAPI.Database.Recipes[RecipeID()].Rarity = (Recipe.RecipeRarity)cbRarity.SelectedIndex;
+            UpdateListItem(RecipeID());
         });
 
         void cbSalX_SelectedIndexChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
+            if (NoUpdate || RecipeID() < 0 || EntryID() < 0)
                 return;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[0] = this.cbSal0.SelectedIndex - 1;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[1] = this.cbSal1.SelectedIndex - 1;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[2] = this.cbSal2.SelectedIndex - 1;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[3] = this.cbSal3.SelectedIndex - 1;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[4] = this.cbSal4.SelectedIndex - 1;
-            if (this.cbSal0.SelectedIndex > 0 & decimal.Compare(this.udSal0.Value, new decimal(1)) < 0)
-                this.udSal0.Value = new decimal(1);
-            if (this.cbSal1.SelectedIndex > 0 & decimal.Compare(this.udSal1.Value, new decimal(1)) < 0)
-                this.udSal1.Value = new decimal(1);
-            if (this.cbSal2.SelectedIndex > 0 & decimal.Compare(this.udSal2.Value, new decimal(1)) < 0)
-                this.udSal2.Value = new decimal(1);
-            if (this.cbSal3.SelectedIndex > 0 & decimal.Compare(this.udSal3.Value, new decimal(1)) < 0)
-                this.udSal3.Value = new decimal(1);
-            if (this.cbSal4.SelectedIndex > 0 & decimal.Compare(this.udSal4.Value, new decimal(1)) < 0)
-                this.udSal4.Value = new decimal(1);
-            this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 0);
-            this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 1);
-            this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 2);
-            this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 3);
-            this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 4);
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[0] = cbSal0.SelectedIndex - 1;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[1] = cbSal1.SelectedIndex - 1;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[2] = cbSal2.SelectedIndex - 1;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[3] = cbSal3.SelectedIndex - 1;
+            DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[4] = cbSal4.SelectedIndex - 1;
+            if (cbSal0.SelectedIndex > 0 & decimal.Compare(udSal0.Value, new decimal(1)) < 0)
+                udSal0.Value = new decimal(1);
+            if (cbSal1.SelectedIndex > 0 & decimal.Compare(udSal1.Value, new decimal(1)) < 0)
+                udSal1.Value = new decimal(1);
+            if (cbSal2.SelectedIndex > 0 & decimal.Compare(udSal2.Value, new decimal(1)) < 0)
+                udSal2.Value = new decimal(1);
+            if (cbSal3.SelectedIndex > 0 & decimal.Compare(udSal3.Value, new decimal(1)) < 0)
+                udSal3.Value = new decimal(1);
+            if (cbSal4.SelectedIndex > 0 & decimal.Compare(udSal4.Value, new decimal(1)) < 0)
+                udSal4.Value = new decimal(1);
+            SetSalvageStringFromIDX(RecipeID(), EntryID(), 0);
+            SetSalvageStringFromIDX(RecipeID(), EntryID(), 1);
+            SetSalvageStringFromIDX(RecipeID(), EntryID(), 2);
+            SetSalvageStringFromIDX(RecipeID(), EntryID(), 3);
+            SetSalvageStringFromIDX(RecipeID(), EntryID(), 4);
         });
 
         protected void ClearEntryInfo()
         {
-            this.udLevel.Value = new decimal(1);
-            this.udLevel.Enabled = false;
-            this.udBuy.Value = new decimal(1);
-            this.udBuy.Enabled = false;
-            this.udBuyM.Value = new decimal(1);
-            this.udBuyM.Enabled = false;
-            this.udCraft.Value = new decimal(1);
-            this.udCraft.Enabled = false;
-            this.udCraftM.Value = new decimal(1);
-            this.udCraftM.Enabled = false;
-            this.cbSal0.SelectedIndex = -1;
-            this.cbSal0.Enabled = false;
-            this.udSal0.Value = new decimal(0);
-            this.udSal0.Enabled = false;
-            this.cbSal1.SelectedIndex = -1;
-            this.cbSal1.Enabled = false;
-            this.udSal1.Value = new decimal(0);
-            this.udSal1.Enabled = false;
-            this.cbSal2.SelectedIndex = -1;
-            this.cbSal2.Enabled = false;
-            this.udSal2.Value = new decimal(0);
-            this.udSal2.Enabled = false;
-            this.cbSal3.SelectedIndex = -1;
-            this.cbSal3.Enabled = false;
-            this.udSal3.Value = new decimal(0);
-            this.udSal3.Enabled = false;
-            this.cbSal4.SelectedIndex = -1;
-            this.cbSal4.Enabled = false;
-            this.udSal4.Value = new decimal(0);
-            this.udSal4.Enabled = false;
+            udLevel.Value = new decimal(1);
+            udLevel.Enabled = false;
+            udBuy.Value = new decimal(1);
+            udBuy.Enabled = false;
+            udBuyM.Value = new decimal(1);
+            udBuyM.Enabled = false;
+            udCraft.Value = new decimal(1);
+            udCraft.Enabled = false;
+            udCraftM.Value = new decimal(1);
+            udCraftM.Enabled = false;
+            cbSal0.SelectedIndex = -1;
+            cbSal0.Enabled = false;
+            udSal0.Value = new decimal(0);
+            udSal0.Enabled = false;
+            cbSal1.SelectedIndex = -1;
+            cbSal1.Enabled = false;
+            udSal1.Value = new decimal(0);
+            udSal1.Enabled = false;
+            cbSal2.SelectedIndex = -1;
+            cbSal2.Enabled = false;
+            udSal2.Value = new decimal(0);
+            udSal2.Enabled = false;
+            cbSal3.SelectedIndex = -1;
+            cbSal3.Enabled = false;
+            udSal3.Value = new decimal(0);
+            udSal3.Enabled = false;
+            cbSal4.SelectedIndex = -1;
+            cbSal4.Enabled = false;
+            udSal4.Value = new decimal(0);
+            udSal4.Enabled = false;
         }
 
         protected void ClearInfo()
         {
-            this.txtRecipeName.Text = "";
-            this.cbEnh.SelectedIndex = -1;
-            this.cbRarity.SelectedIndex = -1;
-            this.lstItems.Items.Clear();
-            this.lblEnh.Text = "";
-            this.txtExtern.Text = "";
-            this.ClearEntryInfo();
+            txtRecipeName.Text = "";
+            cbEnh.SelectedIndex = -1;
+            cbRarity.SelectedIndex = -1;
+            lstItems.Items.Clear();
+            lblEnh.Text = "";
+            txtExtern.Text = "";
+            ClearEntryInfo();
         }
 
-        protected int EntryID() => this.RecipeID() <= -1 ? -1 : this.lstItems.SelectedIndex;
+        protected int EntryID() => RecipeID() <= -1 ? -1 : lstItems.SelectedIndex;
 
         protected void FillList()
         {
-            this.lvDPA.BeginUpdate();
-            this.lvDPA.Items.Clear();
+            lvDPA.BeginUpdate();
+            lvDPA.Items.Clear();
             int num = DatabaseAPI.Database.Recipes.Length - 1;
             for (int Index = 0; Index <= num; ++Index)
-                this.AddListItem(Index);
-            this.lvDPA.EndUpdate();
-            if (this.lvDPA.SelectedItems.Count <= 0)
+                AddListItem(Index);
+            lvDPA.EndUpdate();
+            if (lvDPA.SelectedItems.Count <= 0)
                 return;
-            this.lvDPA.Items[0].Selected = true;
+            lvDPA.Items[0].Selected = true;
         }
 
         void frmRecipeEdit_Load(object sender, EventArgs e)
         {
             Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
-            this.cbRarity.BeginUpdate();
-            this.cbRarity.Items.Clear();
-            this.cbRarity.Items.AddRange((object[])Enum.GetNames(recipeRarity.GetType()));
-            this.cbRarity.EndUpdate();
-            this.cbEnh.BeginUpdate();
-            this.cbEnh.Items.Clear();
-            this.cbEnh.Items.Add("None");
+            cbRarity.BeginUpdate();
+            cbRarity.Items.Clear();
+            cbRarity.Items.AddRange(Enum.GetNames(recipeRarity.GetType()));
+            cbRarity.EndUpdate();
+            cbEnh.BeginUpdate();
+            cbEnh.Items.Clear();
+            cbEnh.Items.Add("None");
             int num1 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
                 if (DatabaseAPI.Database.Enhancements[index].UID != "")
-                    this.cbEnh.Items.Add(DatabaseAPI.Database.Enhancements[index].UID);
+                    cbEnh.Items.Add(DatabaseAPI.Database.Enhancements[index].UID);
                 else
-                    this.cbEnh.Items.Add(("X - " + DatabaseAPI.Database.Enhancements[index].Name));
+                    cbEnh.Items.Add(("X - " + DatabaseAPI.Database.Enhancements[index].Name));
             }
-            this.cbEnh.EndUpdate();
-            this.cbSal0.BeginUpdate();
-            this.cbSal1.BeginUpdate();
-            this.cbSal2.BeginUpdate();
-            this.cbSal3.BeginUpdate();
-            this.cbSal4.BeginUpdate();
-            this.cbSal0.Items.Clear();
-            this.cbSal1.Items.Clear();
-            this.cbSal2.Items.Clear();
-            this.cbSal3.Items.Clear();
-            this.cbSal4.Items.Clear();
-            this.cbSal0.Items.Add("None");
-            this.cbSal1.Items.Add("None");
-            this.cbSal2.Items.Add("None");
-            this.cbSal3.Items.Add("None");
-            this.cbSal4.Items.Add("None");
+            cbEnh.EndUpdate();
+            cbSal0.BeginUpdate();
+            cbSal1.BeginUpdate();
+            cbSal2.BeginUpdate();
+            cbSal3.BeginUpdate();
+            cbSal4.BeginUpdate();
+            cbSal0.Items.Clear();
+            cbSal1.Items.Clear();
+            cbSal2.Items.Clear();
+            cbSal3.Items.Clear();
+            cbSal4.Items.Clear();
+            cbSal0.Items.Add("None");
+            cbSal1.Items.Add("None");
+            cbSal2.Items.Add("None");
+            cbSal3.Items.Add("None");
+            cbSal4.Items.Add("None");
             int num2 = DatabaseAPI.Database.Salvage.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
                 var salvageName = DatabaseAPI.Database.Salvage[index].ExternalName;
-                this.cbSal0.Items.Add(salvageName);
-                this.cbSal1.Items.Add(salvageName);
-                this.cbSal2.Items.Add(salvageName);
-                this.cbSal3.Items.Add(salvageName);
-                this.cbSal4.Items.Add(salvageName);
+                cbSal0.Items.Add(salvageName);
+                cbSal1.Items.Add(salvageName);
+                cbSal2.Items.Add(salvageName);
+                cbSal3.Items.Add(salvageName);
+                cbSal4.Items.Add(salvageName);
             }
-            this.cbSal0.EndUpdate();
-            this.cbSal1.EndUpdate();
-            this.cbSal2.EndUpdate();
-            this.cbSal3.EndUpdate();
-            this.cbSal4.EndUpdate();
-            this.NoUpdate = false;
-            this.FillList();
+            cbSal0.EndUpdate();
+            cbSal1.EndUpdate();
+            cbSal2.EndUpdate();
+            cbSal3.EndUpdate();
+            cbSal4.EndUpdate();
+            NoUpdate = false;
+            FillList();
         }
 
         protected int GetCostByLevel(int iLevelZB)
@@ -462,37 +463,37 @@ namespace Hero_Designer
 
         void IncrementX(int nMax)
         {
-            if (this.RecipeID() < 0 || DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53)
+            if (RecipeID() < 0 || DatabaseAPI.Database.Recipes[RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[RecipeID()].Item.Length > 53)
                 return;
-            int num = DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].Level + 1;
+            int num = DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level + 1;
             if (num < nMax)
             {
                 for (int index = num; index <= nMax; ++index)
                 {
-                    DatabaseAPI.Database.Recipes[this.RecipeID()].Item = (Recipe.RecipeEntry[])Utils.CopyArray(DatabaseAPI.Database.Recipes[this.RecipeID()].Item, (Array)new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length + 1]);
-                    DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 2]);
-                    DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].Level = index;
-                    DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].CraftCost = this.GetCostByLevel(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1].Level);
+                    DatabaseAPI.Database.Recipes[RecipeID()].Item = (Recipe.RecipeEntry[])Utils.CopyArray(DatabaseAPI.Database.Recipes[RecipeID()].Item, new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length + 1]);
+                    DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 2]);
+                    DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level = index;
+                    DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].CraftCost = GetCostByLevel(DatabaseAPI.Database.Recipes[RecipeID()].Item[DatabaseAPI.Database.Recipes[RecipeID()].Item.Length - 1].Level);
                 }
-                this.ShowRecipeInfo(this.RecipeID());
-                this.lstItems.SelectedIndex = this.lstItems.Items.Count - 1;
+                ShowRecipeInfo(RecipeID());
+                lstItems.SelectedIndex = lstItems.Items.Count - 1;
             }
         }
 
         void lstItems_SelectedIndexChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.lvDPA.SelectedIndices.Count > 0)
-                this.ShowEntryInfo(this.lvDPA.SelectedIndices[0], this.lstItems.SelectedIndex);
+            if (lvDPA.SelectedIndices.Count > 0)
+                ShowEntryInfo(lvDPA.SelectedIndices[0], lstItems.SelectedIndex);
             else
-                this.ClearEntryInfo();
+                ClearEntryInfo();
         });
 
         void lvDPA_SelectedIndexChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.lvDPA.SelectedIndices.Count > 0)
-                this.ShowRecipeInfo(this.lvDPA.SelectedIndices[0]);
+            if (lvDPA.SelectedIndices.Count > 0)
+                ShowRecipeInfo(lvDPA.SelectedIndices[0]);
             else
-                this.ClearInfo();
+                ClearInfo();
         });
 
         int MinMax(int iValue, NumericUpDown iControl)
@@ -504,12 +505,12 @@ namespace Hero_Designer
             return iValue;
         }
 
-        int RecipeID() => this.lvDPA.SelectedIndices.Count <= 0 ? -1 : this.lvDPA.SelectedIndices[0];
+        int RecipeID() => lvDPA.SelectedIndices.Count <= 0 ? -1 : lvDPA.SelectedIndices[0];
 
         void SetSalvageStringFromIDX(int iRecipe, int iItem, int iIndex)
         {
             if (DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].SalvageIdx[iIndex] > -1)
-                DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].Salvage[iIndex] = DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].SalvageIdx[iIndex]].InternalName;
+                DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].Salvage[iIndex] = DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()].SalvageIdx[iIndex]].InternalName;
             else
                 DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].Salvage[iIndex] = "";
         }
@@ -517,46 +518,46 @@ namespace Hero_Designer
         void ShowEntryInfo(int rIDX, int iIDX)
         {
             if (rIDX < 0 | rIDX > DatabaseAPI.Database.Recipes.Length - 1)
-                this.ClearEntryInfo();
+                ClearEntryInfo();
             else if (iIDX < 0 | iIDX > DatabaseAPI.Database.Recipes[rIDX].Item.Length - 1)
             {
-                this.ClearEntryInfo();
+                ClearEntryInfo();
             }
             else
             {
-                this.NoUpdate = true;
+                NoUpdate = true;
                 Recipe.RecipeEntry recipeEntry = DatabaseAPI.Database.Recipes[rIDX].Item[iIDX];
-                this.udLevel.Value = new decimal(recipeEntry.Level + 1);
-                this.udLevel.Enabled = true;
-                this.udBuy.Value = new decimal(recipeEntry.BuyCost);
-                this.udBuy.Enabled = true;
-                this.udBuyM.Value = new decimal(recipeEntry.BuyCostM);
-                this.udBuyM.Enabled = true;
-                this.udCraft.Value = new decimal(recipeEntry.CraftCost);
-                this.udCraft.Enabled = true;
-                this.udCraftM.Value = new decimal(recipeEntry.CraftCostM);
-                this.udCraftM.Enabled = true;
-                this.cbSal0.SelectedIndex = recipeEntry.SalvageIdx[0] + 1;
-                this.cbSal0.Enabled = true;
-                this.udSal0.Value = new decimal(recipeEntry.Count[0]);
-                this.udSal0.Enabled = true;
-                this.cbSal1.SelectedIndex = recipeEntry.SalvageIdx[1] + 1;
-                this.cbSal1.Enabled = true;
-                this.udSal1.Value = new decimal(recipeEntry.Count[1]);
-                this.udSal1.Enabled = true;
-                this.cbSal2.SelectedIndex = recipeEntry.SalvageIdx[2] + 1;
-                this.cbSal2.Enabled = true;
-                this.udSal2.Value = new decimal(recipeEntry.Count[2]);
-                this.udSal2.Enabled = true;
-                this.cbSal3.SelectedIndex = recipeEntry.SalvageIdx[3] + 1;
-                this.cbSal3.Enabled = true;
-                this.udSal3.Value = new decimal(recipeEntry.Count[3]);
-                this.udSal3.Enabled = true;
-                this.cbSal4.SelectedIndex = recipeEntry.SalvageIdx[4] + 1;
-                this.cbSal4.Enabled = true;
-                this.udSal4.Value = new decimal(recipeEntry.Count[4]);
-                this.udSal4.Enabled = true;
-                this.NoUpdate = false;
+                udLevel.Value = new decimal(recipeEntry.Level + 1);
+                udLevel.Enabled = true;
+                udBuy.Value = new decimal(recipeEntry.BuyCost);
+                udBuy.Enabled = true;
+                udBuyM.Value = new decimal(recipeEntry.BuyCostM);
+                udBuyM.Enabled = true;
+                udCraft.Value = new decimal(recipeEntry.CraftCost);
+                udCraft.Enabled = true;
+                udCraftM.Value = new decimal(recipeEntry.CraftCostM);
+                udCraftM.Enabled = true;
+                cbSal0.SelectedIndex = recipeEntry.SalvageIdx[0] + 1;
+                cbSal0.Enabled = true;
+                udSal0.Value = new decimal(recipeEntry.Count[0]);
+                udSal0.Enabled = true;
+                cbSal1.SelectedIndex = recipeEntry.SalvageIdx[1] + 1;
+                cbSal1.Enabled = true;
+                udSal1.Value = new decimal(recipeEntry.Count[1]);
+                udSal1.Enabled = true;
+                cbSal2.SelectedIndex = recipeEntry.SalvageIdx[2] + 1;
+                cbSal2.Enabled = true;
+                udSal2.Value = new decimal(recipeEntry.Count[2]);
+                udSal2.Enabled = true;
+                cbSal3.SelectedIndex = recipeEntry.SalvageIdx[3] + 1;
+                cbSal3.Enabled = true;
+                udSal3.Value = new decimal(recipeEntry.Count[3]);
+                udSal3.Enabled = true;
+                cbSal4.SelectedIndex = recipeEntry.SalvageIdx[4] + 1;
+                cbSal4.Enabled = true;
+                udSal4.Value = new decimal(recipeEntry.Count[4]);
+                udSal4.Enabled = true;
+                NoUpdate = false;
             }
         }
 
@@ -564,104 +565,104 @@ namespace Hero_Designer
         {
             if (Index < 0 | Index > DatabaseAPI.Database.Recipes.Length - 1)
             {
-                this.ClearInfo();
+                ClearInfo();
             }
             else
             {
-                this.NoUpdate = true;
-                this.txtRecipeName.Text = DatabaseAPI.Database.Recipes[Index].InternalName;
-                this.cbEnh.SelectedIndex = DatabaseAPI.Database.Recipes[Index].EnhIdx + 1;
+                NoUpdate = true;
+                txtRecipeName.Text = DatabaseAPI.Database.Recipes[Index].InternalName;
+                cbEnh.SelectedIndex = DatabaseAPI.Database.Recipes[Index].EnhIdx + 1;
                 try
                 {
-                    this.lblEnh.Text = DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Recipes[Index].EnhIdx].LongName;
+                    lblEnh.Text = DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Recipes[Index].EnhIdx].LongName;
                 }
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    this.lblEnh.Text = string.Empty;
+                    lblEnh.Text = string.Empty;
                     ProjectData.ClearProjectError();
                 }
-                this.cbRarity.SelectedIndex = (int)DatabaseAPI.Database.Recipes[Index].Rarity;
-                this.txtExtern.Text = DatabaseAPI.Database.Recipes[Index].ExternalName;
-                this.lstItems.Items.Clear();
+                cbRarity.SelectedIndex = (int)DatabaseAPI.Database.Recipes[Index].Rarity;
+                txtExtern.Text = DatabaseAPI.Database.Recipes[Index].ExternalName;
+                lstItems.Items.Clear();
                 int num = DatabaseAPI.Database.Recipes[Index].Item.Length - 1;
                 for (int index = 0; index <= num; ++index)
-                    this.lstItems.Items.Add(("Level: " + Conversions.ToString(DatabaseAPI.Database.Recipes[Index].Item[index].Level + 1)));
-                if (this.lstItems.Items.Count > 0)
-                    this.lstItems.SelectedIndex = 0;
-                this.NoUpdate = false;
+                    lstItems.Items.Add(("Level: " + Conversions.ToString(DatabaseAPI.Database.Recipes[Index].Item[index].Level + 1)));
+                if (lstItems.Items.Count > 0)
+                    lstItems.SelectedIndex = 0;
+                NoUpdate = false;
             }
         }
 
         void txtExtern_TextChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() <= -1)
+            if (NoUpdate || RecipeID() <= -1)
                 return;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].ExternalName = this.txtExtern.Text;
+            DatabaseAPI.Database.Recipes[RecipeID()].ExternalName = txtExtern.Text;
         });
 
         void txtRecipeName_TextChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() <= -1)
+            if (NoUpdate || RecipeID() <= -1)
                 return;
-            DatabaseAPI.Database.Recipes[this.RecipeID()].InternalName = this.txtRecipeName.Text;
-            this.UpdateListItem(this.RecipeID());
+            DatabaseAPI.Database.Recipes[RecipeID()].InternalName = txtRecipeName.Text;
+            UpdateListItem(RecipeID());
         });
 
         void udCostX_Leave(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
+            if (NoUpdate || RecipeID() < 0 || EntryID() < 0)
                 return;
-            var recipeItem = DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()];
-            recipeItem.Level = this.MinMax((int)Math.Round(Conversion.Val(this.udLevel.Text.Replace(",", "").Replace(".", ""))), this.udLevel) - 1;
-            recipeItem.BuyCost = this.MinMax((int)Math.Round(Conversion.Val(this.udBuy.Text.Replace(",", "").Replace(".", ""))), this.udBuy);
-            recipeItem.BuyCostM = this.MinMax((int)Math.Round(Conversion.Val(this.udBuyM.Text.Replace(",", "").Replace(".", ""))), this.udBuyM);
-            recipeItem.CraftCost = this.MinMax((int)Math.Round(Conversion.Val(this.udCraft.Text.Replace(",", "").Replace(".", ""))), this.udCraft);
-            recipeItem.CraftCostM = this.MinMax((int)Math.Round(Conversion.Val(this.udCraftM.Text.Replace(",", "").Replace(".", ""))), this.udCraftM);
+            var recipeItem = DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()];
+            recipeItem.Level = MinMax((int)Math.Round(Conversion.Val(udLevel.Text.Replace(",", "").Replace(".", ""))), udLevel) - 1;
+            recipeItem.BuyCost = MinMax((int)Math.Round(Conversion.Val(udBuy.Text.Replace(",", "").Replace(".", ""))), udBuy);
+            recipeItem.BuyCostM = MinMax((int)Math.Round(Conversion.Val(udBuyM.Text.Replace(",", "").Replace(".", ""))), udBuyM);
+            recipeItem.CraftCost = MinMax((int)Math.Round(Conversion.Val(udCraft.Text.Replace(",", "").Replace(".", ""))), udCraft);
+            recipeItem.CraftCostM = MinMax((int)Math.Round(Conversion.Val(udCraftM.Text.Replace(",", "").Replace(".", ""))), udCraftM);
         });
 
         void udCostX_ValueChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
+            if (NoUpdate || RecipeID() < 0 || EntryID() < 0)
                 return;
-            var recipeItem = DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()];
-            recipeItem.Level = Convert.ToInt32(decimal.Subtract(this.udLevel.Value, new decimal(1)));
-            recipeItem.BuyCost = Convert.ToInt32(this.udBuy.Value);
-            recipeItem.BuyCostM = Convert.ToInt32(this.udBuyM.Value);
-            recipeItem.CraftCost = Convert.ToInt32(this.udCraft.Value);
-            recipeItem.CraftCostM = Convert.ToInt32(this.udCraftM.Value);
+            var recipeItem = DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()];
+            recipeItem.Level = Convert.ToInt32(decimal.Subtract(udLevel.Value, new decimal(1)));
+            recipeItem.BuyCost = Convert.ToInt32(udBuy.Value);
+            recipeItem.BuyCostM = Convert.ToInt32(udBuyM.Value);
+            recipeItem.CraftCost = Convert.ToInt32(udCraft.Value);
+            recipeItem.CraftCostM = Convert.ToInt32(udCraftM.Value);
         });
 
         void udSalX_Leave(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            var recipeItem = DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()];
-            recipeItem.Count[0] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal0.Text)), this.udSal0);
-            recipeItem.Count[1] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal1.Text)), this.udSal1);
-            recipeItem.Count[2] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal2.Text)), this.udSal2);
-            recipeItem.Count[3] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal3.Text)), this.udSal3);
-            recipeItem.Count[4] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal4.Text)), this.udSal4);
+            var recipeItem = DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()];
+            recipeItem.Count[0] = MinMax((int)Math.Round(Conversion.Val(udSal0.Text)), udSal0);
+            recipeItem.Count[1] = MinMax((int)Math.Round(Conversion.Val(udSal1.Text)), udSal1);
+            recipeItem.Count[2] = MinMax((int)Math.Round(Conversion.Val(udSal2.Text)), udSal2);
+            recipeItem.Count[3] = MinMax((int)Math.Round(Conversion.Val(udSal3.Text)), udSal3);
+            recipeItem.Count[4] = MinMax((int)Math.Round(Conversion.Val(udSal4.Text)), udSal4);
         });
 
         void udSalX_ValueChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
-            if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
+            if (NoUpdate || RecipeID() < 0 || EntryID() < 0)
                 return;
-            var recipeItem = DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()];
-            recipeItem.Count[0] = Convert.ToInt32(this.udSal0.Value);
-            recipeItem.Count[1] = Convert.ToInt32(this.udSal1.Value);
-            recipeItem.Count[2] = Convert.ToInt32(this.udSal2.Value);
-            recipeItem.Count[3] = Convert.ToInt32(this.udSal3.Value);
-            recipeItem.Count[4] = Convert.ToInt32(this.udSal4.Value);
+            var recipeItem = DatabaseAPI.Database.Recipes[RecipeID()].Item[EntryID()];
+            recipeItem.Count[0] = Convert.ToInt32(udSal0.Value);
+            recipeItem.Count[1] = Convert.ToInt32(udSal1.Value);
+            recipeItem.Count[2] = Convert.ToInt32(udSal2.Value);
+            recipeItem.Count[3] = Convert.ToInt32(udSal3.Value);
+            recipeItem.Count[4] = Convert.ToInt32(udSal4.Value);
         });
 
         protected void UpdateListItem(int index)
         {
             if (!(index > -1 & index < DatabaseAPI.Database.Recipes.Length))
                 return;
-            this.lvDPA.Items[index].SubItems[0].Text = DatabaseAPI.Database.Recipes[index].InternalName;
-            this.lvDPA.Items[index].SubItems[1].Text = DatabaseAPI.Database.Recipes[index].EnhIdx <= -1 ? "None" : DatabaseAPI.Database.Recipes[index].Enhancement + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index].EnhIdx) + ")";
-            this.lvDPA.Items[index].SubItems[2].Text = Enum.GetName(DatabaseAPI.Database.Recipes[index].Rarity.GetType(), DatabaseAPI.Database.Recipes[index].Rarity);
-            this.lvDPA.Items[index].SubItems[3].Text = Conversions.ToString(DatabaseAPI.Database.Recipes[index].Item.Length);
+            lvDPA.Items[index].SubItems[0].Text = DatabaseAPI.Database.Recipes[index].InternalName;
+            lvDPA.Items[index].SubItems[1].Text = DatabaseAPI.Database.Recipes[index].EnhIdx <= -1 ? "None" : DatabaseAPI.Database.Recipes[index].Enhancement + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index].EnhIdx) + ")";
+            lvDPA.Items[index].SubItems[2].Text = Enum.GetName(DatabaseAPI.Database.Recipes[index].Rarity.GetType(), DatabaseAPI.Database.Recipes[index].Rarity);
+            lvDPA.Items[index].SubItems[3].Text = Conversions.ToString(DatabaseAPI.Database.Recipes[index].Item.Length);
         }
     }
 }

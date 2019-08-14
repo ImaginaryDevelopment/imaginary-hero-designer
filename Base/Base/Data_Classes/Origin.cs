@@ -9,15 +9,15 @@ namespace Base.Data_Classes
 
         internal Origin(string name, string dualO, string singleO)
         {
-            this.Name = name;
-            this.Grades = new string[7];
-            this.Grades[0] = "Training";
-            this.Grades[1] = dualO;
-            this.Grades[2] = singleO;
-            this.Grades[3] = "HO";
-            this.Grades[4] = "IO";
-            this.Grades[5] = "IO";
-            this.Grades[6] = "IO";
+            Name = name;
+            Grades = new string[7];
+            Grades[0] = "Training";
+            Grades[1] = dualO;
+            Grades[2] = singleO;
+            Grades[3] = "HO";
+            Grades[4] = "IO";
+            Grades[5] = "IO";
+            Grades[6] = "IO";
         }
 
         public enum Grade
@@ -29,7 +29,7 @@ namespace Base.Data_Classes
             HO = 3,
             IO = 4,
             SetO = 5,
-            Attuned = 6,
+            Attuned = 6
         }
     }
 }

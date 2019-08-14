@@ -1,11 +1,9 @@
-﻿using Base.Master_Classes;
-using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.AccessControl;
+using Base.Master_Classes;
+using Microsoft.Win32;
 
 namespace Hero_Designer
 {
@@ -109,21 +107,18 @@ namespace Hero_Designer
                 // error condition-ish
                 if (itemNames.Any(name => name.Length > 1))
                     return false;
-                var nextLetter = itemNames.Any() ? (char)((int)itemNames.Max()[0] + 1) : 'a';
+                var nextLetter = itemNames.Any() ? (char)(itemNames.Max()[0] + 1) : 'a';
                 if (itemNames.Length == 0)
                 {
 
                 }
-                else
-                {
 
-                }
                 var mruListValue = (string)owlKey.GetValue(MRUListValueName);
                 // error condition
                 if (mruListValue != null && mruListValue.Contains(nextLetter))
                     return false;
                 owlKey.SetValue(nextLetter.ToString(), MidsContext.AssemblyName);
-                owlKey.SetValue(MRUListValueName, nextLetter.ToString() + mruListValue);
+                owlKey.SetValue(MRUListValueName, nextLetter + mruListValue);
             }
             return true;
         }
@@ -159,7 +154,7 @@ namespace Hero_Designer
             shell.Close();
 
             currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
-            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
             {
                 uc.SetValue("Progid", keyName, RegistryValueKind.String);
             }

@@ -1,13 +1,12 @@
 
-using Base.Master_Classes;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Master_Classes;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -18,12 +17,12 @@ namespace Hero_Designer
 
         public frmTweakMatching()
         {
-            this.Load += new EventHandler(this.frmTweakMatching_Load);
-            this.Loaded = false;
-            this.InitializeComponent();
-            this.Name = nameof(frmTweakMatching);
+            Load += frmTweakMatching_Load;
+            Loaded = false;
+            InitializeComponent();
+            Name = nameof(frmTweakMatching);
             var componentResourceManager = new ComponentResourceManager(typeof(frmTweakMatching));
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -35,37 +34,37 @@ namespace Hero_Designer
             {
                 Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
                 int index2 = index1;
-                if (compOverride[index2].Power == this.cbPower.SelectedItem.ToString() & compOverride[index2].Powerset == this.cbSet1.SelectedItem.ToString())
+                if (compOverride[index2].Power == cbPower.SelectedItem.ToString() & compOverride[index2].Powerset == cbSet1.SelectedItem.ToString())
                     num1 = index1;
             }
             if (num1 > -1)
             {
                 int num3 = (int)Interaction.MsgBox("An override for that powerset/power already exists!", MsgBoxStyle.Information, "Can't have duplicates!");
-                this.lstTweaks.SelectedIndex = num1;
+                lstTweaks.SelectedIndex = num1;
             }
             else
             {
-                if (this.txtAddOvr.Text != this.txtAddActual.Text & this.txtAddOvr.Text != "")
+                if (txtAddOvr.Text != txtAddActual.Text & txtAddOvr.Text != "")
                 {
-                    MidsContext.Config.CompOverride = (Enums.CompOverride[])Utils.CopyArray(MidsContext.Config.CompOverride, (Array)new Enums.CompOverride[MidsContext.Config.CompOverride.Length + 1]);
+                    MidsContext.Config.CompOverride = (Enums.CompOverride[])Utils.CopyArray(MidsContext.Config.CompOverride, new Enums.CompOverride[MidsContext.Config.CompOverride.Length + 1]);
                     Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
                     int index = MidsContext.Config.CompOverride.Length - 1;
-                    compOverride[index].Power = Conversions.ToString(this.cbPower.SelectedItem);
-                    compOverride[index].Powerset = Conversions.ToString(this.cbSet1.SelectedItem);
-                    compOverride[index].Override = this.txtAddOvr.Text;
+                    compOverride[index].Power = Conversions.ToString(cbPower.SelectedItem);
+                    compOverride[index].Powerset = Conversions.ToString(cbSet1.SelectedItem);
+                    compOverride[index].Override = txtAddOvr.Text;
                 }
-                this.listOverrides();
-                this.lstTweaks.SelectedIndex = this.lstTweaks.Items.Count - 1;
+                listOverrides();
+                lstTweaks.SelectedIndex = lstTweaks.Items.Count - 1;
             }
         }
 
         void btnDel_Click(object sender, EventArgs e)
 
         {
-            if (this.lstTweaks.SelectedIndex < 0)
+            if (lstTweaks.SelectedIndex < 0)
                 return;
             Enums.CompOverride[] compOverrideArray = new Enums.CompOverride[MidsContext.Config.CompOverride.Length - 2 + 1];
-            int selectedIndex = this.lstTweaks.SelectedIndex;
+            int selectedIndex = lstTweaks.SelectedIndex;
             int index1 = 0;
             int num1 = MidsContext.Config.CompOverride.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
@@ -90,98 +89,98 @@ namespace Hero_Designer
                 compOverride[index3].Power = compOverrideArray[index2].Power;
                 compOverride[index3].Powerset = compOverrideArray[index2].Powerset;
             }
-            this.listOverrides();
+            listOverrides();
         }
 
         void Button1_Click(object sender, EventArgs e)
 
         {
-            this.Hide();
+            Hide();
         }
 
         void Button2_Click(object sender, EventArgs e)
 
         {
-            if (this.lstTweaks.SelectedIndex < 0)
+            if (lstTweaks.SelectedIndex < 0)
                 return;
-            MidsContext.Config.CompOverride[this.lstTweaks.SelectedIndex].Override = this.txtOvr.Text;
-            int selectedIndex = this.lstTweaks.SelectedIndex;
-            this.listOverrides();
-            this.lstTweaks.SelectedIndex = selectedIndex;
+            MidsContext.Config.CompOverride[lstTweaks.SelectedIndex].Override = txtOvr.Text;
+            int selectedIndex = lstTweaks.SelectedIndex;
+            listOverrides();
+            lstTweaks.SelectedIndex = selectedIndex;
         }
 
         void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets();
+            List_Sets();
         }
 
         void cbPower_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.cbPower.SelectedIndex < 0)
+            if (cbPower.SelectedIndex < 0)
                 return;
-            this.txtAddActual.Text = DatabaseAPI.Database.Powersets[this.getSetIndex()].Powers[this.cbPower.SelectedIndex].DescShort;
-            this.txtAddOvr.Text = this.txtAddActual.Text;
+            txtAddActual.Text = DatabaseAPI.Database.Powersets[getSetIndex()].Powers[cbPower.SelectedIndex].DescShort;
+            txtAddOvr.Text = txtAddActual.Text;
         }
 
         void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.GetPowers();
+            GetPowers();
         }
 
         void cbType1_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (!this.Loaded)
+            if (!Loaded)
                 return;
-            this.List_Sets();
+            List_Sets();
         }
 
         void frmTweakMatching_Load(object sender, EventArgs e)
 
         {
-            this.list_AT();
-            this.list_Type();
-            this.List_Sets();
-            this.GetPowers();
-            this.listOverrides();
-            this.Loaded = true;
+            list_AT();
+            list_Type();
+            List_Sets();
+            GetPowers();
+            listOverrides();
+            Loaded = true;
         }
 
         public int getAT()
         {
-            return this.cbAT1.SelectedIndex;
+            return cbAT1.SelectedIndex;
         }
 
         public void GetPowers()
         {
             int index1 = 0;
             int[] numArray = new int[2];
-            this.cbPower.BeginUpdate();
-            this.cbPower.Items.Clear();
-            numArray[0] = this.getSetIndex();
+            cbPower.BeginUpdate();
+            cbPower.Items.Clear();
+            numArray[0] = getSetIndex();
             int num = DatabaseAPI.Database.Powersets[numArray[index1]].Powers.Length - 1;
             for (int index2 = 0; index2 <= num; ++index2)
-                this.cbPower.Items.Add(DatabaseAPI.Database.Powersets[numArray[index1]].Powers[index2].DisplayName);
-            this.cbPower.SelectedIndex = 0;
-            this.cbPower.EndUpdate();
+                cbPower.Items.Add(DatabaseAPI.Database.Powersets[numArray[index1]].Powers[index2].DisplayName);
+            cbPower.SelectedIndex = 0;
+            cbPower.EndUpdate();
         }
 
         public int getSetIndex()
         {
-            return DatabaseAPI.GetPowersetIndexes(this.getAT(), this.getSetType())[this.cbSet1.SelectedIndex].nID;
+            return DatabaseAPI.GetPowersetIndexes(getAT(), getSetType())[cbSet1.SelectedIndex].nID;
         }
 
         public Enums.ePowerSetType getSetType()
         {
             Enums.ePowerSetType ePowerSetType;
-            switch (this.cbType1.SelectedIndex)
+            switch (cbType1.SelectedIndex)
             {
                 case 0:
                     ePowerSetType = Enums.ePowerSetType.Primary;
@@ -203,13 +202,13 @@ namespace Hero_Designer
 
         public void list_AT()
         {
-            this.cbAT1.BeginUpdate();
-            this.cbAT1.Items.Clear();
+            cbAT1.BeginUpdate();
+            cbAT1.Items.Clear();
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
-            this.cbAT1.SelectedIndex = 0;
-            this.cbAT1.EndUpdate();
+                cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
+            cbAT1.SelectedIndex = 0;
+            cbAT1.EndUpdate();
         }
 
         public void List_Sets()
@@ -217,7 +216,7 @@ namespace Hero_Designer
             Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
             ComboBox cbSet1 = this.cbSet1;
             ComboBox cbType1 = this.cbType1;
-            int selectedIndex = this.cbAT1.SelectedIndex;
+            int selectedIndex = cbAT1.SelectedIndex;
             switch (cbType1.SelectedIndex)
             {
                 case 0:
@@ -243,33 +242,33 @@ namespace Hero_Designer
 
         public void list_Type()
         {
-            this.cbType1.BeginUpdate();
-            this.cbType1.Items.Clear();
-            this.cbType1.Items.Add("Primary");
-            this.cbType1.Items.Add("Secondary");
-            this.cbType1.Items.Add("Ancillary");
-            this.cbType1.SelectedIndex = 0;
-            this.cbType1.EndUpdate();
+            cbType1.BeginUpdate();
+            cbType1.Items.Clear();
+            cbType1.Items.Add("Primary");
+            cbType1.Items.Add("Secondary");
+            cbType1.Items.Add("Ancillary");
+            cbType1.SelectedIndex = 0;
+            cbType1.EndUpdate();
         }
 
         public void listOverrides()
         {
-            this.lstTweaks.BeginUpdate();
-            this.lstTweaks.Items.Clear();
+            lstTweaks.BeginUpdate();
+            lstTweaks.Items.Clear();
             int num = MidsContext.Config.CompOverride.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstTweaks.Items.Add((MidsContext.Config.CompOverride[index].Powerset + "." + MidsContext.Config.CompOverride[index].Power));
-            if (this.lstTweaks.Items.Count > 0)
-                this.lstTweaks.SelectedIndex = 0;
-            this.lstTweaks.EndUpdate();
+                lstTweaks.Items.Add((MidsContext.Config.CompOverride[index].Powerset + "." + MidsContext.Config.CompOverride[index].Power));
+            if (lstTweaks.Items.Count > 0)
+                lstTweaks.SelectedIndex = 0;
+            lstTweaks.EndUpdate();
         }
 
         void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.lstTweaks.SelectedIndex < 0)
+            if (lstTweaks.SelectedIndex < 0)
                 return;
-            this.txtOvr.Text = MidsContext.Config.CompOverride[this.lstTweaks.SelectedIndex].Override;
+            txtOvr.Text = MidsContext.Config.CompOverride[lstTweaks.SelectedIndex].Override;
         }
     }
 }

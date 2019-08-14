@@ -1,6 +1,4 @@
-using System.Drawing;
-using System.Windows.Forms;
-using Hero_Designer.My.Resources;
+using System.ComponentModel;
 
 namespace Hero_Designer
 {
@@ -9,7 +7,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.

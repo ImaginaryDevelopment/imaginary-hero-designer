@@ -1,10 +1,5 @@
 
-using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -23,23 +18,23 @@ namespace Hero_Designer
 
         public frmOptionListDlg()
         {
-            this.InitializeComponent();
-            this.Name = nameof(frmOptionListDlg);
+            InitializeComponent();
+            Name = nameof(frmOptionListDlg);
         }
 
         void Cancel_Button_Click(object sender, EventArgs e)
 
         {
-            this.chkRemember.Checked = false;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            chkRemember.Checked = false;
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         void OK_Button_Click(object sender, EventArgs e)
 
         {
-            this.DialogResult = (DialogResult)(this.cmbAction.SelectedIndex + 2);
-            this.Close();
+            DialogResult = (DialogResult)(cmbAction.SelectedIndex + 2);
+            Close();
         }
 
         public static (DialogResult, bool? remember) ShowWithOptions(

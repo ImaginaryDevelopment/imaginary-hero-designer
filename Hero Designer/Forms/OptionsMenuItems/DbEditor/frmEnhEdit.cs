@@ -1,13 +1,13 @@
 
-using Base.Display;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Display;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -15,11 +15,11 @@ namespace Hero_Designer
     {
         public frmEnhEdit()
         {
-            this.Load += new EventHandler(this.frmEnhEdit_Load);
-            this.InitializeComponent();
-            this.Name = nameof(frmEnhEdit);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEnhEdit));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmEnhEdit_Load;
+            InitializeComponent();
+            Name = nameof(frmEnhEdit);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmEnhEdit));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void AddListItem(int Index)
@@ -54,58 +54,58 @@ namespace Hero_Designer
             }
             else
                 items[4] = "";
-            this.lvEnh.Items.Add(new ListViewItem(items, Index));
-            this.lvEnh.Items[this.lvEnh.Items.Count - 1].Selected = true;
-            this.lvEnh.Items[this.lvEnh.Items.Count - 1].EnsureVisible();
+            lvEnh.Items.Add(new ListViewItem(items, Index));
+            lvEnh.Items[lvEnh.Items.Count - 1].Selected = true;
+            lvEnh.Items[lvEnh.Items.Count - 1].EnsureVisible();
         }
 
         void btnAdd_Click(object sender, EventArgs e)
         {
-            IEnhancement iEnh = (IEnhancement)new Enhancement();
+            IEnhancement iEnh = new Enhancement();
             frmEnhData frmEnhData = new frmEnhData(ref iEnh);
             int num = (int)frmEnhData.ShowDialog();
             if (frmEnhData.DialogResult != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, (Array)new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
+            IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
             database.Enhancements = enhancementArray;
-            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = (IEnhancement)new Enhancement(frmEnhData.myEnh);
+            DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = new Enhancement(frmEnhData.myEnh);
             DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;
             DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].StaticIndex = -1;
-            this.ImageUpdate();
-            this.AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
+            ImageUpdate();
+            AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
         }
 
         void btnClone_Click(object sender, EventArgs e)
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0)
+            if (lvEnh.SelectedIndices.Count <= 0)
                 return;
-            frmEnhData frmEnhData = new frmEnhData(ref DatabaseAPI.Database.Enhancements[this.lvEnh.SelectedIndices[0]]);
+            frmEnhData frmEnhData = new frmEnhData(ref DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]]);
             int num = (int)frmEnhData.ShowDialog();
             if (frmEnhData.DialogResult == DialogResult.OK)
             {
                 IDatabase database = DatabaseAPI.Database;
                 IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
                 database.Enhancements = enhancementArray;
-                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = (IEnhancement)new Enhancement(frmEnhData.myEnh);
+                DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = new Enhancement(frmEnhData.myEnh);
                 DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;
                 DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].StaticIndex = -1;
-                this.ImageUpdate();
-                this.AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
+                ImageUpdate();
+                AddListItem(DatabaseAPI.Database.Enhancements.Length - 1);
             }
         }
 
         void btnDelete_Click(object sender, EventArgs e)
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete enhancement: " + this.lvEnh.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
+            if (lvEnh.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete enhancement: " + lvEnh.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             Enhancement[] enhancementArray = new Enhancement[DatabaseAPI.Database.Enhancements.Length - 1 + 1];
-            int selectedIndex = this.lvEnh.SelectedIndices[0];
+            int selectedIndex = lvEnh.SelectedIndices[0];
             int index1 = 0;
             int num1 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
@@ -119,74 +119,74 @@ namespace Hero_Designer
             DatabaseAPI.Database.Enhancements = new IEnhancement[DatabaseAPI.Database.Enhancements.Length - 2 + 1];
             int num2 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
-                DatabaseAPI.Database.Enhancements[index2] = (IEnhancement)new Enhancement((IEnhancement)enhancementArray[index2]);
-            this.DisplayList();
-            if (this.lvEnh.Items.Count > 0)
+                DatabaseAPI.Database.Enhancements[index2] = new Enhancement(enhancementArray[index2]);
+            DisplayList();
+            if (lvEnh.Items.Count > 0)
             {
-                if (this.lvEnh.Items.Count > selectedIndex)
+                if (lvEnh.Items.Count > selectedIndex)
                 {
-                    this.lvEnh.Items[selectedIndex].Selected = true;
-                    this.lvEnh.Items[selectedIndex].EnsureVisible();
+                    lvEnh.Items[selectedIndex].Selected = true;
+                    lvEnh.Items[selectedIndex].EnsureVisible();
                 }
-                else if (this.lvEnh.Items.Count == selectedIndex)
+                else if (lvEnh.Items.Count == selectedIndex)
                 {
-                    this.lvEnh.Items[selectedIndex - 1].Selected = true;
-                    this.lvEnh.Items[selectedIndex - 1].EnsureVisible();
+                    lvEnh.Items[selectedIndex - 1].Selected = true;
+                    lvEnh.Items[selectedIndex - 1].EnsureVisible();
                 }
             }
         }
 
         void btnDown_Click(object sender, EventArgs e)
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0)
+            if (lvEnh.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEnh.SelectedIndices[0];
-            if (selectedIndex < this.lvEnh.Items.Count - 1)
+            int selectedIndex = lvEnh.SelectedIndices[0];
+            if (selectedIndex < lvEnh.Items.Count - 1)
             {
                 IEnhancement[] enhancementArray = new IEnhancement[2]
                 {
-          (IEnhancement) new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex]),
-          (IEnhancement) new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex + 1])
+          new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex]),
+          new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex + 1])
                 };
-                DatabaseAPI.Database.Enhancements[selectedIndex + 1] = (IEnhancement)new Enhancement(enhancementArray[0]);
-                DatabaseAPI.Database.Enhancements[selectedIndex] = (IEnhancement)new Enhancement(enhancementArray[1]);
-                this.DisplayList();
-                this.lvEnh.Items[selectedIndex + 1].Selected = true;
-                this.lvEnh.Items[selectedIndex + 1].EnsureVisible();
+                DatabaseAPI.Database.Enhancements[selectedIndex + 1] = new Enhancement(enhancementArray[0]);
+                DatabaseAPI.Database.Enhancements[selectedIndex] = new Enhancement(enhancementArray[1]);
+                DisplayList();
+                lvEnh.Items[selectedIndex + 1].Selected = true;
+                lvEnh.Items[selectedIndex + 1].EnsureVisible();
             }
         }
 
         void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0)
+            if (lvEnh.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEnh.SelectedIndices[0];
-            frmEnhData frmEnhData = new frmEnhData(ref DatabaseAPI.Database.Enhancements[this.lvEnh.SelectedIndices[0]]);
+            int selectedIndex = lvEnh.SelectedIndices[0];
+            frmEnhData frmEnhData = new frmEnhData(ref DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]]);
             int num = (int)frmEnhData.ShowDialog();
             if (frmEnhData.DialogResult == DialogResult.OK)
             {
-                DatabaseAPI.Database.Enhancements[this.lvEnh.SelectedIndices[0]] = (IEnhancement)new Enhancement(frmEnhData.myEnh);
-                DatabaseAPI.Database.Enhancements[this.lvEnh.SelectedIndices[0]].IsModified = true;
-                this.ImageUpdate();
-                this.UpdateListItem(selectedIndex);
+                DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]] = new Enhancement(frmEnhData.myEnh);
+                DatabaseAPI.Database.Enhancements[lvEnh.SelectedIndices[0]].IsModified = true;
+                ImageUpdate();
+                UpdateListItem(selectedIndex);
             }
         }
 
         void btnSave_Click(object sender, EventArgs e)
         {
             I9Gfx.LoadEnhancements();
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer, false);
             DatabaseAPI.AssignRecipeIDs();
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.Hide();
+            Hide();
         }
 
         void btnUp_Click(object sender, EventArgs e)
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0)
+            if (lvEnh.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEnh.SelectedIndices[0];
+            int selectedIndex = lvEnh.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
                 IEnhancement[] enhancementArray = new IEnhancement[2]
@@ -194,38 +194,38 @@ namespace Hero_Designer
                    new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex]),
                    new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex - 1])
                 };
-                DatabaseAPI.Database.Enhancements[selectedIndex - 1] = (IEnhancement)new Enhancement(enhancementArray[0]);
-                DatabaseAPI.Database.Enhancements[selectedIndex] = (IEnhancement)new Enhancement(enhancementArray[1]);
-                this.DisplayList();
-                this.lvEnh.Items[selectedIndex - 1].Selected = true;
-                this.lvEnh.Items[selectedIndex - 1].EnsureVisible();
+                DatabaseAPI.Database.Enhancements[selectedIndex - 1] = new Enhancement(enhancementArray[0]);
+                DatabaseAPI.Database.Enhancements[selectedIndex] = new Enhancement(enhancementArray[1]);
+                DisplayList();
+                lvEnh.Items[selectedIndex - 1].Selected = true;
+                lvEnh.Items[selectedIndex - 1].EnsureVisible();
             }
         }
 
         void DisplayList()
         {
-            this.ImageUpdate();
-            this.lvEnh.BeginUpdate();
-            this.lvEnh.Items.Clear();
+            ImageUpdate();
+            lvEnh.BeginUpdate();
+            lvEnh.Items.Clear();
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int Index = 0; Index <= num; ++Index)
-                this.AddListItem(Index);
-            if (this.lvEnh.Items.Count > 0)
+                AddListItem(Index);
+            if (lvEnh.Items.Count > 0)
             {
-                this.lvEnh.Items[0].Selected = true;
-                this.lvEnh.Items[0].EnsureVisible();
+                lvEnh.Items[0].Selected = true;
+                lvEnh.Items[0].EnsureVisible();
             }
-            this.lvEnh.EndUpdate();
+            lvEnh.EndUpdate();
         }
 
         public void FillImageList()
         {
-            Size imageSize1 = this.ilEnh.ImageSize;
+            Size imageSize1 = ilEnh.ImageSize;
             int width1 = imageSize1.Width;
-            imageSize1 = this.ilEnh.ImageSize;
+            imageSize1 = ilEnh.ImageSize;
             int height1 = imageSize1.Height;
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(width1, height1);
-            this.ilEnh.Images.Clear();
+            ilEnh.Images.Clear();
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
@@ -235,41 +235,41 @@ namespace Hero_Designer
                     extendedBitmap.Graphics.Clear(Color.White);
                     Graphics graphics = extendedBitmap.Graphics;
                     I9Gfx.DrawEnhancement(ref graphics, DatabaseAPI.Database.Enhancements[index].ImageIdx, I9Gfx.ToGfxGrade(enhancement.TypeID));
-                    this.ilEnh.Images.Add((Image)extendedBitmap.Bitmap);
+                    ilEnh.Images.Add(extendedBitmap.Bitmap);
                 }
                 else
                 {
-                    ImageList.ImageCollection images = this.ilEnh.Images;
-                    Size imageSize2 = this.ilEnh.ImageSize;
+                    ImageList.ImageCollection images = ilEnh.Images;
+                    Size imageSize2 = ilEnh.ImageSize;
                     int width2 = imageSize2.Width;
-                    imageSize2 = this.ilEnh.ImageSize;
+                    imageSize2 = ilEnh.ImageSize;
                     int height2 = imageSize2.Height;
                     Bitmap bitmap = new Bitmap(width2, height2);
-                    images.Add((Image)bitmap);
+                    images.Add(bitmap);
                 }
             }
         }
 
         void frmEnhEdit_Load(object sender, EventArgs e)
         {
-            this.Show();
-            this.Refresh();
-            this.DisplayList();
-            this.lblLoading.Visible = false;
-            this.lvEnh.Select();
+            Show();
+            Refresh();
+            DisplayList();
+            lblLoading.Visible = false;
+            lvEnh.Select();
         }
 
         public void ImageUpdate()
         {
-            if (this.NoReload.Checked)
+            if (NoReload.Checked)
                 return;
             I9Gfx.LoadEnhancements();
-            this.FillImageList();
+            FillImageList();
         }
 
         void lvEnh_DoubleClick(object sender, EventArgs e)
         {
-            this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
+            btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         void lvEnh_SelectedIndexChanged(object sender, EventArgs e)
@@ -278,7 +278,7 @@ namespace Hero_Designer
 
         void NoReload_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImageUpdate();
+            ImageUpdate();
         }
 
         void UpdateListItem(int Index)
@@ -315,10 +315,10 @@ namespace Hero_Designer
                 strArray1[4] = "";
             int num4 = strArray1.Length - 1;
             for (int index = 0; index <= num4; ++index)
-                this.lvEnh.Items[Index].SubItems[index].Text = strArray1[index];
-            this.lvEnh.Items[Index].ImageIndex = Index;
-            this.lvEnh.Items[Index].EnsureVisible();
-            this.lvEnh.Refresh();
+                lvEnh.Items[Index].SubItems[index].Text = strArray1[index];
+            lvEnh.Items[Index].ImageIndex = Index;
+            lvEnh.Items[Index].EnsureVisible();
+            lvEnh.Refresh();
         }
     }
 }

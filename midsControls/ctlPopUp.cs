@@ -20,12 +20,12 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pBXHeight;
+				return pBXHeight;
 			}
 			set
 			{
-				this.pBXHeight = value;
-				this.NewBX();
+				pBXHeight = value;
+				NewBX();
 			}
 		}
 
@@ -36,12 +36,12 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pColumnPosition;
+				return pColumnPosition;
 			}
 			set
 			{
-				this.pColumnPosition = value;
-				this.Draw();
+				pColumnPosition = value;
+				Draw();
 			}
 		}
 
@@ -52,12 +52,12 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pRightAlignColumn;
+				return pRightAlignColumn;
 			}
 			set
 			{
-				this.pRightAlignColumn = value;
-				this.Draw();
+				pRightAlignColumn = value;
+				Draw();
 			}
 		}
 
@@ -68,12 +68,12 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pSectionPadding;
+				return pSectionPadding;
 			}
 			set
 			{
-				this.pSectionPadding = value;
-				this.Draw();
+				pSectionPadding = value;
+				Draw();
 			}
 		}
 
@@ -84,12 +84,12 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pInternalPadding;
+				return pInternalPadding;
 			}
 			set
 			{
-				this.pInternalPadding = value;
-				this.Draw();
+				pInternalPadding = value;
+				Draw();
 			}
 		}
 
@@ -100,14 +100,14 @@ namespace midsControls
 		{
 			get
 			{
-				return this.pScroll;
+				return pScroll;
 			}
 			set
 			{
-				if (this.pScroll != value)
+				if (pScroll != value)
 				{
-					this.pScroll = value;
-					this.Draw();
+					pScroll = value;
+					Draw();
 				}
 			}
 		}
@@ -118,9 +118,9 @@ namespace midsControls
 		{
 			try
 			{
-				if (disposing && this.components != null)
+				if (disposing && components != null)
 				{
-					this.components.Dispose();
+					components.Dispose();
 				}
 			}
 			finally
@@ -133,74 +133,74 @@ namespace midsControls
 		[DebuggerStepThrough]
 		private void InitializeComponent()
 		{
-			base.SuspendLayout();
-			base.AutoScaleMode = AutoScaleMode.None;
-			this.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-			base.Name = "ctlPopUp";
+			SuspendLayout();
+			AutoScaleMode = AutoScaleMode.None;
+			Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
+			Name = "ctlPopUp";
 			Size size = new Size(167, 104);
-			base.Size = size;
-			base.ResumeLayout(false);
+			Size = size;
+			ResumeLayout(false);
 		}
 
 		// Token: 0x06000122 RID: 290 RVA: 0x0000A775 File Offset: 0x00008975
 		private void ctlPopUp_BackColorChanged(object sender, EventArgs e)
 		{
-			this.NewBX();
-			this.Draw();
+			NewBX();
+			Draw();
 		}
 
 		// Token: 0x06000123 RID: 291 RVA: 0x0000A786 File Offset: 0x00008986
 		private void ctlPopUp_FontChanged(object sender, EventArgs e)
 		{
-			this.NewBX();
-			this.Draw();
+			NewBX();
+			Draw();
 		}
 
 		// Token: 0x06000124 RID: 292 RVA: 0x0000A797 File Offset: 0x00008997
 		private void ctlPopUp_ForeColorChanged(object sender, EventArgs e)
 		{
-			this.NewBX();
-			this.Draw();
+			NewBX();
+			Draw();
 		}
 
 		// Token: 0x06000125 RID: 293 RVA: 0x0000A7A8 File Offset: 0x000089A8
 		private void ctlPopUp_Load(object sender, EventArgs e)
 		{
-			this.NewBX();
-			this.pData = default(PopUp.PopupData);
-			this.pData.Init();
-			this.Draw();
+			NewBX();
+			pData = default;
+			pData.Init();
+			Draw();
 		}
 
 		// Token: 0x06000126 RID: 294 RVA: 0x0000A7D4 File Offset: 0x000089D4
 		private void NewBX()
 		{
-			if (this.pBXHeight < 300)
+			if (pBXHeight < 300)
 			{
-				this.pBXHeight = 300;
+				pBXHeight = 300;
 			}
-			this.myBX = new ExtendedBitmap(base.Size.Width, this.pBXHeight);
-			this.myBX.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+			myBX = new ExtendedBitmap(Size.Width, pBXHeight);
+			myBX.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
 		}
 
 		// Token: 0x06000127 RID: 295 RVA: 0x0000A834 File Offset: 0x00008A34
 		public void SetPopup(PopUp.PopupData iPopup)
 		{
-			this.pData = iPopup;
-			this.Draw();
+			pData = iPopup;
+			Draw();
 		}
 
 		// Token: 0x06000128 RID: 296 RVA: 0x0000A848 File Offset: 0x00008A48
 		private void Draw()
 		{
-			if (this.myBX == null)
+			if (myBX == null)
 			{
-				this.NewBX();
+				NewBX();
 			}
-			this.myBX.Graphics.Clear(this.BackColor);
-			this.DrawBorder();
-			this.DrawStrings();
-			base.CreateGraphics().DrawImageUnscaled(this.myBX.Bitmap, 0, 0);
+			myBX.Graphics.Clear(BackColor);
+			DrawBorder();
+			DrawStrings();
+			CreateGraphics().DrawImageUnscaled(myBX.Bitmap, 0, 0);
 		}
 
 		// Token: 0x06000129 RID: 297 RVA: 0x0000A8B0 File Offset: 0x00008AB0
@@ -209,76 +209,74 @@ namespace midsControls
 			float num = 0f;
 			checked
 			{
-				if (this.pData.Sections != null)
+				if (pData.Sections != null)
 				{
 					StringFormat stringFormat = new StringFormat(StringFormatFlags.NoClip);
-					float num2 = this.pColumnPosition;
-					bool flag = this.pRightAlignColumn;
-					if (this.pData.CustomSet)
+					float num2 = pColumnPosition;
+					bool flag = pRightAlignColumn;
+					if (pData.CustomSet)
 					{
-						this.pColumnPosition = this.pData.ColPos;
-						this.pRightAlignColumn = this.pData.ColRight;
+						pColumnPosition = pData.ColPos;
+						pRightAlignColumn = pData.ColRight;
 					}
 					stringFormat.LineAlignment = StringAlignment.Near;
 					stringFormat.Alignment = StringAlignment.Near;
 					stringFormat.Trimming = StringTrimming.None;
 					int num3 = 0;
-					int num4 = this.pData.Sections.Length - 1;
+					int num4 = pData.Sections.Length - 1;
 					for (int i = num3; i <= num4; i++)
 					{
-						if (this.pData.Sections[i].Content != null)
+						if (pData.Sections[i].Content != null)
 						{
 							int num5 = 0;
-							int num6 = this.pData.Sections[i].Content.Length - 1;
+							int num6 = pData.Sections[i].Content.Length - 1;
 							for (int j = num5; j <= num6; j++)
 							{
 								unchecked
 								{
-									Font font = new Font(this.Font.FontFamily, this.Font.Size * this.pData.Sections[i].Content[j].tSize, this.pData.Sections[i].Content[j].tFormat, this.Font.Unit);
-									RectangleF layoutRectangle = new RectangleF((float)this.pInternalPadding + (float)this.pData.Sections[i].Content[j].tIndent * this.Font.Size, num + (float)this.pInternalPadding, (float)base.Width - ((float)(checked(this.pInternalPadding * 2)) + (float)this.pData.Sections[i].Content[j].tIndent * this.Font.Size), (float)this.myBX.Size.Height);
-									if (this.pData.Sections[i].Content[j].HasColumn)
+									Font font = new Font(Font.FontFamily, Font.Size * pData.Sections[i].Content[j].tSize, pData.Sections[i].Content[j].tFormat, Font.Unit);
+									RectangleF layoutRectangle = new RectangleF(pInternalPadding + pData.Sections[i].Content[j].tIndent * Font.Size, num + pInternalPadding, Width - (checked(pInternalPadding * 2) + pData.Sections[i].Content[j].tIndent * Font.Size), myBX.Size.Height);
+									if (pData.Sections[i].Content[j].HasColumn)
 									{
 										stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
 									}
 									SizeF sizeF;
-									if (Operators.CompareString(this.pData.Sections[i].Content[j].Text, "", false) == 0)
+									if (Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0)
 									{
-										sizeF = this.myBX.Graphics.MeasureString("Null String", font, layoutRectangle.Size, stringFormat);
+										sizeF = myBX.Graphics.MeasureString("Null String", font, layoutRectangle.Size, stringFormat);
 									}
 									else
 									{
-										sizeF = this.myBX.Graphics.MeasureString(this.pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
+										sizeF = myBX.Graphics.MeasureString(pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
 									}
-									SolidBrush brush = new SolidBrush(this.pData.Sections[i].Content[j].tColor);
+									SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
 									layoutRectangle.Height = sizeF.Height + 1f;
-									layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - this.pScroll, layoutRectangle.Width, layoutRectangle.Height);
-									this.myBX.Graphics.DrawString(this.pData.Sections[i].Content[j].Text, font, brush, layoutRectangle, stringFormat);
-									if (this.pData.Sections[i].Content[j].HasColumn)
+									layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - pScroll, layoutRectangle.Width, layoutRectangle.Height);
+									myBX.Graphics.DrawString(pData.Sections[i].Content[j].Text, font, brush, layoutRectangle, stringFormat);
+									if (pData.Sections[i].Content[j].HasColumn)
 									{
-										if (this.pRightAlignColumn)
+										if (pRightAlignColumn)
 										{
 											stringFormat.Alignment = StringAlignment.Far;
 										}
-										layoutRectangle.X = (float)this.pInternalPadding + (float)(checked(base.Width - this.pInternalPadding * 2)) * this.pColumnPosition;
-										layoutRectangle.Width = (float)base.Width - ((float)this.pInternalPadding + layoutRectangle.X);
-										brush = new SolidBrush(this.pData.Sections[i].Content[j].tColorColumn);
-										this.myBX.Graphics.DrawString(this.pData.Sections[i].Content[j].TextColumn, font, brush, layoutRectangle, stringFormat);
+										layoutRectangle.X = pInternalPadding + checked(Width - pInternalPadding * 2) * pColumnPosition;
+										layoutRectangle.Width = Width - (pInternalPadding + layoutRectangle.X);
+										brush = new SolidBrush(pData.Sections[i].Content[j].tColorColumn);
+										myBX.Graphics.DrawString(pData.Sections[i].Content[j].TextColumn, font, brush, layoutRectangle, stringFormat);
 										stringFormat.FormatFlags = StringFormatFlags.NoClip;
 									}
 									stringFormat.Alignment = StringAlignment.Near;
 									num += sizeF.Height + 1f;
 								}
 							}
-							unchecked
-							{
-								num += (float)this.pSectionPadding;
-							}
-						}
+
+                            num += pSectionPadding;
+                        }
 					}
-					base.Height = (int)Math.Round((double)num);
-					this.lHeight = num;
-					this.pColumnPosition = num2;
-					this.pRightAlignColumn = flag;
+					Height = (int)Math.Round(num);
+					lHeight = num;
+					pColumnPosition = num2;
+					pRightAlignColumn = flag;
 				}
 			}
 		}
@@ -286,55 +284,55 @@ namespace midsControls
 		// Token: 0x0600012A RID: 298 RVA: 0x0000AD94 File Offset: 0x00008F94
 		private void DrawBorder()
 		{
-			Pen pen = new Pen(this.ForeColor);
-			Rectangle rect = default(Rectangle);
+			Pen pen = new Pen(ForeColor);
+			Rectangle rect = default;
 			rect.X = 0;
 			rect.Y = 0;
 			checked
 			{
-				rect.Height = base.Height - 1;
-				rect.Width = base.Width - 1;
-				this.myBX.Graphics.DrawRectangle(pen, rect);
+				rect.Height = Height - 1;
+				rect.Width = Width - 1;
+				myBX.Graphics.DrawRectangle(pen, rect);
 			}
 		}
 
 		// Token: 0x0600012B RID: 299 RVA: 0x0000AE00 File Offset: 0x00009000
 		private void ctlPopUp_Paint(object sender, PaintEventArgs e)
 		{
-			if (this.myBX != null)
+			if (myBX != null)
 			{
-				e.Graphics.DrawImageUnscaled(this.myBX.Bitmap, 0, 0);
+				e.Graphics.DrawImageUnscaled(myBX.Bitmap, 0, 0);
 			}
 		}
 
 		// Token: 0x0600012C RID: 300 RVA: 0x0000AE3A File Offset: 0x0000903A
 		private void ctlPopUp_SizeChanged(object sender, EventArgs e)
 		{
-			this.NewBX();
-			this.Draw();
+			NewBX();
+			Draw();
 		}
 
 		// Token: 0x0600012D RID: 301 RVA: 0x0000AE4C File Offset: 0x0000904C
 		public ctlPopUp()
 		{
-			base.BackColorChanged += this.ctlPopUp_BackColorChanged;
-			base.FontChanged += this.ctlPopUp_FontChanged;
-			base.ForeColorChanged += this.ctlPopUp_ForeColorChanged;
-			base.Paint += this.ctlPopUp_Paint;
-			base.Load += this.ctlPopUp_Load;
-			base.SizeChanged += this.ctlPopUp_SizeChanged;
-			this.pSectionPadding = 8;
-			this.pInternalPadding = 3;
-			this.pScroll = 0f;
-			this.lHeight = 0f;
-			this.pBXHeight = 600;
-			this.pColumnPosition = 0.5f;
-			this.pRightAlignColumn = false;
-			this.hIDX = -1;
-			this.pIDX = -1;
-			this.eIDX = -1;
-			this.psIDX = -1;
-			this.InitializeComponent();
+			BackColorChanged += ctlPopUp_BackColorChanged;
+			FontChanged += ctlPopUp_FontChanged;
+			ForeColorChanged += ctlPopUp_ForeColorChanged;
+			Paint += ctlPopUp_Paint;
+			Load += ctlPopUp_Load;
+			SizeChanged += ctlPopUp_SizeChanged;
+			pSectionPadding = 8;
+			pInternalPadding = 3;
+			pScroll = 0f;
+			lHeight = 0f;
+			pBXHeight = 600;
+			pColumnPosition = 0.5f;
+			pRightAlignColumn = false;
+			hIDX = -1;
+			pIDX = -1;
+			eIDX = -1;
+			psIDX = -1;
+			InitializeComponent();
 		}
 
 		// Token: 0x04000082 RID: 130

@@ -8,7 +8,7 @@ public class Salvage
     public Recipe.RecipeRarity Rarity;
     public int LevelMin;
     public int LevelMax;
-    public Salvage.SalvageOrigin Origin;
+    public SalvageOrigin Origin;
 
     public Salvage()
     {
@@ -16,37 +16,37 @@ public class Salvage
 
     public Salvage(BinaryReader reader)
     {
-        this.InternalName = reader.ReadString();
-        this.ExternalName = reader.ReadString();
-        this.Rarity = (Recipe.RecipeRarity)reader.ReadInt32();
-        this.LevelMin = reader.ReadInt32();
-        this.LevelMax = reader.ReadInt32();
-        this.Origin = (Salvage.SalvageOrigin)reader.ReadInt32();
+        InternalName = reader.ReadString();
+        ExternalName = reader.ReadString();
+        Rarity = (Recipe.RecipeRarity)reader.ReadInt32();
+        LevelMin = reader.ReadInt32();
+        LevelMax = reader.ReadInt32();
+        Origin = (SalvageOrigin)reader.ReadInt32();
     }
 
     public Salvage(ref Salvage iSalvage)
     {
-        this.InternalName = iSalvage.InternalName;
-        this.ExternalName = iSalvage.ExternalName;
-        this.Rarity = iSalvage.Rarity;
-        this.LevelMin = iSalvage.LevelMin;
-        this.LevelMax = iSalvage.LevelMax;
-        this.Origin = iSalvage.Origin;
+        InternalName = iSalvage.InternalName;
+        ExternalName = iSalvage.ExternalName;
+        Rarity = iSalvage.Rarity;
+        LevelMin = iSalvage.LevelMin;
+        LevelMax = iSalvage.LevelMax;
+        Origin = iSalvage.Origin;
     }
 
     public void StoreTo(BinaryWriter writer)
     {
-        writer.Write(this.InternalName);
-        writer.Write(this.ExternalName);
-        writer.Write((int)this.Rarity);
-        writer.Write(this.LevelMin);
-        writer.Write(this.LevelMax);
-        writer.Write((int)this.Origin);
+        writer.Write(InternalName);
+        writer.Write(ExternalName);
+        writer.Write((int)Rarity);
+        writer.Write(LevelMin);
+        writer.Write(LevelMax);
+        writer.Write((int)Origin);
     }
 
     public enum SalvageOrigin
     {
         Tech,
-        Magic,
+        Magic
     }
 }

@@ -11,39 +11,39 @@ public class Tips
 
     public Tips()
     {
-        this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
-        for (int index = 0; index <= this._tipStatus.Length - 1; ++index)
-            this._tipStatus[index] = 1;
+        _tipStatus = new int[Enum.GetValues(TipType.TotalsTab.GetType()).Length];
+        for (int index = 0; index <= _tipStatus.Length - 1; ++index)
+            _tipStatus[index] = 1;
     }
 
     // legacy for migration only
     public Tips(BinaryReader reader)
     {
-        this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
+        _tipStatus = new int[Enum.GetValues(TipType.TotalsTab.GetType()).Length];
         int num = reader.ReadInt32();
-        if (num > this._tipStatus.Length - 1)
-            num = this._tipStatus.Length - 1;
+        if (num > _tipStatus.Length - 1)
+            num = _tipStatus.Length - 1;
         for (int index = 0; index <= num; ++index)
-            this._tipStatus[index] = reader.ReadInt32() == 0 ? 1 : 0;
+            _tipStatus[index] = reader.ReadInt32() == 0 ? 1 : 0;
     }
 
     public void Show(TipType tip)
     {
-        if (this._tipStatus[(int)tip] == 0)
+        if (_tipStatus[(int)tip] == 0)
             return;
         StringBuilder stringBuilder = new StringBuilder();
         switch (tip)
         {
-            case Tips.TipType.TotalsTab:
+            case TipType.TotalsTab:
                 stringBuilder.AppendLine("While viewing the Totals tab, the powers which are being included are highlighted green.");
                 stringBuilder.AppendLine("Clicking a power will toggle it on or off. Dimmed powers can't be toggled as they have no effect on your totals.");
                 break;
-            case Tips.TipType.FirstPower:
+            case TipType.FirstPower:
                 stringBuilder.AppendLine("If you decide you want to remove a power and replace it with a different one, click on the power name in the power lists");
                 stringBuilder.AppendLine("that appear on the left of the screen, or Alt+Click on the power bar. Then the next power you select will be placed into");
                 stringBuilder.AppendLine("the empty space.");
                 break;
-            case Tips.TipType.FirstEnh:
+            case TipType.FirstEnh:
                 stringBuilder.AppendLine("To put an enhancement into a slot, Right-Click on it.");
                 stringBuilder.AppendLine(string.Empty);
                 stringBuilder.AppendLine("To pick up a slot to move it somewhere else, Double-Click it.");
@@ -54,7 +54,7 @@ public class Tips
                 stringBuilder.AppendLine("the number into the enhancement picker before clicking on the enhancement.");
                 break;
         }
-        this._tipStatus[(int)tip] = 0;
+        _tipStatus[(int)tip] = 0;
         stringBuilder.AppendLine("\nThis message should not appear again.");
         MessageBox.Show(stringBuilder.ToString(), "Instructions");
     }
@@ -92,6 +92,6 @@ public class Tips
         Tip27,
         Tip28,
         Tip29,
-        Tip30,
+        Tip30
     }
 }

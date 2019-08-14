@@ -8,7 +8,7 @@ public static class CSV
 
     public static string[] ToArray(string iLine)
     {
-        string[] strArray = CSV.Reg.Split(iLine);
+        string[] strArray = Reg.Split(iLine);
         char[] chArray = new char[1] { '"' };
         for (int index = 0; index < strArray.Length; ++index)
             strArray[index] = strArray[index].Trim(chArray);
@@ -110,7 +110,7 @@ public static class CSV
         ToggleIgnoreStun,
         IgnoreLevelBought,
         ShootThroughUntouchable,
-        InterruptLikeSleep,
+        InterruptLikeSleep
     }
 
     internal enum HEffect
@@ -174,7 +174,7 @@ public static class CSV
         DelayEval,
         BoostModAllowed,
         EvalFlags,
-        ProcsPerMinute,
+        ProcsPerMinute
     }
 
     internal enum BoostSet
@@ -183,6 +183,6 @@ public static class CSV
         DisplayName,
         GroupName,
         MinLevel,
-        MaxLevel,
+        MaxLevel
     }
 }

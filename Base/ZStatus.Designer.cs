@@ -1,14 +1,13 @@
 
 using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 
-public partial class ZStatus : System.Windows.Forms.Form
+public partial class ZStatus : Form
 {
     /// <summary>
     /// Required designer variable.
     /// </summary>
-    private System.ComponentModel.IContainer components = null;
+    private IContainer components = null;
 
     /// <summary>
     /// Clean up any resources being used.

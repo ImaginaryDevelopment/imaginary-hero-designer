@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmPowerBrowser
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -471,48 +474,48 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnClassAdd;
-        System.Windows.Forms.Button btnClassClone;
-        System.Windows.Forms.Button btnClassDelete;
-        System.Windows.Forms.Button btnClassDown;
-        System.Windows.Forms.Button btnClassEdit;
-        System.Windows.Forms.Button btnClassSort;
-        System.Windows.Forms.Button btnClassUp;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnPowerAdd;
-        System.Windows.Forms.Button btnPowerClone;
-        System.Windows.Forms.Button btnPowerDelete;
-        System.Windows.Forms.Button btnPowerDown;
-        System.Windows.Forms.Button btnPowerEdit;
-        System.Windows.Forms.Button btnPowerSort;
-        System.Windows.Forms.Button btnPowerUp;
-        System.Windows.Forms.Button btnPSDown;
-        System.Windows.Forms.Button btnPSUp;
-        System.Windows.Forms.Button btnSetAdd;
-        System.Windows.Forms.Button btnSetDelete;
-        System.Windows.Forms.Button btnSetEdit;
-        System.Windows.Forms.Button btnSetSort;
-        System.Windows.Forms.ComboBox cbFilter;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ColumnHeader ColumnHeader6;
-        System.Windows.Forms.ColumnHeader ColumnHeader7;
-        System.Windows.Forms.ImageList ilAT;
-        System.Windows.Forms.ImageList ilPower;
-        System.Windows.Forms.ImageList ilPS;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label lblPower;
-        System.Windows.Forms.Label lblSet;
-        System.Windows.Forms.ListView lvGroup;
-        System.Windows.Forms.ListView lvPower;
-        System.Windows.Forms.ListView lvSet;
-        System.Windows.Forms.Panel pnlGroup;
-        System.Windows.Forms.Panel pnlPower;
-        System.Windows.Forms.Panel pnlSet;
+        Button btnCancel;
+        Button btnClassAdd;
+        Button btnClassClone;
+        Button btnClassDelete;
+        Button btnClassDown;
+        Button btnClassEdit;
+        Button btnClassSort;
+        Button btnClassUp;
+        Button btnOK;
+        Button btnPowerAdd;
+        Button btnPowerClone;
+        Button btnPowerDelete;
+        Button btnPowerDown;
+        Button btnPowerEdit;
+        Button btnPowerSort;
+        Button btnPowerUp;
+        Button btnPSDown;
+        Button btnPSUp;
+        Button btnSetAdd;
+        Button btnSetDelete;
+        Button btnSetEdit;
+        Button btnSetSort;
+        ComboBox cbFilter;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        ColumnHeader ColumnHeader7;
+        ImageList ilAT;
+        ImageList ilPower;
+        ImageList ilPS;
+        Label Label1;
+        Label Label2;
+        Label lblPower;
+        Label lblSet;
+        ListView lvGroup;
+        ListView lvPower;
+        ListView lvSet;
+        Panel pnlGroup;
+        Panel pnlPower;
+        Panel pnlSet;
     }
 }

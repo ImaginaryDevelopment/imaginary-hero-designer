@@ -8,9 +8,9 @@ public class PowerSubEntry
 
     public void Assign(PowerSubEntry iPowerSubEntry)
     {
-        this.Powerset = iPowerSubEntry.Powerset;
-        this.Power = iPowerSubEntry.Power;
-        this.nIDPower = iPowerSubEntry.nIDPower;
-        this.StatInclude = iPowerSubEntry.StatInclude;
+        Powerset = iPowerSubEntry.Powerset;
+        Power = iPowerSubEntry.Power;
+        nIDPower = iPowerSubEntry.nIDPower;
+        StatInclude = iPowerSubEntry.StatInclude;
     }
 }

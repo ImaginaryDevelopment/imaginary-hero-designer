@@ -1,16 +1,14 @@
 
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 using Base.Data_Classes;
-using Base.IO_Classes;
+using Hero_Designer.My;
 using Import;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Hero_Designer
 {
@@ -25,36 +23,36 @@ namespace Hero_Designer
 
         public frmImport_Power()
         {
-            this.Load += new EventHandler(this.frmImport_Power_Load);
-            this.FullFileName = "";
-            this.ImportBuffer = new PowerData[0];
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Power));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_Power);
+            Load += frmImport_Power_Load;
+            FullFileName = "";
+            ImportBuffer = new PowerData[0];
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_Power));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmImport_Power);
         }
 
         void btnCheckAll_Click(object sender, EventArgs e)
         {
-            this.lstImport.BeginUpdate();
-            int num = this.lstImport.Items.Count - 1;
+            lstImport.BeginUpdate();
+            int num = lstImport.Items.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstImport.Items[index].Checked = true;
-            this.lstImport.EndUpdate();
+                lstImport.Items[index].Checked = true;
+            lstImport.EndUpdate();
         }
 
         void btnCheckModified_Click(object sender, EventArgs e)
         {
-            this.lstImport.BeginUpdate();
-            int num = this.lstImport.Items.Count - 1;
+            lstImport.BeginUpdate();
+            int num = lstImport.Items.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstImport.Items[index].Checked = this.lstImport.Items[index].SubItems[2].Text == "No" & this.lstImport.Items[index].SubItems[3].Text == "Yes";
-            this.lstImport.EndUpdate();
+                lstImport.Items[index].Checked = lstImport.Items[index].SubItems[2].Text == "No" & lstImport.Items[index].SubItems[3].Text == "Yes";
+            lstImport.EndUpdate();
         }
 
         void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void btnEraseAll_Click(object sender, EventArgs e)
@@ -62,60 +60,60 @@ namespace Hero_Designer
             if (Interaction.MsgBox("Really wipte the power array. You shouldn't do this if you want to preserve any special power settings.", MsgBoxStyle.YesNo, "Really?") == MsgBoxResult.No)
                 return;
             DatabaseAPI.Database.Power = new IPower[0];
-            int num1 = this.ImportBuffer.Length - 1;
+            int num1 = ImportBuffer.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if (this.ImportBuffer[index].IsValid)
-                    this.ImportBuffer[index].IsNew = true;
+                if (ImportBuffer[index].IsValid)
+                    ImportBuffer[index].IsNew = true;
             }
             int num2 = (int)Interaction.MsgBox("All powers removed!", MsgBoxStyle.OkOnly, null);
         }
 
         void btnFile_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
             {
-                this.FullFileName = this.dlgBrowse.FileName;
-                this.Enabled = false;
-                if (this.ParseClasses(this.FullFileName))
-                    this.FillListView();
-                this.Enabled = true;
+                FullFileName = dlgBrowse.FileName;
+                Enabled = false;
+                if (ParseClasses(FullFileName))
+                    FillListView();
+                Enabled = true;
             }
-            this.BusyHide();
-            this.DisplayInfo();
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
         {
-            this.ProcessImport();
+            ProcessImport();
         }
 
         void btnUncheckAll_Click(object sender, EventArgs e)
         {
-            this.lstImport.BeginUpdate();
-            int num = this.lstImport.Items.Count - 1;
+            lstImport.BeginUpdate();
+            int num = lstImport.Items.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstImport.Items[index].Checked = false;
-            this.lstImport.EndUpdate();
+                lstImport.Items[index].Checked = false;
+            lstImport.EndUpdate();
         }
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         int[] CheckForDeletedPowers()
@@ -128,15 +126,15 @@ namespace Hero_Designer
                 ++num1;
                 if (num1 >= 9)
                 {
-                    this.BusyMsg("Checking for deleted powers..." + Strings.Format(index1, "###,##0") + " of " + Conversions.ToString(DatabaseAPI.Database.Power.Length) + " done.");
+                    BusyMsg("Checking for deleted powers..." + Strings.Format(index1, "###,##0") + " of " + Conversions.ToString(DatabaseAPI.Database.Power.Length) + " done.");
                     Application.DoEvents();
                     num1 = 0;
                 }
                 bool flag = false;
-                int num3 = this.ImportBuffer.Length - 1;
+                int num3 = ImportBuffer.Length - 1;
                 for (int index2 = 0; index2 <= num3; ++index2)
                 {
-                    if (this.ImportBuffer[index2].Index == index1)
+                    if (ImportBuffer[index2].Index == index1)
                     {
                         flag = true;
                         break;
@@ -144,11 +142,11 @@ namespace Hero_Designer
                 }
                 if (!flag)
                 {
-                    numArray = (int[])Utils.CopyArray(numArray, (Array)new int[numArray.Length + 1]);
+                    numArray = (int[])Utils.CopyArray(numArray, new int[numArray.Length + 1]);
                     numArray[numArray.Length - 1] = index1;
                 }
             }
-            this.BusyHide();
+            BusyHide();
             string str = "";
             int num4 = numArray.Length - 1;
             for (int index = 0; index <= num4; ++index)
@@ -176,7 +174,7 @@ namespace Hero_Designer
                 }
                 if (!flag)
                 {
-                    powerArray[index1] = (IPower)new Power(DatabaseAPI.Database.Power[index2]);
+                    powerArray[index1] = new Power(DatabaseAPI.Database.Power[index2]);
                     ++index1;
                 }
             }
@@ -199,51 +197,51 @@ namespace Hero_Designer
 
         void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
-            this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.udRevision.Value = new decimal(DatabaseAPI.Database.PowerVersion.Revision);
-            this.lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
+            lblFile.Text = FileIO.StripPath(FullFileName);
+            lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            udRevision.Value = new decimal(DatabaseAPI.Database.PowerVersion.Revision);
+            lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
         }
 
         void FillListView()
         {
             string[] items = new string[5];
-            this.lstImport.BeginUpdate();
-            this.lstImport.Items.Clear();
+            lstImport.BeginUpdate();
+            lstImport.Items.Clear();
             int num1 = 0;
-            int num2 = this.ImportBuffer.Length - 1;
+            int num2 = ImportBuffer.Length - 1;
             for (int index = 0; index <= num2 - 1; ++index)
             {
                 ++num1;
                 if (num1 >= 100)
                 {
-                    this.BusyMsg(Strings.Format(index, "###,##0") + " records checked.");
+                    BusyMsg(Strings.Format(index, "###,##0") + " records checked.");
                     Application.DoEvents();
                     num1 = 0;
                 }
-                if (this.ImportBuffer[index].IsValid)
+                if (ImportBuffer[index].IsValid)
                 {
-                    items[0] = this.ImportBuffer[index].Data.FullName;
-                    items[1] = this.ImportBuffer[index].Data.DisplayName;
-                    items[2] = !this.ImportBuffer[index].IsNew ? "No" : "Yes";
-                    bool flag = this.ImportBuffer[index].CheckDifference(out items[4]);
+                    items[0] = ImportBuffer[index].Data.FullName;
+                    items[1] = ImportBuffer[index].Data.DisplayName;
+                    items[2] = !ImportBuffer[index].IsNew ? "No" : "Yes";
+                    bool flag = ImportBuffer[index].CheckDifference(out items[4]);
                     items[3] = !flag ? "No" : "Yes";
-                    this.lstImport.Items.Add(new ListViewItem(items)
+                    lstImport.Items.Add(new ListViewItem(items)
                     {
                         Checked = flag,
                         Tag = index
                     });
                 }
             }
-            if (this.lstImport.Items.Count > 0)
-                this.lstImport.Items[0].EnsureVisible();
-            this.lstImport.EndUpdate();
+            if (lstImport.Items.Count > 0)
+                lstImport.Items[0].EnsureVisible();
+            lstImport.EndUpdate();
         }
 
         void frmImport_Power_Load(object sender, EventArgs e)
         {
-            this.FullFileName = DatabaseAPI.Database.PowerVersion.SourceFile;
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowerVersion.SourceFile;
+            DisplayInfo();
         }
 
         bool ParseClasses(string iFileName)
@@ -264,7 +262,7 @@ namespace Hero_Designer
             }
             int num3 = 0;
             int num4 = 0;
-            this.ImportBuffer = new PowerData[0];
+            ImportBuffer = new PowerData[0];
             int num5 = 0;
             try
             {
@@ -277,14 +275,14 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 9)
                         {
-                            this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             Application.DoEvents();
                             num5 = 0;
                         }
-                        this.ImportBuffer = (PowerData[])Utils.CopyArray(ImportBuffer, new PowerData[this.ImportBuffer.Length + 1]);
-                        this.ImportBuffer[this.ImportBuffer.Length - 1] = new PowerData(iString);
+                        ImportBuffer = (PowerData[])Utils.CopyArray(ImportBuffer, new PowerData[ImportBuffer.Length + 1]);
+                        ImportBuffer[ImportBuffer.Length - 1] = new PowerData(iString);
                         ++num3;
-                        if (this.ImportBuffer[this.ImportBuffer.Length - 1].IsValid)
+                        if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
                             ++num1;
                         else
                             ++num4;
@@ -311,29 +309,29 @@ namespace Hero_Designer
         {
             bool flag = false;
             int num1 = 0;
-            int num2 = this.lstImport.Items.Count - 1;
+            int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2 - 1; ++index)
             {
-                if (this.lstImport.Items[index].Checked)
+                if (lstImport.Items[index].Checked)
                 {
-                    this.ImportBuffer[Conversions.ToInteger(this.lstImport.Items[index].Tag)].Apply();
+                    ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
                     ++num1;
                 }
             }
             if (Interaction.MsgBox("Check for deleted powers?", MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
             {
-                int[] pList = this.CheckForDeletedPowers();
+                int[] pList = CheckForDeletedPowers();
                 if (pList.Length > 0 && Interaction.MsgBox((Conversions.ToString(pList.Length) + "  deleted powers found. Delete them?"), MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
                     DeletePowers(pList);
             }
-            DatabaseAPI.Database.PowerVersion.SourceFile = this.dlgBrowse.FileName;
+            DatabaseAPI.Database.PowerVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.PowerVersion.RevisionDate = DateTime.Now;
-            DatabaseAPI.Database.PowerVersion.Revision = Convert.ToInt32(this.udRevision.Value);
+            DatabaseAPI.Database.PowerVersion.Revision = Convert.ToInt32(udRevision.Value);
             DatabaseAPI.MatchAllIDs(null);
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
-            this.DisplayInfo();
+            DisplayInfo();
             return flag;
         }
     }

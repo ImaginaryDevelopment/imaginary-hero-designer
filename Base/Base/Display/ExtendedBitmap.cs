@@ -14,7 +14,7 @@ namespace Base.Display
 
     Graphics _surface;
 
-    protected ExtendedBitmap.PropertyCache Cache;
+    protected PropertyCache Cache;
     bool _isNew;
 
     bool _isInitialised;
@@ -25,15 +25,15 @@ namespace Base.Display
       get
       {
         Graphics graphics;
-        if (this._isInitialised)
+        if (_isInitialised)
         {
-          this._isNew = false;
-          graphics = this._surface;
+          _isNew = false;
+          graphics = _surface;
         }
-        else if (this.Initialise())
+        else if (Initialise())
         {
-          this._isNew = false;
-          graphics = this._surface;
+          _isNew = false;
+          graphics = _surface;
         }
         else
           graphics = null;
@@ -45,7 +45,7 @@ namespace Base.Display
     {
       get
       {
-        return !this._isInitialised ? (this.Initialise() ? this._bits : null) : this._bits;
+        return !_isInitialised ? (Initialise() ? _bits : null) : _bits;
       }
     }
 
@@ -55,14 +55,14 @@ namespace Base.Display
       get
       {
         bool flag;
-        if (this._isDisposed)
+        if (_isDisposed)
           flag = false;
-        else if (this.Cache.Size.Width > 0 & this.Cache.Size.Height > 0)
+        else if (Cache.Size.Width > 0 & Cache.Size.Height > 0)
           flag = true;
-        else if (this.Cache.Bounds.Width > 0 & this.Cache.Bounds.Height > 0)
+        else if (Cache.Bounds.Width > 0 & Cache.Bounds.Height > 0)
         {
-          this.Cache.Size.Width = this.Cache.Bounds.Width;
-          this.Cache.Size.Height = this.Cache.Bounds.Height;
+          Cache.Size.Width = Cache.Bounds.Width;
+          Cache.Size.Height = Cache.Bounds.Height;
           flag = true;
         }
         else
@@ -75,14 +75,14 @@ namespace Base.Display
     {
       get
       {
-        return this._isInitialised ? this.Cache.Size : new Size();
+        return _isInitialised ? Cache.Size : new Size();
       }
       set
       {
-        if (value.Width == this.Cache.Size.Width && value.Height == this.Cache.Size.Height)
+        if (value.Width == Cache.Size.Width && value.Height == Cache.Size.Height)
           return;
-        this.Cache.Size = value;
-        this.Initialise();
+        Cache.Size = value;
+        Initialise();
       }
     }
 
@@ -91,15 +91,15 @@ namespace Base.Display
     {
       get
       {
-        return this._isInitialised ? this.Cache.Clip : new Region();
+        return _isInitialised ? Cache.Clip : new Region();
       }
       set
       {
-        if (!this._isInitialised)
+        if (!_isInitialised)
           return;
-        this._surface.Clip = value;
-        this.Cache.Update(ref this._surface);
-        this._isNew = false;
+        _surface.Clip = value;
+        Cache.Update(ref _surface);
+        _isNew = false;
       }
     }
 
@@ -107,48 +107,48 @@ namespace Base.Display
     {
       get
       {
-        return this._isInitialised ? this.Cache.ClipRect : new Rectangle();
+        return _isInitialised ? Cache.ClipRect : new Rectangle();
       }
     }
 
     public void Dispose()
     {
-      this.Dispose(true);
+      Dispose(true);
       GC.SuppressFinalize( this);
     }
 
     protected virtual void Dispose(bool disposing)
     {
-      if (!disposing || this._isDisposed)
+      if (!disposing || _isDisposed)
         return;
-      this._isNew = false;
-      this._isInitialised = false;
-      if (this._surface != null)
-        this._surface.Dispose();
-      if (this._bits != null)
-        this._bits.Dispose();
-      if (this.Cache.Clip != null)
-        this.Cache.Clip.Dispose();
-      this._isDisposed = true;
+      _isNew = false;
+      _isInitialised = false;
+      if (_surface != null)
+        _surface.Dispose();
+      if (_bits != null)
+        _bits.Dispose();
+      if (Cache.Clip != null)
+        Cache.Clip.Dispose();
+      _isDisposed = true;
     }
 
     public object Clone()
     {
       object obj;
-      if (!this._isInitialised)
+      if (!_isInitialised)
       {
         obj =  new ExtendedBitmap();
       }
       else
       {
-        ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.Size)
+        ExtendedBitmap extendedBitmap = new ExtendedBitmap(Size)
         {
-          Cache = this.Cache
+          Cache = Cache
         };
-        extendedBitmap._surface.DrawImageUnscaled((Image) this._bits, new Point(0, 0));
-        extendedBitmap.Clip = this.Clip;
-        extendedBitmap._isInitialised = this._isInitialised;
-        extendedBitmap._isNew = this._isNew;
+        extendedBitmap._surface.DrawImageUnscaled(_bits, new Point(0, 0));
+        extendedBitmap.Clip = Clip;
+        extendedBitmap._isInitialised = _isInitialised;
+        extendedBitmap._isNew = _isNew;
         obj =  extendedBitmap;
       }
       return obj;
@@ -158,23 +158,23 @@ namespace Base.Display
 
     {
       bool flag;
-      if (!this.CanInitialise)
+      if (!CanInitialise)
       {
         flag = false;
       }
       else
       {
-        if (this._surface != null)
-          this._surface.Dispose();
-        if (this._bits != null)
-          this._bits.Dispose();
-        this._bits = new Bitmap(this.Cache.Size.Width, this.Cache.Size.Height, this.Cache.BitDepth);
-        this._surface = Graphics.FromImage((Image) this._bits);
-        this.Cache.Update(ref this._bits);
-        this._surface.Clip = new Region(this.Cache.Bounds);
-        this.Cache.Update(ref this._surface);
-        this._isNew = true;
-        this._isInitialised = true;
+        if (_surface != null)
+          _surface.Dispose();
+        if (_bits != null)
+          _bits.Dispose();
+        _bits = new Bitmap(Cache.Size.Width, Cache.Size.Height, Cache.BitDepth);
+        _surface = Graphics.FromImage(_bits);
+        Cache.Update(ref _bits);
+        _surface.Clip = new Region(Cache.Bounds);
+        Cache.Update(ref _surface);
+        _isNew = true;
+        _isInitialised = true;
         flag = true;
       }
       return flag;
@@ -183,60 +183,60 @@ namespace Base.Display
     void Initialise(string fileName)
 
     {
-      if (this._surface != null)
-        this._surface.Dispose();
-      if (this._bits != null)
-        this._bits.Dispose();
+      if (_surface != null)
+        _surface.Dispose();
+      if (_bits != null)
+        _bits.Dispose();
       if (!File.Exists(fileName))
       {
-        this.Cache = new ExtendedBitmap.PropertyCache()
+        Cache = new PropertyCache
         {
           Size = new Size(32, 32)
         };
-        this.Initialise();
+        Initialise();
       }
       else
       {
-        this._bits = new Bitmap(fileName);
-        this._surface = Graphics.FromImage((Image) this._bits);
-        this.Cache.Update(ref this._bits);
-        this._surface.Clip = new Region(this.Cache.Bounds);
-        this.Cache.Update(ref this._surface);
-        this._isNew = true;
-        this._isInitialised = true;
+        _bits = new Bitmap(fileName);
+        _surface = Graphics.FromImage(_bits);
+        Cache.Update(ref _bits);
+        _surface.Clip = new Region(Cache.Bounds);
+        Cache.Update(ref _surface);
+        _isNew = true;
+        _isInitialised = true;
       }
     }
 
     ExtendedBitmap()
 
     {
-      this.Cache = new ExtendedBitmap.PropertyCache();
-      this._isNew = true;
-      this._isInitialised = false;
+      Cache = new PropertyCache();
+      _isNew = true;
+      _isInitialised = false;
     }
 
     public ExtendedBitmap(Size imageSize)
     {
-      this.Cache = new ExtendedBitmap.PropertyCache()
+      Cache = new PropertyCache
       {
         Size = imageSize
       };
-      this.Initialise();
+      Initialise();
     }
 
     public ExtendedBitmap(int x, int y)
     {
-      this.Cache = new ExtendedBitmap.PropertyCache()
+      Cache = new PropertyCache
       {
         Size = new Size(x, y)
       };
-      this.Initialise();
+      Initialise();
     }
 
     public ExtendedBitmap(string fileName)
     {
-      this.Cache = new ExtendedBitmap.PropertyCache();
-      this.Initialise(fileName);
+      Cache = new PropertyCache();
+      Initialise(fileName);
     }
 
     protected class PropertyCache
@@ -251,18 +251,18 @@ namespace Base.Display
 
       public void Update(ref Bitmap args)
       {
-        this.Size = args.Size;
-        this._location = new Point(0, 0);
-        this.Bounds = new Rectangle(this._location, this.Size);
-        this.BitDepth = args.PixelFormat;
+        Size = args.Size;
+        _location = new Point(0, 0);
+        Bounds = new Rectangle(_location, Size);
+        BitDepth = args.PixelFormat;
       }
 
       public void Update(ref Graphics args)
       {
-        if (this.Clip != null)
-          this.Clip.Dispose();
-        this.Clip = args.Clip;
-        this.ClipRect = ExtendedBitmap.PropertyCache.RectConvert(args.ClipBounds);
+        if (Clip != null)
+          Clip.Dispose();
+        Clip = args.Clip;
+        ClipRect = RectConvert(args.ClipBounds);
       }
 
       static Rectangle RectConvert(RectangleF iRect)

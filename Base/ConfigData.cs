@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Base;
 using HeroDesigner.Schema;
@@ -117,7 +114,7 @@ public class ConfigData
         get
         {
             ConfigData configData;
-            if ((configData = ConfigData._current) == null)
+            if ((configData = _current) == null)
                 throw new InvalidOperationException("Config was not initialized before access");
             //configData = ConfigData._current = ConfigData.Initialize();
             return configData;
@@ -149,7 +146,7 @@ public class ConfigData
             try
             {
                 var value = serializer.Deserialize<ConfigData>(File.ReadAllText(fn));
-                ConfigData._current = value;
+                _current = value;
             }
             catch
             {
@@ -158,43 +155,43 @@ public class ConfigData
         }
         else
         {
-            ConfigData._current = new ConfigData(deserializing: false, iFilename: Files.GetConfigFilename(forceMhd: true));
+            _current = new ConfigData(deserializing: false, iFilename: Files.GetConfigFilename(forceMhd: true));
         }
-        ConfigData._current.IntializeComponent();
+        _current.IntializeComponent();
     }
 
     ConfigData() : this(true, "") { }
 
     ConfigData(bool deserializing, string iFilename)
     {
-        this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
-        this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
-        this.I9.DefaultIOLevel = 49;
-        this.RtFont.SetDefault();
-        this.Tips = new Tips();
-        this.Export = new ExportConfig();
-        this.CompOverride = Array.Empty<Enums.CompOverride>();
+        DamageMath.Calculate = EDamageMath.Average;
+        DamageMath.ReturnValue = EDamageReturn.Numeric;
+        I9.DefaultIOLevel = 49;
+        RtFont.SetDefault();
+        Tips = new Tips();
+        Export = new ExportConfig();
+        CompOverride = Array.Empty<Enums.CompOverride>();
         if (deserializing) return;
         if (!string.IsNullOrEmpty(iFilename) && File.Exists(iFilename))
         {
             try
             {
-                this.LegacyForMigration(iFilename);
+                LegacyForMigration(iFilename);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        this.IntializeComponent();
+        IntializeComponent();
     }
 
     void IntializeComponent()
     {
-        this.RelocateSaveFolder(false);
+        RelocateSaveFolder(false);
         try
         {
-            this.LoadOverrides();
+            LoadOverrides();
         }
         catch (Exception ex)
         {
@@ -232,20 +229,20 @@ public class ConfigData
                 this.DNickName = reader.ReadString();
                 this.DSelServer = reader.ReadString();
                 this.DChannel = reader.ReadString();*/
-                this.NoToolTips = reader.ReadBoolean();
-                this.BaseAcc = reader.ReadSingle();
+                NoToolTips = reader.ReadBoolean();
+                BaseAcc = reader.ReadSingle();
                 double num3 = reader.ReadSingle();
                 double num4 = reader.ReadSingle();
                 double num5 = reader.ReadSingle();
                 double num6 = reader.ReadSingle();
                 double num7 = reader.ReadSingle();
-                this.CalcEnhLevel = (Enums.eEnhRelative)reader.ReadInt32();
-                this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
-                this.ExempHigh = reader.ReadInt32();
-                this.ExempLow = reader.ReadInt32();
-                this.Inc.DisablePvE = !reader.ReadBoolean();
+                CalcEnhLevel = (Enums.eEnhRelative)reader.ReadInt32();
+                CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
+                ExempHigh = reader.ReadInt32();
+                ExempLow = reader.ReadInt32();
+                Inc.DisablePvE = !reader.ReadBoolean();
                 reader.ReadBoolean();
-                this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
+                DamageMath.Calculate = (EDamageMath)reader.ReadInt32();
                 reader.ReadSingle();
                 if (version < 1.24000000953674)
                 {
@@ -253,88 +250,88 @@ public class ConfigData
                 }
                 else
                     reader.ReadInt32();
-                this.DamageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
-                this.DisableDataDamageGraph = !reader.ReadBoolean();
-                this.DataDamageGraphPercentageOnly = reader.ReadBoolean();
-                this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
-                this.ExportScheme = reader.ReadInt32();
-                this.ExportTarget = reader.ReadInt32();
+                DamageMath.ReturnValue = (EDamageReturn)reader.ReadInt32();
+                DisableDataDamageGraph = !reader.ReadBoolean();
+                DataDamageGraphPercentageOnly = reader.ReadBoolean();
+                DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
+                ExportScheme = reader.ReadInt32();
+                ExportTarget = reader.ReadInt32();
                 if (version >= 1.24000000953674)
                 {
-                    this.ExportBonusTotals = reader.ReadBoolean();
-                    this.ExportBonusList = reader.ReadBoolean();
+                    ExportBonusTotals = reader.ReadBoolean();
+                    ExportBonusList = reader.ReadBoolean();
                 }
                 //this._hideOriginEnhancements =
                 reader.ReadBoolean();
-                this.DisableVillainColours = !reader.ReadBoolean();
-                this.CheckForUpdates = reader.ReadBoolean();
-                this.Columns = reader.ReadInt32();
-                this._lastSize.Width = reader.ReadInt32();
-                this._lastSize.Height = reader.ReadInt32();
-                this.DvState = (Enums.eVisibleSize)reader.ReadInt32();
-                this.StatGraphStyle = (Enums.GraphStyle)reader.ReadInt32();
+                DisableVillainColours = !reader.ReadBoolean();
+                CheckForUpdates = reader.ReadBoolean();
+                Columns = reader.ReadInt32();
+                _lastSize.Width = reader.ReadInt32();
+                _lastSize.Height = reader.ReadInt32();
+                DvState = (Enums.eVisibleSize)reader.ReadInt32();
+                StatGraphStyle = (Enums.GraphStyle)reader.ReadInt32();
                 if (version >= 1.0)
-                    this.IsInitialized = !reader.ReadBoolean();
+                    IsInitialized = !reader.ReadBoolean();
                 if (version >= 1.10000002384186)
-                    this.ForceLevel = reader.ReadInt32();
+                    ForceLevel = reader.ReadInt32();
                 if (version >= 1.20000004768372)
                 {
-                    this.I9.DefaultIOLevel = reader.ReadInt32();
-                    if (this.I9.DefaultIOLevel > 49)
-                        this.I9.DefaultIOLevel = 49;
-                    this.I9.HideIOLevels = !reader.ReadBoolean();
-                    this.I9.IgnoreEnhFX = !reader.ReadBoolean();
-                    this.I9.IgnoreSetBonusFX = !reader.ReadBoolean();
-                    this.I9.ExportIOLevels = reader.ReadBoolean();
-                    this.I9.DisablePrintIOLevels = !reader.ReadBoolean();
-                    this.I9.DisableExportCompress = !reader.ReadBoolean();
-                    this.I9.DisableExportDataChunk = !reader.ReadBoolean();
-                    this.I9.ExportStripEnh = reader.ReadBoolean();
-                    this.I9.ExportStripSetNames = reader.ReadBoolean();
-                    this.I9.ExportExtraSep = reader.ReadBoolean();
-                    this.PrintInColour = reader.ReadBoolean();
+                    I9.DefaultIOLevel = reader.ReadInt32();
+                    if (I9.DefaultIOLevel > 49)
+                        I9.DefaultIOLevel = 49;
+                    I9.HideIOLevels = !reader.ReadBoolean();
+                    I9.IgnoreEnhFX = !reader.ReadBoolean();
+                    I9.IgnoreSetBonusFX = !reader.ReadBoolean();
+                    I9.ExportIOLevels = reader.ReadBoolean();
+                    I9.DisablePrintIOLevels = !reader.ReadBoolean();
+                    I9.DisableExportCompress = !reader.ReadBoolean();
+                    I9.DisableExportDataChunk = !reader.ReadBoolean();
+                    I9.ExportStripEnh = reader.ReadBoolean();
+                    I9.ExportStripSetNames = reader.ReadBoolean();
+                    I9.ExportExtraSep = reader.ReadBoolean();
+                    PrintInColour = reader.ReadBoolean();
                     //this._printScheme = 
                     reader.ReadInt32();
                 }
                 if (version >= 1.21000003814697)
                 {
-                    this.RtFont.PairedBase = reader.ReadSingle();
-                    this.RtFont.PairedBold = reader.ReadBoolean();
-                    this.RtFont.RTFBase = reader.ReadInt32();
-                    this.RtFont.RTFBold = reader.ReadBoolean();
-                    this.RtFont.ColorBackgroundHero = reader.ReadRGB();
-                    this.RtFont.ColorBackgroundVillain = reader.ReadRGB();
-                    this.RtFont.ColorEnhancement = reader.ReadRGB();
-                    this.RtFont.ColorFaded = reader.ReadRGB();
-                    this.RtFont.ColorInvention = reader.ReadRGB();
-                    this.RtFont.ColorInventionInv = reader.ReadRGB();
-                    this.RtFont.ColorText = reader.ReadRGB();
-                    this.RtFont.ColorWarning = reader.ReadRGB();
-                    this.RtFont.ColorPlName = reader.ReadRGB();
-                    this.RtFont.ColorPlSpecial = reader.ReadRGB();
+                    RtFont.PairedBase = reader.ReadSingle();
+                    RtFont.PairedBold = reader.ReadBoolean();
+                    RtFont.RTFBase = reader.ReadInt32();
+                    RtFont.RTFBold = reader.ReadBoolean();
+                    RtFont.ColorBackgroundHero = reader.ReadRGB();
+                    RtFont.ColorBackgroundVillain = reader.ReadRGB();
+                    RtFont.ColorEnhancement = reader.ReadRGB();
+                    RtFont.ColorFaded = reader.ReadRGB();
+                    RtFont.ColorInvention = reader.ReadRGB();
+                    RtFont.ColorInventionInv = reader.ReadRGB();
+                    RtFont.ColorText = reader.ReadRGB();
+                    RtFont.ColorWarning = reader.ReadRGB();
+                    RtFont.ColorPlName = reader.ReadRGB();
+                    RtFont.ColorPlSpecial = reader.ReadRGB();
                 }
                 if (version >= 1.22000002861023)
                 {
-                    this.ShowSlotLevels = reader.ReadBoolean();
-                    this.DisableLoadLastFileOnStart = !reader.ReadBoolean();
-                    this.LastFileName = reader.ReadString();
-                    this.RtFont.ColorPowerAvailable = reader.ReadRGB();
-                    this.RtFont.ColorPowerTaken = reader.ReadRGB();
-                    this.RtFont.ColorPowerTakenDark = reader.ReadRGB();
-                    this.RtFont.ColorPowerDisabled = reader.ReadRGB();
-                    this.RtFont.ColorPowerHighlight = reader.ReadRGB();
+                    ShowSlotLevels = reader.ReadBoolean();
+                    DisableLoadLastFileOnStart = !reader.ReadBoolean();
+                    LastFileName = reader.ReadString();
+                    RtFont.ColorPowerAvailable = reader.ReadRGB();
+                    RtFont.ColorPowerTaken = reader.ReadRGB();
+                    RtFont.ColorPowerTakenDark = reader.ReadRGB();
+                    RtFont.ColorPowerDisabled = reader.ReadRGB();
+                    RtFont.ColorPowerHighlight = reader.ReadRGB();
                 }
                 if (version >= 1.23000001907349)
                 {
-                    this.Tips = new Tips(reader);
-                    this.DefaultSaveFolderOverride = reader.ReadString();
+                    Tips = new Tips(reader);
+                    DefaultSaveFolderOverride = reader.ReadString();
                 }
                 if (version >= 1.24000000953674)
                 {
-                    this.EnhanceVisibility = reader.ReadBoolean();
+                    EnhanceVisibility = reader.ReadBoolean();
                     reader.ReadBoolean();
-                    this.BuildMode = (Enums.dmModes)reader.ReadInt32();
-                    this.BuildOption = (Enums.dmItem)reader.ReadInt32();
+                    BuildMode = (Enums.dmModes)reader.ReadInt32();
+                    BuildOption = (Enums.dmItem)reader.ReadInt32();
                     //this.UpdatePath =
                         reader.ReadString();
                     //if (string.IsNullOrEmpty(this.UpdatePath))
@@ -342,41 +339,41 @@ public class ConfigData
                 }
                 if (version >= 1.25)
                 {
-                    this.ShowEnhRel = reader.ReadBoolean();
-                    this.ShowRelSymbols = reader.ReadBoolean();
-                    this.DisableShowPopup = !reader.ReadBoolean();
+                    ShowEnhRel = reader.ReadBoolean();
+                    ShowRelSymbols = reader.ReadBoolean();
+                    DisableShowPopup = !reader.ReadBoolean();
                     if (version >= 1.32000005245209)
-                        this.DisableAlphaPopup = !reader.ReadBoolean();
-                    this.PopupRecipes = reader.ReadBoolean();
-                    this.ShoppingListIncludesRecipes = reader.ReadBoolean();
-                    this.PrintProfile = (ConfigData.PrintOptionProfile)reader.ReadInt32();
-                    this.PrintHistory = reader.ReadBoolean();
-                    this.LastPrinter = reader.ReadString();
-                    this.DisablePrintProfileEnh = !reader.ReadBoolean();
-                    this.DisableDesaturateInherent = !reader.ReadBoolean();
-                    this.DisableRepeatOnMiddleClick = !reader.ReadBoolean();
+                        DisableAlphaPopup = !reader.ReadBoolean();
+                    PopupRecipes = reader.ReadBoolean();
+                    ShoppingListIncludesRecipes = reader.ReadBoolean();
+                    PrintProfile = (PrintOptionProfile)reader.ReadInt32();
+                    PrintHistory = reader.ReadBoolean();
+                    LastPrinter = reader.ReadString();
+                    DisablePrintProfileEnh = !reader.ReadBoolean();
+                    DisableDesaturateInherent = !reader.ReadBoolean();
+                    DisableRepeatOnMiddleClick = !reader.ReadBoolean();
                 }
                 if (version >= 1.25999999046326)
-                    this.DisableExportHex = !reader.ReadBoolean();
+                    DisableExportHex = !reader.ReadBoolean();
                 if (version >= 1.26999998092651)
-                    this.SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
+                    SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
                 if (version >= 1.27999997138977)
-                    this.SaveFolderChecked = reader.ReadBoolean();
+                    SaveFolderChecked = reader.ReadBoolean();
                 if (version >= 1.28999996185303)
-                    this.UseArcanaTime = reader.ReadBoolean(); //this is correct
-                this.CreateDefaultSaveFolder();
+                    UseArcanaTime = reader.ReadBoolean(); //this is correct
+                CreateDefaultSaveFolder();
             }
         }
     }
 
-    public string GetSaveFolder() => this.DefaultSaveFolderOverride ?? OS.GetDefaultSaveFolder();
+    public string GetSaveFolder() => DefaultSaveFolderOverride ?? OS.GetDefaultSaveFolder();
 
     public void CreateDefaultSaveFolder()
     {
         // if there is a save folder override, but it does not exist, wipe it out
-        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && !Directory.Exists(this.DefaultSaveFolderOverride))
-            this.DefaultSaveFolderOverride = null;
-        var saveFolder = this.GetSaveFolder();
+        if (!string.IsNullOrWhiteSpace(DefaultSaveFolderOverride) && !Directory.Exists(DefaultSaveFolderOverride))
+            DefaultSaveFolderOverride = null;
+        var saveFolder = GetSaveFolder();
         if (Directory.Exists(saveFolder))
             return;
         Directory.CreateDirectory(saveFolder);
@@ -391,20 +388,20 @@ public class ConfigData
 
     void RelocateSaveFolder(bool manual)
     {
-        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && Directory.Exists(this.DefaultSaveFolderOverride) && OS.GetDefaultSaveFolder() != this.DefaultSaveFolderOverride & (!this.SaveFolderChecked | manual))
+        if (!string.IsNullOrWhiteSpace(DefaultSaveFolderOverride) && Directory.Exists(DefaultSaveFolderOverride) && OS.GetDefaultSaveFolder() != DefaultSaveFolderOverride & (!SaveFolderChecked | manual))
         {
-            if (this.DefaultSaveFolderOverride.IndexOf(OS.GetMyDocumentsPath(), StringComparison.OrdinalIgnoreCase) > -1)
+            if (DefaultSaveFolderOverride.IndexOf(OS.GetMyDocumentsPath(), StringComparison.OrdinalIgnoreCase) > -1)
             {
-                this.SaveFolderChecked = true;
+                SaveFolderChecked = true;
                 return;
             }
-            if (Directory.Exists(this.DefaultSaveFolderOverride))
+            if (Directory.Exists(DefaultSaveFolderOverride))
             {
                 if (MessageBox.Show("In order for Mids' Reborn : Designer to operate better in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    this.LastFileName = string.Empty;
-                    string defaultSaveFolder = this.DefaultSaveFolderOverride;
-                    this.DefaultSaveFolderOverride = null;
+                    LastFileName = string.Empty;
+                    string defaultSaveFolder = DefaultSaveFolderOverride;
+                    DefaultSaveFolderOverride = null;
                     if (FileIO.CopyFolder(defaultSaveFolder, GetSaveFolder()))
                     {
                         MessageBox.Show("Save folder was moved!", "All Done", MessageBoxButtons.OK);
@@ -412,14 +409,14 @@ public class ConfigData
                     else
                     {
                         MessageBox.Show("Save folder couldn't be moved! Using old save folder instead.", "Whoops", MessageBoxButtons.OK);
-                        this.DefaultSaveFolderOverride = defaultSaveFolder;
+                        DefaultSaveFolderOverride = defaultSaveFolder;
                     }
                 }
             }
             else
-                this.CreateDefaultSaveFolder();
+                CreateDefaultSaveFolder();
         }
-        this.SaveFolderChecked = true;
+        SaveFolderChecked = true;
     }
 
     // poorly named
@@ -428,8 +425,8 @@ public class ConfigData
     {
         try
         {
-            this.Save(serializer, Files.GetConfigFilename(false));
-            this.SaveOverrides(serializer);
+            Save(serializer, Files.GetConfigFilename(false));
+            SaveOverrides(serializer);
         }
         catch (Exception ex)
         {
@@ -449,12 +446,12 @@ public class ConfigData
                 }
                 else
                 {
-                    this.CompOverride = new Enums.CompOverride[binaryReader.ReadInt32() + 1];
-                    for (int index = 0; index <= this.CompOverride.Length - 1; ++index)
+                    CompOverride = new Enums.CompOverride[binaryReader.ReadInt32() + 1];
+                    for (int index = 0; index <= CompOverride.Length - 1; ++index)
                     {
-                        this.CompOverride[index].Powerset = binaryReader.ReadString();
-                        this.CompOverride[index].Power = binaryReader.ReadString();
-                        this.CompOverride[index].Override = binaryReader.ReadString();
+                        CompOverride[index].Powerset = binaryReader.ReadString();
+                        CompOverride[index].Power = binaryReader.ReadString();
+                        CompOverride[index].Override = binaryReader.ReadString();
                     }
                 }
             }
@@ -498,7 +495,7 @@ public class ConfigData
         var toSerialize = new
         {
             name,
-            this.CompOverride
+            CompOverride
         };
         SaveRawMhd(serializer, toSerialize, iFilename, null);
     }
@@ -513,12 +510,12 @@ public class ConfigData
             using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
             {
                 binaryWriter.Write(OverrideNames);
-                binaryWriter.Write(this.CompOverride.Length - 1);
-                for (int index = 0; index <= this.CompOverride.Length - 1; ++index)
+                binaryWriter.Write(CompOverride.Length - 1);
+                for (int index = 0; index <= CompOverride.Length - 1; ++index)
                 {
-                    binaryWriter.Write(this.CompOverride[index].Powerset);
-                    binaryWriter.Write(this.CompOverride[index].Power);
-                    binaryWriter.Write(this.CompOverride[index].Override);
+                    binaryWriter.Write(CompOverride[index].Powerset);
+                    binaryWriter.Write(CompOverride[index].Power);
+                    binaryWriter.Write(CompOverride[index].Override);
                 }
             }
         }
@@ -528,21 +525,21 @@ public class ConfigData
     {
         Minimum,
         Average,
-        Max,
+        Max
     }
 
     public enum EDamageReturn
     {
         Numeric,
         DPS,
-        DPA,
+        DPA
     }
 
     public enum PrintOptionProfile
     {
         None,
         SinglePage,
-        MultiPage,
+        MultiPage
     }
 
     public class SDamageMath
@@ -552,8 +549,8 @@ public class ConfigData
         public SDamageMath() { }
         public SDamageMath(EDamageMath dmgMath, EDamageReturn dmgRet)
         {
-            this.Calculate = dmgMath;
-            this.ReturnValue = dmgRet;
+            Calculate = dmgMath;
+            ReturnValue = dmgRet;
         }
     }
 
@@ -599,50 +596,50 @@ public class ConfigData
         public bool PairedBold { get; set; }
         public float PairedBase { get; set; }
 
-        public void Assign(ConfigData.FontSettings iFs)
+        public void Assign(FontSettings iFs)
         {
-            this.RTFBase = iFs.RTFBase;
-            this.RTFBold = iFs.RTFBold;
-            this.ColorBackgroundHero = iFs.ColorBackgroundHero;
-            this.ColorBackgroundVillain = iFs.ColorBackgroundVillain;
-            this.ColorText = iFs.ColorText;
-            this.ColorInvention = iFs.ColorInvention;
-            this.ColorInventionInv = iFs.ColorInventionInv;
-            this.ColorFaded = iFs.ColorFaded;
-            this.ColorEnhancement = iFs.ColorEnhancement;
-            this.ColorWarning = iFs.ColorWarning;
-            this.ColorPlName = iFs.ColorPlName;
-            this.ColorPlSpecial = iFs.ColorPlSpecial;
-            this.ColorPowerAvailable = iFs.ColorPowerAvailable;
-            this.ColorPowerTaken = iFs.ColorPowerTaken;
-            this.ColorPowerTakenDark = iFs.ColorPowerTakenDark;
-            this.ColorPowerHighlight = iFs.ColorPowerHighlight;
-            this.ColorPowerDisabled = iFs.ColorPowerDisabled;
-            this.PairedBold = iFs.PairedBold;
-            this.PairedBase = iFs.PairedBase;
+            RTFBase = iFs.RTFBase;
+            RTFBold = iFs.RTFBold;
+            ColorBackgroundHero = iFs.ColorBackgroundHero;
+            ColorBackgroundVillain = iFs.ColorBackgroundVillain;
+            ColorText = iFs.ColorText;
+            ColorInvention = iFs.ColorInvention;
+            ColorInventionInv = iFs.ColorInventionInv;
+            ColorFaded = iFs.ColorFaded;
+            ColorEnhancement = iFs.ColorEnhancement;
+            ColorWarning = iFs.ColorWarning;
+            ColorPlName = iFs.ColorPlName;
+            ColorPlSpecial = iFs.ColorPlSpecial;
+            ColorPowerAvailable = iFs.ColorPowerAvailable;
+            ColorPowerTaken = iFs.ColorPowerTaken;
+            ColorPowerTakenDark = iFs.ColorPowerTakenDark;
+            ColorPowerHighlight = iFs.ColorPowerHighlight;
+            ColorPowerDisabled = iFs.ColorPowerDisabled;
+            PairedBold = iFs.PairedBold;
+            PairedBase = iFs.PairedBase;
         }
 
         public void SetDefault()
         {
-            this.RTFBase = 16;
-            this.RTFBold = false;
-            this.ColorBackgroundHero = Color.FromArgb(0, 0, 32);
-            this.ColorBackgroundVillain = Color.FromArgb(32, 0, 0);
-            this.ColorEnhancement = Color.FromArgb(0, (int)byte.MaxValue, 0);
-            this.ColorFaded = Color.FromArgb(192, 192, 192);
-            this.ColorInvention = Color.FromArgb(0, (int)byte.MaxValue, (int)byte.MaxValue);
-            this.ColorInventionInv = Color.FromArgb(0, 0, 128);
-            this.ColorText = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, (int)byte.MaxValue);
-            this.ColorWarning = Color.FromArgb((int)byte.MaxValue, 0, 0);
-            this.ColorPlName = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.ColorPlSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.ColorPowerAvailable = Color.Yellow;
-            this.ColorPowerTaken = Color.Lime;
-            this.ColorPowerTakenDark = Color.FromArgb(0, 192, 0);
-            this.ColorPowerHighlight = Color.FromArgb(64, 64, 96);
-            this.ColorPowerDisabled = Color.FromArgb(128, 128, 192);
-            this.PairedBase = 8.25f;
-            this.PairedBold = false;
+            RTFBase = 16;
+            RTFBold = false;
+            ColorBackgroundHero = Color.FromArgb(0, 0, 32);
+            ColorBackgroundVillain = Color.FromArgb(32, 0, 0);
+            ColorEnhancement = Color.FromArgb(0, byte.MaxValue, 0);
+            ColorFaded = Color.FromArgb(192, 192, 192);
+            ColorInvention = Color.FromArgb(0, byte.MaxValue, byte.MaxValue);
+            ColorInventionInv = Color.FromArgb(0, 0, 128);
+            ColorText = Color.FromArgb(byte.MaxValue, byte.MaxValue, byte.MaxValue);
+            ColorWarning = Color.FromArgb(byte.MaxValue, 0, 0);
+            ColorPlName = Color.FromArgb(192, 192, byte.MaxValue);
+            ColorPlSpecial = Color.FromArgb(128, 128, byte.MaxValue);
+            ColorPowerAvailable = Color.Yellow;
+            ColorPowerTaken = Color.Lime;
+            ColorPowerTakenDark = Color.FromArgb(0, 192, 0);
+            ColorPowerHighlight = Color.FromArgb(64, 64, 96);
+            ColorPowerDisabled = Color.FromArgb(128, 128, 192);
+            PairedBase = 8.25f;
+            PairedBold = false;
         }
     }
 }

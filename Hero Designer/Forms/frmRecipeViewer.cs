@@ -1,26 +1,27 @@
 
-using Base.Data_Classes;
-using Base.Display;
-using Base.Master_Classes;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Base.Display;
+using Base.Master_Classes;
+using midsControls;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
     public partial class frmRecipeViewer : Form
     {
 
-        midsControls.ImageButton ibClipboard;
-        midsControls.ImageButton ibClose;
-        midsControls.ImageButton ibMiniList;
-        midsControls.ImageButton ibTopmost;
-        midsControls.ctlPopUp RecipeInfo;
+        ImageButton ibClipboard;
+        ImageButton ibClose;
+        ImageButton ibMiniList;
+        ImageButton ibTopmost;
+        ctlPopUp RecipeInfo;
         ExtendedBitmap bxRecipe;
 
         bool Loading;
@@ -29,36 +30,36 @@ namespace Hero_Designer
 
         public frmRecipeViewer(frmMain iParent)
         {
-            this.FormClosed += new FormClosedEventHandler(this.frmRecipeViewer_FormClosed);
-            this.Load += new EventHandler(this.frmRecipeViewer_Load);
-            this.Loading = true;
-            this.InitializeComponent();
-            this.Name = nameof(frmRecipeViewer);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipeViewer));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.RecipeInfo.MouseWheel += new MouseEventHandler(this.RecipeInfo_MouseWheel);
-            this.RecipeInfo.MouseEnter += new EventHandler(this.RecipeInfo_MouseEnter);
-            this.lvPower.MouseEnter += new EventHandler(this.lvPower_MouseEnter);
-            this.lvPower.ItemChecked += new ItemCheckedEventHandler(this.lvPower_ItemChecked);
-            this.lvDPA.SelectedIndexChanged += new EventHandler(this.lvDPA_SelectedIndexChanged);
-            this.lvDPA.MouseEnter += new EventHandler(this.lvDPA_MouseEnter);
-            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-            this.chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
-            this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-            this.ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
-            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-            this.ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
-            this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-            this.myParent = iParent;
-            this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
+            FormClosed += frmRecipeViewer_FormClosed;
+            Load += frmRecipeViewer_Load;
+            Loading = true;
+            InitializeComponent();
+            Name = nameof(frmRecipeViewer);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmRecipeViewer));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            RecipeInfo.MouseWheel += RecipeInfo_MouseWheel;
+            RecipeInfo.MouseEnter += RecipeInfo_MouseEnter;
+            lvPower.MouseEnter += lvPower_MouseEnter;
+            lvPower.ItemChecked += lvPower_ItemChecked;
+            lvDPA.SelectedIndexChanged += lvDPA_SelectedIndexChanged;
+            lvDPA.MouseEnter += lvDPA_MouseEnter;
+            VScrollBar1.Scroll += VScrollBar1_Scroll;
+            chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
+            chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+            ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
+            ibClose.ButtonClicked += ibClose_ButtonClicked;
+            ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
+            ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+            myParent = iParent;
+            bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
 
         void AddToImageList(int eIDX)
 
         {
-            Size imageSize = this.ilSets.ImageSize;
+            Size imageSize = ilSets.ImageSize;
             int width = imageSize.Width;
-            imageSize = this.ilSets.ImageSize;
+            imageSize = ilSets.ImageSize;
             int height = imageSize.Height;
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(width, height);
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[eIDX];
@@ -67,10 +68,10 @@ namespace Hero_Designer
                 extendedBitmap.Graphics.Clear(Color.White);
                 Graphics graphics = extendedBitmap.Graphics;
                 I9Gfx.DrawEnhancement(ref graphics, enhancement.ImageIdx, Origin.Grade.IO);
-                this.ilSets.Images.Add((Image)extendedBitmap.Bitmap);
+                ilSets.Images.Add(extendedBitmap.Bitmap);
             }
             else
-                this.ilSets.Images.Add((Image)new Bitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height));
+                ilSets.Images.Add(new Bitmap(ilSets.ImageSize.Width, ilSets.ImageSize.Height));
         }
 
         PopUp.PopupData BuildList(bool Mini)
@@ -78,17 +79,17 @@ namespace Hero_Designer
         {
             int iIndent = 1;
             PopUp.PopupData popupData = new PopUp.PopupData();
-            frmRecipeViewer.CountingList[] tl = new frmRecipeViewer.CountingList[0];
-            if (this.lvDPA.SelectedIndices.Count >= 1)
+            CountingList[] tl = new CountingList[0];
+            if (lvDPA.SelectedIndices.Count >= 1)
             {
-                if (this.lvDPA.SelectedIndices[0] == 0)
+                if (lvDPA.SelectedIndices[0] == 0)
                 {
                     int[] numArray1 = new int[DatabaseAPI.Database.Salvage.Length - 1 + 1];
                     int num1 = 0;
                     int num2 = 0;
                     int num3 = 0;
                     int num4 = 0;
-                    this.DrawIcon(-1);
+                    DrawIcon(-1);
                     int[][] numArray2 = new int[DatabaseAPI.Database.Recipes.Length - 1 + 1][];
                     int num5 = numArray2.Length - 1;
                     for (int index = 0; index <= num5; ++index)
@@ -96,22 +97,22 @@ namespace Hero_Designer
                         int[] numArray3 = new int[DatabaseAPI.Database.Recipes[index].Item.Length - 1 + 1];
                         numArray2[index] = numArray3;
                     }
-                    int num6 = this.lvDPA.Items.Count - 1;
+                    int num6 = lvDPA.Items.Count - 1;
                     for (int index1 = 1; index1 <= num6; ++index1)
                     {
-                        int rIDX = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.Items[index1].Tag)].RecipeIDX;
-                        if (this.lvDPA.Items[index1].SubItems[1].Text == "*")
+                        int rIDX = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(lvDPA.Items[index1].Tag)].RecipeIDX;
+                        if (lvDPA.Items[index1].SubItems[1].Text == "*")
                         {
                             rIDX = -1;
-                            frmRecipeViewer.putInList(ref tl, this.lvDPA.Items[index1].Text);
+                            putInList(ref tl, lvDPA.Items[index1].Text);
                         }
                         if (rIDX > -1)
                         {
-                            int iLevel = Conversions.ToInteger(this.lvDPA.Items[index1].SubItems[1].Text) - 1;
-                            int itemId = frmRecipeViewer.FindItemID(rIDX, iLevel);
+                            int iLevel = Conversions.ToInteger(lvDPA.Items[index1].SubItems[1].Text) - 1;
+                            int itemId = FindItemID(rIDX, iLevel);
                             if (itemId > -1)
                             {
-                                if (this.chkRecipe.Checked)
+                                if (chkRecipe.Checked)
                                     ++numArray2[rIDX][itemId];
                                 Recipe.RecipeEntry recipeEntry = DatabaseAPI.Database.Recipes[rIDX].Item[itemId];
                                 int num7 = recipeEntry.SalvageIdx.Length - 1;
@@ -131,7 +132,7 @@ namespace Hero_Designer
                                 num1 += recipeEntry.CraftCost;
                                 if (recipeEntry.CraftCostM > 0)
                                     num3 += recipeEntry.CraftCostM;
-                                else if (DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.Items[index1].Tag)].TypeID == Enums.eType.SetO)
+                                else if (DatabaseAPI.Database.Enhancements[Conversions.ToInteger(lvDPA.Items[index1].Tag)].TypeID == Enums.eType.SetO)
                                     num3 += recipeEntry.CraftCost;
                                 num2 += recipeEntry.BuyCost;
                             }
@@ -140,59 +141,59 @@ namespace Hero_Designer
                     int index3 = popupData.Add(null);
                     if (Mini)
                         iIndent = 0;
-                    this.lblHeader.Text = "Shopping List";
-                    if (this.lvPower.CheckedIndices.Count == 1)
+                    lblHeader.Text = "Shopping List";
+                    if (lvPower.CheckedIndices.Count == 1)
                     {
-                        if (!this.lvPower.Items[0].Checked)
-                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(this.lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                        if (!lvPower.Items[0].Checked)
+                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         else
-                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     }
                     else
-                        popupData.Sections[index3].Add(Conversions.ToString(this.lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
-                    if (!this.chkRecipe.Checked)
-                        popupData.Sections[index3].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                        popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    if (!chkRecipe.Checked)
+                        popupData.Sections[index3].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     if (Mini)
                     {
                         string str = "Buy:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Buy Cost:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft (Mem'd):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost (Memorized Common):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, iIndent);
                     }
-                    if (this.chkRecipe.Checked)
+                    if (chkRecipe.Checked)
                     {
-                        this.RecipeInfo.ColumnPosition = 0.75f;
+                        RecipeInfo.ColumnPosition = 0.75f;
                         int index1 = popupData.Add(null);
-                        popupData.Sections[index1].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                        popupData.Sections[index1].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int num7 = numArray2.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
@@ -218,16 +219,16 @@ namespace Hero_Designer
                                             break;
                                     }
                                     if (Mini)
-                                        popupData.Sections[index1].Add(" " + Conversions.ToString(numArray2[index2][index4]) + " x", color, DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                                        popupData.Sections[index1].Add(" " + Conversions.ToString(numArray2[index2][index4]) + " x", color, DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, 0.9f, FontStyle.Bold, iIndent);
                                     else
-                                        popupData.Sections[index1].Add(DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, Conversions.ToString(numArray2[index2][index4]), color, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                                        popupData.Sections[index1].Add(DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, Conversions.ToString(numArray2[index2][index4]), color, 0.9f, FontStyle.Bold, iIndent);
                                 }
                             }
                         }
-                        popupData.Sections[index1].Content = frmRecipeViewer.sortPopupStrings(Mini, 2, popupData.Sections[index1].Content);
+                        popupData.Sections[index1].Content = sortPopupStrings(Mini, 2, popupData.Sections[index1].Content);
                     }
                     else
-                        this.RecipeInfo.ColumnPosition = 0.5f;
+                        RecipeInfo.ColumnPosition = 0.5f;
                     if (Mini)
                     {
                         popupData.ColPos = 0.15f;
@@ -235,13 +236,13 @@ namespace Hero_Designer
                     }
                     int index5 = popupData.Add(null);
                     string iText1 = !Mini ? Conversions.ToString(num4) + " Salvage Items:" : Conversions.ToString(num4) + " Items:";
-                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     int num9 = numArray1.Length - 1;
                     for (int index1 = 0; index1 <= num9; ++index1)
                     {
                         if (numArray1[index1] > 0)
                         {
-                            Color color = System.Drawing.Color.White;
+                            Color color = Color.White;
                             switch (DatabaseAPI.Database.Salvage[index1].Rarity)
                             {
                                 case Recipe.RecipeRarity.Common:
@@ -255,44 +256,44 @@ namespace Hero_Designer
                                     break;
                             }
                             if (Mini)
-                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, System.Drawing.FontStyle.Bold, 0);
+                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, FontStyle.Bold, 0);
                             else
-                                popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, System.Drawing.FontStyle.Bold, 1);
+                                popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, FontStyle.Bold, 1);
                         }
                     }
-                    popupData.Sections[index5].Content = frmRecipeViewer.sortPopupStrings(Mini, 1, popupData.Sections[index5].Content);
-                    if (this.nonRecipeCount != 1)
+                    popupData.Sections[index5].Content = sortPopupStrings(Mini, 1, popupData.Sections[index5].Content);
+                    if (nonRecipeCount != 1)
                     {
                         int index1 = popupData.Add(null);
-                        string iText2 = !Mini ? Conversions.ToString(this.nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(this.nonRecipeCount - 1) + " Enhs:";
-                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                        string iText2 = !Mini ? Conversions.ToString(nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(nonRecipeCount - 1) + " Enhs:";
+                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int num7 = tl.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
                             Color common = PopUp.Colors.Common;
                             if (Mini)
-                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, System.Drawing.FontStyle.Bold, 0);
+                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, FontStyle.Bold, 0);
                             else
-                                popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, System.Drawing.FontStyle.Bold, 1);
+                                popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, FontStyle.Bold, 1);
                         }
-                        popupData.Sections[index1].Content = frmRecipeViewer.sortPopupStrings(Mini, 1, popupData.Sections[index1].Content);
+                        popupData.Sections[index1].Content = sortPopupStrings(Mini, 1, popupData.Sections[index1].Content);
                     }
                     return popupData;
                 }
-                this.lblHeader.Text = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.SelectedItems[0].Tag)].LongName + " (" + this.lvDPA.SelectedItems[0].SubItems[1].Text + ")";
-                int rIdx = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.SelectedItems[0].Tag)].RecipeIDX;
-                if (this.lvDPA.SelectedItems[0].SubItems[1].Text == "*")
+                lblHeader.Text = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(lvDPA.SelectedItems[0].Tag)].LongName + " (" + lvDPA.SelectedItems[0].SubItems[1].Text + ")";
+                int rIdx = DatabaseAPI.Database.Enhancements[Conversions.ToInteger(lvDPA.SelectedItems[0].Tag)].RecipeIDX;
+                if (lvDPA.SelectedItems[0].SubItems[1].Text == "*")
                     rIdx = -1;
-                this.DrawIcon(Conversions.ToInteger(this.lvDPA.SelectedItems[0].Tag));
+                DrawIcon(Conversions.ToInteger(lvDPA.SelectedItems[0].Tag));
                 if (rIdx > -1)
                 {
                     int index1 = popupData.Add(null);
-                    popupData.Sections[index1] = Character.PopRecipeInfo(rIdx, Conversions.ToInteger(this.lvDPA.SelectedItems[0].SubItems[1].Text) - 1);
+                    popupData.Sections[index1] = Character.PopRecipeInfo(rIdx, Conversions.ToInteger(lvDPA.SelectedItems[0].SubItems[1].Text) - 1);
                     if (popupData.Sections[index1].Content != null && popupData.Sections[index1].Content.Length > 0)
                     {
                         PopUp.StringValue[] content = popupData.Sections[index1].Content;
                         int index2 = 0;
-                        content[index2].Text = content[index2].Text + " (" + this.lvDPA.SelectedItems[0].SubItems[1].Text + ")";
+                        content[index2].Text = content[index2].Text + " (" + lvDPA.SelectedItems[0].SubItems[1].Text + ")";
                         return popupData;
                     }
                     popupData.Sections[index1].Content[0].Text = "";
@@ -304,21 +305,21 @@ namespace Hero_Designer
         void ChangedRecipeInfoElements()
 
         {
-            this.VScrollBar1.Value = 0;
-            this.VScrollBar1.Maximum = (int)Math.Round((double)this.RecipeInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
+            VScrollBar1.Value = 0;
+            VScrollBar1.Maximum = (int)Math.Round(RecipeInfo.lHeight * (VScrollBar1.LargeChange / (double)Panel1.Height));
         }
 
         void chkRecipe_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.lvDPA_SelectedIndexChanged(this, new EventArgs());
-            MidsContext.Config.ShoppingListIncludesRecipes = this.chkRecipe.Checked;
+            lvDPA_SelectedIndexChanged(this, new EventArgs());
+            MidsContext.Config.ShoppingListIncludesRecipes = chkRecipe.Checked;
         }
 
         void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.UpdatePowerList();
+            UpdatePowerList();
         }
 
         static int colorRarityCompare(Color t1, Color t2)
@@ -391,41 +392,41 @@ namespace Hero_Designer
         void DrawIcon(int Index)
 
         {
-            ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.bxRecipe.Size);
+            ExtendedBitmap extendedBitmap = new ExtendedBitmap(bxRecipe.Size);
             extendedBitmap.Graphics.Clear(Color.Black);
-            extendedBitmap.Graphics.DrawImageUnscaled((Image)this.bxRecipe.Bitmap, 0, 0);
+            extendedBitmap.Graphics.DrawImageUnscaled(bxRecipe.Bitmap, 0, 0);
             if (Index > -1)
-                extendedBitmap.Graphics.DrawImageUnscaled((Image)I9Gfx.Enhancements[Index], 0, 0);
-            this.pbRecipe.Image = (Image)new Bitmap((Image)extendedBitmap.Bitmap);
+                extendedBitmap.Graphics.DrawImageUnscaled(I9Gfx.Enhancements[Index], 0, 0);
+            pbRecipe.Image = new Bitmap(extendedBitmap.Bitmap);
         }
 
         void FillEnhList()
 
         {
-            if (this.lvPower.CheckedIndices.Count < 1)
+            if (lvPower.CheckedIndices.Count < 1)
             {
-                this.lvDPA.Items.Clear();
+                lvDPA.Items.Clear();
             }
             else
             {
-                this.lvDPA.BeginUpdate();
-                this.lvDPA.Items.Clear();
+                lvDPA.BeginUpdate();
+                lvDPA.Items.Clear();
                 string[] items = new string[3];
                 bool flag = false;
-                int num1 = this.lvPower.CheckedIndices.Count - 1;
-                if (this.lvPower.Items[0].Checked)
+                int num1 = lvPower.CheckedIndices.Count - 1;
+                if (lvPower.Items[0].Checked)
                 {
                     flag = true;
                     num1 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 }
-                this.ilSets.Images.Clear();
-                this.nonRecipeCount = 1;
-                this.lvDPA.Items.Add(" - All Recipes - ");
+                ilSets.Images.Clear();
+                nonRecipeCount = 1;
+                lvDPA.Items.Add(" - All Recipes - ");
                 int num2 = num1;
                 for (int index1 = 0; index1 <= num2; ++index1)
                 {
-                    int hIDX = flag ? index1 : Conversions.ToInteger(this.lvPower.CheckedItems[index1].Tag);
-                    if (MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPowerset > -1 & this.HasIOs(hIDX))
+                    int hIDX = flag ? index1 : Conversions.ToInteger(lvPower.CheckedItems[index1].Tag);
+                    if (MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPowerset > -1 & HasIOs(hIDX))
                     {
                         int num3 = MidsContext.Character.CurrentBuild.Powers[hIDX].Slots.Length - 1;
                         for (int index2 = 0; index2 <= num3; ++index2)
@@ -450,51 +451,51 @@ namespace Hero_Designer
                                 else
                                 {
                                     items[0] = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].Name;
-                                    ++this.nonRecipeCount;
+                                    ++nonRecipeCount;
                                     items[1] = "*";
                                 }
-                                this.AddToImageList(MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh);
+                                AddToImageList(MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh);
                                 items[2] = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower].DisplayName;
-                                this.lvDPA.Items.Add(new ListViewItem(items, this.ilSets.Images.Count - 1));
-                                this.lvDPA.Items[this.lvDPA.Items.Count - 1].Tag = MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh;
+                                lvDPA.Items.Add(new ListViewItem(items, ilSets.Images.Count - 1));
+                                lvDPA.Items[lvDPA.Items.Count - 1].Tag = MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh;
                             }
                         }
                     }
                 }
-                this.lvDPA.EndUpdate();
-                if (this.lvDPA.Items.Count > 0)
-                    this.lvDPA.Items[0].Selected = true;
+                lvDPA.EndUpdate();
+                if (lvDPA.Items.Count > 0)
+                    lvDPA.Items[0].Selected = true;
             }
         }
 
         void FillPowerList()
 
         {
-            this.lvPower.BeginUpdate();
-            this.lvPower.Items.Clear();
-            this.lvPower.Sorting = SortOrder.None;
-            this.lvPower.Items.Add(" - All Powers - ");
-            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = -1;
+            lvPower.BeginUpdate();
+            lvPower.Items.Clear();
+            lvPower.Sorting = SortOrder.None;
+            lvPower.Items.Add(" - All Powers - ");
+            lvPower.Items[lvPower.Items.Count - 1].Tag = -1;
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int hIDX = 0; hIDX <= num; ++hIDX)
             {
-                if (MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower > -1 & this.HasIOs(hIDX))
+                if (MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower > -1 & HasIOs(hIDX))
                 {
                     string text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower].DisplayName;
-                    if (this.chkSortByLevel.Checked)
+                    if (chkSortByLevel.Checked)
                         text = Strings.Format((MidsContext.Character.CurrentBuild.Powers[hIDX].Level + 1), "00") + " - " + text;
-                    this.lvPower.Items.Add(text);
-                    this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = hIDX;
+                    lvPower.Items.Add(text);
+                    lvPower.Items[lvPower.Items.Count - 1].Tag = hIDX;
                 }
             }
-            this.lvPower.Sorting = SortOrder.Ascending;
-            this.lvPower.Sort();
-            if (this.lvPower.Items.Count > 0)
+            lvPower.Sorting = SortOrder.Ascending;
+            lvPower.Sort();
+            if (lvPower.Items.Count > 0)
             {
-                this.lvPower.Items[0].Selected = true;
-                this.lvPower.Items[0].Checked = true;
+                lvPower.Items[0].Selected = true;
+                lvPower.Items[0].Checked = true;
             }
-            this.lvPower.EndUpdate();
+            lvPower.EndUpdate();
         }
 
         static int FindItemID(int rIDX, int iLevel)
@@ -535,23 +536,23 @@ namespace Hero_Designer
         void frmRecipeViewer_FormClosed(object sender, FormClosedEventArgs e)
 
         {
-            this.StoreLocation();
-            this.myParent.FloatRecipe(false);
+            StoreLocation();
+            myParent.FloatRecipe(false);
         }
 
         void frmRecipeViewer_Load(object sender, EventArgs e)
 
         {
-            this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibTopmost.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibTopmost.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.RecipeInfo.SetPopup(new PopUp.PopupData());
-            this.ChangedRecipeInfoElements();
-            this.chkRecipe.Checked = MidsContext.Config.ShoppingListIncludesRecipes;
-            this.Loading = false;
+            ibClose.IA = myParent.Drawing.pImageAttributes;
+            ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibTopmost.IA = myParent.Drawing.pImageAttributes;
+            ibTopmost.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibTopmost.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            RecipeInfo.SetPopup(new PopUp.PopupData());
+            ChangedRecipeInfoElements();
+            chkRecipe.Checked = MidsContext.Config.ShoppingListIncludesRecipes;
+            Loading = false;
         }
 
         bool HasIOs(int hIDX)
@@ -572,11 +573,11 @@ namespace Hero_Designer
         void CopyToClipboard()
         {
             string str1 = "";
-            PopUp.PopupData popupData = this.BuildList(true);
-            int num1 = this.RecipeInfo.pData.Sections.Length - 1;
+            PopUp.PopupData popupData = BuildList(true);
+            int num1 = RecipeInfo.pData.Sections.Length - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
-                int num2 = this.RecipeInfo.pData.Sections[index1].Content.Length - 1;
+                int num2 = RecipeInfo.pData.Sections[index1].Content.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     PopUp.StringValue[] content = popupData.Sections[index1].Content;
@@ -606,22 +607,22 @@ namespace Hero_Designer
         void ibClose_ButtonClicked()
 
         {
-            this.Close();
+            Close();
         }
 
         void ibMiniList_ButtonClicked()
 
         {
-            this.myParent.SetMiniList(this.BuildList(true), "Shopping List");
+            myParent.SetMiniList(BuildList(true), "Shopping List");
         }
 
         void ibTopmost_ButtonClicked()
 
         {
-            this.TopMost = this.ibTopmost.Checked;
-            if (!this.TopMost)
+            TopMost = ibTopmost.Checked;
+            if (!TopMost)
                 return;
-            this.BringToFront();
+            BringToFront();
         }
 
         [DebuggerStepThrough]
@@ -633,37 +634,37 @@ namespace Hero_Designer
             {
                 if (Operators.ConditionalCompareObjectLess(e.Item.Tag, 0, false) && e.Item.Checked)
                 {
-                    int num = this.lvPower.Items.Count - 1;
+                    int num = lvPower.Items.Count - 1;
                     for (int index = 1; index <= num; ++index)
-                        this.lvPower.Items[index].Checked = false;
+                        lvPower.Items[index].Checked = false;
                 }
             }
             else if (e.Item.Checked)
-                this.lvPower.Items[0].Checked = false;
-            this.FillEnhList();
+                lvPower.Items[0].Checked = false;
+            FillEnhList();
         }
 
         void lvPower_MouseEnter(object sender, EventArgs e)
 
         {
-            this.lvPower.Focus();
+            lvPower.Focus();
         }
 
         void lvDPA_MouseEnter(object sender, EventArgs e)
 
         {
-            this.lvDPA.Focus();
+            lvDPA.Focus();
         }
 
         void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            this.RecipeInfo.ScrollY = 0.0f;
-            this.RecipeInfo.SetPopup(this.BuildList(false));
-            this.ChangedRecipeInfoElements();
+            RecipeInfo.ScrollY = 0.0f;
+            RecipeInfo.SetPopup(BuildList(false));
+            ChangedRecipeInfoElements();
         }
 
-        static void putInList(ref frmRecipeViewer.CountingList[] tl, string item)
+        static void putInList(ref CountingList[] tl, string item)
 
         {
             int num = tl.Length - 1;
@@ -675,7 +676,7 @@ namespace Hero_Designer
                     return;
                 }
             }
-            tl = (frmRecipeViewer.CountingList[])Utils.CopyArray(tl, (Array)new frmRecipeViewer.CountingList[tl.Length + 1]);
+            tl = (CountingList[])Utils.CopyArray(tl, new CountingList[tl.Length + 1]);
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }
@@ -683,16 +684,16 @@ namespace Hero_Designer
         void RecipeInfo_MouseEnter(object sender, EventArgs e)
 
         {
-            this.VScrollBar1.Focus();
+            VScrollBar1.Focus();
         }
 
         void RecipeInfo_MouseWheel(object sender, MouseEventArgs e)
 
         {
-            this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
-            if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
-                this.VScrollBar1.Value = this.VScrollBar1.Maximum - 9;
-            this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
+            if (VScrollBar1.Value > VScrollBar1.Maximum - 9)
+                VScrollBar1.Value = VScrollBar1.Maximum - 9;
+            VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
         public void SetLocation()
@@ -703,21 +704,21 @@ namespace Hero_Designer
             rectangle.Width = MainModule.MidsController.SzFrmRecipe.Width;
             rectangle.Height = MainModule.MidsController.SzFrmRecipe.Height;
             if (rectangle.Width < 1)
-                rectangle.Width = this.Width;
+                rectangle.Width = Width;
             if (rectangle.Height < 1)
-                rectangle.Height = this.Height;
-            if (rectangle.Width < this.MinimumSize.Width)
-                rectangle.Width = this.MinimumSize.Width;
-            if (rectangle.Height < this.MinimumSize.Height)
-                rectangle.Height = this.MinimumSize.Height;
+                rectangle.Height = Height;
+            if (rectangle.Width < MinimumSize.Width)
+                rectangle.Width = MinimumSize.Width;
+            if (rectangle.Height < MinimumSize.Height)
+                rectangle.Height = MinimumSize.Height;
             if (rectangle.X < 1)
-                rectangle.X = (int)Math.Round((double)(Screen.PrimaryScreen.Bounds.Width - this.Width) / 2.0);
+                rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - Width) / 2.0);
             if (rectangle.Y < 32)
-                rectangle.Y = (int)Math.Round((double)(Screen.PrimaryScreen.Bounds.Height - this.Height) / 2.0);
-            this.Top = rectangle.Y;
-            this.Left = rectangle.X;
-            this.Height = rectangle.Height;
-            this.Width = rectangle.Width;
+                rectangle.Y = (int)Math.Round((Screen.PrimaryScreen.Bounds.Height - Height) / 2.0);
+            Top = rectangle.Y;
+            Left = rectangle.X;
+            Height = rectangle.Height;
+            Width = rectangle.Width;
         }
 
         static PopUp.StringValue[] sortPopupStrings(
@@ -739,10 +740,10 @@ namespace Hero_Designer
                     switch (colorSortMode)
                     {
                         case 1:
-                            num1 = frmRecipeViewer.colorRarityCompare(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
+                            num1 = colorRarityCompare(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
                             break;
                         case 2:
-                            num1 = frmRecipeViewer.colorRarityCompareB(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
+                            num1 = colorRarityCompareB(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
                             break;
                     }
                     if (num1 == 0 && string.Compare(Conversions.ToString(Interaction.IIf(Mini, inStrs[index1].TextColumn, inStrs[index1].Text)), Conversions.ToString(Interaction.IIf(Mini, inStrs[numArray[index2]].TextColumn, inStrs[numArray[index2]].Text))) < 0 || num1 > 0)
@@ -770,42 +771,42 @@ namespace Hero_Designer
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
-            MainModule.MidsController.SzFrmRecipe.X = this.Left;
-            MainModule.MidsController.SzFrmRecipe.Y = this.Top;
-            MainModule.MidsController.SzFrmRecipe.Width = this.Width;
-            MainModule.MidsController.SzFrmRecipe.Height = this.Height;
+            MainModule.MidsController.SzFrmRecipe.X = Left;
+            MainModule.MidsController.SzFrmRecipe.Y = Top;
+            MainModule.MidsController.SzFrmRecipe.Width = Width;
+            MainModule.MidsController.SzFrmRecipe.Height = Height;
         }
 
         public void UpdateData()
         {
-            this.BackColor = this.myParent.BackColor;
-            this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibTopmost.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibTopmost.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibClipboard.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClipboard.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClipboard.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibMiniList.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibMiniList.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibMiniList.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.FillPowerList();
+            BackColor = myParent.BackColor;
+            ibClose.IA = myParent.Drawing.pImageAttributes;
+            ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibTopmost.IA = myParent.Drawing.pImageAttributes;
+            ibTopmost.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibTopmost.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibClipboard.IA = myParent.Drawing.pImageAttributes;
+            ibClipboard.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClipboard.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibMiniList.IA = myParent.Drawing.pImageAttributes;
+            ibMiniList.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibMiniList.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            FillPowerList();
         }
 
         void UpdatePowerList()
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.FillPowerList();
+            FillPowerList();
         }
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
 
         {
-            this.RecipeInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * ((double)this.RecipeInfo.lHeight - (double)this.Panel1.Height));
+            RecipeInfo.ScrollY = (float)(VScrollBar1.Value / (double)(VScrollBar1.Maximum - VScrollBar1.LargeChange) * (RecipeInfo.lHeight - (double)Panel1.Height));
         }
 
         struct CountingList

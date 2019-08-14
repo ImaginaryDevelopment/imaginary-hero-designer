@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmEnhData
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -752,71 +755,71 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnAdd;
-        System.Windows.Forms.Button btnAddFX;
-        System.Windows.Forms.Button btnAutoFill;
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnDown;
-        System.Windows.Forms.Button btnEdit;
-        System.Windows.Forms.Button btnEditPowerData;
-        System.Windows.Forms.Button btnImage;
-        System.Windows.Forms.Button btnNoImage;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnRemove;
-        System.Windows.Forms.Button btnUp;
-        System.Windows.Forms.ComboBox cbMutEx;
-        System.Windows.Forms.ComboBox cbRecipe;
-        System.Windows.Forms.ComboBox cbSched;
-        System.Windows.Forms.ComboBox cbSet;
-        System.Windows.Forms.ComboBox cbSubType;
-        System.Windows.Forms.CheckBox chkSuperior;
-        System.Windows.Forms.CheckBox chkUnique;
-        System.Windows.Forms.GroupBox gbBasic;
-        System.Windows.Forms.GroupBox gbClass;
-        System.Windows.Forms.GroupBox gbEffects;
-        System.Windows.Forms.GroupBox gbMod;
-        System.Windows.Forms.GroupBox gbSet;
-        System.Windows.Forms.GroupBox gbType;
-        System.Windows.Forms.OpenFileDialog ImagePicker;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label10;
-        System.Windows.Forms.Label Label11;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label Label9;
-        System.Windows.Forms.Label lblClass;
-        System.Windows.Forms.Label lblSched;
-        System.Windows.Forms.ListBox lstAvailable;
-        System.Windows.Forms.ListBox lstSelected;
-        System.Windows.Forms.PictureBox pbSet;
-        System.Windows.Forms.Panel pnlClass;
-        System.Windows.Forms.Panel pnlClassList;
-        System.Windows.Forms.RadioButton rbBoth;
-        System.Windows.Forms.RadioButton rbBuff;
-        System.Windows.Forms.RadioButton rbDebuff;
-        System.Windows.Forms.RadioButton rbMod1;
-        System.Windows.Forms.RadioButton rbMod2;
-        System.Windows.Forms.RadioButton rbMod3;
-        System.Windows.Forms.RadioButton rbMod4;
-        System.Windows.Forms.RadioButton rbModOther;
-        System.Windows.Forms.TextBox StaticIndex;
-        System.Windows.Forms.ToolTip tTip;
-        System.Windows.Forms.TextBox txtDesc;
-        System.Windows.Forms.TextBox txtInternal;
-        System.Windows.Forms.TextBox txtModOther;
-        System.Windows.Forms.TextBox txtNameFull;
-        System.Windows.Forms.TextBox txtNameShort;
-        System.Windows.Forms.TextBox txtProb;
-        System.Windows.Forms.RadioButton typeHO;
-        System.Windows.Forms.RadioButton typeIO;
-        System.Windows.Forms.RadioButton typeRegular;
-        System.Windows.Forms.RadioButton typeSet;
-        System.Windows.Forms.NumericUpDown udMaxLevel;
-        System.Windows.Forms.NumericUpDown udMinLevel;
+        Button btnAdd;
+        Button btnAddFX;
+        Button btnAutoFill;
+        Button btnCancel;
+        Button btnDown;
+        Button btnEdit;
+        Button btnEditPowerData;
+        Button btnImage;
+        Button btnNoImage;
+        Button btnOK;
+        Button btnRemove;
+        Button btnUp;
+        ComboBox cbMutEx;
+        ComboBox cbRecipe;
+        ComboBox cbSched;
+        ComboBox cbSet;
+        ComboBox cbSubType;
+        CheckBox chkSuperior;
+        CheckBox chkUnique;
+        GroupBox gbBasic;
+        GroupBox gbClass;
+        GroupBox gbEffects;
+        GroupBox gbMod;
+        GroupBox gbSet;
+        GroupBox gbType;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblClass;
+        Label lblSched;
+        ListBox lstAvailable;
+        ListBox lstSelected;
+        PictureBox pbSet;
+        Panel pnlClass;
+        Panel pnlClassList;
+        RadioButton rbBoth;
+        RadioButton rbBuff;
+        RadioButton rbDebuff;
+        RadioButton rbMod1;
+        RadioButton rbMod2;
+        RadioButton rbMod3;
+        RadioButton rbMod4;
+        RadioButton rbModOther;
+        TextBox StaticIndex;
+        ToolTip tTip;
+        TextBox txtDesc;
+        TextBox txtInternal;
+        TextBox txtModOther;
+        TextBox txtNameFull;
+        TextBox txtNameShort;
+        TextBox txtProb;
+        RadioButton typeHO;
+        RadioButton typeIO;
+        RadioButton typeRegular;
+        RadioButton typeSet;
+        NumericUpDown udMaxLevel;
+        NumericUpDown udMinLevel;
     }
 }
