@@ -74,17 +74,16 @@ namespace midsControls.My
 			// Token: 0x0600000D RID: 13 RVA: 0x0000217C File Offset: 0x0000037C
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[DebuggerHidden]
-			public override bool Equals(object o)
-			{
-				return base.Equals(RuntimeHelpers.GetObjectValue(o));
-			}
+            // ReSharper disable once BaseObjectEqualsIsObjectEquals
+            public override bool Equals(object o) => base.Equals(RuntimeHelpers.GetObjectValue(o));
 
-			// Token: 0x0600000E RID: 14 RVA: 0x0000219C File Offset: 0x0000039C
+            // Token: 0x0600000E RID: 14 RVA: 0x0000219C File Offset: 0x0000039C
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[DebuggerHidden]
 			public override int GetHashCode()
 			{
-				return base.GetHashCode();
+                // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
+                return base.GetHashCode();
 			}
 
 			// Token: 0x0600000F RID: 15 RVA: 0x000021B4 File Offset: 0x000003B4

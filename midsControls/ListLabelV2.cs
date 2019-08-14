@@ -62,6 +62,7 @@ namespace midsControls
 
         public ListLabelItemV2 Item
         {
+            // ReSharper disable once FunctionRecursiveOnAllPaths
             get
             {
                 if (Item.Index < 0 | Item.Index > checked(Items.Length - 1))
@@ -369,7 +370,7 @@ namespace midsControls
             VisibleLineCount = GetVisibleLineCount();
         }
 
-        void Recalculate(bool Expanded = false)
+        void Recalculate(bool expanded = false)
         {
             checked
             {
@@ -398,7 +399,7 @@ namespace midsControls
                         bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height - (ScrollWidth + yPadding));
                         RecalcLines(bRect);
                     }
-                    if (!Expanded && ScrollSteps > 0)
+                    if (!expanded && ScrollSteps > 0)
                     {
                         int num = 0;
                         if (canExpand)
