@@ -15,7 +15,7 @@ namespace Hero_Designer
         public int idFormat = MidsContext.Config.ExportTarget;
         readonly int idScheme = MidsContext.Config.ExportScheme;
 
-        readonly bool LongExport = true;
+        readonly bool LongExport;
 
         readonly bool NoHTMLBr;
 
@@ -55,12 +55,12 @@ namespace Hero_Designer
         {
             string str1 = "";
             ExportConfig.FormatCodes[] formatCode = MidsContext.Config.Export.FormatCode;
-            int idFormat = this.idFormat;
-            Plain = formatCode[idFormat].BoldOn
-                    + formatCode[idFormat].ColourOn
-                    + formatCode[idFormat].ItalicOn
-                    + formatCode[idFormat].SizeOn
-                    + formatCode[idFormat].UnderlineOn == "";
+            int idFormatA = idFormat;
+            Plain = formatCode[idFormatA].BoldOn
+                    + formatCode[idFormatA].ColourOn
+                    + formatCode[idFormatA].ItalicOn
+                    + formatCode[idFormatA].SizeOn
+                    + formatCode[idFormatA].UnderlineOn == "";
             string str2 = MidsContext.Character.Alignment.ToString();
             string str3 = str1 + formatColor(formatBold(str2 + " Plan by Mids' Reborn : Hero Designer " + MidsContext.AppAssemblyVersion), ExportConfig.Element.Heading) + LineBreak() + formatColor(formatBold(@"https://github.com/ImaginaryDevelopment/imaginary-hero-designer"), ExportConfig.Element.Heading) + LineBreak();
             if (iDataLink != "" && !Plain)

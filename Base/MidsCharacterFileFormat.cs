@@ -367,14 +367,14 @@ public static class MidsCharacterFileFormat
                         var ps = powerEntry1.Power?.GetPowerSet();
                         if (powerIndex < MidsContext.Character.CurrentBuild.Powers.Count)
                         {
-                            if (!(!MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
+                            if (powerEntry1.Power != null && !(!MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
                                 flag5 = !MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen;
                             else
                                 continue;
                         }
                         if (flag5)
                             MidsContext.Character.CurrentBuild.Powers.Add(powerEntry1);
-                        else if ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")
+                        else if (powerEntry1.Power != null && ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool"))
                             MidsContext.Character.CurrentBuild.Powers[powerIndex] = powerEntry1;
                     }
                 }

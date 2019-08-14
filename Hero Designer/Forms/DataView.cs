@@ -301,18 +301,18 @@ namespace Hero_Designer
 
         void DataView_Load(object sender, EventArgs e)
         {
-            Panel pnlInfo = this.pnlInfo;
-            pnlInfo.Top = 20;
-            pnlInfo.Left = 0;
+            Panel pmlInfo2 = pnlInfo;
+            pmlInfo2.Top = 20;
+            pmlInfo2.Left = 0;
             Panel pnlFx = pnlFX;
             pnlFx.Top = 20;
             pnlFx.Left = 0;
-            Panel pnlTotal = this.pnlTotal;
-            pnlTotal.Top = 20;
-            pnlTotal.Left = 0;
-            Panel pnlEnh = this.pnlEnh;
-            pnlEnh.Top = 20;
-            pnlEnh.Left = 0;
+            Panel pnlTotal2 = pnlTotal;
+            pnlTotal2.Top = 20;
+            pnlTotal2.Left = 0;
+            Panel pnlEnh2 = pnlEnh;
+            pnlEnh2.Top = 20;
+            pnlEnh2.Left = 0;
             ctlDamageDisplay infoDamage = info_Damage;
             infoDamage.nBaseVal = 0.0f;
             infoDamage.nEnhVal = 0.0f;
@@ -644,7 +644,7 @@ namespace Hero_Designer
                     str = "\r\n* This power is autohit, but has an effect that requires a ToHit roll.";
                     Suffix2 += "*";
                 }
-                if (accuracy1 != (double)accuracy2 & num2 != (double)accuracy2)
+                if (Math.Abs(accuracy1 - (double)accuracy2) > float.Epsilon & Math.Abs(num2 - (double)accuracy2) > float.Epsilon)
                 {
                     string Tip2 = "Accuracy multiplier without other buffs (Real Numbers style): " + Strings.Format((float)(pBase.Accuracy + (pEnh.Accuracy - (double)MidsContext.Config.BaseAcc)), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00000") + "x" + str;
                     info_DataList.AddItem(FastItem(ShortStr("Accuracy", "Acc"), (float)(MidsContext.Config.BaseAcc * (double)pBase.Accuracy * 100.0), pEnh.Accuracy * 100f, Suffix2, Tip2));
@@ -689,7 +689,7 @@ namespace Hero_Designer
             if (num3 > 1 && durationEffectId > -1 && pBase.Effects[durationEffectId].EffectType == Enums.eEffectType.Mez & pBase.Effects[durationEffectId].MezType != Enums.eMez.Taunt)
             {
                 info_DataList.AddItem(new ctlPairedList.ItemPair("Effect:", Enum.GetName(Enums.eMez.None.GetType(), pBase.Effects[durationEffectId].MezType), false, pBase.Effects[durationEffectId].Probability < 1.0, pBase.Effects[durationEffectId].SpecialCase != Enums.eSpecialCase.None, durationEffectId));
-                bool iAlternate = pBase.Effects[durationEffectId].Mag != (double)pEnh.Effects[durationEffectId].Mag;
+                bool iAlternate = Math.Abs(pBase.Effects[durationEffectId].Mag - (double)pEnh.Effects[durationEffectId].Mag) > float.Epsilon;
                 info_DataList.AddItem(new ctlPairedList.ItemPair("Mag:", Conversions.ToString(pEnh.Effects[durationEffectId].Mag), iAlternate, pBase.Effects[durationEffectId].Probability < 1.0));
                 num3 -= 2;
             }
@@ -771,7 +771,7 @@ namespace Hero_Designer
             if (MidsContext.Config.DataDamageGraphPercentageOnly)
                 str1 += " (% only)";
             float damageValue1 = pBase.FXGetDamageValue();
-            if (pBase.NIDSubPower.Length > 0 & damageValue1 == 0.0)
+            if (pBase.NIDSubPower.Length > 0 & Math.Abs(damageValue1) < float.Epsilon)
             {
                 lblDmg.Text = string.Empty;
                 info_Damage.nBaseVal = 0.0f;
@@ -787,7 +787,7 @@ namespace Hero_Designer
                 info_Damage.nBaseVal = damageValue1;
                 info_Damage.nMaxEnhVal = num2;
                 info_Damage.nEnhVal = damageValue2;
-                if (damageValue2 != (double)damageValue1)
+                if (Math.Abs(damageValue2 - (double)damageValue1) > float.Epsilon)
                     info_Damage.Text = pEnh.FXGetDamageString() + " (" + Utilities.FixDP(damageValue1) + ")";
                 else
                     info_Damage.Text = pBase.FXGetDamageString();
@@ -973,7 +973,7 @@ namespace Hero_Designer
                     double num4 = (size.Height / 2.0 - 30.0) / 2.0;
                     int y2 = (int)Math.Round(num3 + num4);
                     local3 = new Rectangle(x2, y2, 30, 30);
-                    RectangleF Bounds;
+                    RectangleF bounds;
                     Rectangle destRect;
                     if (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh > -1)
                     {
@@ -983,20 +983,20 @@ namespace Hero_Designer
                         {
                             if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.InventO))
                             {
-                                Bounds = iDest;
-                                Bounds.Y -= 3f;
-                                Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
+                                bounds = iDest;
+                                bounds.Y -= 3f;
+                                bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
-                                Bounds = iDest;
-                                Bounds.Y -= 3f;
-                                Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
-                                Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
+                                bounds = iDest;
+                                bounds.Y -= 3f;
+                                bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
+                                Color text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), bounds, text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                         }
                     }
@@ -1013,20 +1013,20 @@ namespace Hero_Designer
                         {
                             if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.InventO))
                             {
-                                Bounds = rectangle2;
-                                Bounds.Y -= 3f;
-                                Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
+                                bounds = rectangle2;
+                                bounds.Y -= 3f;
+                                bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
-                                Bounds = rectangle2;
-                                Bounds.Y -= 3f;
-                                Bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
-                                Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
+                                bounds = rectangle2;
+                                bounds.Y -= 3f;
+                                bounds.Height = DefaultFont.GetHeight(bxFlip.Graphics);
+                                Color text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, byte.MaxValue, byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), bounds, text, Color.FromArgb(128, 0, 0, 0), pnlEnhActive.Font, 1f, graphics2);
                             }
                         }
                     }
@@ -1117,7 +1117,7 @@ namespace Hero_Designer
             if (displayStats.EnduranceRecoveryNet > 0.0)
             {
                 iTip1 = "Net Endurance Gain (Recovery - Drain): " + Utilities.FixDP(displayStats.EnduranceRecoveryNet) + "/s.";
-                if (displayStats.EnduranceRecoveryNet != (double)displayStats.EnduranceRecoveryNumeric)
+                if (Math.Abs(displayStats.EnduranceRecoveryNet - (double)displayStats.EnduranceRecoveryNumeric) > float.Epsilon)
                     iTip1 = iTip1 + "\r\nTime to go from 0-100% end (using net gain): " + Utilities.FixDP(displayStats.EnduranceTimeToFullNet) + "s.";
             }
             else if (displayStats.EnduranceRecoveryNet < 0.0)
@@ -1140,7 +1140,11 @@ namespace Hero_Designer
             {
                 bxFlip?.Dispose();
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
+
             base.Dispose(disposing);
         }
 
@@ -1277,6 +1281,7 @@ namespace Hero_Designer
                     {
                         bool flag = true;
                         int num3 = shortFxArray[index1].Index.Length - 1;
+                        // ReSharper disable once LoopVariableIsNeverChangedInsideLoop
                         for (int index2 = 0; index2 <= num3; ++index2)
                         {
                             if (pEnh.Effects[shortFxArray[index1].Index[index2]].SpecialCase != Enums.eSpecialCase.Defiance)
@@ -1387,7 +1392,7 @@ namespace Hero_Designer
                                 {
                                     if (num3 == -1)
                                         num3 = (int)Math.Round(effectMagSum10.Value[0]);
-                                    else if (num3 > 0 & num3 != (double)effectMagSum10.Value[iIndex])
+                                    else if (num3 > 0 & Math.Abs(num3 - (double)effectMagSum10.Value[iIndex]) > float.Epsilon)
                                         num3 = -2;
                                     ++iIndex;
                                 }
@@ -1568,9 +1573,9 @@ namespace Hero_Designer
                     {
                         if (pBase.Effects[shortFx.Index[index]].Aspect == Enums.eAspect.Cur)
                         {
-                            if (shortFx.Value[index] == -1.0)
+                            if (Math.Abs(shortFx.Value[index] - (-1.0)) < float.Epsilon)
                                 shortFx.Value[index] = 0.0f;
-                            if (shortFx.Value[index] != 100.0)
+                            if (Math.Abs(shortFx.Value[index] - 100.0) > float.Epsilon)
                                 shortFx.Value[index] *= 100f;
                         }
                     }
@@ -1741,7 +1746,7 @@ namespace Hero_Designer
                         string str = !(pEnh.Effects[iTagID].Duration < 2.0 | pBase.PowerType == Enums.ePowerType.Auto_) ? " - " + Strings.Format(pEnh.Effects[iTagID].Duration, "#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "s" : string.Empty;
                         if (pBase.Effects[iTagID].Mag > 0.0)
                         {
-                            bool iAlternate2 = pBase.Effects[iTagID].Duration != (double)pEnh.Effects[iTagID].Duration | !Enums.MezDurationEnhancable(pBase.Effects[iTagID].MezType) & pEnh.Effects[iTagID].Mag != (double)pBase.Effects[iTagID].Mag;
+                            bool iAlternate2 = Math.Abs(pBase.Effects[iTagID].Duration - (double)pEnh.Effects[iTagID].Duration) > float.Epsilon | !Enums.MezDurationEnhancable(pBase.Effects[iTagID].MezType) & Math.Abs(pEnh.Effects[iTagID].Mag - (double)pBase.Effects[iTagID].Mag) > float.Epsilon;
                             string iValue = "Mag " + Utilities.FixDP(pEnh.Effects[iTagID].Mag) + str;
                             if ((pBase.Effects[iTagID].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                                 iValue = "0";
@@ -1762,7 +1767,7 @@ namespace Hero_Designer
                         }
                         else
                         {
-                            bool iAlternate2 = pBase.Effects[iTagID].Duration != (double)pEnh.Effects[iTagID].Duration | !Enums.MezDurationEnhancable(pBase.Effects[iTagID].MezType) & pEnh.Effects[iTagID].Mag != (double)pBase.Effects[iTagID].Mag;
+                            bool iAlternate2 = Math.Abs(pBase.Effects[iTagID].Duration - (double)pEnh.Effects[iTagID].Duration) > float.Epsilon | !Enums.MezDurationEnhancable(pBase.Effects[iTagID].MezType) & Math.Abs(pEnh.Effects[iTagID].Mag - (double)pBase.Effects[iTagID].Mag) > float.Epsilon;
                             string iValue = "Mag " + Utilities.FixDP(pEnh.Effects[iTagID].Mag) + str;
                             if ((pBase.Effects[iTagID].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                                 iValue = "0";
@@ -2037,16 +2042,16 @@ namespace Hero_Designer
         {
             string iValue = Utilities.FixDP(s2.Sum) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if (s1.Sum == 0.0 & !AlwaysShow)
+            if (Math.Abs(s1.Sum) < float.Epsilon & !AlwaysShow)
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
-            else if (s1.Sum == 0.0)
+            else if (Math.Abs(s1.Sum) < float.Epsilon)
             {
                 itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
                 bool iAlternate;
-                if (s1.Sum != (double)s2.Sum)
+                if (Math.Abs(s1.Sum - (double)s2.Sum) > float.Epsilon)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1.Sum) + ")";
@@ -2072,16 +2077,16 @@ namespace Hero_Designer
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if (s1 == 0.0 & !AlwaysShow)
+            if (Math.Abs(s1) < float.Epsilon & !AlwaysShow)
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
-            else if (s1 == 0.0)
+            else if (Math.Abs(s1) < float.Epsilon)
             {
                 itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
                 bool iAlternate;
-                if (s1 != (double)s2)
+                if (Math.Abs(s1 - (double)s2) > float.Epsilon)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1) + ")";
@@ -2107,16 +2112,16 @@ namespace Hero_Designer
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if (s1 == 0.0 & !AlwaysShow)
+            if (Math.Abs(s1) < float.Epsilon & !AlwaysShow)
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
-            else if (s1 == 0.0)
+            else if (Math.Abs(s1) < float.Epsilon)
             {
                 itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false);
             }
             else
             {
                 bool iAlternate;
-                if (s1 != (double)s2)
+                if (Math.Abs(s1 - (double)s2) > float.Epsilon)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1) + ")";
@@ -2143,14 +2148,14 @@ namespace Hero_Designer
         {
             string iValue = maxDecimal < 0 ? Utilities.FixDP(s2) + Suffix : Utilities.FixDP(s2, maxDecimal) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if (s1 == 0.0 & !AlwaysShow)
+            if (Math.Abs(s1) < float.Epsilon & !AlwaysShow)
             {
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false);
             }
             else
             {
                 bool iAlternate;
-                if (s1 != (double)s2)
+                if (Math.Abs(s1 - (double)s2) > float.Epsilon)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1) + ")";
@@ -2240,7 +2245,7 @@ namespace Hero_Designer
             string Title = string.Empty;
             Enums.ShortFX shortFx = new Enums.ShortFX();
             Enums.ShortFX s2 = new Enums.ShortFX();
-            Enums.ShortFX Tag = new Enums.ShortFX();
+            Enums.ShortFX Tag2 = new Enums.ShortFX();
             string Suffix = string.Empty;
             if (Index[ID] > -1)
             {
@@ -2258,7 +2263,8 @@ namespace Hero_Designer
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     shortFx.Sum = (float)(shortFx.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     s2.Sum = (float)(s2.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     Suffix = "%";
@@ -2267,7 +2273,8 @@ namespace Hero_Designer
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Heal, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     shortFx.Sum = (float)(shortFx.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     s2.Sum = (float)(s2.Sum / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     Suffix = "%";
@@ -2276,53 +2283,61 @@ namespace Hero_Designer
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Absorb, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     Suffix = "%";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Endurance)
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Endurance, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     Suffix = "%";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Regeneration)
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.Regeneration, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     Suffix = "%";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Mez & (pBase.Effects[Index[ID]].MezType == Enums.eMez.Taunt | pBase.Effects[Index[ID]].MezType == Enums.eMez.Placate))
                 {
                     shortFx.Add(Index[ID], pBase.Effects[Index[ID]].Duration);
                     s2.Add(Index[ID], pEnh.Effects[Index[ID]].Duration);
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                     Suffix = "s";
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.SpeedFlying)
                 {
                     shortFx.Assign(pBase.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget));
                     s2.Assign(pEnh.GetEffectMagSum(Enums.eEffectType.SpeedFlying, false, onlySelf, onlyTarget));
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.DamageBuff | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Defense | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Resistance | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.ResEffect | pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.Enhancement)
                 {
                     shortFx.Add(Index[ID], pBase.Effects[Index[ID]].Mag);
                     s2.Add(Index[ID], pEnh.Effects[Index[ID]].Mag);
-                    Tag.Assign(pEnh.GetEffectMagSum(pBase.Effects[Index[ID]].EffectType, false, onlySelf, onlyTarget));
+                    Tag2
+.Assign(pEnh.GetEffectMagSum(pBase.Effects[Index[ID]].EffectType, false, onlySelf, onlyTarget));
                 }
                 else if (pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.SilentKill)
                 {
                     shortFx.Add(Index[ID], pBase.Effects[Index[ID]].Absorbed_Duration);
                     s2.Add(Index[ID], pEnh.Effects[Index[ID]].Absorbed_Duration);
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                 }
                 else
                 {
                     shortFx.Add(Index[ID], pBase.Effects[Index[ID]].Mag);
                     s2.Add(Index[ID], pEnh.Effects[Index[ID]].Mag);
-                    Tag.Assign(shortFx);
+                    Tag2
+.Assign(shortFx);
                 }
                 if (pBase.Effects[Index[ID]].DisplayPercentage)
                     Suffix = "%";
@@ -2356,7 +2371,8 @@ namespace Hero_Designer
                     break;
                 }
             }
-            return FastItem(Title, shortFx, s2, Suffix, true, false, pBase.Effects[Index[ID]].Probability < 1.0, pBase.Effects[Index[ID]].SpecialCase != Enums.eSpecialCase.None, Tag);
+            return FastItem(Title, shortFx, s2, Suffix, true, false, pBase.Effects[Index[ID]].Probability < 1.0, pBase.Effects[Index[ID]].SpecialCase != Enums.eSpecialCase.None, Tag2
+);
         }
 
         public void Init()
@@ -3133,23 +3149,23 @@ namespace Hero_Designer
             return -1;
         }
 
-        void PairedList_Hover(object Sender, int Index, Enums.ShortFX Tag)
+        void PairedList_Hover(object Sender, int Index, Enums.ShortFX Tag2)
         {
             string empty1 = string.Empty;
             string str1;
-            if (Tag.Present)
+            if (Tag2.Present)
             {
                 int[] numArray = new int[0];
                 string empty2 = string.Empty;
                 IPower power = new Power(pEnh);
-                int num1 = Tag.Index.Length - 1;
+                int num1 = Tag2.Index.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
-                    if (Tag.Index[index1] != -1 && power.Effects[Tag.Index[index1]].EffectType != Enums.eEffectType.None)
+                    if (Tag2.Index[index1] != -1 && power.Effects[Tag2.Index[index1]].EffectType != Enums.eEffectType.None)
                     {
                         string empty3 = string.Empty;
                         int[] returnMask = new int[0];
-                        power.GetEffectStringGrouped(Tag.Index[index1], ref empty3, ref returnMask, false, false);
+                        power.GetEffectStringGrouped(Tag2.Index[index1], ref empty3, ref returnMask, false, false);
                         if (returnMask.Length > 0)
                         {
                             if (empty2 != string.Empty)
@@ -3161,14 +3177,14 @@ namespace Hero_Designer
                         }
                     }
                 }
-                int num3 = Tag.Index.Length - 1;
+                int num3 = Tag2.Index.Length - 1;
                 for (int index = 0; index <= num3; ++index)
                 {
-                    if (power.Effects[Tag.Index[index]].EffectType != Enums.eEffectType.None)
+                    if (power.Effects[Tag2.Index[index]].EffectType != Enums.eEffectType.None)
                     {
                         if (empty2 != string.Empty)
                             empty2 += "\r\n";
-                        empty2 += power.Effects[Tag.Index[index]].BuildEffectString();
+                        empty2 += power.Effects[Tag2.Index[index]].BuildEffectString();
                     }
                 }
                 str1 = empty1 + empty2;

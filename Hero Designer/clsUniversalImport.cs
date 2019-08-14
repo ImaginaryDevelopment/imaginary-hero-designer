@@ -9,6 +9,7 @@ namespace Hero_Designer
 {
     public class clsUniversalImport
     {
+        public static int IndexOf;
         public const string MarkerA = "Primary";
         public const string MarkerB = "Secondary";
 
@@ -26,7 +27,7 @@ namespace Hero_Designer
                 string iStr = EnhNameFix(strArray2[index]);
                 bool flag1 = false;
                 bool flag2 = iStr.IndexOf("-I", StringComparison.Ordinal) > -1;
-                iStr.IndexOf("-S", StringComparison.Ordinal);
+                IndexOf = iStr.IndexOf("-S", StringComparison.Ordinal);
                 if (flag2 | iStr.IndexOf(":", StringComparison.Ordinal) > -1)
                     flag1 = true;
                 if (iStr.Length > 0)

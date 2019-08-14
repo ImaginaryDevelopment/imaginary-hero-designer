@@ -85,6 +85,7 @@ namespace midsControls
         }
 
         [field: AccessedThroughProperty("tTip")]
+        // ReSharper disable once UnusedAutoPropertyAccessor.Local
         private ToolTip tTip { get; set; }
 
         public Color Highlight

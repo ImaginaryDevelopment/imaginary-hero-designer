@@ -783,7 +783,7 @@ namespace midsControls
                     bxBuffer.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     bxBuffer.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                     bxBuffer.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    if (ScaleValue != scaleValue)
+                    if (Math.Abs(ScaleValue - scaleValue) > float.Epsilon)
                     {
                         FullRedraw();
                         bxBuffer.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
@@ -798,7 +798,7 @@ namespace midsControls
                     ScaleValue = 1f;
                     ResetTarget();
                     ScaleEnabled = false;
-                    if (scaleEnabled != ScaleEnabled | scaleValue != ScaleValue)
+                    if (scaleEnabled != ScaleEnabled | Math.Abs(scaleValue - ScaleValue) > float.Epsilon)
                     {
                         FullRedraw();
                     }

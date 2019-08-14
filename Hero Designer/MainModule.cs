@@ -75,11 +75,15 @@ namespace Hero_Designer
                 I9Gfx.LoadArchetypeImages();
                 I9Gfx.LoadPowersetImages();
                 MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad(Files.MxdbFileBbCodeUpdate));
-                iFrm.Opacity = 1.0;
-                DatabaseAPI.MatchAllIDs(iFrm);
-                iFrm?.SetMessage("Matching Set Bonus IDs...");
-                DatabaseAPI.AssignSetBonusIndexes();
-                iFrm?.SetMessage("Matching Recipe IDs...");
+                if (iFrm != null)
+                {
+                    iFrm.Opacity = 1.0;
+                    DatabaseAPI.MatchAllIDs(iFrm);
+                    iFrm?.SetMessage("Matching Set Bonus IDs...");
+                    DatabaseAPI.AssignSetBonusIndexes();
+                    iFrm?.SetMessage("Matching Recipe IDs...");
+                }
+
                 DatabaseAPI.AssignRecipeIDs();
                 GC.Collect();
             }

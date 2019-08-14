@@ -22,7 +22,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 var exTarget = ex;
-                while (exTarget.InnerException != null)
+                while (exTarget?.InnerException != null)
                 {
                     exTarget = ex.InnerException;
                 }

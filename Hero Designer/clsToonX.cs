@@ -391,7 +391,7 @@ namespace Hero_Designer
                     }
                 }
             }
-            if (_selfBuffs.Defense[0] != 0.0)
+            if (Math.Abs(_selfBuffs.Defense[0]) > float.Epsilon)
             {
                 for (int index = 1; index <= _selfBuffs.Defense.Length - 1; ++index)
                     _selfBuffs.Defense[index] += _selfBuffs.Defense[0];
@@ -1332,14 +1332,14 @@ namespace Hero_Designer
                         Level = (int)Math.Round(Conversion.Val(data[offset]))
                     };
                     offset += 1;
-                    tPower.NIDPowerset = (double)olderFile != 0.100000001490116 ? (Conversion.Val(data[offset]) >= 0.0 ? Powersets[(int)Math.Round(Conversion.Val(data[offset]))].nID : -1) : (int)Math.Round(Conversion.Val(data[offset]));
+                    tPower.NIDPowerset = Math.Abs((double)olderFile - 0.100000001490116) > float.Epsilon ? (Conversion.Val(data[offset]) >= 0.0 ? Powersets[(int)Math.Round(Conversion.Val(data[offset]))].nID : -1) : (int)Math.Round(Conversion.Val(data[offset]));
                     offset += 1;
                     tPower.IDXPower = (int)Math.Round(Conversion.Val(data[offset]));
                     tPower.NIDPower = !(tPower.NIDPowerset > -1 & tPower.IDXPower > -1) ? -1 : DatabaseAPI.Database.Powersets[tPower.NIDPowerset].Power[tPower.IDXPower];
-                    if (olderFile == 0.0 || olderFile >= 1.0)
+                    if (Math.Abs(olderFile) < float.Epsilon || olderFile >= 1.0)
                     {
                         offset += +1;
-                        tPower.StatInclude = Conversion.Val(data[offset]) != 0.0;
+                        tPower.StatInclude = Math.Abs(Conversion.Val(data[offset])) > float.Epsilon;
                         offset = offset + 1 + 1;
                     }
                     offset += 1;
@@ -1432,7 +1432,7 @@ namespace Hero_Designer
             { // stage: poolLocks
                 var poolData = IoGrab2(iStream);
                 for (int index = 0; index <= PoolLocked.Length - 1; ++index)
-                    PoolLocked[index] = Conversion.Val(poolData[index + 1]) != 0.0;
+                    PoolLocked[index] = Math.Abs(Conversion.Val(poolData[index + 1])) > float.Epsilon;
             }
 
             // fast forward stream
@@ -2094,7 +2094,7 @@ namespace Hero_Designer
             }
             else
             {
-                if (nVer < BuildFormatChange2 & nVer != BuildFormatChange1)
+                if (nVer < BuildFormatChange2 & Math.Abs(nVer - BuildFormatChange1) > float.Epsilon)
                 {
                     Interaction.MsgBox("The data being loaded was saved by an older version of the application, attempting conversion.", MsgBoxStyle.Information, "Just FYI");
                 }

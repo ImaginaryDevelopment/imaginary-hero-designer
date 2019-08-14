@@ -348,19 +348,19 @@ namespace midsControls
                 Rectangle rectangle2 = new Rectangle(phPadding, pvPadding, Width - phPadding * 2, rect.Height - pvPadding * 2);
                 LinearGradientBrush brush = new LinearGradientBrush(rect, pFadeBackStart, pFadeBackEnd, 0f);
                 bxBuffer.Graphics.FillRectangle(brush, rect);
-                if (nBase != 0f)
+                if (Math.Abs(nBase) > float.Epsilon)
                 {
                     unchecked
                     {
-                        if (nMaxEnhanced == 0f)
+                        if (Math.Abs(nMaxEnhanced) < float.Epsilon)
                         {
                             nMaxEnhanced = nBase * 2f;
                         }
-                        if (nHighestEnhanced == 0f)
+                        if (Math.Abs(nHighestEnhanced) < float.Epsilon)
                         {
                             nHighestEnhanced = nBase * 2f;
                         }
-                        if (nHighestBase == 0f)
+                        if (Math.Abs(nHighestBase) < float.Epsilon)
                         {
                             nHighestBase = nBase * 2f;
                         }
@@ -459,23 +459,23 @@ namespace midsControls
         }
 
         // Token: 0x06000077 RID: 119 RVA: 0x00007244 File Offset: 0x00005444
-        public void DrawText(Rectangle Bounds)
+        public void DrawText(Rectangle bounds)
         {
             RectangleF layoutRectangle = new RectangleF(0f, 0f, 0f, 0f);
             StringFormat stringFormat = new StringFormat();
             float height = Font.GetHeight(myGFX);
             bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-            layoutRectangle.X = checked(Bounds.X + phPadding);
+            layoutRectangle.X = checked(bounds.X + phPadding);
             if (pStyle == (Enums.eDDStyle)3)
             {
-                layoutRectangle.Y = Bounds.Y + (Bounds.Height - height) / 2f + 2f;
+                layoutRectangle.Y = bounds.Y + (bounds.Height - height) / 2f + 2f;
             }
             else
             {
-                layoutRectangle.Y = Bounds.Y + (Bounds.Height - height) / 2f - 1f;
+                layoutRectangle.Y = bounds.Y + (bounds.Height - height) / 2f - 1f;
             }
-            layoutRectangle.Width = checked(Bounds.Width - phPadding * 2);
-            layoutRectangle.Height = Bounds.Height;
+            layoutRectangle.Width = checked(bounds.Width - phPadding * 2);
+            layoutRectangle.Height = bounds.Height;
             Brush brush = new SolidBrush(pTextColor);
             switch (pAlign)
             {
@@ -489,8 +489,8 @@ namespace midsControls
                     stringFormat.Alignment = StringAlignment.Far;
                     break;
             }
-            Enums.eDDText eDDText = pText;
-            if (eDDText == 0)
+            Enums.eDDText eDdText = pText;
+            if (eDdText == 0)
             {
             }
             SizeF sizeF = bxBuffer.Graphics.MeasureString(pString, Font);

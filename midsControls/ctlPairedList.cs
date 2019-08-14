@@ -282,7 +282,7 @@ namespace midsControls
                     {
                         myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                     }
-                    if (MyItems.Length < 1)
+                    if (MyItems != null && MyItems.Length < 1)
                     {
                         myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                     }

@@ -567,7 +567,7 @@ namespace midsControls
         }
 
         // Token: 0x060000BA RID: 186 RVA: 0x00008310 File Offset: 0x00006510
-        public void Draw_Highlight(Rectangle Bounds)
+        public void Draw_Highlight(Rectangle bounds)
         {
             checked
             {
@@ -575,10 +575,10 @@ namespace midsControls
                 {
                     Color color = Color.FromArgb(128, pHighlightColor.R, pHighlightColor.G, pHighlightColor.B);
                     SolidBrush brush = new SolidBrush(color);
-                    int width = Bounds.Width;
+                    int width = bounds.Width;
                     int height = pItemHeight + yPadding * 2;
                     int num = pHighlight * (pItemHeight + yPadding);
-                    Rectangle rect = new Rectangle(Bounds.Left, Bounds.Top + num, width, height);
+                    Rectangle rect = new Rectangle(bounds.Left, bounds.Top + num, width, height);
                     bxBuffer.Graphics.FillRectangle(brush, rect);
                 }
             }
@@ -674,7 +674,7 @@ namespace midsControls
                 {
                     bxBuffer.Graphics.DrawRectangle(pen, rect);
                 }
-                if (pMarkerValue > 0f & pMarkerValue != Items[Index].valueBase)
+                if (pMarkerValue > 0f & Math.Abs(pMarkerValue - Items[Index].valueBase) > float.Epsilon)
                 {
                     Pen pen2 = new Pen(pMarkerColor2, 3f);
                     int num2 = (int)Math.Round(rect.Left + Bounds.Width * (pMarkerValue / pMaxValue));
@@ -702,7 +702,7 @@ namespace midsControls
         }
 
         // Token: 0x060000BD RID: 189 RVA: 0x00008A7C File Offset: 0x00006C7C
-        public void DrawEnh(int Index, Rectangle Bounds, int nY)
+        public void DrawEnh(int index, Rectangle bounds, int nY)
         {
             SolidBrush brush = new SolidBrush(pEnhColor);
             Pen pen = new Pen(pLineColor, 1f);
@@ -715,31 +715,31 @@ namespace midsControls
             };
             checked
             {
-                int width = (int)Math.Round(Bounds.Width * (Items[Index].valueEnh / pMaxValue));
+                int width = (int)Math.Round(bounds.Width * (Items[index].valueEnh / pMaxValue));
                 int num = pItemHeight;
                 if (Style == 0)
                 {
                     num = (int)Math.Round(num / 2.0);
                     nY += num;
                 }
-                Rectangle rect = new Rectangle(Bounds.Left, Bounds.Top + nY, width, num);
+                Rectangle rect = new Rectangle(bounds.Left, bounds.Top + nY, width, num);
                 bxBuffer.Graphics.FillRectangle(brush, rect);
                 if (pDrawLines)
                 {
                     bxBuffer.Graphics.DrawRectangle(pen, rect);
                 }
-                if (pMarkerValue > 0f & pMarkerValue != Items[Index].valueEnh)
+                if (pMarkerValue > 0f & Math.Abs(pMarkerValue - Items[index].valueEnh) > float.Epsilon)
                 {
                     Pen pen2 = new Pen(pMarkerColor2, 3f);
-                    int num2 = (int)Math.Round(rect.Left + Bounds.Width * (pMarkerValue / pMaxValue));
+                    int num2 = (int)Math.Round(rect.Left + bounds.Width * (pMarkerValue / pMaxValue));
                     bxBuffer.Graphics.DrawLine(pen2, num2, rect.Top + 1, num2, rect.Bottom);
                     pen2 = new Pen(pMarkerColor, 1f);
                     bxBuffer.Graphics.DrawLine(pen2, num2, rect.Top + 1, num2, rect.Bottom);
                 }
-                if (DualName & Operators.CompareString(Items[Index].Name2, "", false) != 0 & Operators.CompareString(Items[Index].Name, Items[Index].Name2, false) != 0)
+                if (DualName & Operators.CompareString(Items[index].Name2, "", false) != 0 & Operators.CompareString(Items[index].Name, Items[index].Name2, false) != 0)
                 {
-                    RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - Bounds.Width - xPadding, rect.Height);
-                    bxBuffer.Graphics.DrawString(Items[Index].Name2 + ":", Font, brush2, layoutRectangle, stringFormat);
+                    RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - bounds.Width - xPadding, rect.Height);
+                    bxBuffer.Graphics.DrawString(Items[index].Name2 + ":", Font, brush2, layoutRectangle, stringFormat);
                 }
             }
         }
@@ -963,7 +963,7 @@ namespace midsControls
                 int num2 = Scales.Length - 1;
                 for (int i = num; i <= num2; i++)
                 {
-                    if (Scales[i] == iVal)
+                    if (Math.Abs(Scales[i] - iVal) < float.Epsilon)
                     {
                         return i;
                     }

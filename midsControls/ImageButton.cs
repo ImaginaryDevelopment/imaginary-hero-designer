@@ -197,11 +197,11 @@ namespace midsControls
         }
 
         // Token: 0x060001BB RID: 443 RVA: 0x0001097A File Offset: 0x0000EB7A
-        public void SetImages(ImageAttributes IA, Bitmap ImageOff, Bitmap ImageOn)
+        public void SetImages(ImageAttributes ia, Bitmap imageOff, Bitmap imageOn)
         {
-            this.IA = IA;
-            this.ImageOff = ImageOff;
-            this.ImageOn = ImageOn;
+            this.IA = ia;
+            this.ImageOff = imageOff;
+            this.ImageOn = imageOn;
             Redraw();
         }
 
@@ -314,51 +314,51 @@ namespace midsControls
         }
 
         // Token: 0x060001BF RID: 447 RVA: 0x00010E10 File Offset: 0x0000F010
-        public void DrawOutlineText(string iStr, RectangleF Bounds, Color Text, Color Outline, Font bFont, float OutlineSpace, ref Graphics Target, bool SmallMode = false, bool LeftAlign = false)
+        public void DrawOutlineText(string iStr, RectangleF bounds, Color text, Color outline, Font bFont, float outlineSpace, ref Graphics target, bool smallMode = false, bool leftAlign = false)
         {
             StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
                 LineAlignment = StringAlignment.Near,
-                Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center
+                Alignment = leftAlign ? StringAlignment.Near : StringAlignment.Center
             };
-            SolidBrush brush = new SolidBrush(Outline);
-            RectangleF layoutRectangle = Bounds;
-            RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(Target));
-            layoutRectangle2.X -= OutlineSpace;
-            if (!SmallMode)
+            SolidBrush brush = new SolidBrush(outline);
+            RectangleF layoutRectangle = bounds;
+            RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(target));
+            layoutRectangle2.X -= outlineSpace;
+            if (!smallMode)
             {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+                target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
             }
-            layoutRectangle2.Y -= OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.X += OutlineSpace;
-            if (!SmallMode)
+            layoutRectangle2.Y -= outlineSpace;
+            target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X += outlineSpace;
+            if (!smallMode)
             {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+                target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
             }
-            layoutRectangle2.X += OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.Y += OutlineSpace;
-            if (!SmallMode)
+            layoutRectangle2.X += outlineSpace;
+            target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y += outlineSpace;
+            if (!smallMode)
             {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+                target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
             }
-            layoutRectangle2.Y += OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.X -= OutlineSpace;
-            if (!SmallMode)
+            layoutRectangle2.Y += outlineSpace;
+            target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X -= outlineSpace;
+            if (!smallMode)
             {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+                target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
             }
-            layoutRectangle2.X -= OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.Y -= OutlineSpace;
-            if (!SmallMode)
+            layoutRectangle2.X -= outlineSpace;
+            target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y -= outlineSpace;
+            if (!smallMode)
             {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+                target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
             }
-            brush = new SolidBrush(Text);
-            Target.DrawString(iStr, bFont, brush, layoutRectangle, stringFormat);
+            brush = new SolidBrush(text);
+            target.DrawString(iStr, bFont, brush, layoutRectangle, stringFormat);
         }
 
         // Token: 0x060001C0 RID: 448 RVA: 0x00010FEC File Offset: 0x0000F1EC

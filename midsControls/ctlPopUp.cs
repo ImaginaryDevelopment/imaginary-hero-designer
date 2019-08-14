@@ -86,7 +86,7 @@ namespace midsControls
 			get => pScroll;
             set
 			{
-				if (pScroll != value)
+				if (Math.Abs(pScroll - value) > float.Epsilon)
 				{
 					pScroll = value;
 					Draw();

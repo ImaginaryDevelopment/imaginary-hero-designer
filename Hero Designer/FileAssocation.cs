@@ -136,28 +136,34 @@ namespace Hero_Designer
         static void SetAssociation(string extension, string keyName, string openWith, string fileDescription)
         {
             var baseKey = Registry.ClassesRoot.CreateSubKey(extension);
-            baseKey.SetValue("", keyName);
+            baseKey?.SetValue("", keyName);
 
             var openMethod = Registry.ClassesRoot.CreateSubKey(keyName);
-            openMethod.SetValue("", fileDescription);
-            openMethod.CreateSubKey("DefaultIcon").SetValue("", "\"" + openWith + "\",0");
-            var shell = openMethod.CreateSubKey("Shell");
-            shell.CreateSubKey("edit").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
-            shell.CreateSubKey("open").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
-            baseKey.Close();
-            openMethod.Close();
-            shell.Close();
+            openMethod?.SetValue("", fileDescription);
+            openMethod?.CreateSubKey("DefaultIcon")?.SetValue("", "\"" + openWith + "\",0");
+            var shell = openMethod?.CreateSubKey("Shell");
+            shell?.CreateSubKey("edit")?.CreateSubKey("command")?.SetValue("", "\"" + openWith + "\"" + " \"%1\"");
+            shell?.CreateSubKey("open")?.CreateSubKey("command")?.SetValue("", "\"" + openWith + "\"" + " \"%1\"");
+            baseKey?.Close();
+            openMethod?.Close();
+            shell?.Close();
 
             var currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
-            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
-            {
-                uc.SetValue("Progid", keyName, RegistryValueKind.String);
-            }
+            if (currentUser != null)
+                using (var uc =
+                    currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree,
+                        RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+                {
+                    uc.SetValue("Progid", keyName, RegistryValueKind.String);
+                }
 
             // Delete the key instead of trying to change it
             currentUser = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + extension, true);
-            currentUser.DeleteSubKey("UserChoice", false);
-            currentUser.Close();
+            if (currentUser != null)
+            {
+                currentUser.DeleteSubKey("UserChoice", false);
+                currentUser.Close();
+            }
 
             // Tell explorer the file association has been changed
             SHChangeNotify(0x08000000, 0x0000, IntPtr.Zero, IntPtr.Zero);
