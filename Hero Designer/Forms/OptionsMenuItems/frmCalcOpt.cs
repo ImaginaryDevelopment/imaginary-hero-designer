@@ -13,14 +13,13 @@ namespace Hero_Designer
 {
     public partial class frmCalcOpt : Form
     {
-
-        short[] defActs;
+        readonly short[] defActs;
 
         protected bool fcNoUpdate;
-        frmMain myParent;
-        string[][] scenActs;
+        readonly frmMain myParent;
+        readonly string[][] scenActs;
 
-        string[] scenarioExample;
+        readonly string[] scenarioExample;
 
         public frmCalcOpt(ref frmMain iParent)
         {
@@ -134,7 +133,7 @@ namespace Hero_Designer
             }
             else
             {
-                if (!(Conversions.ToString(e.KeyChar) == "]"))
+                if (Conversions.ToString(e.KeyChar) != "]")
                     return;
                 ForumColorDown();
             }
@@ -265,7 +264,7 @@ namespace Hero_Designer
                 forumCodeUp();
             else
             {
-                if (!(Conversions.ToString(e.KeyChar) == "]"))
+                if (Conversions.ToString(e.KeyChar) != "]")
                     return;
                 ForumCodeDown();
             }

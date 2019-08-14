@@ -34,7 +34,7 @@ namespace Hero_Designer
             }
             else
             {
-                if (!(Label1.Text != text))
+                if (Label1.Text == text)
                     return;
                 Label1.Text = text;
                 Label1.Refresh();

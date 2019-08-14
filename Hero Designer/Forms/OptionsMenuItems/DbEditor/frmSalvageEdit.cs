@@ -119,7 +119,7 @@ namespace Hero_Designer
                         salvage.LevelMin = 40;
                         salvage.LevelMax = 52;
                     }
-                    salvage.Origin = strArray2[9].IndexOf("Magic") <= -1 ? Salvage.SalvageOrigin.Tech : Salvage.SalvageOrigin.Magic;
+                    salvage.Origin = strArray2[9].IndexOf("Magic", StringComparison.Ordinal) <= -1 ? Salvage.SalvageOrigin.Tech : Salvage.SalvageOrigin.Magic;
                     salvage.Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(strArray2[6]) - 1.0);
                 }
             }

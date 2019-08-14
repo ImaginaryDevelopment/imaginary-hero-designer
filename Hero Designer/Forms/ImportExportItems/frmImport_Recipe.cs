@@ -133,7 +133,7 @@ namespace Hero_Designer
                                 recipe1 = new Recipe
                                 {
                                     InternalName = iName,
-                                    ExternalName = !(array[1] != "") ? iName : array[1],
+                                    ExternalName = array[1] == "" ? iName : array[1],
                                     Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(array[9]) - 1.0)
                                 };
                                 DatabaseAPI.Database.Recipes = DatabaseAPI.Database.Recipes.Append(recipe1).ToArray();

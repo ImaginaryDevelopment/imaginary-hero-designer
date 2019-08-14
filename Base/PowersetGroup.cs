@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class PowersetGroup : IComparable
 {
-    public string Name { get; private set; }
+    public string Name { get; }
 
-    public IDictionary<string, IPowerset> Powersets { get; private set; }
+    public IDictionary<string, IPowerset> Powersets { get; }
 
     public PowersetGroup(string name)
     {

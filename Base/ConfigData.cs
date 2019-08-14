@@ -19,10 +19,10 @@ public class ConfigData
     Size _lastSize = new Size(1072, 760);
 
     // these properties require setters for deserialization
-    public SDamageMath DamageMath { get; private set; } = new SDamageMath();
-    public IncludeExclude Inc { get; private set; } = new IncludeExclude();
-    public Si9 I9 { get; private set; } = new Si9();
-    public FontSettings RtFont { get; private set; } = new FontSettings();
+    public SDamageMath DamageMath { get; } = new SDamageMath();
+    public IncludeExclude Inc { get; } = new IncludeExclude();
+    public Si9 I9 { get; } = new Si9();
+    public FontSettings RtFont { get; } = new FontSettings();
     public Size LastSize { get => _lastSize; set => _lastSize = value; }
 
     public float BaseAcc { get; set; } = 0.75f;

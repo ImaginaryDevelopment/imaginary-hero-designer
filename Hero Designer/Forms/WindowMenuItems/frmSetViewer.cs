@@ -207,12 +207,12 @@ namespace Hero_Designer
                 string str2 = cumulativeSetBonuses[index].BuildEffectString(true);
                 if (!str2.StartsWith("+"))
                     str2 = "+" + str2;
-                if (str2.IndexOf("Endurance") > -1)
+                if (str2.IndexOf("Endurance", StringComparison.Ordinal) > -1)
                     str2 = str2.Replace("Endurance", "Max Endurance");
                 iStr += str2;
             }
             string str9 = RTF.StartRTF() + RTF.ToRTF(iStr) + RTF.EndRTF();
-            if (!(rtApplied.Rtf != str9))
+            if (rtApplied.Rtf == str9)
                 return;
             rtApplied.Rtf = str9;
         }

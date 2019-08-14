@@ -49,7 +49,7 @@ namespace Base.Data_Classes
 
         public int RequestedLevel { get; set; }
 
-        Build[] Builds { get; set; }
+        Build[] Builds { get; }
 
 
         public Build CurrentBuild => Builds.Length > 0 ? Builds[0] : null;
@@ -129,11 +129,11 @@ namespace Base.Data_Classes
 
         public Dictionary<string, float> ModifyEffects { get; protected set; }
 
-        public TotalStatistics Totals { get; private set; }
+        public TotalStatistics Totals { get; }
 
-        public TotalStatistics TotalsCapped { get; private set; }
+        public TotalStatistics TotalsCapped { get; }
 
-        public Statistics DisplayStats { get; private set; }
+        public Statistics DisplayStats { get; }
 
         public int SlotsRemaining
         {
@@ -278,14 +278,10 @@ namespace Base.Data_Classes
             Origin = iOrigin > Archetype.Origin.Length - 1 ? Archetype.Origin.Length - 1 : iOrigin;
             if (flag1)
             {
-                bool flag2 = false;
-                if (Powersets[0] != null && Powersets[0].nArchetype == Archetype.Idx)
-                    flag2 = true;
+                bool flag2 = Powersets[0] != null && Powersets[0].nArchetype == Archetype.Idx;
                 if (!flag2)
                     Powersets[0] = DatabaseAPI.GetPowersetIndexes(Archetype, Enums.ePowerSetType.Primary)[0];
-                bool flag3 = false;
-                if (Powersets[1] != null && Powersets[1].nArchetype == Archetype.Idx)
-                    flag3 = true;
+                bool flag3 = Powersets[1] != null && Powersets[1].nArchetype == Archetype.Idx;
                 if (!flag3)
                     Powersets[1] = DatabaseAPI.GetPowersetIndexes(Archetype, Enums.ePowerSetType.Secondary)[0];
             }

@@ -25,9 +25,9 @@ namespace Hero_Designer
             {
                 string iStr = EnhNameFix(strArray2[index]);
                 bool flag1 = false;
-                bool flag2 = iStr.IndexOf("-I") > -1;
-                iStr.IndexOf("-S");
-                if (flag2 | iStr.IndexOf(":") > -1)
+                bool flag2 = iStr.IndexOf("-I", StringComparison.Ordinal) > -1;
+                iStr.IndexOf("-S", StringComparison.Ordinal);
+                if (flag2 | iStr.IndexOf(":", StringComparison.Ordinal) > -1)
                     flag1 = true;
                 if (iStr.Length > 0)
                 {
@@ -75,7 +75,7 @@ namespace Hero_Designer
             iStr = iStr.Replace("TH_DeBuf", "ToHitDeb");
             iStr = iStr.Replace("DmgRes", "ResDam");
             iStr = iStr.Replace("ConfDur", "Conf");
-            if (iStr.IndexOf("DefBuff") < 0)
+            if (iStr.IndexOf("DefBuff", StringComparison.Ordinal) < 0)
                 iStr = iStr.Replace("DefBuf", "DefBuff");
             iStr = iStr.Replace("DefDeBuf", "DefDeb");
             iStr = iStr.Replace("DisDur", "Dsrnt");
@@ -107,7 +107,7 @@ namespace Hero_Designer
             iStr = iStr.Replace("rng", "Range");
             iStr = iStr.Replace("kbkdis", "KDBist");
             iStr = iStr.Replace("defdbf", "DefDeb");
-            if (iStr.IndexOf("DefBuff") < 0)
+            if (iStr.IndexOf("DefBuff", StringComparison.Ordinal) < 0)
                 iStr = iStr.Replace("defbuf", "DefBuff");
             return iStr;
         }
@@ -181,7 +181,7 @@ namespace Hero_Designer
             int num = haystack.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (haystack[index].IndexOf(needle) > -1)
+                if (haystack[index].IndexOf(needle, StringComparison.Ordinal) > -1)
                     return index;
             }
             return -1;
@@ -352,7 +352,7 @@ namespace Hero_Designer
                                 slots[index5].FlippedEnhancement = new I9Slot();
                                 slots[index5].Enhancement.Enh = MatchEnhancement(sPowerLineArray[index1].Slots[index2].Enh);
                                 slots[index5].Enhancement.Grade = Enums.eEnhGrade.SingleO;
-                                slots[index5].Enhancement.IOLevel = sPowerLineArray[index1].Slots[index2].Enh.IndexOf("-I:") <= -1 ? (sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") <= -1 ? MidsContext.Config.I9.DefaultIOLevel : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0)) : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0);
+                                slots[index5].Enhancement.IOLevel = sPowerLineArray[index1].Slots[index2].Enh.IndexOf("-I:", StringComparison.Ordinal) <= -1 ? sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) <= -1 ? MidsContext.Config.I9.DefaultIOLevel : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) + 1)) - 1.0) : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) + 1)) - 1.0);
                                 slots[index5].Level = index2 != 0 ? sPowerLineArray[index1].Slots[index2].Level - 1 : MidsContext.Character.CurrentBuild.Powers[sPowerLineArray[index1].HistoryID].Level;
                                 if (slots[index5].Level < 0)
                                     slots[index5].Level = 0;
@@ -374,18 +374,18 @@ namespace Hero_Designer
 
         static int MatchEnhancement(string iEnh)
         {
-            if (iEnh.IndexOf("-I") > -1)
+            if (iEnh.IndexOf("-I", StringComparison.Ordinal) > -1)
             {
                 int startIndex = 0;
-                int length = iEnh.IndexOf("-");
+                int length = iEnh.IndexOf("-", StringComparison.Ordinal);
                 return DatabaseAPI.GetEnhancementByName(iEnh.Substring(startIndex, length), Enums.eType.InventO);
             }
 
-            if (iEnh.IndexOf("-") > -1 & iEnh.IndexOf("-S") < 0)
+            if (iEnh.IndexOf("-", StringComparison.Ordinal) > -1 & iEnh.IndexOf("-S", StringComparison.Ordinal) < 0)
             {
-                string iSet = iEnh.Substring(0, iEnh.IndexOf("-"));
-                int num = iEnh.IndexOf(":");
-                return DatabaseAPI.GetEnhancementByName(num >= 0 ? iEnh.Substring(iEnh.IndexOf("-") + 1, num - (iEnh.IndexOf("-") + 1)) : iEnh.Substring(iEnh.IndexOf("-") + 1), iSet);
+                string iSet = iEnh.Substring(0, iEnh.IndexOf("-", StringComparison.Ordinal));
+                int num = iEnh.IndexOf(":", StringComparison.Ordinal);
+                return DatabaseAPI.GetEnhancementByName(num >= 0 ? iEnh.Substring(iEnh.IndexOf("-", StringComparison.Ordinal) + 1, num - (iEnh.IndexOf("-", StringComparison.Ordinal) + 1)) : iEnh.Substring(iEnh.IndexOf("-", StringComparison.Ordinal) + 1), iSet);
             }
             return DatabaseAPI.GetEnhancementByName(iEnh);
         }

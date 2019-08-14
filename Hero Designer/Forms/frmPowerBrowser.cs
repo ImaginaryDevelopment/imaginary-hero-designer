@@ -887,7 +887,7 @@ namespace Hero_Designer
             {
                 if (lvSet.SelectedItems.Count > 0)
                 {
-                    int index = !(lvSet.SelectedItems[0].SubItems[4].Text != "") ? -1 : (int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text));
+                    int index = lvSet.SelectedItems[0].SubItems[4].Text == "" ? -1 : (int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text));
                     if (index > -1)
                     {
                         iPowers1 = new int[DatabaseAPI.Database.Powersets[index].Power.Length - 1 + 1];

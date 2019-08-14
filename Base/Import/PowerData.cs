@@ -181,7 +181,7 @@ namespace Import
       {
         for (int index = 0; index <= DatabaseAPI.Database.Power[Index].GroupMembership.Length - 1; ++index)
         {
-          if (!(DatabaseAPI.Database.Power[Index].GroupMembership[index] == Data.GroupMembership[index]))
+          if (DatabaseAPI.Database.Power[Index].GroupMembership[index] != Data.GroupMembership[index])
           {
             message += string.Format("GroupMembership({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].GroupMembership[index],  Data.GroupMembership[index],  index);
             return true;
@@ -216,7 +216,7 @@ namespace Import
         {
           for (int index = 0; index <= DatabaseAPI.Database.Power[Index].BoostsAllowed.Length - 1; ++index)
           {
-            if (!(DatabaseAPI.Database.Power[Index].BoostsAllowed[index] == Data.BoostsAllowed[index]))
+            if (DatabaseAPI.Database.Power[Index].BoostsAllowed[index] != Data.BoostsAllowed[index])
             {
               message += string.Format("BoostsAllowed({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].BoostsAllowed[index],  Data.BoostsAllowed[index],  index);
               return true;

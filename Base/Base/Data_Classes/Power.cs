@@ -1526,7 +1526,7 @@ namespace Base.Data_Classes
                         }
                         else if (strArray2[index1] == "source>")
                             strArray1[index3 - 1] = "true";
-                        else if (!(strArray2[index1] == "eq"))
+                        else if (strArray2[index1] != "eq")
                         {
                             if (strArray2[index1] == "ispvpmap?")
                             {

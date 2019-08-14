@@ -13,7 +13,7 @@ namespace Hero_Designer
 
         VScrollBar VScrollBar1;
 
-        frmMain myParent;
+        readonly frmMain myParent;
         internal ctlPopUp PInfo
         {
             get => pInfo;

@@ -312,9 +312,7 @@ namespace Hero_Designer
                                 int num2 = DatabaseAPI.Database.Power[effectData.Index].Effects.Length - 1;
                                 for (int index3 = 0; index3 <= num2; ++index3)
                                 {
-                                    bool flag = false;
-                                    if (index3 <= effectData.Nid && _importBuffer[index1 - effectData.Nid + index3].Nid == index3)
-                                        flag = true;
+                                    bool flag = index3 <= effectData.Nid && _importBuffer[index1 - effectData.Nid + index3].Nid == index3;
                                     if (!flag)
                                     {
                                         int nid = effectData.Nid;

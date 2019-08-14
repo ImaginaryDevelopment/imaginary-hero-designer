@@ -12,7 +12,7 @@ public partial class ZStatus : Form
     {
         set
         {
-            if (!(value != lblStatus1.Text))
+            if (value == lblStatus1.Text)
                 return;
             lblStatus1.Text = value;
             lblStatus1.Refresh();
@@ -23,7 +23,7 @@ public partial class ZStatus : Form
     {
         set
         {
-            if (!(value != lblStatus2.Text))
+            if (value == lblStatus2.Text)
                 return;
             lblStatus2.Text = value;
             lblStatus2.Refresh();

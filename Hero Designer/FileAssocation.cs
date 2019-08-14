@@ -135,25 +135,20 @@ namespace Hero_Designer
         // example : SetAssociation(".ucs", "UCS_Editor_File", Application.ExecutablePath, "UCS File"); 
         static void SetAssociation(string extension, string keyName, string openWith, string fileDescription)
         {
-            RegistryKey baseKey;
-            RegistryKey openMethod;
-            RegistryKey shell;
-            RegistryKey currentUser;
-
-            baseKey = Registry.ClassesRoot.CreateSubKey(extension);
+            var baseKey = Registry.ClassesRoot.CreateSubKey(extension);
             baseKey.SetValue("", keyName);
 
-            openMethod = Registry.ClassesRoot.CreateSubKey(keyName);
+            var openMethod = Registry.ClassesRoot.CreateSubKey(keyName);
             openMethod.SetValue("", fileDescription);
             openMethod.CreateSubKey("DefaultIcon").SetValue("", "\"" + openWith + "\",0");
-            shell = openMethod.CreateSubKey("Shell");
+            var shell = openMethod.CreateSubKey("Shell");
             shell.CreateSubKey("edit").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
             shell.CreateSubKey("open").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
             baseKey.Close();
             openMethod.Close();
             shell.Close();
 
-            currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
+            var currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
             using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
             {
                 uc.SetValue("Progid", keyName, RegistryValueKind.String);

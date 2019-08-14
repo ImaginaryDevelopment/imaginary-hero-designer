@@ -252,10 +252,10 @@ namespace Hero_Designer
         {
             cbLinkGroup.BeginUpdate();
             cbLinkGroup.Items.Clear();
-            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
                 cbLinkGroup.Items.Add(key);
             cbLinkGroup.EndUpdate();
-            if (!(myPS.UIDLinkSecondary != ""))
+            if (myPS.UIDLinkSecondary == "")
                 return;
             int index = DatabaseAPI.NidFromUidPowerset(myPS.UIDLinkSecondary);
             if (index > -1)
@@ -286,10 +286,10 @@ namespace Hero_Designer
         {
             cbTrunkGroup.BeginUpdate();
             cbTrunkGroup.Items.Clear();
-            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
                 cbTrunkGroup.Items.Add(key);
             cbTrunkGroup.EndUpdate();
-            if (!(myPS.UIDTrunkSet != ""))
+            if (myPS.UIDTrunkSet == "")
                 return;
             int index = DatabaseAPI.NidFromUidPowerset(myPS.UIDTrunkSet);
             if (index > -1)
@@ -323,7 +323,7 @@ namespace Hero_Designer
             txtName.Text = myPS.DisplayName;
             cbNameGroup.BeginUpdate();
             cbNameGroup.Items.Clear();
-            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
                 cbNameGroup.Items.Add(key);
             cbNameGroup.EndUpdate();
             cbNameGroup.Text = myPS.GroupName;
@@ -370,7 +370,7 @@ namespace Hero_Designer
         {
             cbMutexGroup.BeginUpdate();
             cbMutexGroup.Items.Clear();
-            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
                 cbMutexGroup.Items.Add(key);
             cbMutexGroup.EndUpdate();
             if (myPS.nIDMutexSets.Length <= 0)

@@ -22,10 +22,10 @@ namespace Hero_Designer
         ImageButton ibMiniList;
         ImageButton ibTopmost;
         ctlPopUp RecipeInfo;
-        ExtendedBitmap bxRecipe;
+        readonly ExtendedBitmap bxRecipe;
 
         bool Loading;
-        frmMain myParent;
+        readonly frmMain myParent;
         int nonRecipeCount;
 
         public frmRecipeViewer(frmMain iParent)
@@ -746,7 +746,7 @@ namespace Hero_Designer
                             num1 = colorRarityCompareB(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
                             break;
                     }
-                    if (num1 == 0 && string.Compare(Conversions.ToString(Interaction.IIf(Mini, inStrs[index1].TextColumn, inStrs[index1].Text)), Conversions.ToString(Interaction.IIf(Mini, inStrs[numArray[index2]].TextColumn, inStrs[numArray[index2]].Text))) < 0 || num1 > 0)
+                    if (num1 == 0 && string.CompareOrdinal(Conversions.ToString(Interaction.IIf(Mini, inStrs[index1].TextColumn, inStrs[index1].Text)), Conversions.ToString(Interaction.IIf(Mini, inStrs[numArray[index2]].TextColumn, inStrs[numArray[index2]].Text))) < 0 || num1 > 0)
                     {
                         int num4 = index2;
                         for (int index3 = index1 - 1; index3 >= num4; index3 += -1)

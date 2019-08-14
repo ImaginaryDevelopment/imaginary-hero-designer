@@ -514,12 +514,12 @@ namespace midsControls
                                     {
                                         text = Items[i].Name2;
                                     }
-                                    if (Operators.CompareString(text, "", false) != 0 && text.IndexOf(":") < 0)
+                                    if (Operators.CompareString(text, "", false) != 0 && text.IndexOf(":", StringComparison.Ordinal) < 0)
                                     {
                                         text += ":";
                                     }
                                     int num4 = (int)Math.Round(checked(rectangle.Top + num3) + (pItemHeight - Font.GetHeight(bxBuffer.Graphics)) / 2f);
-                                    int num5 = text.IndexOf("|");
+                                    int num5 = text.IndexOf("|", StringComparison.Ordinal);
                                     RectangleF layoutRectangle = new RectangleF(0f, num4, Width - rectangle.Width - xPadding, ItemHeight + yPadding * 2);
                                     if (num5 < 0)
                                     {

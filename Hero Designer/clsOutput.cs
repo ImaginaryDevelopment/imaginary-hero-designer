@@ -9,17 +9,17 @@ namespace Hero_Designer
 {
     public class clsOutput
     {
-        string[] BBWhite = { " ", "\t" };
+        readonly string[] BBWhite = { " ", "\t" };
 
         public bool HTML;
         public int idFormat = MidsContext.Config.ExportTarget;
-        int idScheme = MidsContext.Config.ExportScheme;
+        readonly int idScheme = MidsContext.Config.ExportScheme;
 
-        bool LongExport = true;
+        readonly bool LongExport = true;
 
-        bool NoHTMLBr;
+        readonly bool NoHTMLBr;
 
-        bool UNB;
+        readonly bool UNB;
 
         public bool Plain;
 
@@ -44,7 +44,7 @@ namespace Hero_Designer
                 UNB = true;
             if (MidsContext.Config.Export.FormatCode[idFormat].Name.Contains(nameof(UNB)))
                 UNB = true;
-            if (MidsContext.Config.Export.FormatCode[idFormat].Notes.IndexOf(nameof(HTML)) > -1)
+            if (MidsContext.Config.Export.FormatCode[idFormat].Notes.IndexOf(nameof(HTML), StringComparison.Ordinal) > -1)
                 HTML = true;
             if (MidsContext.Config.Export.FormatCode[idFormat].Notes.IndexOf("no <br /> tags", StringComparison.OrdinalIgnoreCase) <= -1)
                 return;
@@ -319,7 +319,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num; ++index)
             {
                 string str = cumulativeSetBonuses[index].BuildEffectString(true);
-                if (str.IndexOf("Endurance") > -1)
+                if (str.IndexOf("Endurance", StringComparison.Ordinal) > -1)
                     str = str.Replace("Endurance", "Max Endurance");
                 iText = iText + ListItemOn() + str + ListItemOff();
             }

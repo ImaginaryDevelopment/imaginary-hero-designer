@@ -17,7 +17,7 @@ public class PowerEntry : ICloneable
     public SlotEntry[] Slots { get; set; }
     public PowerSubEntry[] SubPowers { get; set; }
 
-    public bool Chosen { get; private set; }
+    public bool Chosen { get; }
 
     public Enums.ePowerState State => Power == null ? (Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
 

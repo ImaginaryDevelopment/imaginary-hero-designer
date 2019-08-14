@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using Base.Display;
 using Base.Master_Classes;
@@ -47,7 +48,7 @@ namespace Hero_Designer
 
         protected ExtendedBitmap bxRecipe;
 
-        frmMain myParent;
+        readonly frmMain myParent;
         PowerList[] GlobalPowerList;
 
         float GlobalDamageBuff;
@@ -92,11 +93,11 @@ namespace Hero_Designer
             }
             Label lblDpsNum = lblDPSNum;
             float num = damage / animation;
-            string str2 = num.ToString();
+            string str2 = num.ToString(CultureInfo.InvariantCulture);
             lblDpsNum.Text = str2;
             Label lblEpsNum = lblEPSNum;
             num = endurance / animation;
-            string str3 = num.ToString();
+            string str3 = num.ToString(CultureInfo.InvariantCulture);
             lblEpsNum.Text = str3;
             tbDPSOutput.Text = str1;
         }
@@ -114,9 +115,7 @@ namespace Hero_Designer
             {
                 if (MidsContext.Character.CurrentBuild.Powers[powerLocation].NIDPower > -1)
                 {
-                    bool flag = false;
-                    if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.DisplayName == "Rest")
-                        flag = true;
+                    bool flag = MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.DisplayName == "Rest";
                     for (int index = 0; index < MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects.Length && !flag; ++index)
                     {
                         if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Damage || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Resistance && MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].MagPercent < 0.0 || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.DamageBuff && MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Mag > 0.0 && !MidsContext.Character.CurrentBuild.Powers[powerLocation].StatInclude || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.EntCreate)
@@ -173,7 +172,7 @@ namespace Hero_Designer
             ibClear.Checked = false;
             lblHeader.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
-            if (!(ibAutoMode.TextOff == "Automagical"))
+            if (ibAutoMode.TextOff != "Automagical")
                 return;
             CalculateDPS();
         }
@@ -372,13 +371,13 @@ namespace Hero_Designer
             if (damageValue != 0.0)
                 strArray = new[]
                 {
-                    num2.ToString(),
-                    damageValue.ToString(),
-                    rechargeTime.ToString(),
-                    num1.ToString(),
-                    endCost.ToString(),
-                    effectMag1.Sum.ToString(),
-                    effectMag2.Sum.ToString(),
+                    num2.ToString(CultureInfo.InvariantCulture),
+                    damageValue.ToString(CultureInfo.InvariantCulture),
+                    rechargeTime.ToString(CultureInfo.InvariantCulture),
+                    num1.ToString(CultureInfo.InvariantCulture),
+                    endCost.ToString(CultureInfo.InvariantCulture),
+                    effectMag1.Sum.ToString(CultureInfo.InvariantCulture),
+                    effectMag2.Sum.ToString(CultureInfo.InvariantCulture),
                     powerLocation.ToString()
                 };
             else
@@ -386,11 +385,11 @@ namespace Hero_Designer
                 {
                       "-",
                       "-",
-                      rechargeTime.ToString(),
-                      num1.ToString(),
-                      endCost.ToString(),
-                      effectMag1.Sum.ToString(),
-                      effectMag2.Sum.ToString(),
+                      rechargeTime.ToString(CultureInfo.InvariantCulture),
+                      num1.ToString(CultureInfo.InvariantCulture),
+                      endCost.ToString(CultureInfo.InvariantCulture),
+                      effectMag1.Sum.ToString(CultureInfo.InvariantCulture),
+                      effectMag2.Sum.ToString(CultureInfo.InvariantCulture),
                       powerLocation.ToString()
                 };
             return strArray;
@@ -580,8 +579,8 @@ namespace Hero_Designer
                     lblHeader.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
                     lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
                 }
-                lblDPSNum.Text = (num1 / num3).ToString();
-                lblEPSNum.Text = (num2 / num3).ToString();
+                lblDPSNum.Text = (num1 / num3).ToString(CultureInfo.InvariantCulture);
+                lblEPSNum.Text = (num2 / num3).ToString(CultureInfo.InvariantCulture);
             }
         }
 

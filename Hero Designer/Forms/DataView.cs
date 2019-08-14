@@ -75,7 +75,7 @@ namespace Hero_Designer
         Point mouse_offset;
 
         public bool MoveDisable;
-        string[] Pages;
+        readonly string[] Pages;
 
         IPower pBase;
 
@@ -627,9 +627,7 @@ namespace Hero_Designer
                 }
             }
             info_DataList.AddItem(FastItem(ShortStr("End Cost", "End"), pBase.ToggleCost, pEnh.ToggleCost, Suffix1, Tip1));
-            bool flag1 = false;
-            if (pBase.HasAbsorbedEffects && pBase.PowerIndex > -1 && DatabaseAPI.Database.Power[pBase.PowerIndex].EntitiesAutoHit == Enums.eEntity.None)
-                flag1 = true;
+            bool flag1 = pBase.HasAbsorbedEffects && pBase.PowerIndex > -1 && DatabaseAPI.Database.Power[pBase.PowerIndex].EntitiesAutoHit == Enums.eEntity.None;
             bool flag2 = false;
             int num1 = pBase.Effects.Length - 1;
             for (int index = 0; index <= num1 & !flag2; ++index)

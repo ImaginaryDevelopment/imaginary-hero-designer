@@ -9,12 +9,11 @@ namespace Hero_Designer
 {
     public partial class FrmInputLevel : Form
     {
+        readonly bool longFormat;
 
-        bool longFormat;
+        readonly bool mode2;
 
-        bool mode2;
-
-        frmMain myparent;
+        readonly frmMain myparent;
 
         public FrmInputLevel(frmMain iParent, bool iLF, bool iMode2)
         {

@@ -65,7 +65,7 @@ namespace Base
             if (x == null) throw new ArgumentNullException(nameof(x));
             if (string.IsNullOrEmpty(delimiter)) throw new ArgumentException("must not be null or empty", nameof(delimiter));
             if (x.Length < delimiter.Length) throw new InvalidOperationException($"{nameof(delimiter)} was longer than input");
-            var ind = x.IndexOf(delimiter);
+            var ind = x.IndexOf(delimiter, StringComparison.Ordinal);
             if (ind < 0) throw new ArgumentOutOfRangeException(nameof(x), $"{nameof(delimiter)} was not found in string");
 
             return x.Substring(ind + delimiter.Length);
@@ -75,7 +75,7 @@ namespace Base
             if (delimiter == null) throw new ArgumentNullException(nameof(delimiter));
             if (string.IsNullOrEmpty(delimiter)) throw new InvalidOperationException(nameof(delimiter) + "must not be empty");
             if (x == null) throw new ArgumentNullException(nameof(x));
-            var i = x.IndexOf(delimiter);
+            var i = x.IndexOf(delimiter, StringComparison.Ordinal);
             if (i < 0) throw new InvalidOperationException($"{nameof(x)} did not contain '{delimiter}'");
             return x.Substring(0, i);
         }

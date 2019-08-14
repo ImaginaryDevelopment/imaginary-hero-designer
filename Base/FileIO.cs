@@ -66,8 +66,8 @@ public static class FileIO
         try
         {
             do
-                ;
-            while (IOGrab(iStream)[0] != iString);
+            {
+            } while (IOGrab(iStream)[0] != iString);
             return true;
         }
         catch (Exception ex)

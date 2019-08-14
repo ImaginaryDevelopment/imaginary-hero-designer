@@ -1448,7 +1448,7 @@ namespace midsControls
 
         public ExtendedBitmap[] bxPower;
 
-        ExtendedBitmap bxNewSlot;
+        readonly ExtendedBitmap bxNewSlot;
 
         Graphics gTarget;
 

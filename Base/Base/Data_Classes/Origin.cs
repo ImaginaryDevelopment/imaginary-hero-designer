@@ -3,9 +3,9 @@ namespace Base.Data_Classes
 {
     public class Origin
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public string[] Grades { get; private set; }
+        public string[] Grades { get; }
 
         internal Origin(string name, string dualO, string singleO)
         {

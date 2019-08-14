@@ -448,7 +448,7 @@ namespace Hero_Designer
                         btnEdit.Enabled = false;
                     gbMod.Enabled = true;
                     cbSched.Enabled = true;
-                    switch (myEnh.Effect[selectedIndex].Multiplier.ToString())
+                    switch (myEnh.Effect[selectedIndex].Multiplier.ToString(CultureInfo.InvariantCulture))
                     {
                         case "1":
                             rbMod1.Checked = true;
@@ -1087,7 +1087,7 @@ namespace Hero_Designer
         public void SetTypeIcons()
         {
             ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(30, 30);
-            ExtendedBitmap extendedBitmap2 = !(myEnh.Image != "") ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + myEnh.Image);
+            ExtendedBitmap extendedBitmap2 = myEnh.Image == "" ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + myEnh.Image);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
             extendedBitmap1.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage(extendedBitmap2.Bitmap, 0, 0);

@@ -49,10 +49,10 @@ namespace Hero_Designer
 
         VScrollBar VScrollBar1;
 
-        ImageButton[] buttonArray;
+        readonly ImageButton[] buttonArray;
 
         bool Locked;
-        frmMain myParent;
+        readonly frmMain myParent;
         public IPower[] myPowers;
         internal CustomPanel Panel2;
 
@@ -165,7 +165,7 @@ namespace Hero_Designer
             int num1 = myPowers.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]) ? (!(myPowers[index].DisplayName == "Nothing") ? ListLabelV2.LLItemState.Enabled : ListLabelV2.LLItemState.Disabled) : ListLabelV2.LLItemState.Selected;
+                ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]) ? myPowers[index].DisplayName != "Nothing" ? ListLabelV2.LLItemState.Enabled : ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Selected;
                 ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState) : new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold);
                 if (index >= myPowers.Length / 2.0)
                     llRight.AddItem(iItem);

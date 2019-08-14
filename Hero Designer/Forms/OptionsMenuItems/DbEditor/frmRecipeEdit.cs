@@ -122,7 +122,7 @@ namespace Hero_Designer
                             new Recipe
                             {
                                 InternalName = iName,
-                                ExternalName = !(strArray2[14] == "") ? "" : strArray2[1],
+                                ExternalName = strArray2[14] != "" ? "" : strArray2[1],
                                 Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(strArray2[15]) - 1.0)
                             };
                         DatabaseAPI.Database.Recipes = DatabaseAPI.Database.Recipes.Append(recipe1).ToArray();
@@ -142,7 +142,7 @@ namespace Hero_Designer
                         index2 = recipe1.Item.Length - 1;
                     }
                     recipe1.Item[index2].Level = (int)Math.Round(Conversion.Val(strArray2[16]) - 1.0);
-                    if (strArray2[0].IndexOf("Memorized") > -1)
+                    if (strArray2[0].IndexOf("Memorized", StringComparison.Ordinal) > -1)
                     {
                         recipe1.Item[index2].BuyCostM = (int)Math.Round(Conversion.Val(strArray2[19]) - 1.0);
                         recipe1.Item[index2].CraftCostM = (int)Math.Round(Conversion.Val(strArray2[17]) - 1.0);

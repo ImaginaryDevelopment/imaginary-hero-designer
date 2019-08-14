@@ -22,7 +22,7 @@ namespace Hero_Designer
         ImageButton ibClose;
         ImageButton ibTopmost;
         ctlPopUp SetInfo;
-        frmMain myParent;
+        readonly frmMain myParent;
 
         public frmSetFind(frmMain iParent)
         {
@@ -172,9 +172,7 @@ namespace Hero_Designer
                 string[] List = new string[0];
                 int[] nIDList = new int[0];
                 string text = lvBonus.SelectedItems[0].Text;
-                bool flag = false;
-                if (lvMag.Items[0].Selected)
-                    flag = true;
+                bool flag = lvMag.Items[0].Selected;
                 if (!flag)
                 {
                     if (Conversion.Val(RuntimeHelpers.GetObjectValue(lvMag.SelectedItems[0].Tag)) > -1.0)

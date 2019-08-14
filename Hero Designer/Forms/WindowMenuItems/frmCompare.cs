@@ -35,15 +35,15 @@ namespace Hero_Designer
         TrackBar tbScaleX;
         ToolTip tTip;
 
-        string[] DisplayValueStrings;
+        readonly string[] DisplayValueStrings;
         float GraphMax;
         bool Loaded;
         Enums.CompMap Map;
         bool Matching;
-        frmMain myParent;
-        IPower[][] Powers;
-        string[][] Tips;
-        float[][] Values;
+        readonly frmMain myParent;
+        readonly IPower[][] Powers;
+        readonly string[][] Tips;
+        readonly float[][] Values;
 
         public frmCompare(ref frmMain iFrm)
         {

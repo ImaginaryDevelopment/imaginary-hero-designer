@@ -22,7 +22,7 @@ namespace Hero_Designer
 
         public void SetMessage(string iMsg)
         {
-            if (!(Message.Text != iMsg))
+            if (Message.Text == iMsg)
                 return;
             Message.Text = iMsg;
             Refresh();

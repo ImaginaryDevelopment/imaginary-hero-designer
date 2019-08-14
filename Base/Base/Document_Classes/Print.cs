@@ -342,7 +342,7 @@ namespace Base.Document_Classes
                                     if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
                                         str2 = str1 + relativeString1 + " " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
                                     else
-                                        str2 = !(relativeString1 == "X") ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
+                                        str2 = relativeString1 != "X" ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
                                     str1 = str2 + " ";
                                     break;
                                 case Enums.eType.SpecialO:
@@ -351,7 +351,7 @@ namespace Base.Document_Classes
                                     if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
                                         str3 = str1 + relativeString2 + " " + enhancement.GetSpecialName() + " - ";
                                     else
-                                        str3 = !(relativeString2 == "X") ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
+                                        str3 = relativeString2 != "X" ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
                                     str1 = str3 + " ";
                                     break;
                             }

@@ -884,7 +884,7 @@ public static class DatabaseAPI
             do
             {
                 strArray = FileIO.IOGrab(streamReader);
-                if (!(strArray[0] == "End"))
+                if (strArray[0] != "End")
                     Database.Origins.Add(new Origin(strArray[0], strArray[1], strArray[2]));
                 else
                     break;
@@ -1055,7 +1055,7 @@ public static class DatabaseAPI
             MessageBox.Show(ex.Message + "\n\nRecipe database couldn't be loaded.");
             return;
         }
-        if (!(reader.ReadString() != "Mids' Hero Designer Recipe Database"))
+        if (reader.ReadString() == "Mids' Hero Designer Recipe Database")
         {
             Database.RecipeSource1 = reader.ReadString();
             Database.RecipeSource2 = reader.ReadString();
@@ -1345,7 +1345,7 @@ public static class DatabaseAPI
                 do
                 {
                     strArray = FileIO.IOGrab(streamReader);
-                    if (!(strArray[0] == "End"))
+                    if (strArray[0] != "End")
                     {
                         Array.Resize(ref enhancementClasses, enhancementClasses.Length + 1);
                         enhancementClasses[enhancementClasses.Length - 1].ID = int.Parse(strArray[0]);

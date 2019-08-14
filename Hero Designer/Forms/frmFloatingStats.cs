@@ -10,7 +10,7 @@ namespace Hero_Designer
     {
         public DataView dvFloat;
 
-        frmMain myOwner;
+        readonly frmMain myOwner;
 
         public frmFloatingStats(frmMain iOwner)
         {

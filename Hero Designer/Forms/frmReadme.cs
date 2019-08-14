@@ -18,7 +18,7 @@ namespace Hero_Designer
         int btnY;
         bool Loading;
         Point mouse_offset;
-        string myFile;
+        readonly string myFile;
         int rtH;
         int rtW;
 

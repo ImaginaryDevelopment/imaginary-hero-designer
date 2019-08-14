@@ -17,13 +17,13 @@ namespace Hero_Designer
 {
     public partial class frmEditPower : Form
     {
-        Requirement backup_Requires;
+        readonly Requirement backup_Requires;
         ExtendedBitmap bxEnhPicked;
         ExtendedBitmap bxEnhPicker;
         ExtendedBitmap bxSet;
         ExtendedBitmap bxSetList;
-        int enhAcross;
-        int enhPadding;
+        readonly int enhAcross;
+        readonly int enhPadding;
         public IPower myPower;
         bool ReqChanging;
         bool Updating;
@@ -52,7 +52,7 @@ namespace Hero_Designer
         void btnCSVImport_Click(object sender, EventArgs e)
         {
             string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
-            if (!(str != ""))
+            if (str == "")
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
             {
@@ -982,7 +982,7 @@ namespace Hero_Designer
             Updating = true;
             cbNameGroup.BeginUpdate();
             cbNameGroup.Items.Clear();
-            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (string key in DatabaseAPI.Database.PowersetGroups.Keys)
                 cbNameGroup.Items.Add(key);
             cbNameGroup.EndUpdate();
             cbNameSet.BeginUpdate();
