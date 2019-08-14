@@ -170,8 +170,7 @@ namespace Base.Data_Classes
                             if (!DatabaseAPI.Database.Classes[ps.nArchetype].Playable)
                                 return false;
                         }
-                        else if (ps == null
-                                || ps.SetType == Enums.ePowerSetType.None
+                        else if (ps.SetType == Enums.ePowerSetType.None
                                 || ps.SetType == Enums.ePowerSetType.Accolade
                                 || ps.SetType == Enums.ePowerSetType.Pet
                                 || ps.SetType == Enums.ePowerSetType.SetBonus
@@ -1013,23 +1012,21 @@ namespace Base.Data_Classes
                                 switch (DatabaseAPI.Database.Classes[ps.nArchetype].PrimaryGroup.ToLower())
                                 {
                                     case "scrapper_melee":
+                                        var str = lower;
                                         if (EffectType == Enums.eEffectType.Damage && !string.IsNullOrEmpty(lower) && Probability <= 0.1)
                                         {
-                                            string str;
-                                            if ((str = lower) != null)
+                                            switch (str)
                                             {
-                                                if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !")
-                                                {
+                                                case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&":
+                                                case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !":
                                                     SpecialCase = Enums.eSpecialCase.CriticalHit;
                                                     goto label_77;
-                                                }
-
-                                                if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||")
-                                                {
+                                                case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&":
+                                                case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||":
                                                     SpecialCase = Enums.eSpecialCase.CriticalMinion;
                                                     goto label_77;
-                                                }
                                             }
+
                                             SpecialCase = Enums.eSpecialCase.CriticalHit;
                                             goto label_77;
                                         }
@@ -1118,23 +1115,21 @@ namespace Base.Data_Classes
                     label_77:
                         if (SpecialCase == Enums.eSpecialCase.None)
                         {
+                            string str = lower;
                             if ((lower.Contains("arch source> class_scrapper eq") || lower.Contains("arch source> class_scrapper ==")) && Probability < 0.9)
                             {
-                                string str;
-                                if ((str = lower) != null)
+                                switch (str)
                                 {
-                                    if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !")
-                                    {
+                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&":
+                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !":
                                         SpecialCase = Enums.eSpecialCase.CriticalHit;
                                         goto label_101;
-                                    }
-
-                                    if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||")
-                                    {
+                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&":
+                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||":
                                         SpecialCase = Enums.eSpecialCase.CriticalMinion;
                                         goto label_101;
-                                    }
                                 }
+
                                 SpecialCase = Enums.eSpecialCase.CriticalHit;
                             }
                             else if ((lower.Contains("arch source> class_controller eq") || lower.Contains("arch source> class_controller ==".ToLower())) && lower.Contains("kheld") && EffectType == Enums.eEffectType.Damage)
