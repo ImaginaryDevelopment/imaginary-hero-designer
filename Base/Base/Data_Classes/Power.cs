@@ -10,6 +10,7 @@ namespace Base.Data_Classes
 {
     public class Power : IPower, IComparable
     {
+        public bool Contains;
         public IPowerset GetPowerSet() => !(PowerSetID < 0 | PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[PowerSetID] : null;
 
         public float CastTimeReal { get; set; }
@@ -1416,6 +1417,7 @@ namespace Base.Data_Classes
                         string str = "$ARCHETYPE @";
                         if (index1 == 1)
                             str = "$ARCHTYPE @";
+                        Contains = iReq.Contains(str);
                         for (int index2 = 0; index2 <= DatabaseAPI.Database.Classes.Length - 1; ++index2)
                         {
                             string oldValue1 = str + DatabaseAPI.Database.Classes[index2].ClassName.ToUpper() + " ==";
@@ -1432,10 +1434,8 @@ namespace Base.Data_Classes
                                 requirement2.ClassName[requirement2.ClassName.Length - 1] = DatabaseAPI.Database.Classes[index2].ClassName;
                                 iReq = iReq.Replace(oldValue1, "true");
                             }
-                            else
-                                iReq.Contains(str);
                         }
-                        if (iReq.Contains(str))
+                        if (Contains)
                         {
                             int startIndex = iReq.IndexOf(str, StringComparison.Ordinal);
                             for (int index2 = startIndex + str.Length; index2 <= iReq.Length - 1; ++index2)

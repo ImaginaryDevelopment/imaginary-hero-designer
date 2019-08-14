@@ -8,7 +8,7 @@ namespace Import
   {
     public readonly int Index = -1;
     public int Nid = -1;
-    public readonly bool IsValid = true;
+    public readonly bool IsValid;
     readonly string _csvString = string.Empty;
 
     public readonly IEffect Data;

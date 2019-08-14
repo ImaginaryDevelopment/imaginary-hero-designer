@@ -34,11 +34,11 @@ public static class Files
             // get the directory that holds the filename, filename should be a FULL path
             var fnDir = Path.GetDirectoryName(filename);
             // if the filename is already in a folder with the correct foldername, we need to go up twice instead of once.
-            var targetRoot = fnDir.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).EndsWith(foldername) ?
+            var targetRoot = fnDir != null && fnDir.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).EndsWith(foldername) ?
                     Path.GetDirectoryName(fnDir) : fnDir;
             var parent = Path.GetDirectoryName(targetRoot);
             if (parent == null) return null;
-            var attempt = Path.Combine(Path.Combine(parent, foldername), Path.GetFileName(filename));
+            var attempt = Path.Combine(Path.Combine(parent, foldername), Path.GetFileName(filename) ?? throw new InvalidOperationException());
             if (File.Exists(attempt))
                 return attempt;
             //if (Path.IsPathRooted(attempt)) return filename;

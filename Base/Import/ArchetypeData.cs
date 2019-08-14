@@ -10,7 +10,7 @@ namespace Import
 
     readonly string _csvString = string.Empty;
 
-    public readonly bool IsValid = true;
+    public readonly bool IsValid;
     public readonly Archetype Data;
     public readonly bool IsNew;
 

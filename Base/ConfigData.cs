@@ -47,7 +47,7 @@ public class ConfigData
     public Enums.eEnhRelative CalcEnhLevel { get; set; } = Enums.eEnhRelative.Even;
     public Enums.eDDGraph DataGraphType { get; set; } = Enums.eDDGraph.Both;
     public Enums.GraphStyle StatGraphStyle { get; set; } = Enums.GraphStyle.Stacked;
-    public Enums.CompOverride[] CompOverride { get; set; } = Array.Empty<Enums.CompOverride>();
+    public Enums.CompOverride[] CompOverride { get; set; }
 
     public string DNickName { get; set; }
     public List<string> DServers { get; set; } = new List<string>();

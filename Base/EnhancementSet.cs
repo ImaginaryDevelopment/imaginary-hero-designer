@@ -5,10 +5,10 @@ using System.Text;
 
 public class EnhancementSet
 {
-    public string DisplayName = string.Empty;
-    public string ShortName = string.Empty;
-    public string Desc = string.Empty;
-    public string Image = string.Empty;
+    public string DisplayName;
+    public string ShortName;
+    public string Desc;
+    public string Image;
     public BonusItem[] Bonus = new BonusItem[5];
     public BonusItem[] SpecialBonus = new BonusItem[6];
     public string Uid = string.Empty;
