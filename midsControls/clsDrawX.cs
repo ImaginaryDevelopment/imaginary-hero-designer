@@ -301,7 +301,6 @@ namespace midsControls
                 }
                 else
                 {
-                    indicating = true;
                     grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
                     imageAttr = GreySlot(grey);
                 }

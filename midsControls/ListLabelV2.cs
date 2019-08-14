@@ -1151,10 +1151,7 @@ namespace midsControls
                                     goto IL_3EA;
                                 }
                                 cursor = Cursors[(int)Items[itemAtY].ItemState];
-                                if (itemAtY != HoverIndex)
-                                {
-                                    HoverIndex = itemAtY;
-                                }
+                                HoverIndex = itemAtY;
                                 Draw();
                                 ItemHover?.Invoke(Items[itemAtY]);
                                 goto IL_3EA;

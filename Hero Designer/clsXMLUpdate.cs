@@ -25,9 +25,9 @@ namespace Hero_Designer
                     if (sData.Length > 96)
                         sData = sData.Substring(0, 96);
                 }
-                string str = "?" + "body=" + Strings.Format(MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format(DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
+                //string str = "?" + "body=" + Strings.Format(MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format(DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
                 if (sData != "")
-                    str = str + "&data=" + sData;
+                    //str = str + "&data=" + sData;
                 Process.Start(targetUrl);
             }
             catch (Exception ex)

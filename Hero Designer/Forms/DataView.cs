@@ -1791,7 +1791,7 @@ namespace Hero_Designer
                             string iValue = Conversions.ToString(pBase.Effects[iTagID].Probability * 100f) + "%";
                             if ((pBase.Effects[iTagID].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                                 iValue = "0%";
-                            ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(CapString(names[(int)pBase.Effects[iTagID].MezType], 7) + ":", iValue, iAlternate1, pBase.Effects[iTagID].Probability < 1.0 | pBase.Effects[iTagID].SpecialCase == Enums.eSpecialCase.Combo, pBase.Effects[iTagID].SpecialCase != Enums.eSpecialCase.None, iTagID);
+                            ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(CapString(names[(int)pBase.Effects[iTagID].MezType], 7) + ":", iValue, false, pBase.Effects[iTagID].Probability < 1.0 | pBase.Effects[iTagID].SpecialCase == Enums.eSpecialCase.Combo, pBase.Effects[iTagID].SpecialCase != Enums.eSpecialCase.None, iTagID);
                             iList.AddItem(iItem);
                             if (pBase.Effects[iTagID].isEnhancementEffect)
                                 iList.SetUnique();

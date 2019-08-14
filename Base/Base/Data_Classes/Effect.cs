@@ -515,7 +515,7 @@ namespace Base.Data_Classes
             }
             string iStr = string.Empty;
             if (!string.IsNullOrEmpty(iValue))
-                iStr = " (" + BuildCs(iValue, iStr, false) + ")";
+                iStr = " (" + BuildCs(iValue, iStr) + ")";
             return str5.Trim() + iStr + str4;
         }
 
@@ -796,15 +796,15 @@ namespace Base.Data_Classes
             string iStr1 = string.Empty;
             if (!string.IsNullOrEmpty(iValue1 + iValue4 + iValue2 + iValue3 + str6 + iValue5 + iValue6))
             {
-                string iStr2 = BuildCs(iValue1, iStr1, false);
-                string iStr3 = BuildCs(iValue3, iStr2, false);
-                string iStr4 = BuildCs(iValue6, iStr3, false);
-                string iStr5 = BuildCs(iValue4, iStr4, false);
+                string iStr2 = BuildCs(iValue1, iStr1);
+                string iStr3 = BuildCs(iValue3, iStr2);
+                string iStr4 = BuildCs(iValue6, iStr3);
+                string iStr5 = BuildCs(iValue4, iStr4);
                 if (!string.IsNullOrEmpty(iValue2))
                     iStr5 = !string.IsNullOrEmpty(str6) ? BuildCs(iValue2 + ", if " + str6, iStr5, noComma) : BuildCs(iValue2, iStr5, noComma);
                 else if (!string.IsNullOrEmpty(str6))
-                    iStr5 = BuildCs("if " + str6, iStr5, false);
-                iStr1 = " (" + BuildCs(iValue5, iStr5, false) + ")";
+                    iStr5 = BuildCs("if " + str6, iStr5);
+                iStr1 = " (" + BuildCs(iValue5, iStr5) + ")";
             }
             return str8 + str10 + iStr1 + str5 + str7 + str4 + strCondition;
         }
@@ -992,9 +992,9 @@ namespace Base.Data_Classes
                     DelayedTime = float.Parse(array[15]);
                     Stacking = array[18].ToLower() == "stack" ? Enums.eStacking.Yes : Enums.eStacking.No;
                     BaseProbability = float.Parse(array[20]);
-                    Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[9].Replace(" ", ","), Suppression, false);
+                    Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[9].Replace(" ", ","), Suppression);
                     if (Suppression == Enums.eSuppress.None)
-                        Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[10].Replace(" ", ","), Suppression, false);
+                        Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[10].Replace(" ", ","), Suppression);
                     Buffable = int.Parse(array[7]) > 0;
                     Resistible = int.Parse(array[8]) > 0;
                     string lower = array[26].ToLower();
