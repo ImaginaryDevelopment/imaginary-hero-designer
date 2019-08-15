@@ -28,16 +28,15 @@ public class Modifiers
         do
         {
             iLine1 = FileIO.ReadLineUnlimited(iStream1, char.MinValue);
-            if (iLine1 != null && !iLine1.StartsWith("#"))
+            if (iLine1 == null || iLine1.StartsWith("#"))
+                continue;
+            string[] array = CSV.ToArray(iLine1);
+            Array.Resize(ref Modifier, Modifier.Length + 1);
+            Modifier[Modifier.Length - 1] = new ModifierTable
             {
-                string[] array = CSV.ToArray(iLine1);
-                Array.Resize(ref Modifier, Modifier.Length + 1);
-                Modifier[Modifier.Length - 1] = new ModifierTable
-                {
-                    BaseIndex = Convert.ToInt32(array[0]),
-                    ID = array[1]
-                };
-            }
+                BaseIndex = Convert.ToInt32(array[0]),
+                ID = array[1]
+            };
         }
         while (iLine1 != null);
         iStream1.Close();
@@ -55,24 +54,21 @@ public class Modifiers
         do
         {
             iLine2 = FileIO.ReadLineUnlimited(iStream2, char.MinValue);
-            if (iLine2 != null && !iLine2.StartsWith("#"))
+            if (iLine2 == null || iLine2.StartsWith("#"))
+                continue;
+            string[] array = CSV.ToArray(iLine2);
+            if (array.Length <= 0)
+                continue;
+            int num = int.Parse(array[0]) - 1;
+            for (int index1 = 0; index1 <= Modifier.Length - 1; ++index1)
             {
-                string[] array = CSV.ToArray(iLine2);
-                if (array.Length > 0)
-                {
-                    int num = int.Parse(array[0]) - 1;
-                    for (int index1 = 0; index1 <= Modifier.Length - 1; ++index1)
-                    {
-                        if (num >= Modifier[index1].BaseIndex & num <= Modifier[index1].BaseIndex + 55)
-                        {
-                            int index2 = num - Modifier[index1].BaseIndex;
-                            Modifier[index1].Table[index2] = new float[array.Length - 1];
-                            for (int index3 = 0; index3 <= array.Length - 2; ++index3)
-                                Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
-                            break;
-                        }
-                    }
-                }
+                if (!(num >= Modifier[index1].BaseIndex & num <= Modifier[index1].BaseIndex + 55))
+                    continue;
+                int index2 = num - Modifier[index1].BaseIndex;
+                Modifier[index1].Table[index2] = new float[array.Length - 1];
+                for (int index3 = 0; index3 <= array.Length - 2; ++index3)
+                    Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
+                break;
             }
         }
         while (iLine2 != null);
@@ -126,11 +122,10 @@ public class Modifiers
             {
                 Modifier[index] = new ModifierTable();
                 Modifier[index].Load(reader);
-                if (num > 5)
-                {
-                    num = 0;
-                    Application.DoEvents();
-                }
+                if (num <= 5)
+                    continue;
+                num = 0;
+                Application.DoEvents();
             }
             return true;
         }

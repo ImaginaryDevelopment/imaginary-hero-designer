@@ -23,12 +23,12 @@ namespace Import
       IsNew = true;
       for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
       {
-        if (!string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, Data.FullName, StringComparison.OrdinalIgnoreCase))
-        {
-          IsNew = false;
-          _index = index;
-          break;
-        }
+        if (string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) ||
+            !string.Equals(DatabaseAPI.Database.Powersets[index].FullName, Data.FullName, StringComparison.OrdinalIgnoreCase))
+          continue;
+        IsNew = false;
+        _index = index;
+        break;
       }
     }
 

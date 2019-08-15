@@ -66,15 +66,15 @@ public class EnhancementSet
                         if (index2 == returnMask[index3])
                             flag = true;
                     }
-                    if (!flag)
-                    {
-                        if (!string.IsNullOrEmpty(empty1))
-                            empty1 += ", ";
-                        string str2 = longForm ? DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectString(true) : DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectStringShort(false, true);
-                        if (str2.Contains("EndRec"))
-                            str2 = str2.Replace("EndRec", "Recovery");
-                        empty1 += str2;
-                    }
+
+                    if (flag)
+                        continue;
+                    if (!string.IsNullOrEmpty(empty1))
+                        empty1 += ", ";
+                    string str2 = longForm ? DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectString(true) : DatabaseAPI.Database.Power[bonusItemArray[index].Index[index1]].Effects[index2].BuildEffectStringShort(false, true);
+                    if (str2.Contains("EndRec"))
+                        str2 = str2.Replace("EndRec", "Recovery");
+                    empty1 += str2;
                 }
             }
             str1 = empty1;

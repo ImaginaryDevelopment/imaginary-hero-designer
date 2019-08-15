@@ -22,12 +22,12 @@ namespace Import
       IsNew = true;
       for (int index = 0; index < DatabaseAPI.Database.EnhancementSets.Count; ++index)
       {
-        if (!string.IsNullOrEmpty(DatabaseAPI.Database.EnhancementSets[index].Uid) && string.Equals(DatabaseAPI.Database.EnhancementSets[index].Uid, Data.Uid, StringComparison.OrdinalIgnoreCase))
-        {
-          IsNew = false;
-          Index = index;
-          break;
-        }
+        if (string.IsNullOrEmpty(DatabaseAPI.Database.EnhancementSets[index].Uid) ||
+            !string.Equals(DatabaseAPI.Database.EnhancementSets[index].Uid, Data.Uid, StringComparison.OrdinalIgnoreCase))
+          continue;
+        IsNew = false;
+        Index = index;
+        break;
       }
     }
 

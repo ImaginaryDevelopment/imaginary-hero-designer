@@ -132,126 +132,125 @@ namespace Hero_Designer
                     flag4 = false;
                 if (flag3 & MidsContext.Character.CurrentBuild.Powers[index1].SubPowers.Length > 0)
                     flag4 = false;
-                if (flag4)
+                if (!flag4)
+                    continue;
+                if (MidsContext.Character.CurrentBuild.Powers[index1].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[index1].IDXPower > -1)
                 {
-                    if (MidsContext.Character.CurrentBuild.Powers[index1].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[index1].IDXPower > -1)
+                    str1 = str1 + formatBold(formatColor("Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Level + 1) + ":", ExportConfig.Element.Level) + str2 + formatColor(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].NIDPower].DisplayName, ExportConfig.Element.Power)) + str2;
+                    bool flag5 = !MidsContext.Character.CurrentBuild.Powers[index1].Chosen;
+                }
+                else
+                    str1 = str1 + formatBold(formatColor("Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Level + 1) + ":", ExportConfig.Element.Level) + str2 + formatItalic(formatColor("[Empty]", ExportConfig.Element.Power))) + str2;
+                if (MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length > 0)
+                {
+                    if (!LongExport)
                     {
-                        str1 = str1 + formatBold(formatColor("Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Level + 1) + ":", ExportConfig.Element.Level) + str2 + formatColor(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].NIDPower].DisplayName, ExportConfig.Element.Power)) + str2;
-                        bool flag5 = !MidsContext.Character.CurrentBuild.Powers[index1].Chosen;
-                    }
-                    else
-                        str1 = str1 + formatBold(formatColor("Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Level + 1) + ":", ExportConfig.Element.Level) + str2 + formatItalic(formatColor("[Empty]", ExportConfig.Element.Power))) + str2;
-                    if (MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length > 0)
-                    {
-                        if (!LongExport)
+                        if (!Plain)
+                            str1 += formatColor("--", ExportConfig.Element.Heading);
+                        int num2 = !(MidsContext.Character.CurrentBuild.Powers[index1].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[index1].IDXPower > -1) ? 7 : DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].NIDPower].DisplayName.Length;
+                        if (Plain & num2 < 16)
                         {
-                            if (!Plain)
-                                str1 += formatColor("--", ExportConfig.Element.Heading);
-                            int num2 = !(MidsContext.Character.CurrentBuild.Powers[index1].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[index1].IDXPower > -1) ? 7 : DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].NIDPower].DisplayName.Length;
-                            if (Plain & num2 < 16)
-                            {
-                                str1 += str2;
-                                if (num2 < 8)
-                                    str1 += str2;
-                            }
                             str1 += str2;
+                            if (num2 < 8)
+                                str1 += str2;
                         }
-                        string iText = "";
-                        string str3 = "";
-                        int num3 = MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1;
-                        for (int index2 = 0; index2 <= num3; ++index2)
+                        str1 += str2;
+                    }
+                    string iText = "";
+                    string str3 = "";
+                    int num3 = MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1;
+                    for (int index2 = 0; index2 <= num3; ++index2)
+                    {
+                        if (flag2)
                         {
-                            if (flag2)
-                            {
-                                if (LongExport)
-                                {
-                                    string str4 = iText + ListItemOn();
-                                    string str5 = " (";
-                                    str3 = (index2 != 0 ? str5 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str5 + "A") + ") ";
-                                    iText = str4 + str3;
-                                }
-                                else if (index2 > 0)
-                                    iText += formatColor(", ", ExportConfig.Element.Title);
-                                if (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh <= -1)
-                                {
-                                    iText += formatColor("Empty", ExportConfig.Element.Slots);
-                                }
-                                else
-                                {
-                                    switch (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].TypeID)
-                                    {
-                                        case Enums.eType.Normal:
-                                            iText = LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.Slots) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.Slots);
-                                            break;
-                                        case Enums.eType.InventO:
-                                            iText = LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.IO) + formatColor(" IO", ExportConfig.Element.IO) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.IO) + formatColor("-I", ExportConfig.Element.IO);
-                                            if (exportIoLevels)
-                                            {
-                                                iText = !LongExport ? iText + formatColor(":" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.IO) : iText + formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.IO);
-                                            }
-                                            break;
-                                        case Enums.eType.SpecialO:
-                                            if (!LongExport)
-                                            {
-                                                string str4 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hamidon ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "X:" : "TN:") : "HY:") : "HO:";
-                                                iText += formatColor(str4 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.HO);
-                                                break;
-                                            }
-                                            string str6 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID == Enums.eSubtype.Hamidon ? "HamiO:" : (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "Special:" : "Titan:") : "Hydra:");
-                                            iText += formatColor(str6 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.HO);
-                                            break;
-                                        case Enums.eType.SetO:
-                                            if (flag1)
-                                                iText = LongExport ? iText + formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].DisplayName + " - ", ExportConfig.Element.SetO) : iText + formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].ShortName + "-", ExportConfig.Element.SetO);
-                                            iText = !LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.SetO) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.SetO);
-                                            if (LongExport)
-                                            {
-                                                if (exportIoLevels & flag1)
-                                                    iText += formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
-                                                if (exportIoLevels & !flag1)
-                                                {
-                                                    iText += formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
-                                                }
-                                                break;
-                                            }
-                                            if (exportIoLevels & flag1)
-                                                iText += formatColor(":" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
-                                            if (exportIoLevels & !flag1)
-                                                iText += formatColor("-S:" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
-                                            break;
-                                    }
-                                }
-                            }
-                            if (!LongExport)
-                            {
-                                string str4 = "(";
-                                str3 = (index2 != 0 ? str4 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str4 + "A") + ")";
-                            }
-                            else if (!flag2)
-                            {
-                                if (index2 == 0)
-                                    iText += ListItemOn();
-                                string str4 = " (";
-                                str3 = (index2 != 0 ? str4 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str4 + "A") + ")";
-                                iText += str3;
-                            }
                             if (LongExport)
                             {
-                                if (flag2)
-                                    iText += ListItemOff();
-                                else if (index2 == MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1)
-                                    iText += ListItemOff();
+                                string str4 = iText + ListItemOn();
+                                string str5 = " (";
+                                str3 = (index2 != 0 ? str5 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str5 + "A") + ") ";
+                                iText = str4 + str3;
+                            }
+                            else if (index2 > 0)
+                                iText += formatColor(", ", ExportConfig.Element.Title);
+                            if (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh <= -1)
+                            {
+                                iText += formatColor("Empty", ExportConfig.Element.Slots);
                             }
                             else
-                                iText += str3;
+                            {
+                                switch (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].TypeID)
+                                {
+                                    case Enums.eType.Normal:
+                                        iText = LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.Slots) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.Slots);
+                                        break;
+                                    case Enums.eType.InventO:
+                                        iText = LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.IO) + formatColor(" IO", ExportConfig.Element.IO) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.IO) + formatColor("-I", ExportConfig.Element.IO);
+                                        if (exportIoLevels)
+                                        {
+                                            iText = !LongExport ? iText + formatColor(":" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.IO) : iText + formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.IO);
+                                        }
+                                        break;
+                                    case Enums.eType.SpecialO:
+                                        if (!LongExport)
+                                        {
+                                            string str4 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hamidon ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "X:" : "TN:") : "HY:") : "HO:";
+                                            iText += formatColor(str4 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.HO);
+                                            break;
+                                        }
+                                        string str6 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID == Enums.eSubtype.Hamidon ? "HamiO:" : (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "Special:" : "Titan:") : "Hydra:");
+                                        iText += formatColor(str6 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.HO);
+                                        break;
+                                    case Enums.eType.SetO:
+                                        if (flag1)
+                                            iText = LongExport ? iText + formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].DisplayName + " - ", ExportConfig.Element.SetO) : iText + formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].ShortName + "-", ExportConfig.Element.SetO);
+                                        iText = !LongExport ? iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.SetO) : iText + formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.SetO);
+                                        if (LongExport)
+                                        {
+                                            if (exportIoLevels & flag1)
+                                                iText += formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
+                                            if (exportIoLevels & !flag1)
+                                            {
+                                                iText += formatColor(": Level " + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
+                                            }
+                                            break;
+                                        }
+                                        if (exportIoLevels & flag1)
+                                            iText += formatColor(":" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
+                                        if (exportIoLevels & !flag1)
+                                            iText += formatColor("-S:" + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1), ExportConfig.Element.SetO);
+                                        break;
+                                }
+                            }
+                        }
+                        if (!LongExport)
+                        {
+                            string str4 = "(";
+                            str3 = (index2 != 0 ? str4 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str4 + "A") + ")";
+                        }
+                        else if (!flag2)
+                        {
+                            if (index2 == 0)
+                                iText += ListItemOn();
+                            string str4 = " (";
+                            str3 = (index2 != 0 ? str4 + Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str4 + "A") + ")";
+                            iText += str3;
                         }
                         if (LongExport)
-                            iText = List(iText);
-                        str1 += iText;
+                        {
+                            if (flag2)
+                                iText += ListItemOff();
+                            else if (index2 == MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1)
+                                iText += ListItemOff();
+                        }
+                        else
+                            iText += str3;
                     }
-                    if (!LongExport | MidsContext.Character.CurrentBuild.Powers[index1].SlotCount == 0)
-                        str1 += LineBreak();
+                    if (LongExport)
+                        iText = List(iText);
+                    str1 += iText;
                 }
+                if (!LongExport | MidsContext.Character.CurrentBuild.Powers[index1].SlotCount == 0)
+                    str1 += LineBreak();
             }
             return str1;
         }
@@ -267,43 +266,43 @@ namespace Hero_Designer
                 int num2 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].Powers.Length > 0)
+                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].Powers.Length <= 0)
+                        continue;
+                    I9SetData.sSetInfo[] setInfo = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo;
+                    int index3 = index2;
+                    string str2 = str1 + formatColor(formatUnderline(formatBold(DatabaseAPI.Database.EnhancementSets[setInfo[index3].SetIDX].DisplayName)), ExportConfig.Element.IO);
+                    if (MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset > -1)
+                        str2 = str2 + LineBreak() + formatColor("(" + DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName + ")", ExportConfig.Element.Power);
+                    string iText = "";
+                    int num3 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SlottedCount - 2;
+                    for (int index4 = 0; index4 <= num3; ++index4)
                     {
-                        I9SetData.sSetInfo[] setInfo = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo;
-                        int index3 = index2;
-                        string str2 = str1 + formatColor(formatUnderline(formatBold(DatabaseAPI.Database.EnhancementSets[setInfo[index3].SetIDX].DisplayName)), ExportConfig.Element.IO);
-                        if (MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset > -1)
-                            str2 = str2 + LineBreak() + formatColor("(" + DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName + ")", ExportConfig.Element.Power);
-                        string iText = "";
-                        int num3 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SlottedCount - 2;
-                        for (int index4 = 0; index4 <= num3; ++index4)
+                        string str3 = iText + ListItemOn();
+                        bool flag = false;
+                        string str4 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index4, false, true);
+                        int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index.Length - 1;
+                        for (int index5 = 0; index5 <= num4; ++index5)
                         {
-                            string str3 = iText + ListItemOn();
-                            bool flag = false;
-                            string str4 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index4, false, true);
-                            int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index.Length - 1;
-                            for (int index5 = 0; index5 <= num4; ++index5)
-                            {
-                                if (DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5] > -1)
-                                {
-                                    ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]];
-                                    if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]] > 5)
-                                        flag = true;
-                                }
-                            }
-                            if (flag)
-                                str4 = formatItalic(formatColor(str4 + " (Exceeded 5 Bonus Cap)", ExportConfig.Element.Slots));
-                            iText = str3 + str4 + ListItemOff();
+                            if (DatabaseAPI.Database
+                                    .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4]
+                                    .Index[index5] <= -1)
+                                continue;
+                            ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]];
+                            if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]] > 5)
+                                flag = true;
                         }
-                        int num5 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes.Length - 1;
-                        for (int index4 = 0; index4 <= num5; ++index4)
-                        {
-                            int index5 = DatabaseAPI.IsSpecialEnh(MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes[index4]);
-                            if (index5 > -1)
-                                iText = iText + ListItemOn() + formatColor("  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true), ExportConfig.Element.Power) + ListItemOff();
-                        }
-                        str1 = str2 + List(iText);
+                        if (flag)
+                            str4 = formatItalic(formatColor(str4 + " (Exceeded 5 Bonus Cap)", ExportConfig.Element.Slots));
+                        iText = str3 + str4 + ListItemOff();
                     }
+                    int num5 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes.Length - 1;
+                    for (int index4 = 0; index4 <= num5; ++index4)
+                    {
+                        int index5 = DatabaseAPI.IsSpecialEnh(MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes[index4]);
+                        if (index5 > -1)
+                            iText = iText + ListItemOn() + formatColor("  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true), ExportConfig.Element.Power) + ListItemOff();
+                    }
+                    str1 = str2 + List(iText);
                 }
             }
             return str1;

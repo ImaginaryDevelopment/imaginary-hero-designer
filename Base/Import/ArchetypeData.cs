@@ -28,12 +28,12 @@ namespace Import
         IsNew = true;
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
         {
-          if (!string.IsNullOrEmpty(DatabaseAPI.Database.Classes[index].ClassName) && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, Data.ClassName, StringComparison.OrdinalIgnoreCase))
-          {
-            IsNew = false;
-            _index = index;
-            break;
-          }
+          if (string.IsNullOrEmpty(DatabaseAPI.Database.Classes[index].ClassName) ||
+              !string.Equals(DatabaseAPI.Database.Classes[index].ClassName, Data.ClassName, StringComparison.OrdinalIgnoreCase))
+            continue;
+          IsNew = false;
+          _index = index;
+          break;
         }
       }
     }
@@ -50,12 +50,12 @@ namespace Import
         _index = DatabaseAPI.Database.Classes.Length - 1;
         DatabaseAPI.Database.Classes[_index] = new Archetype();
       }
-      if (!(!IsNew & _index < 0))
-      {
-        DatabaseAPI.Database.Classes[_index].IsNew = IsNew;
-        DatabaseAPI.Database.Classes[_index].IsModified = true;
-        DatabaseAPI.Database.Classes[_index].UpdateFromCSV(_csvString);
-      }
+
+      if (!IsNew & _index < 0)
+        return;
+      DatabaseAPI.Database.Classes[_index].IsNew = IsNew;
+      DatabaseAPI.Database.Classes[_index].IsModified = true;
+      DatabaseAPI.Database.Classes[_index].UpdateFromCSV(_csvString);
     }
 
     public bool CheckDifference(out string message)
@@ -114,13 +114,13 @@ namespace Import
       else if (DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower() != Data.PrimaryGroup.ToLower())
       {
         message +=
-            $"Primary: {DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower()} => {Data.PrimaryGroup.ToLower()}";
+          $"Primary: {DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower()} => {Data.PrimaryGroup.ToLower()}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower() != Data.SecondaryGroup.ToLower())
       {
         message +=
-            $"Secondary: {DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower()} => {Data.SecondaryGroup.ToLower()}";
+          $"Secondary: {DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower()} => {Data.SecondaryGroup.ToLower()}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[_index].Playable != Data.Playable)
@@ -130,6 +130,7 @@ namespace Import
       }
       else
         flag = false;
+
       return flag;
     }
   }

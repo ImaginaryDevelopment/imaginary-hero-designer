@@ -38,11 +38,10 @@ public static class DatabaseAPI
             return AttribMod[uID];
         for (int index = 0; index <= Database.AttribMods.Modifier.Length - 1; ++index)
         {
-            if (string.Equals(uID, Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
-            {
-                AttribMod.Add(uID, index);
-                return index;
-            }
+            if (!string.Equals(uID, Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
+                continue;
+            AttribMod.Add(uID, index);
+            return index;
         }
         return -1;
     }
@@ -73,16 +72,15 @@ public static class DatabaseAPI
         Database.PowersetGroups = new Dictionary<string, PowersetGroup>();
         foreach (IPowerset powerset in Database.Powersets)
         {
-            if (!string.IsNullOrEmpty(powerset.GroupName))
+            if (string.IsNullOrEmpty(powerset.GroupName))
+                continue;
+            if (!Database.PowersetGroups.TryGetValue(powerset.GroupName, out PowersetGroup powersetGroup))
             {
-                if (!Database.PowersetGroups.TryGetValue(powerset.GroupName, out PowersetGroup powersetGroup))
-                {
-                    powersetGroup = new PowersetGroup(powerset.GroupName);
-                    Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
-                }
-                powersetGroup.Powersets.Add(powerset.FullName, powerset);
-                powerset.SetGroup(powersetGroup);
+                powersetGroup = new PowersetGroup(powerset.GroupName);
+                Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
             }
+            powersetGroup.Powersets.Add(powerset.FullName, powerset);
+            powerset.SetGroup(powersetGroup);
         }
     }
 
@@ -111,10 +109,7 @@ public static class DatabaseAPI
         IPowerset[] powersetArray = Database.Powersets;
         if (group != null)
         {
-            List<IPowerset> powersetList = new List<IPowerset>();
-            foreach (var powerset in group.Powersets)
-                powersetList.Add(powerset.Value);
-            powersetArray = powersetList.ToArray();
+            powersetArray = @group.Powersets.Select(powerset => powerset.Value).ToArray();
         }
 
         List<int> intList = new List<int>();
@@ -210,25 +205,20 @@ public static class DatabaseAPI
         int idx = GetArchetypeByName(iArchetype).Idx;
         foreach (IPowerset powerset1 in Database.Powersets)
         {
-            if ((idx == powerset1.nArchetype || powerset1.nArchetype == -1) && string.Equals(iName, powerset1.DisplayName, StringComparison.OrdinalIgnoreCase))
-            {
-                if (powerset1.SetType != Enums.ePowerSetType.Ancillary)
-                    return powerset1;
-                if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
-                    return powerset1;
-            }
+            if ((idx != powerset1.nArchetype && powerset1.nArchetype != -1) ||
+                !string.Equals(iName, powerset1.DisplayName, StringComparison.OrdinalIgnoreCase))
+                continue;
+            if (powerset1.SetType != Enums.ePowerSetType.Ancillary)
+                return powerset1;
+            if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
+                return powerset1;
         }
         return null;
     }
     //Pine
     public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
     {
-        foreach (IPowerset powerset in Database.Powersets)
-        {
-            if (iSet == powerset.SetType && string.Equals(iName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase))
-                return powerset;
-        }
-        return null;
+        return Database.Powersets.FirstOrDefault(powerset => iSet == powerset.SetType && string.Equals(iName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase));
     }
 
     public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
@@ -271,12 +261,7 @@ public static class DatabaseAPI
         if (powersetByName == null)
             return null;
 
-        foreach (IPower power2 in powersetByName.Powers)
-        {
-            if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
-                return power2;
-        }
-        return null;
+        return powersetByName.Powers.FirstOrDefault(power2 => string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase));
     }
 
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
@@ -297,29 +282,20 @@ public static class DatabaseAPI
                     numArray = Database.Classes[iAT].Ancillary;
                     break;
             }
-            foreach (int index in numArray)
-                stringList.Add(Database.Powersets[index].DisplayName);
+
+            stringList.AddRange(numArray.Select(index => Database.Powersets[index].DisplayName));
         }
         else
         {
-            foreach (IPowerset powerset in Database.Powersets)
-            {
-                if (powerset.SetType == iSet)
-                    stringList.Add(powerset.DisplayName);
-            }
+            stringList.AddRange(from powerset in Database.Powersets where powerset.SetType == iSet select powerset.DisplayName);
         }
         stringList.Sort();
-        if (stringList.Count > 0)
-            return stringList.ToArray();
-        return new[] { "No " + Enum.GetName(iSet.GetType(), iSet) };
+        return stringList.Count > 0 ? stringList.ToArray() : new[] { "No " + Enum.GetName(iSet.GetType(), iSet) };
     }
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
-        List<int> intList = new List<int>();
-        foreach (KeyValuePair<string, IPowerset> powerset in group.Powersets)
-            intList.Add(powerset.Value.nID);
-        return intList.ToArray();
+        return @group.Powersets.Select(powerset => powerset.Value.nID).ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroupName(string name)
@@ -393,13 +369,12 @@ public static class DatabaseAPI
         //        ?? -1;
         foreach (EnhancementSet enhancementSet in Database.EnhancementSets)
         {
-            if (string.Equals(enhancementSet.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(enhancementSet.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
+                continue;
+            foreach (int enhancement in enhancementSet.Enhancements)
             {
-                foreach (int enhancement in enhancementSet.Enhancements)
-                {
-                    if (string.Equals(Database.Enhancements[enhancementSet.Enhancements[enhancement]].ShortName, iName, StringComparison.OrdinalIgnoreCase))
-                        return enhancementSet.Enhancements[enhancement];
-                }
+                if (string.Equals(Database.Enhancements[enhancementSet.Enhancements[enhancement]].ShortName, iName, StringComparison.OrdinalIgnoreCase))
+                    return enhancementSet.Enhancements[enhancement];
             }
         }
         return -1;
@@ -409,17 +384,17 @@ public static class DatabaseAPI
     {
         for (int index = 0; index < Database.Enhancements.Length; ++index)
         {
-            if (Database.Enhancements[index].TypeID == (Enums.eType)iType && string.Equals(Database.Enhancements[index].ShortName, enhName, StringComparison.OrdinalIgnoreCase))
-            {
-                int num;
-                if (Database.Enhancements[index].TypeID != Enums.eType.SetO)
-                    num = index;
-                else if (Database.EnhancementSets[Database.Enhancements[index].nIDSet].DisplayName.Equals(setName, StringComparison.OrdinalIgnoreCase))
-                    num = index;
-                else
-                    continue;
-                return num;
-            }
+            if (Database.Enhancements[index].TypeID != (Enums.eType) iType || !string.Equals(Database.Enhancements[index].ShortName, enhName,
+                    StringComparison.OrdinalIgnoreCase))
+                continue;
+            int num;
+            if (Database.Enhancements[index].TypeID != Enums.eType.SetO)
+                num = index;
+            else if (Database.EnhancementSets[Database.Enhancements[index].nIDSet].DisplayName.Equals(setName, StringComparison.OrdinalIgnoreCase))
+                num = index;
+            else
+                continue;
+            return num;
         }
         if (fallBack > -1 & fallBack < Database.Enhancements.Length)
             return fallBack;
@@ -438,12 +413,7 @@ public static class DatabaseAPI
 
     public static Recipe GetRecipeByName(string iName)
     {
-        foreach (Recipe recipe in Database.Recipes)
-        {
-            if (string.Equals(recipe.InternalName, iName, StringComparison.OrdinalIgnoreCase))
-                return recipe;
-        }
-        return null;
+        return Database.Recipes.FirstOrDefault(recipe => string.Equals(recipe.InternalName, iName, StringComparison.OrdinalIgnoreCase));
     }
 
     public static string[] UidReferencingPowerFix(string uidPower, string uidNew = "")
@@ -458,12 +428,11 @@ public static class DatabaseAPI
             }
             for (int index2 = 0; index2 <= Database.Power[index1].Effects.Length - 1; ++index2)
             {
-                if (Database.Power[index1].Effects[index2].Summon == uidPower)
-                {
-                    Database.Power[index1].Effects[index2].Summon = uidNew;
-                    Array.Resize(ref array, array.Length + 1);
-                    array[array.Length - 1] = Database.Power[index1].FullName + " (GrantPower)";
-                }
+                if (Database.Power[index1].Effects[index2].Summon != uidPower)
+                    continue;
+                Database.Power[index1].Effects[index2].Summon = uidNew;
+                Array.Resize(ref array, array.Length + 1);
+                array[array.Length - 1] = Database.Power[index1].FullName + " (GrantPower)";
             }
         }
         return array;
@@ -505,25 +474,20 @@ public static class DatabaseAPI
         string uid = isSub ? uidRecipe.Substring(0, uidRecipe.LastIndexOf("_", StringComparison.Ordinal)) : uidRecipe;
         for (int recipeIdx = 0; recipeIdx < Database.Recipes.Length; ++recipeIdx)
         {
-            if (string.Equals(Database.Recipes[recipeIdx].InternalName, uid, StringComparison.OrdinalIgnoreCase))
-            {
-                if (!isSub)
-                    return recipeIdx;
-                int startIndex = uidRecipe.LastIndexOf("_", StringComparison.Ordinal) + 1;
-                if (!(startIndex < 0 || startIndex > uidRecipe.Length - 1))
-                {
-                    uid = uidRecipe.Substring(startIndex);
-                    for (int index2 = 0; index2 < Database.Recipes[recipeIdx].Item.Length; ++index2)
-                    {
-                        if (Database.Recipes[recipeIdx].Item[index2].Level == startIndex)
-                        {
-                            subIndex = index2;
-                            return recipeIdx;
-                        }
-                    }
-                    continue;
-                }
+            if (!string.Equals(Database.Recipes[recipeIdx].InternalName, uid, StringComparison.OrdinalIgnoreCase))
+                continue;
+            if (!isSub)
+                return recipeIdx;
+            int startIndex = uidRecipe.LastIndexOf("_", StringComparison.Ordinal) + 1;
+            if (startIndex < 0 || startIndex > uidRecipe.Length - 1)
                 return -1;
+            uid = uidRecipe.Substring(startIndex);
+            for (int index2 = 0; index2 < Database.Recipes[recipeIdx].Item.Length; ++index2)
+            {
+                if (Database.Recipes[recipeIdx].Item[index2].Level != startIndex)
+                    continue;
+                subIndex = index2;
+                return recipeIdx;
             }
         }
         return -1;
@@ -739,11 +703,10 @@ public static class DatabaseAPI
                     nID = index
                 };
                 ++num3;
-                if (num3 > 10)
-                {
-                    num3 = 0;
-                    Application.DoEvents();
-                }
+                if (num3 <= 10)
+                    continue;
+                num3 = 0;
+                Application.DoEvents();
             }
             if (reader.ReadString() != "BEGIN:POWERS")
             {
@@ -761,11 +724,10 @@ public static class DatabaseAPI
             {
                 Database.Power[index] = new Power(reader);
                 ++num3;
-                if (num3 > 50)
-                {
-                    num3 = 0;
-                    Application.DoEvents();
-                }
+                if (num3 <= 50)
+                    continue;
+                num3 = 0;
+                Application.DoEvents();
             }
             if (reader.ReadString() != "BEGIN:SUMMONS")
             {
@@ -966,15 +928,13 @@ public static class DatabaseAPI
     {
         foreach (IEnhancement enhancement in Database.Enhancements)
         {
-            if (enhancement.TypeID == Enums.eType.InventO || enhancement.TypeID == Enums.eType.SetO)
-            {
-                int recipeIdxByName = GetRecipeIdxByName(enhancement.UID);
-                if (recipeIdxByName > -1)
-                {
-                    enhancement.RecipeIDX = recipeIdxByName;
-                    enhancement.RecipeName = Database.Recipes[recipeIdxByName].InternalName;
-                }
-            }
+            if (enhancement.TypeID != Enums.eType.InventO && enhancement.TypeID != Enums.eType.SetO)
+                continue;
+            int recipeIdxByName = GetRecipeIdxByName(enhancement.UID);
+            if (recipeIdxByName <= -1)
+                continue;
+            enhancement.RecipeIDX = recipeIdxByName;
+            enhancement.RecipeName = Database.Recipes[recipeIdxByName].InternalName;
         }
     }
 
@@ -998,13 +958,12 @@ public static class DatabaseAPI
                         string a = recipeEntry.Salvage[index1];
                         for (int index2 = 0; index2 <= Database.Salvage.Length - 1; ++index2)
                         {
-                            if (string.Equals(a, Database.Salvage[index2].InternalName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                recipeEntry.SalvageIdx[index1] = index2;
-                                numArray[index1] = index2;
-                                strArray[index1] = recipeEntry.Salvage[index1];
-                                break;
-                            }
+                            if (!string.Equals(a, Database.Salvage[index2].InternalName, StringComparison.OrdinalIgnoreCase))
+                                continue;
+                            recipeEntry.SalvageIdx[index1] = index2;
+                            numArray[index1] = index2;
+                            strArray[index1] = recipeEntry.Salvage[index1];
+                            break;
                         }
                     }
                 }
@@ -1021,20 +980,18 @@ public static class DatabaseAPI
         }
         for (int index1 = 0; index1 <= Database.Enhancements.Length - 1; ++index1)
         {
-            if (!string.IsNullOrEmpty(Database.Enhancements[index1].RecipeName))
+            if (string.IsNullOrEmpty(Database.Enhancements[index1].RecipeName))
+                continue;
+            Database.Enhancements[index1].RecipeIDX = -1;
+            string recipeName = Database.Enhancements[index1].RecipeName;
+            for (int index2 = 0; index2 <= Database.Recipes.Length - 1; ++index2)
             {
-                Database.Enhancements[index1].RecipeIDX = -1;
-                string recipeName = Database.Enhancements[index1].RecipeName;
-                for (int index2 = 0; index2 <= Database.Recipes.Length - 1; ++index2)
-                {
-                    if (recipeName.Equals(Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Database.Recipes[index2].Enhancement = Database.Enhancements[index1].UID;
-                        Database.Recipes[index2].EnhIdx = index1;
-                        Database.Enhancements[index1].RecipeIDX = index2;
-                        break;
-                    }
-                }
+                if (!recipeName.Equals(Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                Database.Recipes[index2].Enhancement = Database.Enhancements[index1].UID;
+                Database.Recipes[index2].EnhIdx = index1;
+                Database.Enhancements[index1].RecipeIDX = index2;
+                break;
             }
         }
     }
@@ -1066,11 +1023,10 @@ public static class DatabaseAPI
             {
                 Database.Recipes[index] = new Recipe(reader);
                 ++num;
-                if (num > 100)
-                {
-                    num = 0;
-                    Application.DoEvents();
-                }
+                if (num <= 100)
+                    continue;
+                num = 0;
+                Application.DoEvents();
             }
         }
         else
@@ -1298,11 +1254,10 @@ public static class DatabaseAPI
                 {
                     Database.Enhancements[index] = new Enhancement(reader);
                     ++num1;
-                    if (num1 > 5)
-                    {
-                        num1 = 0;
-                        Application.DoEvents();
-                    }
+                    if (num1 <= 5)
+                        continue;
+                    num1 = 0;
+                    Application.DoEvents();
                 }
                 Database.EnhancementSets = new EnhancementSetCollection();
                 int num2 = reader.ReadInt32() + 1;
@@ -1310,11 +1265,10 @@ public static class DatabaseAPI
                 {
                     Database.EnhancementSets.Add(new EnhancementSet(reader));
                     ++num1;
-                    if (num1 > 5)
-                    {
-                        num1 = 0;
-                        Application.DoEvents();
-                    }
+                    if (num1 <= 5)
+                        continue;
+                    num1 = 0;
+                    Application.DoEvents();
                 }
                 reader.Close();
                 fileStream.Close();
@@ -1641,20 +1595,19 @@ public static class DatabaseAPI
                 power1.FullName = "Orphan." + power1.DisplayName.Replace(" ", "_");
             power1.PowerIndex = index;
             power1.PowerSetID = NidFromUidPowerset(power1.FullSetName);
-            if (power1.PowerSetID > -1)
-            {
-                var ps = power1.GetPowerSet();
-                int length = ps.Powers.Length;
-                power1.PowerSetIndex = length;
-                int[] power2 = ps.Power;
-                Array.Resize(ref power2, length + 1);
-                ps.Power = power2;
-                IPower[] powers = ps.Powers;
-                Array.Resize(ref powers, length + 1);
-                ps.Powers = powers;
-                ps.Power[length] = index;
-                ps.Powers[length] = power1;
-            }
+            if (power1.PowerSetID <= -1)
+                continue;
+            var ps = power1.GetPowerSet();
+            int length = ps.Powers.Length;
+            power1.PowerSetIndex = length;
+            int[] power2 = ps.Power;
+            Array.Resize(ref power2, length + 1);
+            ps.Power = power2;
+            IPower[] powers = ps.Powers;
+            Array.Resize(ref powers, length + 1);
+            ps.Powers = powers;
+            ps.Power[length] = index;
+            ps.Powers[length] = power1;
         }
         foreach (IPower power in Database.Power)
         {
@@ -1693,11 +1646,10 @@ public static class DatabaseAPI
             {
                 for (int index2 = 0; index2 < Database.MutexList.Length; ++index2)
                 {
-                    if (string.Equals(Database.MutexList[index2], power.GroupMembership[index1], StringComparison.OrdinalIgnoreCase))
-                    {
-                        power.NGroupMembership[index1] = index2;
-                        break;
-                    }
+                    if (!string.Equals(Database.MutexList[index2], power.GroupMembership[index1], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    power.NGroupMembership[index1] = index2;
+                    break;
                 }
             }
             power.NIDSubPower = new int[power.UIDSubPower.Length];
@@ -1797,20 +1749,19 @@ public static class DatabaseAPI
         for (int index1 = 0; index1 <= Database.Enhancements.Length - 1; ++index1)
         {
             IEnhancement enhancement = Database.Enhancements[index1];
-            if (enhancement.TypeID == Enums.eType.SetO && !string.IsNullOrEmpty(enhancement.UIDSet))
+            if (enhancement.TypeID != Enums.eType.SetO || string.IsNullOrEmpty(enhancement.UIDSet))
+                continue;
+            int index2 = NidFromUidioSet(enhancement.UIDSet);
+            if (index2 > -1)
             {
-                int index2 = NidFromUidioSet(enhancement.UIDSet);
-                if (index2 > -1)
-                {
-                    enhancement.nIDSet = index2;
-                    Array.Resize(ref Database.EnhancementSets[index2].Enhancements, Database.EnhancementSets[index2].Enhancements.Length + 1);
-                    Database.EnhancementSets[index2].Enhancements[Database.EnhancementSets[index2].Enhancements.Length - 1] = index1;
-                }
-                else
-                {
-                    str = str + enhancement.UIDSet + enhancement.Name + "\n";
-                    flag = true;
-                }
+                enhancement.nIDSet = index2;
+                Array.Resize(ref Database.EnhancementSets[index2].Enhancements, Database.EnhancementSets[index2].Enhancements.Length + 1);
+                Database.EnhancementSets[index2].Enhancements[Database.EnhancementSets[index2].Enhancements.Length - 1] = index1;
+            }
+            else
+            {
+                str = str + enhancement.UIDSet + enhancement.Name + "\n";
+                flag = true;
             }
         }
         if (!flag)
@@ -1861,11 +1812,10 @@ public static class DatabaseAPI
             lastStaticPowerIdx = -1;
         for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
-            if (Database.Power[index].StaticIndex < 0)
-            {
-                ++lastStaticPowerIdx;
-                Database.Power[index].StaticIndex = lastStaticPowerIdx;
-            }
+            if (Database.Power[index].StaticIndex >= 0)
+                continue;
+            ++lastStaticPowerIdx;
+            Database.Power[index].StaticIndex = lastStaticPowerIdx;
         }
         int lastStaticEnhIdx = -2;
         for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
@@ -1877,16 +1827,15 @@ public static class DatabaseAPI
             lastStaticEnhIdx = -1;
         for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
         {
-            if (Database.Enhancements[index].StaticIndex < 1)
-            {
-                ++lastStaticEnhIdx;
-                Database.Enhancements[index].StaticIndex = lastStaticEnhIdx;
-            }
+            if (Database.Enhancements[index].StaticIndex >= 1)
+                continue;
+            ++lastStaticEnhIdx;
+            Database.Enhancements[index].StaticIndex = lastStaticEnhIdx;
         }
-        if (save)
-        {
-            SaveMainDatabase(serializer);
-            SaveEnhancementDb(serializer);
-        }
+
+        if (!save)
+            return;
+        SaveMainDatabase(serializer);
+        SaveEnhancementDb(serializer);
     }
 }

@@ -122,22 +122,20 @@ public class Requirement
                 flag2 = false;
                 for (int index = 0; index <= ClassName.Length - 1; ++index)
                 {
-                    if (string.Equals(ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase))
-                    {
-                        flag2 = true;
-                        break;
-                    }
+                    if (!string.Equals(ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    flag2 = true;
+                    break;
                 }
             }
             if (ClassNameNot.Length > 0)
             {
                 for (int index = 0; index <= ClassNameNot.Length - 1; ++index)
                 {
-                    if (string.Equals(ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase))
-                    {
-                        flag2 = false;
-                        break;
-                    }
+                    if (!string.Equals(ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    flag2 = false;
+                    break;
                 }
             }
             flag1 = flag2;
@@ -178,22 +176,20 @@ public class Requirement
         {
             for (int index2 = 0; index2 < index1.Length; ++index2)
             {
-                if (string.Equals(index1[index2], uidPower, StringComparison.OrdinalIgnoreCase))
-                {
-                    flag = true;
-                    index1[index2] = uidFix;
-                }
+                if (!string.Equals(index1[index2], uidPower, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                flag = true;
+                index1[index2] = uidFix;
             }
         }
         foreach (var index1 in PowerIDNot)
         {
             for (int index2 = 0; index2 < index1.Length; ++index2)
             {
-                if (string.Equals(index1[index2], uidPower, StringComparison.OrdinalIgnoreCase))
-                {
-                    flag = true;
-                    index1[index2] = uidFix;
-                }
+                if (!string.Equals(index1[index2], uidPower, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                flag = true;
+                index1[index2] = uidFix;
             }
         }
         return flag;

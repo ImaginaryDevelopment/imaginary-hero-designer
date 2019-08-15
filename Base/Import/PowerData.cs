@@ -33,12 +33,12 @@ namespace Import
           IsNew = true;
           for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
           {
-            if (!string.IsNullOrEmpty(DatabaseAPI.Database.Power[index].FullName) && string.Equals(DatabaseAPI.Database.Power[index].FullName, Data.FullName, StringComparison.OrdinalIgnoreCase))
-            {
-              IsNew = false;
-              Index = index;
-              break;
-            }
+            if (string.IsNullOrEmpty(DatabaseAPI.Database.Power[index].FullName) || !string.Equals(DatabaseAPI.Database.Power[index].FullName,
+                  Data.FullName, StringComparison.OrdinalIgnoreCase))
+              continue;
+            IsNew = false;
+            Index = index;
+            break;
           }
         }
       }
@@ -56,12 +56,12 @@ namespace Import
         Index = DatabaseAPI.Database.Power.Length - 1;
         DatabaseAPI.Database.Power[Index] = new Power();
       }
-      if (!(!IsNew & Index < 0) && !DatabaseAPI.Database.Power[Index].NeverAutoUpdate)
-      {
-        DatabaseAPI.Database.Power[Index].IsNew = IsNew;
-        DatabaseAPI.Database.Power[Index].IsModified = true;
-        DatabaseAPI.Database.Power[Index].UpdateFromCSV(_csvString);
-      }
+
+      if (!IsNew & Index < 0 || DatabaseAPI.Database.Power[Index].NeverAutoUpdate)
+        return;
+      DatabaseAPI.Database.Power[Index].IsNew = IsNew;
+      DatabaseAPI.Database.Power[Index].IsModified = true;
+      DatabaseAPI.Database.Power[Index].UpdateFromCSV(_csvString);
     }
 
     public bool CheckDifference(out string message)
@@ -182,11 +182,10 @@ namespace Import
       {
         for (int index = 0; index <= DatabaseAPI.Database.Power[Index].GroupMembership.Length - 1; ++index)
         {
-          if (DatabaseAPI.Database.Power[Index].GroupMembership[index] != Data.GroupMembership[index])
-          {
-            message += string.Format("GroupMembership({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].GroupMembership[index],  Data.GroupMembership[index],  index);
-            return true;
-          }
+          if (DatabaseAPI.Database.Power[Index].GroupMembership[index] == Data.GroupMembership[index])
+            continue;
+          message += string.Format("GroupMembership({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].GroupMembership[index],  Data.GroupMembership[index],  index);
+          return true;
         }
         if (DatabaseAPI.Database.Power[Index].MaxTargets != Data.MaxTargets)
         {
@@ -218,11 +217,10 @@ namespace Import
         {
           for (int index = 0; index <= DatabaseAPI.Database.Power[Index].BoostsAllowed.Length - 1; ++index)
           {
-            if (DatabaseAPI.Database.Power[Index].BoostsAllowed[index] != Data.BoostsAllowed[index])
-            {
-              message += string.Format("BoostsAllowed({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].BoostsAllowed[index],  Data.BoostsAllowed[index],  index);
-              return true;
-            }
+            if (DatabaseAPI.Database.Power[Index].BoostsAllowed[index] == Data.BoostsAllowed[index])
+              continue;
+            message += string.Format("BoostsAllowed({2}): {0} => {1}",  DatabaseAPI.Database.Power[Index].BoostsAllowed[index],  Data.BoostsAllowed[index],  index);
+            return true;
           }
           if (DatabaseAPI.Database.Power[Index].BoostBoostable != Data.BoostBoostable)
           {

@@ -31,13 +31,15 @@ public class I9Slot : ICloneable
         IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Enh];
         foreach (Enums.sEffect sEffect in enhancement.Effect)
         {
-            if (sEffect.Mode == Enums.eEffMode.Enhancement && (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly || mag <= 0.0) && ((sEffect.BuffMode != Enums.eBuffDebuff.BuffOnly || mag >= 0.0) && (sEffect.Schedule != Enums.eSchedule.None && (Enums.eEnhance)sEffect.Enhance.ID == iEffect)) && (subEnh < 0 || subEnh == sEffect.Enhance.SubID))
-            {
-                float scheduleMult = GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
-                if (Math.Abs(sEffect.Multiplier) > 0.01)
-                    scheduleMult *= sEffect.Multiplier;
-                num2 += scheduleMult;
-            }
+            if (sEffect.Mode != Enums.eEffMode.Enhancement || (sEffect.BuffMode == Enums.eBuffDebuff.DeBuffOnly && !(mag <= 0.0)) ||
+                ((sEffect.BuffMode == Enums.eBuffDebuff.BuffOnly && !(mag >= 0.0)) ||
+                 (sEffect.Schedule == Enums.eSchedule.None || (Enums.eEnhance) sEffect.Enhance.ID != iEffect)) ||
+                (subEnh >= 0 && subEnh != sEffect.Enhance.SubID))
+                continue;
+            float scheduleMult = GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
+            if (Math.Abs(sEffect.Multiplier) > 0.01)
+                scheduleMult *= sEffect.Multiplier;
+            num2 += scheduleMult;
         }
         return num2;
     }
@@ -235,48 +237,69 @@ public class I9Slot : ICloneable
             {
                 foreach (Enums.sEffect sEffect in enhancement.Effect)
                 {
-                    if (sEffect.Mode == Enums.eEffMode.FX)
-                        flag1 = true;
-                    if (sEffect.Mode == Enums.eEffMode.Enhancement && sEffect.Schedule != Enums.eSchedule.None)
+                    switch (sEffect.Mode)
                     {
-                        float scheduleMult = GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
-                        if (sEffect.Multiplier > 0.0)
-                            scheduleMult *= sEffect.Multiplier;
-                        Enums.eEnhance id = (Enums.eEnhance)sEffect.Enhance.ID;
-                        string str2;
-                        if (id == Enums.eEnhance.Mez)
+                        case Enums.eEffMode.FX:
+                            flag1 = true;
+                            break;
+                        case Enums.eEffMode.Enhancement when sEffect.Schedule != Enums.eSchedule.None:
                         {
-                            Enums.eMez subId = (Enums.eMez)sEffect.Enhance.SubID;
-                            str2 = Enum.GetName(subId.GetType(), subId);
+                            float scheduleMult = GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
+                            if (sEffect.Multiplier > 0.0)
+                                scheduleMult *= sEffect.Multiplier;
+                            Enums.eEnhance id = (Enums.eEnhance)sEffect.Enhance.ID;
+                            string str2;
+                            if (id == Enums.eEnhance.Mez)
+                            {
+                                Enums.eMez subId = (Enums.eMez)sEffect.Enhance.SubID;
+                                str2 = Enum.GetName(subId.GetType(), subId);
+                            }
+                            else
+                                str2 = Enum.GetName(id.GetType(), id);
+                            switch (sEffect.Enhance.ID)
+                            {
+                                case 7:
+                                case 8:
+                                case 17:
+                                    str2 = !flag2 ? "Heal" : string.Empty;
+                                    flag2 = true;
+                                    break;
+                                case 10:
+                                case 11 when !flag5:
+                                    str2 = !flag3 ? "Jump" : string.Empty;
+                                    flag3 = true;
+                                    break;
+                                case 5:
+                                case 16:
+                                    str2 = !flag4 ? "EndMod" : string.Empty;
+                                    flag4 = true;
+                                    break;
+                                default:
+                                {
+                                    if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
+                                    {
+                                        str2 = !flag5 ? "Slow Movement" : string.Empty;
+                                        flag5 = true;
+                                    }
+
+                                    break;
+                                }
+                            }
+                            if (!string.IsNullOrEmpty(str2))
+                            {
+                                if (stringBuilder.Length > 0)
+                                    stringBuilder.Append("\n");
+                                stringBuilder.AppendFormat("{0}  enhancement (Sched. {1}: {2}%)", str2, Enum.GetName(sEffect.Schedule.GetType(), sEffect.Schedule), (scheduleMult * 100f).ToString(NumberFormatInfo.CurrentInfo));
+                            }
+
+                            break;
                         }
-                        else
-                            str2 = Enum.GetName(id.GetType(), id);
-                        if (sEffect.Enhance.ID == 7 || sEffect.Enhance.ID == 8 || sEffect.Enhance.ID == 17)
-                        {
-                            str2 = !flag2 ? "Heal" : string.Empty;
-                            flag2 = true;
-                        }
-                        else if (sEffect.Enhance.ID == 10 || sEffect.Enhance.ID == 11 && !flag5)
-                        {
-                            str2 = !flag3 ? "Jump" : string.Empty;
-                            flag3 = true;
-                        }
-                        else if (sEffect.Enhance.ID == 5 || sEffect.Enhance.ID == 16)
-                        {
-                            str2 = !flag4 ? "EndMod" : string.Empty;
-                            flag4 = true;
-                        }
-                        else if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
-                        {
-                            str2 = !flag5 ? "Slow Movement" : string.Empty;
-                            flag5 = true;
-                        }
-                        if (!string.IsNullOrEmpty(str2))
-                        {
-                            if (stringBuilder.Length > 0)
-                                stringBuilder.Append("\n");
-                            stringBuilder.AppendFormat("{0}  enhancement (Sched. {1}: {2}%)", str2, Enum.GetName(sEffect.Schedule.GetType(), sEffect.Schedule), (scheduleMult * 100f).ToString(NumberFormatInfo.CurrentInfo));
-                        }
+                        case Enums.eEffMode.PowerEnh:
+                            break;
+                        case Enums.eEffMode.PowerProc:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
                 if (!flag1)
@@ -302,33 +325,31 @@ public class I9Slot : ICloneable
                                 power.Effects[idEffect].Buffable = true;
                                 if (power.Effects[idEffect].Absorbed_EffectID == index1)
                                     power.GetEffectStringGrouped(idEffect, ref empty, ref returnMask, false, false);
-                                if (returnMask.Length > 0)
-                                {
-                                    if (stringBuilder.Length > 0)
-                                        stringBuilder.Append("\n");
-                                    stringBuilder.AppendFormat("  {0}", empty);
-                                    break;
-                                }
+                                if (returnMask.Length <= 0)
+                                    continue;
+                                if (stringBuilder.Length > 0)
+                                    stringBuilder.Append("\n");
+                                stringBuilder.AppendFormat("  {0}", empty);
+                                break;
                             }
                             for (int index2 = 0; index2 <= power.Effects.Length - 1; ++index2)
                             {
                                 bool flag6 = false;
                                 for (int index3 = 0; index3 <= returnMask.Length - 1; ++index3)
                                 {
-                                    if (returnMask[index3] == index2)
-                                    {
-                                        flag6 = true;
-                                        break;
-                                    }
+                                    if (returnMask[index3] != index2)
+                                        continue;
+                                    flag6 = true;
+                                    break;
                                 }
-                                if (power.Effects[index2].Absorbed_EffectID == index1 && !flag6)
-                                {
-                                    if (stringBuilder.Length > 0)
-                                        stringBuilder.Append("\n");
-                                    power.Effects[index2].Stacking = Enums.eStacking.Yes;
-                                    power.Effects[index2].Buffable = true;
-                                    stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString());
-                                }
+
+                                if (power.Effects[index2].Absorbed_EffectID != index1 || flag6)
+                                    continue;
+                                if (stringBuilder.Length > 0)
+                                    stringBuilder.Append("\n");
+                                power.Effects[index2].Stacking = Enums.eStacking.Yes;
+                                power.Effects[index2].Buffable = true;
+                                stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString());
                             }
                         }
                         else if (!power.Effects[index1].Absorbed_Effect && power.Effects[index1].EffectType != Enums.eEffectType.Enhancement)
@@ -380,6 +401,10 @@ public class I9Slot : ICloneable
                     return "+4";
                 case Enums.eEnhRelative.PlusFive:
                     return "+5";
+                case Enums.eEnhRelative.None:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
         else
@@ -404,6 +429,10 @@ public class I9Slot : ICloneable
                     return "+4";
                 case Enums.eEnhRelative.PlusFive:
                     return "+5";
+                case Enums.eEnhRelative.None:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
         return string.Empty;

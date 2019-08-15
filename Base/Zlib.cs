@@ -79,13 +79,11 @@ public class Zlib
         int destLength = outSize;
         byte[] array = new byte[destLength];
 
-        if (Uncompress(ref array[0], ref destLength, ref iBytes[0], length) == 0)
-        {
-            Array.Resize(ref array, destLength);
-            return array;
-        }
+        if (Uncompress(ref array[0], ref destLength, ref iBytes[0], length) != 0)
+            return Array.Empty<byte>();
+        Array.Resize(ref array, destLength);
+        return array;
 
-        return Array.Empty<byte>();
     }
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {
@@ -217,22 +215,20 @@ public class Zlib
                 int startIndex = 0;
                 for (int index2 = 0; index2 <= strArray[index1].Length - 1; ++index2)
                 {
-                    if (strArray[index1][index2] == '|')
-                    {
-                        startIndex = index2 + 1;
-                        break;
-                    }
+                    if (strArray[index1][index2] != '|')
+                        continue;
+                    startIndex = index2 + 1;
+                    break;
                 }
                 if (startIndex < strArray[index1].Length - 1)
                     strArray[index1] = strArray[index1].Substring(startIndex);
                 int length = strArray[index1].Length;
                 for (int index2 = strArray[index1].Length - 1; index2 >= 0; index2 += -1)
                 {
-                    if (strArray[index1][index2] == '|')
-                    {
-                        length = index2;
-                        break;
-                    }
+                    if (strArray[index1][index2] != '|')
+                        continue;
+                    length = index2;
+                    break;
                 }
                 if (length > 0)
                     strArray[index1] = strArray[index1].Substring(0, length);

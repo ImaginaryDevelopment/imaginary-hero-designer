@@ -113,16 +113,14 @@ public static class Enums
                 names[index] = names[index].ToUpper();
             foreach (var index1 in strArray2)
             {
-                if (index1.Length > 0)
-                {
-                    int index2 = Array.IndexOf(names, index1);
-                    if (index2 > -1)
-                    {
-                        if (noFlag)
-                            return (int)values.GetValue(index2);
-                        num1 += (int)values.GetValue(index2);
-                    }
-                }
+                if (index1.Length <= 0)
+                    continue;
+                int index2 = Array.IndexOf(names, index1);
+                if (index2 <= -1)
+                    continue;
+                if (noFlag)
+                    return (int)values.GetValue(index2);
+                num1 += (int)values.GetValue(index2);
             }
             num2 = num1;
         }
@@ -209,13 +207,12 @@ public static class Enums
             {
                 for (int index = 0; index < iDamage.Length; ++index)
                 {
-                    if (iDamage[index])
-                    {
-                        string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
-                        if (!string.IsNullOrEmpty(str2))
-                            str2 += ",";
-                        str2 += str3;
-                    }
+                    if (!iDamage[index])
+                        continue;
+                    string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
+                    if (!string.IsNullOrEmpty(str2))
+                        str2 += ",";
+                    str2 += str3;
                 }
             }
             str1 = str2;
@@ -243,13 +240,12 @@ public static class Enums
             {
                 for (int index = 0; index < iDamage.Length; ++index)
                 {
-                    if (iDamage[index])
-                    {
-                        string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
-                        if (!string.IsNullOrEmpty(str2))
-                            str2 += ",";
-                        str2 += str3;
-                    }
+                    if (!iDamage[index])
+                        continue;
+                    string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
+                    if (!string.IsNullOrEmpty(str2))
+                        str2 += ",";
+                    str2 += str3;
                 }
             }
             str1 = str2;
@@ -277,13 +273,12 @@ public static class Enums
             {
                 for (int index = 0; index < iMez.Length; ++index)
                 {
-                    if (iMez[index])
-                    {
-                        string str3 = shortForm ? GetMezNameShort((eMezShort)index) : GetMezName((eMezShort)index);
-                        if (!string.IsNullOrEmpty(str2))
-                            str2 += ",";
-                        str2 += str3;
-                    }
+                    if (!iMez[index])
+                        continue;
+                    string str3 = shortForm ? GetMezNameShort((eMezShort)index) : GetMezName((eMezShort)index);
+                    if (!string.IsNullOrEmpty(str2))
+                        str2 += ",";
+                    str2 += str3;
                 }
             }
             str1 = str2;
@@ -1244,11 +1239,10 @@ public static class Enums
                 {
                     for (int index = 0; index < Value.Length; ++index)
                     {
-                        if (Value[index] > (double)num1)
-                        {
-                            num1 = Value[index];
-                            num2 = index;
-                        }
+                        if (!(Value[index] > (double) num1))
+                            continue;
+                        num1 = Value[index];
+                        num2 = index;
                     }
                     num3 = num2;
                 }
@@ -1280,12 +1274,11 @@ public static class Enums
             int index1 = 0;
             for (int index2 = 0; index2 <= Index.Length - 1; ++index2)
             {
-                if (index2 != iIndex)
-                {
-                    numArray1[index1] = Value[index2];
-                    numArray2[index1] = Index[index2];
-                    ++index1;
-                }
+                if (index2 == iIndex)
+                    continue;
+                numArray1[index1] = Value[index2];
+                numArray2[index1] = Index[index2];
+                ++index1;
             }
             Value = numArray1;
             Index = numArray2;

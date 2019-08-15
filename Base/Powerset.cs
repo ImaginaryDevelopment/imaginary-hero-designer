@@ -180,8 +180,7 @@ public class Powerset : IPowerset, IComparable
 
     public int CompareTo(object obj)
     {
-        IPowerset powerset = obj as IPowerset;
-        if (powerset == null)
+        if (!(obj is IPowerset powerset))
             throw new ArgumentException("Comparison failed - Passed object was not a Powerset Class!");
         int num = string.Compare(GroupName, powerset.GroupName, StringComparison.OrdinalIgnoreCase);
         if (num == 0)
@@ -206,21 +205,20 @@ public class Powerset : IPowerset, IComparable
             SubName = array[4];
             for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
             {
-                if (DatabaseAPI.Database.Classes[index].Playable)
+                if (!DatabaseAPI.Database.Classes[index].Playable)
+                    continue;
+                if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        SetType = Enums.ePowerSetType.Primary;
-                        break;
-                    }
-                    if (string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        SetType = Enums.ePowerSetType.Secondary;
-                        break;
-                    }
+                    ATClass = DatabaseAPI.Database.Classes[index].ClassName;
+                    SetType = Enums.ePowerSetType.Primary;
+                    break;
                 }
+
+                if (!string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                ATClass = DatabaseAPI.Database.Classes[index].ClassName;
+                SetType = Enums.ePowerSetType.Secondary;
+                break;
             }
             if (SetType == Enums.ePowerSetType.None)
             {

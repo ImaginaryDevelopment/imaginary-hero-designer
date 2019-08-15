@@ -377,18 +377,18 @@ namespace Base.Data_Classes
                 default:
                     return false;
             }
-            if (powersetType != Enums.PowersetType.None)
+
+            if (powersetType == Enums.PowersetType.None)
+                return false;
+            for (int index = 0; index <= DatabaseAPI.Database.Powersets[powerSetId].nIDMutexSets.Length - 1; ++index)
             {
-                for (int index = 0; index <= DatabaseAPI.Database.Powersets[powerSetId].nIDMutexSets.Length - 1; ++index)
-                {
-                    if (DatabaseAPI.Database.Powersets[powerSetId].nIDMutexSets[index] == Powersets[(int)powersetType].nID)
-                        return true;
-                }
-                for (int index = 0; index <= Powersets[(int)powersetType].nIDMutexSets.Length - 1; ++index)
-                {
-                    if (Powersets[(int)powersetType].nIDMutexSets[index] == powerSetId)
-                        return true;
-                }
+                if (DatabaseAPI.Database.Powersets[powerSetId].nIDMutexSets[index] == Powersets[(int)powersetType].nID)
+                    return true;
+            }
+            for (int index = 0; index <= Powersets[(int)powersetType].nIDMutexSets.Length - 1; ++index)
+            {
+                if (Powersets[(int)powersetType].nIDMutexSets[index] == powerSetId)
+                    return true;
             }
             return false;
         }
@@ -621,12 +621,11 @@ namespace Base.Data_Classes
             int[] numArray = new int[2];
             for (int level = 0; level < DatabaseAPI.Database.Levels.Length; ++level)
             {
-                if (DatabaseAPI.Database.Levels[level].Slots > 0)
-                {
-                    int num = CurrentBuild.SlotsPlacedAtLevel(level);
-                    numArray[0] += DatabaseAPI.Database.Levels[level].Slots - num;
-                    numArray[1] += num;
-                }
+                if (DatabaseAPI.Database.Levels[level].Slots <= 0)
+                    continue;
+                int num = CurrentBuild.SlotsPlacedAtLevel(level);
+                numArray[0] += DatabaseAPI.Database.Levels[level].Slots - num;
+                numArray[1] += num;
             }
             return numArray;
         }
@@ -678,39 +677,37 @@ namespace Base.Data_Classes
             for (int index = 0; index <= enhancementSet.Bonus.Length - 1; ++index)
             {
                 string effectString = enhancementSet.GetEffectString(index, false, true);
-                if (!string.IsNullOrEmpty(effectString))
-                {
-                    if (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP)
-                        effectString += "(PvP)";
-                    if (num >= enhancementSet.Bonus[index].Slotted & (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.Any))
-                        section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f);
-                    else if (power == null)
-                        section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f);
-                    else
-                        section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Disabled, 0.9f);
-                }
+                if (string.IsNullOrEmpty(effectString))
+                    continue;
+                if (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP)
+                    effectString += "(PvP)";
+                if (num >= enhancementSet.Bonus[index].Slotted & (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.Any))
+                    section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f);
+                else if (power == null)
+                    section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f);
+                else
+                    section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Disabled, 0.9f);
             }
             for (int index = 0; index <= enhancementSet.SpecialBonus.Length - 1; ++index)
             {
                 string effectString = enhancementSet.GetEffectString(index, true, true);
-                if (!string.IsNullOrEmpty(effectString))
+                if (string.IsNullOrEmpty(effectString))
+                    continue;
+                bool flag = false;
+                if (power != null)
                 {
-                    bool flag = false;
-                    if (power != null)
+                    foreach (SlotEntry slot in power.Slots)
                     {
-                        foreach (SlotEntry slot in power.Slots)
-                        {
-                            if (slot.Enhancement.Enh > -1 && enhancementSet.SpecialBonus[index].Special > -1 && slot.Enhancement.Enh == enhancementSet.Enhancements[enhancementSet.SpecialBonus[index].Special])
-                                flag = true;
-                        }
+                        if (slot.Enhancement.Enh > -1 && enhancementSet.SpecialBonus[index].Special > -1 && slot.Enhancement.Enh == enhancementSet.Enhancements[enhancementSet.SpecialBonus[index].Special])
+                            flag = true;
                     }
-                    if (flag)
-                        section1.Add("(Enh) " + effectString, PopUp.Colors.Effect, 0.9f);
-                    else if (power == null)
-                        section1.Add("(Enh) " + effectString, PopUp.Colors.Effect, 0.9f);
-                    else
-                        section1.Add("(Enh) " + effectString, PopUp.Colors.Disabled, 0.9f);
                 }
+                if (flag)
+                    section1.Add("(Enh) " + effectString, PopUp.Colors.Effect, 0.9f);
+                else if (power == null)
+                    section1.Add("(Enh) " + effectString, PopUp.Colors.Effect, 0.9f);
+                else
+                    section1.Add("(Enh) " + effectString, PopUp.Colors.Disabled, 0.9f);
             }
             return section1;
         }
@@ -733,22 +730,20 @@ namespace Base.Data_Classes
                     num2 = recipe.Item[index2].Level;
                 if (recipe.Item[index2].Level < num1)
                     num1 = recipe.Item[index2].Level;
-                if (recipe.Item[index2].Level == iLevel)
-                {
-                    index1 = index2;
-                    break;
-                }
+                if (recipe.Item[index2].Level != iLevel)
+                    continue;
+                index1 = index2;
+                break;
             }
             if (index1 < 0)
             {
                 iLevel = Enhancement.GranularLevelZb(iLevel, 0, 49);
                 for (int index2 = 0; index2 <= recipe.Item.Length - 1; ++index2)
                 {
-                    if (recipe.Item[index2].Level == iLevel)
-                    {
-                        index1 = index2;
-                        break;
-                    }
+                    if (recipe.Item[index2].Level != iLevel)
+                        continue;
+                    index1 = index2;
+                    break;
                 }
             }
             if (index1 < 0)
@@ -769,28 +764,29 @@ namespace Base.Data_Classes
                 section1.Add("Craft Cost (Memorized):", PopUp.Colors.Effect, $"{recipeEntry.CraftCostM:###,###,##0}", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             for (int index2 = 0; index2 <= recipeEntry.Salvage.Length - 1 && (index2 == 0 || recipeEntry.SalvageIdx[index2] != recipeEntry.SalvageIdx[0]); ++index2)
             {
-                if (recipeEntry.SalvageIdx[index2] >= 0)
+                if (recipeEntry.SalvageIdx[index2] < 0)
+                    continue;
+                Color iColor = Color.White;
+                string empty = string.Empty;
+                switch (DatabaseAPI.Database.Salvage[recipeEntry.SalvageIdx[index2]].Rarity)
                 {
-                    Color iColor = Color.White;
-                    string empty = string.Empty;
-                    switch (DatabaseAPI.Database.Salvage[recipeEntry.SalvageIdx[index2]].Rarity)
-                    {
-                        case Recipe.RecipeRarity.Common:
-                            iColor = PopUp.Colors.Common;
-                            break;
-                        case Recipe.RecipeRarity.Uncommon:
-                            iColor = PopUp.Colors.Uncommon;
-                            break;
-                        case Recipe.RecipeRarity.Rare:
-                            iColor = PopUp.Colors.Rare;
-                            break;
-                        case Recipe.RecipeRarity.UltraRare:
-                            iColor = PopUp.Colors.UltraRare;
-                            break;
-                    }
-                    if (recipeEntry.Count[index2] > 0)
-                        section1.Add(DatabaseAPI.Database.Salvage[recipeEntry.SalvageIdx[index2]].ExternalName + empty, iColor, recipeEntry.Count[index2].ToString(CultureInfo.InvariantCulture), PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    case Recipe.RecipeRarity.Common:
+                        iColor = PopUp.Colors.Common;
+                        break;
+                    case Recipe.RecipeRarity.Uncommon:
+                        iColor = PopUp.Colors.Uncommon;
+                        break;
+                    case Recipe.RecipeRarity.Rare:
+                        iColor = PopUp.Colors.Rare;
+                        break;
+                    case Recipe.RecipeRarity.UltraRare:
+                        iColor = PopUp.Colors.UltraRare;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
+                if (recipeEntry.Count[index2] > 0)
+                    section1.Add(DatabaseAPI.Database.Salvage[recipeEntry.SalvageIdx[index2]].ExternalName + empty, iColor, recipeEntry.Count[index2].ToString(CultureInfo.InvariantCulture), PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
             }
             return section1;
         }
@@ -809,21 +805,20 @@ namespace Base.Data_Classes
                 for (int index = 0; index <= enhancementSet.Enhancements.Length - 1; ++index)
                 {
                     IEnhancement enhancement = DatabaseAPI.Database.Enhancements[enhancementSet.Enhancements[index]];
-                    if (enhancement.RecipeIDX > -1)
+                    if (enhancement.RecipeIDX <= -1)
+                        continue;
+                    if (DatabaseAPI.Database.Recipes[enhancement.RecipeIDX].Rarity == Recipe.RecipeRarity.Rare)
                     {
-                        if (DatabaseAPI.Database.Recipes[enhancement.RecipeIDX].Rarity == Recipe.RecipeRarity.Rare)
-                        {
-                            iColor = PopUp.Colors.Rare;
-                            break;
-                        }
-                        if (DatabaseAPI.Database.Recipes[enhancement.RecipeIDX].Rarity == Recipe.RecipeRarity.UltraRare)
-                        {
-                            iColor = PopUp.Colors.UltraRare;
-                            break;
-                        }
-                        if (index > 2)
-                            break;
+                        iColor = PopUp.Colors.Rare;
+                        break;
                     }
+                    if (DatabaseAPI.Database.Recipes[enhancement.RecipeIDX].Rarity == Recipe.RecipeRarity.UltraRare)
+                    {
+                        iColor = PopUp.Colors.UltraRare;
+                        break;
+                    }
+                    if (index > 2)
+                        break;
                 }
                 PopUp.PopupData popupData1 = new PopUp.PopupData();
                 int index1 = popupData1.Add();
@@ -853,14 +848,13 @@ namespace Base.Data_Classes
             {
                 foreach (SlotEntry slot in power.Slots)
                 {
-                    if (slot.Enhancement.Enh >= 0 && DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].nIDSet == sIdx)
+                    if (slot.Enhancement.Enh < 0 || DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].nIDSet != sIdx)
+                        continue;
+                    ++num;
+                    for (int index = 0; index <= enhancementSet.Enhancements.Length - 1; ++index)
                     {
-                        ++num;
-                        for (int index = 0; index <= enhancementSet.Enhancements.Length - 1; ++index)
-                        {
-                            if (slot.Enhancement.Enh == enhancementSet.Enhancements[index])
-                                flagArray[index] = true;
-                        }
+                        if (slot.Enhancement.Enh == enhancementSet.Enhancements[index])
+                            flagArray[index] = true;
                     }
                 }
             }
@@ -895,17 +889,16 @@ namespace Base.Data_Classes
                 int minI = -1;
                 for (int x = 0; x <= poolOrder.Length - 1; ++x)
                 {
-                    if (minO > poolOrder[x])
-                    {
-                        minO = poolOrder[x];
-                        minI = x;
-                    }
+                    if (minO <= poolOrder[x])
+                        continue;
+                    minO = poolOrder[x];
+                    minI = x;
                 }
-                if (minI > -1 && poolIndex[minI] > -1)
-                {
-                    Powersets[i + 3] = DatabaseAPI.Database.Powersets[poolIndex[minI]];
-                    poolOrder[minI] = 512;
-                }
+
+                if (minI <= -1 || poolIndex[minI] <= -1)
+                    continue;
+                Powersets[i + 3] = DatabaseAPI.Database.Powersets[poolIndex[minI]];
+                poolOrder[minI] = 512;
             }
             // HACK: this assumes at least 8 powersets exist, but the database is fully editable.
             PoolLocked[0] = PowersetUsed(Powersets[3]) & PoolUnique(Enums.PowersetType.Pool0);
@@ -954,19 +947,13 @@ namespace Base.Data_Classes
 
             if (power.NIDPowerset == Powersets[1].nID & power.IDXPower == 0 & !allowSecondary)
             {
-                if (CurrentBuild.PowersPlaced > 1)
-                {
-                    message = "The first power from your secondary set is non-optional and can't be removed.";
-                    return false;
-                }
-                return true;
-            }
-
-            if (power.NIDPowerset < 0)
-            {
+                if (CurrentBuild.PowersPlaced <= 1)
+                    return true;
+                message = "The first power from your secondary set is non-optional and can't be removed.";
                 return false;
             }
-            return true;
+
+            return power.NIDPowerset >= 0;
         }
 
         public void SwitchSets(IPowerset newPowerset, IPowerset oldPowerset)
@@ -1012,65 +999,64 @@ namespace Base.Data_Classes
             }
             foreach (PowerEntry power in CurrentBuild.Powers)
             {
-                if (power.NIDPowerset >= 0)
+                if (power.NIDPowerset < 0)
+                    continue;
+                int idxPower = power.IDXPower;
+                if (power.NIDPowerset == oldTrunk)
                 {
-                    int idxPower = power.IDXPower;
-                    if (power.NIDPowerset == oldTrunk)
+                    for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
+                        --idxPower;
+                    for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
+                        ++idxPower;
+                    if (newTrunk < 0)
+                        power.Reset();
+                    else if (idxPower > DatabaseAPI.Database.Powersets[newTrunk].Power.Length - 1 || idxPower < 0)
                     {
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
-                            --idxPower;
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
-                            ++idxPower;
-                        if (newTrunk < 0)
-                            power.Reset();
-                        else if (idxPower > DatabaseAPI.Database.Powersets[newTrunk].Power.Length - 1 || idxPower < 0)
-                        {
-                            power.Reset();
-                        }
-                        else
-                        {
-                            power.NIDPowerset = newTrunk;
-                            power.NIDPower = DatabaseAPI.Database.Powersets[newTrunk].Power[idxPower];
-                            power.IDXPower = idxPower;
-                        }
+                        power.Reset();
                     }
-                    else if (power.NIDPowerset == oldBranch)
+                    else
                     {
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
-                            --idxPower;
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
-                            ++idxPower;
-                        if (newBranch < 0 || idxPower > DatabaseAPI.Database.Powersets[newBranch].Power.Length - 1)
-                        {
-                            power.Reset();
-                        }
-                        else
-                        {
-                            power.NIDPowerset = newBranch;
-                            power.NIDPower = DatabaseAPI.Database.Powersets[newBranch].Power[idxPower];
-                            power.IDXPower = idxPower;
-                        }
+                        power.NIDPowerset = newTrunk;
+                        power.NIDPower = DatabaseAPI.Database.Powersets[newTrunk].Power[idxPower];
+                        power.IDXPower = idxPower;
                     }
-                    if (power.Power == null || !power.Power.Slottable)
-                        power.Slots = Array.Empty<SlotEntry>();
-                    else if (power.Slots.Length == 0)
+                }
+                else if (power.NIDPowerset == oldBranch)
+                {
+                    for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
+                        --idxPower;
+                    for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
+                        ++idxPower;
+                    if (newBranch < 0 || idxPower > DatabaseAPI.Database.Powersets[newBranch].Power.Length - 1)
                     {
-                        power.Slots = new[]{
-                            new SlotEntry
-                            {
-                                Enhancement = new I9Slot(),
-                                FlippedEnhancement = new I9Slot(),
-                                Level = power.Level
-                            }
-                        };
+                        power.Reset();
                     }
-                    else if (idxPower > -1)
+                    else
                     {
-                        for (int index4 = 0; index4 < power.SlotCount; ++index4)
+                        power.NIDPowerset = newBranch;
+                        power.NIDPower = DatabaseAPI.Database.Powersets[newBranch].Power[idxPower];
+                        power.IDXPower = idxPower;
+                    }
+                }
+                if (power.Power == null || !power.Power.Slottable)
+                    power.Slots = Array.Empty<SlotEntry>();
+                else if (power.Slots.Length == 0)
+                {
+                    power.Slots = new[]{
+                        new SlotEntry
                         {
-                            if (!power.PowerSet.Powers[idxPower].IsEnhancementValid(power.Slots[index4].Enhancement.Enh))
-                                power.Slots[index4].Enhancement = new I9Slot();
+                            Enhancement = new I9Slot(),
+                            FlippedEnhancement = new I9Slot(),
+                            Level = power.Level
                         }
+                    };
+                }
+                else if (idxPower > -1)
+                {
+                    for (int index4 = 0; index4 < power.SlotCount; ++index4)
+                    {
+                        if (!power.PowerSet.Powers[idxPower].IsEnhancementValid(power.Slots[index4].Enhancement.Enh))
+                            power.Slots[index4].Enhancement = new I9Slot();
                     }
                 }
             }

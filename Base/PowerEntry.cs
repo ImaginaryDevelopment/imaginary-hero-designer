@@ -146,32 +146,187 @@ public class PowerEntry : ICloneable
             if (Slots[index1].Enhancement.Enh < 0) continue;
             var enh = DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh];
             var power = enh.GetPower();
-            if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
+            if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length <= 0 || power == null)
+                continue;
+            foreach (var index2 in power.Effects)
             {
-                foreach (var index2 in power.Effects)
+                int num = 0;
+                switch (index2.EffectType)
                 {
-                    int num;
-                    switch (index2.EffectType)
-                    {
-                        case Enums.eEffectType.None:
-                        case Enums.eEffectType.Damage:
-                        case Enums.eEffectType.DamageBuff:
-                        case Enums.eEffectType.Enhancement:
-                        case Enums.eEffectType.Heal:
-                            num = 1;
-                            break;
-                        case Enums.eEffectType.Mez:
-                            if (index2.Mag > 0.0)
-                                goto case Enums.eEffectType.None;
-                            else
-                                goto default;
-                        default:
-                            num = index2.ToWho == Enums.eToWho.Target ? 1 : 0;
-                            break;
-                    }
-                    if (num == 0)
-                        return true;
+                    case Enums.eEffectType.None:
+                    case Enums.eEffectType.Damage:
+                    case Enums.eEffectType.DamageBuff:
+                    case Enums.eEffectType.Enhancement:
+                    case Enums.eEffectType.Heal:
+                        num = 1;
+                        break;
+                    case Enums.eEffectType.Mez:
+                        if (index2.Mag > 0.0)
+                            goto case Enums.eEffectType.None;
+                        else
+                            goto default;
+                    case Enums.eEffectType.Accuracy:
+                        break;
+                    case Enums.eEffectType.ViewAttrib:
+                        break;
+                    case Enums.eEffectType.Defense:
+                        break;
+                    case Enums.eEffectType.DropToggles:
+                        break;
+                    case Enums.eEffectType.Endurance:
+                        break;
+                    case Enums.eEffectType.EnduranceDiscount:
+                        break;
+                    case Enums.eEffectType.Fly:
+                        break;
+                    case Enums.eEffectType.SpeedFlying:
+                        break;
+                    case Enums.eEffectType.GrantPower:
+                        break;
+                    case Enums.eEffectType.HitPoints:
+                        break;
+                    case Enums.eEffectType.InterruptTime:
+                        break;
+                    case Enums.eEffectType.JumpHeight:
+                        break;
+                    case Enums.eEffectType.SpeedJumping:
+                        break;
+                    case Enums.eEffectType.Meter:
+                        break;
+                    case Enums.eEffectType.MezResist:
+                        break;
+                    case Enums.eEffectType.MovementControl:
+                        break;
+                    case Enums.eEffectType.MovementFriction:
+                        break;
+                    case Enums.eEffectType.PerceptionRadius:
+                        break;
+                    case Enums.eEffectType.Range:
+                        break;
+                    case Enums.eEffectType.RechargeTime:
+                        break;
+                    case Enums.eEffectType.Recovery:
+                        break;
+                    case Enums.eEffectType.Regeneration:
+                        break;
+                    case Enums.eEffectType.ResEffect:
+                        break;
+                    case Enums.eEffectType.Resistance:
+                        break;
+                    case Enums.eEffectType.RevokePower:
+                        break;
+                    case Enums.eEffectType.Reward:
+                        break;
+                    case Enums.eEffectType.SpeedRunning:
+                        break;
+                    case Enums.eEffectType.SetCostume:
+                        break;
+                    case Enums.eEffectType.SetMode:
+                        break;
+                    case Enums.eEffectType.Slow:
+                        break;
+                    case Enums.eEffectType.StealthRadius:
+                        break;
+                    case Enums.eEffectType.StealthRadiusPlayer:
+                        break;
+                    case Enums.eEffectType.EntCreate:
+                        break;
+                    case Enums.eEffectType.ThreatLevel:
+                        break;
+                    case Enums.eEffectType.ToHit:
+                        break;
+                    case Enums.eEffectType.Translucency:
+                        break;
+                    case Enums.eEffectType.XPDebtProtection:
+                        break;
+                    case Enums.eEffectType.SilentKill:
+                        break;
+                    case Enums.eEffectType.Elusivity:
+                        break;
+                    case Enums.eEffectType.GlobalChanceMod:
+                        break;
+                    case Enums.eEffectType.CombatModShift:
+                        break;
+                    case Enums.eEffectType.UnsetMode:
+                        break;
+                    case Enums.eEffectType.Rage:
+                        break;
+                    case Enums.eEffectType.MaxRunSpeed:
+                        break;
+                    case Enums.eEffectType.MaxJumpSpeed:
+                        break;
+                    case Enums.eEffectType.MaxFlySpeed:
+                        break;
+                    case Enums.eEffectType.DesignerStatus:
+                        break;
+                    case Enums.eEffectType.PowerRedirect:
+                        break;
+                    case Enums.eEffectType.TokenAdd:
+                        break;
+                    case Enums.eEffectType.ExperienceGain:
+                        break;
+                    case Enums.eEffectType.InfluenceGain:
+                        break;
+                    case Enums.eEffectType.PrestigeGain:
+                        break;
+                    case Enums.eEffectType.AddBehavior:
+                        break;
+                    case Enums.eEffectType.RechargePower:
+                        break;
+                    case Enums.eEffectType.RewardSourceTeam:
+                        break;
+                    case Enums.eEffectType.VisionPhase:
+                        break;
+                    case Enums.eEffectType.CombatPhase:
+                        break;
+                    case Enums.eEffectType.ClearFog:
+                        break;
+                    case Enums.eEffectType.SetSZEValue:
+                        break;
+                    case Enums.eEffectType.ExclusiveVisionPhase:
+                        break;
+                    case Enums.eEffectType.Absorb:
+                        break;
+                    case Enums.eEffectType.XAfraid:
+                        break;
+                    case Enums.eEffectType.XAvoid:
+                        break;
+                    case Enums.eEffectType.BeastRun:
+                        break;
+                    case Enums.eEffectType.ClearDamagers:
+                        break;
+                    case Enums.eEffectType.EntCreate_x:
+                        break;
+                    case Enums.eEffectType.Glide:
+                        break;
+                    case Enums.eEffectType.Hoverboard:
+                        break;
+                    case Enums.eEffectType.Jumppack:
+                        break;
+                    case Enums.eEffectType.MagicCarpet:
+                        break;
+                    case Enums.eEffectType.NinjaRun:
+                        break;
+                    case Enums.eEffectType.Null:
+                        break;
+                    case Enums.eEffectType.NullBool:
+                        break;
+                    case Enums.eEffectType.Stealth:
+                        break;
+                    case Enums.eEffectType.SteamJump:
+                        break;
+                    case Enums.eEffectType.Walk:
+                        break;
+                    case Enums.eEffectType.XPDebt:
+                        break;
+                    case Enums.eEffectType.ForceMove:
+                        break;
+                    default:
+                        num = index2.ToWho == Enums.eToWho.Target ? 1 : 0;
+                        break;
                 }
+                if (num == 0)
+                    return true;
             }
         }
         return false;
@@ -284,11 +439,10 @@ public class PowerEntry : ICloneable
                 int index3 = -1;
                 for (int index2 = 0; index2 < slotEntryArray.Length; ++index2)
                 {
-                    if (index2 != index1)
-                    {
-                        ++index3;
-                        slotEntryArray[index2].Assign(Slots[index3]);
-                    }
+                    if (index2 == index1)
+                        continue;
+                    ++index3;
+                    slotEntryArray[index2].Assign(Slots[index3]);
                 }
                 Slots = new SlotEntry[slotEntryArray.Length];
                 for (int index2 = 0; index2 < Slots.Length; ++index2)
