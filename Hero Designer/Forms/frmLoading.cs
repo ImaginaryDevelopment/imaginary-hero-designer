@@ -25,6 +25,12 @@ namespace Hero_Designer
             Name = nameof(frmLoading);
         }
 
+        public sealed override string Text
+        {
+            get => base.Text;
+            set => base.Text = value;
+        }
+
         public void SetMessage(string text)
         {
             if (Label1.InvokeRequired)
