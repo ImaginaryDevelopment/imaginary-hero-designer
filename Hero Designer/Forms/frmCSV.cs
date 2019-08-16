@@ -122,8 +122,9 @@ namespace Hero_Designer
             string str1 = "Static Indexes, App version " + MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
             str1 = (from Power power in DatabaseAPI.Database.Power where power.GetPowerSet().SetType != Enums.ePowerSetType.Boost select Conversions.ToString(power.StaticIndex) + "\t" + power.FullName + "\r\n").Aggregate(str1, (current, str2) => current + str2);
             string text = str1 + "Enhancements\r\n";
-            foreach (Enhancement enhancement in DatabaseAPI.Database.Enhancements)
+            foreach (var enhancement1 in DatabaseAPI.Database.Enhancements)
             {
+                var enhancement = (Enhancement) enhancement1;
                 string str2;
                 var power = enhancement.GetPower();
                 if (power != null)
