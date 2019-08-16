@@ -85,7 +85,7 @@ namespace Hero_Designer
         void btnImport_Click(object sender, EventArgs e)
         {
             char[] chArray = { '\r' };
-            string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(chArray);
+            string[] strArray1 = Clipboard.GetDataObject()?.GetData("System.String", true).ToString().Split(chArray);
             chArray[0] = '\t';
             DatabaseAPI.Database.Salvage = new Salvage[0];
             int num = strArray1.Length - 1;

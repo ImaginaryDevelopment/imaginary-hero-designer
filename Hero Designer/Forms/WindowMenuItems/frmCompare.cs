@@ -946,7 +946,7 @@ namespace Hero_Designer
                             flag = true;
                     }
                     Values[index1][index2] = !(Powers[index1][index2].EntitiesAutoHit == Enums.eEntity.None | flag) ? 0.0f : (float)(Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     {
                         Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
@@ -987,7 +987,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1030,7 +1030,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= Powers[index1].Length - 1; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1063,7 +1063,7 @@ namespace Hero_Designer
                 for (int subPowIdx = 0; subPowIdx <= Powers[powIdx].Length - 1; ++subPowIdx)
                 {
                     Values[powIdx][subPowIdx] = Powers[powIdx][subPowIdx].FXGetDamageValue();
-                    if (Values[powIdx][subPowIdx] == 0.0)
+                    if (Math.Abs(Values[powIdx][subPowIdx]) < float.Epsilon)
                         continue;
                     if (Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
                         Values[powIdx][subPowIdx] /= Powers[powIdx][subPowIdx].EndCost;
@@ -1094,7 +1094,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1131,7 +1131,7 @@ namespace Hero_Designer
                     if (durationEffectId <= -1)
                         continue;
                     Values[index1][index2] = Powers[index1][index2].Effects[durationEffectId].Duration;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1164,7 +1164,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].EndCost;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1204,7 +1204,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].EndCost;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     switch (Powers[index1][index2].PowerType)
                     {
@@ -1256,7 +1256,7 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = MidsContext.Archetype.DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1293,7 +1293,7 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     if (Powers[index1][index2].EndCost > 0.0)
                         Values[index1][index2] /= Powers[index1][index2].EndCost;
@@ -1332,7 +1332,7 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     if (Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
                         Values[index1][index2] /= Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime;
@@ -1368,7 +1368,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].MaxTargets;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1445,7 +1445,7 @@ namespace Hero_Designer
                             break;
                     }
 
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1478,7 +1478,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].RechargeTime;
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                     if (Matching)
@@ -1559,7 +1559,7 @@ namespace Hero_Designer
                         Values[index1][index2] = effectMagSum.Sum;
                     }
 
-                    if (Values[index1][index2] == 0.0)
+                    if (Math.Abs(Values[index1][index2]) < float.Epsilon)
                         continue;
                     {
                         Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;

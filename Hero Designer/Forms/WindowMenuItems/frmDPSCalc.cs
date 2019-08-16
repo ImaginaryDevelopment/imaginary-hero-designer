@@ -74,7 +74,7 @@ namespace Hero_Designer
         {
             if (chkSortByLevel.Checked)
             {
-                for (int index = 0; (double) AttackChain[index].DPA != 0.0; ++index)
+                for (int index = 0; Math.Abs((double) AttackChain[index].DPA) > float.Epsilon; ++index)
                 {
                     string[] strArray = AttackChain[index].PowerName.Split('-');
                     AttackChain[index].PowerName = strArray[1];
@@ -85,7 +85,7 @@ namespace Hero_Designer
             float damage = AttackChain[0].Damage;
             float endurance = AttackChain[0].Endurance;
             float animation = AttackChain[0].Animation;
-            for (int index = 1; AttackChain[index].DPA != 0.0; ++index)
+            for (int index = 1; Math.Abs(AttackChain[index].DPA) > float.Epsilon; ++index)
             {
                 str1 = str1 + " --> " + AttackChain[index].PowerName;
                 damage += AttackChain[index].Damage;
@@ -379,7 +379,7 @@ namespace Hero_Designer
             effectMag2.Multiply();
             float num2 = damageValue / num1;
             string[] strArray;
-            if (damageValue != 0.0)
+            if (Math.Abs(damageValue) > float.Epsilon)
                 strArray = new[]
                 {
                     num2.ToString(CultureInfo.InvariantCulture), damageValue.ToString(CultureInfo.InvariantCulture),
@@ -445,7 +445,7 @@ namespace Hero_Designer
                     array[length].DamageBuff = float.Parse(lvPower.Items[index].SubItems[6].Text);
                     array[length].ResistanceDeBuff = float.Parse(lvPower.Items[index].SubItems[7].Text);
                     array[length].RechargeTimer = -1f;
-                    if (array[length].DamageBuff > 0.0 && array[length].DPA != 0.0)
+                    if (array[length].DamageBuff > 0.0 && Math.Abs(array[length].DPA) > float.Epsilon)
                     {
                         IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text));
                         array[length].HidenDPA = basePower.FXGetDamageValue();

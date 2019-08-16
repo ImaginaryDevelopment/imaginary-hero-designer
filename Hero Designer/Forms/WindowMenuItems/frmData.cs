@@ -128,14 +128,14 @@ namespace Hero_Designer
                 iPopup.Sections[index2].Add("Effect Area:", PopUp.Colors.Text, Enum.GetName(power1.EffectArea.GetType(), power1.EffectArea), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Text, TwoDP(power1.EndCost), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Auto-Hit:", PopUp.Colors.Text, Enum.GetName(power1.EntitiesAutoHit.GetType(), power1.EntitiesAutoHit), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
-                if (power1.InterruptTime != 0.0)
+                if (Math.Abs(power1.InterruptTime) > float.Epsilon)
                     iPopup.Sections[index2].Add("Interrupt:", PopUp.Colors.Text, TwoDP(power1.InterruptTime) + "s", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Level Available:", PopUp.Colors.Text, Conversions.ToString(power1.Level), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Max Targets:", PopUp.Colors.Text, Conversions.ToString(power1.MaxTargets), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Notify Mobs:", PopUp.Colors.Text, Enum.GetName(power1.AIReport.GetType(), power1.AIReport), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
-                if (power1.Radius != 0.0)
+                if (Math.Abs(power1.Radius) > float.Epsilon)
                     iPopup.Sections[index2].Add("Radius:", PopUp.Colors.Text, Conversions.ToString(power1.Radius) + "ft", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
-                if (power1.Range != 0.0)
+                if (Math.Abs(power1.Range) > float.Epsilon)
                     iPopup.Sections[index2].Add("Range:", PopUp.Colors.Text, Conversions.ToString(power1.Range) + "ft", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("RechargeTime:", PopUp.Colors.Text, Conversions.ToString(power1.RechargeTime) + "s", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Target:", PopUp.Colors.Text, Enum.GetName(power1.EntitiesAffected.GetType(), power1.EntitiesAffected), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);

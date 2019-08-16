@@ -473,7 +473,7 @@ namespace Hero_Designer
                       BaseArray[index].I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt)))
                     continue;
                 float accuracy = BaseArray[index].Accuracy;
-                if (accuracy == 0.0)
+                if (Math.Abs(accuracy) < float.Epsilon)
                     continue;
                 float num3 = EnhArray[index].Accuracy;
                 float nEnh;
@@ -485,7 +485,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (EnhArray[index].Accuracy == (double) accuracy)
+                    if (Math.Abs(EnhArray[index].Accuracy - (double) accuracy) < float.Epsilon)
                         num3 = MidsContext.Config.BaseAcc * num3;
                     nEnh = num3 * 100f;
                     nBase = (float) (MidsContext.Config.BaseAcc * (double) accuracy * 100.0);
@@ -506,7 +506,7 @@ namespace Hero_Designer
                 string iTip = Graph.Style != Enums.GraphStyle.baseOnly
                     ? displayName + ": " + Strings.Format(nEnh, "##0.#") + "%"
                     : displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.#") + "%)";
                 if (BaseOverride)
                 {
@@ -530,7 +530,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].FXGetDamageValue();
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string iTip = BaseArray[index].DisplayName;
@@ -557,7 +557,7 @@ namespace Hero_Designer
                         iTip = iTip + "\r\n" + BaseArray[index].FXGetDamageString();
                 }
 
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseArray[index].PowerType == Enums.ePowerType.Toggle)
                     iTip = iTip + "\r\n(Applied every " + Conversions.ToString(BaseArray[index].ActivatePeriod) + "s)";
@@ -584,7 +584,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].FXGetDamageValue();
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string str = BaseArray[index].DisplayName;
@@ -612,7 +612,7 @@ namespace Hero_Designer
                 }
 
                 string iTip = str + "/s";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -637,7 +637,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].FXGetDamageValue();
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 if (EnhArray[index].EndCost > 0.0)
@@ -678,7 +678,7 @@ namespace Hero_Designer
                 else
                 {
                     iTip = str + "\r\nDamage per unit of End: " + Strings.Format(nEnh, "##0.##");
-                    if (nBase != (double) nEnh)
+                    if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 }
 
@@ -705,7 +705,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].FXGetDamageValue();
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string str = BaseArray[index].DisplayName;
@@ -733,7 +733,7 @@ namespace Hero_Designer
                 }
 
                 string iTip = str + "/s";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -760,7 +760,7 @@ namespace Hero_Designer
                     continue;
                 float nBase = BaseArray[index].Effects[durationEffectId].Duration;
                 float nEnh = EnhArray[index].Effects[durationEffectId].Duration;
-                if (!(nBase != 0.0 & BaseArray[index].PowerType == Enums.ePowerType.Click))
+                if (!(Math.Abs(nBase) > float.Epsilon & BaseArray[index].PowerType == Enums.ePowerType.Click))
                     continue;
                 string str1 = EnhArray[index].Effects[durationEffectId].EffectType != Enums.eEffectType.Mez
                     ? Enums.GetEffectName(EnhArray[index].Effects[durationEffectId].EffectType)
@@ -784,7 +784,7 @@ namespace Hero_Designer
                     str2 = displayName + " (" + str1 + "): " + Strings.Format(nBase, "##0.#");
                 else
                     str2 = displayName + " (" + str1 + "): " + Strings.Format(nEnh, "##0.#");
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     str2 = str2 + " (" + Strings.Format(nBase, "##0.#") + ")";
                 string iTip = str2 + "s";
                 if (BaseOverride)
@@ -807,7 +807,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].EndCost;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].EndCost;
                 string displayName = BaseArray[index].DisplayName;
@@ -825,7 +825,7 @@ namespace Hero_Designer
                 string iTip = Graph.Style != Enums.GraphStyle.baseOnly
                     ? displayName + ": " + Strings.Format(nEnh, "##0.##")
                     : displayName + ": " + Strings.Format(nBase, "##0.##");
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseArray[index].PowerType == Enums.ePowerType.Toggle)
                     iTip += "\r\n(Per Second)";
@@ -849,7 +849,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].EndCost;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].EndCost;
                 switch (BaseArray[index].PowerType)
@@ -887,7 +887,7 @@ namespace Hero_Designer
                 string iTip = (Graph.Style != Enums.GraphStyle.baseOnly
                                   ? displayName + ": " + Strings.Format(nEnh, "##0.##")
                                   : displayName + ": " + Strings.Format(nBase, "##0.##")) + "/s";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -909,7 +909,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 string displayName = BaseArray[index].DisplayName;
@@ -931,7 +931,7 @@ namespace Hero_Designer
                     iTip = displayName + ": " + Strings.Format(num4, "##0.#") + "%";
                 else
                     iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.#") + "% (" + Strings.Format(nEnh, "##0.#") + " HP)";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + "\r\n  Base: " + Strings.Format(num4, "##0.#") + "% (" + Strings.Format(nBase, "##0.#") + " HP)";
                 if (BaseOverride)
                 {
@@ -954,7 +954,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 if (EnhArray[index].EndCost > 0.0)
@@ -983,7 +983,7 @@ namespace Hero_Designer
                 else
                     iTip = displayName + "\r\n  Enhanced Heal per unit of End: " + Strings.Format(num5, "##0.##") + "% (" +
                            Strings.Format(nEnh, "##0.##") + " HP)";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + "\r\n  Base Heal per unit of End: " + Strings.Format(num4, "##0.##") + "% (" +
                            Strings.Format(nBase, "##0.##") + " HP)";
                 if (BaseOverride)
@@ -1007,7 +1007,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 switch (BaseArray[index].PowerType)
@@ -1048,7 +1048,7 @@ namespace Hero_Designer
                 else
                     iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.##") + "%/s (" + Strings.Format(nEnh, "##0.##") +
                            " HP)";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + "\r\n  Base: " + Strings.Format(num4, "##0.##") + "%/s (" + Strings.Format(nBase, "##0.##") + " HP)";
                 if (BaseOverride)
                 {
@@ -1083,7 +1083,7 @@ namespace Hero_Designer
                     nEnh = EnhArray[index].Radius;
                 }
 
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 string displayName = BaseArray[index].DisplayName;
                 if (num1 < (double) nEnh)
@@ -1100,7 +1100,7 @@ namespace Hero_Designer
                 string str = Graph.Style != Enums.GraphStyle.baseOnly
                     ? displayName + ": " + Strings.Format(nEnh, "##0.#")
                     : displayName + ": " + Strings.Format(nBase, "##0.#");
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     str = str + " (" + Strings.Format(nBase, "##0.#") + ")";
                 string iTip = str + "ft";
                 if (BaseOverride)
@@ -1123,7 +1123,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 float nBase = BaseArray[index].RechargeTime;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].RechargeTime;
                 string displayName = BaseArray[index].DisplayName;
@@ -1141,7 +1141,7 @@ namespace Hero_Designer
                 string iTip = (Graph.Style != Enums.GraphStyle.baseOnly
                                   ? displayName + ": " + Strings.Format(nEnh, "##0.##")
                                   : displayName + ": " + Strings.Format(nBase, "##0.##")) + "s";
-                if (nBase != (double) nEnh)
+                if (Math.Abs(nBase - (double) nEnh) > float.Epsilon)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -1164,7 +1164,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num3; ++index)
             {
                 float nBase = BaseArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration).Sum;
-                if (nBase == 0.0)
+                if (Math.Abs(nBase) < float.Epsilon)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration).Sum;
                 float num4 = (float) (num2 / 12.0 * (0.05 + 0.05 * ((nBase - 100.0) / 100.0)));
@@ -1196,7 +1196,7 @@ namespace Hero_Designer
                     iTip = " Health regenerated per second: " + Strings.Format(num5, "##0.##") +
                            "%\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num4, "##0.##") + " HP";
                 }
-                else if (nBase == (double) nEnh)
+                else if (Math.Abs(nBase - (double) nEnh) < float.Epsilon)
                     iTip = displayName + ": " + Strings.Format(nBase, "##0.#") + "%\r\n Health regenerated per second: " +
                            Strings.Format(num5, "##0.##") + "%\r\n HitPoints regenerated per second at level 50: " +
                            Strings.Format(num4, "##0.##") + " HP";

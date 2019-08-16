@@ -42,7 +42,7 @@ namespace Hero_Designer
             IEffect effect = (IEffect)myFX.Clone();
             try
             {
-                effect.ImportFromCSV(Clipboard.GetDataObject().GetData("System.String", true).ToString());
+                effect.ImportFromCSV(Clipboard.GetDataObject()?.GetData("System.String", true).ToString());
             }
             catch (Exception ex)
             {
@@ -51,7 +51,7 @@ namespace Hero_Designer
                 ProjectData.ClearProjectError();
                 return;
             }
-            myFX.ImportFromCSV(Clipboard.GetDataObject().GetData("System.String", true).ToString());
+            myFX.ImportFromCSV(Clipboard.GetDataObject()?.GetData("System.String", true).ToString());
             DisplayEffectData();
         }
 
@@ -320,7 +320,7 @@ namespace Hero_Designer
             }
             else
             {
-                using (MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name)))
+                using (MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject()?.GetData(format.Name) ?? throw new InvalidOperationException()))
                 using (BinaryReader reader = new BinaryReader(memoryStream))
                 {
                     string powerFullName = myFX.PowerFullName;

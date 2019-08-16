@@ -103,7 +103,7 @@ namespace Hero_Designer
             if (Interaction.MsgBox("Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Careful...") != MsgBoxResult.Yes)
                 return;
             char[] delimiter = { '\r' };
-            string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(delimiter);
+            string[] strArray1 = Clipboard.GetDataObject()?.GetData("System.String", true).ToString().Split(delimiter);
             delimiter[0] = '\t';
             DatabaseAPI.Database.Recipes = new Recipe[0];
             int num1 = strArray1.Length - 1;
@@ -132,7 +132,7 @@ namespace Hero_Designer
                 int num2 = recipe1.Item.Length - 1;
                 for (int index3 = 0; index3 <= num2; ++index3)
                 {
-                    if (recipe1.Item[index3].Level == Conversion.Val(strArray2[16]) - 1.0)
+                    if (Math.Abs(recipe1.Item[index3].Level - (Conversion.Val(strArray2[16]) - 1.0)) < float.Epsilon)
                         index2 = index3;
                 }
                 if (index2 < 0)

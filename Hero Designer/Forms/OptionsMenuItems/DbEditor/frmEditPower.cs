@@ -51,7 +51,7 @@ namespace Hero_Designer
 
         void btnCSVImport_Click(object sender, EventArgs e)
         {
-            string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
+            string str = Clipboard.GetDataObject()?.GetData("System.String", true).ToString();
             if (str == "")
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
@@ -87,7 +87,7 @@ namespace Hero_Designer
             }
             else
             {
-                MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name));
+                MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject()?.GetData(format.Name) ?? throw new InvalidOperationException());
                 BinaryReader reader = new BinaryReader(memoryStream);
                 myPower = new Power(reader) {GroupName = groupName, SetName = setName};
                 SetFullName();
