@@ -187,12 +187,12 @@ namespace Hero_Designer
             }
             BackColor = myParent.BackColor;
             PopInfo.ForeColor = BackColor;
-            ListLabelV2 llLeft = this.LLLeft;
+            ListLabelV2 llLeft = LLLeft;
             UpdateLLColours(ref llLeft);
-            this.LLLeft = llLeft;
-            ListLabelV2 llRight = this.LLRight;
+            LLLeft = llLeft;
+            ListLabelV2 llRight = LLRight;
             UpdateLLColours(ref llRight);
-            this.LLRight = llRight;
+            LLRight = llRight;
             ibClose.IA = myParent.Drawing.pImageAttributes;
             ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
             ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;

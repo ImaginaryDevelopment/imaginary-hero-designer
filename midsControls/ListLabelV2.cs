@@ -390,7 +390,7 @@ namespace midsControls
 
                 Rectangle bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height);
                 RecalcLines(bRect);
-                if (ScrollSteps > 0 | this.Expanded)
+                if (ScrollSteps > 0 | Expanded)
                 {
                     bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height - (ScrollWidth + yPadding));
                     RecalcLines(bRect);

@@ -1281,13 +1281,13 @@ namespace Hero_Designer
             }
             else
             {
-                this.DlgSave.FileName = MidsContext.Character.Archetype.DisplayName;
-                SaveFileDialog dlgSave = this.DlgSave;
+                DlgSave.FileName = MidsContext.Character.Archetype.DisplayName;
+                SaveFileDialog dlgSave = DlgSave;
                 dlgSave.FileName = dlgSave.FileName + " - " + MidsContext.Character.Powersets[0].DisplayName + " - " +
                                    MidsContext.Character.Powersets[1].DisplayName;
             }
 
-            if (this.DlgSave.ShowDialog() == DialogResult.OK)
+            if (DlgSave.ShowDialog() == DialogResult.OK)
             {
                 if (!MainModule.MidsController.Toon.Save(DlgSave.FileName))
                     return false;

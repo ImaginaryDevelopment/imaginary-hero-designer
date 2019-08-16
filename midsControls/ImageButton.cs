@@ -199,9 +199,9 @@ namespace midsControls
         // Token: 0x060001BB RID: 443 RVA: 0x0001097A File Offset: 0x0000EB7A
         public void SetImages(ImageAttributes ia, Bitmap imageOff, Bitmap imageOn)
         {
-            this.IA = ia;
-            this.ImageOff = imageOff;
-            this.ImageOn = imageOn;
+            IA = ia;
+            ImageOff = imageOff;
+            ImageOn = imageOn;
             Redraw();
         }
 
