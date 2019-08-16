@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Base.Data_Classes;
@@ -117,10 +118,12 @@ namespace midsControls
                 {
                     value = 0;
                 }
+
                 if (value > 100)
                 {
                     value = 100;
                 }
+
                 _nPad = value;
                 FullDraw();
             }
@@ -146,6 +149,7 @@ namespace midsControls
             {
                 components?.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -176,6 +180,7 @@ namespace midsControls
             {
                 _myBx = new ExtendedBitmap(Width, Height);
             }
+
             _myBx.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
         }
 
@@ -183,13 +188,12 @@ namespace midsControls
         {
             SetBxSize();
             DrawLayerLowest();
-            if (_hDraw != null)
-            {
-                DrawLayerImages();
-                Graphics graphics = CreateGraphics();
-                Rectangle clipRect = new Rectangle(0, 0, Width, Height);
-                I9PickerPaint(this, new PaintEventArgs(graphics, clipRect));
-            }
+            if (_hDraw == null)
+                return;
+            DrawLayerImages();
+            Graphics graphics = CreateGraphics();
+            Rectangle clipRect = new Rectangle(0, 0, Width, Height);
+            I9PickerPaint(this, new PaintEventArgs(graphics, clipRect));
         }
 
         void DrawLayerLowest()
@@ -224,7 +228,7 @@ namespace midsControls
             checked
             {
                 iRect.Width = _nSize * 5 + _nPad * 4;
-                iRect.Height = (int)Math.Round(font.GetHeight(_myBx.Graphics));
+                iRect.Height = (int) Math.Round(font.GetHeight(_myBx.Graphics));
                 _headerHeight = iRect.Height + _nPad;
                 RectangleF layoutRectangle = new RectangleF(iRect.X, iRect.Y, iRect.Width, iRect.Height);
                 _myBx.Graphics.DrawRectangle(pen, Dilate(iRect));
@@ -232,6 +236,7 @@ namespace midsControls
                 {
                     text = "Enhancing: " + DatabaseAPI.Database.Power[_nPowerIDX].DisplayName;
                 }
+
                 if (Operators.CompareString(text, "", false) != 0)
                 {
                     _myBx.Graphics.DrawString(text, font, brush, layoutRectangle);
@@ -261,6 +266,7 @@ namespace midsControls
                 layoutRectangle = new RectangleF(rectBounds.X, rectBounds.Y, rectBounds.Width, rectBounds.Height);
                 _myBx.Graphics.DrawString("LVL", font, brush, layoutRectangle, stringFormat);
             }
+
             layoutRectangle.Y += font.GetHeight(_myBx.Graphics) + 3f;
             rectBounds.Height = checked(Height - (rectBounds.Y + _nPad));
             brush = new SolidBrush(ForeColor);
@@ -274,6 +280,7 @@ namespace midsControls
             {
                 s = GetRelativeString(UI.View.RelLevel);
             }
+
             _myBx.Graphics.DrawString(s, font, brush, layoutRectangle, stringFormat);
         }
 
@@ -316,6 +323,7 @@ namespace midsControls
                     result = "!";
                     break;
             }
+
             return result;
         }
 
@@ -338,26 +346,31 @@ namespace midsControls
                 layoutRectangle.Height = Font.GetHeight(_myBx.Graphics);
                 layoutRectangle2.X = iRect.X;
             }
+
             layoutRectangle2.Y = iRect.Y + layoutRectangle.Height;
             layoutRectangle2.Width = iRect.Width;
             layoutRectangle2.Height = iRect.Height - layoutRectangle.Height;
             _myBx.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             float num = 1f;
-            int num2 = checked((int)Math.Round(_myBx.Graphics.MeasureString(_hoverTitle, Font, (int)Math.Round(layoutRectangle.Width * 10f)).Width));
+            int num2 = checked((int) Math.Round(_myBx.Graphics.MeasureString(_hoverTitle, Font, (int) Math.Round(layoutRectangle.Width * 10f))
+                .Width));
             if (num2 > layoutRectangle.Width - 10f)
             {
                 num = (layoutRectangle.Width - 10f) / num2;
             }
+
             if (num < 0.5)
             {
                 num = 0.5f;
             }
+
             Font font = new Font(Name, Font.Size * num, FontStyle.Bold, Font.Unit, 0);
             _myBx.Graphics.DrawRectangle(pen, Dilate(iRect));
             if (Operators.CompareString(_hoverTitle, "", false) != 0)
             {
                 _myBx.Graphics.DrawString(_hoverTitle, font, brush, layoutRectangle);
             }
+
             if (Operators.CompareString(_hoverText, "", false) != 0)
             {
                 _myBx.Graphics.DrawString(_hoverText, Font, brush, layoutRectangle2);
@@ -379,23 +392,24 @@ namespace midsControls
             Rectangle rectBounds = GetRectBounds(0, 0);
             checked
             {
-                srcRect.X = (int)eType * _nSize;
-                _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect.X, srcRect.Y, 30, 30, GraphicsUnit.Pixel, _hDraw.pImageAttributes);
+                srcRect.X = (int) eType * _nSize;
+                _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect.X, srcRect.Y, 30, 30, GraphicsUnit.Pixel,
+                    _hDraw.pImageAttributes);
                 eType = Enums.eType.Normal;
                 rectBounds = GetRectBounds(1, 0);
-                srcRect.X = (int)eType * _nSize;
+                srcRect.X = (int) eType * _nSize;
                 _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
                 eType = Enums.eType.InventO;
                 rectBounds = GetRectBounds(2, 0);
-                srcRect.X = (int)eType * _nSize;
+                srcRect.X = (int) eType * _nSize;
                 _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
                 eType = Enums.eType.SpecialO;
                 rectBounds = GetRectBounds(3, 0);
-                srcRect.X = (int)eType * _nSize;
+                srcRect.X = (int) eType * _nSize;
                 _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
                 eType = Enums.eType.SetO;
                 rectBounds = GetRectBounds(4, 0);
-                srcRect.X = (int)eType * _nSize;
+                srcRect.X = (int) eType * _nSize;
                 _myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
             }
         }
@@ -407,76 +421,84 @@ namespace midsControls
                 switch (UI.View.TabID)
                 {
                     case Enums.eType.Normal:
+                    {
+                        int num = 1;
+                        for (int i = UI.NOGrades.Length - 1; i >= 1; i += -1)
                         {
-                            int num = 1;
-                            for (int i = UI.NOGrades.Length - 1; i >= 1; i += -1)
-                            {
-                                Rectangle srcRect = new Rectangle(UI.NOGrades[i] * _nSize, 0, _nSize, _nSize);
-                                _myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, GetRectBounds(4, num), I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade((Enums.eType)1, (Enums.eEnhGrade)i)), GraphicsUnit.Pixel);
-                                _myBx.Graphics.DrawImage(I9Gfx.EnhGrades.Bitmap, GetRectBounds(4, num), srcRect, GraphicsUnit.Pixel);
-                                num++;
-                            }
-                            int num2 = 0;
-                            int num3 = UI.NO.Length - 1;
-                            for (int i = num2; i <= num3; i++)
-                            {
-                                Origin.Grade grade;
-                                switch (UI.View.GradeID)
-                                {
-                                    case Enums.eEnhGrade.TrainingO:
-                                        grade = 0;
-                                        break;
-                                    case Enums.eEnhGrade.DualO:
-                                        grade = Origin.Grade.DualO;
-                                        break;
-                                    case Enums.eEnhGrade.SingleO:
-                                        grade = Origin.Grade.SingleO;
-                                        break;
-                                    default:
-                                        grade = Origin.Grade.SingleO;
-                                        break;
-                                }
-                                Graphics graphics = _myBx.Graphics;
-                                I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.NO[i], grade);
-                            }
-                            break;
+                            Rectangle srcRect = new Rectangle(UI.NOGrades[i] * _nSize, 0, _nSize, _nSize);
+                            _myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, GetRectBounds(4, num),
+                                I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade((Enums.eType) 1, (Enums.eEnhGrade) i)), GraphicsUnit.Pixel);
+                            _myBx.Graphics.DrawImage(I9Gfx.EnhGrades.Bitmap, GetRectBounds(4, num), srcRect, GraphicsUnit.Pixel);
+                            num++;
                         }
+
+                        int num2 = 0;
+                        int num3 = UI.NO.Length - 1;
+                        for (int i = num2; i <= num3; i++)
+                        {
+                            Origin.Grade grade;
+                            switch (UI.View.GradeID)
+                            {
+                                case Enums.eEnhGrade.TrainingO:
+                                    grade = 0;
+                                    break;
+                                case Enums.eEnhGrade.DualO:
+                                    grade = Origin.Grade.DualO;
+                                    break;
+                                case Enums.eEnhGrade.SingleO:
+                                    grade = Origin.Grade.SingleO;
+                                    break;
+                                default:
+                                    grade = Origin.Grade.SingleO;
+                                    break;
+                            }
+
+                            Graphics graphics = _myBx.Graphics;
+                            I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.NO[i], grade);
+                        }
+
+                        break;
+                    }
                     case Enums.eType.InventO:
+                    {
+                        for (int i = 0; i <= UI.IO.Length - 1; i++)
                         {
-                            for (int i = 0; i <= UI.IO.Length - 1; i++)
-                            {
-                                Graphics graphics = _myBx.Graphics;
-                                I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.IO[i], (Origin.Grade)4);
-                            }
-                            break;
+                            Graphics graphics = _myBx.Graphics;
+                            I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.IO[i], (Origin.Grade) 4);
                         }
+
+                        break;
+                    }
                     case Enums.eType.SpecialO:
+                    {
+                        for (int i = 1; i <= UI.SpecialTypes.Length - 1; i++)
                         {
-                            for (int i = 1; i <= UI.SpecialTypes.Length - 1; i++)
-                            {
-                                Rectangle srcRect2 = new Rectangle(UI.SpecialTypes[i] * _nSize, 0, _nSize, _nSize);
-                                _myBx.Graphics.DrawImage(I9Gfx.EnhSpecials.Bitmap, GetRectBounds(4, i), srcRect2, GraphicsUnit.Pixel);
-                            }
-                            for (int i = 0; i <= UI.SpecialO.Length - 1; i++)
-                            {
-                                Graphics graphics = _myBx.Graphics;
-                                I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.SpecialO[i], (Origin.Grade)3);
-                            }
-                            break;
+                            Rectangle srcRect2 = new Rectangle(UI.SpecialTypes[i] * _nSize, 0, _nSize, _nSize);
+                            _myBx.Graphics.DrawImage(I9Gfx.EnhSpecials.Bitmap, GetRectBounds(4, i), srcRect2, GraphicsUnit.Pixel);
                         }
+
+                        for (int i = 0; i <= UI.SpecialO.Length - 1; i++)
+                        {
+                            Graphics graphics = _myBx.Graphics;
+                            I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)), UI.SpecialO[i], (Origin.Grade) 3);
+                        }
+
+                        break;
+                    }
                     case Enums.eType.SetO:
+                    {
+                        for (int i = 0; i <= UI.SetTypes.Length - 1; i++)
                         {
-                            for (int i = 0; i <= UI.SetTypes.Length - 1; i++)
-                            {
-                                Rectangle srcRect3 = new Rectangle(UI.SetTypes[i] * _nSize, 0, _nSize, _nSize);
-                                _myBx.Graphics.DrawImage(I9Gfx.SetTypes.Bitmap, GetRectBounds(4, i + 1), srcRect3, GraphicsUnit.Pixel);
-                            }
-                            if (UI.View.SetID > -1)
-                                DisplaySetEnhancements();
-                            else
-                                DisplaySetImages();
-                            break;
+                            Rectangle srcRect3 = new Rectangle(UI.SetTypes[i] * _nSize, 0, _nSize, _nSize);
+                            _myBx.Graphics.DrawImage(I9Gfx.SetTypes.Bitmap, GetRectBounds(4, i + 1), srcRect3, GraphicsUnit.Pixel);
                         }
+
+                        if (UI.View.SetID > -1)
+                            DisplaySetEnhancements();
+                        else
+                            DisplaySetImages();
+                        break;
+                    }
                 }
             }
         }
@@ -504,12 +526,13 @@ namespace midsControls
                             int column;
                             (colorMatrix2 = colorMatrix)[row = r, column = c] = colorMatrix2[row, column] / 2f;
                         }
+
                         c++;
-                    }
-                    while (c <= 2);
+                    } while (c <= 2);
+
                     r++;
-                }
-                while (r <= 2);
+                } while (r <= 2);
+
                 ImageAttributes imageAttributes = new ImageAttributes();
                 imageAttributes.SetColorMatrix(colorMatrix);
                 return imageAttributes;
@@ -520,22 +543,16 @@ namespace midsControls
         {
             checked
             {
-                for (int i = 0; i <= DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements.Length - 1; i++)
+                for (int i = 0;
+                    i <= DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements.Length - 1;
+                    i++)
                 {
                     var enh = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[i];
-                    bool grey = false;
-                    foreach (var slotted in _mySlotted)
-                    //for (int j = 0; j <= this._mySlotted.Length - 1; j++)
-                    {
-                        if (enh == slotted)
-                        {
-                            grey = true;
-                            break;
-                        }
-                    }
+                    bool grey = _mySlotted.Any(slotted => enh == slotted);
                     Graphics graphics = _myBx.Graphics;
                     I9Gfx.DrawEnhancementAt(ref graphics, GetRectBounds(IndexToXY(i)),
-                        DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[i], (Origin.Grade)5, GreyItem(grey));
+                        DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[i], (Origin.Grade) 5,
+                        GreyItem(grey));
                 }
             }
         }
@@ -564,6 +581,7 @@ namespace midsControls
                     if (DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[index] == _mySlotted[i])
                         return true;
                 }
+
                 return false;
             }
         }
@@ -572,20 +590,18 @@ namespace midsControls
         {
             checked
             {
-                if (UI.View.TabID == Enums.eType.SetO)
+                if (UI.View.TabID != Enums.eType.SetO)
+                    return;
+                if (UI.View.SetTypeID <= -1)
+                    return;
+                int num = 0;
+                int num2 = UI.Sets[UI.View.SetTypeID].Length - 1;
+                for (int i = num; i <= num2; i++)
                 {
-                    if (UI.View.SetTypeID > -1)
-                    {
-                        int num = 0;
-                        int num2 = UI.Sets[UI.View.SetTypeID].Length - 1;
-                        for (int i = num; i <= num2; i++)
-                        {
-                            Rectangle srcRect = new Rectangle(I9Gfx.OriginIndex * _nSize, 4 * _nSize, _nSize, _nSize);
-                            _myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, GetRectBounds(IndexToXY(i)), srcRect, GraphicsUnit.Pixel);
-                            srcRect = new Rectangle(UI.Sets[UI.View.SetTypeID][i] * _nSize, 0, _nSize, _nSize);
-                            _myBx.Graphics.DrawImage(I9Gfx.Sets.Bitmap, GetRectBounds(IndexToXY(i)), srcRect, GraphicsUnit.Pixel);
-                        }
-                    }
+                    Rectangle srcRect = new Rectangle(I9Gfx.OriginIndex * _nSize, 4 * _nSize, _nSize, _nSize);
+                    _myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, GetRectBounds(IndexToXY(i)), srcRect, GraphicsUnit.Pixel);
+                    srcRect = new Rectangle(UI.Sets[UI.View.SetTypeID][i] * _nSize, 0, _nSize, _nSize);
+                    _myBx.Graphics.DrawImage(I9Gfx.Sets.Bitmap, GetRectBounds(IndexToXY(i)), srcRect, GraphicsUnit.Pixel);
                 }
             }
         }
@@ -607,48 +623,55 @@ namespace midsControls
         void DrawHighlights()
         {
             DrawHighlight(_hoverCell.X, _hoverCell.Y);
-            DrawSelected((int)UI.View.TabID, 0);
-            if (UI.View.TabID == Enums.eType.SetO)
+            DrawSelected((int) UI.View.TabID, 0);
+            switch (UI.View.TabID)
             {
-                if (UI.View.SetTypeID > -1)
+                case Enums.eType.SetO:
                 {
-                    DrawSelected(4, checked(UI.View.SetTypeID + 1));
+                    if (UI.View.SetTypeID > -1)
+                    {
+                        DrawSelected(4, checked(UI.View.SetTypeID + 1));
+                    }
+
+                    break;
                 }
+                case Enums.eType.Normal:
+                {
+                    if ((int) UI.View.GradeID > -1)
+                    {
+                        DrawSelected(4, Reverse((int) UI.View.GradeID));
+                    }
+
+                    break;
+                }
+                case Enums.eType.SpecialO when (int) UI.View.SpecialID > -1:
+                    DrawSelected(4, (int) UI.View.SpecialID);
+                    break;
             }
-            else if (UI.View.TabID == Enums.eType.Normal)
+
+            if (UI.Initial.PickerID <= -1)
+                return;
+            if (UI.Initial.TabID == UI.View.TabID & UI.Initial.SetTypeID == UI.View.SetTypeID & UI.Initial.SetID == UI.View.SetID &
+                UI.Initial.GradeID == UI.View.GradeID & UI.Initial.SpecialID == UI.View.SpecialID)
             {
-                if ((int)UI.View.GradeID > -1)
-                {
-                    DrawSelected(4, Reverse((int)UI.View.GradeID));
-                }
+                DrawSelected(IndexToXY(UI.Initial.PickerID).X, IndexToXY(UI.Initial.PickerID).Y);
+                DrawBox(IndexToXY(UI.Initial.PickerID).X, IndexToXY(UI.Initial.PickerID).Y);
             }
-            else if (UI.View.TabID == Enums.eType.SpecialO && (int)UI.View.SpecialID > -1)
+            else if (UI.Initial.TabID == UI.View.TabID && UI.Initial.SetTypeID == UI.View.SetTypeID && UI.View.SetID < 0)
             {
-                DrawSelected(4, (int)UI.View.SpecialID);
-            }
-            if (UI.Initial.PickerID > -1)
-            {
-                if (UI.Initial.TabID == UI.View.TabID & UI.Initial.SetTypeID == UI.View.SetTypeID & UI.Initial.SetID == UI.View.SetID & UI.Initial.GradeID == UI.View.GradeID & UI.Initial.SpecialID == UI.View.SpecialID)
-                {
-                    DrawSelected(IndexToXY(UI.Initial.PickerID).X, IndexToXY(UI.Initial.PickerID).Y);
-                    DrawBox(IndexToXY(UI.Initial.PickerID).X, IndexToXY(UI.Initial.PickerID).Y);
-                }
-                else if (UI.Initial.TabID == UI.View.TabID && UI.Initial.SetTypeID == UI.View.SetTypeID && UI.View.SetID < 0)
-                {
-                    DrawSelected(IndexToXY(UI.Initial.SetID).X, IndexToXY(UI.Initial.SetID).Y);
-                    DrawBox(IndexToXY(UI.Initial.SetID).X, IndexToXY(UI.Initial.SetID).Y);
-                }
+                DrawSelected(IndexToXY(UI.Initial.SetID).X, IndexToXY(UI.Initial.SetID).Y);
+                DrawBox(IndexToXY(UI.Initial.SetID).X, IndexToXY(UI.Initial.SetID).Y);
             }
         }
 
         void DrawTypeLine()
         {
-            Rectangle rectBounds = GetRectBounds((int)UI.View.TabID, 0);
+            Rectangle rectBounds = GetRectBounds((int) UI.View.TabID, 0);
             checked
             {
                 int ly1 = _headerHeight + _nPad + _nSize;
                 int y = ly1 + _nPad - 2;
-                int ly2 = (int)Math.Round(rectBounds.X + rectBounds.Width / 2.0);
+                int ly2 = (int) Math.Round(rectBounds.X + rectBounds.Width / 2.0);
                 Pen pen = new Pen(ForeColor);
                 _myBx.Graphics.DrawLine(pen, ly2, ly1, ly2, y);
             }
@@ -658,27 +681,29 @@ namespace midsControls
         {
             checked
             {
-                if (UI.View.TabID == Enums.eType.SetO && UI.View.SetTypeID < 0)
-                    return;
-                if (UI.View.TabID == Enums.eType.Normal && UI.View.GradeID < 0)
-                    return;
-                if (UI.View.TabID == Enums.eType.SpecialO && UI.View.SpecialID < 0)
-                    return;
+                switch (UI.View.TabID)
+                {
+                    case Enums.eType.SetO when UI.View.SetTypeID < 0:
+                    case Enums.eType.Normal when UI.View.GradeID < 0:
+                    case Enums.eType.SpecialO when UI.View.SpecialID < 0:
+                        return;
+                }
 
                 Rectangle rectangle = default;
                 switch (UI.View.TabID)
                 {
                     case Enums.eType.Normal:
-                        rectangle = GetRectBounds(4, Reverse((int)UI.View.GradeID));
+                        rectangle = GetRectBounds(4, Reverse((int) UI.View.GradeID));
                         break;
                     case Enums.eType.SpecialO:
-                        rectangle = GetRectBounds(4, (int)UI.View.SpecialID);
+                        rectangle = GetRectBounds(4, (int) UI.View.SpecialID);
                         break;
                     case Enums.eType.SetO:
                         rectangle = GetRectBounds(4, UI.View.SetTypeID + 1);
                         break;
                 }
-                int ly = (int)Math.Round(rectangle.Y + rectangle.Height / 2.0);
+
+                int ly = (int) Math.Round(rectangle.Y + rectangle.Height / 2.0);
                 int x = rectangle.X - 2;
                 int x2 = rectangle.X - _nPad + 2;
                 Pen pen = new Pen(ForeColor);
@@ -691,7 +716,7 @@ namespace midsControls
             DrawSetBox();
             DrawSetLine();
             DrawEnhBoxSet();
-            DrawBox((int)UI.View.TabID, 0);
+            DrawBox((int) UI.View.TabID, 0);
         }
 
         void DrawEnhBoxSet()
@@ -732,16 +757,15 @@ namespace midsControls
         {
             checked
             {
-                if (x > -1 & y > -1)
-                {
-                    Pen pen = new Pen(ForeColor);
-                    Rectangle rectBounds = GetRectBounds(x, y);
-                    rectBounds.X--;
-                    rectBounds.Y--;
-                    rectBounds.Width++;
-                    rectBounds.Height++;
-                    _myBx.Graphics.DrawRectangle(pen, rectBounds);
-                }
+                if (!(x > -1 & y > -1))
+                    return;
+                Pen pen = new Pen(ForeColor);
+                Rectangle rectBounds = GetRectBounds(x, y);
+                rectBounds.X--;
+                rectBounds.Y--;
+                rectBounds.Width++;
+                rectBounds.Height++;
+                _myBx.Graphics.DrawRectangle(pen, rectBounds);
             }
         }
 
@@ -759,6 +783,7 @@ namespace midsControls
                     index -= tCols;
                     tRow++;
                 }
+
                 Point result = new Point(index, tRow + 1);
                 return result;
             }
@@ -788,10 +813,12 @@ namespace midsControls
                     for (int y = 0; y <= rows; y++)
                     {
                         Rectangle rectBounds = GetRectBounds(x, y);
-                        if ((iPt.X >= rectBounds.X & iPt.X <= rectBounds.X + rectBounds.Width) && (iPt.Y >= rectBounds.Y & iPt.Y <= rectBounds.Y + rectBounds.Height))
+                        if ((iPt.X >= rectBounds.X & iPt.X <= rectBounds.X + rectBounds.Width) &&
+                            (iPt.Y >= rectBounds.Y & iPt.Y <= rectBounds.Y + rectBounds.Height))
                             return new Point(x, y);
                     }
                 }
+
                 return new Point(-1, -1);
             }
         }
@@ -816,7 +843,7 @@ namespace midsControls
 
                 if (cellXY.Y == 0)
                 {
-                    UI.View.TabID = (Enums.eType)cellXY.X;
+                    UI.View.TabID = (Enums.eType) cellXY.X;
                     if (cellXY.X == 4 & UI.SetTypes.Length > 0)
                     {
                         UI.View.SetTypeID = 0;
@@ -825,22 +852,30 @@ namespace midsControls
                             UI.View.RelLevel = Enums.eEnhRelative.Even;
                         }
                     }
-                    else if (cellXY.X == 2)
-                    {
-                        if (UI.Initial.TabID == Enums.eType.Normal)
-                            UI.Initial.TabID = Enums.eType.InventO;
-                        if (UI.View.RelLevel < Enums.eEnhRelative.Even)
-                            UI.View.RelLevel = Enums.eEnhRelative.Even;
-                    }
-                    else if (cellXY.X == 1)
-                    {
-                        if (UI.View.RelLevel > Enums.eEnhRelative.PlusThree)
-                            UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
-                        if (UI.Initial.TabID == Enums.eType.InventO)
-                            UI.Initial.TabID = Enums.eType.Normal;
-                    }
-                    else if (cellXY.X == 3 && UI.View.RelLevel > Enums.eEnhRelative.PlusThree)
-                        UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
+                    else
+                        switch (cellXY.X)
+                        {
+                            case 2:
+                            {
+                                if (UI.Initial.TabID == Enums.eType.Normal)
+                                    UI.Initial.TabID = Enums.eType.InventO;
+                                if (UI.View.RelLevel < Enums.eEnhRelative.Even)
+                                    UI.View.RelLevel = Enums.eEnhRelative.Even;
+                                break;
+                            }
+                            case 1:
+                            {
+                                if (UI.View.RelLevel > Enums.eEnhRelative.PlusThree)
+                                    UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
+                                if (UI.Initial.TabID == Enums.eType.InventO)
+                                    UI.Initial.TabID = Enums.eType.Normal;
+                                break;
+                            }
+                            case 3 when UI.View.RelLevel > Enums.eEnhRelative.PlusThree:
+                                UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
+                                break;
+                        }
+
                     if (cellXY.X == 0)
                         DoEnhancementPicked(-1);
                 }
@@ -854,20 +889,23 @@ namespace midsControls
                                 if (cellXY.Y < UI.NOGrades.Length)
                                 {
                                     cellXY.Y = Reverse(cellXY.Y);
-                                    UI.View.GradeID = (Enums.eEnhGrade)cellXY.Y;
+                                    UI.View.GradeID = (Enums.eEnhGrade) cellXY.Y;
                                     if (UI.Initial.TabID == Enums.eType.Normal)
                                     {
                                         UI.Initial.GradeID = UI.View.GradeID;
                                     }
+
                                     DoHover(_hoverCell, true);
                                 }
+
                                 break;
                             case Enums.eType.SpecialO:
                                 if (cellXY.Y < UI.SpecialTypes.Length)
                                 {
-                                    SetSpecialEnhSet((Enums.eSubtype)cellXY.Y);
+                                    SetSpecialEnhSet((Enums.eSubtype) cellXY.Y);
                                     DoHover(_hoverCell, true);
                                 }
+
                                 break;
                             case Enums.eType.SetO:
                                 if (cellXY.Y - 1 < UI.SetTypes.Length)
@@ -876,6 +914,7 @@ namespace midsControls
                                     UI.View.SetID = -1;
                                     DoHover(_hoverCell, true);
                                 }
+
                                 break;
                         }
                     }
@@ -888,24 +927,30 @@ namespace midsControls
                     else if (CellEnhSelect(cellIndex))
                         DoEnhancementPicked(cellIndex);
                 }
+
                 FullDraw();
             }
         }
 
         static int Reverse(int iValue)
         {
-            if (iValue == 3)
-                return 1;
-            if (iValue == 1)
-                return 3;
-            return iValue;
+            switch (iValue)
+            {
+                case 3:
+                    return 1;
+                case 1:
+                    return 3;
+                default:
+                    return iValue;
+            }
         }
 
         bool CellSetTypeSelect(Point cell)
             => cell.X == 4;
 
         bool CellSetSelect(int cellIDX)
-            => UI.View.SetTypeID >= 0 && (UI.View.TabID == Enums.eType.SetO & UI.View.SetID == -1 & cellIDX > -1 & cellIDX < UI.Sets[UI.View.SetTypeID].Length);
+            => UI.View.SetTypeID >= 0 && (UI.View.TabID == Enums.eType.SetO & UI.View.SetID == -1 & cellIDX > -1 &
+                                          cellIDX < UI.Sets[UI.View.SetTypeID].Length);
 
         bool CellEnhSelect(int cellIDX)
         {
@@ -930,16 +975,18 @@ namespace midsControls
                     array = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements;
                     break;
             }
+
             return (cellIDX > -1 & cellIDX < array.Length);
         }
 
         void DoEnhancementPicked(int index)
         {
-            I9Slot i9Slot = (I9Slot)_mySlot.Clone();
+            I9Slot i9Slot = (I9Slot) _mySlot.Clone();
             CheckAndFixIOLevel();
             checked
             {
-                if (((UI.View.IOLevel != UI.Initial.IOLevel & UI.View.IOLevel != _userLevel) | _userLevel == -1) && !(UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49) == UI.View.IOLevel))
+                if (((UI.View.IOLevel != UI.Initial.IOLevel & UI.View.IOLevel != _userLevel) | _userLevel == -1) &&
+                    !(UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49) == UI.View.IOLevel))
                     _levelCapped = true;
                 switch (UI.View.TabID)
                 {
@@ -973,22 +1020,27 @@ namespace midsControls
                         }
                         else
                             i9Slot.RelativeLevel = UI.View.RelLevel;
+
                         break;
                 }
+
                 if (UI.View.TabID != 0)
                     _lastTab = UI.View.TabID;
-                if (UI.View.TabID == Enums.eType.SetO)
-                    _lastSet = UI.View.SetTypeID;
-                if (UI.View.TabID == Enums.eType.Normal)
+                switch (UI.View.TabID)
                 {
-                    _lastGrade = UI.View.GradeID;
-                    _lastRelativeLevel = UI.View.RelLevel;
+                    case Enums.eType.SetO:
+                        _lastSet = UI.View.SetTypeID;
+                        break;
+                    case Enums.eType.Normal:
+                        _lastGrade = UI.View.GradeID;
+                        _lastRelativeLevel = UI.View.RelLevel;
+                        break;
+                    case Enums.eType.SpecialO:
+                        _lastSpecial = UI.View.SpecialID;
+                        _lastRelativeLevel = UI.View.RelLevel;
+                        break;
                 }
-                if (UI.View.TabID == Enums.eType.SpecialO)
-                {
-                    _lastSpecial = UI.View.SpecialID;
-                    _lastRelativeLevel = UI.View.RelLevel;
-                }
+
                 if ((UI.View.TabID == Enums.eType.SetO | UI.View.TabID == Enums.eType.InventO) & !_levelCapped)
                 {
                     if (UI.View.TabID == Enums.eType.InventO & Enhancement.GranularLevelZb(_userLevel - 1, 9, 49) == UI.View.IOLevel)
@@ -1000,6 +1052,7 @@ namespace midsControls
                 {
                     LastLevel = _userLevel;
                 }
+
                 EnhancementPicked?.Invoke(i9Slot);
             }
         }
@@ -1033,16 +1086,15 @@ namespace midsControls
             Point location = new Point(e.X, e.Y);
             Point cellXY = GetCellXY(location);
             DoHover(cellXY);
-            if (e.Button == MouseButtons.Left)
-            {
-                Point point = new Point(e.X, e.Y);
-                point.Offset(_mouseOffset.X, _mouseOffset.Y);
-                location = Location;
-                Point location2 = checked(new Point(location.X + point.X, Location.Y + point.Y));
-                Rectangle bounds = Bounds;
-                Location = location2;
-                Moved?.Invoke(Bounds, bounds);
-            }
+            if (e.Button != MouseButtons.Left)
+                return;
+            Point point = new Point(e.X, e.Y);
+            point.Offset(_mouseOffset.X, _mouseOffset.Y);
+            location = Location;
+            Point location2 = checked(new Point(location.X + point.X, Location.Y + point.Y));
+            Rectangle bounds = Bounds;
+            Location = location2;
+            Moved?.Invoke(Bounds, bounds);
         }
 
         void DoHover(Point cell, bool alwaysUpdate = false)
@@ -1072,6 +1124,7 @@ namespace midsControls
                             SetInfoStrings("Invention Set", "Collecting a set will grant additional effects");
                             break;
                     }
+
                     hlOk = true;
                 }
                 else if (cell.Y > 0)
@@ -1085,14 +1138,16 @@ namespace midsControls
                                 {
                                     string message = "";
                                     int num = cell.Y;
-                                    if (num == 1)
+                                    switch (num)
                                     {
-                                        num = 3;
+                                        case 1:
+                                            num = 3;
+                                            break;
+                                        case 3:
+                                            num = 1;
+                                            break;
                                     }
-                                    else if (num == 3)
-                                    {
-                                        num = 1;
-                                    }
+
                                     switch (num)
                                     {
                                         case 0:
@@ -1108,9 +1163,11 @@ namespace midsControls
                                             message = "The most effective regular enhancement.";
                                             break;
                                     }
+
                                     SetInfoStrings(DatabaseAPI.Database.EnhGradeStringLong[UI.NOGrades[num]], message);
                                     hlOk = true;
                                 }
+
                                 break;
                             case Enums.eType.SpecialO:
                                 if (cell.Y < UI.SpecialTypes.Length)
@@ -1131,9 +1188,11 @@ namespace midsControls
                                             message2 = "Rewards from the Eden Trial.";
                                             break;
                                     }
+
                                     SetInfoStrings(DatabaseAPI.Database.SpecialEnhStringLong[UI.SpecialTypes[cell.Y]], message2);
                                     hlOk = true;
                                 }
+
                                 break;
                             case Enums.eType.SetO:
                                 if (cell.Y - 1 < UI.SetTypes.Length)
@@ -1141,6 +1200,7 @@ namespace midsControls
                                     SetInfoStrings(setTypeStringLong[UI.SetTypes[cell.Y - 1]], "Click here to view the set listing.");
                                     hlOk = true;
                                 }
+
                                 break;
                         }
                     }
@@ -1154,13 +1214,17 @@ namespace midsControls
                         }
                         else
                         {
-                            str = string.Concat(" (", Conversions.ToString(DatabaseAPI.Database.EnhancementSets[tId].LevelMin + 1), "-", Conversions.ToString(DatabaseAPI.Database.EnhancementSets[tId].LevelMax + 1), ")");
+                            str = string.Concat(" (", Conversions.ToString(DatabaseAPI.Database.EnhancementSets[tId].LevelMin + 1), "-",
+                                Conversions.ToString(DatabaseAPI.Database.EnhancementSets[tId].LevelMax + 1), ")");
                         }
-                        SetInfoStrings(DatabaseAPI.Database.EnhancementSets[tId].DisplayName + str, "Type: " + setTypeStringLong[(int)DatabaseAPI.Database.EnhancementSets[tId].SetType]);
+
+                        SetInfoStrings(DatabaseAPI.Database.EnhancementSets[tId].DisplayName + str,
+                            "Type: " + setTypeStringLong[(int) DatabaseAPI.Database.EnhancementSets[tId].SetType]);
                         if ((cell.X != _hoverCell.X | cell.Y != _hoverCell.Y) || alwaysUpdate)
                         {
                             RaiseHoverSet(tId);
                         }
+
                         hlOk = true;
                     }
                     else if (CellEnhSelect(cellIndex))
@@ -1185,42 +1249,57 @@ namespace midsControls
                                 SetInfoStrings(DatabaseAPI.Database.Enhancements[tId].Name, DatabaseAPI.Database.Enhancements[tId].Desc);
                                 break;
                             case Enums.eType.SetO:
+                            {
+                                tId = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[cellIndex];
+                                string text = DatabaseAPI.Database.Enhancements[tId].Name;
+                                string str2;
+                                if (DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin ==
+                                    DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMax)
                                 {
-                                    tId = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].Enhancements[cellIndex];
-                                    string text = DatabaseAPI.Database.Enhancements[tId].Name;
-                                    string str2;
-                                    if (DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin == DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMax)
-                                    {
-                                        str2 = " (" + Conversions.ToString(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin + 1) + ")";
-                                    }
-                                    else
-                                    {
-                                        str2 = string.Concat(" (", Conversions.ToString(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin + 1), "-", Conversions.ToString(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMax + 1), ")");
-                                        if (DatabaseAPI.Database.Enhancements[tId].Unique)
-                                        {
-                                            text += " (Unique)";
-                                        }
-                                    }
-                                    SetInfoStrings(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].DisplayName + str2, text);
-                                    break;
+                                    str2 = " (" + Conversions.ToString(
+                                               DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin +
+                                               1) + ")";
                                 }
+                                else
+                                {
+                                    str2 = string.Concat(" (",
+                                        Conversions.ToString(DatabaseAPI.Database
+                                                                 .EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMin + 1),
+                                        "-",
+                                        Conversions.ToString(DatabaseAPI.Database
+                                                                 .EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].LevelMax + 1),
+                                        ")");
+                                    if (DatabaseAPI.Database.Enhancements[tId].Unique)
+                                    {
+                                        text += " (Unique)";
+                                    }
+                                }
+
+                                SetInfoStrings(
+                                    DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[tId].nIDSet].DisplayName + str2,
+                                    text);
+                                break;
+                            }
                         }
+
                         if (cell.X != _hoverCell.X || cell.Y != _hoverCell.Y || alwaysUpdate)
                         {
                             RaiseHoverEnhancement(tId);
                         }
+
                         hlOk = true;
                     }
                 }
+
                 if (!hlOk)
                 {
                     cell = new Point(-1, -1);
                 }
-                if (cell.X != _hoverCell.X || cell.Y != _hoverCell.Y)
-                {
-                    _hoverCell = cell;
-                    FullDraw();
-                }
+
+                if (cell.X == _hoverCell.X && cell.Y == _hoverCell.Y)
+                    return;
+                _hoverCell = cell;
+                FullDraw();
             }
         }
 
@@ -1238,6 +1317,7 @@ namespace midsControls
                         }
                     }
                 }
+
                 return 0;
             }
         }
@@ -1254,6 +1334,7 @@ namespace midsControls
                     if (DatabaseAPI.Database.EnhancementSets[i].SetType == iSetType)
                         list.Add(i);
                 }
+
                 return list.ToArray();
             }
         }
@@ -1270,9 +1351,7 @@ namespace midsControls
 
         static int[] GetValidEnhancements(int iPowerIDX, Enums.eType iType, Enums.eSubtype iSubType = 0)
         {
-            if (iPowerIDX < 0)
-                return Array.Empty<int>();
-            return DatabaseAPI.Database.Power[iPowerIDX].GetValidEnhancements(iType, iSubType);
+            return iPowerIDX < 0 ? Array.Empty<int>() : DatabaseAPI.Database.Power[iPowerIDX].GetValidEnhancements(iType, iSubType);
         }
 
         public void SetData(int iPower, ref I9Slot iSlot, ref clsDrawX iDraw, int[] slotted)
@@ -1281,16 +1360,16 @@ namespace midsControls
             _levelCapped = false;
             _userLevel = -1;
             _hDraw = iDraw;
-            _mySlot = (I9Slot)iSlot.Clone();
+            _mySlot = (I9Slot) iSlot.Clone();
             _hoverCell = new Point(-1, -1);
             _hoverText = "";
             _hoverTitle = "";
             _nPowerIDX = iPower;
             UI = new cTracking();
             Enums.eSubtype eSubtype = 0;
-            UI.SpecialTypes = (int[])Enum.GetValues(eSubtype.GetType());
+            UI.SpecialTypes = (int[]) Enum.GetValues(eSubtype.GetType());
             Enums.eEnhGrade eEnhGrade = 0;
-            UI.NOGrades = (int[])Enum.GetValues(eEnhGrade.GetType());
+            UI.NOGrades = (int[]) Enum.GetValues(eEnhGrade.GetType());
             UI.NO = GetValidEnhancements(_nPowerIDX, Enums.eType.Normal);
             UI.IO = GetValidEnhancements(_nPowerIDX, Enums.eType.InventO);
             UI.Initial.GradeID = _lastGrade;
@@ -1300,19 +1379,23 @@ namespace midsControls
             {
                 UI.Initial.SpecialID = Enums.eSubtype.Hamidon;
             }
+
             if (UI.Initial.GradeID == 0)
             {
                 UI.Initial.GradeID = MidsContext.Config.CalcEnhOrigin;
             }
+
             if (UI.Initial.RelLevel == 0)
             {
                 UI.Initial.RelLevel = MidsContext.Config.CalcEnhLevel;
             }
+
             if (_mySlot.Enh > -1)
             {
                 if (DatabaseAPI.Database.Enhancements[_mySlot.Enh].SubTypeID != 0)
                 {
-                    UI.SpecialO = GetValidEnhancements(_nPowerIDX, Enums.eType.SpecialO, DatabaseAPI.Database.Enhancements[_mySlot.Enh].SubTypeID);
+                    UI.SpecialO = GetValidEnhancements(_nPowerIDX, Enums.eType.SpecialO,
+                        DatabaseAPI.Database.Enhancements[_mySlot.Enh].SubTypeID);
                     UI.Initial.SpecialID = DatabaseAPI.Database.Enhancements[_mySlot.Enh].SubTypeID;
                 }
                 else
@@ -1324,14 +1407,16 @@ namespace midsControls
             {
                 UI.SpecialO = GetValidEnhancements(_nPowerIDX, Enums.eType.SpecialO, UI.Initial.SpecialID);
             }
+
             UI.SetTypes = GetValidSetTypes(_nPowerIDX);
             checked
             {
                 UI.Sets = new int[UI.SetTypes.Length][];
                 for (int i = 0; i <= UI.SetTypes.Length - 1; i++)
                 {
-                    UI.Sets[i] = GetSets((Enums.eSetType)UI.SetTypes[i]);
+                    UI.Sets[i] = GetSets((Enums.eSetType) UI.SetTypes[i]);
                 }
+
                 if (_mySlot.Grade != 0)
                     UI.Initial.GradeID = _mySlot.Grade;
                 if (_mySlot.Enh > -1)
@@ -1341,6 +1426,7 @@ namespace midsControls
                     _mySlot.RelativeLevel = _lastRelativeLevel;
                     _mySlot.Grade = _lastGrade;
                 }
+
                 if (_mySlot.Enh > -1)
                 {
                     var power = DatabaseAPI.Database.Enhancements[_mySlot.Enh].GetPower();
@@ -1348,6 +1434,7 @@ namespace midsControls
                     {
                         _mySlot.RelativeLevel = Enums.eEnhRelative.Even;
                     }
+
                     if (_nPowerIDX < 0)
                     {
                         switch (DatabaseAPI.Database.Enhancements[_mySlot.Enh].TypeID)
@@ -1365,35 +1452,42 @@ namespace midsControls
                                 UI.SpecialO[0] = _mySlot.Enh;
                                 break;
                             case Enums.eType.SetO:
-                                {
-                                    UI.SetTypes = new int[1];
-                                    UI.SetTypes[0] = (int)DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].SetType;
-                                    UI.Sets = new int[1][];
-                                    int[] array = new int[1];
-                                    UI.Sets[0] = array;
-                                    UI.Sets[0][0] = DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet;
-                                    UI.SetO = new int[1];
-                                    UI.SetO[0] = _mySlot.Enh;
-                                    break;
-                                }
+                            {
+                                UI.SetTypes = new int[1];
+                                UI.SetTypes[0] = (int) DatabaseAPI.Database
+                                    .EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].SetType;
+                                UI.Sets = new int[1][];
+                                int[] array = new int[1];
+                                UI.Sets[0] = array;
+                                UI.Sets[0][0] = DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet;
+                                UI.SetO = new int[1];
+                                UI.SetO[0] = _mySlot.Enh;
+                                break;
+                            }
                         }
                     }
+
                     UI.Initial.TabID = DatabaseAPI.Database.Enhancements[_mySlot.Enh].TypeID;
                     if (UI.Initial.TabID == Enums.eType.SetO)
                     {
                         UI.Initial.SetID = SetIDGlobalToLocal(DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet);
-                        UI.Initial.SetTypeID = SetTypeToID(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].SetType);
-                        UI.SetO = new int[DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].Enhancements.Length - 1 + 1];
-                        Array.Copy(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].Enhancements, UI.SetO, UI.SetO.Length);
+                        UI.Initial.SetTypeID = SetTypeToID(DatabaseAPI.Database
+                            .EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].SetType);
+                        UI.SetO = new int[DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet]
+                                              .Enhancements.Length - 1 + 1];
+                        Array.Copy(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[_mySlot.Enh].nIDSet].Enhancements,
+                            UI.SetO, UI.SetO.Length);
                     }
                     else if (UI.SetTypes.Length > 0)
                     {
                         UI.Initial.SetTypeID = 0;
                     }
+
                     UI.Initial.PickerID = GetPickerIndex(_mySlot.Enh, UI.Initial.TabID);
                 }
                 else
                     UI.Initial.TabID = 0;
+
                 if (UI.Initial.TabID == Enums.eType.InventO || UI.Initial.TabID == Enums.eType.SetO)
                     UI.Initial.IOLevel = _mySlot.IOLevel + 1;
                 else if (LastLevel > 0)
@@ -1407,6 +1501,7 @@ namespace midsControls
                     if (UI.View.TabID == Enums.eType.SetO & UI.SetTypes.Length > _lastSet)
                         UI.View.SetTypeID = _lastSet;
                 }
+
                 _mySlotted = new int[slotted.Length - 1 + 1];
                 Array.Copy(slotted, _mySlotted, _mySlotted.Length);
                 if (UI.SetTypes.Length > 3)
@@ -1419,6 +1514,7 @@ namespace midsControls
                     _rows = 5;
                     Height = 235;
                 }
+
                 FullDraw();
             }
         }
@@ -1428,7 +1524,7 @@ namespace midsControls
             UI.View.SpecialID = iSubType;
             if (_nPowerIDX > 0)
                 UI.SpecialO = GetValidEnhancements(_nPowerIDX, Enums.eType.SpecialO, UI.View.SpecialID);
-            else if (UI.Initial.SpecialID == UI.View.SpecialID & (int)UI.Initial.TabID == 3)
+            else if (UI.Initial.SpecialID == UI.View.SpecialID & (int) UI.Initial.TabID == 3)
             {
                 UI.SpecialO = new int[1];
                 UI.SpecialO[0] = _mySlot.Enh;
@@ -1443,11 +1539,12 @@ namespace midsControls
             {
                 for (int i = 0; i <= UI.SetTypes.Length - 1; i++)
                 {
-                    if (iSetType == (Enums.eSetType)UI.SetTypes[i])
+                    if (iSetType == (Enums.eSetType) UI.SetTypes[i])
                     {
                         return i;
                     }
                 }
+
                 return -1;
             }
         }
@@ -1470,6 +1567,7 @@ namespace midsControls
                     array = UI.SetO;
                     break;
             }
+
             checked
             {
                 for (int i = 0; i <= array.Length - 1; i++)
@@ -1477,6 +1575,7 @@ namespace midsControls
                     if (array[i] == index)
                         return i;
                 }
+
                 return -1;
             }
         }
@@ -1487,33 +1586,39 @@ namespace midsControls
             int ioMin = 10;
             checked
             {
-                if (UI.View.TabID == Enums.eType.InventO)
+                switch (UI.View.TabID)
                 {
-                    if (UI.Initial.TabID == UI.View.TabID && UI.Initial.PickerID == UI.View.PickerID && UI.View.PickerID > -1)
+                    case Enums.eType.InventO:
                     {
-                        ioMax = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMax + 1;
-                        ioMin = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMin + 1;
+                        if (UI.Initial.TabID == UI.View.TabID && UI.Initial.PickerID == UI.View.PickerID && UI.View.PickerID > -1)
+                        {
+                            ioMax = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMax + 1;
+                            ioMin = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMin + 1;
+                        }
+
+                        break;
+                    }
+                    case Enums.eType.SetO when (UI.View.SetID > -1 && UI.View.SetTypeID > -1):
+                    {
+                        var enhSetMax = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMax + 1;
+                        ioMax = enhSetMax;
+                        var enhSetMin = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMin + 1;
+                        ioMin = enhSetMin;
+                        break;
                     }
                 }
-                else if (UI.View.TabID == Enums.eType.SetO && (UI.View.SetID > -1 && UI.View.SetTypeID > -1))
-                {
-                    var enhSetMax = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMax + 1;
-                    ioMax = enhSetMax;
-                    var enhSetMin = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMin + 1;
-                    ioMin = enhSetMin;
-                }
+
                 if (UI.View.IOLevel > ioMax)
                     UI.View.IOLevel = ioMax;
                 if (UI.View.IOLevel < ioMin)
                     UI.View.IOLevel = ioMin;
 
-                if (UI.View.TabID == Enums.eType.InventO)
-                {
-                    if (ioMax > IOMax)
-                        ioMax = IOMax;
-                    var nextLevel = Enhancement.GranularLevelZb(UI.View.IOLevel - 1, ioMin - 1, ioMax - 1) + 1;
-                    UI.View.IOLevel = nextLevel;
-                }
+                if (UI.View.TabID != Enums.eType.InventO)
+                    return;
+                if (ioMax > IOMax)
+                    ioMax = IOMax;
+                var nextLevel = Enhancement.GranularLevelZb(UI.View.IOLevel - 1, ioMin - 1, ioMax - 1) + 1;
+                UI.View.IOLevel = nextLevel;
             }
         }
 
@@ -1524,35 +1629,42 @@ namespace midsControls
             int fixedLevel = UI.View.IOLevel;
             checked
             {
-                if (UI.View.TabID == Enums.eType.InventO)
+                switch (UI.View.TabID)
                 {
-                    if (UI.Initial.TabID == UI.View.TabID & UI.Initial.PickerID == UI.View.PickerID & UI.View.PickerID > -1)
+                    case Enums.eType.InventO:
                     {
-                        ioMax = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMax + 1;
-                        ioMin = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMin + 1;
+                        if (UI.Initial.TabID == UI.View.TabID & UI.Initial.PickerID == UI.View.PickerID & UI.View.PickerID > -1)
+                        {
+                            ioMax = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMax + 1;
+                            ioMin = DatabaseAPI.Database.Enhancements[UI.IO[UI.View.PickerID]].LevelMin + 1;
+                        }
+
+                        break;
                     }
+                    case Enums.eType.SetO when (UI.View.SetID > -1 & UI.View.SetTypeID > -1):
+                        ioMax = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMax + 1;
+                        ioMin = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMin + 1;
+                        break;
                 }
-                else if (UI.View.TabID == Enums.eType.SetO && (UI.View.SetID > -1 & UI.View.SetTypeID > -1))
-                {
-                    ioMax = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMax + 1;
-                    ioMin = DatabaseAPI.Database.EnhancementSets[UI.Sets[UI.View.SetTypeID][UI.View.SetID]].LevelMin + 1;
-                }
+
                 if (fixedLevel > ioMax)
                 {
                     fixedLevel = ioMax;
                 }
+
                 if (fixedLevel < ioMin)
                 {
                     fixedLevel = ioMin;
                 }
-                if (UI.View.TabID == Enums.eType.InventO)
+
+                if (UI.View.TabID != Enums.eType.InventO)
+                    return fixedLevel;
+                if (ioMax > 50)
                 {
-                    if (ioMax > 50)
-                    {
-                        ioMax = 50;
-                    }
-                    fixedLevel = Enhancement.GranularLevelZb(fixedLevel - 1, ioMin - 1, ioMax - 1) + 1;
+                    ioMax = 50;
                 }
+
+                fixedLevel = Enhancement.GranularLevelZb(fixedLevel - 1, ioMin - 1, ioMax - 1) + 1;
                 return fixedLevel;
             }
         }
@@ -1578,7 +1690,7 @@ namespace midsControls
                     if (text.Length > 2)
                         text = text.Substring(text.Length - 2);
 
-                    int number = (int)Math.Round(Conversion.Val(text));
+                    int number = (int) Math.Round(Conversion.Val(text));
                     if (number > 50)
                         number = 50;
                     if (number < 1)
@@ -1597,73 +1709,71 @@ namespace midsControls
             Keys keyCode = e.KeyCode;
             checked
             {
-                if (keyCode == Keys.Return)
+                switch (keyCode)
                 {
-                    UI.Initial.IOLevel = UI.View.IOLevel;
-                    UI.Initial.RelLevel = UI.View.RelLevel;
-                    UI.View = new cTracking.cLocation(UI.Initial);
-                    DoEnhancementPicked(UI.View.PickerID);
+                    case Keys.Return:
+                        UI.Initial.IOLevel = UI.View.IOLevel;
+                        UI.Initial.RelLevel = UI.View.RelLevel;
+                        UI.View = new cTracking.cLocation(UI.Initial);
+                        DoEnhancementPicked(UI.View.PickerID);
+                        break;
+                    case Keys.Back:
+                        UI.View.IOLevel = UI.Initial.IOLevel;
+                        UI.View.RelLevel = UI.Initial.RelLevel;
+                        TimerReset();
+                        break;
+                    case Keys.Delete:
+                        UI.View.IOLevel = UI.Initial.IOLevel;
+                        UI.View.RelLevel = UI.Initial.RelLevel;
+                        TimerReset();
+                        break;
+                    case Keys.Decimal:
+                        UI.View.IOLevel = UI.Initial.IOLevel;
+                        UI.View.RelLevel = UI.Initial.RelLevel;
+                        TimerReset();
+                        break;
+                    case Keys.Home:
+                        UI.View.IOLevel = 0;
+                        UI.View.RelLevel = Enums.eEnhRelative.MinusThree;
+                        TimerReset();
+                        break;
+                    case Keys.End:
+                        UI.View.IOLevel = 100;
+                        UI.View.RelLevel = Enums.eEnhRelative.PlusFive;
+                        TimerReset();
+                        break;
+                    case Keys.Space:
+                        UI.View.IOLevel = MidsContext.Config.I9.DefaultIOLevel + 1;
+                        UI.View.RelLevel = Enums.eEnhRelative.Even;
+                        TimerReset();
+                        break;
+                    case Keys.Add:
+                        RelAdjust(1);
+                        break;
+                    case Keys.Subtract:
+                        RelAdjust(-1);
+                        break;
+                    case Keys.Oemplus:
+                        RelAdjust(1);
+                        break;
+                    case Keys.OemMinus:
+                        RelAdjust(-1);
+                        break;
+                    default:
+                    {
+                        if (e.KeyValue >= 48 & e.KeyValue <= 57)
+                        {
+                            num = e.KeyValue - 48;
+                        }
+                        else if (e.KeyValue >= 96 & e.KeyValue <= 105)
+                        {
+                            num = e.KeyValue - 96;
+                        }
+
+                        break;
+                    }
                 }
-                else if (keyCode == Keys.Back)
-                {
-                    UI.View.IOLevel = UI.Initial.IOLevel;
-                    UI.View.RelLevel = UI.Initial.RelLevel;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.Delete)
-                {
-                    UI.View.IOLevel = UI.Initial.IOLevel;
-                    UI.View.RelLevel = UI.Initial.RelLevel;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.Decimal)
-                {
-                    UI.View.IOLevel = UI.Initial.IOLevel;
-                    UI.View.RelLevel = UI.Initial.RelLevel;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.Home)
-                {
-                    UI.View.IOLevel = 0;
-                    UI.View.RelLevel = Enums.eEnhRelative.MinusThree;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.End)
-                {
-                    UI.View.IOLevel = 100;
-                    UI.View.RelLevel = Enums.eEnhRelative.PlusFive;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.Space)
-                {
-                    UI.View.IOLevel = MidsContext.Config.I9.DefaultIOLevel + 1;
-                    UI.View.RelLevel = Enums.eEnhRelative.Even;
-                    TimerReset();
-                }
-                else if (keyCode == Keys.Add)
-                {
-                    RelAdjust(1);
-                }
-                else if (keyCode == Keys.Subtract)
-                {
-                    RelAdjust(-1);
-                }
-                else if (keyCode == Keys.Oemplus)
-                {
-                    RelAdjust(1);
-                }
-                else if (keyCode == Keys.OemMinus)
-                {
-                    RelAdjust(-1);
-                }
-                else if (e.KeyValue >= 48 & e.KeyValue <= 57)
-                {
-                    num = e.KeyValue - 48;
-                }
-                else if (e.KeyValue >= 96 & e.KeyValue <= 105)
-                {
-                    num = e.KeyValue - 96;
-                }
+
                 //if (this.UI.View.TabID == Enums.eType.SetO || this.UI.View.TabID ==Enums.eType.InventO)
                 if (UI.View.TabID == Enums.eType.SetO || UI.View.TabID == Enums.eType.InventO)
                 {
@@ -1672,6 +1782,7 @@ namespace midsControls
                     else
                         CheckAndFixIOLevel();
                 }
+
                 DoHover(_hoverCell, true);
                 FullDraw();
             }
@@ -1689,11 +1800,12 @@ namespace midsControls
                         eEnhRelative--;
                     }
                 }
-                else if (direction > 0 && (int)UI.View.RelLevel < 9)
+                else if (direction > 0 && (int) UI.View.RelLevel < 9)
                 {
                     eEnhRelative++;
                 }
-                if (eEnhRelative > Enums.eEnhRelative.PlusThree & (UI.View.TabID == Enums.eType.Normal | (int)UI.View.TabID == 3))
+
+                if (eEnhRelative > Enums.eEnhRelative.PlusThree & (UI.View.TabID == Enums.eType.Normal | (int) UI.View.TabID == 3))
                 {
                     eEnhRelative = Enums.eEnhRelative.PlusThree;
                 }
@@ -1701,6 +1813,7 @@ namespace midsControls
                 {
                     eEnhRelative = Enums.eEnhRelative.Even;
                 }
+
                 UI.View.RelLevel = eEnhRelative;
             }
         }
@@ -1778,8 +1891,11 @@ namespace midsControls
         }
 
         public delegate void EnhancementPickedEventHandler(I9Slot e);
+
         public delegate void HoverEnhancementEventHandler(int e);
+
         public delegate void HoverSetEventHandler(int e);
+
         public delegate void MovedEventHandler(Rectangle oldBounds, Rectangle newBounds);
     }
 }

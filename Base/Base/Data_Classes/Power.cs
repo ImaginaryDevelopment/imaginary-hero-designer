@@ -1661,8 +1661,7 @@ namespace Base.Data_Classes
 
         public int CompareTo(object obj)
         {
-            Power power = obj as Power;
-            if (power == null)
+            if (!(obj is Power power))
                 throw new ArgumentException("Comparison failed - Passed object was not an Archetype Class!");
             int num = string.Compare(FullSetName, power.FullSetName, StringComparison.OrdinalIgnoreCase);
             return num == 0 ? (Level <= power.Level ? (Level >= power.Level ? (Level != power.Level || !SortOverride || power.SortOverride ? (Level != power.Level || SortOverride || !power.SortOverride ? string.Compare(FullName, power.FullName, StringComparison.OrdinalIgnoreCase) : 1) : -1) : -1) : 1) : num;
@@ -2197,11 +2196,11 @@ namespace Base.Data_Classes
                             Radius = power.Radius;
                             Target = power.Target;
                             ActivatePeriod = power.ActivatePeriod;
-                            if (DatabaseAPI.Database.Power[PowerIndex].EntitiesAutoHit != Enums.eEntity.None && DatabaseAPI.Database.Power[PowerIndex].EntitiesAutoHit != Enums.eEntity.Caster)
-                            {
-                                Accuracy = power.Accuracy;
-                                break;
-                            }
+                            if (DatabaseAPI.Database.Power[PowerIndex].EntitiesAutoHit == Enums.eEntity.None ||
+                                DatabaseAPI.Database.Power[PowerIndex].EntitiesAutoHit == Enums.eEntity.Caster)
+                                continue;
+                            Accuracy = power.Accuracy;
+                            break;
                         }
                     }
                 }

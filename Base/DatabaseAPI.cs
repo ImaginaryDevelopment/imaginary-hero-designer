@@ -258,10 +258,8 @@ public static class DatabaseAPI
         if (string.IsNullOrEmpty(name))
             return null;
         IPowerset powersetByName = GetPowersetByName(name);
-        if (powersetByName == null)
-            return null;
 
-        return powersetByName.Powers.FirstOrDefault(power2 => string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase));
+        return powersetByName?.Powers.FirstOrDefault(power2 => string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase));
     }
 
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)

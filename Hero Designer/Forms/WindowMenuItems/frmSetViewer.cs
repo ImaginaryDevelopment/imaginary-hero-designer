@@ -38,7 +38,7 @@ namespace Hero_Designer
             Load += frmSetViewer_Load;
             InitializeComponent();
             var componentResourceManager = new ComponentResourceManager(typeof(frmSetViewer));
-            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
             Name = nameof(frmSetViewer);
             myParent = iParent;
         }
@@ -57,7 +57,7 @@ namespace Hero_Designer
                 btnSmall.Left = rtxtInfo.Width + rtxtInfo.Left - btnSmall.Width;
                 btnClose.Left = btnSmall.Left - (btnClose.Width + 8);
                 chkOnTop.Left = btnClose.Left - (chkOnTop.Width + 4);
-                chkOnTop.Top = (int)Math.Round(btnClose.Top + (btnClose.Height - chkOnTop.Height) / 2.0);
+                chkOnTop.Top = (int) Math.Round(btnClose.Top + (btnClose.Height - chkOnTop.Height) / 2.0);
                 btnSmall.TextOff = "Expand >>";
             }
             else
@@ -72,6 +72,7 @@ namespace Hero_Designer
                 chkOnTop.Top = 392;
                 btnSmall.TextOff = "<< Shrink";
             }
+
             StoreLocation();
         }
 
@@ -96,13 +97,23 @@ namespace Hero_Designer
                     I9SetData.sSetInfo[] setInfo = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo;
                     int index3 = index2;
                     items[0] = DatabaseAPI.Database.EnhancementSets[setInfo[index3].SetIDX].DisplayName;
-                    items[1] = MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset <= -1 ? "" : DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset].Powers[MainModule.MidsController.Toon.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName;
+                    items[1] =
+                        MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex]
+                            .NIDPowerset <= -1
+                            ? ""
+                            : DatabaseAPI.Database
+                                .Powersets[
+                                    MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex]
+                                        .NIDPowerset].Powers[
+                                    MainModule.MidsController.Toon.CurrentBuild
+                                        .Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName;
                     items[2] = Conversions.ToString(setInfo[index3].SlottedCount);
                     ++imageIndex;
                     lstSets.Items.Add(new ListViewItem(items, imageIndex));
                     lstSets.Items[lstSets.Items.Count - 1].Tag = setInfo[index3].SetIDX;
                 }
             }
+
             lstSets.EndUpdate();
             if (lstSets.Items.Count > 0)
                 lstSets.Items[0].Selected = true;
@@ -120,77 +131,103 @@ namespace Hero_Designer
                 int num2 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].Powers.Length > 0)
+                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].Powers.Length <= 0)
+                        continue;
+                    I9SetData.sSetInfo[] setInfo = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo;
+                    int index3 = index2;
+                    EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[setInfo[index3].SetIDX];
+                    string str2 = str1 + RTF.Color(RTF.ElementID.Invention) + RTF.Underline(RTF.Bold(enhancementSet.DisplayName));
+                    if (MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset >
+                        -1)
+                        str2 = str2 + RTF.Crlf() + RTF.Color(RTF.ElementID.Faded) + "(" + DatabaseAPI.Database
+                                   .Powersets[
+                                       MidsContext.Character.CurrentBuild
+                                           .Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset]
+                                   .Powers[
+                                       MidsContext.Character.CurrentBuild
+                                           .Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName + ")";
+                    string str3 = str2 + RTF.Crlf() + RTF.Color(RTF.ElementID.Text);
+                    string str4 = "";
+                    int num3 = enhancementSet.Bonus.Length - 1;
+                    for (int index4 = 0; index4 <= num3; ++index4)
                     {
-                        I9SetData.sSetInfo[] setInfo = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo;
-                        int index3 = index2;
-                        EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[setInfo[index3].SetIDX];
-                        string str2 = str1 + RTF.Color(RTF.ElementID.Invention) + RTF.Underline(RTF.Bold(enhancementSet.DisplayName));
-                        if (MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset > -1)
-                            str2 = str2 + RTF.Crlf() + RTF.Color(RTF.ElementID.Faded) + "(" + DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName + ")";
-                        string str3 = str2 + RTF.Crlf() + RTF.Color(RTF.ElementID.Text);
-                        string str4 = "";
-                        int num3 = enhancementSet.Bonus.Length - 1;
-                        for (int index4 = 0; index4 <= num3; ++index4)
+                        if (!(setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted &
+                              (enhancementSet.Bonus[index4].PvMode == Enums.ePvX.Any |
+                               enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE |
+                               enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE)))
+                            continue;
+                        if (str4 != "")
+                            str4 += RTF.Crlf();
+                        bool localOverCap = false;
+                        string str5 = "  " + enhancementSet.GetEffectString(index4, false, true);
+                        int num4 = enhancementSet.Bonus[index4].Index.Length - 1;
+                        for (int index5 = 0; index5 <= num4; ++index5)
                         {
-                            if (setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted & (enhancementSet.Bonus[index4].PvMode == Enums.ePvX.Any | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE))
-                            {
-                                if (str4 != "")
-                                    str4 += RTF.Crlf();
-                                bool localOverCap = false;
-                                string str5 = "  " + enhancementSet.GetEffectString(index4, false, true);
-                                int num4 = enhancementSet.Bonus[index4].Index.Length - 1;
-                                for (int index5 = 0; index5 <= num4; ++index5)
-                                {
-                                    if (enhancementSet.Bonus[index4].Index[index5] > -1)
-                                    {
-                                        ++numArray[enhancementSet.Bonus[index4].Index[index5]];
-                                        if (numArray[enhancementSet.Bonus[index4].Index[index5]] > 5)
-                                            localOverCap = true;
-                                    }
-                                }
-                                if (localOverCap)
-                                    str5 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str5 + " >Cap" + RTF.Color(RTF.ElementID.Text));
-                                if (localOverCap)
-                                    hasOvercap = true;
-                                str4 += str5;
-                            }
+                            if (enhancementSet.Bonus[index4].Index[index5] <= -1)
+                                continue;
+                            ++numArray[enhancementSet.Bonus[index4].Index[index5]];
+                            if (numArray[enhancementSet.Bonus[index4].Index[index5]] > 5)
+                                localOverCap = true;
                         }
-                        int num5 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes.Length - 1;
-                        for (int index4 = 0; index4 <= num5; ++index4)
-                        {
-                            int index5 = DatabaseAPI.IsSpecialEnh(MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes[index4]);
-                            if (index5 > -1)
-                            {
-                                if (str4 != "")
-                                    str4 += RTF.Crlf();
-                                string str5 = str4 + RTF.Color(RTF.ElementID.Enhancement);
-                                bool localOverCap = false;
-                                string str6 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true);
-                                int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index.Length - 1;
-                                for (int index6 = 0; index6 <= num4; ++index6)
-                                {
-                                    if (DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6] > -1)
-                                    {
-                                        ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]];
-                                        if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]] > 5)
-                                            localOverCap = true;
-                                    }
-                                }
-                                if (localOverCap)
-                                    str6 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str6 + " >Cap" + RTF.Color(RTF.ElementID.Text));
-                                if (localOverCap)
-                                    hasOvercap = true;
-                                str4 = str5 + str6;
-                            }
-                        }
-                        str1 = str3 + str4 + RTF.Crlf() + RTF.Crlf();
+
+                        if (localOverCap)
+                            str5 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str5 + " >Cap" + RTF.Color(RTF.ElementID.Text));
+                        if (localOverCap)
+                            hasOvercap = true;
+                        str4 += str5;
                     }
+
+                    int num5 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes.Length - 1;
+                    for (int index4 = 0; index4 <= num5; ++index4)
+                    {
+                        int index5 = DatabaseAPI.IsSpecialEnh(MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2]
+                            .EnhIndexes[index4]);
+                        if (index5 <= -1)
+                            continue;
+                        if (str4 != "")
+                            str4 += RTF.Crlf();
+                        string str5 = str4 + RTF.Color(RTF.ElementID.Enhancement);
+                        bool localOverCap = false;
+                        string str6 = "  " + DatabaseAPI.Database
+                                          .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                          .GetEffectString(index5, true, true);
+                        int num4 = DatabaseAPI.Database
+                                       .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                       .SpecialBonus[index5].Index.Length - 1;
+                        for (int index6 = 0; index6 <= num4; ++index6)
+                        {
+                            if (DatabaseAPI.Database
+                                    .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                    .SpecialBonus[index5].Index[index6] <= -1)
+                                continue;
+                            ++numArray[
+                                DatabaseAPI.Database
+                                    .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                    .SpecialBonus[index5].Index[index6]];
+                            if (numArray[
+                                    DatabaseAPI.Database
+                                        .EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                        .SpecialBonus[index5].Index[index6]] > 5)
+                                localOverCap = true;
+                        }
+
+                        if (localOverCap)
+                            str6 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str6 + " >Cap" + RTF.Color(RTF.ElementID.Text));
+                        if (localOverCap)
+                            hasOvercap = true;
+                        str4 = str5 + str6;
+                    }
+
+                    str1 = str3 + str4 + RTF.Crlf() + RTF.Crlf();
                 }
             }
+
             string str7;
             if (hasOvercap)
-                str7 = RTF.Color(RTF.ElementID.Invention) + RTF.Underline(RTF.Bold("Information:")) + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "One or more set bonuses have exceeded the 5 bonus cap, and will not affect your stats. Scroll down this list to find bonuses marked as '" + RTF.Italic(RTF.Color(RTF.ElementID.Warning) + ">Cap") + RTF.Color(RTF.ElementID.Text) + "'" + RTF.Crlf() + RTF.Crlf();
+                str7 = RTF.Color(RTF.ElementID.Invention) + RTF.Underline(RTF.Bold("Information:")) + RTF.Crlf() +
+                       RTF.Color(RTF.ElementID.Text) +
+                       "One or more set bonuses have exceeded the 5 bonus cap, and will not affect your stats. Scroll down this list to find bonuses marked as '" +
+                       RTF.Italic(RTF.Color(RTF.ElementID.Warning) + ">Cap") + RTF.Color(RTF.ElementID.Text) + "'" + RTF.Crlf() + RTF.Crlf();
             else
                 str7 = "";
             string str8 = RTF.StartRTF() + str7 + str1 + RTF.EndRTF();
@@ -211,6 +248,7 @@ namespace Hero_Designer
                     str2 = str2.Replace("Endurance", "Max Endurance");
                 iStr += str2;
             }
+
             string str9 = RTF.StartRTF() + RTF.ToRTF(iStr) + RTF.EndRTF();
             if (rtApplied.Rtf == str9)
                 return;
@@ -231,26 +269,26 @@ namespace Hero_Designer
                 int num2 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX > -1)
+                    if (MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX <= -1)
+                        continue;
+                    EnhancementSet enhancementSet =
+                        DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX];
+                    if (enhancementSet.ImageIdx > -1)
                     {
-                        EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX];
-                        if (enhancementSet.ImageIdx > -1)
-                        {
-                            extendedBitmap.Graphics.Clear(Color.White);
-                            Graphics graphics = extendedBitmap.Graphics;
-                            I9Gfx.DrawEnhancementSet(ref graphics, enhancementSet.ImageIdx);
-                            ilSet.Images.Add(extendedBitmap.Bitmap);
-                        }
-                        else
-                        {
-                            ImageList.ImageCollection images = ilSet.Images;
-                            Size imageSize2 = ilSet.ImageSize;
-                            int width2 = imageSize2.Width;
-                            imageSize2 = ilSet.ImageSize;
-                            int height2 = imageSize2.Height;
-                            Bitmap bitmap = new Bitmap(width2, height2);
-                            images.Add(bitmap);
-                        }
+                        extendedBitmap.Graphics.Clear(Color.White);
+                        Graphics graphics = extendedBitmap.Graphics;
+                        I9Gfx.DrawEnhancementSet(ref graphics, enhancementSet.ImageIdx);
+                        ilSet.Images.Add(extendedBitmap.Bitmap);
+                    }
+                    else
+                    {
+                        ImageList.ImageCollection images = ilSet.Images;
+                        Size imageSize2 = ilSet.ImageSize;
+                        int width2 = imageSize2.Width;
+                        imageSize2 = ilSet.ImageSize;
+                        int height2 = imageSize2.Height;
+                        Bitmap bitmap = new Bitmap(width2, height2);
+                        images.Add(bitmap);
                     }
                 }
             }
@@ -274,15 +312,15 @@ namespace Hero_Designer
         {
             if (lstSets.SelectedItems.Count < 1)
                 return;
-            rtxtInfo.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(Conversions.ToInteger(lstSets.SelectedItems[0].Tag), Conversions.ToInteger(lstSets.SelectedItems[0].SubItems[2].Text)) + RTF.EndRTF();
+            rtxtInfo.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(Conversions.ToInteger(lstSets.SelectedItems[0].Tag),
+                               Conversions.ToInteger(lstSets.SelectedItems[0].SubItems[2].Text)) + RTF.EndRTF();
         }
 
         public void SetLocation()
         {
             var rectangle = new Rectangle
             {
-                X = MainModule.MidsController.SzFrmSets.X,
-                Y = MainModule.MidsController.SzFrmSets.Y
+                X = MainModule.MidsController.SzFrmSets.X, Y = MainModule.MidsController.SzFrmSets.Y
             };
             if (rectangle.X < 1)
                 rectangle.X = myParent.Left + 8;

@@ -51,8 +51,8 @@ namespace Hero_Designer
             this.cbAncillary = new System.Windows.Forms.ComboBox();
             this.lblEpic = new System.Windows.Forms.Label();
             this.lblATLocked = new System.Windows.Forms.Label();
-            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
-            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.DlgOpen = new System.Windows.Forms.OpenFileDialog();
+            this.DlgSave = new System.Windows.Forms.SaveFileDialog();
             this.tTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblLocked0 = new System.Windows.Forms.Label();
             this.lblLocked1 = new System.Windows.Forms.Label();
@@ -463,13 +463,13 @@ namespace Hero_Designer
             // 
             // dlgOpen
             // 
-            this.dlgOpen.DefaultExt = "mxd";
-            this.dlgOpen.Filter = "Hero/Villain Builds (*.mxd)|*.mxd;*.txt|Text Files (*.txt)|*.txt";
+            this.DlgOpen.DefaultExt = "mxd";
+            this.DlgOpen.Filter = "Hero/Villain Builds (*.mxd)|*.mxd;*.txt|Text Files (*.txt)|*.txt";
             // 
             // dlgSave
             // 
-            this.dlgSave.DefaultExt = "mxd";
-            this.dlgSave.Filter = "Hero/Villain Builds (*.mxd)|*.mxd";
+            this.DlgSave.DefaultExt = "mxd";
+            this.DlgSave.Filter = "Hero/Villain Builds (*.mxd)|*.mxd";
             // 
             // tTip
             // 
@@ -2149,7 +2149,5 @@ namespace Hero_Designer
         TextBox txtName;
         ToolStripMenuItem ViewToolStripMenuItem;
         ToolStripMenuItem WindowToolStripMenuItem;
-        OpenFileDialog dlgOpen;
-        SaveFileDialog dlgSave;
     }
 }

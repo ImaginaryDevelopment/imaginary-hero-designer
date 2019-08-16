@@ -11,8 +11,6 @@ namespace Hero_Designer
     {
         public class MidsController
         {
-            static bool _appInitialized;
-
             public static Rectangle SzFrmCompare = new Rectangle();
             public static Rectangle SzFrmData = new Rectangle();
             public static Rectangle SzFrmRecipe = new Rectangle();
@@ -20,24 +18,23 @@ namespace Hero_Designer
             public static Rectangle SzFrmStats = new Rectangle();
             public static Rectangle SzFrmTotals = new Rectangle();
 
-            public static bool IsAppInitialized => _appInitialized;
+            public static bool IsAppInitialized { get; private set; }
 
             public static clsToonX Toon
             {
-                get => (clsToonX)MidsContext.Character;
+                get => (clsToonX) MidsContext.Character;
                 set => MidsContext.Character = value;
             }
 
             public static void LoadData(ref frmLoading iFrm)
             {
                 DatabaseAPI.LoadDatabaseVersion();
-                _appInitialized = true;
+                IsAppInitialized = true;
                 iFrm?.SetMessage("Loading Data...");
                 iFrm?.SetMessage("Loading Attribute Modifiers...");
                 DatabaseAPI.Database.AttribMods = new Modifiers();
                 if (!DatabaseAPI.Database.AttribMods.Load())
                 {
-
                 }
 
                 iFrm?.SetMessage("Loading Powerset Database...");
@@ -45,14 +42,17 @@ namespace Hero_Designer
                 {
                     Interaction.MsgBox(
                         "Failed to load Levelling data file! The program is unable to proceed.\r\n" +
-                        "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, "Error");
+                        "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases",
+                        MsgBoxStyle.Critical, "Error");
                     ProjectData.EndApp();
                 }
+
                 if (!DatabaseAPI.LoadMainDatabase())
                 {
                     Interaction.MsgBox("There was an error reading the database. Aborting.", MsgBoxStyle.Critical, "Dang");
                     ProjectData.EndApp();
                 }
+
                 if (!DatabaseAPI.LoadMaths())
                     ProjectData.EndApp();
                 iFrm?.SetMessage("Loading Enhancement Database...");

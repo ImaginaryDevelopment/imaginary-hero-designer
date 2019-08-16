@@ -36,8 +36,7 @@ namespace Hero_Designer
         {
             using (var subkey = parentKey.OpenSubKey(subkeyPath, writable: false))
             {
-                if (subkey == null) return false;
-                return keyCheckIfExists(subkey);
+                return subkey != null && keyCheckIfExists(subkey);
             }
         }
 

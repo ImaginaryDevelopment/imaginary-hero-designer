@@ -18,19 +18,13 @@ namespace Hero_Designer.My.Resources
     [DebuggerNonUserCode]
     internal sealed class Resources
     {
-        static CultureInfo resourceCulture;
-
         static ResourceManager resourceMan;
 
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static CultureInfo Culture
-        {
-            get => resourceCulture;
-            set => resourceCulture = value;
-        }
+        internal static CultureInfo Culture { get; set; }
 
-        internal static Bitmap Gradient => (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
+        internal static Bitmap Gradient => (Bitmap) RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), Culture));
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static ResourceManager ResourceManager =>

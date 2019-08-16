@@ -69,15 +69,14 @@ namespace Hero_Designer
             int num1 = MidsContext.Config.CompOverride.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
             {
-                if (index2 != selectedIndex)
-                {
-                    Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
-                    int index3 = index2;
-                    compOverrideArray[index1].Override = compOverride[index3].Override;
-                    compOverrideArray[index1].Power = compOverride[index3].Power;
-                    compOverrideArray[index1].Powerset = compOverride[index3].Powerset;
-                    ++index1;
-                }
+                if (index2 == selectedIndex)
+                    continue;
+                Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
+                int index3 = index2;
+                compOverrideArray[index1].Override = compOverride[index3].Override;
+                compOverrideArray[index1].Power = compOverride[index3].Power;
+                compOverrideArray[index1].Powerset = compOverride[index3].Powerset;
+                ++index1;
             }
             MidsContext.Config.CompOverride = new Enums.CompOverride[compOverrideArray.Length - 1 + 1];
             int num2 = MidsContext.Config.CompOverride.Length - 1;

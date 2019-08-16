@@ -133,15 +133,13 @@ namespace Hero_Designer
                 int num1 = setBonusList.Length - 1;
                 for (int index = 0; index <= num1; ++index)
                 {
-                    if (DatabaseAPI.Database.Power[setBonusList[index]].Effects.Length > 0)
-                    {
-                        string powerString = GetPowerString(setBonusList[index]);
-                        if (text == powerString)
-                        {
-                            string Effect = (DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
-                            AddEffect(ref List, ref nIDList, Effect, setBonusList[index]);
-                        }
-                    }
+                    if (DatabaseAPI.Database.Power[setBonusList[index]].Effects.Length <= 0)
+                        continue;
+                    string powerString = GetPowerString(setBonusList[index]);
+                    if (text != powerString)
+                        continue;
+                    string Effect = (DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)(DatabaseAPI.Database.Power[setBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
+                    AddEffect(ref List, ref nIDList, Effect, setBonusList[index]);
                 }
                 lvMag.BeginUpdate();
                 lvMag.Items.Clear();
@@ -183,12 +181,11 @@ namespace Hero_Designer
                     int num = setBonusList.Length - 1;
                     for (int index = 0; index <= num; ++index)
                     {
-                        if (DatabaseAPI.Database.Power[setBonusList[index]].Effects.Length > 0)
-                        {
-                            string powerString = GetPowerString(setBonusList[index]);
-                            if (text == powerString)
-                                AddEffect(ref List, ref nIDList, DatabaseAPI.Database.Power[setBonusList[index]].PowerName, setBonusList[index]);
-                        }
+                        if (DatabaseAPI.Database.Power[setBonusList[index]].Effects.Length <= 0)
+                            continue;
+                        string powerString = GetPowerString(setBonusList[index]);
+                        if (text == powerString)
+                            AddEffect(ref List, ref nIDList, DatabaseAPI.Database.Power[setBonusList[index]].PowerName, setBonusList[index]);
                     }
                 }
                 int num1 = DatabaseAPI.Database.EnhancementSets.Count - 1;
@@ -275,23 +272,23 @@ namespace Hero_Designer
                         if (index1 == returnMask[index2])
                             flag = true;
                     }
-                    if (!flag)
-                    {
-                        if (str1 != "")
-                            str1 += ", ";
-                        string str3 = Strings.Trim(DatabaseAPI.Database.Power[nIDPower].Effects[index1].BuildEffectString(true, "", true));
-                        if (str3.Contains("Res("))
-                            str3 = str3.Replace("Res(", "Resistance(");
-                        if (str3.Contains("Def("))
-                            str3 = str3.Replace("Def(", "Defense(");
-                        if (str3.Contains("EndRec"))
-                            str3 = str3.Replace("EndRec", "Recovery");
-                        if (str3.Contains("Endurance"))
-                            str3 = str3.Replace("Endurance", "Max End");
-                        else if (str3.Contains("End") & !str3.Contains("Max End"))
-                            str3 = str3.Replace("End", "Max End");
-                        str1 += str3;
-                    }
+
+                    if (flag)
+                        continue;
+                    if (str1 != "")
+                        str1 += ", ";
+                    string str3 = Strings.Trim(DatabaseAPI.Database.Power[nIDPower].Effects[index1].BuildEffectString(true, "", true));
+                    if (str3.Contains("Res("))
+                        str3 = str3.Replace("Res(", "Resistance(");
+                    if (str3.Contains("Def("))
+                        str3 = str3.Replace("Def(", "Defense(");
+                    if (str3.Contains("EndRec"))
+                        str3 = str3.Replace("EndRec", "Recovery");
+                    if (str3.Contains("Endurance"))
+                        str3 = str3.Replace("Endurance", "Max End");
+                    else if (str3.Contains("End") & !str3.Contains("Max End"))
+                        str3 = str3.Replace("End", "Max End");
+                    str1 += str3;
                 }
                 str2 = str1;
             }

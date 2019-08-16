@@ -282,14 +282,13 @@ namespace Hero_Designer
 
         void dcAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(dcServerName.Text))
-            {
-                dcExList.Items.Add(dcServerName.Text);
-                if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
-                    MidsContext.Config.DServers.Add(dcServerName.Text);
-                MidsContext.Config.DSelServer = dcServerName.Text;
-                dcExList.SelectedItem = MidsContext.Config.DSelServer;
-            }
+            if (string.IsNullOrWhiteSpace(dcServerName.Text))
+                return;
+            dcExList.Items.Add(dcServerName.Text);
+            if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
+                MidsContext.Config.DServers.Add(dcServerName.Text);
+            MidsContext.Config.DSelServer = dcServerName.Text;
+            dcExList.SelectedItem = MidsContext.Config.DSelServer;
         }
 
         void dcRemove_Click(object sender, EventArgs e)

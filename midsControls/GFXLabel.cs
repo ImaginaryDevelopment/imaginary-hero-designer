@@ -18,13 +18,12 @@ namespace midsControls
 		public override string Text
 		{
 			get => myText;
-            set
+			set
 			{
-				if (Operators.CompareString(value, myText, false) != 0)
-				{
-					myText = value;
-					Draw();
-				}
+				if (Operators.CompareString(value, myText, false) == 0)
+					return;
+				myText = value;
+				Draw();
 			}
 		}
 
@@ -34,13 +33,12 @@ namespace midsControls
 		public string InitialText
 		{
 			get => myText;
-            set
+			set
 			{
-				if (Operators.CompareString(value, myText, false) != 0)
-				{
-					myText = value;
-					Draw();
-				}
+				if (Operators.CompareString(value, myText, false) == 0)
+					return;
+				myText = value;
+				Draw();
 			}
 		}
 
@@ -50,7 +48,7 @@ namespace midsControls
 		public ContentAlignment TextAlign
 		{
 			get => myAlign;
-            set
+			set
 			{
 				myAlign = value;
 				Draw();
@@ -76,6 +74,7 @@ namespace midsControls
 			{
 				Components?.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 
@@ -99,85 +98,82 @@ namespace midsControls
 		// Token: 0x06000138 RID: 312 RVA: 0x0000B124 File Offset: 0x00009324
 		private void Draw()
 		{
-			if (bxBuffer != null)
+			if (bxBuffer == null)
+				return;
+			Rectangle rect = new Rectangle(0, 0, Width, Height);
+			RectangleF layoutRectangle = new RectangleF(0f, 0f, 0f, 0f);
+			StringFormat stringFormat = new StringFormat();
+			layoutRectangle.X = 0f;
+			layoutRectangle.Width = Width;
+			layoutRectangle.Height = Font.GetHeight();
+			bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+			Brush brush = new SolidBrush(BackColor);
+			bxBuffer.Graphics.FillRectangle(brush, rect);
+			brush = new SolidBrush(ForeColor);
+			float num = 1f;
+			int num2 = checked((int) Math.Round(bxBuffer.Graphics
+				.MeasureString(myText, Font, (int) Math.Round(layoutRectangle.Width * 10f), stringFormat).Width));
+			if (num2 > checked(bxBuffer.Size.Width - 10))
 			{
-				Rectangle rect = new Rectangle(0, 0, Width, Height);
-				RectangleF layoutRectangle = new RectangleF(0f, 0f, 0f, 0f);
-				StringFormat stringFormat = new StringFormat();
-				layoutRectangle.X = 0f;
-				layoutRectangle.Width = Width;
-				layoutRectangle.Height = Font.GetHeight();
-				bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-				Brush brush = new SolidBrush(BackColor);
-				bxBuffer.Graphics.FillRectangle(brush, rect);
-				brush = new SolidBrush(ForeColor);
-				float num = 1f;
-				int num2 = checked((int)Math.Round(bxBuffer.Graphics.MeasureString(myText, Font, (int)Math.Round(layoutRectangle.Width * 10f), stringFormat).Width));
-				if (num2 > checked(bxBuffer.Size.Width - 10))
-				{
-					num = (bxBuffer.Size.Width - 10f) / num2;
-				}
-				float num3;
-				if (num < 0.6)
-				{
-					num = 0.6f;
-					num3 = 2f;
-				}
-				else
-				{
-					num3 = 1f;
-				}
-				Font font = new Font(Font.Name, Font.Size * num, Font.Style, GraphicsUnit.Point, 0);
-				layoutRectangle.Height = font.GetHeight() * num3;
-				ContentAlignment contentAlignment = myAlign;
-				if (contentAlignment == ContentAlignment.BottomCenter)
-				{
-					stringFormat.Alignment = StringAlignment.Center;
-					layoutRectangle.Y = Height - layoutRectangle.Height;
-				}
-				else if (contentAlignment == ContentAlignment.BottomLeft)
-				{
-					stringFormat.Alignment = StringAlignment.Near;
-					layoutRectangle.Y = Height - layoutRectangle.Height;
-				}
-				else if (contentAlignment == ContentAlignment.BottomRight)
-				{
-					stringFormat.Alignment = StringAlignment.Far;
-					layoutRectangle.Y = Height - layoutRectangle.Height;
-				}
-				else if (contentAlignment == ContentAlignment.MiddleCenter)
-				{
-					stringFormat.Alignment = StringAlignment.Center;
-					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
-				}
-				else if (contentAlignment == ContentAlignment.MiddleLeft)
-				{
-					stringFormat.Alignment = StringAlignment.Near;
-					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
-				}
-				else if (contentAlignment == ContentAlignment.MiddleRight)
-				{
-					stringFormat.Alignment = StringAlignment.Far;
-					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
-				}
-				else if (contentAlignment == ContentAlignment.TopCenter)
-				{
-					stringFormat.Alignment = StringAlignment.Center;
-					layoutRectangle.Y = 0f;
-				}
-				else if (contentAlignment == ContentAlignment.TopLeft)
-				{
-					stringFormat.Alignment = StringAlignment.Near;
-					layoutRectangle.Y = 0f;
-				}
-				else if (contentAlignment == ContentAlignment.TopRight)
-				{
-					stringFormat.Alignment = StringAlignment.Far;
-					layoutRectangle.Y = 0f;
-				}
-				bxBuffer.Graphics.DrawString(myText, font, brush, layoutRectangle, stringFormat);
-				myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
+				num = (bxBuffer.Size.Width - 10f) / num2;
 			}
+
+			float num3;
+			if (num < 0.6)
+			{
+				num = 0.6f;
+				num3 = 2f;
+			}
+			else
+			{
+				num3 = 1f;
+			}
+
+			Font font = new Font(Font.Name, Font.Size * num, Font.Style, GraphicsUnit.Point, 0);
+			layoutRectangle.Height = font.GetHeight() * num3;
+			ContentAlignment contentAlignment = myAlign;
+			switch (contentAlignment)
+			{
+				case ContentAlignment.BottomCenter:
+					stringFormat.Alignment = StringAlignment.Center;
+					layoutRectangle.Y = Height - layoutRectangle.Height;
+					break;
+				case ContentAlignment.BottomLeft:
+					stringFormat.Alignment = StringAlignment.Near;
+					layoutRectangle.Y = Height - layoutRectangle.Height;
+					break;
+				case ContentAlignment.BottomRight:
+					stringFormat.Alignment = StringAlignment.Far;
+					layoutRectangle.Y = Height - layoutRectangle.Height;
+					break;
+				case ContentAlignment.MiddleCenter:
+					stringFormat.Alignment = StringAlignment.Center;
+					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
+					break;
+				case ContentAlignment.MiddleLeft:
+					stringFormat.Alignment = StringAlignment.Near;
+					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
+					break;
+				case ContentAlignment.MiddleRight:
+					stringFormat.Alignment = StringAlignment.Far;
+					layoutRectangle.Y = (Height - layoutRectangle.Height) / 2f;
+					break;
+				case ContentAlignment.TopCenter:
+					stringFormat.Alignment = StringAlignment.Center;
+					layoutRectangle.Y = 0f;
+					break;
+				case ContentAlignment.TopLeft:
+					stringFormat.Alignment = StringAlignment.Near;
+					layoutRectangle.Y = 0f;
+					break;
+				case ContentAlignment.TopRight:
+					stringFormat.Alignment = StringAlignment.Far;
+					layoutRectangle.Y = 0f;
+					break;
+			}
+
+			bxBuffer.Graphics.DrawString(myText, font, brush, layoutRectangle, stringFormat);
+			myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
 		}
 
 		// Token: 0x06000139 RID: 313 RVA: 0x0000B4F8 File Offset: 0x000096F8
@@ -236,9 +232,9 @@ namespace midsControls
 		}
 
 		// Token: 0x04000090 RID: 144
-        public IContainer Components { get; }
+		public IContainer Components { get; }
 
-        // Token: 0x04000091 RID: 145
+		// Token: 0x04000091 RID: 145
 		private string myText;
 
 		// Token: 0x04000092 RID: 146

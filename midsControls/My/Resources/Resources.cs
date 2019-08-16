@@ -24,11 +24,10 @@ namespace midsControls.My.Resources
 		{
 			get
 			{
-				if (ReferenceEquals(resourceMan, null))
-				{
-					ResourceManager resourceManager = new ResourceManager("midsControls.Resources", typeof(Resources).Assembly);
-					resourceMan = resourceManager;
-				}
+				if (!ReferenceEquals(resourceMan, null))
+					return resourceMan;
+				ResourceManager resourceManager = new ResourceManager("midsControls.Resources", typeof(Resources).Assembly);
+				resourceMan = resourceManager;
 				return resourceMan;
 			}
 		}
@@ -39,9 +38,9 @@ namespace midsControls.My.Resources
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		internal static CultureInfo Culture { get; set; }
 
-        // Token: 0x04000001 RID: 1
+		// Token: 0x04000001 RID: 1
 		private static ResourceManager resourceMan;
 
 		// Token: 0x04000002 RID: 2
-    }
+	}
 }

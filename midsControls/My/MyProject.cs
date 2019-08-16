@@ -23,36 +23,32 @@ namespace midsControls.My
 		[HelpKeyword("My.Computer")]
 		internal static MyComputer Computer
 		{
-			[DebuggerHidden]
-			get => m_ComputerObjectProvider.GetInstance;
-        }
+			[DebuggerHidden] get => m_ComputerObjectProvider.GetInstance;
+		}
 
 		// Token: 0x17000004 RID: 4
 		// (get) Token: 0x06000008 RID: 8 RVA: 0x000020F4 File Offset: 0x000002F4
 		[HelpKeyword("My.Application")]
 		internal static MyApplication Application
 		{
-			[DebuggerHidden]
-			get => m_AppObjectProvider.GetInstance;
-        }
+			[DebuggerHidden] get => m_AppObjectProvider.GetInstance;
+		}
 
 		// Token: 0x17000005 RID: 5
 		// (get) Token: 0x06000009 RID: 9 RVA: 0x00002110 File Offset: 0x00000310
 		[HelpKeyword("My.User")]
 		internal static User User
 		{
-			[DebuggerHidden]
-			get => m_UserObjectProvider.GetInstance;
-        }
+			[DebuggerHidden] get => m_UserObjectProvider.GetInstance;
+		}
 
 		// Token: 0x17000006 RID: 6
 		// (get) Token: 0x0600000A RID: 10 RVA: 0x0000212C File Offset: 0x0000032C
 		[HelpKeyword("My.WebServices")]
 		internal static MyWebServices WebServices
 		{
-			[DebuggerHidden]
-			get => m_MyWebServicesObjectProvider.GetInstance;
-        }
+			[DebuggerHidden] get => m_MyWebServicesObjectProvider.GetInstance;
+		}
 
 		// Token: 0x04000003 RID: 3
 		private static readonly ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new ThreadSafeObjectProvider<MyComputer>();
@@ -64,7 +60,8 @@ namespace midsControls.My
 		private static readonly ThreadSafeObjectProvider<User> m_UserObjectProvider = new ThreadSafeObjectProvider<User>();
 
 		// Token: 0x04000006 RID: 6
-		private static readonly ThreadSafeObjectProvider<MyWebServices> m_MyWebServicesObjectProvider = new ThreadSafeObjectProvider<MyWebServices>();
+		private static readonly ThreadSafeObjectProvider<MyWebServices> m_MyWebServicesObjectProvider =
+			new ThreadSafeObjectProvider<MyWebServices>();
 
 		// Token: 0x02000006 RID: 6
 		[MyGroupCollection("System.Web.Services.Protocols.SoapHttpClientProtocol", "Create__Instance__", "Dispose__Instance__", "")]
@@ -74,16 +71,16 @@ namespace midsControls.My
 			// Token: 0x0600000D RID: 13 RVA: 0x0000217C File Offset: 0x0000037C
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[DebuggerHidden]
-            // ReSharper disable once BaseObjectEqualsIsObjectEquals
-            public override bool Equals(object o) => base.Equals(RuntimeHelpers.GetObjectValue(o));
+			// ReSharper disable once BaseObjectEqualsIsObjectEquals
+			public override bool Equals(object o) => base.Equals(RuntimeHelpers.GetObjectValue(o));
 
-            // Token: 0x0600000E RID: 14 RVA: 0x0000219C File Offset: 0x0000039C
+			// Token: 0x0600000E RID: 14 RVA: 0x0000219C File Offset: 0x0000039C
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[DebuggerHidden]
 			public override int GetHashCode()
 			{
-                // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
-                return base.GetHashCode();
+				// ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
+				return base.GetHashCode();
 			}
 
 			// Token: 0x0600000F RID: 15 RVA: 0x000021B4 File Offset: 0x000003B4
@@ -105,18 +102,18 @@ namespace midsControls.My
 			// Token: 0x06000011 RID: 17 RVA: 0x000021E8 File Offset: 0x000003E8
 			[DebuggerHidden]
 			private static T Create__Instance__<T>(T instance) where T : new()
-            {
-                var result = instance == null ? Activator.CreateInstance<T>() : instance;
-                return result;
-            }
+			{
+				var result = instance == null ? Activator.CreateInstance<T>() : instance;
+				return result;
+			}
 
 			// Token: 0x06000012 RID: 18 RVA: 0x00002214 File Offset: 0x00000414
 			[DebuggerHidden]
 			private void Dispose__Instance__<T>(ref T instance)
-            {
-                if (instance == null) throw new ArgumentNullException(nameof(instance));
-                instance = default;
-            }
+			{
+				if (instance == null) throw new ArgumentNullException(nameof(instance));
+				instance = default;
+			}
 
 			// Token: 0x06000013 RID: 19 RVA: 0x0000221E File Offset: 0x0000041E
 			[EditorBrowsable(EditorBrowsableState.Never)]
@@ -139,11 +136,10 @@ namespace midsControls.My
 				get
 				{
 					T t = m_Context.Value;
-					if (t == null)
-					{
-						t = Activator.CreateInstance<T>();
-						m_Context.Value = t;
-					}
+					if (t != null)
+						return t;
+					t = Activator.CreateInstance<T>();
+					m_Context.Value = t;
 					return t;
 				}
 			}

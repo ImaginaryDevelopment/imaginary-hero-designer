@@ -19,6 +19,7 @@ namespace midsControls
         public delegate void EmptyHoverEventHandler();
 
         public delegate void ExpandChangedEventHandler(bool Expanded);
+
         public event ItemClickEventHandler ItemClick;
         public event ItemHoverEventHandler ItemHover;
         public event EmptyHoverEventHandler EmptyHover;
@@ -37,27 +38,26 @@ namespace midsControls
                 }
                 else
                 {
-                    result = Colours[(int)Item.ItemState];
+                    result = Colours[(int) Item.ItemState];
                 }
+
                 return result;
             }
             set
             {
-                if (!(Item.ItemState < LLItemState.Enabled | Item.ItemState > LLItemState.Heading))
-                {
-                    Colours[(int)Item.ItemState] = value;
-                    Draw();
-                }
+                if (Item.ItemState < LLItemState.Enabled | Item.ItemState > LLItemState.Heading)
+                    return;
+                Colours[(int) Item.ItemState] = value;
+                Draw();
             }
         }
 
         public void UpdateTextColors(LLItemState State, Color color)
         {
-            if (!(State < LLItemState.Enabled | State > LLItemState.Heading))
-            {
-                Colours[(int)State] = color;
-                Draw();
-            }
+            if (State < LLItemState.Enabled | State > LLItemState.Heading)
+                return;
+            Colours[(int) State] = color;
+            Draw();
         }
 
         public ListLabelItemV2 Item
@@ -71,11 +71,10 @@ namespace midsControls
             }
             set
             {
-                if (!(Item.Index < 0 | Item.Index > checked(Items.Length - 1)))
-                {
-                    Items[Item.Index] = new ListLabelItemV2(value);
-                    Draw();
-                }
+                if (Item.Index < 0 | Item.Index > checked(Items.Length - 1))
+                    return;
+                Items[Item.Index] = new ListLabelItemV2(value);
+                Draw();
             }
         }
 
@@ -104,11 +103,10 @@ namespace midsControls
             get => xPadding;
             set
             {
-                if (value >= 0 & checked(value * 2 < Width - 5))
-                {
-                    xPadding = value;
-                    Draw();
-                }
+                if (!(value >= 0 & checked(value * 2 < Width - 5)))
+                    return;
+                xPadding = value;
+                Draw();
             }
         }
 
@@ -117,12 +115,11 @@ namespace midsControls
             get => yPadding;
             set
             {
-                if (value >= 0 & value < Height / 3.0)
-                {
-                    yPadding = value;
-                    SetLineHeight();
-                    Draw();
-                }
+                if (!(value >= 0 & value < Height / 3.0))
+                    return;
+                yPadding = value;
+                SetLineHeight();
+                Draw();
             }
         }
 
@@ -144,18 +141,17 @@ namespace midsControls
             set
             {
                 DisableRedraw = value;
-                if (!value)
+                if (value)
+                    return;
+                if (Expanded)
                 {
-                    if (Expanded)
-                    {
-                        RecomputeExpand();
-                    }
-                    if (!Expanded)
-                    {
-                        Recalculate();
-                        Draw();
-                    }
+                    RecomputeExpand();
                 }
+
+                if (Expanded)
+                    return;
+                Recalculate();
+                Draw();
             }
         }
 
@@ -198,14 +194,12 @@ namespace midsControls
             get => expandMaxY;
             set
             {
-                if (value >= szNormal.Height)
-                {
-                    if (value <= 2000)
-                    {
-                        expandMaxY = value;
-                        Draw();
-                    }
-                }
+                if (value < szNormal.Height)
+                    return;
+                if (value > 2000)
+                    return;
+                expandMaxY = value;
+                Draw();
             }
         }
 
@@ -221,6 +215,7 @@ namespace midsControls
                 {
                     ScrollWidth = value;
                 }
+
                 Recalculate();
                 Draw();
             }
@@ -347,7 +342,7 @@ namespace midsControls
         {
             DisableEvents = true;
             int num = Items.Length;
-            Items = (ListLabelItemV2[])Utils.CopyArray(Items, new ListLabelItemV2[checked(num + 1)]);
+            Items = (ListLabelItemV2[]) Utils.CopyArray(Items, new ListLabelItemV2[checked(num + 1)]);
             Items[num] = iItem;
             Items[num].Index = num;
             WrapString(num);
@@ -366,7 +361,7 @@ namespace midsControls
         void SetLineHeight()
         {
             Font font = new Font(Font, Font.Style);
-            LineHeight = checked((int)Math.Round(font.GetHeight() + checked(yPadding * 2)));
+            LineHeight = checked((int) Math.Round(font.GetHeight() + checked(yPadding * 2)));
             VisibleLineCount = GetVisibleLineCount();
         }
 
@@ -374,42 +369,43 @@ namespace midsControls
         {
             checked
             {
-                if (Items.Length != 0)
+                if (Items.Length == 0)
+                    return;
+                InitBuffer();
+                if (AutoSize)
                 {
-                    InitBuffer();
-                    if (AutoSize)
+                    if (AutoSizeMode == AutoSizeMode.GrowAndShrink)
                     {
-                        if (AutoSizeMode == AutoSizeMode.GrowAndShrink)
-                        {
-                            Height = DesiredHeight;
-                        }
-                        else if (DesiredHeight > SizeNormal.Height)
-                        {
-                            Height = DesiredHeight;
-                        }
-                        else
-                        {
-                            Height = SizeNormal.Height;
-                        }
+                        Height = DesiredHeight;
                     }
-                    Rectangle bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height);
-                    RecalcLines(bRect);
-                    if (ScrollSteps > 0 | this.Expanded)
+                    else if (DesiredHeight > SizeNormal.Height)
                     {
-                        bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height - (ScrollWidth + yPadding));
-                        RecalcLines(bRect);
+                        Height = DesiredHeight;
                     }
-                    if (!expanded && ScrollSteps > 0)
+                    else
                     {
-                        int num = 0;
-                        if (canExpand)
-                        {
-                            num = ScrollWidth + yPadding;
-                        }
-                        bRect = new Rectangle(xPadding, 0, Width - (xPadding * 2 + ScrollWidth), Height - num);
-                        RecalcLines(bRect);
+                        Height = SizeNormal.Height;
                     }
                 }
+
+                Rectangle bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height);
+                RecalcLines(bRect);
+                if (ScrollSteps > 0 | this.Expanded)
+                {
+                    bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height - (ScrollWidth + yPadding));
+                    RecalcLines(bRect);
+                }
+
+                if (expanded || ScrollSteps <= 0)
+                    return;
+                int num = 0;
+                if (canExpand)
+                {
+                    num = ScrollWidth + yPadding;
+                }
+
+                bRect = new Rectangle(xPadding, 0, Width - (xPadding * 2 + ScrollWidth), Height - num);
+                RecalcLines(bRect);
             }
         }
 
@@ -425,6 +421,7 @@ namespace midsControls
                 {
                     WrapString(i);
                 }
+
                 GetTotalLineCount();
                 GetScrollSteps();
             }
@@ -434,87 +431,92 @@ namespace midsControls
         {
             checked
             {
-                if (Operators.CompareString(Items[Index].Text, "", false) != 0)
+                if (Operators.CompareString(Items[Index].Text, "", false) == 0)
+                    return;
+                InitBuffer();
+                int num = 1;
+                if (Items[Index].Text.Contains(" "))
                 {
-                    InitBuffer();
-                    int num = 1;
-                    if (Items[Index].Text.Contains(" "))
+                    string[] array = Items[Index].Text.Split(" ".ToCharArray());
+                    StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap);
+                    Font font = new Font(Font, (FontStyle) Items[Index].FontFlags);
+                    string str = "";
+                    if (Items[Index].ItemState == LLItemState.Heading)
                     {
-                        string[] array = Items[Index].Text.Split(" ".ToCharArray());
-                        StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap);
-                        Font font = new Font(Font, (FontStyle)Items[Index].FontFlags);
-                        string str = "";
-                        if (Items[Index].ItemState == LLItemState.Heading)
+                        str = "~  ~";
+                    }
+
+                    string text = array[0];
+                    int num2 = 1;
+                    int num3 = array.Length - 1;
+                    for (int i = num2; i <= num3; i++)
+                    {
+                        Graphics graphics = bxBuffer.Graphics;
+                        string text2 = text + " " + array[i] + str;
+                        Font font2 = font;
+                        SizeF layoutArea = new SizeF(1024f, Height);
+                        if (Math.Ceiling(graphics.MeasureString(text2, font2, layoutArea, stringFormat).Width) > TextArea.Width)
                         {
-                            str = "~  ~";
-                        }
-                        string text = array[0];
-                        int num2 = 1;
-                        int num3 = array.Length - 1;
-                        for (int i = num2; i <= num3; i++)
-                        {
-                            Graphics graphics = bxBuffer.Graphics;
-                            string text2 = text + " " + array[i] + str;
-                            Font font2 = font;
-                            SizeF layoutArea = new SizeF(1024f, Height);
-                            if (Math.Ceiling(graphics.MeasureString(text2, font2, layoutArea, stringFormat).Width) > TextArea.Width)
+                            if (Items[Index].ItemState == LLItemState.Heading)
                             {
-                                if (Items[Index].ItemState == LLItemState.Heading)
-                                {
-                                    text = text + " ~\r\n~ " + array[i];
-                                }
-                                else
-                                {
-                                    text = text + "\r\n " + array[i];
-                                }
-                                num++;
+                                text = text + " ~\r\n~ " + array[i];
                             }
                             else
                             {
-                                text = text + " " + array[i];
+                                text = text + "\r\n " + array[i];
                             }
+
+                            num++;
                         }
-                        Items[Index].WrappedText = text;
+                        else
+                        {
+                            text = text + " " + array[i];
+                        }
                     }
-                    else
-                    {
-                        Items[Index].WrappedText = Items[Index].Text;
-                    }
-                    if (Items[Index].ItemState == LLItemState.Heading)
-                    {
-                        Items[Index].WrappedText = "~ " + Items[Index].WrappedText + " ~";
-                    }
-                    Items[Index].LineCount = num;
-                    Items[Index].ItemHeight = num * (LineHeight - yPadding * 2) + yPadding * 2;
+
+                    Items[Index].WrappedText = text;
                 }
+                else
+                {
+                    Items[Index].WrappedText = Items[Index].Text;
+                }
+
+                if (Items[Index].ItemState == LLItemState.Heading)
+                {
+                    Items[Index].WrappedText = "~ " + Items[Index].WrappedText + " ~";
+                }
+
+                Items[Index].LineCount = num;
+                Items[Index].ItemHeight = num * (LineHeight - yPadding * 2) + yPadding * 2;
             }
         }
 
         void InitBuffer()
         {
-            if (!DisableRedraw)
+            if (DisableRedraw)
+                return;
+            if ((Width == 0 | Height == 0) & bxBuffer == null)
+                return;
+            if (bxBuffer == null)
             {
-                if (!((Width == 0 | Height == 0) & bxBuffer == null))
-                {
-                    if (bxBuffer == null)
-                    {
-                        bxBuffer = new ExtendedBitmap(Width, Height);
-                    }
-                    if (bxBuffer.Size.Width != Width | bxBuffer.Size.Height != Height)
-                    {
-                        bxBuffer.Dispose();
-                        bxBuffer = null;
-                        GC.Collect();
-                        if (Height == 0 | Width == 0)
-                        {
-                            return;
-                        }
-                        bxBuffer = new ExtendedBitmap(Width, Height);
-                    }
-                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    bxBuffer.Graphics.TextContrast = 0;
-                }
+                bxBuffer = new ExtendedBitmap(Width, Height);
             }
+
+            if (bxBuffer.Size.Width != Width | bxBuffer.Size.Height != Height)
+            {
+                bxBuffer.Dispose();
+                bxBuffer = null;
+                GC.Collect();
+                if (Height == 0 | Width == 0)
+                {
+                    return;
+                }
+
+                bxBuffer = new ExtendedBitmap(Width, Height);
+            }
+
+            bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            bxBuffer.Graphics.TextContrast = 0;
         }
 
         int GetRealTotalHeight()
@@ -528,6 +530,7 @@ namespace midsControls
                 {
                     num += Items[i].ItemHeight;
                 }
+
                 return num;
             }
         }
@@ -536,27 +539,25 @@ namespace midsControls
         {
             checked
             {
-                if (!DisableRedraw)
+                if (DisableRedraw)
+                    return;
+                if (!Visible)
+                    return;
+                InitBuffer();
+                if (Width == 0 | Height == 0)
+                    return;
+                bxBuffer.Graphics.Clear(Expanded ? Color.Black : BackColor);
+                int scrollOffset = ScrollOffset;
+                int num = Items.Length - 1;
+                for (int i = scrollOffset; i <= num; i++)
                 {
-                    if (Visible)
-                    {
-                        InitBuffer();
-                        if (!(Width == 0 | Height == 0))
-                        {
-                            bxBuffer.Graphics.Clear(Expanded ? Color.Black : BackColor);
-                            int scrollOffset = ScrollOffset;
-                            int num = Items.Length - 1;
-                            for (int i = scrollOffset; i <= num; i++)
-                            {
-                                DrawItem(i);
-                            }
-                            DrawScrollBar();
-                            DrawExpandButton();
-                            Graphics graphics = CreateGraphics();
-                            graphics.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
-                        }
-                    }
+                    DrawItem(i);
                 }
+
+                DrawScrollBar();
+                DrawExpandButton();
+                Graphics graphics = CreateGraphics();
+                graphics.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
             }
         }
 
@@ -564,102 +565,109 @@ namespace midsControls
         {
             checked
             {
-                if (Index >= 0)
+                if (Index < 0)
+                    return;
+                if (Index < ScrollOffset)
+                    return;
+                if (Index > Items.Length - 1)
+                    return;
+                int num = 0;
+                int scrollOffset = ScrollOffset;
+                int num2 = Index - 1;
+                for (int i = scrollOffset; i <= num2; i++)
                 {
-                    if (Index >= ScrollOffset)
+                    num += Items[i].ItemHeight;
+                    if (num > Height)
                     {
-                        if (Index <= Items.Length - 1)
-                        {
-                            int num = 0;
-                            int scrollOffset = ScrollOffset;
-                            int num2 = Index - 1;
-                            for (int i = scrollOffset; i <= num2; i++)
-                            {
-                                num += Items[i].ItemHeight;
-                                if (num > Height)
-                                {
-                                    return;
-                                }
-                            }
-                            int height = Items[Index].ItemHeight;
-                            if (Items[Index].LineCount == 1)
-                            {
-                                if (num + Items[Index].ItemHeight > TextArea.Height)
-                                {
-                                    return;
-                                }
-                            }
-                            else if (num + Items[Index].ItemHeight > TextArea.Height)
-                            {
-                                if (num + LineHeight > TextArea.Height)
-                                {
-                                    return;
-                                }
-                                height = LineHeight - yPadding;
-                            }
-                            Rectangle rectangle = new Rectangle(TextArea.Left, num, TextArea.Width, height);
-                            StringFormat stringFormat = new StringFormat();
-                            switch (Items[Index].TextAlign)
-                            {
-                                case LLTextAlign.Left:
-                                    stringFormat.Alignment = StringAlignment.Near;
-                                    break;
-                                case LLTextAlign.Center:
-                                    stringFormat.Alignment = StringAlignment.Center;
-                                    break;
-                                case LLTextAlign.Right:
-                                    stringFormat.Alignment = StringAlignment.Far;
-                                    break;
-                            }
-                            FontStyle fontStyle = FontStyle.Regular;
-                            if (Items[Index].Bold)
-                            {
-                                fontStyle++;
-                            }
-                            if (Items[Index].Italic)
-                            {
-                                fontStyle += 2;
-                            }
-                            if (Items[Index].Underline)
-                            {
-                                fontStyle += 4;
-                            }
-                            if (Items[Index].Strikethrough)
-                            {
-                                fontStyle += 8;
-                            }
-                            Font font = new Font(Font, fontStyle);
-                            if (Index == HoverID && HighlightOn[(int)Items[Index].ItemState])
-                            {
-                                SolidBrush brush = new SolidBrush(hvrColor);
-                                bxBuffer.Graphics.FillRectangle(brush, rectangle);
-                            }
-                            SolidBrush brush2 = new SolidBrush(Color.Black);
-                            if (TextOutline)
-                            {
-                                Rectangle r = rectangle;
-                                r.X--;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.Y--;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.X++;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.X++;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.Y++;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.Y++;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.X--;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                                r.X--;
-                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
-                            }
-                            brush2 = new SolidBrush(Colours[(int)Items[Index].ItemState]);
-                            bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, rectangle, stringFormat);
-                        }
+                        return;
                     }
                 }
+
+                int height = Items[Index].ItemHeight;
+                if (Items[Index].LineCount == 1)
+                {
+                    if (num + Items[Index].ItemHeight > TextArea.Height)
+                    {
+                        return;
+                    }
+                }
+                else if (num + Items[Index].ItemHeight > TextArea.Height)
+                {
+                    if (num + LineHeight > TextArea.Height)
+                    {
+                        return;
+                    }
+
+                    height = LineHeight - yPadding;
+                }
+
+                Rectangle rectangle = new Rectangle(TextArea.Left, num, TextArea.Width, height);
+                StringFormat stringFormat = new StringFormat();
+                switch (Items[Index].TextAlign)
+                {
+                    case LLTextAlign.Left:
+                        stringFormat.Alignment = StringAlignment.Near;
+                        break;
+                    case LLTextAlign.Center:
+                        stringFormat.Alignment = StringAlignment.Center;
+                        break;
+                    case LLTextAlign.Right:
+                        stringFormat.Alignment = StringAlignment.Far;
+                        break;
+                }
+
+                FontStyle fontStyle = FontStyle.Regular;
+                if (Items[Index].Bold)
+                {
+                    fontStyle++;
+                }
+
+                if (Items[Index].Italic)
+                {
+                    fontStyle += 2;
+                }
+
+                if (Items[Index].Underline)
+                {
+                    fontStyle += 4;
+                }
+
+                if (Items[Index].Strikethrough)
+                {
+                    fontStyle += 8;
+                }
+
+                Font font = new Font(Font, fontStyle);
+                if (Index == HoverID && HighlightOn[(int) Items[Index].ItemState])
+                {
+                    SolidBrush brush = new SolidBrush(hvrColor);
+                    bxBuffer.Graphics.FillRectangle(brush, rectangle);
+                }
+
+                SolidBrush brush2 = new SolidBrush(Color.Black);
+                if (TextOutline)
+                {
+                    Rectangle r = rectangle;
+                    r.X--;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.Y--;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.X++;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.X++;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.Y++;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.Y++;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.X--;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                    r.X--;
+                    bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
+                }
+
+                brush2 = new SolidBrush(Colours[(int) Items[Index].ItemState]);
+                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, rectangle, stringFormat);
             }
         }
 
@@ -677,8 +685,9 @@ namespace midsControls
             }
             else
             {
-                result = checked((int)Math.Round(Conversion.Int(TextArea.Height / (double)LineHeight)));
+                result = checked((int) Math.Round(Conversion.Int(TextArea.Height / (double) LineHeight)));
             }
+
             return result;
         }
 
@@ -693,6 +702,7 @@ namespace midsControls
                 {
                     num += Items[i].LineCount;
                 }
+
                 return num;
             }
         }
@@ -719,97 +729,102 @@ namespace midsControls
                         wrapCount++;
                     }
                 }
+
                 if (wrapCount > 0)
                 {
                     wrapCount++;
                 }
+
                 ScrollSteps = wrapCount;
                 if (ScrollSteps <= 1)
                 {
                     ScrollSteps = 0;
                 }
+
                 return ScrollSteps;
             }
         }
 
         void DrawScrollBar()
         {
-            if (!(ScrollWidth < 1 | !canScroll | ScrollSteps < 1))
+            if (ScrollWidth < 1 | !canScroll | ScrollSteps < 1)
+                return;
+            SolidBrush brush;
+            Pen pen = new Pen(scBarColor);
+            Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
+            Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
+            PointF[] array;
+            Rectangle rect;
+            checked
             {
-                SolidBrush brush;
-                Pen pen = new Pen(scBarColor);
-                Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
-                Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
-                PointF[] array;
-                Rectangle rect;
-                checked
+                bxBuffer.Graphics.DrawLine(pen, (int) Math.Round(TextArea.Right + ScrollWidth / 2.0), yPadding + ScrollWidth,
+                    (int) Math.Round(TextArea.Right + ScrollWidth / 2.0), Height - (ScrollWidth + yPadding));
+                brush = new SolidBrush(scButtonColor);
+                array = new PointF[3];
+                if (ScrollSteps > 0)
                 {
-                    bxBuffer.Graphics.DrawLine(pen, (int)Math.Round(TextArea.Right + ScrollWidth / 2.0), yPadding + ScrollWidth, (int)Math.Round(TextArea.Right + ScrollWidth / 2.0), Height - (ScrollWidth + yPadding));
-                    brush = new SolidBrush(scButtonColor);
-                    array = new PointF[3];
-                    if (ScrollSteps > 0)
-                    {
-                        int num = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
-                        int y = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double)ScrollSteps * ScrollOffset);
-                        int height = (int)Math.Round(num / (double)ScrollSteps);
-                        rect = new Rectangle(TextArea.Right, y, ScrollWidth, height);
-                        bxBuffer.Graphics.FillRectangle(brush, rect);
-                        bxBuffer.Graphics.DrawLine(pen2, rect.Left, rect.Top, rect.Left, rect.Bottom);
-                        bxBuffer.Graphics.DrawLine(pen2, rect.Left + 1, rect.Top, rect.Right, rect.Top);
-                        bxBuffer.Graphics.DrawLine(pen3, rect.Right, rect.Top, rect.Right, rect.Bottom);
-                        bxBuffer.Graphics.DrawLine(pen3, rect.Left + 1, rect.Bottom, rect.Right - 1, rect.Bottom);
-                    }
-                    rect = new Rectangle(TextArea.Right, yPadding + ScrollWidth, ScrollWidth, Height - (ScrollWidth + yPadding) * 2);
-                    array[0] = new PointF(rect.Left, rect.Top);
-                    array[1] = new PointF(rect.Right, rect.Top);
+                    int num = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
+                    int y = (int) Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double) ScrollSteps * ScrollOffset);
+                    int height = (int) Math.Round(num / (double) ScrollSteps);
+                    rect = new Rectangle(TextArea.Right, y, ScrollWidth, height);
+                    bxBuffer.Graphics.FillRectangle(brush, rect);
+                    bxBuffer.Graphics.DrawLine(pen2, rect.Left, rect.Top, rect.Left, rect.Bottom);
+                    bxBuffer.Graphics.DrawLine(pen2, rect.Left + 1, rect.Top, rect.Right, rect.Top);
+                    bxBuffer.Graphics.DrawLine(pen3, rect.Right, rect.Top, rect.Right, rect.Bottom);
+                    bxBuffer.Graphics.DrawLine(pen3, rect.Left + 1, rect.Bottom, rect.Right - 1, rect.Bottom);
                 }
-                array[2] = new PointF(rect.Left + rect.Width / 2f, yPadding);
-                bxBuffer.Graphics.FillPolygon(brush, array);
-                bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
-                bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
-                array[0] = new PointF(rect.Left, rect.Bottom);
-                array[1] = new PointF(rect.Right, rect.Bottom);
-                array[2] = new PointF(rect.Left + rect.Width / 2f, checked(Height - yPadding));
-                bxBuffer.Graphics.FillPolygon(brush, array);
-                bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
-                bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
+
+                rect = new Rectangle(TextArea.Right, yPadding + ScrollWidth, ScrollWidth, Height - (ScrollWidth + yPadding) * 2);
+                array[0] = new PointF(rect.Left, rect.Top);
+                array[1] = new PointF(rect.Right, rect.Top);
             }
+
+            array[2] = new PointF(rect.Left + rect.Width / 2f, yPadding);
+            bxBuffer.Graphics.FillPolygon(brush, array);
+            bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
+            bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
+            array[0] = new PointF(rect.Left, rect.Bottom);
+            array[1] = new PointF(rect.Right, rect.Bottom);
+            array[2] = new PointF(rect.Left + rect.Width / 2f, checked(Height - yPadding));
+            bxBuffer.Graphics.FillPolygon(brush, array);
+            bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
+            bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
         }
 
         void DrawExpandButton()
         {
-            if (!(!canExpand | (!Expanded & ScrollSteps < 1)))
+            if (!canExpand | (!Expanded & ScrollSteps < 1))
+                return;
+            Pen pen = new Pen(scBarColor);
+            Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
+            Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
+            var brush = new SolidBrush(scButtonColor);
+            PointF[] array = new PointF[3];
+            Rectangle rectangle = checked(new Rectangle((int) Math.Round(Width / 3.0), Height - (ScrollWidth + yPadding),
+                (int) Math.Round(Width / 3.0), ScrollWidth - yPadding));
+            if (Expanded)
             {
-                Pen pen = new Pen(scBarColor);
-                Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
-                Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
-                var brush = new SolidBrush(scButtonColor);
-                PointF[] array = new PointF[3];
-                Rectangle rectangle = checked(new Rectangle((int)Math.Round(Width / 3.0), Height - (ScrollWidth + yPadding), (int)Math.Round(Width / 3.0), ScrollWidth - yPadding));
-                if (Expanded)
+                array[0] = new PointF(rectangle.Left, rectangle.Bottom);
+                array[1] = new PointF(rectangle.Right, rectangle.Bottom);
+                array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Top);
+                bxBuffer.Graphics.FillPolygon(brush, array);
+                bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
+                bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
+                checked
                 {
-                    array[0] = new PointF(rectangle.Left, rectangle.Bottom);
-                    array[1] = new PointF(rectangle.Right, rectangle.Bottom);
-                    array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Top);
-                    bxBuffer.Graphics.FillPolygon(brush, array);
-                    bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
-                    bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
-                    checked
-                    {
-                        bxBuffer.Graphics.DrawLine(pen, 0, 0, 0, Height - 1);
-                        bxBuffer.Graphics.DrawLine(pen, 0, Height - 1, Width - 1, Height - 1);
-                        bxBuffer.Graphics.DrawLine(pen, Width - 1, Height, Width - 1, 0);
-                    }
+                    bxBuffer.Graphics.DrawLine(pen, 0, 0, 0, Height - 1);
+                    bxBuffer.Graphics.DrawLine(pen, 0, Height - 1, Width - 1, Height - 1);
+                    bxBuffer.Graphics.DrawLine(pen, Width - 1, Height, Width - 1, 0);
                 }
-                else
-                {
-                    array[0] = new PointF(rectangle.Left, rectangle.Top);
-                    array[1] = new PointF(rectangle.Right, rectangle.Top);
-                    array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Bottom);
-                    bxBuffer.Graphics.FillPolygon(brush, array);
-                    bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
-                    bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
-                }
+            }
+            else
+            {
+                array[0] = new PointF(rectangle.Left, rectangle.Top);
+                array[1] = new PointF(rectangle.Right, rectangle.Top);
+                array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Bottom);
+                bxBuffer.Graphics.FillPolygon(brush, array);
+                bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
+                bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
             }
         }
 
@@ -835,8 +850,10 @@ namespace midsControls
                             return i;
                         }
                     }
+
                     result = -1;
                 }
+
                 return result;
             }
         }
@@ -870,8 +887,8 @@ namespace midsControls
                 else
                 {
                     int num = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
-                    int num2 = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double)ScrollSteps * ScrollOffset);
-                    int num3 = (int)Math.Round(num / (double)ScrollSteps);
+                    int num2 = (int) Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double) ScrollSteps * ScrollOffset);
+                    int num3 = (int) Math.Round(num / (double) ScrollSteps);
                     if (Y < num2)
                     {
                         result = eMouseTarget.ScrollBarUp;
@@ -885,6 +902,7 @@ namespace midsControls
                         result = eMouseTarget.ScrollBlock;
                     }
                 }
+
                 return result;
             }
         }
@@ -910,39 +928,44 @@ namespace midsControls
                     int num;
                     if (ScrollSteps / 3.0 < 5.0)
                     {
-                        num = (int)Math.Round(ScrollSteps / 3.0);
+                        num = (int) Math.Round(ScrollSteps / 3.0);
                     }
                     else
                     {
                         num = 5;
                     }
+
                     switch (GetMouseTarget(e.X, e.Y))
                     {
                         case eMouseTarget.Item:
+                        {
+                            int itemAtY = GetItemAtY(e.Y);
+                            if (itemAtY > -1)
                             {
-                                int itemAtY = GetItemAtY(e.Y);
-                                if (itemAtY > -1)
+                                int num2 = 0;
+                                int scrollOffset = ScrollOffset;
+                                int num3 = itemAtY - 1;
+                                for (int i = scrollOffset; i <= num3; i++)
                                 {
-                                    int num2 = 0;
-                                    int scrollOffset = ScrollOffset;
-                                    int num3 = itemAtY - 1;
-                                    for (int i = scrollOffset; i <= num3; i++)
-                                    {
-                                        num2 += Items[i].ItemHeight;
-                                    }
-                                    if ((num2 + Items[itemAtY].ItemHeight >= e.Y & num2 + Items[itemAtY].ItemHeight <= TextArea.Height) | (Items[itemAtY].LineCount > 1 & num2 + LineHeight >= e.Y & num2 + LineHeight <= TextArea.Height))
-                                    {
-                                        ItemClick?.Invoke(Items[itemAtY], e.Button);
-                                    }
+                                    num2 += Items[i].ItemHeight;
                                 }
-                                break;
+
+                                if ((num2 + Items[itemAtY].ItemHeight >= e.Y & num2 + Items[itemAtY].ItemHeight <= TextArea.Height) |
+                                    (Items[itemAtY].LineCount > 1 & num2 + LineHeight >= e.Y & num2 + LineHeight <= TextArea.Height))
+                                {
+                                    ItemClick?.Invoke(Items[itemAtY], e.Button);
+                                }
                             }
+
+                            break;
+                        }
                         case eMouseTarget.UpButton:
                             if (ScrollSteps > 0 & ScrollOffset > 0)
                             {
                                 ScrollOffset--;
                                 Draw();
                             }
+
                             break;
                         case eMouseTarget.DownButton:
                             if (ScrollSteps > 0 & ScrollOffset + 1 < ScrollSteps)
@@ -950,6 +973,7 @@ namespace midsControls
                                 ScrollOffset++;
                                 Draw();
                             }
+
                             break;
                         case eMouseTarget.ScrollBarUp:
                             if (ScrollSteps > 0)
@@ -959,8 +983,10 @@ namespace midsControls
                                 {
                                     ScrollOffset = 0;
                                 }
+
                                 Draw();
                             }
+
                             break;
                         case eMouseTarget.ScrollBarDown:
                             if (ScrollSteps > 0)
@@ -970,35 +996,39 @@ namespace midsControls
                                 {
                                     ScrollOffset = ScrollSteps - 1;
                                 }
+
                                 Draw();
                             }
+
                             break;
                         case eMouseTarget.ScrollBlock:
                             if (ScrollSteps > 0)
                             {
                                 DragMode = true;
                             }
+
                             break;
                         case eMouseTarget.ExpandButton:
+                        {
+                            if (!Expanded)
                             {
-                                if (!Expanded)
-                                {
-                                    Expanded = true;
-                                    ScrollOffset = 0;
-                                    RecomputeExpand();
-                                }
-                                else
-                                {
-                                    DisableRedraw = true;
-                                    Height = szNormal.Height;
-                                    Expanded = false;
-                                    Recalculate();
-                                    DisableRedraw = false;
-                                    Draw();
-                                }
-                                ExpandChanged?.Invoke(Expanded);
-                                break;
+                                Expanded = true;
+                                ScrollOffset = 0;
+                                RecomputeExpand();
                             }
+                            else
+                            {
+                                DisableRedraw = true;
+                                Height = szNormal.Height;
+                                Expanded = false;
+                                Recalculate();
+                                DisableRedraw = false;
+                                Draw();
+                            }
+
+                            ExpandChanged?.Invoke(Expanded);
+                            break;
+                        }
                     }
                 }
             }
@@ -1022,27 +1052,28 @@ namespace midsControls
                 DisableRedraw = false;
                 Draw();
             }
+
             ExpandChanged?.Invoke(Expanded);
         }
 
         // Token: 0x0600020D RID: 525 RVA: 0x00013878 File Offset: 0x00011A78
         void RecomputeExpand()
         {
-            if (Expanded)
+            if (!Expanded)
+                return;
+            int num = expandMaxY;
+            Recalculate(true);
+            int num2 = checked(GetRealTotalHeight() + ScrollWidth + yPadding * 3);
+            if (num2 < num)
             {
-                int num = expandMaxY;
-                Recalculate(true);
-                int num2 = checked(GetRealTotalHeight() + ScrollWidth + yPadding * 3);
-                if (num2 < num)
-                {
-                    num = num2;
-                }
-                DisableRedraw = true;
-                Height = num;
-                Recalculate();
-                DisableRedraw = false;
-                Draw();
+                num = num2;
             }
+
+            DisableRedraw = true;
+            Height = num;
+            Recalculate();
+            DisableRedraw = false;
+            Draw();
         }
 
         // Token: 0x0600020E RID: 526 RVA: 0x000138F0 File Offset: 0x00011AF0
@@ -1069,46 +1100,53 @@ namespace midsControls
                     switch (mouseTarget)
                     {
                         case eMouseTarget.Item:
+                        {
+                            int itemAtY = GetItemAtY(e.Y);
+                            if (itemAtY <= -1)
                             {
-                                int itemAtY = GetItemAtY(e.Y);
-                                if (itemAtY <= -1)
+                                if (HoverIndex != -1)
                                 {
-                                    if (HoverIndex != -1)
-                                    {
-                                        flag = true;
-                                    }
-                                    HoverIndex = -1;
-                                    EmptyHover?.Invoke();
-                                    goto IL_3EA;
+                                    flag = true;
                                 }
-                                int num = 0;
-                                int scrollOffset = ScrollOffset;
-                                int num2 = itemAtY - 1;
-                                for (int i = scrollOffset; i <= num2; i++)
-                                {
-                                    num += Items[i].ItemHeight;
-                                }
-                                if (!((num + Items[itemAtY].ItemHeight >= e.Y & num + Items[itemAtY].ItemHeight <= TextArea.Height) | (Items[itemAtY].LineCount > 1 & num + LineHeight >= e.Y & num + LineHeight <= TextArea.Height)))
-                                {
-                                    if (HoverIndex != -1)
-                                    {
-                                        flag = true;
-                                    }
-                                    HoverIndex = -1;
-                                    EmptyHover?.Invoke();
-                                    goto IL_3EA;
-                                }
-                                cursor = Cursors[(int)Items[itemAtY].ItemState];
-                                HoverIndex = itemAtY;
-                                Draw();
-                                ItemHover?.Invoke(Items[itemAtY]);
+
+                                HoverIndex = -1;
+                                EmptyHover?.Invoke();
                                 goto IL_3EA;
                             }
+
+                            int num = 0;
+                            int scrollOffset = ScrollOffset;
+                            int num2 = itemAtY - 1;
+                            for (int i = scrollOffset; i <= num2; i++)
+                            {
+                                num += Items[i].ItemHeight;
+                            }
+
+                            if (!((num + Items[itemAtY].ItemHeight >= e.Y & num + Items[itemAtY].ItemHeight <= TextArea.Height) |
+                                  (Items[itemAtY].LineCount > 1 & num + LineHeight >= e.Y & num + LineHeight <= TextArea.Height)))
+                            {
+                                if (HoverIndex != -1)
+                                {
+                                    flag = true;
+                                }
+
+                                HoverIndex = -1;
+                                EmptyHover?.Invoke();
+                                goto IL_3EA;
+                            }
+
+                            cursor = Cursors[(int) Items[itemAtY].ItemState];
+                            HoverIndex = itemAtY;
+                            Draw();
+                            ItemHover?.Invoke(Items[itemAtY]);
+                            goto IL_3EA;
+                        }
                         case eMouseTarget.UpButton:
                             if (LastMouseMovetarget != mouseTarget)
                             {
                                 Draw();
                             }
+
                             emptyHoverEvent = EmptyHover;
                             emptyHoverEvent?.Invoke();
                             goto IL_3EA;
@@ -1117,6 +1155,7 @@ namespace midsControls
                             {
                                 Draw();
                             }
+
                             emptyHoverEvent = EmptyHover;
                             emptyHoverEvent?.Invoke();
                             goto IL_3EA;
@@ -1126,6 +1165,7 @@ namespace midsControls
                             emptyHoverEvent?.Invoke();
                             goto IL_3EA;
                     }
+
                     emptyHoverEvent = EmptyHover;
                     emptyHoverEvent?.Invoke();
                 }
@@ -1137,8 +1177,8 @@ namespace midsControls
                 {
                     cursor = System.Windows.Forms.Cursors.SizeNS;
                     int num3 = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
-                    int num4 = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num3 / (double)ScrollSteps * ScrollOffset);
-                    int num5 = (int)Math.Round(num3 / (double)ScrollSteps);
+                    int num4 = (int) Math.Round(checked(ScrollWidth + yPadding * 2) + num3 / (double) ScrollSteps * ScrollOffset);
+                    int num5 = (int) Math.Round(num3 / (double) ScrollSteps);
                     if (e.Y < num4 & ScrollOffset > 0)
                     {
                         ScrollOffset--;
@@ -1149,14 +1189,17 @@ namespace midsControls
                         ScrollOffset++;
                         Draw();
                     }
+
                     EmptyHoverEventHandler emptyHoverEvent = EmptyHover;
                     emptyHoverEvent?.Invoke();
                 }
-            IL_3EA:
+
+                IL_3EA:
                 if (flag)
                 {
                     Draw();
                 }
+
                 Cursor = cursor;
                 LastMouseMovetarget = mouseTarget;
             }
@@ -1179,6 +1222,7 @@ namespace midsControls
             {
                 Draw();
             }
+
             if (bxBuffer != null)
             {
                 e.Graphics.DrawImage(bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
@@ -1208,31 +1252,16 @@ namespace midsControls
             Items = new ListLabelItemV2[0];
             Colours = new[]
             {
-                Color.LightBlue,
-                Color.LightGreen,
-                Color.LightGray,
-                Color.DarkGreen,
-                Color.Red,
-                Color.Orange
+                Color.LightBlue, Color.LightGreen, Color.LightGray, Color.DarkGreen, Color.Red, Color.Orange
             };
             Cursors = new[]
             {
-                System.Windows.Forms.Cursors.Hand,
-                System.Windows.Forms.Cursors.Hand,
-                System.Windows.Forms.Cursors.Default,
-                System.Windows.Forms.Cursors.Hand,
-                System.Windows.Forms.Cursors.Hand,
-                System.Windows.Forms.Cursors.Default
+                System.Windows.Forms.Cursors.Hand, System.Windows.Forms.Cursors.Hand, System.Windows.Forms.Cursors.Default,
+                System.Windows.Forms.Cursors.Hand, System.Windows.Forms.Cursors.Hand, System.Windows.Forms.Cursors.Default
             };
             HighlightOn = new[]
             {
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                false
+                true, true, true, true, true, true, false
             };
             bgColor = Color.Black;
             hvrColor = Color.WhiteSmoke;
@@ -1352,14 +1381,19 @@ namespace midsControls
         {
             // Token: 0x040000F9 RID: 249
             Enabled,
+
             // Token: 0x040000FA RID: 250
             Selected,
+
             // Token: 0x040000FB RID: 251
             Disabled,
+
             // Token: 0x040000FC RID: 252
             SelectedDisabled,
+
             // Token: 0x040000FD RID: 253
             Invalid,
+
             // Token: 0x040000FE RID: 254
             Heading
         }
@@ -1370,12 +1404,16 @@ namespace midsControls
         {
             // Token: 0x04000100 RID: 256
             Normal = 0,
+
             // Token: 0x04000101 RID: 257
             Bold = 1,
+
             // Token: 0x04000102 RID: 258
             Italic = 2,
+
             // Token: 0x04000103 RID: 259
             Underline = 4,
+
             // Token: 0x04000104 RID: 260
             Strikethrough = 8
         }
@@ -1385,8 +1423,10 @@ namespace midsControls
         {
             // Token: 0x04000106 RID: 262
             Left,
+
             // Token: 0x04000107 RID: 263
             Center,
+
             // Token: 0x04000108 RID: 264
             Right
         }
@@ -1396,18 +1436,25 @@ namespace midsControls
         {
             // Token: 0x0400010A RID: 266
             None,
+
             // Token: 0x0400010B RID: 267
             Item,
+
             // Token: 0x0400010C RID: 268
             UpButton,
+
             // Token: 0x0400010D RID: 269
             DownButton,
+
             // Token: 0x0400010E RID: 270
             ScrollBarUp,
+
             // Token: 0x0400010F RID: 271
             ScrollBarDown,
+
             // Token: 0x04000110 RID: 272
             ScrollBlock,
+
             // Token: 0x04000111 RID: 273
             ExpandButton
         }
@@ -1560,7 +1607,8 @@ namespace midsControls
             }
 
             // Token: 0x06000223 RID: 547 RVA: 0x00014378 File Offset: 0x00012578
-            public ListLabelItemV2(string iText, LLItemState iState, int inIDSet = -1, int iIDXPower = -1, int inIDPower = -1, string iStringTag = "", LLFontFlags iFont = LLFontFlags.Normal, LLTextAlign iAlign = LLTextAlign.Left)
+            public ListLabelItemV2(string iText, LLItemState iState, int inIDSet = -1, int iIDXPower = -1, int inIDPower = -1,
+                string iStringTag = "", LLFontFlags iFont = LLFontFlags.Normal, LLTextAlign iAlign = LLTextAlign.Left)
             {
                 Txt = "";
                 WrappedText = "";
@@ -1647,6 +1695,5 @@ namespace midsControls
             // Token: 0x0400011D RID: 285
             public int Index;
         }
-
     }
 }

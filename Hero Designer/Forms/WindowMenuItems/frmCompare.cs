@@ -384,11 +384,10 @@ namespace Hero_Designer
                     Powers[Index][index] = new Power(DatabaseAPI.Database.Powersets[numArray[Index]].Powers[index]);
                     Powers[Index][index].AbsorbPetEffects();
                     Powers[Index][index].ApplyGrantPowerEffects();
-                    if (nIDClass > -1)
-                    {
-                        Powers[Index][index].ForcedClassID = nIDClass;
-                        Powers[Index][index].ForcedClass = DatabaseAPI.UidFromNidClass(nIDClass);
-                    }
+                    if (nIDClass <= -1)
+                        continue;
+                    Powers[Index][index].ForcedClassID = nIDClass;
+                    Powers[Index][index].ForcedClass = DatabaseAPI.UidFromNidClass(nIDClass);
                 }
                 ++Index;
             }
@@ -457,31 +456,28 @@ namespace Hero_Designer
                 int num1 = iSFX.Index.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
-                    if (iSFX.Index[index1] != -1 && power.Effects[iSFX.Index[index1]].EffectType != Enums.eEffectType.None)
-                    {
-                        string returnString = "";
-                        int[] returnMask = new int[0];
-                        power.GetEffectStringGrouped(iSFX.Index[index1], ref returnString, ref returnMask, false, false);
-                        if (returnMask.Length > 0)
-                        {
-                            if (str3 != "")
-                                str3 += "\r\n  ";
-                            str3 += returnString.Replace("\r\n", "\r\n  ");
-                            int num2 = returnMask.Length - 1;
-                            for (int index2 = 0; index2 <= num2; ++index2)
-                                power.Effects[returnMask[index2]].EffectType = Enums.eEffectType.None;
-                        }
-                    }
+                    if (iSFX.Index[index1] == -1 || power.Effects[iSFX.Index[index1]].EffectType == Enums.eEffectType.None)
+                        continue;
+                    string returnString = "";
+                    int[] returnMask = new int[0];
+                    power.GetEffectStringGrouped(iSFX.Index[index1], ref returnString, ref returnMask, false, false);
+                    if (returnMask.Length <= 0)
+                        continue;
+                    if (str3 != "")
+                        str3 += "\r\n  ";
+                    str3 += returnString.Replace("\r\n", "\r\n  ");
+                    int num2 = returnMask.Length - 1;
+                    for (int index2 = 0; index2 <= num2; ++index2)
+                        power.Effects[returnMask[index2]].EffectType = Enums.eEffectType.None;
                 }
                 int num3 = iSFX.Index.Length - 1;
                 for (int index = 0; index <= num3; ++index)
                 {
-                    if (power.Effects[iSFX.Index[index]].EffectType != Enums.eEffectType.None)
-                    {
-                        if (str3 != "")
-                            str3 += "\r\n  ";
-                        str3 += power.Effects[iSFX.Index[index]].BuildEffectString().Replace("\r\n", "\r\n  ");
-                    }
+                    if (power.Effects[iSFX.Index[index]].EffectType == Enums.eEffectType.None)
+                        continue;
+                    if (str3 != "")
+                        str3 += "\r\n  ";
+                    str3 += power.Effects[iSFX.Index[index]].BuildEffectString().Replace("\r\n", "\r\n  ");
                 }
                 str2 = str1 + str3;
             }
@@ -501,11 +497,10 @@ namespace Hero_Designer
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (DatabaseAPI.Database.Classes[index].Playable)
-                {
-                    cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
-                    cbAT2.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
-                }
+                if (!DatabaseAPI.Database.Classes[index].Playable)
+                    continue;
+                cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
+                cbAT2.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
             }
             cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
             cbAT2.SelectedIndex = MidsContext.Character.Archetype.Idx;
@@ -603,12 +598,11 @@ namespace Hero_Designer
                 int num5 = Powers[0].Length - 1;
                 for (int index2 = 0; index2 <= num5; ++index2)
                 {
-                    if (string.Equals(Powers[0][index2].DisplayName, displayName, StringComparison.OrdinalIgnoreCase) & !Placed[index1])
-                    {
-                        Map.Map[index2, 1] = index1;
-                        Placed[index1] = true;
-                        break;
-                    }
+                    if (!(string.Equals(Powers[0][index2].DisplayName, displayName, StringComparison.OrdinalIgnoreCase) & !Placed[index1]))
+                        continue;
+                    Map.Map[index2, 1] = index1;
+                    Placed[index1] = true;
+                    break;
                 }
             }
             mapOverride();
@@ -781,20 +775,18 @@ namespace Hero_Designer
             int num6 = Powers[1].Length - 1;
             for (int index = 0; index <= num6; ++index)
             {
-                if (!Placed[index] && Map.Map[index, 1] == -1)
-                {
-                    Map.Map[index, 1] = index;
-                    Placed[index] = true;
-                }
+                if (Placed[index] || Map.Map[index, 1] != -1)
+                    continue;
+                Map.Map[index, 1] = index;
+                Placed[index] = true;
             }
             int num7 = Powers[1].Length - 1;
             for (int index = 0; index <= num7; ++index)
             {
-                if (!Placed[index])
-                {
-                    Map.Map[GetNextFreeSlot(), 1] = index;
-                    Placed[index] = true;
-                }
+                if (Placed[index])
+                    continue;
+                Map.Map[GetNextFreeSlot(), 1] = index;
+                Placed[index] = true;
             }
         }
 
@@ -833,7 +825,9 @@ namespace Hero_Designer
                     if (Powers[1][powerIdx].DescShort.IndexOf(iStrings[index2], StringComparison.OrdinalIgnoreCase) < 0)
                         flag1 = false;
                 }
-                if (flag1 & !placed[powerIdx])
+
+                if (!(flag1 & !placed[powerIdx]))
+                    continue;
                 {
                     for (int index2 = 0; index2 <= Powers[0].Length - 1; ++index2)
                     {
@@ -843,12 +837,12 @@ namespace Hero_Designer
                             if (Powers[0][index2].DescShort.IndexOf(iStrings[index3], StringComparison.OrdinalIgnoreCase) < 0)
                                 flag2 = false;
                         }
-                        if (flag2)
-                        {
-                            Map.Map[index2, 1] = powerIdx;
-                            placed[powerIdx] = true;
-                            return powerIdx;
-                        }
+
+                        if (!flag2)
+                            continue;
+                        Map.Map[index2, 1] = powerIdx;
+                        placed[powerIdx] = true;
+                        return powerIdx;
                     }
                 }
             }
@@ -952,7 +946,8 @@ namespace Hero_Designer
                             flag = true;
                     }
                     Values[index1][index2] = !(Powers[index1][index2].EntitiesAutoHit == Enums.eEntity.None | flag) ? 0.0f : (float)(Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
                     {
                         Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                         if (Matching)
@@ -992,29 +987,29 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString();
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
-                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
-                        {
-                            string[][] tips2 = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips2[index3][index4] = tips2[index3][index4] + "\r\n  (Applied every " + Conversions.ToString(Powers[index1][index2].ActivatePeriod) + "s)";
-                        }
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
+                    }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString();
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
+                    if (Powers[index1][index2].PowerType != Enums.ePowerType.Toggle)
+                        continue;
+                    {
+                        string[][] tips2 = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips2[index3][index4] = tips2[index3][index4] + "\r\n  (Applied every " + Conversions.ToString(Powers[index1][index2].ActivatePeriod) + "s)";
                     }
                 }
                 ++index1;
@@ -1035,21 +1030,20 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= Powers[index1].Length - 1; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            tips[index1][index2] = tips[index1][index2] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        tips[index1][index2] = tips[index1][index2] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1069,18 +1063,17 @@ namespace Hero_Designer
                 for (int subPowIdx = 0; subPowIdx <= Powers[powIdx].Length - 1; ++subPowIdx)
                 {
                     Values[powIdx][subPowIdx] = Powers[powIdx][subPowIdx].FXGetDamageValue();
-                    if (Values[powIdx][subPowIdx] != 0.0)
-                    {
-                        if (Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
-                            Values[powIdx][subPowIdx] /= Powers[powIdx][subPowIdx].EndCost;
-                        Tips[powIdx][subPowIdx] = DatabaseAPI.Database.Classes[Powers[powIdx][subPowIdx].ForcedClassID].DisplayName + ":" + Powers[powIdx][subPowIdx].DisplayName;
-                        if (Matching)
-                            Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " [Level " + Conversions.ToString(Powers[powIdx][subPowIdx].Level) + "]";
-                        Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + "\r\n  " + Powers[powIdx][subPowIdx].FXGetDamageString();
-                        if (num1 < (double)Values[powIdx][subPowIdx])
-                            num1 = Values[powIdx][subPowIdx];
-                        Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " - DPE: " + Strings.Format(Values[powIdx][subPowIdx], "##0.##");
-                    }
+                    if (Values[powIdx][subPowIdx] == 0.0)
+                        continue;
+                    if (Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
+                        Values[powIdx][subPowIdx] /= Powers[powIdx][subPowIdx].EndCost;
+                    Tips[powIdx][subPowIdx] = DatabaseAPI.Database.Classes[Powers[powIdx][subPowIdx].ForcedClassID].DisplayName + ":" + Powers[powIdx][subPowIdx].DisplayName;
+                    if (Matching)
+                        Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " [Level " + Conversions.ToString(Powers[powIdx][subPowIdx].Level) + "]";
+                    Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + "\r\n  " + Powers[powIdx][subPowIdx].FXGetDamageString();
+                    if (num1 < (double)Values[powIdx][subPowIdx])
+                        num1 = Values[powIdx][subPowIdx];
+                    Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " - DPE: " + Strings.Format(Values[powIdx][subPowIdx], "##0.##");
                 }
                 ++powIdx;
             }
@@ -1101,23 +1094,22 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].FXGetDamageValue();
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].FXGetDamageString() + "/s";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1136,27 +1128,25 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= powerCount; ++index2)
                 {
                     int durationEffectId = Powers[index1][index2].GetDurationEffectID();
-                    if (durationEffectId > -1)
+                    if (durationEffectId <= -1)
+                        continue;
+                    Values[index1][index2] = Powers[index1][index2].Effects[durationEffectId].Duration;
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Values[index1][index2] = Powers[index1][index2].Effects[durationEffectId].Duration;
-                        if (Values[index1][index2] != 0.0)
-                        {
-                            Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                            if (Matching)
-                            {
-                                string[][] tips = Tips;
-                                int index3 = index1;
-                                int index4 = index2;
-                                tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                            }
-                            string[][] tips1 = Tips;
-                            int index5 = index1;
-                            int index6 = index2;
-                            tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[durationEffectId].BuildEffectString();
-                            if (num1 < (double)Values[index1][index2])
-                                num1 = Values[index1][index2];
-                        }
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[durationEffectId].BuildEffectString();
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1174,30 +1164,29 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].EndCost;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Powers[index1][index2].EndCost, "##0.##");
-                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
-                        {
-                            string[][] tips2 = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips2[index3][index4] = tips2[index3][index4] + " (Per Second)";
-                        }
-                        if ((double)num1 < Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Powers[index1][index2].EndCost, "##0.##");
+                    if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                    {
+                        string[][] tips2 = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips2[index3][index4] = tips2[index3][index4] + " (Per Second)";
+                    }
+                    if ((double)num1 < Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1215,34 +1204,38 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].EndCost;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    switch (Powers[index1][index2].PowerType)
                     {
-                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Click)
+                        case Enums.ePowerType.Click:
                         {
                             if (Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
                                 Values[index1][index2] = Powers[index1][index2].EndCost / (Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime);
+                            break;
                         }
-                        else if (Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        case Enums.ePowerType.Toggle:
                             Values[index1][index2] = Powers[index1][index2].EndCost / Powers[index1][index2].ActivatePeriod;
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Values[index1][index2], "##0.##");
-                        string[][] tips2 = Tips;
-                        int index7 = index1;
-                        int index8 = index2;
-                        tips2[index7][index8] = tips2[index7][index8] + "/s";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                            break;
                     }
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
+                    {
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
+                    }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(Values[index1][index2], "##0.##");
+                    string[][] tips2 = Tips;
+                    int index7 = index1;
+                    int index8 = index2;
+                    tips2[index7][index8] = tips2[index7][index8] + "/s";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1263,23 +1256,22 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = MidsContext.Archetype.DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = MidsContext.Archetype.DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[effectMagSum.Index[0]].BuildEffectString();
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Powers[index1][index2].Effects[effectMagSum.Index[0]].BuildEffectString();
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1301,25 +1293,24 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    if (Powers[index1][index2].EndCost > 0.0)
+                        Values[index1][index2] /= Powers[index1][index2].EndCost;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        if (Powers[index1][index2].EndCost > 0.0)
-                            Values[index1][index2] /= Powers[index1][index2].EndCost;
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP per unit of end.";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP per unit of end.";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1341,25 +1332,24 @@ namespace Hero_Designer
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID];
                     Enums.ShortFX effectMagSum = Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal);
                     Values[index1][index2] = effectMagSum.Sum;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    if (Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
+                        Values[index1][index2] /= Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        if (Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].RechargeTime + (double)Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime > 0.0)
-                            Values[index1][index2] /= Powers[index1][index2].RechargeTime + Powers[index1][index2].CastTime + Powers[index1][index2].InterruptTime;
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP/s";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(Values[index1][index2], "##0.##") + " HP/s";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1378,33 +1368,32 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].MaxTargets;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        if (Values[index1][index2] > 1.0)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Targets Max.";
-                        }
-                        else
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Target Max.";
-                        }
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    if (Values[index1][index2] > 1.0)
+                    {
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Targets Max.";
+                    }
+                    else
+                    {
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + "\r\n  " + Conversions.ToString(Values[index1][index2]) + " Target Max.";
+                    }
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1455,23 +1444,23 @@ namespace Hero_Designer
                             str = str + Conversions.ToString(Powers[index1][index2].Radius) + "ft radius.";
                             break;
                     }
-                    if (Values[index1][index2] != 0.0)
+
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + str;
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + str;
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1489,23 +1478,22 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     Values[index1][index2] = Powers[index1][index2].RechargeTime;
-                    if (Values[index1][index2] != 0.0)
+                    if (Values[index1][index2] == 0.0)
+                        continue;
+                    Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
+                    if (Matching)
                     {
-                        Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
-                        if (Matching)
-                        {
-                            string[][] tips = Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(Values[index1][index2], "##0.##") + "s";
-                        if (num1 < (double)Values[index1][index2])
-                            num1 = Values[index1][index2];
+                        string[][] tips = Tips;
+                        int index3 = index1;
+                        int index4 = index2;
+                        tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(Powers[index1][index2].Level) + "]";
                     }
+                    string[][] tips1 = Tips;
+                    int index5 = index1;
+                    int index6 = index2;
+                    tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(Values[index1][index2], "##0.##") + "s";
+                    if (num1 < (double)Values[index1][index2])
+                        num1 = Values[index1][index2];
                 }
                 ++index1;
             }
@@ -1570,7 +1558,9 @@ namespace Hero_Designer
                             effectMagSum.Multiply();
                         Values[index1][index2] = effectMagSum.Sum;
                     }
-                    if (Values[index1][index2] != 0.0)
+
+                    if (Values[index1][index2] == 0.0)
+                        continue;
                     {
                         Tips[index1][index2] = DatabaseAPI.Database.Classes[Powers[index1][index2].ForcedClassID].DisplayName + ":" + Powers[index1][index2].DisplayName;
                         if (Matching)

@@ -134,17 +134,16 @@ namespace Hero_Designer
                 int num3 = ImportBuffer.Length - 1;
                 for (int index2 = 0; index2 <= num3; ++index2)
                 {
-                    if (ImportBuffer[index2].Index == index1)
-                    {
-                        flag = true;
-                        break;
-                    }
+                    if (ImportBuffer[index2].Index != index1)
+                        continue;
+                    flag = true;
+                    break;
                 }
-                if (!flag)
-                {
-                    numArray = (int[])Utils.CopyArray(numArray, new int[numArray.Length + 1]);
-                    numArray[numArray.Length - 1] = index1;
-                }
+
+                if (flag)
+                    continue;
+                numArray = (int[])Utils.CopyArray(numArray, new int[numArray.Length + 1]);
+                numArray[numArray.Length - 1] = index1;
             }
             BusyHide();
             string str = "";
@@ -166,17 +165,16 @@ namespace Hero_Designer
                 int num2 = pList.Length - 1;
                 for (int index3 = 0; index3 <= num2; ++index3)
                 {
-                    if (index2 == pList[index3])
-                    {
-                        flag = true;
-                        break;
-                    }
+                    if (index2 != pList[index3])
+                        continue;
+                    flag = true;
+                    break;
                 }
-                if (!flag)
-                {
-                    powerArray[index1] = new Power(DatabaseAPI.Database.Power[index2]);
-                    ++index1;
-                }
+
+                if (flag)
+                    continue;
+                powerArray[index1] = new Power(DatabaseAPI.Database.Power[index2]);
+                ++index1;
             }
             int num3;
             if (index1 != powerArray.Length)
@@ -219,19 +217,19 @@ namespace Hero_Designer
                     Application.DoEvents();
                     num1 = 0;
                 }
-                if (ImportBuffer[index].IsValid)
+
+                if (!ImportBuffer[index].IsValid)
+                    continue;
+                items[0] = ImportBuffer[index].Data.FullName;
+                items[1] = ImportBuffer[index].Data.DisplayName;
+                items[2] = !ImportBuffer[index].IsNew ? "No" : "Yes";
+                bool flag = ImportBuffer[index].CheckDifference(out items[4]);
+                items[3] = !flag ? "No" : "Yes";
+                lstImport.Items.Add(new ListViewItem(items)
                 {
-                    items[0] = ImportBuffer[index].Data.FullName;
-                    items[1] = ImportBuffer[index].Data.DisplayName;
-                    items[2] = !ImportBuffer[index].IsNew ? "No" : "Yes";
-                    bool flag = ImportBuffer[index].CheckDifference(out items[4]);
-                    items[3] = !flag ? "No" : "Yes";
-                    lstImport.Items.Add(new ListViewItem(items)
-                    {
-                        Checked = flag,
-                        Tag = index
-                    });
-                }
+                    Checked = flag,
+                    Tag = index
+                });
             }
             if (lstImport.Items.Count > 0)
                 lstImport.Items[0].EnsureVisible();
@@ -269,23 +267,22 @@ namespace Hero_Designer
                 do
                 {
                     iString = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iString != null && !iString.StartsWith("#"))
+                    if (iString == null || iString.StartsWith("#"))
+                        continue;
+                    ++num5;
+                    if (num5 >= 9)
                     {
-                        ++num5;
-                        if (num5 >= 9)
-                        {
-                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                            Application.DoEvents();
-                            num5 = 0;
-                        }
-                        ImportBuffer = (PowerData[])Utils.CopyArray(ImportBuffer, new PowerData[ImportBuffer.Length + 1]);
-                        ImportBuffer[ImportBuffer.Length - 1] = new PowerData(iString);
-                        ++num3;
-                        if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
-                            ++num1;
-                        else
-                            ++num4;
+                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                        Application.DoEvents();
+                        num5 = 0;
                     }
+                    ImportBuffer = (PowerData[])Utils.CopyArray(ImportBuffer, new PowerData[ImportBuffer.Length + 1]);
+                    ImportBuffer[ImportBuffer.Length - 1] = new PowerData(iString);
+                    ++num3;
+                    if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
+                        ++num1;
+                    else
+                        ++num4;
                 }
                 while (iString != null);
             }
@@ -309,11 +306,10 @@ namespace Hero_Designer
             int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2 - 1; ++index)
             {
-                if (lstImport.Items[index].Checked)
-                {
-                    ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
-                    ++num1;
-                }
+                if (!lstImport.Items[index].Checked)
+                    continue;
+                ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
+                ++num1;
             }
             if (Interaction.MsgBox("Check for deleted powers?", MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
             {

@@ -113,28 +113,27 @@ namespace Hero_Designer
                 do
                 {
                     iLine = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iLine != null && !iLine.StartsWith("#"))
+                    if (iLine == null || iLine.StartsWith("#"))
+                        continue;
+                    ++num5;
+                    if (num5 >= 9)
                     {
-                        ++num5;
-                        if (num5 >= 9)
-                        {
-                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                            num5 = 0;
-                        }
-                        string[] array = CSV.ToArray(iLine);
-                        int index1 = DatabaseAPI.NidFromUidPower(array[1]);
-                        if (index1 > -1)
-                        {
-                            DatabaseAPI.Database.Power[index1].Level = (int)Math.Round(Conversion.Val(array[2]) + 1.0);
-                            int index2 = DatabaseAPI.NidFromUidPowerset(DatabaseAPI.Database.Power[index1].FullSetName);
-                            if (index2 > -1 && DatabaseAPI.Database.Powersets[index2].SetType == Enums.ePowerSetType.Pool && DatabaseAPI.Database.Power[index1].Level == 1)
-                                DatabaseAPI.Database.Power[index1].Level = 4;
-                            ++num1;
-                        }
-                        else
-                            ++num4;
-                        ++num3;
+                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                        num5 = 0;
                     }
+                    string[] array = CSV.ToArray(iLine);
+                    int index1 = DatabaseAPI.NidFromUidPower(array[1]);
+                    if (index1 > -1)
+                    {
+                        DatabaseAPI.Database.Power[index1].Level = (int)Math.Round(Conversion.Val(array[2]) + 1.0);
+                        int index2 = DatabaseAPI.NidFromUidPowerset(DatabaseAPI.Database.Power[index1].FullSetName);
+                        if (index2 > -1 && DatabaseAPI.Database.Powersets[index2].SetType == Enums.ePowerSetType.Pool && DatabaseAPI.Database.Power[index1].Level == 1)
+                            DatabaseAPI.Database.Power[index1].Level = 4;
+                        ++num1;
+                    }
+                    else
+                        ++num4;
+                    ++num3;
                 }
                 while (iLine != null);
             }

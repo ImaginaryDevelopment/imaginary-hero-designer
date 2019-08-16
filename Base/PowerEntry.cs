@@ -473,11 +473,9 @@ public class PowerEntry : ICloneable
             return false;
         }
 
-        if (slotIdx == 0 && Slots.Length > 1)
-        {
-            message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
-            return false;
-        }
-        return true;
+        if (slotIdx != 0 || Slots.Length <= 1)
+            return true;
+        message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
+        return false;
     }
 }

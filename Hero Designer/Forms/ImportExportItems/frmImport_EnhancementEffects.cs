@@ -108,45 +108,43 @@ namespace Hero_Designer
             do
             {
                 str2 = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                if (str2 != null)
+                if (str2 == null)
+                    continue;
+                ++num3;
+                if (num3 >= 101)
                 {
-                    ++num3;
-                    if (num3 >= 101)
-                    {
-                        BusyMsg(Strings.Format(num1, "###,##0") + " records parsed.");
-                        Application.DoEvents();
-                        num3 = 0;
-                    }
-                    ++num1;
-                    string[] array = CSV.ToArray(str2);
-                    if (array.Length > 0 && !str2.StartsWith("#") & array[0].StartsWith("Boosts."))
-                    {
-                        bool flag = true;
-                        string uidEnh = array[0];
-                        int index = DatabaseAPI.NidFromUidEnhExtended(uidEnh);
-                        if (index < 0)
-                            flag = false;
-                        if (flag)
-                        {
-                            ++num4;
-                            IPower power1 = DatabaseAPI.Database.Enhancements[index].GetPower();
-                            power1.FullName = uidEnh;
-                            string[] strArray = power1.FullName.Split('.');
-                            power1.GroupName = strArray[0];
-                            power1.SetName = strArray[1];
-                            power1.PowerName = strArray[2];
-                            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power1.Effects, new IEffect[power1.Effects.Length + 1]);
-                            power1.Effects = effectArray;
-                            // this creates a reference cycle - power has an effect, that effect refers to the power
-                            power1.Effects[power1.Effects.Length - 1] = new Effect(power1);
-                            power1.Effects[power1.Effects.Length - 1].ImportFromCSV(str2);
-                        }
-                        else
-                        {
-                            ++num2;
-                            str1 = str1 + uidEnh + "\r\n";
-                        }
-                    }
+                    BusyMsg(Strings.Format(num1, "###,##0") + " records parsed.");
+                    Application.DoEvents();
+                    num3 = 0;
+                }
+                ++num1;
+                string[] array = CSV.ToArray(str2);
+                if (array.Length <= 0 || !(!str2.StartsWith("#") & array[0].StartsWith("Boosts.")))
+                    continue;
+                bool flag = true;
+                string uidEnh = array[0];
+                int index = DatabaseAPI.NidFromUidEnhExtended(uidEnh);
+                if (index < 0)
+                    flag = false;
+                if (flag)
+                {
+                    ++num4;
+                    IPower power1 = DatabaseAPI.Database.Enhancements[index].GetPower();
+                    power1.FullName = uidEnh;
+                    string[] strArray = power1.FullName.Split('.');
+                    power1.GroupName = strArray[0];
+                    power1.SetName = strArray[1];
+                    power1.PowerName = strArray[2];
+                    IEffect[] effectArray = (IEffect[])Utils.CopyArray(power1.Effects, new IEffect[power1.Effects.Length + 1]);
+                    power1.Effects = effectArray;
+                    // this creates a reference cycle - power has an effect, that effect refers to the power
+                    power1.Effects[power1.Effects.Length - 1] = new Effect(power1);
+                    power1.Effects[power1.Effects.Length - 1].ImportFromCSV(str2);
+                }
+                else
+                {
+                    ++num2;
+                    str1 = str1 + uidEnh + "\r\n";
                 }
             }
             while (str2 != null);

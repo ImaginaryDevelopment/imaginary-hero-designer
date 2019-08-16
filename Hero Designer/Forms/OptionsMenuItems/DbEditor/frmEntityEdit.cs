@@ -32,11 +32,10 @@ namespace Hero_Designer
             int num1 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if (DatabaseAPI.Database.Entities[index].UID.ToLower() == myEntity.UID.ToLower() & index != myEntity.GetNId())
-                {
-                    Interaction.MsgBox(myEntity.UID + " is not unique. Please enter a unique name.", MsgBoxStyle.Information, "Invalid Name");
-                    return;
-                }
+                if (!(DatabaseAPI.Database.Entities[index].UID.ToLower() == myEntity.UID.ToLower() & index != myEntity.GetNId()))
+                    continue;
+                Interaction.MsgBox(myEntity.UID + " is not unique. Please enter a unique name.", MsgBoxStyle.Information, "Invalid Name");
+                return;
             }
             myEntity.UpdateNClassID(DatabaseAPI.NidFromUidClass);
             DialogResult = DialogResult.OK;
@@ -282,12 +281,11 @@ namespace Hero_Designer
                 int num = lvPSGroup.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvPSGroup.Items[index].Text, strArray[0], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvPSGroup.Items[index].Selected = true;
-                        lvPSGroup.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvPSGroup.Items[index].Text, strArray[0], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvPSGroup.Items[index].Selected = true;
+                    lvPSGroup.Items[index].EnsureVisible();
+                    break;
                 }
             }
             UG_SetList();
@@ -296,12 +294,11 @@ namespace Hero_Designer
                 int num = lvPSSet.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvPSSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvPSSet.Items[index].Selected = true;
-                        lvPSSet.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvPSSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvPSSet.Items[index].Selected = true;
+                    lvPSSet.Items[index].EnsureVisible();
+                    break;
                 }
             }
             Updating = false;
@@ -384,12 +381,11 @@ namespace Hero_Designer
                 int num = lvUGGroup.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvUGGroup.Items[index].Text, strArray[0], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvUGGroup.Items[index].Selected = true;
-                        lvUGGroup.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvUGGroup.Items[index].Text, strArray[0], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvUGGroup.Items[index].Selected = true;
+                    lvUGGroup.Items[index].EnsureVisible();
+                    break;
                 }
             }
             UG_SetList();
@@ -398,12 +394,11 @@ namespace Hero_Designer
                 int num = lvUGSet.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvUGSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvUGSet.Items[index].Selected = true;
-                        lvUGSet.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvUGSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvUGSet.Items[index].Selected = true;
+                    lvUGSet.Items[index].EnsureVisible();
+                    break;
                 }
             }
             UG_PowerList();
@@ -412,12 +407,11 @@ namespace Hero_Designer
                 int num = lvUGPower.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvUGPower.Items[index].Text, strArray[2], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvUGPower.Items[index].Selected = true;
-                        lvUGPower.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvUGPower.Items[index].Text, strArray[2], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvUGPower.Items[index].Selected = true;
+                    lvUGPower.Items[index].EnsureVisible();
+                    break;
                 }
             }
             Updating = false;

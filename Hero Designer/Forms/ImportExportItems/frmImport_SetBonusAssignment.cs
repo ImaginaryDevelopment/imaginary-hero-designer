@@ -133,91 +133,88 @@ namespace Hero_Designer
                 do
                 {
                     iLine = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iLine != null && !iLine.StartsWith("#"))
+                    if (iLine == null || iLine.StartsWith("#"))
+                        continue;
+                    ++num5;
+                    if (num5 >= 9)
                     {
-                        ++num5;
-                        if (num5 >= 9)
+                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                        num5 = 0;
+                    }
+                    string[] array = CSV.ToArray(iLine);
+                    int index1 = DatabaseAPI.NidFromUidioSet(array[0]);
+                    if (index1 > -1)
+                    {
+                        int integer = Conversions.ToInteger(array[1]);
+                        string[] strArray1 = array[3].Split(" ".ToCharArray());
+                        Enums.ePvX ePvX = Enums.ePvX.Any;
+                        if (array[2].Contains("isPVPMap?"))
                         {
-                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                            num5 = 0;
+                            ePvX = Enums.ePvX.PvP;
+                            array[2] = array[2].Replace("isPVPMap?", "").Replace("  ", " ");
                         }
-                        string[] array = CSV.ToArray(iLine);
-                        int index1 = DatabaseAPI.NidFromUidioSet(array[0]);
-                        if (index1 > -1)
+                        string[] strArray2 = array[2].Split(" ".ToCharArray());
+                        if (array[2] == "")
                         {
-                            int integer = Conversions.ToInteger(array[1]);
-                            string[] strArray1 = array[3].Split(" ".ToCharArray());
-                            Enums.ePvX ePvX = Enums.ePvX.Any;
-                            if (array[2].Contains("isPVPMap?"))
+                            DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray(DatabaseAPI.Database.EnhancementSets[index1].Bonus, new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
+                            DatabaseAPI.Database.EnhancementSets[index1].Bonus[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1] = new EnhancementSet.BonusItem();
+                            EnhancementSet.BonusItem[] bonus = DatabaseAPI.Database.EnhancementSets[index1].Bonus;
+                            int index2 = DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1;
+                            bonus[index2].AltString = "";
+                            bonus[index2].Name = new string[strArray1.Length - 1 + 1];
+                            bonus[index2].Index = new int[strArray1.Length - 1 + 1];
+                            int num2 = bonus[index2].Name.Length - 1;
+                            for (int index3 = 0; index3 <= num2; ++index3)
                             {
-                                ePvX = Enums.ePvX.PvP;
-                                array[2] = array[2].Replace("isPVPMap?", "").Replace("  ", " ");
+                                bonus[index2].Name[index3] = strArray1[index3];
+                                bonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
                             }
-                            string[] strArray2 = array[2].Split(" ".ToCharArray());
-                            if (array[2] == "")
-                            {
-                                DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray(DatabaseAPI.Database.EnhancementSets[index1].Bonus, new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
-                                DatabaseAPI.Database.EnhancementSets[index1].Bonus[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1] = new EnhancementSet.BonusItem();
-                                EnhancementSet.BonusItem[] bonus = DatabaseAPI.Database.EnhancementSets[index1].Bonus;
-                                int index2 = DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1;
-                                bonus[index2].AltString = "";
-                                bonus[index2].Name = new string[strArray1.Length - 1 + 1];
-                                bonus[index2].Index = new int[strArray1.Length - 1 + 1];
-                                int num2 = bonus[index2].Name.Length - 1;
-                                for (int index3 = 0; index3 <= num2; ++index3)
-                                {
-                                    bonus[index2].Name[index3] = strArray1[index3];
-                                    bonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
-                                }
-                                bonus[index2].Special = -1;
-                                bonus[index2].PvMode = ePvX;
-                                bonus[index2].Slotted = integer;
-                            }
-                            else
-                            {
-                                int num2 = -1;
-                                int num7 = strArray2.Length - 1;
-                                for (int index2 = 0; index2 <= num7; ++index2)
-                                {
-                                    int num8 = DatabaseAPI.NidFromUidEnh(strArray2[index2]);
-                                    if (num8 > -1)
-                                    {
-                                        int num9 = DatabaseAPI.Database.EnhancementSets[index1].Enhancements.Length - 1;
-                                        for (int index3 = 0; index3 <= num9; ++index3)
-                                        {
-                                            if (DatabaseAPI.Database.EnhancementSets[index1].Enhancements[index3] == num8)
-                                            {
-                                                num2 = index3;
-                                                break;
-                                            }
-                                        }
-                                        break;
-                                    }
-                                }
-                                if (num2 > -1)
-                                {
-                                    EnhancementSet.BonusItem[] specialBonus = DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus;
-                                    int index2 = num2;
-                                    specialBonus[index2].AltString = "";
-                                    specialBonus[index2].Name = new string[strArray1.Length - 1 + 1];
-                                    specialBonus[index2].Index = new int[strArray1.Length - 1 + 1];
-                                    int num8 = specialBonus[index2].Name.Length - 1;
-                                    for (int index3 = 0; index3 <= num8; ++index3)
-                                    {
-                                        specialBonus[index2].Name[index3] = strArray1[index3];
-                                        specialBonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
-                                    }
-                                    specialBonus[index2].Special = num2;
-                                    specialBonus[index2].PvMode = ePvX;
-                                    specialBonus[index2].Slotted = integer;
-                                }
-                            }
-                            ++num1;
+                            bonus[index2].Special = -1;
+                            bonus[index2].PvMode = ePvX;
+                            bonus[index2].Slotted = integer;
                         }
                         else
-                            ++num4;
-                        ++num3;
+                        {
+                            int num2 = -1;
+                            int num7 = strArray2.Length - 1;
+                            for (int index2 = 0; index2 <= num7; ++index2)
+                            {
+                                int num8 = DatabaseAPI.NidFromUidEnh(strArray2[index2]);
+                                if (num8 <= -1)
+                                    continue;
+                                int num9 = DatabaseAPI.Database.EnhancementSets[index1].Enhancements.Length - 1;
+                                for (int index3 = 0; index3 <= num9; ++index3)
+                                {
+                                    if (DatabaseAPI.Database.EnhancementSets[index1].Enhancements[index3] != num8)
+                                        continue;
+                                    num2 = index3;
+                                    break;
+                                }
+                                break;
+                            }
+                            if (num2 > -1)
+                            {
+                                EnhancementSet.BonusItem[] specialBonus = DatabaseAPI.Database.EnhancementSets[index1].SpecialBonus;
+                                int index2 = num2;
+                                specialBonus[index2].AltString = "";
+                                specialBonus[index2].Name = new string[strArray1.Length - 1 + 1];
+                                specialBonus[index2].Index = new int[strArray1.Length - 1 + 1];
+                                int num8 = specialBonus[index2].Name.Length - 1;
+                                for (int index3 = 0; index3 <= num8; ++index3)
+                                {
+                                    specialBonus[index2].Name[index3] = strArray1[index3];
+                                    specialBonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
+                                }
+                                specialBonus[index2].Special = num2;
+                                specialBonus[index2].PvMode = ePvX;
+                                specialBonus[index2].Slotted = integer;
+                            }
+                        }
+                        ++num1;
                     }
+                    else
+                        ++num4;
+                    ++num3;
                 }
                 while (iLine != null);
             }

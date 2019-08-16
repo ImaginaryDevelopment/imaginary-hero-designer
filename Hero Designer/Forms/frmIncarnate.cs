@@ -32,10 +32,6 @@ namespace Hero_Designer
 
         Label lblLock;
 
-        ListLabelV2 llLeft;
-
-        ListLabelV2 llRight;
-
         ImageButton loreBtn;
 
         ImageButton OmegaButton;
@@ -56,17 +52,9 @@ namespace Hero_Designer
         public IPower[] myPowers;
         internal CustomPanel Panel2;
 
-        internal ListLabelV2 LLLeft
-        {
-            get => llLeft;
-            private set => llLeft = value;
-        }
+        internal ListLabelV2 LLLeft { get; private set; }
 
-        internal ListLabelV2 LLRight
-        {
-            get => llRight;
-            private set => llRight = value;
-        }
+        internal ListLabelV2 LLRight { get; private set; }
 
         public frmIncarnate(ref frmMain iParent)
         {
@@ -94,15 +82,15 @@ namespace Hero_Designer
             lblLock.Click += lblLock_Click;
 
             // llLeft events
-            llLeft.ItemClick += llLeft_ItemClick;
-            llLeft.MouseEnter += llLeft_MouseEnter;
-            llLeft.ItemHover += llLeft_ItemHover;
+            LLLeft.ItemClick += llLeft_ItemClick;
+            LLLeft.MouseEnter += llLeft_MouseEnter;
+            LLLeft.ItemHover += llLeft_ItemHover;
 
 
             // llRight events
-            llRight.MouseEnter += llRight_MouseEnter;
-            llRight.ItemHover += llRight_ItemHover;
-            llRight.ItemClick += llRight_ItemClick;
+            LLRight.MouseEnter += llRight_MouseEnter;
+            LLRight.ItemHover += llRight_ItemHover;
+            LLRight.ItemClick += llRight_ItemClick;
 
             loreBtn.ButtonClicked += loreBtn_ButtonClicked;
             Name = nameof(frmIncarnate);
@@ -138,10 +126,10 @@ namespace Hero_Designer
 
         public void FillLists()
         {
-            llLeft.SuspendRedraw = true;
-            llRight.SuspendRedraw = true;
-            llLeft.ClearItems();
-            llRight.ClearItems();
+            LLLeft.SuspendRedraw = true;
+            LLRight.SuspendRedraw = true;
+            LLLeft.ClearItems();
+            LLRight.ClearItems();
             int[] keys = new int[myPowers.Length - 1 + 1];
             if (myPowers.Length < 2)
             {
@@ -168,14 +156,14 @@ namespace Hero_Designer
                 ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]) ? myPowers[index].DisplayName != "Nothing" ? ListLabelV2.LLItemState.Enabled : ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Selected;
                 ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState) : new ListLabelV2.ListLabelItemV2(myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold);
                 if (index >= myPowers.Length / 2.0)
-                    llRight.AddItem(iItem);
+                    LLRight.AddItem(iItem);
                 else
-                    llLeft.AddItem(iItem);
+                    LLLeft.AddItem(iItem);
             }
-            llLeft.SuspendRedraw = false;
-            llRight.SuspendRedraw = false;
-            llLeft.Refresh();
-            llRight.Refresh();
+            LLLeft.SuspendRedraw = false;
+            LLRight.SuspendRedraw = false;
+            LLLeft.Refresh();
+            LLRight.Refresh();
         }
 
         void frmIncarnate_Load(object sender, EventArgs e)
@@ -199,12 +187,12 @@ namespace Hero_Designer
             }
             BackColor = myParent.BackColor;
             PopInfo.ForeColor = BackColor;
-            ListLabelV2 llLeft = this.llLeft;
+            ListLabelV2 llLeft = this.LLLeft;
             UpdateLLColours(ref llLeft);
-            this.llLeft = llLeft;
-            ListLabelV2 llRight = this.llRight;
+            this.LLLeft = llLeft;
+            ListLabelV2 llRight = this.LLRight;
             UpdateLLColours(ref llRight);
-            this.llRight = llRight;
+            this.LLRight = llRight;
             ibClose.IA = myParent.Drawing.pImageAttributes;
             ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
             ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
@@ -278,29 +266,29 @@ namespace Hero_Designer
             if (Item.ItemState == ListLabelV2.LLItemState.Disabled)
                 return;
             bool flag = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[Item.Index]);
-            int num1 = llLeft.Items.Length - 1;
+            int num1 = LLLeft.Items.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if (llLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                    llLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                if (LLLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                    LLLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
                 if (MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]))
                     MidsContext.Character.CurrentBuild.RemovePower(myPowers[index]);
             }
-            int num2 = llRight.Items.Length - 1;
+            int num2 = LLRight.Items.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (llRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                    llRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
-                if (MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index + llLeft.Items.Length]))
-                    MidsContext.Character.CurrentBuild.RemovePower(myPowers[index + llLeft.Items.Length]);
+                if (LLRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                    LLRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                if (MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index + LLLeft.Items.Length]))
+                    MidsContext.Character.CurrentBuild.RemovePower(myPowers[index + LLLeft.Items.Length]);
             }
             if (flag)
             {
                 MidsContext.Character.CurrentBuild.AddPower(myPowers[Item.Index], 49).StatInclude = true;
                 Item.ItemState = ListLabelV2.LLItemState.Selected;
             }
-            llLeft.Refresh();
-            llRight.Refresh();
+            LLLeft.Refresh();
+            LLRight.Refresh();
             myParent.PowerModified(markModified: true);
         }
 
@@ -318,7 +306,7 @@ namespace Hero_Designer
 
         void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
-            int pIDX = Item.Index + llLeft.Items.Length;
+            int pIDX = Item.Index + LLLeft.Items.Length;
             if (Button == MouseButtons.Right)
             {
                 Locked = false;
@@ -332,33 +320,31 @@ namespace Hero_Designer
                     return;
                 bool unused = !MidsContext.Character.CurrentBuild.PowerUsed(myPowers[pIDX]);
                 bool hasChanges = false;
-                for (int index = 0; index <= llLeft.Items.Length - 1; ++index)
+                for (int index = 0; index <= LLLeft.Items.Length - 1; ++index)
                 {
-                    if (llLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                        llLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
-                    if (MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]))
-                    {
-                        MidsContext.Character.CurrentBuild.RemovePower(myPowers[index]);
-                        hasChanges = true;
-                    }
+                    if (LLLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                        LLLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                    if (!MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index]))
+                        continue;
+                    MidsContext.Character.CurrentBuild.RemovePower(myPowers[index]);
+                    hasChanges = true;
                 }
-                for (int index = 0; index <= llRight.Items.Length - 1; ++index)
+                for (int index = 0; index <= LLRight.Items.Length - 1; ++index)
                 {
-                    if (llRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                        llRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
-                    if (MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index + llLeft.Items.Length]))
-                    {
-                        MidsContext.Character.CurrentBuild.RemovePower(myPowers[index + llLeft.Items.Length]);
-                        hasChanges = true;
-                    }
+                    if (LLRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                        LLRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                    if (!MidsContext.Character.CurrentBuild.PowerUsed(myPowers[index + LLLeft.Items.Length]))
+                        continue;
+                    MidsContext.Character.CurrentBuild.RemovePower(myPowers[index + LLLeft.Items.Length]);
+                    hasChanges = true;
                 }
                 if (unused)
                 {
                     MidsContext.Character.CurrentBuild.AddPower(myPowers[pIDX], 49).StatInclude = true;
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
-                llLeft.Refresh();
-                llRight.Refresh();
+                LLLeft.Refresh();
+                LLRight.Refresh();
                 myParent.PowerModified(markModified: unused || hasChanges);
             }
         }
@@ -366,7 +352,7 @@ namespace Hero_Designer
         void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
 
         {
-            miniPowerInfo(Item.Index + llLeft.Items.Length);
+            miniPowerInfo(Item.Index + LLLeft.Items.Length);
         }
 
         void llRight_MouseEnter(object sender, EventArgs e)
@@ -453,19 +439,20 @@ namespace Hero_Designer
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
-                        if ((power2.Effects[index3].EffectType != Enums.eEffectType.GrantPower | power2.Effects[index3].Absorbed_Effect) & power2.Effects[index3].EffectType != Enums.eEffectType.RevokePower & power2.Effects[index3].EffectType != Enums.eEffectType.SetMode)
+                        if (!((power2.Effects[index3].EffectType != Enums.eEffectType.GrantPower | power2.Effects[index3].Absorbed_Effect) &
+                              power2.Effects[index3].EffectType != Enums.eEffectType.RevokePower &
+                              power2.Effects[index3].EffectType != Enums.eEffectType.SetMode))
+                            continue;
+                        int index4 = iPopup.Add();
+                        power1.Effects[index3].SetPower(power1);
+                        string[] strArray = power1.Effects[index3].BuildEffectString().Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
+                        int num2 = strArray.Length - 1;
+                        for (int index5 = 0; index5 <= num2; ++index5)
                         {
-                            int index4 = iPopup.Add();
-                            power1.Effects[index3].SetPower(power1);
-                            string[] strArray = power1.Effects[index3].BuildEffectString().Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
-                            int num2 = strArray.Length - 1;
-                            for (int index5 = 0; index5 <= num2; ++index5)
-                            {
-                                if (index5 == 0)
-                                    iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
-                                else
-                                    iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Disabled, 0.9f, FontStyle.Italic, 2);
-                            }
+                            if (index5 == 0)
+                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
+                            else
+                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Disabled, 0.9f, FontStyle.Italic, 2);
                         }
                     }
                 }

@@ -112,18 +112,17 @@ namespace Hero_Designer
                 return;
             ImagePicker.InitialDirectory = I9Gfx.GetEnhancementsPath();
             ImagePicker.FileName = mySet.Image;
-            if (ImagePicker.ShowDialog() == DialogResult.OK)
+            if (ImagePicker.ShowDialog() != DialogResult.OK)
+                return;
+            string str = FileIO.StripPath(ImagePicker.FileName);
+            if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
             {
-                string str = FileIO.StripPath(ImagePicker.FileName);
-                if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
-                {
-                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
-                }
-                else
-                {
-                    mySet.Image = str;
-                    DisplayIcon();
-                }
+                int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
+            }
+            else
+            {
+                mySet.Image = str;
+                DisplayIcon();
             }
         }
 
@@ -152,21 +151,19 @@ namespace Hero_Designer
             for (int index1 = 0; index1 <= num1; ++index1)
             {
                 string[] strArray2 = strArray1[index1].Split(chArray);
-                if (strArray2.Length > 3)
-                {
-                    int num2 = (int)Math.Round(Conversion.Val(strArray2[0]));
-                    int index2 = DatabaseAPI.NidFromUidPower(strArray2[3]);
-                    int num3 = num2 - 2;
-                    if (num3 > -1 & index2 > -1)
-                    {
-                        EnhancementSet.BonusItem[] bonus = mySet.Bonus;
-                        int index3 = num3;
-                        bonus[index3].Name = (string[])Utils.CopyArray(bonus[index3].Name, new string[bonus[index3].Name.Length + 1]);
-                        bonus[index3].Index = (int[])Utils.CopyArray(bonus[index3].Index, new int[bonus[index3].Index.Length + 1]);
-                        bonus[index3].Index[bonus[index3].Index.Length - 1] = index2;
-                        bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[index2].FullName;
-                    }
-                }
+                if (strArray2.Length <= 3)
+                    continue;
+                int num2 = (int)Math.Round(Conversion.Val(strArray2[0]));
+                int index2 = DatabaseAPI.NidFromUidPower(strArray2[3]);
+                int num3 = num2 - 2;
+                if (!(num3 > -1 & index2 > -1))
+                    continue;
+                EnhancementSet.BonusItem[] bonus = mySet.Bonus;
+                int index3 = num3;
+                bonus[index3].Name = (string[])Utils.CopyArray(bonus[index3].Name, new string[bonus[index3].Name.Length + 1]);
+                bonus[index3].Index = (int[])Utils.CopyArray(bonus[index3].Index, new int[bonus[index3].Index.Length + 1]);
+                bonus[index3].Index[bonus[index3].Index.Length - 1] = index2;
+                bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[index2].FullName;
             }
             DisplayBonus();
             DisplayBonusText();
@@ -230,12 +227,11 @@ namespace Hero_Designer
                 int num2 = mySet.Bonus[index1].Index.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (mySet.Bonus[index1].Index[index2] > -1)
-                    {
-                        if (index2 > 0)
-                            str1 += ", ";
-                        str1 = str1 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName;
-                    }
+                    if (mySet.Bonus[index1].Index[index2] <= -1)
+                        continue;
+                    if (index2 > 0)
+                        str1 += ", ";
+                    str1 = str1 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName;
                 }
                 if (mySet.Bonus[index1].Index.Length > 0)
                     str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, false));
@@ -256,12 +252,11 @@ namespace Hero_Designer
                     int num2 = mySet.SpecialBonus[index1].Index.Length - 1;
                     for (int index2 = 0; index2 <= num2; ++index2)
                     {
-                        if (mySet.SpecialBonus[index1].Index[index2] > -1)
-                        {
-                            if (index2 > 0)
-                                str3 += ", ";
-                            str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
-                        }
+                        if (mySet.SpecialBonus[index1].Index[index2] <= -1)
+                            continue;
+                        if (index2 > 0)
+                            str3 += ", ";
+                        str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
                     }
                     str1 = str3 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, true)) + RTF.Crlf();
                 }
@@ -475,12 +470,11 @@ namespace Hero_Designer
                 int num1 = mySet.Bonus[BonusID()].Index.Length - 1;
                 for (int index2 = 0; index2 <= num1; ++index2)
                 {
-                    if (index2 != selectedIndex)
-                    {
-                        numArray2[index1] = mySet.Bonus[BonusID()].Index[index2];
-                        strArray2[index1] = mySet.Bonus[BonusID()].Name[index2];
-                        ++index1;
-                    }
+                    if (index2 == selectedIndex)
+                        continue;
+                    numArray2[index1] = mySet.Bonus[BonusID()].Index[index2];
+                    strArray2[index1] = mySet.Bonus[BonusID()].Name[index2];
+                    ++index1;
                 }
                 mySet.Bonus[BonusID()].Name = new string[numArray2.Length - 1 + 1];
                 mySet.Bonus[BonusID()].Index = new int[strArray2.Length - 1 + 1];
@@ -498,12 +492,11 @@ namespace Hero_Designer
                 int num1 = mySet.SpecialBonus[SpecialID()].Index.Length - 1;
                 for (int index2 = 0; index2 <= num1; ++index2)
                 {
-                    if (index2 != selectedIndex)
-                    {
-                        numArray2[index1] = mySet.SpecialBonus[SpecialID()].Index[index2];
-                        strArray2[index1] = mySet.SpecialBonus[SpecialID()].Name[index2];
-                        ++index1;
-                    }
+                    if (index2 == selectedIndex)
+                        continue;
+                    numArray2[index1] = mySet.SpecialBonus[SpecialID()].Index[index2];
+                    strArray2[index1] = mySet.SpecialBonus[SpecialID()].Name[index2];
+                    ++index1;
                 }
                 mySet.SpecialBonus[SpecialID()].Name = new string[numArray2.Length - 1 + 1];
                 mySet.SpecialBonus[SpecialID()].Index = new int[strArray2.Length - 1 + 1];

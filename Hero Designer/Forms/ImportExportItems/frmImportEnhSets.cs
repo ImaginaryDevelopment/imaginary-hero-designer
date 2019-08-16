@@ -123,36 +123,36 @@ namespace Hero_Designer
                     Application.DoEvents();
                     num1 = 0;
                 }
-                if (_importBuffer[index].IsValid)
+
+                if (!_importBuffer[index].IsValid)
+                    continue;
+                items[0] = _importBuffer[index].Data.DisplayName;
+                items[1] = Enum.GetName(_importBuffer[index].Data.SetType.GetType(), _importBuffer[index].Data.SetType);
+                bool flag = false;
+                if (_importBuffer[index].IsNew)
                 {
-                    items[0] = _importBuffer[index].Data.DisplayName;
-                    items[1] = Enum.GetName(_importBuffer[index].Data.SetType.GetType(), _importBuffer[index].Data.SetType);
-                    bool flag = false;
-                    if (_importBuffer[index].IsNew)
-                    {
-                        items[2] = "Yes";
-                        ++num2;
-                    }
-                    else
-                    {
-                        items[2] = "No";
-                        flag = _importBuffer[index].CheckDifference(out items[4]);
-                    }
-                    if (flag)
-                    {
-                        items[3] = "Yes";
-                        ++num3;
-                    }
-                    else
-                        items[3] = "No";
-                    ListViewItem listViewItem = new ListViewItem(items)
-                    {
-                        Checked = flag | _importBuffer[index].IsNew,
-                        Tag = index
-                    };
-                    _currentItems.Add(listViewItem);
-                    lstImport.Items.Add(listViewItem);
+                    items[2] = "Yes";
+                    ++num2;
                 }
+                else
+                {
+                    items[2] = "No";
+                    flag = _importBuffer[index].CheckDifference(out items[4]);
+                }
+                if (flag)
+                {
+                    items[3] = "Yes";
+                    ++num3;
+                }
+                else
+                    items[3] = "No";
+                ListViewItem listViewItem = new ListViewItem(items)
+                {
+                    Checked = flag | _importBuffer[index].IsNew,
+                    Tag = index
+                };
+                _currentItems.Add(listViewItem);
+                lstImport.Items.Add(listViewItem);
             }
             if (lstImport.Items.Count > 0)
                 lstImport.Items[0].EnsureVisible();
@@ -204,21 +204,20 @@ namespace Hero_Designer
             do
             {
                 iString = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                if (iString != null && !iString.StartsWith("#"))
+                if (iString == null || iString.StartsWith("#"))
+                    continue;
+                ++num5;
+                if (num5 >= 100)
                 {
-                    ++num5;
-                    if (num5 >= 100)
-                    {
-                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                        num5 = 0;
-                    }
-                    _importBuffer.Add(new EnhSetData(iString));
-                    ++num3;
-                    if (_importBuffer[_importBuffer.Count - 1].IsValid)
-                        ++num1;
-                    else
-                        ++num4;
+                    BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                    num5 = 0;
                 }
+                _importBuffer.Add(new EnhSetData(iString));
+                ++num3;
+                if (_importBuffer[_importBuffer.Count - 1].IsValid)
+                    ++num1;
+                else
+                    ++num4;
             }
             while (iString != null);
             iStream.Close();
@@ -234,16 +233,14 @@ namespace Hero_Designer
             int importCount = lstImport.Items.Count - 1;
             for (int index = 0; index <= importCount; ++index)
             {
-                if (lstImport.Items[index].Checked)
-                {
-                    _importBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
-                    ++num1;
-                    if (num1 > 0 && num1 % 10 == 0)
-                    {
-                        BusyMsg("Applying: " + Conversions.ToString(index) + " records done.");
-                        Application.DoEvents();
-                    }
-                }
+                if (!lstImport.Items[index].Checked)
+                    continue;
+                _importBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
+                ++num1;
+                if (num1 <= 0 || num1 % 10 != 0)
+                    continue;
+                BusyMsg("Applying: " + Conversions.ToString(index) + " records done.");
+                Application.DoEvents();
             }
             Enabled = true;
             BusyMsg("Saving...");

@@ -78,18 +78,17 @@ namespace Hero_Designer
                 return;
             ImagePicker.InitialDirectory = I9Gfx.GetPowersetsPath();
             ImagePicker.FileName = myPS.ImageName;
-            if (ImagePicker.ShowDialog() == DialogResult.OK)
+            if (ImagePicker.ShowDialog() != DialogResult.OK)
+                return;
+            string str = FileIO.StripPath(ImagePicker.FileName);
+            if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
             {
-                string str = FileIO.StripPath(ImagePicker.FileName);
-                if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
-                {
-                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetPowersetsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
-                }
-                else
-                {
-                    myPS.ImageName = str;
-                    DisplayIcon();
-                }
+                int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetPowersetsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
+            }
+            else
+            {
+                myPS.ImageName = str;
+                DisplayIcon();
             }
         }
 
@@ -394,11 +393,10 @@ namespace Hero_Designer
                     int num2 = myPS.nIDMutexSets.Length - 1;
                     for (int index2 = 0; index2 <= num2; ++index2)
                     {
-                        if (numArray[index1] == myPS.nIDMutexSets[index2])
-                        {
-                            lvMutexSets.SetSelected(index1, true);
-                            break;
-                        }
+                        if (numArray[index1] != myPS.nIDMutexSets[index2])
+                            continue;
+                        lvMutexSets.SetSelected(index1, true);
+                        break;
                     }
                 }
             }
@@ -438,14 +436,13 @@ namespace Hero_Designer
 
         static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
         {
-            if (!string.IsNullOrEmpty(iFullName))
+            if (string.IsNullOrEmpty(iFullName))
+                return true;
+            int num = DatabaseAPI.Database.Powersets.Length - 1;
+            for (int index = 0; index <= num; ++index)
             {
-                int num = DatabaseAPI.Database.Powersets.Length - 1;
-                for (int index = 0; index <= num; ++index)
-                {
-                    if (index != skipId && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, iFullName, StringComparison.OrdinalIgnoreCase))
-                        return false;
-                }
+                if (index != skipId && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, iFullName, StringComparison.OrdinalIgnoreCase))
+                    return false;
             }
             return true;
         }
