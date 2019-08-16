@@ -52,9 +52,9 @@ namespace Hero_Designer
         public IPower[] myPowers;
         internal CustomPanel Panel2;
 
-        internal ListLabelV2 LLLeft { get; private set; }
+        internal ListLabelV2 LLLeft;
 
-        internal ListLabelV2 LLRight { get; private set; }
+        internal ListLabelV2 LLRight;
 
         public frmIncarnate(ref frmMain iParent)
         {
