@@ -12,7 +12,7 @@ namespace Hero_Designer
         VScrollBar VScrollBar1;
 
         readonly frmMain myParent;
-        internal ctlPopUp PInfo { get; private set; }
+        internal ctlPopUp PInfo;
 
         public frmMiniList(frmMain iParent)
         {
