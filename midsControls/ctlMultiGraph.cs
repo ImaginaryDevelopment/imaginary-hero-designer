@@ -992,11 +992,10 @@ namespace midsControls
         // Token: 0x060000CD RID: 205 RVA: 0x00009334 File Offset: 0x00007534
         private void ctlMultiGraph_MouseDown(object sender, MouseEventArgs e)
         {
-            if (pClickable & e.Button == MouseButtons.Left)
-            {
-                float valueAtXY = GetValueAtXY(e.X, e.Y);
-                BarClick?.Invoke(valueAtXY);
-            }
+            if (!(pClickable & e.Button == MouseButtons.Left))
+                return;
+            float valueAtXY = GetValueAtXY(e.X, e.Y);
+            BarClick?.Invoke(valueAtXY);
         }
 
         // Token: 0x060000CE RID: 206 RVA: 0x0000938C File Offset: 0x0000758C

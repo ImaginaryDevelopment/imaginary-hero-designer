@@ -59,7 +59,7 @@ namespace Hero_Designer
             chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
             Name = nameof(frmStats);
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmStats));
-            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
             myParent = iParent;
         }
 
@@ -169,6 +169,7 @@ namespace Hero_Designer
                         break;
                 }
             }
+
             Graph.Max = GraphMax;
             tbScaleX.Value = Graph.ScaleIndex;
             SetScaleLabel();
@@ -208,9 +209,9 @@ namespace Hero_Designer
             items2.Add("Enhanced Only");
             items2.Add("Active & Alternate");
             items2.Add("Stacked Active + Alt");
-            if (MidsContext.Config.StatGraphStyle > (Enums.GraphStyle)(cbStyle.Items.Count - 1))
+            if (MidsContext.Config.StatGraphStyle > (Enums.GraphStyle) (cbStyle.Items.Count - 1))
                 MidsContext.Config.StatGraphStyle = Enums.GraphStyle.Stacked;
-            cbStyle.SelectedIndex = (int)MidsContext.Config.StatGraphStyle;
+            cbStyle.SelectedIndex = (int) MidsContext.Config.StatGraphStyle;
             cbStyle.EndUpdate();
         }
 
@@ -254,7 +255,7 @@ namespace Hero_Designer
                 clientSize1 = ClientSize;
                 int num4 = clientSize1.Width - (this.tbScaleX.Left + (ClientSize.Width - chkOnTop.Left) + 4);
                 tbScaleX.Width = num4;
-                lblScale.Left = (int)Math.Round(this.tbScaleX.Left + (this.tbScaleX.Width - lblScale.Width) / 2.0);
+                lblScale.Left = (int) Math.Round(this.tbScaleX.Left + (this.tbScaleX.Width - lblScale.Width) / 2.0);
                 int num5 = this.cbStyle.Left + 154;
                 Size clientSize2 = ClientSize;
                 int num6 = clientSize2.Width - 3;
@@ -268,6 +269,7 @@ namespace Hero_Designer
                 else
                     this.cbStyle.Width = 154;
             }
+
             StoreLocation();
         }
 
@@ -326,14 +328,18 @@ namespace Hero_Designer
                                     .Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset]
                                     .Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                                 continue;
-                            BaseArray = (IPower[])Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
-                            EnhArray = (IPower[])Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
+                            BaseArray = (IPower[]) Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
+                            EnhArray = (IPower[]) Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
                             int index = BaseArray.Length - 1;
-                            BaseArray[index] = new Power(DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset].Powers[MainModule.MidsController.Toon.CurrentBuild.Powers[iPower].IDXPower]);
+                            BaseArray[index] = new Power(DatabaseAPI.Database
+                                .Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset]
+                                .Powers[MainModule.MidsController.Toon.CurrentBuild.Powers[iPower].IDXPower]);
                             EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
                         }
+
                         break;
                     }
+
                     int num1 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                     for (int iPower = 0; iPower <= num1; ++iPower)
                     {
@@ -342,9 +348,10 @@ namespace Hero_Designer
                                 .Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset]
                                 .Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                             continue;
-                        BaseArray = (IPower[])Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
+                        BaseArray = (IPower[]) Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
                         BaseArray[BaseArray.Length - 1] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
                     }
+
                     MainModule.MidsController.Toon.FlipAllSlots();
                     int num2 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                     for (int iPower = 0; iPower <= num2; ++iPower)
@@ -354,9 +361,10 @@ namespace Hero_Designer
                                 .Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset]
                                 .Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                             continue;
-                        EnhArray = (IPower[])Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
+                        EnhArray = (IPower[]) Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
                         EnhArray[EnhArray.Length - 1] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
                     }
+
                     MainModule.MidsController.Toon.FlipAllSlots();
                     break;
                 case 7:
@@ -382,52 +390,60 @@ namespace Hero_Designer
 
         public void GetSetArray(Enums.PowersetType SetType, Enums.ePowerType iType)
         {
-            if (MidsContext.Character.Powersets[(int)SetType] == null)
+            if (MidsContext.Character.Powersets[(int) SetType] == null)
                 return;
             if (cbStyle.SelectedIndex >= cbStyle.Items.Count - 2)
             {
-                int num1 = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
+                int num1 = MidsContext.Character.Powersets[(int) SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num1; ++iPower)
                 {
                     if (!(iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int) SetType].Powers[iPower].PowerType == iType))
                         continue;
-                    BaseArray = (IPower[])Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
+                    BaseArray = (IPower[]) Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
                     int index = BaseArray.Length - 1;
-                    BaseArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));
+                    BaseArray[index] =
+                        MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int) SetType].nID,
+                            iPower));
                     if (BaseArray[index] != null)
                         continue;
-                    BaseArray[index] = new Power(MidsContext.Character.Powersets[(int)SetType].Powers[iPower]);
+                    BaseArray[index] = new Power(MidsContext.Character.Powersets[(int) SetType].Powers[iPower]);
                     BaseArray[index].Accuracy *= MidsContext.Config.BaseAcc;
                 }
+
                 MainModule.MidsController.Toon.FlipAllSlots();
-                int num2 = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
+                int num2 = MidsContext.Character.Powersets[(int) SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num2; ++iPower)
                 {
                     if (!(iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int) SetType].Powers[iPower].PowerType == iType))
                         continue;
-                    EnhArray = (IPower[])Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
+                    EnhArray = (IPower[]) Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
                     int index = EnhArray.Length - 1;
-                    EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));
+                    EnhArray[index] =
+                        MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int) SetType].nID,
+                            iPower));
                     if (EnhArray[index] != null)
                         continue;
-                    EnhArray[index] = new Power(MidsContext.Character.Powersets[(int)SetType].Powers[iPower]);
+                    EnhArray[index] = new Power(MidsContext.Character.Powersets[(int) SetType].Powers[iPower]);
                     EnhArray[index].Accuracy *= MidsContext.Config.BaseAcc;
                 }
+
                 MainModule.MidsController.Toon.FlipAllSlots();
             }
             else
             {
-                int num = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
+                int num = MidsContext.Character.Powersets[(int) SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num; ++iPower)
                 {
                     if (!(iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int) SetType].Powers[iPower].PowerType == iType))
                         continue;
-                    BaseArray = (IPower[])Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
-                    EnhArray = (IPower[])Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
+                    BaseArray = (IPower[]) Utils.CopyArray(BaseArray, new IPower[BaseArray.Length + 1]);
+                    EnhArray = (IPower[]) Utils.CopyArray(EnhArray, new IPower[EnhArray.Length + 1]);
                     int index = BaseArray.Length - 1;
-                    BaseArray[index] = new Power(MidsContext.Character.Powersets[(int)SetType].Powers[iPower]);
-                    EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower)) ??
-                                      new Power(BaseArray[index]);
+                    BaseArray[index] = new Power(MidsContext.Character.Powersets[(int) SetType].Powers[iPower]);
+                    EnhArray[index] =
+                        MainModule.MidsController.Toon.GetEnhancedPower(GrabPlaced(MidsContext.Character.Powersets[(int) SetType].nID,
+                            iPower)) ??
+                        new Power(BaseArray[index]);
                 }
             }
         }
@@ -439,9 +455,11 @@ namespace Hero_Designer
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (MidsContext.Character.CurrentBuild.Powers[index].NIDPowerset == iSet & MidsContext.Character.CurrentBuild.Powers[index].IDXPower == iPower)
+                if (MidsContext.Character.CurrentBuild.Powers[index].NIDPowerset == iSet &
+                    MidsContext.Character.CurrentBuild.Powers[index].IDXPower == iPower)
                     return index;
             }
+
             return -1;
         }
 
@@ -467,15 +485,16 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (EnhArray[index].Accuracy == (double)accuracy)
+                    if (EnhArray[index].Accuracy == (double) accuracy)
                         num3 = MidsContext.Config.BaseAcc * num3;
                     nEnh = num3 * 100f;
-                    nBase = (float)(MidsContext.Config.BaseAcc * (double)accuracy * 100.0);
+                    nBase = (float) (MidsContext.Config.BaseAcc * (double) accuracy * 100.0);
                 }
+
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -483,8 +502,11 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num4;
                 }
-                string iTip = Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") + "%" : displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
-                if (nBase != (double)nEnh)
+
+                string iTip = Graph.Style != Enums.GraphStyle.baseOnly
+                    ? displayName + ": " + Strings.Format(nEnh, "##0.#") + "%"
+                    : displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.#") + "%)";
                 if (BaseOverride)
                 {
@@ -492,8 +514,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num4;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -510,9 +534,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string iTip = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -520,6 +544,7 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
                     iTip = iTip + "\r\n" + BaseArray[index].FXGetDamageString();
@@ -531,7 +556,8 @@ namespace Hero_Designer
                     if (BaseOverride)
                         iTip = iTip + "\r\n" + BaseArray[index].FXGetDamageString();
                 }
-                if (nBase != (double)nEnh)
+
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseArray[index].PowerType == Enums.ePowerType.Toggle)
                     iTip = iTip + "\r\n(Applied every " + Conversions.ToString(BaseArray[index].ActivatePeriod) + "s)";
@@ -541,8 +567,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
@@ -560,9 +588,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string str = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -570,6 +598,7 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
                     str = str + "\r\n" + BaseArray[index].FXGetDamageString();
@@ -581,8 +610,9 @@ namespace Hero_Designer
                     if (BaseOverride)
                         str = str + "\r\n" + BaseArray[index].FXGetDamageString();
                 }
+
                 string iTip = str + "/s";
-                if (nBase != (double)nEnh)
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -590,8 +620,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
@@ -613,10 +645,11 @@ namespace Hero_Designer
                     nBase /= BaseArray[index].EndCost;
                     nEnh /= EnhArray[index].EndCost;
                 }
+
                 string str = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
@@ -629,12 +662,14 @@ namespace Hero_Designer
                     if (BaseOverride)
                         str = str + "\r\n" + BaseArray[index].FXGetDamageString();
                 }
+
                 if (BaseOverride)
                 {
                     float num3 = nBase;
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 string iTip;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
@@ -643,17 +678,20 @@ namespace Hero_Designer
                 else
                 {
                     iTip = str + "\r\nDamage per unit of End: " + Strings.Format(nEnh, "##0.##");
-                    if (nBase != (double)nEnh)
+                    if (nBase != (double) nEnh)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 }
+
                 if (BaseOverride)
                 {
                     float num3 = nBase;
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
@@ -671,9 +709,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].FXGetDamageValue();
                 string str = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -681,6 +719,7 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
                     str = str + "\r\n" + BaseArray[index].FXGetDamageString();
@@ -692,8 +731,9 @@ namespace Hero_Designer
                     if (BaseOverride)
                         str = str + "\r\n" + BaseArray[index].FXGetDamageString();
                 }
+
                 string iTip = str + "/s";
-                if (nBase != (double)nEnh)
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -701,8 +741,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
@@ -718,39 +760,43 @@ namespace Hero_Designer
                     continue;
                 float nBase = BaseArray[index].Effects[durationEffectId].Duration;
                 float nEnh = EnhArray[index].Effects[durationEffectId].Duration;
-                if (nBase != 0.0 & BaseArray[index].PowerType == Enums.ePowerType.Click)
+                if (!(nBase != 0.0 & BaseArray[index].PowerType == Enums.ePowerType.Click))
+                    continue;
+                string str1 = EnhArray[index].Effects[durationEffectId].EffectType != Enums.eEffectType.Mez
+                    ? Enums.GetEffectName(EnhArray[index].Effects[durationEffectId].EffectType)
+                    : Enums.GetMezName((Enums.eMezShort) EnhArray[index].Effects[durationEffectId].MezType);
+                if (EnhArray[index].Effects[durationEffectId].Mag < 0.0)
+                    str1 = "-" + str1;
+                string displayName = BaseArray[index].DisplayName;
+                if (num1 < (double) nEnh)
+                    num1 = nEnh;
+                if (num1 < (double) nBase)
+                    num1 = nBase;
+                if (BaseOverride)
                 {
-                    string str1 = EnhArray[index].Effects[durationEffectId].EffectType != Enums.eEffectType.Mez ? Enums.GetEffectName(EnhArray[index].Effects[durationEffectId].EffectType) : Enums.GetMezName((Enums.eMezShort)EnhArray[index].Effects[durationEffectId].MezType);
-                    if (EnhArray[index].Effects[durationEffectId].Mag < 0.0)
-                        str1 = "-" + str1;
-                    string displayName = BaseArray[index].DisplayName;
-                    if (num1 < (double)nEnh)
-                        num1 = nEnh;
-                    if (num1 < (double)nBase)
-                        num1 = nBase;
-                    if (BaseOverride)
-                    {
-                        float num3 = nBase;
-                        nBase = nEnh;
-                        nEnh = num3;
-                    }
-                    string str2;
-                    if (Graph.Style == Enums.GraphStyle.baseOnly)
-                        str2 = displayName + " (" + str1 + "): " + Strings.Format(nBase, "##0.#");
-                    else
-                        str2 = displayName + " (" + str1 + "): " + Strings.Format(nEnh, "##0.#");
-                    if (nBase != (double)nEnh)
-                        str2 = str2 + " (" + Strings.Format(nBase, "##0.#") + ")";
-                    string iTip = str2 + "s";
-                    if (BaseOverride)
-                    {
-                        float num3 = nBase;
-                        nBase = nEnh;
-                        nEnh = num3;
-                    }
-                    Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
+                    float num3 = nBase;
+                    nBase = nEnh;
+                    nEnh = num3;
                 }
+
+                string str2;
+                if (Graph.Style == Enums.GraphStyle.baseOnly)
+                    str2 = displayName + " (" + str1 + "): " + Strings.Format(nBase, "##0.#");
+                else
+                    str2 = displayName + " (" + str1 + "): " + Strings.Format(nEnh, "##0.#");
+                if (nBase != (double) nEnh)
+                    str2 = str2 + " (" + Strings.Format(nBase, "##0.#") + ")";
+                string iTip = str2 + "s";
+                if (BaseOverride)
+                {
+                    float num3 = nBase;
+                    nBase = nEnh;
+                    nEnh = num3;
+                }
+
+                Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -765,9 +811,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].EndCost;
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -775,8 +821,11 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                string iTip = Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##");
-                if (nBase != (double)nEnh)
+
+                string iTip = Graph.Style != Enums.GraphStyle.baseOnly
+                    ? displayName + ": " + Strings.Format(nEnh, "##0.##")
+                    : displayName + ": " + Strings.Format(nBase, "##0.##");
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseArray[index].PowerType == Enums.ePowerType.Toggle)
                     iTip += "\r\n(Per Second)";
@@ -786,8 +835,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -805,10 +856,12 @@ namespace Hero_Designer
                 {
                     case Enums.ePowerType.Click:
                     {
-                        if (EnhArray[index].RechargeTime + (double)EnhArray[index].CastTime + EnhArray[index].InterruptTime > 0.0)
+                        if (EnhArray[index].RechargeTime + (double) EnhArray[index].CastTime + EnhArray[index].InterruptTime > 0.0)
                         {
-                            nBase = BaseArray[index].EndCost / (BaseArray[index].RechargeTime + BaseArray[index].CastTime + BaseArray[index].InterruptTime);
-                            nEnh = EnhArray[index].EndCost / (EnhArray[index].RechargeTime + EnhArray[index].CastTime + EnhArray[index].InterruptTime);
+                            nBase = BaseArray[index].EndCost /
+                                    (BaseArray[index].RechargeTime + BaseArray[index].CastTime + BaseArray[index].InterruptTime);
+                            nEnh = EnhArray[index].EndCost /
+                                   (EnhArray[index].RechargeTime + EnhArray[index].CastTime + EnhArray[index].InterruptTime);
                         }
 
                         break;
@@ -818,10 +871,11 @@ namespace Hero_Designer
                         nEnh = EnhArray[index].EndCost / EnhArray[index].ActivatePeriod;
                         break;
                 }
+
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -829,8 +883,11 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                string iTip = (Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "/s";
-                if (nBase != (double)nEnh)
+
+                string iTip = (Graph.Style != Enums.GraphStyle.baseOnly
+                                  ? displayName + ": " + Strings.Format(nEnh, "##0.##")
+                                  : displayName + ": " + Strings.Format(nBase, "##0.##")) + "/s";
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -838,8 +895,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -854,9 +913,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -864,14 +923,15 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                float num4 = (float)(nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
-                float num5 = (float)(nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
+
+                float num4 = (float) (nBase / (double) MidsContext.Archetype.Hitpoints * 100.0);
+                float num5 = (float) (nEnh / (double) MidsContext.Archetype.Hitpoints * 100.0);
                 string iTip;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                     iTip = displayName + ": " + Strings.Format(num4, "##0.#") + "%";
                 else
                     iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.#") + "% (" + Strings.Format(nEnh, "##0.#") + " HP)";
-                if (nBase != (double)nEnh)
+                if (nBase != (double) nEnh)
                     iTip = iTip + "\r\n  Base: " + Strings.Format(num4, "##0.#") + "% (" + Strings.Format(nBase, "##0.#") + " HP)";
                 if (BaseOverride)
                 {
@@ -880,8 +940,10 @@ namespace Hero_Designer
                     nEnh = num3;
                     iTip = iTip.Replace("Enhanced", "Acive").Replace("Base", "Alternate");
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -900,10 +962,11 @@ namespace Hero_Designer
                     nBase /= BaseArray[index].EndCost;
                     nEnh /= EnhArray[index].EndCost;
                 }
+
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -911,15 +974,18 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                float num4 = (float)(nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
-                float num5 = (float)(nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
+
+                float num4 = (float) (nBase / (double) MidsContext.Archetype.Hitpoints * 100.0);
+                float num5 = (float) (nEnh / (double) MidsContext.Archetype.Hitpoints * 100.0);
                 string iTip;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                     iTip = displayName + ": " + Strings.Format(nBase, "##0.##") + "%";
                 else
-                    iTip = displayName + "\r\n  Enhanced Heal per unit of End: " + Strings.Format(num5, "##0.##") + "% (" + Strings.Format(nEnh, "##0.##") + " HP)";
-                if (nBase != (double)nEnh)
-                    iTip = iTip + "\r\n  Base Heal per unit of End: " + Strings.Format(num4, "##0.##") + "% (" + Strings.Format(nBase, "##0.##") + " HP)";
+                    iTip = displayName + "\r\n  Enhanced Heal per unit of End: " + Strings.Format(num5, "##0.##") + "% (" +
+                           Strings.Format(nEnh, "##0.##") + " HP)";
+                if (nBase != (double) nEnh)
+                    iTip = iTip + "\r\n  Base Heal per unit of End: " + Strings.Format(num4, "##0.##") + "% (" +
+                           Strings.Format(nBase, "##0.##") + " HP)";
                 if (BaseOverride)
                 {
                     float num3 = nBase;
@@ -927,8 +993,10 @@ namespace Hero_Designer
                     nEnh = num3;
                     iTip = iTip.Replace("Enhanced", "Acive").Replace("Base", "Alternate");
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -942,23 +1010,28 @@ namespace Hero_Designer
                 if (nBase == 0.0)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal).Sum;
-                if (BaseArray[index].PowerType == Enums.ePowerType.Click)
+                switch (BaseArray[index].PowerType)
                 {
-                    if (EnhArray[index].RechargeTime + (double)EnhArray[index].CastTime + EnhArray[index].InterruptTime > 0.0)
+                    case Enums.ePowerType.Click:
                     {
-                        nBase /= BaseArray[index].RechargeTime + BaseArray[index].CastTime + BaseArray[index].InterruptTime;
-                        nEnh /= EnhArray[index].RechargeTime + EnhArray[index].CastTime + EnhArray[index].InterruptTime;
+                        if (EnhArray[index].RechargeTime + (double) EnhArray[index].CastTime + EnhArray[index].InterruptTime > 0.0)
+                        {
+                            nBase /= BaseArray[index].RechargeTime + BaseArray[index].CastTime + BaseArray[index].InterruptTime;
+                            nEnh /= EnhArray[index].RechargeTime + EnhArray[index].CastTime + EnhArray[index].InterruptTime;
+                        }
+
+                        break;
                     }
+                    case Enums.ePowerType.Toggle:
+                        nBase /= BaseArray[index].ActivatePeriod;
+                        nEnh /= EnhArray[index].ActivatePeriod;
+                        break;
                 }
-                else if (BaseArray[index].PowerType == Enums.ePowerType.Toggle)
-                {
-                    nBase /= BaseArray[index].ActivatePeriod;
-                    nEnh /= EnhArray[index].ActivatePeriod;
-                }
+
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -966,14 +1039,16 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                float num4 = (float)(nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
-                float num5 = (float)(nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
+
+                float num4 = (float) (nBase / (double) MidsContext.Archetype.Hitpoints * 100.0);
+                float num5 = (float) (nEnh / (double) MidsContext.Archetype.Hitpoints * 100.0);
                 string iTip;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                     iTip = displayName + ": " + Strings.Format(num4, "##0.##") + "%";
                 else
-                    iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.##") + "%/s (" + Strings.Format(nEnh, "##0.##") + " HP)";
-                if (nBase != (double)nEnh)
+                    iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.##") + "%/s (" + Strings.Format(nEnh, "##0.##") +
+                           " HP)";
+                if (nBase != (double) nEnh)
                     iTip = iTip + "\r\n  Base: " + Strings.Format(num4, "##0.##") + "%/s (" + Strings.Format(nBase, "##0.##") + " HP)";
                 if (BaseOverride)
                 {
@@ -982,8 +1057,10 @@ namespace Hero_Designer
                     nEnh = num3;
                     iTip = iTip.Replace("Enhanced", "Acive").Replace("Base", "Alternate");
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -1009,9 +1086,9 @@ namespace Hero_Designer
                 if (nBase == 0.0)
                     continue;
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -1019,8 +1096,11 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                string str = Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") : displayName + ": " + Strings.Format(nBase, "##0.#");
-                if (nBase != (double)nEnh)
+
+                string str = Graph.Style != Enums.GraphStyle.baseOnly
+                    ? displayName + ": " + Strings.Format(nEnh, "##0.#")
+                    : displayName + ": " + Strings.Format(nBase, "##0.#");
+                if (nBase != (double) nEnh)
                     str = str + " (" + Strings.Format(nBase, "##0.#") + ")";
                 string iTip = str + "ft";
                 if (BaseOverride)
@@ -1029,8 +1109,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -1045,9 +1127,9 @@ namespace Hero_Designer
                     continue;
                 float nEnh = EnhArray[index].RechargeTime;
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -1055,8 +1137,11 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
-                string iTip = (Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "s";
-                if (nBase != (double)nEnh)
+
+                string iTip = (Graph.Style != Enums.GraphStyle.baseOnly
+                                  ? displayName + ": " + Strings.Format(nEnh, "##0.##")
+                                  : displayName + ": " + Strings.Format(nBase, "##0.##")) + "s";
+                if (nBase != (double) nEnh)
                     iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                 if (BaseOverride)
                 {
@@ -1064,8 +1149,10 @@ namespace Hero_Designer
                     nBase = nEnh;
                     nEnh = num3;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
@@ -1080,14 +1167,14 @@ namespace Hero_Designer
                 if (nBase == 0.0)
                     continue;
                 float nEnh = EnhArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration).Sum;
-                float num4 = (float)(num2 / 12.0 * (0.05 + 0.05 * ((nBase - 100.0) / 100.0)));
-                float num5 = (float)(num4 / (double)num2 * 100.0);
-                float num6 = (float)(num2 / 12.0 * (0.05 + 0.05 * ((nEnh - 100.0) / 100.0)));
-                float num7 = (float)(num6 / (double)num2 * 100.0);
+                float num4 = (float) (num2 / 12.0 * (0.05 + 0.05 * ((nBase - 100.0) / 100.0)));
+                float num5 = (float) (num4 / (double) num2 * 100.0);
+                float num6 = (float) (num2 / 12.0 * (0.05 + 0.05 * ((nEnh - 100.0) / 100.0)));
+                float num7 = (float) (num6 / (double) num2 * 100.0);
                 string displayName = BaseArray[index].DisplayName;
-                if (num1 < (double)nEnh)
+                if (num1 < (double) nEnh)
                     num1 = nEnh;
-                if (num1 < (double)nBase)
+                if (num1 < (double) nBase)
                     num1 = nBase;
                 if (BaseOverride)
                 {
@@ -1101,29 +1188,38 @@ namespace Hero_Designer
                     num5 = num7;
                     num7 = num10;
                 }
+
                 string iTip;
                 if (Graph.Style == Enums.GraphStyle.baseOnly)
                 {
                     string str = displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
-                    iTip = " Health regenerated per second: " + Strings.Format(num5, "##0.##") + "%\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num4, "##0.##") + " HP";
+                    iTip = " Health regenerated per second: " + Strings.Format(num5, "##0.##") +
+                           "%\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num4, "##0.##") + " HP";
                 }
-                else if (nBase == (double)nEnh)
-                    iTip = displayName + ": " + Strings.Format(nBase, "##0.#") + "%\r\n Health regenerated per second: " + Strings.Format(num5, "##0.##") + "%\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num4, "##0.##") + " HP";
+                else if (nBase == (double) nEnh)
+                    iTip = displayName + ": " + Strings.Format(nBase, "##0.#") + "%\r\n Health regenerated per second: " +
+                           Strings.Format(num5, "##0.##") + "%\r\n HitPoints regenerated per second at level 50: " +
+                           Strings.Format(num4, "##0.##") + " HP";
                 else
-                    iTip = displayName + ": " + Strings.Format(nEnh, "##0.#") + "% (" + Strings.Format(nBase, "##0.#") + "%)" + "\r\n Health regenerated per second: " + Strings.Format(num7, "##0.##") + "% (" + Strings.Format(num5, "##0.##") + ")" + "\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num6, "##0.##") + " HP (" + Strings.Format(num4, "##0.##") + ")";
+                    iTip = displayName + ": " + Strings.Format(nEnh, "##0.#") + "% (" + Strings.Format(nBase, "##0.#") + "%)" +
+                           "\r\n Health regenerated per second: " + Strings.Format(num7, "##0.##") + "% (" + Strings.Format(num5, "##0.##") +
+                           ")" + "\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num6, "##0.##") + " HP (" +
+                           Strings.Format(num4, "##0.##") + ")";
+
                 if (BaseOverride)
                 {
                     float num8 = nBase;
                     nBase = nEnh;
                     nEnh = num8;
                 }
+
                 Graph.AddItem(BaseArray[index].DisplayName, nBase, nEnh, iTip);
             }
+
             GraphMax = num1 * 1.025f;
         }
 
         [DebuggerStepThrough]
-
         void NewSets()
 
         {
@@ -1181,7 +1277,7 @@ namespace Hero_Designer
         {
             if (cbStyle.SelectedIndex > -1 & cbStyle.SelectedIndex < cbStyle.Items.Count - 2)
             {
-                Graph.Style = (Enums.GraphStyle)cbStyle.SelectedIndex;
+                Graph.Style = (Enums.GraphStyle) cbStyle.SelectedIndex;
                 MidsContext.Config.StatGraphStyle = Graph.Style;
                 BaseOverride = false;
             }
@@ -1195,6 +1291,7 @@ namespace Hero_Designer
                 Graph.Style = Enums.GraphStyle.Stacked;
                 BaseOverride = true;
             }
+
             GetPowerArray();
             if (BaseOverride)
             {
@@ -1206,6 +1303,7 @@ namespace Hero_Designer
                 lblKey1.Text = "Base";
                 lblKey2.Text = "Enhanced";
             }
+
             MidsContext.Config.StatGraphStyle = Graph.Style;
         }
 
@@ -1227,9 +1325,9 @@ namespace Hero_Designer
             if (rectangle.Height < MinimumSize.Height)
                 rectangle.Height = MinimumSize.Height;
             if (rectangle.X < 1)
-                rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - Width) / 2.0);
+                rectangle.X = (int) Math.Round((Screen.PrimaryScreen.Bounds.Width - Width) / 2.0);
             if (rectangle.Y < 32)
-                rectangle.Y = (int)Math.Round((Screen.PrimaryScreen.Bounds.Height - Height) / 2.0);
+                rectangle.Y = (int) Math.Round((Screen.PrimaryScreen.Bounds.Height - Height) / 2.0);
             Top = rectangle.Y;
             Left = rectangle.X;
             Height = rectangle.Height;
