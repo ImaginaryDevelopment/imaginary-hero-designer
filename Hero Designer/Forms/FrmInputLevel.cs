@@ -29,7 +29,7 @@ namespace Hero_Designer
         void btnOK_Click(object sender, EventArgs e)
         {
             int num;
-            if (Conversion.Val(udLevel.Text) != Convert.ToDouble(udLevel.Value))
+            if (Math.Abs(Conversion.Val(udLevel.Text) - Convert.ToDouble(udLevel.Value)) > float.Epsilon)
             {
                 num = (int)Math.Round(Conversion.Val(udLevel.Text));
                 if (Decimal.Compare(new Decimal(num), udLevel.Minimum) < 0)
