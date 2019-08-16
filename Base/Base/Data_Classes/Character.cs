@@ -766,7 +766,7 @@ namespace Base.Data_Classes
             {
                 if (recipeEntry.SalvageIdx[index2] < 0)
                     continue;
-                Color iColor = Color.White;
+                Color iColor;
                 string empty = string.Empty;
                 switch (DatabaseAPI.Database.Salvage[recipeEntry.SalvageIdx[index2]].Rarity)
                 {

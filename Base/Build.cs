@@ -532,7 +532,7 @@ public class Build
 
     public bool SetEnhRelativelevels(Enums.eEnhRelative newVal)
     {
-        string display = string.Empty;
+        string display;
         switch (newVal)
         {
             case Enums.eEnhRelative.None:

@@ -294,66 +294,69 @@ namespace midsControls
                 int num4 = 0;
                 int num5 = 0;
                 int num6 = 0;
-                int num7 = MyItems.Length - 1;
-                for (int i = num6; i <= num7; i++)
+                if (MyItems != null)
                 {
-                    PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
-                    rectangleF.Location = location;
-                    rectangleF.Width = num3;
-                    stringFormat.Alignment = StringAlignment.Far;
-                    stringFormat.Trimming = StringTrimming.None;
-                    stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                    if (Highlightable & CurrentHighlight == i)
+                    int num7 = MyItems.Length - 1;
+                    for (int i = num6; i <= num7; i++)
                     {
-                        brush = new SolidBrush(myHighlightColor);
-                        bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                        brush = new SolidBrush(myHighlightTextColor);
-                    }
-                    else
-                    {
-                        brush = new SolidBrush(NameColour);
-                    }
+                        PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
+                        rectangleF.Location = location;
+                        rectangleF.Width = num3;
+                        stringFormat.Alignment = StringAlignment.Far;
+                        stringFormat.Trimming = StringTrimming.None;
+                        stringFormat.FormatFlags = StringFormatFlags.NoWrap;
+                        if (Highlightable & CurrentHighlight == i)
+                        {
+                            brush = new SolidBrush(myHighlightColor);
+                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                            brush = new SolidBrush(myHighlightTextColor);
+                        }
+                        else
+                        {
+                            brush = new SolidBrush(NameColour);
+                        }
 
-                    string text = MyItems[i].Name;
-                    if (Operators.CompareString(text, "", false) != 0 & !text.EndsWith(":"))
-                    {
-                        text += ":";
-                    }
+                        string text = MyItems[i].Name;
+                        if (Operators.CompareString(text, "", false) != 0 & !text.EndsWith(":"))
+                        {
+                            text += ":";
+                        }
 
-                    bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
-                    location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
-                    rectangleF.Location = location;
-                    rectangleF.Width = num2;
-                    if (Highlightable & CurrentHighlight == i)
-                    {
-                        brush = new SolidBrush(myHighlightColor);
-                        bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                        brush = new SolidBrush(myHighlightTextColor);
-                    }
-                    else if (MyItems[i].UniqueColour)
-                    {
-                        brush = new SolidBrush(ValueColorD);
-                    }
-                    else if (MyItems[i].AlternateColour)
-                    {
-                        brush = new SolidBrush(ValueColorA);
-                    }
-                    else if (MyItems[i].ProbColour)
-                    {
-                        brush = new SolidBrush(ValueColorB);
-                    }
-                    else
-                    {
-                        brush = new SolidBrush(ValueColor);
-                    }
+                        bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
+                        location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
+                        rectangleF.Location = location;
+                        rectangleF.Width = num2;
+                        if (Highlightable & CurrentHighlight == i)
+                        {
+                            brush = new SolidBrush(myHighlightColor);
+                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                            brush = new SolidBrush(myHighlightTextColor);
+                        }
+                        else if (MyItems[i].UniqueColour)
+                        {
+                            brush = new SolidBrush(ValueColorD);
+                        }
+                        else if (MyItems[i].AlternateColour)
+                        {
+                            brush = new SolidBrush(ValueColorA);
+                        }
+                        else if (MyItems[i].ProbColour)
+                        {
+                            brush = new SolidBrush(ValueColorB);
+                        }
+                        else
+                        {
+                            brush = new SolidBrush(ValueColor);
+                        }
 
-                    stringFormat.Alignment = StringAlignment.Near;
-                    bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
-                    num5++;
-                    if (num5 < myColumns)
-                        continue;
-                    num5 = 0;
-                    num4++;
+                        stringFormat.Alignment = StringAlignment.Near;
+                        bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
+                        num5++;
+                        if (num5 < myColumns)
+                            continue;
+                        num5 = 0;
+                        num4++;
+                    }
                 }
 
                 myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);

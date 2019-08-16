@@ -85,24 +85,39 @@ namespace Base
 
         public static string GetLine(this string x, int lineIndex)
         {
-            if (x == null) throw new ArgumentNullException(nameof(x));
-            if (lineIndex < 0) throw new ArgumentOutOfRangeException($"{nameof(lineIndex)} must be 0 or greater");
-            var strIndex = x.IndexOfAny(new[] { '\r', '\n' });
-            switch (lineIndex)
+            while (true)
             {
-                case 0 when strIndex < 0:
-                    return x;
-                case 0 when strIndex == 0:
-                    return string.Empty;
-                case 0 when 0 < strIndex:
-                    return x.GetRange(0, strIndex - 1);
-            }
+                if (x == null)
+                    throw new ArgumentNullException(nameof(x));
+                if (lineIndex < 0)
+                    throw new ArgumentOutOfRangeException($"{nameof(lineIndex)} must be 0 or greater");
+                var strIndex = x.IndexOfAny(new[]
+                {
+                    '\r', '\n'
+                });
+                switch (lineIndex)
+                {
+                    case 0 when strIndex < 0:
+                        return x;
+                    case 0 when strIndex == 0:
+                        return string.Empty;
+                    case 0 when 0 < strIndex:
+                        return x.GetRange(0, strIndex - 1);
+                }
 
-            if (0 < lineIndex && strIndex < 0) throw new InvalidOperationException("Reached end of string before finding desired index");
-            var rem = x.Substring(strIndex + 1);
-            if (0 < rem.Length && x[strIndex] == '\r' && rem[0] == '\n')
-                return rem.Substring(1).GetLine(lineIndex - 1);
-            return rem.GetLine(lineIndex - 1);
+                if (0 < lineIndex && strIndex < 0)
+                    throw new InvalidOperationException("Reached end of string before finding desired index");
+                var rem = x.Substring(strIndex + 1);
+                if (0 < rem.Length && x[strIndex] == '\r' && rem[0] == '\n')
+                {
+                    x = rem.Substring(1);
+                    lineIndex = lineIndex - 1;
+                    continue;
+                }
+
+                x = rem;
+                lineIndex = lineIndex - 1;
+            }
         }
     }
 }

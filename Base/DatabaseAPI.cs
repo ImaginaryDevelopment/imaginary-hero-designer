@@ -109,7 +109,7 @@ public static class DatabaseAPI
         IPowerset[] powersetArray = Database.Powersets;
         if (group != null)
         {
-            powersetArray = @group.Powersets.Select(powerset => powerset.Value).ToArray();
+            powersetArray = group.Powersets.Select(powerset => powerset.Value).ToArray();
         }
 
         List<int> intList = new List<int>();
@@ -293,7 +293,7 @@ public static class DatabaseAPI
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
-        return @group.Powersets.Select(powerset => powerset.Value.nID).ToArray();
+        return group.Powersets.Select(powerset => powerset.Value.nID).ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroupName(string name)

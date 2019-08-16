@@ -1448,12 +1448,12 @@ namespace Hero_Designer
                 var indexLookup = new int[count + 1];
                 for (int index2 = 0; index2 <= count; ++index2)
                 {
-                    PowerEntry tPower = new PowerEntry()
+                    PowerEntry tPower = new PowerEntry
                     {
                         Level = (int) Math.Round(Conversion.Val(data[offset]))
                     };
                     offset += 1;
-                    tPower.NIDPowerset = Math.Abs((double) olderFile - 0.100000001490116) > float.Epsilon
+                    tPower.NIDPowerset = Math.Abs(olderFile - 0.100000001490116) > float.Epsilon
                         ? (Conversion.Val(data[offset]) >= 0.0 ? Powersets[(int) Math.Round(Conversion.Val(data[offset]))].nID : -1)
                         : (int) Math.Round(Conversion.Val(data[offset]));
                     offset += 1;
