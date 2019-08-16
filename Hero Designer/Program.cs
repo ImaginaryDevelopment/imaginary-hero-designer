@@ -26,7 +26,9 @@ namespace Hero_Designer
                 {
                     exTarget = ex.InnerException;
                 }
-                MessageBox.Show(exTarget.Message, exTarget.GetType().Name);
+
+                if (exTarget != null)
+                    MessageBox.Show(exTarget.Message, exTarget.GetType().Name);
                 throw;
             }
         }

@@ -558,7 +558,7 @@ namespace Hero_Designer
             if (A_GT_B(displayStats.MovementFlySpeed(speedFormat, true), displayStats.MovementFlySpeed(speedFormat, false)))
                 fltTip = fltTip + "\r\n" + strCap +
                          Strings.Format(displayStats.Speed(MidsContext.Character.Totals.FlySpd, speedFormat), "##0.#") + rateDisp + ".";
-            else if (displayStats.MovementFlySpeed(speedFormat, false) == 0.0)
+            else if (Math.Abs(displayStats.MovementFlySpeed(speedFormat, false)) < float.Epsilon)
                 fltTip += "\r\nYou have no active flight powers.";
             string jumpTip = "Base Jump Speed: " + formatSpeed(21f);
             if (A_GT_B(displayStats.MovementJumpSpeed(speedFormat, true), displayStats.MovementJumpSpeed(speedFormat, false)))
@@ -653,7 +653,7 @@ namespace Hero_Designer
                 MidsContext.Character.Totals.Elusivity * 100f, 0.0f, "This effect resists accuracy buffs of enemies attacking you.");
             graphElusivity.Max = 100f;
             graphElusivity.Draw();
-            if (graphAcc.Font.Size != (double) MidsContext.Config.RtFont.PairedBase)
+            if (Math.Abs(graphAcc.Font.Size - (double) MidsContext.Config.RtFont.PairedBase) > float.Epsilon)
                 SetFonts();
             Character.TotalStatistics totals = MidsContext.Character.Totals;
             string str9 = "\r\nStatus protection prevents you being affected by a status effect such as" +
@@ -682,7 +682,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num4; ++index)
             {
                 string iTip11;
-                if (totals.Mez[(int) eMezArray[index]] == 0.0)
+                if (Math.Abs(totals.Mez[(int) eMezArray[index]]) < float.Epsilon)
                     iTip11 = "You have no protection from " + names3[(int) eMezArray[index]] + " effects.\r\n" + str9;
                 else
                     iTip11 = "You have mag " + Strings.Format((float) -(double) totals.Mez[(int) eMezArray[index]], "##0.##") +
@@ -706,7 +706,7 @@ namespace Hero_Designer
                             "% of their full effect.\r\n" + str10;
 
                 string iTip12;
-                if (totals.MezRes[(int) eMezArray[index]] == 0.0)
+                if (Math.Abs(totals.MezRes[(int) eMezArray[index]]) < float.Epsilon)
                     iTip12 = "You have no resistance to " + names3[(int) eMezArray[index]] + " effects.\r\n" + str10;
                 else
                     iTip12 = "You have " + Strings.Format(totals.MezRes[(int) eMezArray[index]], "##0.##") + "% resistance to " +

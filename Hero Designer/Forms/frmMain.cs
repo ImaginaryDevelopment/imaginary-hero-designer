@@ -938,7 +938,7 @@ namespace Hero_Designer
                         Stream mStream = new MemoryStream(new ASCIIEncoding().GetBytes(str));
                         loaded = MainModule.MidsController.Toon.Load("", ref mStream);
                     }
-                    else if (str.Contains("Character Profile:") || str.Contains("build.txt"))
+                    else if (str != null && (str.Contains("Character Profile:") || str.Contains("build.txt")))
                     {
                         GameImport(str);
                         loaded = true;
