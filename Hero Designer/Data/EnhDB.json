@@ -43800,6 +43800,7 @@
       "Schedule": 4
     },
     {
+      "IsModified": true,
       "StaticIndex": 1011,
       "Name": "Scaling Resist Damage",
       "ShortName": "ResDam%",
@@ -43810,59 +43811,17 @@
       "ImageIdx": 1011,
       "nIDSet": 174,
       "UIDSet": "Reactive_Defenses",
-      "Effect": [
-        {
-          "Mode": 1,
-          "Enhance": {
-            "ID": -1,
-            "SubID": -1
-          },
-          "Multiplier": 1.0,
-          "FX": {
-            "MagnitudeExpression": "",
-            "Probability": 1.0,
-            "Mag": 0.03,
-            "MagPercent": 3.0,
-            "Duration": 10.1,
-            "DisplayPercentage": true,
-            "VariableModified": true,
-            "BaseProbability": 1.0,
-            "Reward": "",
-            "EffectId": "Ones",
-            "Special": "",
-            "EffectType": 29,
-            "Summon": "",
-            "nSummon": -1,
-            "UIDClassName": "",
-            "nIDClassName": -1,
-            "VariableModifiedOverride": true,
-            "isEnhancementEffect": true,
-            "Scale": 0.03,
-            "nMagnitude": 1.0,
-            "nDuration": 10.1,
-            "Aspect": 3,
-            "ModifierTable": "Melee_Ones",
-            "nModifierTable": 41,
-            "PowerFullName": "",
-            "Absorbed_PowerType": 1,
-            "Absorbed_Power_nID": -1,
-            "Absorbed_Class_nID": -1,
-            "Absorbed_EffectID": -1,
-            "Override": "",
-            "nOverride": -1
-          }
-        }
-      ],
+      "Effect": [],
       "EffectChance": 1.0,
       "LevelMin": 19,
       "LevelMax": 49,
       "Unique": true,
+      "MutExID": 6,
       "RecipeName": "Reactive_Defenses_F",
       "RecipeIDX": 1901,
       "UID": "Crafted_Reactive_Defenses_F",
-      "Probability": 1.0,
-      "HasPowerEffect": true,
-      "LongName": "Reactive Defenses: Scaling Resist Damage"
+      "LongName": "Reactive Defenses: Scaling Resist Damage",
+      "Schedule": -1
     },
     {
       "StaticIndex": 1012,
@@ -44666,7 +44625,6 @@
       "LongName": "Superior Defiant Barrage: RechargeTime/+Status"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1030,
       "Name": "Accuracy/Damage",
       "ShortName": "Acc/Dmg",
@@ -44704,7 +44662,6 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1031,
       "Name": "Damage/RechargeTime",
       "ShortName": "Dmg/Rchg",
@@ -44742,7 +44699,6 @@
       "LongName": "Unrelenting Fury: Damage/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1032,
       "Name": "Accuracy/Damage/RechargeTime",
       "ShortName": "Acc/Dmg/Rchg",
@@ -44787,7 +44743,6 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1033,
       "Name": "Damage/Endurance/RechargeTime",
       "ShortName": "Dmg/EndRdx/Rchg",
@@ -44832,7 +44787,6 @@
       "LongName": "Unrelenting Fury: Damage/Endurance/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1034,
       "Name": "Accuracy/Damage/Endurance/RechargeTime",
       "ShortName": "Acc/Dmg/EndRdx/Rchg",
@@ -44884,7 +44838,6 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage/Endurance/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1035,
       "Name": "RechargeTime/+Regen/+End",
       "ShortName": "Rchg/+Regen/+End",
@@ -44952,7 +44905,6 @@
       "LongName": "Unrelenting Fury: RechargeTime/+Regen/+End"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1036,
       "Name": "Accuracy/Damage",
       "ShortName": "Acc/Dmg",
@@ -44991,7 +44943,6 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1037,
       "Name": "Damage/RechargeTime",
       "ShortName": "Dmg/Rchg",
@@ -45030,7 +44981,6 @@
       "LongName": "Superior Unrelenting Fury: Damage/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1038,
       "Name": "Accuracy/Damage/RechargeTime",
       "ShortName": "Acc/Dmg/Rchg",
@@ -45076,7 +45026,6 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1039,
       "Name": "Damage/Endurance/RechargeTime",
       "ShortName": "Dmg/EndRdx/Rchg",
@@ -45122,7 +45071,6 @@
       "LongName": "Superior Unrelenting Fury: Damage/Endurance/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1040,
       "Name": "Accuracy/Damage/Endurance/RechargeTime",
       "ShortName": "Acc/Dmg/EndRdx/Rchg",
@@ -45175,7 +45123,6 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage/Endurance/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 1041,
       "Name": "RechargeTime/+Regen/+End",
       "ShortName": "Rchg/+Regen/+End",
