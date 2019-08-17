@@ -34013,9 +34013,9 @@
       "LongName": "Gladiator's Javelin: Damage/Endurance/Recharge"
     },
     {
-      "StaticIndex": 815,
-      "Name": "Resistance",
-      "ShortName": "ResDam",
+      "StaticIndex": 817,
+      "Name": "End/Resist",
+      "ShortName": "End/Res",
       "Desc": "",
       "TypeID": 4,
       "ClassID": [],
@@ -34026,22 +34026,103 @@
       "Effect": [
         {
           "Enhance": {
+            "ID": 4,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        },
+        {
+          "Enhance": {
             "ID": 18,
             "SubID": -1
           },
           "Schedule": 1,
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         }
       ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
-      "RecipeName": "Gladiators_Armor_A",
-      "RecipeIDX": 1866,
-      "UID": "Crafted_Gladiators_Armor_A",
+      "RecipeName": "Gladiators_Armor_E",
+      "RecipeIDX": 1870,
+      "UID": "Crafted_Gladiators_Armor_E",
       "HasEnhEffect": true,
-      "LongName": "Gladiator's Armor: Resistance",
-      "Schedule": 1
+      "LongName": "Gladiator's Armor: End/Resist",
+      "Schedule": 4
+    },
+    {
+      "StaticIndex": 820,
+      "Name": "Recharge/Resist",
+      "ShortName": "RechRes",
+      "Desc": "",
+      "TypeID": 4,
+      "ClassID": [],
+      "Image": "sGladiatorsArmor.png",
+      "ImageIdx": 816,
+      "nIDSet": 143,
+      "UIDSet": "Gladiators_Armor",
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 14,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        },
+        {
+          "Enhance": {
+            "ID": 18,
+            "SubID": -1
+          },
+          "Schedule": 1,
+          "Multiplier": 0.625
+        }
+      ],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "Gladiators_Armor_D",
+      "RecipeIDX": 1869,
+      "UID": "Crafted_Gladiators_Armor_D",
+      "HasEnhEffect": true,
+      "LongName": "Gladiator's Armor: Recharge/Resist",
+      "Schedule": 4
+    },
+    {
+      "StaticIndex": 819,
+      "Name": "Recharge/Endurance",
+      "ShortName": "RechEnd",
+      "Desc": "",
+      "TypeID": 4,
+      "ClassID": [],
+      "Image": "sGladiatorsArmor.png",
+      "ImageIdx": 817,
+      "nIDSet": 143,
+      "UIDSet": "Gladiators_Armor",
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 4,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        },
+        {
+          "Enhance": {
+            "ID": 14,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        }
+      ],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "Gladiators_Armor_C",
+      "RecipeIDX": 1868,
+      "UID": "Crafted_Gladiators_Armor_C",
+      "HasEnhEffect": true,
+      "LongName": "Gladiator's Armor: Recharge/Endurance"
     },
     {
       "StaticIndex": 816,
@@ -34051,7 +34132,7 @@
       "TypeID": 4,
       "ClassID": [],
       "Image": "sGladiatorsArmor.png",
-      "ImageIdx": 816,
+      "ImageIdx": 818,
       "nIDSet": 143,
       "UIDSet": "Gladiators_Armor",
       "Effect": [
@@ -34089,42 +34170,35 @@
       "Schedule": 4
     },
     {
-      "StaticIndex": 817,
-      "Name": "End/Resist",
-      "ShortName": "End/Res",
+      "StaticIndex": 815,
+      "Name": "Resistance",
+      "ShortName": "ResDam",
       "Desc": "",
       "TypeID": 4,
       "ClassID": [],
       "Image": "sGladiatorsArmor.png",
-      "ImageIdx": 817,
+      "ImageIdx": 819,
       "nIDSet": 143,
       "UIDSet": "Gladiators_Armor",
       "Effect": [
-        {
-          "Enhance": {
-            "ID": 4,
-            "SubID": -1
-          },
-          "Multiplier": 0.625
-        },
         {
           "Enhance": {
             "ID": 18,
             "SubID": -1
           },
           "Schedule": 1,
-          "Multiplier": 0.625
+          "Multiplier": 1.0
         }
       ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
-      "RecipeName": "Gladiators_Armor_E",
-      "RecipeIDX": 1870,
-      "UID": "Crafted_Gladiators_Armor_E",
+      "RecipeName": "Gladiators_Armor_A",
+      "RecipeIDX": 1866,
+      "UID": "Crafted_Gladiators_Armor_A",
       "HasEnhEffect": true,
-      "LongName": "Gladiator's Armor: End/Resist",
-      "Schedule": 4
+      "LongName": "Gladiator's Armor: Resistance",
+      "Schedule": 1
     },
     {
       "StaticIndex": 818,
@@ -34134,7 +34208,7 @@
       "TypeID": 4,
       "ClassID": [],
       "Image": "sGladiatorsArmor.png",
-      "ImageIdx": 818,
+      "ImageIdx": 820,
       "nIDSet": 143,
       "UIDSet": "Gladiators_Armor",
       "Effect": [],
@@ -34147,80 +34221,6 @@
       "UID": "Crafted_Gladiators_Armor_F",
       "LongName": "Gladiator's Armor: TP Protection +3% Def (All)",
       "Schedule": -1
-    },
-    {
-      "StaticIndex": 819,
-      "Name": "Recharge/Endurance",
-      "ShortName": "RechEnd",
-      "Desc": "",
-      "TypeID": 4,
-      "ClassID": [],
-      "Image": "sGladiatorsArmor.png",
-      "ImageIdx": 819,
-      "nIDSet": 143,
-      "UIDSet": "Gladiators_Armor",
-      "Effect": [
-        {
-          "Enhance": {
-            "ID": 4,
-            "SubID": -1
-          },
-          "Multiplier": 0.625
-        },
-        {
-          "Enhance": {
-            "ID": 14,
-            "SubID": -1
-          },
-          "Multiplier": 0.625
-        }
-      ],
-      "EffectChance": 1.0,
-      "LevelMin": 9,
-      "LevelMax": 49,
-      "RecipeName": "Gladiators_Armor_C",
-      "RecipeIDX": 1868,
-      "UID": "Crafted_Gladiators_Armor_C",
-      "HasEnhEffect": true,
-      "LongName": "Gladiator's Armor: Recharge/Endurance"
-    },
-    {
-      "StaticIndex": 820,
-      "Name": "Recharge/Resist",
-      "ShortName": "RechRes",
-      "Desc": "",
-      "TypeID": 4,
-      "ClassID": [],
-      "Image": "sGladiatorsArmor.png",
-      "ImageIdx": 820,
-      "nIDSet": 143,
-      "UIDSet": "Gladiators_Armor",
-      "Effect": [
-        {
-          "Enhance": {
-            "ID": 14,
-            "SubID": -1
-          },
-          "Multiplier": 0.625
-        },
-        {
-          "Enhance": {
-            "ID": 18,
-            "SubID": -1
-          },
-          "Schedule": 1,
-          "Multiplier": 0.625
-        }
-      ],
-      "EffectChance": 1.0,
-      "LevelMin": 9,
-      "LevelMax": 49,
-      "RecipeName": "Gladiators_Armor_D",
-      "RecipeIDX": 1869,
-      "UID": "Crafted_Gladiators_Armor_D",
-      "HasEnhEffect": true,
-      "LongName": "Gladiator's Armor: Recharge/Resist",
-      "Schedule": 4
     },
     {
       "StaticIndex": 821,
@@ -43800,7 +43800,6 @@
       "Schedule": 4
     },
     {
-      "IsModified": true,
       "StaticIndex": 1011,
       "Name": "Scaling Resist Damage",
       "ShortName": "ResDam%",
