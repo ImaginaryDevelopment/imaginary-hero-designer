@@ -321,9 +321,10 @@ namespace Hero_Designer
             }
         }
 
-        void richTextBox3_LinkClicked(object sender, LinkClickedEventArgs e)
+        private void InvBot_Click(object sender, EventArgs e)
         {
-            Process.Start(e.LinkText);
+            var botLink = Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot");
+            Process.Start(botLink);
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)
@@ -563,7 +564,6 @@ namespace Hero_Designer
                 dcExList.Items.Add(item);
             if (!string.IsNullOrWhiteSpace(config.DSelServer))
                 dcExList.SelectedItem = config.DSelServer;
-            richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             lblSaveFolder.Text = config.GetSaveFolder();
             //this.txtUpdatePath.Text = config.UpdatePath;
             chkColorInherent.Checked = !config.DisableDesaturateInherent;

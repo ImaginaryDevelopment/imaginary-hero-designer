@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Master_Classes;
@@ -16,26 +19,6 @@ namespace Hero_Designer
     {
         public static string DFileName;
         public static string DExt;
-
-        /* Not used yet but maybe in next release
-        public static string GetDescription(Enum value)
-        {
-            Type type = value.GetType();
-            string name = Enum.GetName(type, value);
-            if (name != null)
-            {
-                FieldInfo field = type.GetField(name);
-                if (field != null)
-                {
-                    if (Attribute.GetCustomAttribute(field, 
-                        typeof(DescriptionAttribute)) is DescriptionAttribute attr)
-                    {
-                        return attr.Description;
-                    }
-                }
-            }
-            return null;
-        }*/
 
         public static string ShrinkTheDatalink(string strUrl)
         {
@@ -59,33 +42,64 @@ namespace Hero_Designer
 
         internal static async Task DiscordExport()
         {
-            //Set vars and shrink the link
             Statistics displayStats = MidsContext.Character.DisplayStats;
             var num = MidsContext.Character.Level + 1;
             if (num > 50) num = 50;
 
+            string[] names = Enum.GetNames(Enums.eDamage.None.GetType());
+            int num1 = names.Length - 1;
+
+            //Create Defenses List - Smashing, Lethal, Fire, Cold, Energy, Negative, Psionic, Melee, Ranged, AOE
+            List<string> defenseStats = new List<string>();
+            for (int dType = 1; dType <= num1; ++dType)
+            {
+                var tmpMatch = new Regex(@"(unique*|toxic|special)", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+                if (tmpMatch.Match(names[dType]).Success)
+                    continue;
+                string defenseStat = $"{Strings.Format(displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##")}%";
+                defenseStats.Add(defenseStat);
+            }
+
+            //Create Resistances List - Smashing, Lethal, Fire, Cold, Energy, Negative, Toxic, Psionic
+            string resistCap = $"{Strings.Format((float)(MidsContext.Character.Archetype.ResCap * 100.0), "###0")}%";
+            List<string> resistanceStats = new List<string>();
+            for (int rType = 1; rType <= num1; ++rType)
+            {
+                var tmpMatch = new Regex(@"(unique*|melee|ranged|aoe|special)", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+                if (tmpMatch.Match(names[rType]).Success)
+                    continue;
+                var resistanceStat = $"{Strings.Format(displayStats.DamageResistance(rType, true),"##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##")}%";
+                resistanceStats.Add(resistanceStat);
+            }
+
+            //Set Discard vars
             var (dServer, dUser, dChannel) = (
                 MidsContext.Config.DSelServer.Replace(" (Default)", ""),
                 MidsContext.Config.DNickName,
                 MidsContext.Config.DChannel);
-            var (cLevel, cArchetype, cPriPowerset, cSecPowerset, cGlobRecharge, cEndRecovery, cTotalEndUse, cToonName, cDatalink) = (
+
+            var (cLevel, cArchetype, cPriPowerset, cSecPowerset, cGlobRecharge, cEndRecovery, cHPRegen, cTotalDmgBuff, cTotalEndUse, cTotalToHit, cToonName, cDatalink) = (
                 Conversions.ToString(num),
                 MidsContext.Character.Archetype.DisplayName,
                 MidsContext.Character.Powersets[0].DisplayName,
                 MidsContext.Character.Powersets[1].DisplayName,
                 Strings.Format((float)(displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
                 Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)",
-                //HPRegen: Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
-                //TotalDamageBuff: Strings.Format(displayStats.BuffDamage(false) - 100f, "##0.#") + "%",
+                Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
+                Strings.Format(displayStats.BuffDamage(false) - 100f, "##0.#") + "%",
                 Strings.Format(displayStats.EnduranceUsage, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s",
-                //TotalToHit: Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
+                Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
                 MidsContext.Character.Name,
                 MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true));
+
             var shrunkData = ShrinkTheDatalink(cDatalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
             string wString = Encoding.UTF8.GetString(data);
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(wString);
+
+            //Send the data to the API Server and retrieve response
+
+            /*var httpWebRequest = (HttpWebRequest)WebRequest.Create(wString);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
@@ -157,7 +171,7 @@ namespace Hero_Designer
                             break;
                         }
                 }
-            }
+            }*/
         }
     }
 }
