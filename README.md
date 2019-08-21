@@ -1,5 +1,5 @@
 # Welcome to Mids' Reborn : Hero Designer
-Mids' Reborn : Hero Designer is a continuation of the original Mids' Hero/Villain Designer which was designed by Matt Bauer. Later during the programs life cycle, Titan Network took over its development until 2012 when the last 'City of Heroes' server was shut down. The project has since been abandoned, and no further development continued. Until Now!
+Mids' Reborn : Hero Designer is a continuation of the original Mids' Hero/Villain Designer which was designed by Mids. Later during the programs life cycle, Titan Network took over its development until 2012 when the last 'City of Heroes' server was shut down. The project has since been abandoned, and no further development continued. Until Now!
 
 The project is reborn once more with a new name, new features..like *DISCORD EXPORT!*, and a new team!
 
