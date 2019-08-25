@@ -805,6 +805,34 @@ public static class Enums
         AoE
     }
 
+    public enum eStats
+    {
+        None,
+        Smashing_Defense,
+        Lethal_Defense,
+        Fire_Defense,
+        Cold_Defense,
+        Energy_Defense,
+        Negative_Defense,
+        Psionic_Defense,
+        Melee_Defense,
+        Ranged_Defense,
+        AOE_Defense,
+        Smashing_Resistance,
+        Lethal_Resistance,
+        Fire_Resistance,
+        Cold_Resistance,
+        Energy_Resistance,
+        Negative_Resistance,
+        Toxic_Resistance,
+        Psionic_Resistance,
+        Damage_Buff,
+        Endurance_Usage,
+        Recovery,
+        Regen,
+        ToHit
+    }
+
     public enum eBuffMode
     {
         Normal,

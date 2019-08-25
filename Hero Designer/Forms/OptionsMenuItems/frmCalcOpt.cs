@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -325,6 +326,26 @@ namespace Hero_Designer
         {
             var botLink = Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot");
             Process.Start(botLink);
+        }
+
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            var countChecked = tabPage7.Controls.OfType<CheckBox>().Count(c => c.Checked);
+            List<string> checkStats = new List<string>();
+            if (countChecked <= 6)
+            {
+                foreach (var c in tabPage7.Controls.OfType<CheckBox>())
+                {
+                    if (c.Checked)
+                    {
+                        checkStats.Add(c.Name);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Too many stats selected, please go back and make sure you only have 6 or less selected.", @"Error");
+            }
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)

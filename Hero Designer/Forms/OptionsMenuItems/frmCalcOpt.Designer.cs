@@ -107,6 +107,7 @@ namespace Hero_Designer
             this.Label5 = new System.Windows.Forms.Label();
             this.udExHigh = new System.Windows.Forms.NumericUpDown();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label41 = new System.Windows.Forms.Label();
             this.invBot = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
@@ -212,7 +213,6 @@ namespace Hero_Designer
             this.myTip = new System.Windows.Forms.ToolTip(this.components);
             this.cPicker = new System.Windows.Forms.ColorDialog();
             this.fbdSave = new System.Windows.Forms.FolderBrowserDialog();
-            this.label41 = new System.Windows.Forms.Label();
             this.TabControl1.SuspendLayout();
             this.TabPage3.SuspendLayout();
             this.GroupBox17.SuspendLayout();
@@ -1145,6 +1145,18 @@ namespace Hero_Designer
             this.tabPage7.Text = "Discord Export Settings";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Enabled = false;
+            this.label41.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label41.Location = new System.Drawing.Point(497, 252);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(224, 30);
+            this.label41.TabIndex = 7;
+            this.label41.Text = "You MUST have admin permissions\r\nin your Discord to invite.";
+            // 
             // invBot
             // 
             this.invBot.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1232,6 +1244,7 @@ namespace Hero_Designer
             this.checkBox23.TabIndex = 25;
             this.checkBox23.Text = "To Hit";
             this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox22
             // 
@@ -1242,6 +1255,7 @@ namespace Hero_Designer
             this.checkBox22.TabIndex = 24;
             this.checkBox22.Text = "Regen";
             this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox21
             // 
@@ -1252,6 +1266,7 @@ namespace Hero_Designer
             this.checkBox21.TabIndex = 23;
             this.checkBox21.Text = "Recovery";
             this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox20
             // 
@@ -1262,6 +1277,7 @@ namespace Hero_Designer
             this.checkBox20.TabIndex = 22;
             this.checkBox20.Text = "Endurance Usage";
             this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox19
             // 
@@ -1272,6 +1288,7 @@ namespace Hero_Designer
             this.checkBox19.TabIndex = 21;
             this.checkBox19.Text = "Damage Buff";
             this.checkBox19.UseVisualStyleBackColor = true;
+            this.checkBox19.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox18
             // 
@@ -1282,6 +1299,7 @@ namespace Hero_Designer
             this.checkBox18.TabIndex = 20;
             this.checkBox18.Text = "Psionic";
             this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox17
             // 
@@ -1292,6 +1310,7 @@ namespace Hero_Designer
             this.checkBox17.TabIndex = 19;
             this.checkBox17.Text = "Toxic";
             this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox16
             // 
@@ -1302,6 +1321,7 @@ namespace Hero_Designer
             this.checkBox16.TabIndex = 18;
             this.checkBox16.Text = "Negative";
             this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox15
             // 
@@ -1312,6 +1332,7 @@ namespace Hero_Designer
             this.checkBox15.TabIndex = 17;
             this.checkBox15.Text = "Energy";
             this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox14
             // 
@@ -1322,6 +1343,7 @@ namespace Hero_Designer
             this.checkBox14.TabIndex = 16;
             this.checkBox14.Text = "Cold";
             this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox13
             // 
@@ -1332,6 +1354,7 @@ namespace Hero_Designer
             this.checkBox13.TabIndex = 15;
             this.checkBox13.Text = "Fire";
             this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox12
             // 
@@ -1342,6 +1365,7 @@ namespace Hero_Designer
             this.checkBox12.TabIndex = 14;
             this.checkBox12.Text = "Lethal";
             this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox11
             // 
@@ -1352,6 +1376,7 @@ namespace Hero_Designer
             this.checkBox11.TabIndex = 13;
             this.checkBox11.Text = "Smashing";
             this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox10
             // 
@@ -1362,6 +1387,7 @@ namespace Hero_Designer
             this.checkBox10.TabIndex = 12;
             this.checkBox10.Text = "AOE";
             this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox10.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox9
             // 
@@ -1372,6 +1398,7 @@ namespace Hero_Designer
             this.checkBox9.TabIndex = 11;
             this.checkBox9.Text = "Ranged";
             this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox8
             // 
@@ -1382,6 +1409,7 @@ namespace Hero_Designer
             this.checkBox8.TabIndex = 10;
             this.checkBox8.Text = "Melee";
             this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox7
             // 
@@ -1392,6 +1420,7 @@ namespace Hero_Designer
             this.checkBox7.TabIndex = 9;
             this.checkBox7.Text = "Psionic";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox6
             // 
@@ -1402,6 +1431,7 @@ namespace Hero_Designer
             this.checkBox6.TabIndex = 8;
             this.checkBox6.Text = "Negative";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -1412,6 +1442,7 @@ namespace Hero_Designer
             this.checkBox5.TabIndex = 7;
             this.checkBox5.Text = "Energy";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -1422,6 +1453,7 @@ namespace Hero_Designer
             this.checkBox4.TabIndex = 6;
             this.checkBox4.Text = "Cold";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -1432,6 +1464,7 @@ namespace Hero_Designer
             this.checkBox3.TabIndex = 5;
             this.checkBox3.Text = "Fire";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -1442,6 +1475,7 @@ namespace Hero_Designer
             this.checkBox2.TabIndex = 4;
             this.checkBox2.Text = "Lethal";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -1452,6 +1486,7 @@ namespace Hero_Designer
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Smashing";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // label35
             // 
@@ -2214,18 +2249,6 @@ namespace Hero_Designer
             // cPicker
             // 
             this.cPicker.FullOpen = true;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Enabled = false;
-            this.label41.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label41.Location = new System.Drawing.Point(497, 252);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(224, 30);
-            this.label41.TabIndex = 7;
-            this.label41.Text = "You MUST have admin permissions\r\nin your Discord to invite.";
             // 
             // frmCalcOpt
             // 
