@@ -14,7 +14,7 @@ namespace Hero_Designer
 
         ListLabelV2 Listlabel1;
 
-        protected ConfigData.FontSettings myFS;
+        protected ConfigData.FontSettings myFS = new ConfigData.FontSettings();
 
         public frmColourSettings()
         {
