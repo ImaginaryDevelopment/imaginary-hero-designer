@@ -53,6 +53,8 @@ public class ConfigData
     public List<string> DServers { get; set; } = new List<string>();
     public string DSelServer { get; set; }
     public string DChannel { get; set; }
+    public List<string> CheckedStatBoxes { get; set; } = new List<string>();
+    public List<string> CheckedStats { get; set; } = new List<string>();
     public bool DisableDesaturateInherent { get; set; }
     public Enums.dmModes BuildMode { get; set; } = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption { get; set; } = Enums.dmItem.Slot;
@@ -89,6 +91,7 @@ public class ConfigData
     public bool LongExport { get; set; }
     public bool MasterMode { get; set; }
     public bool ShrinkFrmSets { get; set; }
+
 
     public string DefaultSaveFolderOverride
     {

@@ -19,6 +19,8 @@ namespace Hero_Designer
         protected bool fcNoUpdate;
         readonly frmMain myParent;
         readonly string[][] scenActs;
+        //public List<bool> checkStats = new List<bool>();
+        public List<string> useStats = new List<string>();
 
         readonly string[] scenarioExample;
 
@@ -65,10 +67,20 @@ namespace Hero_Designer
 
         void btnOK_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            StoreControls();
-            myParent.DoCalcOptUpdates();
-            Hide();
+            var cCount = groupBox21.Controls.OfType<CheckBox>().Count(c => c.Checked);
+            if (cCount < 3 || cCount > 6)
+            {
+                MessageBox.Show(@"Incorrect amount of stats selected, please go back and make sure you have 3 to 6 stats selected.",
+                    @"Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DialogResult = DialogResult.Abort;
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                StoreControls();
+                myParent.DoCalcOptUpdates();
+                Hide();
+            }
         }
 
         void btnSaveFolder_Click(object sender, EventArgs e)
@@ -330,21 +342,24 @@ namespace Hero_Designer
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            var countChecked = tabPage7.Controls.OfType<CheckBox>().Count(c => c.Checked);
-            List<string> checkStats = new List<string>();
-            if (countChecked <= 6)
+            foreach (CheckBox box in groupBox21.Controls.OfType<CheckBox>())
             {
-                foreach (var c in tabPage7.Controls.OfType<CheckBox>())
+                var boxNum = box.Name.Replace("checkBox", "");
+                var eVal = (Enums.eStats) Convert.ToInt32(boxNum);
+                if (box.Checked)
                 {
-                    if (c.Checked)
+                    if (!useStats.Contains(eVal.ToString()))
                     {
-                        checkStats.Add(c.Name);
+                        useStats.Add(eVal.ToString());
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show(@"Too many stats selected, please go back and make sure you only have 6 or less selected.", @"Error");
+                else
+                {
+                    if (useStats.Contains(eVal.ToString()))
+                    {
+                        useStats.Remove(eVal.ToString());
+                    }
+                }
             }
         }
 
@@ -545,6 +560,16 @@ namespace Hero_Designer
             clbSuppression.EndUpdate();
         }
 
+        void SetStatCheck(string box, bool val)
+        {
+            foreach (var cbox in groupBox21.Controls.OfType<CheckBox>())
+            {
+                if (cbox.Name == box)
+                {
+                    cbox.Checked = true;
+                }
+            }
+        }
         void SetControls()
         {
             ConfigData config = MidsContext.Config;
@@ -586,6 +611,10 @@ namespace Hero_Designer
             if (!string.IsNullOrWhiteSpace(config.DSelServer))
                 dcExList.SelectedItem = config.DSelServer;
             lblSaveFolder.Text = config.GetSaveFolder();
+            foreach (var item in config.CheckedStatBoxes)
+            {
+                SetStatCheck(item, true);
+            }
             //this.txtUpdatePath.Text = config.UpdatePath;
             chkColorInherent.Checked = !config.DisableDesaturateInherent;
             chkMiddle.Checked = !config.DisableRepeatOnMiddleClick;
@@ -761,6 +790,9 @@ namespace Hero_Designer
             config.RtFont.PairedBase = Convert.ToSingle(udStatSize.Value);
             config.RtFont.RTFBold = chkTextBold.Checked;
             config.RtFont.PairedBold = chkStatBold.Checked;
+            var checkStats = groupBox21.Controls.OfType<CheckBox>().Where(r => r.Checked).Select(r => r.Name);
+            config.CheckedStatBoxes = checkStats.ToList();
+            config.CheckedStats = useStats;
             config.DisableLoadLastFileOnStart = !chkLoadLastFile.Checked;
             if (config.DefaultSaveFolderOverride != lblSaveFolder.Text)
             {

@@ -111,6 +111,7 @@ namespace Hero_Designer
             this.invBot = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.checkBox24 = new System.Windows.Forms.CheckBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.checkBox23 = new System.Windows.Forms.CheckBox();
@@ -1182,6 +1183,7 @@ namespace Hero_Designer
             // 
             // groupBox21
             // 
+            this.groupBox21.Controls.Add(this.checkBox24);
             this.groupBox21.Controls.Add(this.groupBox23);
             this.groupBox21.Controls.Add(this.groupBox22);
             this.groupBox21.Controls.Add(this.checkBox23);
@@ -1212,17 +1214,27 @@ namespace Hero_Designer
             this.groupBox21.Controls.Add(this.label2);
             this.groupBox21.Location = new System.Drawing.Point(6, 109);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(480, 173);
+            this.groupBox21.Size = new System.Drawing.Size(480, 189);
             this.groupBox21.TabIndex = 4;
             this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Stats To Include In Build Preview (choose up to 6):";
+            this.groupBox21.Text = "Stats To Include In Build Preview (Min: 3 - Max: 6):";
+            // 
+            // checkBox24
+            // 
+            this.checkBox24.AutoSize = true;
+            this.checkBox24.Location = new System.Drawing.Point(355, 165);
+            this.checkBox24.Name = "checkBox24";
+            this.checkBox24.Size = new System.Drawing.Size(52, 18);
+            this.checkBox24.TabIndex = 27;
+            this.checkBox24.Text = "To Hit";
+            this.checkBox24.UseVisualStyleBackColor = true;
             // 
             // groupBox23
             // 
             this.groupBox23.Enabled = false;
             this.groupBox23.Location = new System.Drawing.Point(332, 35);
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(10, 138);
+            this.groupBox23.Size = new System.Drawing.Size(10, 154);
             this.groupBox23.TabIndex = 26;
             this.groupBox23.TabStop = false;
             // 
@@ -1231,7 +1243,7 @@ namespace Hero_Designer
             this.groupBox22.Enabled = false;
             this.groupBox22.Location = new System.Drawing.Point(154, 35);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(10, 138);
+            this.groupBox22.Size = new System.Drawing.Size(10, 154);
             this.groupBox22.TabIndex = 5;
             this.groupBox22.TabStop = false;
             // 
@@ -1240,9 +1252,9 @@ namespace Hero_Designer
             this.checkBox23.AutoSize = true;
             this.checkBox23.Location = new System.Drawing.Point(355, 141);
             this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(52, 18);
+            this.checkBox23.Size = new System.Drawing.Size(57, 18);
             this.checkBox23.TabIndex = 25;
-            this.checkBox23.Text = "To Hit";
+            this.checkBox23.Text = "Regen";
             this.checkBox23.UseVisualStyleBackColor = true;
             this.checkBox23.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
@@ -1251,9 +1263,9 @@ namespace Hero_Designer
             this.checkBox22.AutoSize = true;
             this.checkBox22.Location = new System.Drawing.Point(355, 117);
             this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(57, 18);
+            this.checkBox22.Size = new System.Drawing.Size(73, 18);
             this.checkBox22.TabIndex = 24;
-            this.checkBox22.Text = "Regen";
+            this.checkBox22.Text = "Recovery";
             this.checkBox22.UseVisualStyleBackColor = true;
             this.checkBox22.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
@@ -1262,9 +1274,9 @@ namespace Hero_Designer
             this.checkBox21.AutoSize = true;
             this.checkBox21.Location = new System.Drawing.Point(355, 93);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(73, 18);
+            this.checkBox21.Size = new System.Drawing.Size(106, 18);
             this.checkBox21.TabIndex = 23;
-            this.checkBox21.Text = "Recovery";
+            this.checkBox21.Text = "Global Recharge";
             this.checkBox21.UseVisualStyleBackColor = true;
             this.checkBox21.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
@@ -2503,5 +2515,6 @@ namespace Hero_Designer
         private CheckBox checkBox12;
         private CheckBox checkBox11;
         private Label label41;
+        private CheckBox checkBox24;
     }
 }

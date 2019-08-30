@@ -828,6 +828,7 @@ public static class Enums
         Psionic_Resistance,
         Damage_Buff,
         Endurance_Usage,
+        Global_Recharge,
         Recovery,
         Regen,
         ToHit
