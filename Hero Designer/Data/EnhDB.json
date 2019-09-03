@@ -54920,6 +54920,163 @@
       "HasPowerEffect": true,
       "LongName": "Sudden Acceleration: Knockback to Knockdown",
       "Schedule": 4
+    },
+    {
+      "StaticIndex": 1252,
+      "Name": "Damage/Endurance/Interrupt",
+      "ShortName": "Dmg/End/Int",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1252,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 2,
+            "SubID": -1
+          },
+          "Multiplier": 0.5
+        },
+        {
+          "Enhance": {
+            "ID": 5,
+            "SubID": -1
+          },
+          "Multiplier": 0.5
+        },
+        {
+          "Enhance": {
+            "ID": 9,
+            "SubID": -1
+          },
+          "Schedule": 2,
+          "Multiplier": 0.5
+        }
+      ],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_A",
+      "HasEnhEffect": true,
+      "LongName": "Experienced Marksman: Damage/Endurance/Interrupt",
+      "Schedule": 4
+    },
+    {
+      "StaticIndex": 1253,
+      "Name": "Accuracy/Endurance/Recharge",
+      "ShortName": "Acc/End/Rech",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1253,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_B",
+      "LongName": "Experienced Marksman: Accuracy/Endurance/Recharge",
+      "Schedule": -1
+    },
+    {
+      "StaticIndex": 1254,
+      "Name": "Range/Fast Snipe",
+      "ShortName": "Rng/FSnp",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1254,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_C",
+      "LongName": "Experienced Marksman: Range/Fast Snipe",
+      "Schedule": -1
+    },
+    {
+      "StaticIndex": 1255,
+      "Name": "Accuracy/Damage",
+      "ShortName": "Acc/Dmg",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1255,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_D",
+      "LongName": "Experienced Marksman: Accuracy/Damage",
+      "Schedule": -1
+    },
+    {
+      "StaticIndex": 1256,
+      "Name": "Damage/Recharge",
+      "ShortName": "Dmg/Rech",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1256,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_E",
+      "LongName": "Experienced Marksman: Damage/Recharge",
+      "Schedule": -1
+    },
+    {
+      "IsModified": true,
+      "StaticIndex": 1257,
+      "Name": "Damage/Interrupt/Range/Recharge",
+      "ShortName": "Dmg/Int/Rng/Rech",
+      "Desc": "",
+      "TypeID": 4,
+      "SubTypeID": -1,
+      "ClassID": [],
+      "Image": "eMarksman.png",
+      "ImageIdx": 1257,
+      "nIDSet": 215,
+      "UIDSet": "Experienced_Marksman",
+      "Effect": [],
+      "EffectChance": 1.0,
+      "LevelMin": 9,
+      "LevelMax": 49,
+      "RecipeName": "",
+      "RecipeIDX": -1,
+      "UID": "Crafted_Experienced_Marksman_F",
+      "LongName": "Experienced Marksman: Damage/Interrupt/Range/Recharge",
+      "Schedule": -1
     }
   ],
   "EnhancementSets": [
@@ -78669,6 +78826,120 @@
       ],
       "ImageIdx": 214,
       "LevelMin": 20,
+      "LevelMax": 49
+    },
+    {
+      "DisplayName": "Experienced Marksman",
+      "ShortName": "ExpMarks",
+      "Desc": "",
+      "Image": "eMarksman.png",
+      "Bonus": [
+        {
+          "Special": -1,
+          "Name": [
+            "Set_Bonus.PVP_Set_Bonus.Increased_Range_1"
+          ],
+          "Index": [
+            7706
+          ],
+          "AltString": "",
+          "Slotted": 2
+        },
+        {
+          "Special": -1,
+          "Name": [
+            "Set_Bonus.Set_Bonus.Increased_Health_3"
+          ],
+          "Index": [
+            8098
+          ],
+          "AltString": "",
+          "Slotted": 3
+        },
+        {
+          "Special": -1,
+          "Name": [
+            "Set_Bonus.Set_Bonus.Increased_Damage_4"
+          ],
+          "Index": [
+            8029
+          ],
+          "AltString": "",
+          "Slotted": 4
+        },
+        {
+          "Special": -1,
+          "Name": [
+            "Set_Bonus.PVP_Set_Bonus.Increased_Endurance_4"
+          ],
+          "Index": [
+            7541
+          ],
+          "AltString": "",
+          "Slotted": 5
+        },
+        {
+          "Special": -1,
+          "Name": [
+            "Set_Bonus.PVP_Set_Bonus.Increased_Ranged_Energy_Neg_Def_3"
+          ],
+          "Index": [
+            7701
+          ],
+          "AltString": "",
+          "Slotted": 6
+        }
+      ],
+      "SpecialBonus": [
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        },
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        },
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        },
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        },
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        },
+        {
+          "Special": -1,
+          "Name": [],
+          "Index": [],
+          "AltString": ""
+        }
+      ],
+      "Uid": "Experienced_Marksman",
+      "SetType": 5,
+      "Enhancements": [
+        1252,
+        1253,
+        1254,
+        1255,
+        1256,
+        1257
+      ],
+      "ImageIdx": 215,
+      "LevelMin": 9,
       "LevelMax": 49
     }
   ]

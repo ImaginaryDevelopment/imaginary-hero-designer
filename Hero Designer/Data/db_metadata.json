@@ -32,8 +32,8 @@
   {
     "Archetype": "Class_Blaster",
     "Fullname": "Blaster_Ranged.Beam_Rifle",
-    "Hash": 1099975422,
-    "Length": 168776
+    "Hash": 155087633,
+    "Length": 168438
   },
   {
     "Archetype": "Class_Blaster",
@@ -110,8 +110,8 @@
   {
     "Archetype": "Class_Blaster",
     "Fullname": "Blaster_Support.Gadgets",
-    "Hash": -555709902,
-    "Length": 141932
+    "Hash": -1890915677,
+    "Length": 144969
   },
   {
     "Archetype": "Class_Blaster",
@@ -15818,8 +15818,8 @@
   {
     "Archetype": "Class_Controller",
     "Fullname": "Controller_Control.Illusion_Control",
-    "Hash": -1970400381,
-    "Length": 101530
+    "Hash": -1660116825,
+    "Length": 101532
   },
   {
     "Archetype": "Class_Controller",
@@ -15938,7 +15938,7 @@
   {
     "Archetype": "Class_Corruptor",
     "Fullname": "Corruptor_Ranged.Beam_Rifle",
-    "Hash": -1928762727,
+    "Hash": 864590041,
     "Length": 116942
   },
   {
@@ -16178,14 +16178,14 @@
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Earth_Assault",
-    "Hash": -916736281,
-    "Length": 98915
+    "Hash": -1130282367,
+    "Length": 98974
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Electricity_Manipulation",
-    "Hash": -552165709,
-    "Length": 110138
+    "Hash": -25355860,
+    "Length": 110388
   },
   {
     "Archetype": "Class_Dominator",
@@ -16202,38 +16202,38 @@
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Icy_Assault",
-    "Hash": -1154089127,
-    "Length": 126555
+    "Hash": 874585429,
+    "Length": 133920
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Martial_Assault",
-    "Hash": -753424711,
-    "Length": 63873
+    "Hash": 2106563547,
+    "Length": 67746
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Psionic_Assault",
-    "Hash": -1199088860,
-    "Length": 75902
+    "Hash": -285210147,
+    "Length": 75911
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Radioactive_Assault",
-    "Hash": -895492328,
-    "Length": 107893
+    "Hash": 1088525515,
+    "Length": 107820
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Savage_Assault",
-    "Hash": -1386445447,
-    "Length": 87488
+    "Hash": -1034462898,
+    "Length": 87328
   },
   {
     "Archetype": "Class_Dominator",
     "Fullname": "Dominator_Assault.Thorny_Assault",
-    "Hash": 1739973404,
-    "Length": 83069
+    "Hash": 1409630069,
+    "Length": 82243
   },
   {
     "Archetype": "Class_Dominator",
@@ -18038,8 +18038,8 @@
   {
     "Archetype": "Class_Peacebringer",
     "Fullname": "Peacebringer_Defensive.Luminous_Aura",
-    "Hash": 1777130140,
-    "Length": 206161
+    "Hash": 259828263,
+    "Length": 206130
   },
   {
     "Archetype": "Class_Peacebringer",
@@ -19712,8 +19712,8 @@
   {
     "Archetype": "",
     "Fullname": "Pool.Invisibility",
-    "Hash": -1067476800,
-    "Length": 134047
+    "Hash": -1377374137,
+    "Length": 134050
   },
   {
     "Archetype": "",
@@ -19724,8 +19724,8 @@
   {
     "Archetype": "",
     "Fullname": "Pool.Flight",
-    "Hash": 1740018441,
-    "Length": 112452
+    "Hash": 559254444,
+    "Length": 112421
   },
   {
     "Archetype": "",
@@ -19982,8 +19982,8 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Defense.Energy_Aura",
-    "Hash": -2037942650,
-    "Length": 141044
+    "Hash": 1352441409,
+    "Length": 142708
   },
   {
     "Archetype": "Class_Sentinel",
@@ -20018,7 +20018,7 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Defense.Regeneration",
-    "Hash": 1168799004,
+    "Hash": 506007868,
     "Length": 107700
   },
   {
@@ -20048,7 +20048,7 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Ranged.Beam_Rifle",
-    "Hash": 133042866,
+    "Hash": 14426552,
     "Length": 95530
   },
   {
@@ -20168,8 +20168,8 @@
   {
     "Archetype": "Class_Stalker",
     "Fullname": "Stalker_Defense.Ninjitsu",
-    "Hash": -1889583429,
-    "Length": 126221
+    "Hash": -1063080201,
+    "Length": 126220
   },
   {
     "Archetype": "Class_Stalker",
@@ -20282,8 +20282,8 @@
   {
     "Archetype": "Class_Stalker",
     "Fullname": "Stalker_Melee.Savage_Melee",
-    "Hash": 1922622463,
-    "Length": 117582
+    "Hash": -13296076,
+    "Length": 117290
   },
   {
     "Archetype": "Class_Stalker",
@@ -20564,7 +20564,7 @@
   {
     "Archetype": "",
     "Fullname": "Temporary_Powers.Temporary_Powers",
-    "Hash": 1948535378,
+    "Hash": -1965046014,
     "Length": 4419036
   },
   {
@@ -21448,5 +21448,11 @@
     "Fullname": "Widow_Training.Widow_Training",
     "Hash": -1565914322,
     "Length": 86436
+  },
+  {
+    "Archetype": "",
+    "Fullname": "Pets.TargetingDrone",
+    "Hash": -1569806899,
+    "Length": 443
   }
 ]
