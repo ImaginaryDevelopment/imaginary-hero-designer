@@ -55056,7 +55056,6 @@
       "Schedule": -1
     },
     {
-      "IsModified": true,
       "StaticIndex": 1257,
       "Name": "Damage/Interrupt/Range/Recharge",
       "ShortName": "Dmg/Int/Rng/Rech",
