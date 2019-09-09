@@ -1,9 +1,12 @@
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Base.Data_Classes;
 using Base.Display;
@@ -15,7 +18,6 @@ namespace Hero_Designer
 {
     public partial class frmSetEdit : Form
     {
-
         protected bool Loading;
         public EnhancementSet mySet;
         protected int[] SetBonusList;
@@ -32,6 +34,7 @@ namespace Hero_Designer
                 {
                     _lvBonusList.DoubleClick -= eventHandler2;
                 }
+
                 _lvBonusList = value;
                 if (_lvBonusList == null)
                     return;
@@ -52,6 +55,7 @@ namespace Hero_Designer
                     _udMaxLevel.Leave -= eventHandler1;
                     _udMaxLevel.ValueChanged -= eventHandler2;
                 }
+
                 _udMaxLevel = value;
                 if (_udMaxLevel == null)
                     return;
@@ -73,6 +77,7 @@ namespace Hero_Designer
                     _udMinLevel.Leave -= eventHandler1;
                     _udMinLevel.ValueChanged -= eventHandler2;
                 }
+
                 _udMinLevel = value;
                 if (_udMinLevel == null)
                     return;
@@ -90,8 +95,8 @@ namespace Hero_Designer
             InitializeComponent();
             Name = nameof(frmSetEdit);
             var componentResourceManager = new ComponentResourceManager(typeof(frmSetEdit));
-            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
+            Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
+            btnImage.Image = (Image) componentResourceManager.GetObject("btnImage.Image");
             mySet = new EnhancementSet(iSet);
         }
 
@@ -117,7 +122,10 @@ namespace Hero_Designer
             string str = FileIO.StripPath(ImagePicker.FileName);
             if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
             {
-                int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
+                int num = (int) Interaction.MsgBox(
+                    ("You must select an image from the " + I9Gfx.GetEnhancementsPath() +
+                     " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."),
+                    MsgBoxStyle.Information, "Ah...");
             }
             else
             {
@@ -140,51 +148,88 @@ namespace Hero_Designer
             Hide();
         }
 
-        void btnPaste_Click(object sender, EventArgs e)
+        /*void btnPaste_Click(object sender, EventArgs e)
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
-            char[] chArray = { '^' };
+            char[] chArray = new char[1] { '^' };
             string[] strArray1 = str.Replace("\r\n", Conversions.ToString(chArray[0])).Split(chArray);
             chArray[0] = '\t';
-            mySet.InitBonus();
+            this.mySet.InitBonus();
             int num1 = strArray1.Length - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
-                string[] strArray2 = strArray1[index1].Split(chArray);
-                if (strArray2.Length <= 3)
-                    continue;
-                int num2 = (int)Math.Round(Conversion.Val(strArray2[0]));
-                int index2 = DatabaseAPI.NidFromUidPower(strArray2[3]);
-                int num3 = num2 - 2;
-                if (!(num3 > -1 & index2 > -1))
-                    continue;
-                EnhancementSet.BonusItem[] bonus = mySet.Bonus;
-                int index3 = num3;
-                bonus[index3].Name = (string[])Utils.CopyArray(bonus[index3].Name, new string[bonus[index3].Name.Length + 1]);
-                bonus[index3].Index = (int[])Utils.CopyArray(bonus[index3].Index, new int[bonus[index3].Index.Length + 1]);
-                bonus[index3].Index[bonus[index3].Index.Length - 1] = index2;
-                bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[index2].FullName;
+                string[] strArray2 = strArray1[index1].Split('^');
+                if (strArray2.Length >= 3)
+                {
+                    int num2 = (int)Math.Round(Conversion.Val(strArray2[0]));
+                    int index2 = DatabaseAPI.NidFromUidPower(strArray2[3]);
+                    int num3 = num2 - 2;
+                    if (num3 > -1 & index2 > -1)
+                    {
+                        EnhancementSet.BonusItem[] bonus = this.mySet.Bonus;
+                        int index3 = num3;
+                        bonus[index3].Name = (string[])Utils.CopyArray(bonus[index3].Name, (Array)new string[bonus[index3].Name.Length + 1]);
+                        bonus[index3].Index = (int[])Utils.CopyArray(bonus[index3].Index, (Array)new int[bonus[index3].Index.Length + 1]);
+                        bonus[index3].Index[bonus[index3].Index.Length - 1] = index2;
+                        bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[index2].FullName;
+                    }
+                }
             }
-            DisplayBonus();
-            DisplayBonusText();
-        }
+            this.DisplayBonus();
+            this.DisplayBonusText();
+        }*/
 
-        void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+        void btnPaste_Click(object sender, EventArgs e)
         {
-            if (Loading)
-                return;
-            mySet.SetType = (Enums.eSetType)cbSetType.SelectedIndex;
+            var clipString = Clipboard.GetText();
+            char[] charArray = { '^' };
+            clipString = clipString.Replace("\r\n", charArray[0].ToString());
+            string[] parsedString = clipString.Split(charArray);
+            int nBonus = 0;
+            int BonusSlot = 0;
+            Enums.ePvX BonusMode = Enums.ePvX.Any;
+            mySet.InitBonus();
+            int num1 = parsedString.Length - 1;
+            for (int index1 = 0; index1 <= num1; ++index1)
+            {
+                var isNumeric = int.TryParse(parsedString[index1], out int n);
+                if (isNumeric)
+                {
+                    BonusSlot = Convert.ToInt32(parsedString[index1]);
+                }
+                else
+                {
+                    var BonusPower = parsedString[index1];
+                    nBonus = DatabaseAPI.NidFromUidPower(BonusPower);
+                    BonusMode = BonusPower.Contains("PVP") ? Enums.ePvX.PvP : Enums.ePvX.PvE;
+                }
+
+                var num2 = 8 - 2;
+                if (num2 > -1 & nBonus > -1)
+                {
+                    EnhancementSet.BonusItem[] bonus = mySet.Bonus;
+                    var index3 = num2;
+
+                    //bonus[index3].Slotted = BonusSlot;
+                    bonus[index3].PvMode = BonusMode;
+                    bonus[index3].Name = (string[]) Utils.CopyArray(bonus[index3].Name, (Array) new string[bonus[index3].Name.Length + 1]);
+                    bonus[index3].Index = (int[]) Utils.CopyArray(bonus[index3].Index, (Array) new int[bonus[index3].Index.Length + 1]);
+                    bonus[index3].Index[bonus[index3].Index.Length - 1] = nBonus;
+                    bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[nBonus].FullName;
+                    //Array.Resize(ref bonus[nMin].Name, bonus[nMin].Name.Length + 1);
+                    //Array.Resize(ref bonus[nMin].Index, bonus[nMin].Index.Length + 1);
+                    //bonus[nMin].Index[bonus[nMin].Index.Length - 1] = nBonus;
+                    //bonus[nMin].Name[bonus[nMin].Name.Length - 1] = DatabaseAPI.Database.Power[nBonus].FullName;
+                    //bonus[nMin].PvMode = BonusMode;
+                    //bonus[nMin].Slotted = BonusSlot;
+                }
+            }
+
+            DisplayBonus2();
+            DisplayBonusText2();
         }
 
-        void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Loading)
-                return;
-            DisplayBonus();
-            DisplayBonusText();
-        }
-
-        public void DisplayBonus()
+        public void DisplayBonus2()
         {
             try
             {
@@ -206,6 +251,119 @@ namespace Hero_Designer
                         lstBonus.Items.Add(DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName);
                     txtAlternate.Text = mySet.SpecialBonus[index1].AltString;
                 }
+
+                lstBonus.EndUpdate();
+                cbSlotCount.Enabled = mySet.Enhancements.Length > 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}\r\n{ex.StackTrace}");
+                //ProjectData.SetProjectError(ex);
+                //ProjectData.ClearProjectError();
+            }
+        }
+
+        public void DisplayBonusText2()
+        {
+            string str1 = RTF.StartRTF();
+            int num1 = mySet.Bonus.Length - 1;
+            for (int index1 = 0; index1 <= num1; ++index1)
+            {
+                if (mySet.Bonus[index1].Index.Length > 0)
+                    str1 = str1 + RTF.Color(RTF.ElementID.Black) +
+                           RTF.Bold(Conversions.ToString(mySet.Bonus[index1].Slotted) + " Enhancements: ");
+                int num2 = mySet.Bonus[index1].Index.Length - 1;
+                for (int index2 = 0; index2 <= num2; ++index2)
+                {
+                    if (mySet.Bonus[index1].Index[index2] <= -1)
+                        continue;
+                    if (index2 > 0)
+                        str1 += ", ";
+                    str1 = str1 + RTF.Color(RTF.ElementID.InentionInvert) +
+                           DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName;
+                }
+
+                if (mySet.Bonus[index1].Index.Length > 0)
+                    str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, false));
+                if (mySet.Bonus[index1].PvMode == Enums.ePvX.PvP)
+                    str1 += "(PvP)";
+                if (mySet.Bonus[index1].Index.Length > 0)
+                    str1 += RTF.Crlf();
+            }
+
+            int num3 = mySet.SpecialBonus.Length - 1;
+            for (int index1 = 0; index1 <= num3; ++index1)
+            {
+                if (mySet.SpecialBonus[index1].Special > -1)
+                {
+                    string str2 = str1 + RTF.Color(RTF.ElementID.Black) + RTF.Bold("Special Case Enhancement: ") +
+                                  RTF.Color(RTF.ElementID.InentionInvert);
+                    if (mySet.Enhancements[mySet.SpecialBonus[index1].Special] > -1)
+                        str2 += DatabaseAPI.Database.Enhancements[mySet.Enhancements[mySet.SpecialBonus[index1].Special]].Name;
+                    string str3 = str2 + RTF.Crlf();
+                    int num2 = mySet.SpecialBonus[index1].Index.Length - 1;
+                    for (int index2 = 0; index2 <= num2; ++index2)
+                    {
+                        if (mySet.SpecialBonus[index1].Index[index2] <= -1)
+                            continue;
+                        if (index2 > 0)
+                            str3 += ", ";
+                        str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) +
+                               DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
+                    }
+
+                    str1 = str3 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, true)) + RTF.Crlf();
+                }
+
+                if (mySet.SpecialBonus[index1].Index.Length > 0)
+                    str1 += RTF.Crlf();
+            }
+
+            rtbBonus.Rtf = str1 + RTF.EndRTF();
+        }
+
+        void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Loading)
+                return;
+            mySet.SetType = (Enums.eSetType) cbSetType.SelectedIndex;
+        }
+
+        void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Loading)
+                return;
+            DisplayBonus();
+            DisplayBonusText();
+        }
+
+        public void DisplayBonus()
+        {
+            try
+            {
+                lstBonus.BeginUpdate();
+                lstBonus.Items.Clear();
+                if (isBonus())
+                {
+                    int index1 = BonusID();
+                    MessageBox.Show(index1.ToString());
+                    MessageBox.Show(mySet.Bonus.Length.ToString());
+                    int num = mySet.Bonus[index1].Index.Length - 1;
+                    for (int index2 = 0; index2 <= num; ++index2)
+                    {
+                        lstBonus.Items.Add(DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName);
+                        txtAlternate.Text = mySet.Bonus[index1].AltString;
+                    }
+                }
+                else if (isSpecial())
+                {
+                    int index1 = SpecialID();
+                    int num = mySet.SpecialBonus[index1].Index.Length - 1;
+                    for (int index2 = 0; index2 <= num; ++index2)
+                        lstBonus.Items.Add(DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName);
+                    txtAlternate.Text = mySet.SpecialBonus[index1].AltString;
+                }
+
                 lstBonus.EndUpdate();
                 cbSlotCount.Enabled = mySet.Enhancements.Length > 1;
             }
@@ -223,7 +381,8 @@ namespace Hero_Designer
             for (int index1 = 0; index1 <= num1; ++index1)
             {
                 if (mySet.Bonus[index1].Index.Length > 0)
-                    str1 = str1 + RTF.Color(RTF.ElementID.Black) + RTF.Bold(Conversions.ToString(mySet.Bonus[index1].Slotted) + " Enhancements: ");
+                    str1 = str1 + RTF.Color(RTF.ElementID.Black) +
+                           RTF.Bold(Conversions.ToString(mySet.Bonus[index1].Slotted) + " Enhancements: ");
                 int num2 = mySet.Bonus[index1].Index.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
@@ -231,21 +390,25 @@ namespace Hero_Designer
                         continue;
                     if (index2 > 0)
                         str1 += ", ";
-                    str1 = str1 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName;
+                    str1 = str1 + RTF.Color(RTF.ElementID.InentionInvert) +
+                           DatabaseAPI.Database.Power[mySet.Bonus[index1].Index[index2]].PowerName;
                 }
+
                 if (mySet.Bonus[index1].Index.Length > 0)
                     str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, false));
                 if (mySet.Bonus[index1].PvMode == Enums.ePvX.PvP)
-                    str1 += "(PvP)";
+                    str1 += " (PvP)";
                 if (mySet.Bonus[index1].Index.Length > 0)
                     str1 += RTF.Crlf();
             }
+
             int num3 = mySet.SpecialBonus.Length - 1;
             for (int index1 = 0; index1 <= num3; ++index1)
             {
                 if (mySet.SpecialBonus[index1].Special > -1)
                 {
-                    string str2 = str1 + RTF.Color(RTF.ElementID.Black) + RTF.Bold("Special Case Enhancement: ") + RTF.Color(RTF.ElementID.InentionInvert);
+                    string str2 = str1 + RTF.Color(RTF.ElementID.Black) + RTF.Bold("Special Case Enhancement: ") +
+                                  RTF.Color(RTF.ElementID.InentionInvert);
                     if (mySet.Enhancements[mySet.SpecialBonus[index1].Special] > -1)
                         str2 += DatabaseAPI.Database.Enhancements[mySet.Enhancements[mySet.SpecialBonus[index1].Special]].Name;
                     string str3 = str2 + RTF.Crlf();
@@ -256,13 +419,17 @@ namespace Hero_Designer
                             continue;
                         if (index2 > 0)
                             str3 += ", ";
-                        str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) + DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
+                        str3 = str3 + RTF.Color(RTF.ElementID.InentionInvert) +
+                               DatabaseAPI.Database.Power[mySet.SpecialBonus[index1].Index[index2]].PowerName;
                     }
+
                     str1 = str3 + RTF.Crlf() + "   " + RTF.Italic(mySet.GetEffectString(index1, true)) + RTF.Crlf();
                 }
+
                 if (mySet.SpecialBonus[index1].Index.Length > 0)
                     str1 += RTF.Crlf();
             }
+
             rtbBonus.Rtf = str1 + RTF.EndRTF();
         }
 
@@ -272,15 +439,18 @@ namespace Hero_Designer
             {
                 ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + mySet.Image);
                 ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(30, 30);
-                extendedBitmap2.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
-                extendedBitmap2.Graphics.DrawImage(extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, GraphicsUnit.Pixel);
+                extendedBitmap2.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO),
+                    GraphicsUnit.Pixel);
+                extendedBitmap2.Graphics.DrawImage(extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect,
+                    GraphicsUnit.Pixel);
                 btnImage.Image = new Bitmap(extendedBitmap2.Bitmap);
                 btnImage.Text = mySet.Image;
             }
             else
             {
                 ExtendedBitmap extendedBitmap = new ExtendedBitmap(30, 30);
-                extendedBitmap.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
+                extendedBitmap.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO),
+                    GraphicsUnit.Pixel);
                 btnImage.Image = new Bitmap(extendedBitmap.Bitmap);
                 btnImage.Text = "Select Image";
             }
@@ -298,7 +468,7 @@ namespace Hero_Designer
             SetMaxLevel(mySet.LevelMax + 1);
             udMaxLevel.Minimum = udMinLevel.Value;
             udMinLevel.Maximum = udMaxLevel.Value;
-            cbSetType.SelectedIndex = (int)mySet.SetType;
+            cbSetType.SelectedIndex = (int) mySet.SetType;
             btnImage.Text = mySet.Image;
             DisplayBonusText();
             DisplayBonus();
@@ -326,16 +496,20 @@ namespace Hero_Designer
                         int num3 = 1;
                         string[] strArray2;
                         IntPtr index2;
-                        (strArray2 = strArray1)[(int)(index2 = (IntPtr)num3)] = strArray2[(int)index2] + ",";
+                        (strArray2 = strArray1)[(int) (index2 = (IntPtr) num3)] = strArray2[(int) index2] + ",";
                     }
+
                     string[] strArray3 = items;
                     int num4 = 1;
                     string[] strArray4;
                     IntPtr index3;
-                    (strArray4 = strArray3)[(int)(index3 = (IntPtr)num4)] = strArray4[(int)index3] + DatabaseAPI.Database.EnhancementClasses[enhancement.ClassID[index1]].ShortName;
+                    (strArray4 = strArray3)[(int) (index3 = (IntPtr) num4)] =
+                        strArray4[(int) index3] + DatabaseAPI.Database.EnhancementClasses[enhancement.ClassID[index1]].ShortName;
                 }
+
                 lvEnh.Items.Add(new ListViewItem(items, imageIndex));
             }
+
             lvEnh.EndUpdate();
         }
 
@@ -343,9 +517,35 @@ namespace Hero_Designer
         {
             cbSlotCount.BeginUpdate();
             cbSlotCount.Items.Clear();
-            int num1 = mySet.Enhancements.Length - 2;
-            for (int index = 0; index <= num1; ++index)
-                cbSlotCount.Items.Add((Conversions.ToString(index + 2) + " Enhancements"));
+            var num0 = mySet.Enhancements.Length;
+            //var num0 = mySet.Enhancements.Length * 2;
+            var num1 = num0 + num0 -1;
+            for (int index = 2; index <= num1; ++index)
+            {
+                if (index <= num0)
+                {
+                    cbSlotCount.Items.Add((Conversions.ToString(index) + " Enhancements"));
+                }
+                else
+                {
+                    switch (num1)
+                    {
+                        case 5:
+                            cbSlotCount.Items.Add((Conversions.ToString(index - 2) + " Enhancements (PVP Effects)"));
+                            break;
+                        case 7:
+                            cbSlotCount.Items.Add((Conversions.ToString(index - 3) + " Enhancements (PVP Effects)"));
+                            break;
+                        case 9:
+                            cbSlotCount.Items.Add((Conversions.ToString(index - 4) + " Enhancements (PVP Effects)"));
+                            break;
+                        case 11:
+                            cbSlotCount.Items.Add((Conversions.ToString(index - 5) + " Enhancements (PVP Effects)"));
+                            break;
+                    }
+                }
+            }
+
             int num2 = mySet.Enhancements.Length - 1;
             for (int index = 0; index <= num2; ++index)
                 cbSlotCount.Items.Add(DatabaseAPI.Database.Enhancements[mySet.Enhancements[index]].Name);
@@ -371,6 +571,7 @@ namespace Hero_Designer
                     Tag = SetBonusList[index]
                 });
             }
+
             int num2 = SetBonusListPVP.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
@@ -383,6 +584,7 @@ namespace Hero_Designer
                     Tag = SetBonusListPVP[index]
                 });
             }
+
             lvBonusList.Sort();
             lvBonusList.EndUpdate();
         }
@@ -445,14 +647,28 @@ namespace Hero_Designer
             DisplayBonus();
         }
 
-        public bool isBonus()
+        /*public bool isBonus()
         {
             return cbSlotCount.SelectedIndex > -1 & cbSlotCount.SelectedIndex < mySet.Enhancements.Length - 1;
+        }*/
+
+        /*public bool isSpecial()
+        {
+            return cbSlotCount.SelectedIndex >= mySet.Enhancements.Length - 1 & cbSlotCount.SelectedIndex < mySet.Enhancements.Length + mySet.Enhancements.Length - 1;
+        }*/
+
+        public bool isBonus()
+        {
+            var num0 = mySet.Enhancements.Length;
+            var num1 = num0 + num0 - 1;
+            return cbSlotCount.SelectedIndex > -1 & cbSlotCount.SelectedIndex < num1;
         }
 
         public bool isSpecial()
         {
-            return cbSlotCount.SelectedIndex >= mySet.Enhancements.Length - 1 & cbSlotCount.SelectedIndex < mySet.Enhancements.Length + mySet.Enhancements.Length - 1;
+            var num0 = mySet.Enhancements.Length;
+            var num1 = num0 + num0 - 1;
+            return cbSlotCount.SelectedIndex >= num1 & cbSlotCount.SelectedIndex < num1 + num0;
         }
 
         void lstBonus_DoubleClick(object sender, EventArgs e)
@@ -460,8 +676,8 @@ namespace Hero_Designer
             if (lstBonus.SelectedIndex < 0)
                 return;
             int selectedIndex = lstBonus.SelectedIndex;
-            int[] numArray1 = new int[0];
-            string[] strArray1 = new string[0];
+            //int[] numArray1 = new int[0];
+            //string[] strArray1 = new string[0];
             int index1 = 0;
             if (isBonus())
             {
@@ -476,6 +692,7 @@ namespace Hero_Designer
                     strArray2[index1] = mySet.Bonus[BonusID()].Name[index2];
                     ++index1;
                 }
+
                 mySet.Bonus[BonusID()].Name = new string[numArray2.Length - 1 + 1];
                 mySet.Bonus[BonusID()].Index = new int[strArray2.Length - 1 + 1];
                 int num2 = numArray2.Length - 1;
@@ -498,6 +715,7 @@ namespace Hero_Designer
                     strArray2[index1] = mySet.SpecialBonus[SpecialID()].Name[index2];
                     ++index1;
                 }
+
                 mySet.SpecialBonus[SpecialID()].Name = new string[numArray2.Length - 1 + 1];
                 mySet.SpecialBonus[SpecialID()].Index = new int[strArray2.Length - 1 + 1];
                 int num2 = numArray2.Length - 1;
@@ -506,9 +724,11 @@ namespace Hero_Designer
                     mySet.SpecialBonus[SpecialID()].Index[index2] = numArray2[index2];
                     mySet.SpecialBonus[SpecialID()].Name[index2] = strArray2[index2];
                 }
+
                 if (mySet.SpecialBonus[SpecialID()].Index.Length < 1)
                     mySet.SpecialBonus[SpecialID()].Special = -1;
             }
+
             DisplayBonus();
             DisplayBonusText();
         }
@@ -516,29 +736,33 @@ namespace Hero_Designer
         void lvBonusList_DoubleClick(object sender, EventArgs e)
         {
             if (lvBonusList.SelectedIndices.Count < 1)
+            {
                 return;
-            int index = (int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(lvBonusList.SelectedItems[0].Tag)));
+            }
+
+            var index = Convert.ToInt32(lvBonusList.SelectedItems[0].Tag);
             if (index < 0)
             {
-                int num = (int)Interaction.MsgBox("Tag was < 0!");
+                MessageBox.Show(@"Tag was < 0!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (isBonus())
                 {
-                    mySet.Bonus[BonusID()].Name = (string[])Utils.CopyArray(mySet.Bonus[BonusID()].Name, new string[mySet.Bonus[BonusID()].Name.Length + 1]);
-                    mySet.Bonus[BonusID()].Index = (int[])Utils.CopyArray(mySet.Bonus[BonusID()].Index, new int[mySet.Bonus[BonusID()].Index.Length + 1]);
+                    mySet.Bonus[BonusID()].Name = (string[]) Utils.CopyArray(mySet.Bonus[BonusID()].Name, new string[mySet.Bonus[BonusID()].Name.Length + 1]);
+                    mySet.Bonus[BonusID()].Index = (int[]) Utils.CopyArray(mySet.Bonus[BonusID()].Index, new int[mySet.Bonus[BonusID()].Index.Length + 1]);
                     mySet.Bonus[BonusID()].Name[mySet.Bonus[BonusID()].Name.Length - 1] = DatabaseAPI.Database.Power[index].FullName;
                     mySet.Bonus[BonusID()].Index[mySet.Bonus[BonusID()].Index.Length - 1] = index;
                 }
                 else if (isSpecial())
                 {
                     mySet.SpecialBonus[SpecialID()].Special = SpecialID();
-                    mySet.SpecialBonus[SpecialID()].Name = (string[])Utils.CopyArray(mySet.SpecialBonus[SpecialID()].Name, new string[mySet.SpecialBonus[SpecialID()].Name.Length + 1]);
-                    mySet.SpecialBonus[SpecialID()].Index = (int[])Utils.CopyArray(mySet.SpecialBonus[SpecialID()].Index, new int[mySet.SpecialBonus[SpecialID()].Index.Length + 1]);
+                    mySet.SpecialBonus[SpecialID()].Name = (string[]) Utils.CopyArray(mySet.SpecialBonus[SpecialID()].Name,new string[mySet.SpecialBonus[SpecialID()].Name.Length + 1]);
+                    mySet.SpecialBonus[SpecialID()].Index = (int[]) Utils.CopyArray(mySet.SpecialBonus[SpecialID()].Index,new int[mySet.SpecialBonus[SpecialID()].Index.Length + 1]);
                     mySet.SpecialBonus[SpecialID()].Name[mySet.SpecialBonus[SpecialID()].Name.Length - 1] = DatabaseAPI.Database.Power[index].FullName;
                     mySet.SpecialBonus[SpecialID()].Index[mySet.SpecialBonus[SpecialID()].Index.Length - 1] = index;
                 }
+
                 DisplayBonus();
                 DisplayBonusText();
             }
@@ -607,7 +831,7 @@ namespace Hero_Designer
 
         void udMaxLevel_Leave(object sender, EventArgs e)
         {
-            SetMaxLevel((int)Math.Round(Conversion.Val(udMaxLevel.Text)));
+            SetMaxLevel((int) Math.Round(Conversion.Val(udMaxLevel.Text)));
             mySet.LevelMax = Convert.ToInt32(Decimal.Subtract(udMaxLevel.Value, new Decimal(1)));
         }
 
@@ -621,7 +845,7 @@ namespace Hero_Designer
 
         void udMinLevel_Leave(object sender, EventArgs e)
         {
-            SetMinLevel((int)Math.Round(Conversion.Val(udMinLevel.Text)));
+            SetMinLevel((int) Math.Round(Conversion.Val(udMinLevel.Text)));
             mySet.LevelMin = Convert.ToInt32(Decimal.Subtract(udMinLevel.Value, new Decimal(1)));
         }
 

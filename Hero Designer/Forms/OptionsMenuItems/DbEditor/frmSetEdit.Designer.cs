@@ -20,6 +20,7 @@ namespace Hero_Designer
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -31,7 +32,7 @@ namespace Hero_Designer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
+            this.components = (System.ComponentModel.IContainer) new System.ComponentModel.Container();
             this.btnNoImage = new System.Windows.Forms.Button();
             this.gbBasic = new System.Windows.Forms.GroupBox();
             this.txtInternal = new System.Windows.Forms.TextBox();
@@ -85,20 +86,20 @@ namespace Hero_Designer
             this.btnNoImage.TabIndex = 2;
             this.btnNoImage.Text = "Clear Image";
             this.btnNoImage.Click += new System.EventHandler(btnNoImage_Click);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.txtInternal);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label5);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.cbSetType);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label1);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label7);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label6);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.udMinLevel);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.udMaxLevel);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.txtDesc);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label4);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.txtNameShort);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label3);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.txtNameFull);
-            this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label2);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.txtInternal);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label5);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.cbSetType);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label1);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label7);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label6);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.udMinLevel);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.udMaxLevel);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.txtDesc);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label4);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.txtNameShort);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label3);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.txtNameFull);
+            this.gbBasic.Controls.Add((System.Windows.Forms.Control) this.Label2);
 
             this.gbBasic.Location = new System.Drawing.Point(96, 8);
             this.gbBasic.Name = "gbBasic";
@@ -158,31 +159,43 @@ namespace Hero_Designer
             this.udMinLevel.Location = new System.Drawing.Point(64, 126);
             System.Decimal num = new System.Decimal(new int[4]
             {
-        53,
-        0,
-        0,
-        0
+                53, 0, 0, 0
             });
             this.udMinLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            num = new System.Decimal(new int[4]
+            {
+                1, 0, 0, 0
+            });
             this.udMinLevel.Minimum = num;
             this.udMinLevel.Name = "udMinLevel";
 
             this.udMinLevel.Size = new System.Drawing.Size(36, 20);
             this.udMinLevel.TabIndex = 4;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            num = new System.Decimal(new int[4]
+            {
+                1, 0, 0, 0
+            });
             this.udMinLevel.Value = num;
 
             this.udMaxLevel.Location = new System.Drawing.Point(64, 150);
-            num = new System.Decimal(new int[4] { 53, 0, 0, 0 });
+            num = new System.Decimal(new int[4]
+            {
+                53, 0, 0, 0
+            });
             this.udMaxLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            num = new System.Decimal(new int[4]
+            {
+                1, 0, 0, 0
+            });
             this.udMaxLevel.Minimum = num;
             this.udMaxLevel.Name = "udMaxLevel";
 
             this.udMaxLevel.Size = new System.Drawing.Size(36, 20);
             this.udMaxLevel.TabIndex = 5;
-            num = new System.Decimal(new int[4] { 53, 0, 0, 0 });
+            num = new System.Decimal(new int[4]
+            {
+                53, 0, 0, 0
+            });
             this.udMaxLevel.Value = num;
 
             this.txtDesc.Location = new System.Drawing.Point(100, 102);
@@ -240,7 +253,7 @@ namespace Hero_Designer
             this.btnImage.Text = "ImageName";
             this.btnImage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImage.Click += new System.EventHandler(btnImage_Click);
-            this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.lvEnh);
+            this.GroupBox2.Controls.Add((System.Windows.Forms.Control) this.lvEnh);
 
             this.GroupBox2.Location = new System.Drawing.Point(6, 216);
             this.GroupBox2.Name = "GroupBox2";
@@ -251,8 +264,7 @@ namespace Hero_Designer
             this.GroupBox2.Text = "Enhancements belonging to this set:";
             this.lvEnh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[2]
             {
-        this.ColumnHeader1,
-        this.ColumnHeader2
+                this.ColumnHeader1, this.ColumnHeader2
             });
             this.lvEnh.FullRowSelect = true;
             this.lvEnh.LargeImageList = this.ilEnh;
@@ -293,13 +305,13 @@ namespace Hero_Designer
             this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.ImagePicker.Filter = "PNG Images|*.png";
             this.ImagePicker.Title = "Select Image File";
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.btnPaste);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.txtAlternate);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.lvBonusList);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.lstBonus);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.Label16);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.cbSlotCount);
-            this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.rtbBonus);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.btnPaste);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.txtAlternate);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.lvBonusList);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.lstBonus);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.Label16);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.cbSlotCount);
+            this.GroupBox3.Controls.Add((System.Windows.Forms.Control) this.rtbBonus);
 
             this.GroupBox3.Location = new System.Drawing.Point(348, 8);
             this.GroupBox3.Name = "GroupBox3";
@@ -326,8 +338,7 @@ namespace Hero_Designer
             this.txtAlternate.TextChanged += new System.EventHandler(txtAlternate_TextChanged);
             this.lvBonusList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[2]
             {
-        this.ColumnHeader3,
-        this.ColumnHeader4
+                this.ColumnHeader3, this.ColumnHeader4
             });
             this.lvBonusList.FullRowSelect = true;
             this.lvBonusList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -362,14 +373,16 @@ namespace Hero_Designer
             this.Label16.Text = "Bonus for slotting:";
             this.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbSlotCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSlotCount.Items.AddRange(new object[5]
+            /*this.cbSlotCount.Items.AddRange(new object[5]
             {
-         "2",
-         "3",
-         "4",
-         "5",
-         "6"
-            });
+                "2", "3", "4", "5", "6"
+            });*/
+
+            this.cbSlotCount.Items.AddRange(new object[10]
+                {
+                    "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"
+                }
+            );
 
             this.cbSlotCount.Location = new System.Drawing.Point(110, 281);
             this.cbSlotCount.Name = "cbSlotCount";
@@ -419,24 +432,24 @@ namespace Hero_Designer
             this.rbIfAny.TabIndex = 103;
             this.rbIfAny.TabStop = true;
             this.rbIfAny.Text = "Any";
-            this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
+            this.AcceptButton = (System.Windows.Forms.IButtonControl) this.btnOK;
 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.CancelButton = (System.Windows.Forms.IButtonControl)this.btnCancel;
+            this.CancelButton = (System.Windows.Forms.IButtonControl) this.btnCancel;
 
             this.ClientSize = new System.Drawing.Size(989, 482);
-            this.Controls.Add((System.Windows.Forms.Control)this.Label27);
-            this.Controls.Add((System.Windows.Forms.Control)this.rbIfPlayer);
-            this.Controls.Add((System.Windows.Forms.Control)this.rbIfCritter);
-            this.Controls.Add((System.Windows.Forms.Control)this.rbIfAny);
-            this.Controls.Add((System.Windows.Forms.Control)this.GroupBox3);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnCancel);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnOK);
-            this.Controls.Add((System.Windows.Forms.Control)this.GroupBox2);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnNoImage);
-            this.Controls.Add((System.Windows.Forms.Control)this.gbBasic);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnImage);
-            this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.Controls.Add((System.Windows.Forms.Control) this.Label27);
+            this.Controls.Add((System.Windows.Forms.Control) this.rbIfPlayer);
+            this.Controls.Add((System.Windows.Forms.Control) this.rbIfCritter);
+            this.Controls.Add((System.Windows.Forms.Control) this.rbIfAny);
+            this.Controls.Add((System.Windows.Forms.Control) this.GroupBox3);
+            this.Controls.Add((System.Windows.Forms.Control) this.btnCancel);
+            this.Controls.Add((System.Windows.Forms.Control) this.btnOK);
+            this.Controls.Add((System.Windows.Forms.Control) this.GroupBox2);
+            this.Controls.Add((System.Windows.Forms.Control) this.btnNoImage);
+            this.Controls.Add((System.Windows.Forms.Control) this.gbBasic);
+            this.Controls.Add((System.Windows.Forms.Control) this.btnImage);
+            this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte) 0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -452,6 +465,7 @@ namespace Hero_Designer
             this.GroupBox3.PerformLayout();
             this.ResumeLayout(false);
         }
+
         #endregion
 
         Button btnCancel;

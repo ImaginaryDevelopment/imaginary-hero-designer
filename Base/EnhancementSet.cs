@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 public class EnhancementSet
 {
@@ -9,7 +10,7 @@ public class EnhancementSet
     public string ShortName;
     public string Desc;
     public string Image;
-    public BonusItem[] Bonus = new BonusItem[5];
+    public BonusItem[] Bonus = new BonusItem[11];
     public BonusItem[] SpecialBonus = new BonusItem[6];
     public string Uid = string.Empty;
     public Enums.eSetType SetType;
