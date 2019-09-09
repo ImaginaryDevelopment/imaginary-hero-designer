@@ -10,7 +10,7 @@ public class EnhancementSet
     public string ShortName;
     public string Desc;
     public string Image;
-    public BonusItem[] Bonus = new BonusItem[11];
+    public BonusItem[] Bonus = new BonusItem[5];
     public BonusItem[] SpecialBonus = new BonusItem[6];
     public string Uid = string.Empty;
     public Enums.eSetType SetType;
@@ -21,6 +21,7 @@ public class EnhancementSet
 
     public void InitBonus()
     {
+        Array.Resize(ref Bonus, 11);
         for (int index = 0; index <= Bonus.Length - 1; ++index)
         {
             Bonus[index].Special = -1;
