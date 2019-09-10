@@ -240,7 +240,7 @@ public class Build
         string text;
         if (!iSetMin & !iSetMax)
             text = "Really set all placed Invention and Set enhancements to level " + newVal + 1 +
-                   "?\n\nNote: Enahncements which are not available at the default level will be set to the closest value.";
+                   "?\n\nNote: Enhancements which are not available at the default level will be set to the closest value.";
         else if (iSetMin)
         {
             newVal = 0;
@@ -338,7 +338,7 @@ public class Build
                     Level = lvlIdx, HID = powerIdx
                 };
                 string appendText = string.Empty;
-                string choiceText = power.Chosen ? "Added" : "Recieved";
+                string choiceText = power.Chosen ? "Added" : "Received";
                 if (power.Slots.Length > 0)
                 {
                     historyMap.SID = 0;
