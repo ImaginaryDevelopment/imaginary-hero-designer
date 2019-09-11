@@ -61,7 +61,7 @@ namespace midsControls
         public clsDrawX(Control iTarget)
         {
             InterfaceMode = 0;
-            VillainColor = false;
+            //VillainColor = false;
             ScaleValue = 1f;
             Scaling = false;
             vcCols = 3;
@@ -103,11 +103,11 @@ namespace midsControls
 
         void DrawSplit()
         {
-            Pen pen = VillainColor ? new Pen(Color.Maroon, 2f) : new Pen(Color.Blue, 2f);
+            Pen pen = new Pen(Color.SlateGray, 2f);
             checked
             {
-                int iValue = 4 + vcRowsPowers * (SzPower.Height + 17) - 4;
-                bxBuffer.Graphics.DrawLine(pen, 0, ScaleDown(iValue), ScaleDown(PowerPosition(15).X + SzPower.Width + 7), ScaleDown(iValue));
+                int iValue = 4 + vcRowsPowers * (SzPower.Height + 18) - 10;
+                bxBuffer.Graphics.DrawLine(pen, 2, ScaleDown(iValue), ScaleDown(PowerPosition(15).X + SzPower.Width + 195), ScaleDown(iValue));
             }
         }
 
@@ -1002,14 +1002,14 @@ namespace midsControls
 
         public void ColourSwitch()
         {
-            bool useHeroColors = true;
+            /*bool useHeroColors = true;
             if (MidsContext.Character != null)
                 useHeroColors = MidsContext.Character.IsHero();
             if (MidsContext.Config.DisableVillainColours)
                 useHeroColors = true;
 
-            VillainColor = !useHeroColors;
-            pColorMatrix = new ColorMatrix(useHeroColors ? heroMatrix : villainMatrix);
+            VillainColor = !useHeroColors;*/
+            pColorMatrix = new ColorMatrix(heroMatrix);
             if (pImageAttributes == null)
                 pImageAttributes = new ImageAttributes();
             pImageAttributes.SetColorMatrix(pColorMatrix);
@@ -1017,7 +1017,7 @@ namespace midsControls
 
         public static ImageAttributes GetRecolourIa(bool hero)
         {
-            var colorMatrix = new ColorMatrix(hero ? heroMatrix : villainMatrix);
+            var colorMatrix = new ColorMatrix(heroMatrix);
             ImageAttributes imageAttributes = new ImageAttributes();
             imageAttributes.SetColorMatrix(colorMatrix);
             return imageAttributes;
@@ -1778,7 +1778,7 @@ namespace midsControls
 
         public ImageAttributes pImageAttributes;
 
-        bool VillainColor;
+        //bool VillainColor;
 
         float ScaleValue;
 

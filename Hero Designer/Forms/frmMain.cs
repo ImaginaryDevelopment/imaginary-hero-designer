@@ -175,7 +175,7 @@ namespace Hero_Designer
             dvAnchored = new DataView();
             Controls.Add(dvAnchored);
             dvAnchored.BackColor = Color.Black;
-            dvAnchored.DrawVillain = false;
+            //dvAnchored.DrawVillain = false;
             dvAnchored.Floating = false;
             dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
 
@@ -1185,7 +1185,7 @@ namespace Hero_Designer
             SetTitleBar();
             Application.DoEvents();
             GetBestDamageValues();
-            UpdateColours();
+            //UpdateColours();
             FloatUpdate(true);
             return true;
         }
@@ -1319,7 +1319,7 @@ namespace Hero_Designer
             FloatingDataForm.dvFloat.Init();
             FloatingDataForm.dvFloat.SetFontData();
             myDataView.BackColor = BackColor;
-            myDataView.DrawVillain = !MainModule.MidsController.Toon.IsHero();
+            //myDataView.DrawVillain = !MainModule.MidsController.Toon.IsHero();
             dvAnchored.Visible = false;
             pnlGFX.Select();
             FloatingDataForm.Show();
@@ -4178,7 +4178,7 @@ namespace Hero_Designer
             myDataView = dvAnchored;
             myDataView.Init();
             myDataView.BackColor = BackColor;
-            myDataView.DrawVillain = !MainModule.MidsController.Toon.IsHero();
+            //myDataView.DrawVillain = !MainModule.MidsController.Toon.IsHero();
             dvAnchored.Visible = true;
             NoResizeEvent = true;
             OnResizeEnd(new EventArgs());
@@ -5047,22 +5047,12 @@ namespace Hero_Designer
 
         void UpdateColours(bool skipDraw = false)
         {
-            myDataView.DrawVillain = !MidsContext.Character.IsHero();
+            //myDataView.DrawVillain = !MidsContext.Character.IsHero();
             bool draw;
-            if (myDataView.DrawVillain)
-            {
-                draw = I9Picker.ForeColor.R != byte.MaxValue;
-                BackColor = Color.FromArgb(0, 0, 0);
-                lblATLocked.BackColor = Color.FromArgb(byte.MaxValue, 128, 128);
-                I9Picker.ForeColor = Color.FromArgb(byte.MaxValue, 0, 0);
-            }
-            else
-            {
-                draw = I9Picker.ForeColor.R != 96;
+            draw = I9Picker.ForeColor.R != 96;
                 BackColor = Color.FromArgb(0, 0, 0);
                 lblATLocked.BackColor = Color.FromArgb(128, 128, byte.MaxValue);
                 I9Picker.ForeColor = Color.FromArgb(96, 48, byte.MaxValue);
-            }
 
             I9Picker.BackColor = BackColor;
             I9Popup.BackColor = Color.Black;
@@ -5316,16 +5306,10 @@ namespace Hero_Designer
             iList.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb(byte.MaxValue, 0, 0));
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-            if (myDataView.DrawVillain)
-            {
-                iList.ScrollBarColor = Color.FromArgb(byte.MaxValue, 0, 0);
-                iList.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            }
-            else
-            {
-                iList.ScrollBarColor = Color.FromArgb(64, 64, byte.MaxValue);
-                iList.ScrollButtonColor = Color.FromArgb(32, 32, byte.MaxValue);
-            }
+
+            iList.ScrollBarColor = Color.FromArgb(64, 64, byte.MaxValue);
+            iList.ScrollButtonColor = Color.FromArgb(32, 32, byte.MaxValue);
+
         }
 
         void UpdateOtherFormsFonts()
