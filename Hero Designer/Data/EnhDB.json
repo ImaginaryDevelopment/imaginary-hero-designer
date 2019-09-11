@@ -54922,6 +54922,7 @@
       "Schedule": 4
     },
     {
+      "IsModified": true,
       "StaticIndex": 1252,
       "Name": "Damage/Endurance/Interrupt",
       "ShortName": "Dmg/End/Int",
@@ -54968,6 +54969,7 @@
       "Schedule": 4
     },
     {
+      "IsModified": true,
       "StaticIndex": 1253,
       "Name": "Accuracy/Endurance/Recharge",
       "ShortName": "Acc/End/Rech",
@@ -54979,17 +54981,40 @@
       "ImageIdx": 1253,
       "nIDSet": 215,
       "UIDSet": "Experienced_Marksman",
-      "Effect": [],
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 1,
+            "SubID": -1
+          },
+          "Multiplier": 0.5
+        },
+        {
+          "Enhance": {
+            "ID": 5,
+            "SubID": -1
+          },
+          "Multiplier": 0.5
+        },
+        {
+          "Enhance": {
+            "ID": 14,
+            "SubID": -1
+          },
+          "Multiplier": 0.5
+        }
+      ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
       "RecipeName": "",
       "RecipeIDX": -1,
       "UID": "Crafted_Experienced_Marksman_B",
-      "LongName": "Experienced Marksman: Accuracy/Endurance/Recharge",
-      "Schedule": -1
+      "HasEnhEffect": true,
+      "LongName": "Experienced Marksman: Accuracy/Endurance/Recharge"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1254,
       "Name": "Range/Fast Snipe",
       "ShortName": "Rng/FSnp",
@@ -55001,17 +55026,28 @@
       "ImageIdx": 1254,
       "nIDSet": 215,
       "UIDSet": "Experienced_Marksman",
-      "Effect": [],
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 13,
+            "SubID": -1
+          },
+          "Schedule": 1,
+          "Multiplier": 0.625
+        }
+      ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
       "RecipeName": "",
       "RecipeIDX": -1,
       "UID": "Crafted_Experienced_Marksman_C",
+      "HasEnhEffect": true,
       "LongName": "Experienced Marksman: Range/Fast Snipe",
-      "Schedule": -1
+      "Schedule": 1
     },
     {
+      "IsModified": true,
       "StaticIndex": 1255,
       "Name": "Accuracy/Damage",
       "ShortName": "Acc/Dmg",
@@ -55023,17 +55059,33 @@
       "ImageIdx": 1255,
       "nIDSet": 215,
       "UIDSet": "Experienced_Marksman",
-      "Effect": [],
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 1,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        },
+        {
+          "Enhance": {
+            "ID": 2,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        }
+      ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
       "RecipeName": "",
       "RecipeIDX": -1,
       "UID": "Crafted_Experienced_Marksman_D",
-      "LongName": "Experienced Marksman: Accuracy/Damage",
-      "Schedule": -1
+      "HasEnhEffect": true,
+      "LongName": "Experienced Marksman: Accuracy/Damage"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1256,
       "Name": "Damage/Recharge",
       "ShortName": "Dmg/Rech",
@@ -55045,17 +55097,33 @@
       "ImageIdx": 1256,
       "nIDSet": 215,
       "UIDSet": "Experienced_Marksman",
-      "Effect": [],
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 2,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        },
+        {
+          "Enhance": {
+            "ID": 14,
+            "SubID": -1
+          },
+          "Multiplier": 0.625
+        }
+      ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
       "RecipeName": "",
       "RecipeIDX": -1,
       "UID": "Crafted_Experienced_Marksman_E",
-      "LongName": "Experienced Marksman: Damage/Recharge",
-      "Schedule": -1
+      "HasEnhEffect": true,
+      "LongName": "Experienced Marksman: Damage/Recharge"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1257,
       "Name": "Damage/Interrupt/Range/Recharge",
       "ShortName": "Dmg/Int/Rng/Rech",
@@ -55067,15 +55135,47 @@
       "ImageIdx": 1257,
       "nIDSet": 215,
       "UIDSet": "Experienced_Marksman",
-      "Effect": [],
+      "Effect": [
+        {
+          "Enhance": {
+            "ID": 2,
+            "SubID": -1
+          },
+          "Multiplier": 0.4375
+        },
+        {
+          "Enhance": {
+            "ID": 9,
+            "SubID": -1
+          },
+          "Schedule": 2,
+          "Multiplier": 0.4375
+        },
+        {
+          "Enhance": {
+            "ID": 13,
+            "SubID": -1
+          },
+          "Schedule": 1,
+          "Multiplier": 0.4375
+        },
+        {
+          "Enhance": {
+            "ID": 14,
+            "SubID": -1
+          },
+          "Multiplier": 0.4375
+        }
+      ],
       "EffectChance": 1.0,
       "LevelMin": 9,
       "LevelMax": 49,
       "RecipeName": "",
       "RecipeIDX": -1,
       "UID": "Crafted_Experienced_Marksman_F",
+      "HasEnhEffect": true,
       "LongName": "Experienced Marksman: Damage/Interrupt/Range/Recharge",
-      "Schedule": -1
+      "Schedule": 4
     }
   ],
   "EnhancementSets": [

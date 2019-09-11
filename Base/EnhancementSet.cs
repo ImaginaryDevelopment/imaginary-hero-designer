@@ -31,6 +31,7 @@ public class EnhancementSet
         }
         for (int index = 0; index <= SpecialBonus.Length - 1; ++index)
         {
+            //Array.Resize(ref SpecialBonus, 13);
             SpecialBonus[index].Special = -1;
             SpecialBonus[index].AltString = string.Empty;
             SpecialBonus[index].Name = new string[0];

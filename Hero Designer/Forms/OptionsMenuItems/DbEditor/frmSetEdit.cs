@@ -752,7 +752,7 @@ namespace Hero_Designer
         public bool isBonus()
         {
             var num0 = mySet.Enhancements.Length;
-            var num1 = num0 + num0 - 1;
+            var num1 = num0 + num0 - 2;
             return cbSlotCount.SelectedIndex > -1 & cbSlotCount.SelectedIndex < num1;
         }
 
@@ -760,7 +760,9 @@ namespace Hero_Designer
         {
             var num0 = mySet.Enhancements.Length;
             var num1 = num0 + num0 - 1;
-            return cbSlotCount.SelectedIndex >= num1 & cbSlotCount.SelectedIndex < num1 + num0;
+            var num2 = num1 - 1;
+            var num3 = num1 + num0 - 1;
+            return cbSlotCount.SelectedIndex >= num2 & cbSlotCount.SelectedIndex < num3;
         }
 
         void lstBonus_DoubleClick(object sender, EventArgs e)
@@ -883,7 +885,9 @@ namespace Hero_Designer
 
         public int SpecialID()
         {
-            return cbSlotCount.SelectedIndex - (mySet.Enhancements.Length - 1);
+            var num1 = mySet.Enhancements.Length;
+            var num2 = num1 + num1 - 2;
+            return cbSlotCount.SelectedIndex - num2;
         }
 
         void txtAlternate_TextChanged(object sender, EventArgs e)
