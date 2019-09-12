@@ -182,6 +182,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Malice_of_the_Corruptor_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

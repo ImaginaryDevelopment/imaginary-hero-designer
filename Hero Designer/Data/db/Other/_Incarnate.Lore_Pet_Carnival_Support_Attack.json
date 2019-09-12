@@ -82,8 +82,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -151,7 +151,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Carnival_Support_Attack",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     }
   ]

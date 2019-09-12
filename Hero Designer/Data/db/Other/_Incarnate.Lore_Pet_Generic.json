@@ -374,6 +374,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -455,6 +456,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -641,6 +643,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -964,6 +967,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1287,6 +1291,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1404,6 +1409,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1625,6 +1631,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Generic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

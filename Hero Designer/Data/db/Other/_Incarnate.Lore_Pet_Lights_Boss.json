@@ -86,8 +86,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 81.32995,
-          "MagPercent": 81.32995,
+          "Mag": 39.76128,
+          "MagPercent": 39.76128,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -120,8 +120,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -155,7 +155,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -220,8 +220,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -324,8 +324,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -359,7 +359,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -426,8 +426,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5369034,
-          "MagPercent": 37.5369034,
+          "Mag": 18.35136,
+          "MagPercent": 18.35136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -459,8 +459,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -493,8 +493,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -599,7 +599,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 3.25
     },
     {
@@ -667,8 +667,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -700,8 +700,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -735,7 +735,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 3.06993747
     }
   ]

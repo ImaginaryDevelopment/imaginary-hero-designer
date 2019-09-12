@@ -534,6 +534,7 @@
         }
       ],
       "FullSetName": "Boosts.Hydra_DeBuff_Accuracy",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

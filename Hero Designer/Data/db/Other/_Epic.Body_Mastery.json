@@ -88,8 +88,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.192,
-          "MagPercent": 119.200005,
+          "Mag": 1.49,
+          "MagPercent": 149.0,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -122,7 +122,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -196,8 +196,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": 0.05,
-          "MagPercent": 5.0,
+          "Mag": 0.04,
+          "MagPercent": 4.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -368,7 +368,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -464,8 +464,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -497,8 +497,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -533,8 +533,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 92.3574142,
-          "MagPercent": 92.3574142,
+          "Mag": 50.7965622,
+          "MagPercent": 50.7965622,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -567,8 +567,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 92.3574142,
-          "MagPercent": 92.3574142,
+          "Mag": 50.7965622,
+          "MagPercent": 50.7965622,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -603,8 +603,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "Damage",
@@ -638,8 +638,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 0.1,
           "Reward": "",
@@ -785,7 +785,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -934,6 +934,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1055,8 +1056,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.68306,
-          "MagPercent": 16.68306,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1088,8 +1089,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.7027321,
-          "MagPercent": 36.7027321,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1122,8 +1123,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.5311165,
-          "MagPercent": 17.5311165,
+          "Mag": 9.642111,
+          "MagPercent": 9.642111,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1156,8 +1157,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 39.020565,
-          "MagPercent": 39.020565,
+          "Mag": 21.4613037,
+          "MagPercent": 21.4613037,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1261,8 +1262,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 56.55112,
-          "MagPercent": 56.55112,
+          "Mag": 31.1031075,
+          "MagPercent": 31.1031075,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -1297,8 +1298,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 55.0540962,
-          "MagPercent": 55.0540962,
+          "Mag": 30.2797451,
+          "MagPercent": 30.2797451,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "Damage",
@@ -1332,8 +1333,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 55.0540962,
-          "MagPercent": 55.0540962,
+          "Mag": 30.2797451,
+          "MagPercent": 30.2797451,
           "InherentSpecial": true,
           "BaseProbability": 0.1,
           "Reward": "",
@@ -1479,7 +1480,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.37995839
     }

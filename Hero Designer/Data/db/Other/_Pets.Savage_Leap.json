@@ -81,6 +81,7 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.Savage_Leap",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

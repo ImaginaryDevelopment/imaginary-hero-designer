@@ -146,6 +146,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Rooting_Grasp_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

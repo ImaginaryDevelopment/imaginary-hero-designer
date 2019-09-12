@@ -163,7 +163,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Archery_Snipe",
-      "CastTime": 4.67,
+      "CastTime": 4.884,
       "AoEModifier": 1.0
     },
     {
@@ -307,7 +307,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Archery_Snipe",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     }
   ]

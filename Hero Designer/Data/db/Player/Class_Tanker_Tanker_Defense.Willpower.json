@@ -89,8 +89,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -120,8 +120,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -153,8 +153,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -187,8 +187,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -221,8 +221,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -255,8 +255,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -289,8 +289,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -323,8 +323,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -357,8 +357,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -391,8 +391,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -424,6 +424,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -494,8 +495,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1575,
-          "MagPercent": 15.75,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -529,8 +530,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1575,
-          "MagPercent": 15.75,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -565,8 +566,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -601,8 +602,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1575,
-          "MagPercent": 15.75,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -636,8 +637,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1575,
-          "MagPercent": 15.75,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -671,8 +672,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -705,7 +706,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -831,6 +832,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1243,8 +1245,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.09,
+          "MagPercent": 9.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1279,8 +1281,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.09,
+          "MagPercent": 9.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2042,7 +2044,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2198,8 +2200,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.05,
+          "MagPercent": -5.0,
           "Duration": 1.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2378,8 +2380,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 2.502459,
-          "MagPercent": 2.502459,
+          "Mag": 1.37635207,
+          "MagPercent": 1.37635207,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2409,7 +2411,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2502,6 +2504,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2571,8 +2574,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0231000017,
-          "MagPercent": 2.31000018,
+          "Mag": 0.0297000017,
+          "MagPercent": 2.97000027,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2607,8 +2610,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0231000017,
-          "MagPercent": 2.31000018,
+          "Mag": 0.0297000017,
+          "MagPercent": 2.97000027,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2644,8 +2647,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2681,8 +2684,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2718,8 +2721,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2755,8 +2758,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2792,8 +2795,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0231000017,
-          "MagPercent": 2.31000018,
+          "Mag": 0.0297000017,
+          "MagPercent": 2.97000027,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2828,8 +2831,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0231000017,
-          "MagPercent": 2.31000018,
+          "Mag": 0.0297000017,
+          "MagPercent": 2.97000027,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2864,8 +2867,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2900,8 +2903,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2936,8 +2939,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2972,8 +2975,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.091,
-          "MagPercent": 9.099999,
+          "Mag": 0.117,
+          "MagPercent": 11.7,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3111,7 +3114,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3348,8 +3351,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3383,8 +3386,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3418,8 +3421,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3453,8 +3456,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3488,8 +3491,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3523,8 +3526,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3558,8 +3561,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3593,8 +3596,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3628,8 +3631,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3,
-          "MagPercent": 30.0000019,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3695,8 +3698,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3732,8 +3735,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3769,8 +3772,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3806,8 +3809,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3843,8 +3846,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3880,8 +3883,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3917,8 +3920,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3954,8 +3957,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3991,8 +3994,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4197,7 +4200,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4269,8 +4272,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4302,8 +4305,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4336,8 +4339,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4370,8 +4373,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4404,8 +4407,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4438,8 +4441,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4472,8 +4475,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4506,8 +4509,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5145,7 +5148,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Willpower",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     }

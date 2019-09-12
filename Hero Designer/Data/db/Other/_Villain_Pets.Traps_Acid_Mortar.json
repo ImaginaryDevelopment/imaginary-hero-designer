@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625615,
-          "MagPercent": 0.625615,
+          "Mag": 0.305856,
+          "MagPercent": 0.305856,
           "Duration": 20.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -120,8 +120,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -154,8 +154,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -188,8 +188,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -222,8 +222,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -256,8 +256,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -290,8 +290,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -324,8 +324,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -358,8 +358,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -392,8 +392,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -426,6 +426,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Acid_Mortar",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -1829,6 +1830,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Acid_Mortar",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

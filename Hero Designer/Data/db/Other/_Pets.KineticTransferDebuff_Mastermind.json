@@ -361,6 +361,7 @@
         }
       ],
       "FullSetName": "Pets.KineticTransferDebuff_Mastermind",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     }
   ]

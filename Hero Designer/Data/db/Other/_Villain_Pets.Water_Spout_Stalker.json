@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -162,7 +162,7 @@
           "Probability": 0.04,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 0.04,
           "Reward": "",
           "EffectId": "Stun",
@@ -236,8 +236,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.105000004,
-          "MagPercent": -10.5,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -270,6 +270,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout_Stalker",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -453,6 +454,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout_Stalker",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -534,6 +536,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout_Stalker",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -618,6 +621,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout_Stalker",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -703,6 +707,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout_Stalker",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

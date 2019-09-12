@@ -421,7 +421,7 @@
         }
       ],
       "FullSetName": "Pets.LightningStorm_Controller",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.75
     },
     {
@@ -506,6 +506,7 @@
         }
       ],
       "FullSetName": "Pets.LightningStorm_Controller",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -656,6 +657,7 @@
         }
       ],
       "FullSetName": "Pets.LightningStorm_Controller",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -89,8 +89,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -151,6 +151,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -599,7 +600,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -1088,7 +1089,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -1577,7 +1578,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -1765,7 +1766,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -1819,8 +1820,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1849,6 +1850,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2036,7 +2038,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -2090,8 +2092,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2120,6 +2122,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2173,8 +2176,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2203,6 +2206,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2255,8 +2259,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2317,6 +2321,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2400,6 +2405,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2662,7 +2668,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -2752,7 +2758,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -2805,8 +2811,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2867,6 +2873,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2986,7 +2993,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -3435,7 +3442,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -3519,6 +3526,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3572,8 +3580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3602,6 +3610,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3685,6 +3694,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3947,7 +3957,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     }
   ]

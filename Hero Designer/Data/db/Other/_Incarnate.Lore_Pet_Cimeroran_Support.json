@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 96.3807,
-          "MagPercent": 96.3807,
+          "Mag": 107.0897,
+          "MagPercent": 107.0897,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -115,7 +115,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Support",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 4.75
     },
     {
@@ -180,8 +180,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 188.906174,
-          "MagPercent": 188.906174,
+          "Mag": 209.895813,
+          "MagPercent": 209.895813,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -211,7 +211,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Support",
-      "CastTime": 2.27,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     }
   ]

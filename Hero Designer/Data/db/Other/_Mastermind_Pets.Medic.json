@@ -244,6 +244,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -342,7 +343,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -439,7 +440,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "AoEModifier": 1.0
     },
     {
@@ -579,7 +580,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic",
-      "CastTime": 2.2,
+      "CastTime": 2.376,
       "AoEModifier": 1.0
     },
     {
@@ -801,6 +802,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

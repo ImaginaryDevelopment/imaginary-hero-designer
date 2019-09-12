@@ -384,6 +384,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Impervium_Armor_A",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

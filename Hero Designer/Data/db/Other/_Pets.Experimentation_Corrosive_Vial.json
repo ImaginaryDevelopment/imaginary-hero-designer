@@ -417,6 +417,7 @@
         }
       ],
       "FullSetName": "Pets.Experimentation_Corrosive_Vial",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

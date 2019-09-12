@@ -282,6 +282,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Miracle_D",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -95,8 +95,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -130,8 +130,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -166,8 +166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -202,8 +202,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -238,8 +238,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -273,8 +273,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -308,8 +308,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -343,8 +343,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -377,7 +377,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -471,6 +471,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -541,8 +542,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -576,8 +577,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -612,8 +613,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -648,8 +649,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -752,8 +753,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -787,8 +788,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -822,8 +823,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -857,8 +858,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -891,7 +892,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -962,8 +963,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1273,8 +1274,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1545,7 +1546,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1605,11 +1606,11 @@
       "DescLong": "You can tap the dark essence of the Netherworld to drain a small amount of life essence from a nearby enemy, thus increasing your regeneration rate. Damage: Minor, Recharge: Slow",
       "SortOverride": true,
       "SetTypes": [
-        0,
         4,
         9,
         29,
-        44
+        44,
+        45
       ],
       "Level": 16,
       "VariableName": "",
@@ -1623,8 +1624,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.12204,
-          "MagPercent": 11.12204,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1655,8 +1656,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1889,7 +1890,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.93,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -2030,8 +2031,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2067,8 +2068,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2104,8 +2105,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2141,8 +2142,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2178,8 +2179,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2215,8 +2216,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2252,8 +2253,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2289,8 +2290,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2326,8 +2327,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2363,8 +2364,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2400,8 +2401,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2436,8 +2437,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2472,8 +2473,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2508,8 +2509,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2544,8 +2545,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2580,8 +2581,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2616,8 +2617,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2652,8 +2653,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2688,8 +2689,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2724,8 +2725,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2898,7 +2899,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2977,7 +2978,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Fear",
@@ -3047,7 +3048,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 3.9336,
+          "Duration": 4.917,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Fear",
@@ -3081,7 +3082,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3157,7 +3158,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -3190,8 +3191,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3259,7 +3260,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3340,8 +3341,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3374,7 +3375,7 @@
           "Probability": 1.0,
           "Mag": 30.0,
           "MagPercent": 30.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -3411,7 +3412,7 @@
           "Probability": 1.0,
           "Mag": 30.0,
           "MagPercent": 30.0,
-          "Duration": 2.384,
+          "Duration": 2.98,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -3446,8 +3447,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 289.1421,
-          "MagPercent": 289.1421,
+          "Mag": 353.3958,
+          "MagPercent": 353.3958,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -3615,7 +3616,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Dark_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 4.75
     }

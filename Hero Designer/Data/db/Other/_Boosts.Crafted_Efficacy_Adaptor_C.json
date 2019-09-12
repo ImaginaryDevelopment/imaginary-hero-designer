@@ -214,6 +214,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Efficacy_Adaptor_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

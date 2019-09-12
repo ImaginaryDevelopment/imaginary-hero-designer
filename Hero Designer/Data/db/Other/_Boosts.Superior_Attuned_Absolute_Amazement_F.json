@@ -109,6 +109,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Superior_Attuned_Absolute_Amazement_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -326,6 +326,7 @@
         }
       ],
       "FullSetName": "Pets.Chain_Jolt_Controller_Jump3",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

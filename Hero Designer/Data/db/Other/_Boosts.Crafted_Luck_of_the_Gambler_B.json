@@ -496,6 +496,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Luck_of_the_Gambler_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -288,6 +288,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Blessing_of_the_Zephyr_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

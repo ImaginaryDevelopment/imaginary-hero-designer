@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 97.31785,
-          "MagPercent": 97.31785,
+          "Mag": 53.5248,
+          "MagPercent": 53.5248,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.70765,
-          "MagPercent": 41.70765,
+          "Mag": 22.9392,
+          "MagPercent": 22.9392,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -158,8 +158,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -227,8 +227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -363,7 +363,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Dark_Melee_Assassins_Strike",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -436,8 +436,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 107.4389,
-          "MagPercent": 107.4389,
+          "Mag": 59.09138,
+          "MagPercent": 59.09138,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -469,8 +469,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 46.0452461,
-          "MagPercent": 46.0452461,
+          "Mag": 25.3248768,
+          "MagPercent": 25.3248768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -502,8 +502,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 153.484146,
-          "MagPercent": 153.484146,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -535,8 +535,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 67.12818,
-          "MagPercent": 67.12818,
+          "Mag": 36.9204865,
+          "MagPercent": 36.9204865,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -569,8 +569,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.76938,
-          "MagPercent": 28.76938,
+          "Mag": 15.8231544,
+          "MagPercent": 15.8231544,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -602,8 +602,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 95.89757,
-          "MagPercent": 95.89757,
+          "Mag": 52.7436447,
+          "MagPercent": 52.7436447,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -665,7 +665,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Dark_Melee_Assassins_Strike",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     }
   ]

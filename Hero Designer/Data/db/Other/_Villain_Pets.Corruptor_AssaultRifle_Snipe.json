@@ -94,8 +94,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -163,8 +163,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 115.0775,
-          "MagPercent": 115.0775,
+          "Mag": 56.26007,
+          "MagPercent": 56.26007,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -234,8 +234,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -271,8 +271,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 115.0775,
-          "MagPercent": 115.0775,
+          "Mag": 56.26007,
+          "MagPercent": 56.26007,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -307,7 +307,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corruptor_AssaultRifle_Snipe",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -386,8 +386,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -455,8 +455,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -526,8 +526,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -563,8 +563,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -599,7 +599,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corruptor_AssaultRifle_Snipe",
-      "CastTime": 3.67,
+      "CastTime": 3.828,
       "AoEModifier": 1.0
     }
   ]

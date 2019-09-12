@@ -110,6 +110,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -193,6 +194,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -277,6 +279,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -361,6 +364,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -445,6 +449,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -529,6 +534,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -613,6 +619,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -785,7 +792,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -1037,7 +1044,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Boss_2",
-      "CastTime": 1.23,
+      "CastTime": 1.452,
       "AoEModifier": 3.25
     }
   ]

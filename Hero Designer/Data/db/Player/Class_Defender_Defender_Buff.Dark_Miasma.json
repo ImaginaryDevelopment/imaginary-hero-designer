@@ -137,8 +137,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.0375,
+          "MagPercent": -3.75000024,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -173,8 +173,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -210,8 +210,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -247,8 +247,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -284,8 +284,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -321,8 +321,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -358,8 +358,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -395,8 +395,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -432,8 +432,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -505,8 +505,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -2.7853,
-          "MagPercent": -278.53,
+          "Mag": -2.98425,
+          "MagPercent": -298.425018,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -541,8 +541,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -578,8 +578,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -615,8 +615,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -652,8 +652,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -689,8 +689,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -726,8 +726,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -763,8 +763,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -800,8 +800,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -836,7 +836,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -943,7 +943,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1018,8 +1018,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1053,8 +1053,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1089,8 +1089,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1125,8 +1125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1161,8 +1161,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1197,8 +1197,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1233,8 +1233,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1269,8 +1269,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1305,8 +1305,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.105000004,
-          "MagPercent": -10.5,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1340,8 +1340,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1376,8 +1376,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1412,8 +1412,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1448,8 +1448,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1484,8 +1484,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1520,8 +1520,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1556,8 +1556,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1592,8 +1592,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.28,
-          "MagPercent": -28.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1627,7 +1627,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1887,8 +1887,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2138,7 +2138,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2285,8 +2285,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2321,8 +2321,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2357,8 +2357,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2393,8 +2393,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2429,8 +2429,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2465,8 +2465,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2501,8 +2501,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2537,8 +2537,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2573,8 +2573,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2609,8 +2609,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2679,8 +2679,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2714,8 +2714,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2749,8 +2749,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2784,8 +2784,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.211,
-          "MagPercent": 121.1,
+          "Mag": 1.2975,
+          "MagPercent": 129.75,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2820,8 +2820,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -4.844,
-          "MagPercent": -4.844,
+          "Mag": -5.19,
+          "MagPercent": -5.19,
           "Duration": 2.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2856,8 +2856,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.6954,
-          "MagPercent": 169.54,
+          "Mag": 1.8165,
+          "MagPercent": 181.65,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2891,7 +2891,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -3006,8 +3006,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.105000004,
-          "MagPercent": -10.5,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3116,7 +3116,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 3.414927
     },
@@ -3261,7 +3261,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3699,7 +3699,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 1.03,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3813,7 +3813,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Dark_Miasma",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 1.0
     }

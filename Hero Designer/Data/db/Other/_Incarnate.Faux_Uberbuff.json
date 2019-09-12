@@ -68,6 +68,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Faux_Uberbuff",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

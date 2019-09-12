@@ -218,8 +218,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.175,
-          "MagPercent": -17.5,
+          "Mag": -0.25,
+          "MagPercent": -25.0,
           "Duration": 0.45,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -315,6 +315,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickOil_Corruptor",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

@@ -94,8 +94,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -165,8 +165,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -235,7 +235,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.53,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -305,8 +305,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -341,8 +341,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -378,8 +378,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -414,8 +414,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -623,7 +623,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -693,8 +693,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -729,8 +729,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -766,8 +766,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -803,8 +803,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -839,8 +839,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -875,8 +875,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0315,
-          "MagPercent": 3.15,
+          "Mag": 0.0405,
+          "MagPercent": 4.05,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1678,6 +1678,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2187,8 +2188,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2460,7 +2461,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2555,7 +2556,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2627,8 +2628,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 301.189758,
-          "MagPercent": 301.189758,
+          "Mag": 200.793243,
+          "MagPercent": 200.793243,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2659,8 +2660,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2694,7 +2695,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2961,8 +2962,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2995,8 +2996,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3029,8 +3030,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3063,8 +3064,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3097,8 +3098,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3131,8 +3132,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3165,8 +3166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3199,8 +3200,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3232,6 +3233,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3311,7 +3313,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Sleep",
@@ -3385,8 +3387,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 15.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3422,7 +3424,7 @@
           "Probability": 0.5,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 23.84,
+          "Duration": 29.8,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -3565,7 +3567,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.862474
     },
@@ -3642,8 +3644,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3676,8 +3678,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3745,8 +3747,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4084,7 +4086,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Ninjitsu",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     }

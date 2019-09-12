@@ -418,6 +418,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Blood_Mandate_D",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

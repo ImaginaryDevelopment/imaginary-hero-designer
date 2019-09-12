@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 93.8422546,
-          "MagPercent": 93.8422546,
+          "Mag": 45.8784,
+          "MagPercent": 45.8784,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -150,7 +150,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Drones_Boss",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -215,8 +215,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 51.30043,
-          "MagPercent": 51.30043,
+          "Mag": 25.0801926,
+          "MagPercent": 25.0801926,
           "Duration": 0.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -284,7 +284,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Drones_Boss",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -352,8 +352,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 66.94081,
-          "MagPercent": 66.94081,
+          "Mag": 32.726593,
+          "MagPercent": 32.726593,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -418,7 +418,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Drones_Boss",
-      "CastTime": 3.5,
+      "CastTime": 3.696,
       "AoEModifier": 2.73993444
     }
   ]

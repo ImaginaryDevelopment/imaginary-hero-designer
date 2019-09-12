@@ -496,6 +496,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Luck_of_the_Gambler_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

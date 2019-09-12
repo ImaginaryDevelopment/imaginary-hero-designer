@@ -181,6 +181,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Absolute_Amazement_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -122,8 +122,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -159,8 +159,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -200,8 +200,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.27316,
-          "MagPercent": 36.27316,
+          "Mag": 17.733532,
+          "MagPercent": 17.733532,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -238,8 +238,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.13658,
-          "MagPercent": 18.13658,
+          "Mag": 8.866766,
+          "MagPercent": 8.866766,
           "Duration": 9.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -707,7 +707,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -917,8 +917,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -952,8 +952,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -989,8 +989,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 234.860886,
-          "MagPercent": 234.860886,
+          "Mag": 114.820793,
+          "MagPercent": 114.820793,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1024,8 +1024,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 117.430443,
-          "MagPercent": 117.430443,
+          "Mag": 57.4103966,
+          "MagPercent": 57.4103966,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1198,7 +1198,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1427,8 +1427,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1462,8 +1462,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1499,8 +1499,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 29.35198,
-          "MagPercent": 29.35198,
+          "Mag": 14.3498459,
+          "MagPercent": 14.3498459,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1535,8 +1535,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 14.6756763,
-          "MagPercent": 14.6756763,
+          "Mag": 7.17477,
+          "MagPercent": 7.17477,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1677,7 +1677,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1824,8 +1824,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1859,8 +1859,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1896,8 +1896,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.3669167,
-          "MagPercent": 41.3669167,
+          "Mag": 20.22381,
+          "MagPercent": 20.22381,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1932,8 +1932,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.6834583,
-          "MagPercent": 20.6834583,
+          "Mag": 10.1119051,
+          "MagPercent": 10.1119051,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2149,7 +2149,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2362,7 +2362,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2475,7 +2475,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2770,7 +2770,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3171,7 +3171,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3318,7 +3318,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Electric_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     }

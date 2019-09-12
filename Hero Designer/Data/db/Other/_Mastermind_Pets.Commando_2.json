@@ -194,7 +194,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando_2",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 2.15995646
     },
     {
@@ -279,6 +279,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -417,7 +418,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando_2",
-      "CastTime": 6.0,
+      "CastTime": 6.204,
       "AoEModifier": 2.99724317
     }
   ]

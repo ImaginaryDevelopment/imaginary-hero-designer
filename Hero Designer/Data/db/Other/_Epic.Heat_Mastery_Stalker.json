@@ -133,7 +133,7 @@
         }
       ],
       "FullSetName": "Epic.Heat_Mastery_Stalker",
-      "CastTime": 3.07,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -210,8 +210,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 68.81765,
-          "MagPercent": 68.81765,
+          "Mag": 33.64416,
+          "MagPercent": 33.64416,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -245,8 +245,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -283,8 +283,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 198.1479,
-          "MagPercent": 198.1479,
+          "Mag": 96.87224,
+          "MagPercent": 96.87224,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -317,7 +317,7 @@
         }
       ],
       "FullSetName": "Epic.Heat_Mastery_Stalker",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -411,8 +411,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -445,8 +445,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.3053474,
-          "MagPercent": 56.3053474,
+          "Mag": 27.5270386,
+          "MagPercent": 27.5270386,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -480,8 +480,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.7543221,
-          "MagPercent": 10.7543221,
+          "Mag": 5.25766468,
+          "MagPercent": 5.25766468,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -515,8 +515,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 66.06182,
-          "MagPercent": 66.06182,
+          "Mag": 32.2968674,
+          "MagPercent": 32.2968674,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -551,8 +551,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 2.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -588,7 +588,7 @@
         }
       ],
       "FullSetName": "Epic.Heat_Mastery_Stalker",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -685,7 +685,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 14.3040009,
+          "Duration": 17.8800011,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -757,8 +757,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.40415,
-          "MagPercent": 27.40415,
+          "Mag": 15.072278,
+          "MagPercent": 15.072278,
           "Duration": 4.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -794,8 +794,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 4.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -944,8 +944,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 2.502459,
-          "MagPercent": 2.502459,
+          "Mag": 1.37635207,
+          "MagPercent": 1.37635207,
           "Duration": 4.2,
           "Reward": "",
           "EffectId": "FieryEmbrace",
@@ -978,7 +978,7 @@
         }
       ],
       "FullSetName": "Epic.Heat_Mastery_Stalker",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1095,8 +1095,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -1298,7 +1298,7 @@
         }
       ],
       "FullSetName": "Epic.Heat_Mastery_Stalker",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     }

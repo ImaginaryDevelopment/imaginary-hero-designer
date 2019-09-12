@@ -85,8 +85,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -118,8 +118,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -154,7 +154,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "AoEModifier": 1.0
     },
     {
@@ -222,8 +222,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 162.6599,
-          "MagPercent": 162.6599,
+          "Mag": 79.52256,
+          "MagPercent": 79.52256,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -255,8 +255,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -360,7 +360,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 4.2,
+      "CastTime": 4.356,
       "AoEModifier": 2.557239
     },
     {
@@ -457,7 +457,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 3.93,
+      "CastTime": 4.092,
       "AoEModifier": 1.0
     },
     {
@@ -519,7 +519,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 3.83,
+      "CastTime": 4.092,
       "AoEModifier": 1.0
     }
   ]

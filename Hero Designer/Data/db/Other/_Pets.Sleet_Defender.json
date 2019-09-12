@@ -1647,6 +1647,7 @@
         }
       ],
       "FullSetName": "Pets.Sleet_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -1734,6 +1735,7 @@
         }
       ],
       "FullSetName": "Pets.Sleet_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

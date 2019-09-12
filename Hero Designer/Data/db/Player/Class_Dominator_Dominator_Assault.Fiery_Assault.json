@@ -97,8 +97,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.7861633,
-          "MagPercent": 36.7861633,
+          "Mag": 17.984333,
+          "MagPercent": 17.984333,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -131,8 +131,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.1303215,
-          "MagPercent": 18.1303215,
+          "Mag": 8.863707,
+          "MagPercent": 8.863707,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -166,8 +166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.855042,
-          "MagPercent": 106.855042,
+          "Mag": 52.2402039,
+          "MagPercent": 52.2402039,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -231,7 +231,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -304,8 +304,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.789362,
-          "MagPercent": 11.789362,
+          "Mag": 6.484147,
+          "MagPercent": 6.484147,
           "Duration": 4.6,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -369,8 +369,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.3295078,
-          "MagPercent": 15.3295078,
+          "Mag": 8.431227,
+          "MagPercent": 8.431227,
           "Duration": 4.6,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -436,7 +436,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -512,8 +512,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.5984764,
-          "MagPercent": 36.5984764,
+          "Mag": 17.8925762,
+          "MagPercent": 17.8925762,
           "Duration": 2.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -581,8 +581,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 58.9786034,
-          "MagPercent": 58.9786034,
+          "Mag": 28.8339634,
+          "MagPercent": 28.8339634,
           "Duration": 2.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -619,7 +619,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -692,8 +692,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -727,8 +727,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -765,8 +765,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 136.634323,
-          "MagPercent": 136.634323,
+          "Mag": 66.79895,
+          "MagPercent": 66.79895,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -830,7 +830,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -894,8 +894,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.25,
-          "MagPercent": 125.0,
+          "Mag": 0.799999952,
+          "MagPercent": 79.99999,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -929,8 +929,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -965,8 +965,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1001,8 +1001,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1037,8 +1037,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1073,8 +1073,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1109,8 +1109,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1145,8 +1145,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1180,7 +1180,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1254,8 +1254,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.8051,
-          "MagPercent": 27.8051,
+          "Mag": 15.2928,
+          "MagPercent": 15.2928,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1287,8 +1287,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1323,8 +1323,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 74.7401047,
-          "MagPercent": 74.7401047,
+          "Mag": 41.1070442,
+          "MagPercent": 41.1070442,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1387,7 +1387,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1469,8 +1469,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 22.24408,
-          "MagPercent": 22.24408,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1641,7 +1641,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1718,8 +1718,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 222.718933,
-          "MagPercent": 222.718933,
+          "Mag": 108.884735,
+          "MagPercent": 108.884735,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1753,8 +1753,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 14.0763369,
-          "MagPercent": 14.0763369,
+          "Mag": 6.88175964,
+          "MagPercent": 6.88175964,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -1791,8 +1791,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 331.075439,
-          "MagPercent": 331.075439,
+          "Mag": 161.859,
+          "MagPercent": 161.859,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1922,7 +1922,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 4.67,
+      "CastTime": 4.884,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1995,8 +1995,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 142.640213,
-          "MagPercent": 142.640213,
+          "Mag": 69.73517,
+          "MagPercent": 69.73517,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2030,8 +2030,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 14.0763369,
-          "MagPercent": 14.0763369,
+          "Mag": 6.88175964,
+          "MagPercent": 6.88175964,
           "Duration": 4.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -2068,8 +2068,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 138.386032,
-          "MagPercent": 138.386032,
+          "Mag": 67.65534,
+          "MagPercent": 67.65534,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2193,7 +2193,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     }

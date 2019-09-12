@@ -172,6 +172,7 @@
         }
       ],
       "FullSetName": "Pets.Resistance_Rifle",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -338,7 +339,7 @@
         }
       ],
       "FullSetName": "Pets.Resistance_Rifle",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "AoEModifier": 1.0
     },
     {
@@ -465,7 +466,7 @@
         }
       ],
       "FullSetName": "Pets.Resistance_Rifle",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -739,7 +740,7 @@
         }
       ],
       "FullSetName": "Pets.Resistance_Rifle",
-      "CastTime": 2.2,
+      "CastTime": 2.376,
       "AoEModifier": 1.0
     },
     {
@@ -872,7 +873,7 @@
         }
       ],
       "FullSetName": "Pets.Resistance_Rifle",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "AoEModifier": 2.15995646
     }
   ]

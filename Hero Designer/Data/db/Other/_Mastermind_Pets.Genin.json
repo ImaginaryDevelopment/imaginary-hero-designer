@@ -314,6 +314,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Genin",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -448,7 +449,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Genin",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -674,6 +675,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Genin",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -884,7 +886,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Genin",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     }
   ]

@@ -418,6 +418,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Pulverizing_Fisticuffs_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

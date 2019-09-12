@@ -369,6 +369,7 @@
         }
       ],
       "FullSetName": "Boosts.Titan_Accuracy_Mez",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

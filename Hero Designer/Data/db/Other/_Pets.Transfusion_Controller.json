@@ -110,6 +110,7 @@
         }
       ],
       "FullSetName": "Pets.Transfusion_Controller",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

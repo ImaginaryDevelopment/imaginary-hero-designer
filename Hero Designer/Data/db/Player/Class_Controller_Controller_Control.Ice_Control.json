@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -141,8 +141,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -181,8 +181,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.930315,
-          "MagPercent": 28.930315,
+          "Mag": 14.1436987,
+          "MagPercent": 14.1436987,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -219,8 +219,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 14.4648438,
-          "MagPercent": 14.4648438,
+          "Mag": 7.07169628,
+          "MagPercent": 7.07169628,
           "Duration": 9.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -724,7 +724,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -915,8 +915,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -950,8 +950,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -987,8 +987,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 212.832962,
-          "MagPercent": 212.832962,
+          "Mag": 104.0516,
+          "MagPercent": 104.0516,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1022,8 +1022,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.416481,
-          "MagPercent": 106.416481,
+          "Mag": 52.0258,
+          "MagPercent": 52.0258,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1377,7 +1377,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1459,8 +1459,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 5.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1496,8 +1496,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 5.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -1536,8 +1536,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.650919,
-          "MagPercent": 13.650919,
+          "Mag": 6.673778,
+          "MagPercent": 6.673778,
           "Duration": 5.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -1577,8 +1577,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.82545948,
-          "MagPercent": 6.82545948,
+          "Mag": 3.336889,
+          "MagPercent": 3.336889,
           "Duration": 5.2,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -2083,7 +2083,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2506,7 +2506,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2793,7 +2793,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 5.04995537
     },
@@ -2894,7 +2894,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2974,8 +2974,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3008,8 +3008,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3043,8 +3043,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3081,8 +3081,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3235,7 +3235,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -3746,7 +3746,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3855,7 +3855,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Ice_Control",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     }

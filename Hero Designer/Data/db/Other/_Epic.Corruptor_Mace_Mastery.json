@@ -353,7 +353,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mace_Mastery",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -429,8 +429,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -465,8 +465,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -502,8 +502,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1225,
-          "MagPercent": 12.25,
+          "Mag": 0.175,
+          "MagPercent": 17.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -538,8 +538,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.09,
+          "MagPercent": 9.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -575,8 +575,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -611,8 +611,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -647,8 +647,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -683,8 +683,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -719,8 +719,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -755,8 +755,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -791,8 +791,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -827,8 +827,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1111,7 +1111,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mace_Mastery",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1200,8 +1200,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": 0.05,
-          "MagPercent": 5.0,
+          "Mag": 0.04,
+          "MagPercent": 4.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1372,7 +1372,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mace_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1717,7 +1717,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mace_Mastery",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1871,7 +1871,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mace_Mastery",
-      "CastTime": 3.03,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     }

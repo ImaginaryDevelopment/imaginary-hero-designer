@@ -108,8 +108,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 42.263752,
-          "MagPercent": 42.263752,
+          "Mag": 23.2450562,
+          "MagPercent": 23.2450562,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -140,8 +140,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 16.68306,
-          "MagPercent": 16.68306,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "InherentSpecial": true,
           "Reward": "",
           "EffectId": "Damage",
@@ -176,8 +176,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 52.51716,
-          "MagPercent": 52.51716,
+          "Mag": 28.884428,
+          "MagPercent": 28.884428,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -210,8 +210,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 21.4505215,
-          "MagPercent": 21.4505215,
+          "Mag": 11.7977839,
+          "MagPercent": 11.7977839,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -245,8 +245,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 73.96824,
-          "MagPercent": 73.96824,
+          "Mag": 40.682518,
+          "MagPercent": 40.682518,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -281,8 +281,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 42.263752,
-          "MagPercent": 42.263752,
+          "Mag": 23.2450562,
+          "MagPercent": 23.2450562,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -316,8 +316,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 42.263752,
-          "MagPercent": 42.263752,
+          "Mag": 23.2450562,
+          "MagPercent": 23.2450562,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -349,8 +349,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 19.0186882,
-          "MagPercent": 19.0186882,
+          "Mag": 10.4602757,
+          "MagPercent": 10.4602757,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -380,8 +380,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 7.507377,
-          "MagPercent": 7.507377,
+          "Mag": 4.129056,
+          "MagPercent": 4.129056,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -412,7 +412,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -496,8 +496,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.0590172,
-          "MagPercent": 60.0590172,
+          "Mag": 33.0324478,
+          "MagPercent": 33.0324478,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -529,8 +529,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 94.98111,
-          "MagPercent": 94.98111,
+          "Mag": 52.2395935,
+          "MagPercent": 52.2395935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -563,8 +563,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 94.98111,
-          "MagPercent": 94.98111,
+          "Mag": 52.2395935,
+          "MagPercent": 52.2395935,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -599,8 +599,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 60.0590172,
-          "MagPercent": 60.0590172,
+          "Mag": 33.0324478,
+          "MagPercent": 33.0324478,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -634,8 +634,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 60.0590172,
-          "MagPercent": 60.0590172,
+          "Mag": 33.0324478,
+          "MagPercent": 33.0324478,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -667,8 +667,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 27.026556,
-          "MagPercent": 27.026556,
+          "Mag": 14.8646011,
+          "MagPercent": 14.8646011,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -698,7 +698,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -776,8 +776,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.7027321,
-          "MagPercent": 36.7027321,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -809,8 +809,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.7027321,
-          "MagPercent": 36.7027321,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -844,8 +844,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 53.6955376,
-          "MagPercent": 53.6955376,
+          "Mag": 29.5325375,
+          "MagPercent": 29.5325375,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -878,8 +878,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 53.6955376,
-          "MagPercent": 53.6955376,
+          "Mag": 29.5325375,
+          "MagPercent": 29.5325375,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -913,8 +913,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 107.391632,
-          "MagPercent": 107.391632,
+          "Mag": 59.06538,
+          "MagPercent": 59.06538,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -949,8 +949,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -985,8 +985,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 73.4054642,
-          "MagPercent": 73.4054642,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -1020,8 +1020,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 73.4054642,
-          "MagPercent": 73.4054642,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -1053,8 +1053,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 16.5162277,
-          "MagPercent": 16.5162277,
+          "Mag": 9.083923,
+          "MagPercent": 9.083923,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1084,8 +1084,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 16.5162277,
-          "MagPercent": 16.5162277,
+          "Mag": 9.083923,
+          "MagPercent": 9.083923,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1116,7 +1116,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1191,8 +1191,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 87.86412,
-          "MagPercent": 87.86412,
+          "Mag": 48.32525,
+          "MagPercent": 48.32525,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1224,8 +1224,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 101.458031,
-          "MagPercent": 101.458031,
+          "Mag": 55.8019,
+          "MagPercent": 55.8019,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1258,8 +1258,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 101.458031,
-          "MagPercent": 101.458031,
+          "Mag": 55.8019,
+          "MagPercent": 55.8019,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -1294,8 +1294,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 87.86412,
-          "MagPercent": 87.86412,
+          "Mag": 48.32525,
+          "MagPercent": 48.32525,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -1329,8 +1329,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 87.86412,
-          "MagPercent": 87.86412,
+          "Mag": 48.32525,
+          "MagPercent": 48.32525,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -1362,8 +1362,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 39.5388527,
-          "MagPercent": 39.5388527,
+          "Mag": 21.7463627,
+          "MagPercent": 21.7463627,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1393,7 +1393,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1474,8 +1474,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 44.48816,
-          "MagPercent": 44.48816,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1507,8 +1507,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 103.019562,
-          "MagPercent": 103.019562,
+          "Mag": 56.66074,
+          "MagPercent": 56.66074,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1541,8 +1541,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 103.019562,
-          "MagPercent": 103.019562,
+          "Mag": 56.66074,
+          "MagPercent": 56.66074,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -1577,8 +1577,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 44.48816,
-          "MagPercent": 44.48816,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -1612,8 +1612,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 44.48816,
-          "MagPercent": 44.48816,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -1646,8 +1646,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1,
-          "MagPercent": 10.0,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1683,8 +1683,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1720,8 +1720,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1757,8 +1757,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1794,8 +1794,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1831,8 +1831,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1868,8 +1868,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1905,8 +1905,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1942,8 +1942,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1978,8 +1978,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 20.0196724,
-          "MagPercent": 20.0196724,
+          "Mag": 11.0108166,
+          "MagPercent": 11.0108166,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2009,7 +2009,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2223,7 +2223,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2300,8 +2300,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 77.29817,
-          "MagPercent": 77.29817,
+          "Mag": 42.5139847,
+          "MagPercent": 42.5139847,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2368,8 +2368,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 83.20565,
-          "MagPercent": 83.20565,
+          "Mag": 45.763092,
+          "MagPercent": 45.763092,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2402,8 +2402,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 83.20565,
-          "MagPercent": 83.20565,
+          "Mag": 45.763092,
+          "MagPercent": 45.763092,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -2474,8 +2474,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 77.29817,
-          "MagPercent": 77.29817,
+          "Mag": 42.5139847,
+          "MagPercent": 42.5139847,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -2509,8 +2509,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 77.29817,
-          "MagPercent": 77.29817,
+          "Mag": 42.5139847,
+          "MagPercent": 42.5139847,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -2542,8 +2542,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 34.78418,
-          "MagPercent": 34.78418,
+          "Mag": 19.1312943,
+          "MagPercent": 19.1312943,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2573,7 +2573,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2650,8 +2650,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 110.6643,
-          "MagPercent": 110.6643,
+          "Mag": 60.865345,
+          "MagPercent": 60.865345,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2683,8 +2683,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 134.57724,
-          "MagPercent": 134.57724,
+          "Mag": 74.01746,
+          "MagPercent": 74.01746,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2717,8 +2717,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.15,
-          "Mag": 134.57724,
-          "MagPercent": 134.57724,
+          "Mag": 74.01746,
+          "MagPercent": 74.01746,
           "BaseProbability": 0.15,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -2751,8 +2751,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.15,
-          "Mag": 110.6643,
-          "MagPercent": 110.6643,
+          "Mag": 60.865345,
+          "MagPercent": 60.865345,
           "BaseProbability": 0.15,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -2784,8 +2784,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 49.7989349,
-          "MagPercent": 49.7989349,
+          "Mag": 27.3894043,
+          "MagPercent": 27.3894043,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2815,7 +2815,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -2895,8 +2895,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 58.3907051,
-          "MagPercent": 58.3907051,
+          "Mag": 32.11488,
+          "MagPercent": 32.11488,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2928,8 +2928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 44.1472664,
-          "MagPercent": 44.1472664,
+          "Mag": 24.2809887,
+          "MagPercent": 24.2809887,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2962,8 +2962,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 44.1472664,
-          "MagPercent": 44.1472664,
+          "Mag": 24.2809887,
+          "MagPercent": 24.2809887,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -3069,8 +3069,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 58.3907051,
-          "MagPercent": 58.3907051,
+          "Mag": 32.11488,
+          "MagPercent": 32.11488,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "MLCrit",
@@ -3104,8 +3104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 58.3907051,
-          "MagPercent": 58.3907051,
+          "Mag": 32.11488,
+          "MagPercent": 32.11488,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "BossCrit",
@@ -3137,8 +3137,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 26.2758179,
-          "MagPercent": 26.2758179,
+          "Mag": 14.4516954,
+          "MagPercent": 14.4516954,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3168,7 +3168,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 2.52997327
     }

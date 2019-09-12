@@ -418,6 +418,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Entropic_Chaos_D",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -176,6 +176,7 @@
         }
       ],
       "FullSetName": "Boosts.Technology_Natural_Snare",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

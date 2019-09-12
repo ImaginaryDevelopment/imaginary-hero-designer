@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -178,8 +178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 21.215229,
-          "MagPercent": 21.215229,
+          "Mag": 10.3718824,
+          "MagPercent": 10.3718824,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -905,7 +905,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -982,8 +982,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1015,8 +1015,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 35.5905266,
-          "MagPercent": 35.5905266,
+          "Mag": 19.5747833,
+          "MagPercent": 19.5747833,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1049,8 +1049,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 112.889259,
-          "MagPercent": 112.889259,
+          "Mag": 62.0890732,
+          "MagPercent": 62.0890732,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1618,7 +1618,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1695,8 +1695,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1728,8 +1728,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 53.385788,
-          "MagPercent": 53.385788,
+          "Mag": 29.362175,
+          "MagPercent": 29.362175,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1762,8 +1762,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 118.359642,
-          "MagPercent": 118.359642,
+          "Mag": 65.09778,
+          "MagPercent": 65.09778,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2362,7 +2362,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2648,8 +2648,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2683,8 +2683,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2718,8 +2718,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2753,8 +2753,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2788,8 +2788,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2823,8 +2823,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2858,8 +2858,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2893,8 +2893,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2928,8 +2928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 6023.795,
+          "Mag": 40.15865,
+          "MagPercent": 4015.865,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2995,7 +2995,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3063,8 +3063,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3098,8 +3098,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3134,8 +3134,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3170,8 +3170,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3206,8 +3206,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3242,8 +3242,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3278,8 +3278,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3314,8 +3314,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3350,8 +3350,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -3385,7 +3385,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3781,7 +3781,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 3.47,
+      "CastTime": 3.696,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4348,7 +4348,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 5.04995537
     },
@@ -4425,8 +4425,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.565938,
-          "MagPercent": 10.565938,
+          "Mag": 5.811264,
+          "MagPercent": 5.811264,
           "Duration": 5.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4462,7 +4462,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -4968,7 +4968,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5392,7 +5392,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 2.1,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.5
     }

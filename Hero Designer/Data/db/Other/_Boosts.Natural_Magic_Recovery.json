@@ -142,6 +142,7 @@
         }
       ],
       "FullSetName": "Boosts.Natural_Magic_Recovery",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

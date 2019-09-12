@@ -208,6 +208,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -404,7 +405,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -600,7 +601,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -767,7 +768,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -964,7 +965,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -1160,7 +1161,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -1326,7 +1327,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -1492,7 +1493,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -1657,7 +1658,7 @@
         }
       ],
       "FullSetName": "Pets.Decoy",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "AoEModifier": 1.0
     }
   ]

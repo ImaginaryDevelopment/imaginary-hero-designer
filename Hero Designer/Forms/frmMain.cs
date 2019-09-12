@@ -165,8 +165,11 @@ namespace Hero_Designer
             tsHelp.Enabled = false;
             tsPatchNotes.Visible = false;
             tsPatchNotes.Enabled = false;
-            tsDonate.Visible = false;
-            tsDonate.Enabled = false;
+            //enable menus
+            tsKoFi.Visible = true;
+            tsKoFi.Enabled = true;
+            tsPatreon.Visible = true;
+            tsPatreon.Enabled = true;
 
             tmrGfx.Tick += tmrGfx_Tick;
             //adding events
@@ -4503,7 +4506,7 @@ namespace Hero_Designer
 
         void tsAdvResetTips_Click(object sender, EventArgs e) => MidsContext.Config.Tips = new Tips();
 
-        void tsBug_Click(object sender, EventArgs e)
+        /*void tsBug_Click(object sender, EventArgs e)
         {
             string at = "ATFailed";
             string pri = "PriFailed";
@@ -4520,7 +4523,7 @@ namespace Hero_Designer
             }
 
             clsXMLUpdate.BugReport(at, pri, sec, string.Empty);
-        }
+        }*/
 
         void tsClearAllEnh_Click(object sender, EventArgs e)
         {
@@ -4558,7 +4561,9 @@ namespace Hero_Designer
             FloatTop(true);
         }
 
-        void tsDonate_Click(object sender, EventArgs e) => clsXMLUpdate.Donate();
+        void tsKoFi_Click(object sender, EventArgs e) => clsXMLUpdate.KoFi();
+        void tsPatreon_Click(object sender, EventArgs e) => clsXMLUpdate.Patreon();
+        void tsBugReport_Click(object sender, EventArgs e) => clsXMLUpdate.BugReport();
 
         void tsDynamic_Click(object sender, EventArgs e)
         {

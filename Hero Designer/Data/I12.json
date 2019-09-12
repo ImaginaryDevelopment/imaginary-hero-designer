@@ -7948,15 +7948,6 @@
       "ClassName": ""
     },
     {
-      "UID": "Pets_Ember_Demon1",
-      "DisplayName": "Ember Demon",
-      "PowersetFullName": [
-        "Mastermind_Pets.Ember_Demon"
-      ],
-      "UpgradePowerFullName": [],
-      "ClassName": "Class_Minion_Pets"
-    },
-    {
       "UID": "Pets_Protector_Bot1",
       "DisplayName": "Protector Bot",
       "PowersetFullName": [
@@ -7964,6 +7955,36 @@
       ],
       "UpgradePowerFullName": [],
       "ClassName": "Class_Minion_Pets"
+    },
+    {
+      "UID": "Pets_Ember_Demon",
+      "DisplayName": "Ember Demon",
+      "PowersetFullName": [
+        "Mastermind_Pets.Ember_Demon",
+        "Mastermind_Pets.Ember_Demon_2",
+        "Mastermind_Pets.Ember_Demon_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Hellfire_Gargoyle",
+      "DisplayName": "Hellfire Gargoyle",
+      "PowersetFullName": [
+        "Mastermind_Pets.Hellfire_Gargoyle",
+        "Mastermind_Pets.Hellfire_Gargoyle_2",
+        "Mastermind_Pets.Hellfire_Gargoyle_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
     }
   ]
 }

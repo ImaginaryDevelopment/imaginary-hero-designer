@@ -88,8 +88,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 75.07381,
-          "MagPercent": 75.07381,
+          "Mag": 36.70272,
+          "MagPercent": 36.70272,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -191,7 +191,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 4.93995428
     },
     {
@@ -256,8 +256,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 73.4054642,
-          "MagPercent": 73.4054642,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -287,7 +287,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -352,8 +352,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 82.5811844,
-          "MagPercent": 82.5811844,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -385,8 +385,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -600,7 +600,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "AoEModifier": 1.0
     },
     {
@@ -738,7 +738,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "AoEModifier": 1.0
     }
   ]

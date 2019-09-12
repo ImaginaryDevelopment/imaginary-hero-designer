@@ -351,6 +351,7 @@
         }
       ],
       "FullSetName": "Pets.RainofFire",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -438,6 +439,7 @@
         }
       ],
       "FullSetName": "Pets.RainofFire",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

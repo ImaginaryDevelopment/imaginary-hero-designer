@@ -147,6 +147,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Volley_of_Velocity_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

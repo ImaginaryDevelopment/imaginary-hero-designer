@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Pets.Burn",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -162,7 +163,7 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.Burn",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 2.2
     }
   ]

@@ -88,8 +88,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.785428,
-          "MagPercent": 7.785428,
+          "Mag": 4.281984,
+          "MagPercent": 4.281984,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -122,7 +122,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 2.384,
+          "Duration": 2.98,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -260,6 +260,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Chain_Stun_Dominator_Jump1",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

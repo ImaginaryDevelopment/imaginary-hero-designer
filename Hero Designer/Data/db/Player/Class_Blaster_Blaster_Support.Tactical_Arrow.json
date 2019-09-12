@@ -519,8 +519,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 8.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -557,8 +557,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 19.3846817,
-          "MagPercent": 19.3846817,
+          "Mag": 9.476949,
+          "MagPercent": 9.476949,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -890,7 +890,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1290,7 +1290,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.16,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1756,8 +1756,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 3.12807512,
-          "MagPercent": 3.12807512,
+          "Mag": 1.52928007,
+          "MagPercent": 1.52928007,
           "Duration": 4.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2088,7 +2088,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2156,8 +2156,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2191,8 +2191,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2227,8 +2227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2263,8 +2263,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2299,8 +2299,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2335,8 +2335,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2371,8 +2371,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2407,8 +2407,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2443,8 +2443,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2512,7 +2512,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2621,8 +2621,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.049,
-          "MagPercent": -4.9,
+          "Mag": -0.0525000021,
+          "MagPercent": -5.25,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2656,8 +2656,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.049,
-          "MagPercent": -4.9,
+          "Mag": -0.0525000021,
+          "MagPercent": -5.25,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3008,7 +3008,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -3315,7 +3315,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3576,6 +3576,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3795,8 +3796,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -4109,7 +4110,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -4213,8 +4214,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4250,8 +4251,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4287,8 +4288,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4324,8 +4325,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4361,8 +4362,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4398,8 +4399,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4435,8 +4436,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4472,8 +4473,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4509,8 +4510,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4546,8 +4547,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4653,8 +4654,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4689,8 +4690,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4725,8 +4726,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4761,8 +4762,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4797,8 +4798,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4833,8 +4834,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4869,8 +4870,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4905,8 +4906,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4941,8 +4942,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4977,8 +4978,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5251,6 +5252,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     }

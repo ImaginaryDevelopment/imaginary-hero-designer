@@ -303,7 +303,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Jonin_3",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 1.24965537
     },
     {
@@ -632,7 +632,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Jonin_3",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.862474
     },
     {
@@ -720,6 +720,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Jonin_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -803,6 +804,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Jonin_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1246,7 +1248,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Jonin_3",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     }
   ]

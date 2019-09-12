@@ -350,6 +350,7 @@
         }
       ],
       "FullSetName": "Pets.SiphonPower_Mastermind",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

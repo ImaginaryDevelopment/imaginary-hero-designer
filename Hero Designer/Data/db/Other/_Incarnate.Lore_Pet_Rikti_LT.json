@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -116,8 +116,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.7952633,
-          "MagPercent": 17.7952633,
+          "Mag": 9.787392,
+          "MagPercent": 9.787392,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -219,7 +219,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -284,8 +284,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -316,8 +316,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 35.5905266,
-          "MagPercent": 35.5905266,
+          "Mag": 19.5747833,
+          "MagPercent": 19.5747833,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -419,7 +419,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -484,8 +484,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 82.5811844,
-          "MagPercent": 82.5811844,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -519,7 +519,7 @@
           "Probability": 0.05,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "Stun",
@@ -556,7 +556,7 @@
           "Probability": 0.05,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 2.384,
+          "Duration": 2.98,
           "BaseProbability": 0.05,
           "Reward": "",
           "EffectId": "Stun",
@@ -591,7 +591,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     }
   ]

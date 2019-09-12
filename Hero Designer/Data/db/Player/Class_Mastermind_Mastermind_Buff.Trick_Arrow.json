@@ -515,7 +515,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -625,8 +625,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.0375,
+          "MagPercent": -3.75000024,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -660,8 +660,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.0375,
+          "MagPercent": -3.75000024,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -732,7 +732,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -837,7 +837,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.16,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1297,7 +1297,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1407,7 +1407,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.16,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1486,8 +1486,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625615,
-          "MagPercent": 0.625615,
+          "Mag": 0.305856,
+          "MagPercent": 0.305856,
           "Duration": 20.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1522,8 +1522,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1556,8 +1556,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1590,8 +1590,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1624,8 +1624,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1658,8 +1658,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1692,8 +1692,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1726,8 +1726,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1760,8 +1760,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1794,8 +1794,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1828,7 +1828,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1930,7 +1930,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.16,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2042,7 +2042,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.16,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2335,8 +2335,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -7.26600027,
-          "MagPercent": -726.600037,
+          "Mag": -7.785,
+          "MagPercent": -778.5,
           "Duration": 15.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2371,8 +2371,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2440,7 +2440,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Trick_Arrow",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 6.25
     }

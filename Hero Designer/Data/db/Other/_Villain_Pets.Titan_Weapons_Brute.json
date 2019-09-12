@@ -112,8 +112,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 40.5398331,
-          "MagPercent": 40.5398331,
+          "Mag": 22.2969017,
+          "MagPercent": 22.2969017,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -145,8 +145,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -181,8 +181,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -217,8 +217,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 112.820862,
-          "MagPercent": 112.820862,
+          "Mag": 62.0514526,
+          "MagPercent": 62.0514526,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -250,8 +250,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 18.2429256,
-          "MagPercent": 18.2429256,
+          "Mag": 10.0336056,
+          "MagPercent": 10.0336056,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -458,7 +458,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 2.2,
+      "CastTime": 2.376,
       "AoEModifier": 1.61999214
     },
     {
@@ -541,8 +541,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 144.364075,
-          "MagPercent": 144.364075,
+          "Mag": 79.4002151,
+          "MagPercent": 79.4002151,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -574,8 +574,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.879341,
-          "MagPercent": 120.879341,
+          "Mag": 66.48361,
+          "MagPercent": 66.48361,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -678,8 +678,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 64.96384,
-          "MagPercent": 64.96384,
+          "Mag": 35.7301,
+          "MagPercent": 35.7301,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -820,7 +820,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.61999214
     },
     {
@@ -903,8 +903,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 144.364075,
-          "MagPercent": 144.364075,
+          "Mag": 79.4002151,
+          "MagPercent": 79.4002151,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -936,8 +936,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 166.008118,
-          "MagPercent": 166.008118,
+          "Mag": 91.3044357,
+          "MagPercent": 91.3044357,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -969,8 +969,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 64.96384,
-          "MagPercent": 64.96384,
+          "Mag": 35.7301,
+          "MagPercent": 35.7301,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1248,7 +1248,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 2.7,
+      "CastTime": 2.904,
       "AoEModifier": 1.61999214
     },
     {
@@ -1328,8 +1328,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 100.3208,
-          "MagPercent": 100.3208,
+          "Mag": 55.1764221,
+          "MagPercent": 55.1764221,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1361,8 +1361,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 117.333626,
-          "MagPercent": 117.333626,
+          "Mag": 64.53348,
+          "MagPercent": 64.53348,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1395,8 +1395,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1430,8 +1430,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 45.14436,
-          "MagPercent": 45.14436,
+          "Mag": 24.82939,
+          "MagPercent": 24.82939,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1572,7 +1572,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "AoEModifier": 1.0
     },
     {
@@ -1652,8 +1652,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 100.3208,
-          "MagPercent": 100.3208,
+          "Mag": 55.1764221,
+          "MagPercent": 55.1764221,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1685,8 +1685,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 159.453354,
-          "MagPercent": 159.453354,
+          "Mag": 87.69932,
+          "MagPercent": 87.69932,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1719,8 +1719,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1754,8 +1754,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 45.14436,
-          "MagPercent": 45.14436,
+          "Mag": 24.82939,
+          "MagPercent": 24.82939,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1962,7 +1962,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -2048,8 +2048,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 40.5398331,
-          "MagPercent": 40.5398331,
+          "Mag": 22.2969017,
+          "MagPercent": 22.2969017,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2081,8 +2081,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2117,8 +2117,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2153,8 +2153,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 67.69263,
-          "MagPercent": 67.69263,
+          "Mag": 37.2309341,
+          "MagPercent": 37.2309341,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2186,8 +2186,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 18.2429256,
-          "MagPercent": 18.2429256,
+          "Mag": 10.0336056,
+          "MagPercent": 10.0336056,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2328,7 +2328,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.61999214
     },
     {
@@ -2408,8 +2408,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 178.619949,
-          "MagPercent": 178.619949,
+          "Mag": 98.2409439,
+          "MagPercent": 98.2409439,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2442,8 +2442,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2478,8 +2478,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 146.66745,
-          "MagPercent": 146.66745,
+          "Mag": 80.66707,
+          "MagPercent": 80.66707,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2512,8 +2512,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2546,8 +2546,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2580,8 +2580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2614,8 +2614,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2648,8 +2648,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2682,8 +2682,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2716,8 +2716,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2750,8 +2750,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2783,8 +2783,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 80.37898,
-          "MagPercent": 80.37898,
+          "Mag": 44.2084274,
+          "MagPercent": 44.2084274,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2925,7 +2925,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 1.3,
+      "CastTime": 1.452,
       "AoEModifier": 1.0
     },
     {
@@ -3005,8 +3005,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 178.619949,
-          "MagPercent": 178.619949,
+          "Mag": 98.2409439,
+          "MagPercent": 98.2409439,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3039,8 +3039,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3075,8 +3075,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 199.316971,
-          "MagPercent": 199.316971,
+          "Mag": 109.6243,
+          "MagPercent": 109.6243,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3109,8 +3109,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3143,8 +3143,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3177,8 +3177,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3211,8 +3211,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3245,8 +3245,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3279,8 +3279,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3313,8 +3313,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3347,8 +3347,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3380,8 +3380,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 80.37898,
-          "MagPercent": 80.37898,
+          "Mag": 44.2084274,
+          "MagPercent": 44.2084274,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3588,7 +3588,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 2.3,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -3670,8 +3670,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 79.46697,
-          "MagPercent": 79.46697,
+          "Mag": 43.70682,
+          "MagPercent": 43.70682,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3738,8 +3738,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 80.58641,
-          "MagPercent": 80.58641,
+          "Mag": 44.3225136,
+          "MagPercent": 44.3225136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3807,8 +3807,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 35.76014,
-          "MagPercent": 35.76014,
+          "Mag": 19.66807,
+          "MagPercent": 19.66807,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3949,7 +3949,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.61999214
     },
     {
@@ -4031,8 +4031,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 79.46697,
-          "MagPercent": 79.46697,
+          "Mag": 43.70682,
+          "MagPercent": 43.70682,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -4099,8 +4099,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 134.364243,
-          "MagPercent": 134.364243,
+          "Mag": 73.9003143,
+          "MagPercent": 73.9003143,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -4168,8 +4168,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 35.76014,
-          "MagPercent": 35.76014,
+          "Mag": 19.66807,
+          "MagPercent": 19.66807,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -4376,7 +4376,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Titan_Weapons_Brute",
-      "CastTime": 2.43,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.61999214
     }
   ]

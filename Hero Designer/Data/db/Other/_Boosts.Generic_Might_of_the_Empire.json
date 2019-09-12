@@ -426,6 +426,7 @@
         }
       ],
       "FullSetName": "Boosts.Generic_Might_of_the_Empire",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

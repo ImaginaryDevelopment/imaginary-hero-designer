@@ -389,7 +389,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_3",
-      "CastTime": 3.67,
+      "CastTime": 3.828,
       "AoEModifier": 3.25
     },
     {
@@ -518,7 +518,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_3",
-      "CastTime": 1.6,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -602,6 +602,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

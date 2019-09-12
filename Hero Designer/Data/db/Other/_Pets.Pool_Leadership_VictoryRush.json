@@ -149,6 +149,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     },
     {
@@ -275,6 +276,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     },
     {
@@ -401,6 +403,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     },
     {
@@ -527,6 +530,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     },
     {
@@ -653,6 +657,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     },
     {
@@ -779,6 +784,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Leadership_VictoryRush",
+      "CastTime": 0.132,
       "AoEModifier": 23.5
     }
   ]

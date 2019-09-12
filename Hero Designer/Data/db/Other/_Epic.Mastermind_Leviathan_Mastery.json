@@ -106,8 +106,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.445803,
-          "MagPercent": 8.445803,
+          "Mag": 4.129056,
+          "MagPercent": 4.129056,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -141,8 +141,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -181,8 +181,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.43258,
-          "MagPercent": 13.43258,
+          "Mag": 6.56703424,
+          "MagPercent": 6.56703424,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -220,8 +220,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.494072,
-          "MagPercent": 17.494072,
+          "Mag": 8.552651,
+          "MagPercent": 8.552651,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -330,7 +330,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Leviathan_Mastery",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -412,8 +412,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 43.79305,
-          "MagPercent": 43.79305,
+          "Mag": 21.40992,
+          "MagPercent": 21.40992,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -446,8 +446,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 4.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -484,8 +484,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 61.1401062,
-          "MagPercent": 61.1401062,
+          "Mag": 29.8906956,
+          "MagPercent": 29.8906956,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -519,8 +519,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.2282715,
-          "MagPercent": 12.2282715,
+          "Mag": 5.97826147,
+          "MagPercent": 5.97826147,
           "Duration": 4.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -556,7 +556,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Leviathan_Mastery",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -653,8 +653,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 197.9723,
-          "MagPercent": 197.9723,
+          "Mag": 108.884735,
+          "MagPercent": 108.884735,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -688,7 +688,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -723,8 +723,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 298.826416,
-          "MagPercent": 298.826416,
+          "Mag": 164.354477,
+          "MagPercent": 164.354477,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -865,7 +865,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Leviathan_Mastery",
-      "CastTime": 2.23,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -954,8 +954,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -989,8 +989,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1025,8 +1025,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1061,8 +1061,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1096,8 +1096,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1131,8 +1131,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1166,8 +1166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1201,8 +1201,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1236,8 +1236,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1271,8 +1271,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1306,8 +1306,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1340,7 +1340,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Leviathan_Mastery",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1533,8 +1533,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 47.42162,
-          "MagPercent": 47.42162,
+          "Mag": 23.1838856,
+          "MagPercent": 23.1838856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1568,8 +1568,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.71081,
-          "MagPercent": 23.71081,
+          "Mag": 11.5919428,
+          "MagPercent": 11.5919428,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1607,8 +1607,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.445803,
-          "MagPercent": 8.445803,
+          "Mag": 4.129056,
+          "MagPercent": 4.129056,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1642,8 +1642,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1715,7 +1715,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Leviathan_Mastery",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     }

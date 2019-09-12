@@ -103,6 +103,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -226,7 +227,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -296,6 +297,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -419,7 +421,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -489,6 +491,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 7.75000048
     }
   ]

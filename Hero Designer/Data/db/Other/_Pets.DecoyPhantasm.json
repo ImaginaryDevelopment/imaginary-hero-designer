@@ -186,7 +186,7 @@
         }
       ],
       "FullSetName": "Pets.DecoyPhantasm",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -354,7 +354,7 @@
         }
       ],
       "FullSetName": "Pets.DecoyPhantasm",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 2.37995839
     },
     {
@@ -536,6 +536,7 @@
         }
       ],
       "FullSetName": "Pets.DecoyPhantasm",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -605,7 +606,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Pets.DecoyPhantasm",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -821,6 +822,7 @@
         }
       ],
       "FullSetName": "Pets.DecoyPhantasm",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

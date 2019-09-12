@@ -83,8 +83,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 38.92714,
-          "MagPercent": 38.92714,
+          "Mag": 21.40992,
+          "MagPercent": 21.40992,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -219,6 +219,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Chain_Induction_Jump2",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     }
   ]

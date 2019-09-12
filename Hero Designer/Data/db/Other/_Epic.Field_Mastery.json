@@ -100,8 +100,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -134,8 +134,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 50.049202,
-          "MagPercent": 50.049202,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -169,8 +169,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 39.62958,
-          "MagPercent": 39.62958,
+          "Mag": 19.3744469,
+          "MagPercent": 19.3744469,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -204,8 +204,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 158.518326,
-          "MagPercent": 158.518326,
+          "Mag": 77.49779,
+          "MagPercent": 77.49779,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -308,7 +308,7 @@
         }
       ],
       "FullSetName": "Epic.Field_Mastery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -382,8 +382,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -417,8 +417,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -453,8 +453,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -488,8 +488,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -523,8 +523,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -558,8 +558,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -593,8 +593,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -628,8 +628,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -663,8 +663,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -698,8 +698,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -732,7 +732,7 @@
         }
       ],
       "FullSetName": "Epic.Field_Mastery",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -830,8 +830,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -864,8 +864,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.2905922,
-          "MagPercent": 41.2905922,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -899,8 +899,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.8152027,
-          "MagPercent": 28.8152027,
+          "Mag": 14.0874214,
+          "MagPercent": 14.0874214,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -934,8 +934,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 64.136795,
-          "MagPercent": 64.136795,
+          "Mag": 31.3557453,
+          "MagPercent": 31.3557453,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1039,7 +1039,7 @@
         }
       ],
       "FullSetName": "Epic.Field_Mastery",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -1136,8 +1136,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.28075,
-          "MagPercent": 31.28075,
+          "Mag": 15.2928,
+          "MagPercent": 15.2928,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1170,8 +1170,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.024601,
-          "MagPercent": 25.024601,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1276,8 +1276,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.0375614,
-          "MagPercent": 28.0375614,
+          "Mag": 13.707242,
+          "MagPercent": 13.707242,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1350,7 +1350,7 @@
         }
       ],
       "FullSetName": "Epic.Field_Mastery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1465,8 +1465,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1500,8 +1500,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1536,8 +1536,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1572,8 +1572,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1608,8 +1608,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1644,8 +1644,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1680,8 +1680,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1887,7 +1887,7 @@
         }
       ],
       "FullSetName": "Epic.Field_Mastery",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     }

@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -137,8 +137,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -174,8 +174,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -353,7 +353,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 3.3666203
     },
@@ -423,8 +423,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 127.222527,
-          "MagPercent": 127.222527,
+          "Mag": 141.358414,
+          "MagPercent": 141.358414,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -455,8 +455,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -4.844,
-          "MagPercent": -4.844,
+          "Mag": -5.19,
+          "MagPercent": -5.19,
           "Duration": 60.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -491,8 +491,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -4.844,
-          "MagPercent": -4.844,
+          "Mag": -5.19,
+          "MagPercent": -5.19,
           "Duration": 60.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -527,8 +527,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4844,
-          "MagPercent": 48.44,
+          "Mag": 0.519,
+          "MagPercent": 51.8999977,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -561,8 +561,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4844,
-          "MagPercent": 48.44,
+          "Mag": 0.519,
+          "MagPercent": 51.8999977,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -595,8 +595,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.9688,
-          "MagPercent": 96.88,
+          "Mag": 1.038,
+          "MagPercent": 103.799995,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -631,8 +631,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4844,
-          "MagPercent": 48.44,
+          "Mag": 0.519,
+          "MagPercent": 51.8999977,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -666,8 +666,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.4532,
-          "MagPercent": 145.319992,
+          "Mag": 1.55699992,
+          "MagPercent": 155.7,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -701,8 +701,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.6055,
-          "MagPercent": 60.55,
+          "Mag": 0.64875,
+          "MagPercent": 64.875,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -736,8 +736,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.6055,
-          "MagPercent": 60.55,
+          "Mag": 0.64875,
+          "MagPercent": 64.875,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -770,7 +770,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.27,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1085,7 +1085,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1232,8 +1232,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1268,8 +1268,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1304,8 +1304,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1340,8 +1340,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1376,8 +1376,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1412,8 +1412,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1448,8 +1448,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1484,8 +1484,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1520,8 +1520,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1556,8 +1556,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1626,8 +1626,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1661,8 +1661,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1696,8 +1696,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.13,
-          "MagPercent": 13.0,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1731,8 +1731,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.211,
-          "MagPercent": 121.1,
+          "Mag": 1.2975,
+          "MagPercent": 129.75,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1767,8 +1767,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -4.844,
-          "MagPercent": -4.844,
+          "Mag": -5.19,
+          "MagPercent": -5.19,
           "Duration": 2.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1803,8 +1803,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.6954,
-          "MagPercent": 169.54,
+          "Mag": 1.8165,
+          "MagPercent": 181.65,
           "Duration": 2.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1837,7 +1837,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -1954,7 +1954,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2063,8 +2063,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.225000009,
+          "MagPercent": -22.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2277,7 +2277,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2351,7 +2351,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -2515,7 +2515,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2633,7 +2633,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2746,7 +2746,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Storm_Summoning",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     }

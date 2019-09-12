@@ -146,6 +146,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Touch_of_Death_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -81,8 +81,8 @@
           "ProcsPerMinute": 3.0,
           "CancelOnMiss": true,
           "Probability": 0.5,
-          "Mag": 64.57507,
-          "MagPercent": 64.57507,
+          "Mag": 78.9250641,
+          "MagPercent": 78.9250641,
           "Reward": "",
           "EffectId": "Heal",
           "Special": "",
@@ -180,6 +180,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Panacea_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

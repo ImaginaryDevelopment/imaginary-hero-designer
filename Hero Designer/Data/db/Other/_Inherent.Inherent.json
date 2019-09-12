@@ -414,7 +414,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 15
@@ -545,8 +545,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 210.832825,
-          "MagPercent": 210.832825,
+          "Mag": 140.555267,
+          "MagPercent": 140.555267,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -835,7 +835,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.93,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 13
@@ -1147,8 +1147,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.05,
-          "MagPercent": 5.0,
+          "Mag": 0.04,
+          "MagPercent": 4.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1183,8 +1183,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.15625,
-          "MagPercent": 15.625,
+          "Mag": 0.099999994,
+          "MagPercent": 9.999999,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1219,8 +1219,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.15625,
-          "MagPercent": 15.625,
+          "Mag": 0.099999994,
+          "MagPercent": 9.999999,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1254,7 +1254,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 12
@@ -1739,7 +1739,7 @@
           "Probability": 0.1,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -1776,7 +1776,7 @@
           "Probability": 0.1,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -1888,7 +1888,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
@@ -2179,7 +2179,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 14
@@ -2759,7 +2759,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
@@ -2995,8 +2995,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3030,7 +3030,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
@@ -3160,8 +3160,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3228,7 +3228,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
@@ -3461,8 +3461,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3567,7 +3567,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 9
@@ -3699,8 +3699,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3767,7 +3767,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 3.06993747,
       "DisplayLocation": 8
@@ -4144,7 +4144,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
@@ -4484,7 +4484,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
@@ -4863,7 +4863,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 9
@@ -5209,7 +5209,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 3.06993747,
       "DisplayLocation": 8
@@ -5992,6 +5992,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6480,6 +6481,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6689,6 +6691,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6739,6 +6742,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6970,7 +6974,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 14
@@ -7170,8 +7174,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -7282,7 +7286,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.1,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 12
@@ -7586,8 +7590,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -7624,7 +7628,7 @@
           "Probability": 0.1,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Stun",
@@ -7661,7 +7665,7 @@
           "Probability": 0.1,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Stun",
@@ -7773,7 +7777,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
@@ -8064,7 +8068,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 15
@@ -8295,8 +8299,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -8501,7 +8505,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
@@ -8588,8 +8592,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 527.082031,
-          "MagPercent": 527.082031,
+          "Mag": 351.388184,
+          "MagPercent": 351.388184,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -8619,7 +8623,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 13
@@ -8828,6 +8832,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -9035,6 +9040,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
     },
@@ -9242,6 +9248,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 8
     },
@@ -9458,6 +9465,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -9549,6 +9557,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -9600,6 +9609,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9694,7 +9704,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -9787,7 +9797,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -9839,6 +9849,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10080,6 +10091,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10539,6 +10551,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10784,6 +10797,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10852,8 +10866,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.0196724,
-          "MagPercent": 20.0196724,
+          "Mag": 11.0108166,
+          "MagPercent": 11.0108166,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -10914,8 +10928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.0196724,
-          "MagPercent": 20.0196724,
+          "Mag": 11.0108166,
+          "MagPercent": 11.0108166,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -11089,7 +11103,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -11183,7 +11197,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -12068,7 +12082,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 46.0,
       "DisplayLocation": 3
     },
@@ -12162,7 +12176,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -13047,7 +13061,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 46.0,
       "DisplayLocation": 3
     },
@@ -13135,6 +13149,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14034,7 +14049,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14128,6 +14143,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 46.0
     },
     {
@@ -14217,6 +14233,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14303,6 +14320,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14425,6 +14443,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14509,6 +14528,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14927,6 +14947,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 4
@@ -15061,6 +15082,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15193,6 +15215,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15326,6 +15349,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15458,6 +15482,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15590,6 +15615,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15723,6 +15749,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15855,6 +15882,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15987,6 +16015,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16120,6 +16149,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16252,6 +16282,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16384,6 +16415,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16516,6 +16548,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16648,6 +16681,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16780,6 +16814,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16912,6 +16947,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17044,6 +17080,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17166,6 +17203,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17256,6 +17294,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -17313,8 +17352,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -17482,7 +17521,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -17699,6 +17738,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17752,7 +17792,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -17906,6 +17946,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17999,7 +18040,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -18082,7 +18123,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -18165,7 +18206,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -18243,7 +18284,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -18342,7 +18383,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -19062,6 +19103,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -19151,6 +19193,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19621,6 +19664,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -19798,6 +19842,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 22
@@ -19893,7 +19938,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -19988,7 +20033,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20093,7 +20138,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20197,7 +20242,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20291,7 +20336,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20385,7 +20430,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20480,7 +20525,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20574,7 +20619,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20668,7 +20713,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -20880,6 +20925,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 21
@@ -21058,6 +21104,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 23
@@ -21153,7 +21200,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -21247,7 +21294,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -21424,6 +21471,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 25
@@ -21602,6 +21650,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 24
@@ -21719,7 +21768,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -21772,8 +21821,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -21834,6 +21883,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22030,6 +22080,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22135,7 +22186,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22240,7 +22291,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22345,7 +22396,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22439,7 +22490,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22533,7 +22584,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22627,7 +22678,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -22759,8 +22810,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.0562500022,
+          "MagPercent": -5.625,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -22793,7 +22844,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -22892,8 +22943,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.0562500022,
+          "MagPercent": -5.625,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -22926,7 +22977,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -23126,7 +23177,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -23293,7 +23344,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -23434,8 +23485,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -23468,7 +23519,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 3.07,
+      "CastTime": 3.3,
       "AoEModifier": 1.24149275
     },
     {
@@ -23997,7 +24048,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 10.0,
+      "CastTime": 10.164,
       "AoEModifier": 7.0
     },
     {
@@ -24158,7 +24209,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "AoEModifier": 1.0
     },
     {
@@ -24253,7 +24304,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -24348,7 +24399,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -24523,6 +24574,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -24617,7 +24669,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -24712,7 +24764,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -24797,7 +24849,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -24891,7 +24943,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -24948,8 +25000,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -25268,7 +25320,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -25363,7 +25415,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -25458,7 +25510,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -25563,7 +25615,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -25688,7 +25740,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 5.93,
+      "CastTime": 6.072,
       "AoEModifier": 1.0
     },
     {
@@ -25782,7 +25834,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -25887,7 +25939,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -25981,7 +26033,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -26065,6 +26117,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26146,6 +26199,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26263,7 +26317,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -26641,6 +26695,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -26764,6 +26819,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -26891,6 +26947,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -26947,8 +27004,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -27151,7 +27208,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -27216,8 +27273,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.01875,
+          "MagPercent": 1.87500012,
           "DisplayPercentage": true,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -27247,8 +27304,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27282,8 +27339,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27317,8 +27374,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27352,8 +27409,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27387,8 +27444,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27422,8 +27479,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27457,8 +27514,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27492,8 +27549,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.501476,
-          "MagPercent": 150.1476,
+          "Mag": 0.7340544,
+          "MagPercent": 73.40544,
           "DisplayPercentage": true,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -27526,7 +27583,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -27624,7 +27681,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -27793,7 +27850,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 5.0,
+      "CastTime": 5.148,
       "AoEModifier": 1.0
     },
     {
@@ -28070,7 +28127,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 4
@@ -28164,7 +28221,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 3.33,
+      "CastTime": 3.564,
       "AoEModifier": 1.0
     },
     {
@@ -28256,8 +28313,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0008674265,
-          "MagPercent": 0.0867426544,
+          "Mag": 0.000578284555,
+          "MagPercent": 0.0578284562,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "IgnoreED": true,
@@ -28287,8 +28344,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.00192761433,
-          "MagPercent": 0.192761436,
+          "Mag": 0.00128507672,
+          "MagPercent": 0.128507674,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -28317,6 +28374,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -28383,7 +28441,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -28560,6 +28618,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 1
@@ -28993,7 +29052,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 10.0,
       "DisplayLocation": 3
     },
@@ -29375,6 +29434,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29479,7 +29539,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -30649,6 +30709,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -30701,6 +30762,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30791,6 +30853,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 46.0
     },
     {
@@ -31667,6 +31730,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31758,8 +31822,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.000927664456,
-          "MagPercent": 0.09276645,
+          "Mag": 0.000618443242,
+          "MagPercent": 0.0618443228,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "IgnoreED": true,
@@ -31789,8 +31853,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.00192761456,
-          "MagPercent": 0.192761451,
+          "Mag": 0.001285077,
+          "MagPercent": 0.128507689,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -31819,6 +31883,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -32368,6 +32433,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32916,6 +32982,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33464,6 +33531,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34232,7 +34300,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.0,
+      "CastTime": 6.204,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 2
@@ -34399,6 +34467,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34531,7 +34600,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.0,
+      "CastTime": 17.16,
       "AoEModifier": 1.0
     },
     {
@@ -34667,7 +34736,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.0,
+      "CastTime": 17.16,
       "AoEModifier": 1.0
     },
     {
@@ -34800,7 +34869,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.0,
+      "CastTime": 17.16,
       "AoEModifier": 1.0
     },
     {
@@ -35298,6 +35367,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35806,6 +35876,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36363,6 +36434,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36854,6 +36926,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37316,7 +37389,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 1.0,
       "DisplayLocation": 16
     },
@@ -37547,6 +37620,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37699,7 +37773,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.03,
+      "CastTime": 6.204,
       "AoEModifier": 1.0
     },
     {
@@ -37810,8 +37884,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -37846,8 +37920,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -37882,8 +37956,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -37918,8 +37992,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -37954,8 +38028,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -37990,8 +38064,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -38026,8 +38100,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -38062,8 +38136,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -38098,8 +38172,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -38134,8 +38208,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -38374,6 +38448,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 5
@@ -38517,7 +38592,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 5.93,
+      "CastTime": 6.072,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 5

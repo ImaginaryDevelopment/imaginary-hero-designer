@@ -350,6 +350,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Edict_of_the_Master_E",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

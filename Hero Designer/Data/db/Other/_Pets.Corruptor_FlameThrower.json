@@ -180,6 +180,7 @@
         }
       ],
       "FullSetName": "Pets.Corruptor_FlameThrower",
+      "CastTime": 0.132,
       "AoEModifier": 1.6
     },
     {
@@ -268,6 +269,7 @@
         }
       ],
       "FullSetName": "Pets.Corruptor_FlameThrower",
+      "CastTime": 0.132,
       "AoEModifier": 1.6
     }
   ]

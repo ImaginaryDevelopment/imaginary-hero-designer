@@ -98,8 +98,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 42.54182,
-          "MagPercent": 42.54182,
+          "Mag": 20.7982082,
+          "MagPercent": 20.7982082,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -132,8 +132,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 99.84628,
-          "MagPercent": 99.84628,
+          "Mag": 48.8137,
+          "MagPercent": 48.8137,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -167,8 +167,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 42.54182,
-          "MagPercent": 42.54182,
+          "Mag": 20.7982082,
+          "MagPercent": 20.7982082,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -204,8 +204,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 99.84628,
-          "MagPercent": 99.84628,
+          "Mag": 48.8137,
+          "MagPercent": 48.8137,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -240,7 +240,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -314,8 +314,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -348,8 +348,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.616058,
-          "MagPercent": 106.616058,
+          "Mag": 52.1233673,
+          "MagPercent": 52.1233673,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -383,8 +383,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -420,8 +420,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.616058,
-          "MagPercent": 106.616058,
+          "Mag": 52.1233673,
+          "MagPercent": 52.1233673,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -456,7 +456,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -533,8 +533,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.9309654,
-          "MagPercent": 56.9309654,
+          "Mag": 27.8328972,
+          "MagPercent": 27.8328972,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -567,8 +567,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.2886429,
-          "MagPercent": 60.2886429,
+          "Mag": 29.4744263,
+          "MagPercent": 29.4744263,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -602,8 +602,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.9309654,
-          "MagPercent": 56.9309654,
+          "Mag": 27.8328972,
+          "MagPercent": 27.8328972,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -639,8 +639,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.2886429,
-          "MagPercent": 60.2886429,
+          "Mag": 29.4744263,
+          "MagPercent": 29.4744263,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -675,7 +675,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -749,8 +749,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 122.620544,
-          "MagPercent": 122.620544,
+          "Mag": 59.9477768,
+          "MagPercent": 59.9477768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -783,8 +783,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.82018757,
-          "MagPercent": 7.82018757,
+          "Mag": 3.8232,
+          "MagPercent": 3.8232,
           "Duration": 4.125,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -821,8 +821,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 176.0856,
-          "MagPercent": 176.0856,
+          "Mag": 86.08623,
+          "MagPercent": 86.08623,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -856,8 +856,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 122.620544,
-          "MagPercent": 122.620544,
+          "Mag": 59.9477768,
+          "MagPercent": 59.9477768,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -893,8 +893,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 176.0856,
-          "MagPercent": 176.0856,
+          "Mag": 86.08623,
+          "MagPercent": 86.08623,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -929,7 +929,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -997,8 +997,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1032,8 +1032,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1068,8 +1068,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1104,8 +1104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1140,8 +1140,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1176,8 +1176,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1212,8 +1212,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1248,8 +1248,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1284,8 +1284,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1319,7 +1319,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1398,8 +1398,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1432,8 +1432,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5369034,
-          "MagPercent": 37.5369034,
+          "Mag": 18.35136,
+          "MagPercent": 18.35136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1467,8 +1467,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.10047,
-          "MagPercent": 15.10047,
+          "Mag": 7.38244629,
+          "MagPercent": 7.38244629,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1502,8 +1502,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 30.2015648,
-          "MagPercent": 30.2015648,
+          "Mag": 14.7651987,
+          "MagPercent": 14.7651987,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1608,8 +1608,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.3053474,
-          "MagPercent": 56.3053474,
+          "Mag": 27.5270386,
+          "MagPercent": 27.5270386,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1645,8 +1645,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 45.3020363,
-          "MagPercent": 45.3020363,
+          "Mag": 22.147646,
+          "MagPercent": 22.147646,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1681,7 +1681,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1759,8 +1759,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1793,8 +1793,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1828,8 +1828,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1865,8 +1865,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1967,7 +1967,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 4.67,
+      "CastTime": 4.884,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2044,8 +2044,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2079,7 +2079,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -2152,8 +2152,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2189,8 +2189,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2225,7 +2225,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2372,7 +2372,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Archery",
-      "CastTime": 4.0,
+      "CastTime": 4.224,
       "Slottable": true,
       "AoEModifier": 1.0
     }

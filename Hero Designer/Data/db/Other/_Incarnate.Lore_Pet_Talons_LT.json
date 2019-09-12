@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5369034,
-          "MagPercent": 37.5369034,
+          "Mag": 18.35136,
+          "MagPercent": 18.35136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -116,7 +116,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_LT",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -254,8 +254,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -562,7 +562,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_LT",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -629,8 +629,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 57.0560875,
-          "MagPercent": 57.0560875,
+          "Mag": 27.8940678,
+          "MagPercent": 27.8940678,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -662,8 +662,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 85.58414,
-          "MagPercent": 85.58414,
+          "Mag": 41.8411026,
+          "MagPercent": 41.8411026,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -698,7 +698,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -731,8 +731,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -766,8 +766,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -801,8 +801,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -836,8 +836,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -871,8 +871,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -906,8 +906,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -941,8 +941,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -976,8 +976,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.13,
-          "MagPercent": -13.0,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 12.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1298,7 +1298,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_LT",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     }
   ]

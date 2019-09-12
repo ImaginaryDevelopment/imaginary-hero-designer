@@ -114,6 +114,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Energy_Manipulator_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

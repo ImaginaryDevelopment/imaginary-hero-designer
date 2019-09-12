@@ -103,8 +103,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.05904,
-          "MagPercent": 60.05904,
+          "Mag": 29.362175,
+          "MagPercent": 29.362175,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -172,8 +172,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 127.876953,
-          "MagPercent": 127.876953,
+          "Mag": 62.5175743,
+          "MagPercent": 62.5175743,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -307,7 +307,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mu_Mastery",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -381,8 +381,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -416,8 +416,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -452,8 +452,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -488,8 +488,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -523,8 +523,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -558,8 +558,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -593,8 +593,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -628,8 +628,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -663,8 +663,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -698,8 +698,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -733,8 +733,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -767,7 +767,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mu_Mastery",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -867,8 +867,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -941,8 +941,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.825922,
-          "MagPercent": 23.825922,
+          "Mag": 11.64822,
+          "MagPercent": 11.64822,
           "Duration": 7.21,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1265,7 +1265,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mu_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -1396,7 +1396,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mu_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1592,8 +1592,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.25251,
-          "MagPercent": 36.25251,
+          "Mag": 17.7234364,
+          "MagPercent": 17.7234364,
           "Duration": 6.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1630,8 +1630,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "Duration": 6.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1805,7 +1805,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mu_Mastery",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     }

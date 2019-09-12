@@ -119,8 +119,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 125.123,
-          "MagPercent": 125.123,
+          "Mag": 61.1712,
+          "MagPercent": 61.1712,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -152,7 +152,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_Support_Attack",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     }
   ]

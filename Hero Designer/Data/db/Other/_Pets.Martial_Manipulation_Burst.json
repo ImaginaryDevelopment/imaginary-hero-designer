@@ -112,6 +112,7 @@
         }
       ],
       "FullSetName": "Pets.Martial_Manipulation_Burst",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

@@ -461,6 +461,7 @@
         }
       ],
       "FullSetName": "Boosts.Generic_Syndicate_Techniques",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -602,8 +602,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -635,8 +635,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -669,8 +669,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -703,8 +703,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -737,8 +737,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -771,8 +771,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -805,8 +805,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -839,8 +839,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -873,8 +873,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4,
-          "MagPercent": 40.0,
+          "Mag": 0.32,
+          "MagPercent": 32.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -905,6 +905,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -990,6 +991,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1075,6 +1077,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1160,6 +1163,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1245,6 +1249,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1330,6 +1335,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1415,6 +1421,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1500,6 +1507,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1552,6 +1560,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1637,6 +1646,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1689,6 +1699,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1743,8 +1754,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1774,6 +1785,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1826,6 +1838,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1880,8 +1893,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1913,8 +1926,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1947,8 +1960,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1981,8 +1994,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2015,8 +2028,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2049,8 +2062,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2083,8 +2096,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2117,8 +2130,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.20875,
-          "MagPercent": 20.875,
+          "Mag": 0.1336,
+          "MagPercent": 13.36,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2150,6 +2163,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2241,6 +2255,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2837,6 +2852,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2889,6 +2905,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3008,6 +3025,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3091,6 +3109,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3177,6 +3196,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3298,6 +3318,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3385,6 +3406,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3471,6 +3493,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3557,6 +3580,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3643,6 +3667,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3729,6 +3754,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3815,6 +3841,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3901,6 +3928,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3987,6 +4015,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4071,6 +4100,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4155,6 +4185,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4239,6 +4270,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4323,6 +4355,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4407,6 +4440,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4491,6 +4525,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4575,6 +4610,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4667,6 +4703,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -5016,6 +5053,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5068,6 +5106,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5152,6 +5191,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5236,6 +5276,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5320,6 +5361,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5404,6 +5446,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5488,6 +5531,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5572,6 +5616,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5656,6 +5701,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6120,6 +6166,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6172,6 +6219,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6258,6 +6306,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -6343,6 +6392,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6428,6 +6478,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6513,6 +6564,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6598,6 +6650,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6683,6 +6736,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6768,6 +6822,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6853,6 +6908,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7168,6 +7224,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7483,6 +7540,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7798,6 +7856,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8113,6 +8172,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8428,6 +8488,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8743,6 +8804,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9058,6 +9120,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9174,6 +9237,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9238,8 +9302,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.12,
-          "Mag": 60.23795,
-          "MagPercent": 60.23795,
+          "Mag": 40.15865,
+          "MagPercent": 40.15865,
           "BaseProbability": 0.12,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -9267,6 +9331,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9584,6 +9649,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -9670,6 +9736,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9756,6 +9823,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9842,6 +9910,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9928,6 +9997,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10014,6 +10084,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10100,6 +10171,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10186,6 +10258,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10270,6 +10343,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10354,6 +10428,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10438,6 +10513,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10522,6 +10598,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10606,6 +10683,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10690,6 +10768,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10774,6 +10853,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11089,6 +11169,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11404,6 +11485,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11719,6 +11801,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12034,6 +12117,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12349,6 +12433,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12664,6 +12749,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12979,6 +13065,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13065,6 +13152,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13117,6 +13205,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13233,6 +13322,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13317,6 +13407,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13708,6 +13799,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13793,6 +13885,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13879,6 +13972,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13965,6 +14059,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14051,6 +14146,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14137,6 +14233,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14223,6 +14320,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14309,6 +14407,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14395,6 +14494,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14479,6 +14579,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14563,6 +14664,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14647,6 +14749,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14731,6 +14834,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14815,6 +14919,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14899,6 +15004,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14983,6 +15089,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15069,6 +15176,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15155,6 +15263,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15241,6 +15350,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15327,6 +15437,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15413,6 +15524,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15499,6 +15611,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15585,6 +15698,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15669,6 +15783,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15753,6 +15868,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15837,6 +15953,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15921,6 +16038,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16005,6 +16123,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16089,6 +16208,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16173,6 +16293,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16422,6 +16543,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16507,6 +16629,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16592,6 +16715,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16677,6 +16801,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16762,6 +16887,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16847,6 +16973,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16932,6 +17059,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17017,6 +17145,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17102,6 +17231,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17223,6 +17353,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17344,6 +17475,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17465,6 +17597,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17586,6 +17719,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17707,6 +17841,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17828,6 +17963,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17949,6 +18085,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18034,6 +18171,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18119,6 +18257,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18204,6 +18343,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18289,6 +18429,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18374,6 +18515,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18459,6 +18601,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18544,6 +18687,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18628,6 +18772,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18712,6 +18857,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18796,6 +18942,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18880,6 +19027,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18964,6 +19112,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19048,6 +19197,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19132,6 +19282,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19216,6 +19367,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19300,6 +19452,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19384,6 +19537,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19468,6 +19622,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19552,6 +19707,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19636,6 +19792,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19720,6 +19877,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19804,6 +19962,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19888,6 +20047,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19972,6 +20132,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20056,6 +20217,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20140,6 +20302,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20224,6 +20387,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20308,6 +20472,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20500,6 +20665,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20692,6 +20858,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20884,6 +21051,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21076,6 +21244,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21268,6 +21437,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21460,6 +21630,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21652,6 +21823,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21736,6 +21908,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21820,6 +21993,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21904,6 +22078,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21988,6 +22163,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22072,6 +22248,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22156,6 +22333,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22240,6 +22418,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22357,6 +22536,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22474,6 +22654,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22591,6 +22772,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22708,6 +22890,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22825,6 +23008,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22942,6 +23126,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23059,6 +23244,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23144,6 +23330,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23229,6 +23416,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23314,6 +23502,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23399,6 +23588,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23484,6 +23674,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23569,6 +23760,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23654,6 +23846,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23807,6 +24000,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23960,6 +24154,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24113,6 +24308,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24266,6 +24462,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24419,6 +24616,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24572,6 +24770,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24725,6 +24924,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24810,6 +25010,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24895,6 +25096,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24980,6 +25182,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25065,6 +25268,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25150,6 +25354,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25235,6 +25440,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25320,6 +25526,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25404,6 +25611,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25488,6 +25696,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25572,6 +25781,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25656,6 +25866,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25740,6 +25951,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25824,6 +26036,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25908,6 +26121,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26231,6 +26445,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26554,6 +26769,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26877,6 +27093,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27200,6 +27417,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27523,6 +27741,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27846,6 +28065,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28169,6 +28389,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28252,6 +28473,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28335,6 +28557,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28418,6 +28641,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28501,6 +28725,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28584,6 +28809,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28667,6 +28893,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28750,6 +28977,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28835,6 +29063,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28920,6 +29149,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29005,6 +29235,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29090,6 +29321,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29175,6 +29407,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29260,6 +29493,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29345,6 +29579,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29498,6 +29733,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29651,6 +29887,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29804,6 +30041,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29957,6 +30195,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30110,6 +30349,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30263,6 +30503,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30416,6 +30657,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30500,6 +30742,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30584,6 +30827,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30668,6 +30912,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30752,6 +30997,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30836,6 +31082,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30920,6 +31167,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31004,6 +31252,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31157,6 +31406,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31310,6 +31560,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31463,6 +31714,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31616,6 +31868,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31769,6 +32022,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31922,6 +32176,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32075,6 +32330,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32194,6 +32450,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32313,6 +32570,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32432,6 +32690,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32551,6 +32810,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32670,6 +32930,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32789,6 +33050,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32908,6 +33170,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33025,6 +33288,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33142,6 +33406,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33259,6 +33524,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33376,6 +33642,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33493,6 +33760,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33610,6 +33878,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33727,6 +33996,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33812,6 +34082,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33897,6 +34168,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33982,6 +34254,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34067,6 +34340,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34152,6 +34426,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34237,6 +34512,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34322,6 +34598,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34406,6 +34683,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34490,6 +34768,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34574,6 +34853,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34658,6 +34938,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34742,6 +35023,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34826,6 +35108,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34910,6 +35193,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34963,8 +35247,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.035693,
-          "MagPercent": 9.035693,
+          "Mag": 6.02379751,
+          "MagPercent": 6.02379751,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -34993,6 +35277,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35046,8 +35331,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.5535383,
-          "MagPercent": 13.5535383,
+          "Mag": 9.035696,
+          "MagPercent": 9.035696,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35076,6 +35361,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35129,8 +35415,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.0713863,
-          "MagPercent": 18.0713863,
+          "Mag": 12.047595,
+          "MagPercent": 12.047595,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35159,6 +35445,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35212,8 +35499,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 22.5892315,
-          "MagPercent": 22.5892315,
+          "Mag": 15.059494,
+          "MagPercent": 15.059494,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35242,6 +35529,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35295,8 +35583,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.1070766,
-          "MagPercent": 27.1070766,
+          "Mag": 18.0713921,
+          "MagPercent": 18.0713921,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35325,6 +35613,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35378,8 +35667,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.6249218,
-          "MagPercent": 31.6249218,
+          "Mag": 21.08329,
+          "MagPercent": 21.08329,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35408,6 +35697,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35461,8 +35751,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.1427727,
-          "MagPercent": 36.1427727,
+          "Mag": 24.09519,
+          "MagPercent": 24.09519,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -35491,6 +35781,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35576,6 +35867,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35661,6 +35953,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35746,6 +36039,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35831,6 +36125,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35916,6 +36211,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36001,6 +36297,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36086,6 +36383,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36170,6 +36468,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36254,6 +36553,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36338,6 +36638,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36422,6 +36723,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36506,6 +36808,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36590,6 +36893,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36674,6 +36978,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36827,6 +37132,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36980,6 +37286,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37133,6 +37440,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37286,6 +37594,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37439,6 +37748,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37592,6 +37902,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37745,6 +38056,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37830,6 +38142,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37915,6 +38228,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38000,6 +38314,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38085,6 +38400,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38170,6 +38486,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38255,6 +38572,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38340,6 +38658,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38493,6 +38812,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38646,6 +38966,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38799,6 +39120,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38952,6 +39274,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39105,6 +39428,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39258,6 +39582,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39411,6 +39736,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39594,6 +39920,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39777,6 +40104,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39960,6 +40288,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40143,6 +40472,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40326,6 +40656,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40509,6 +40840,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40692,6 +41024,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40777,6 +41110,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40862,6 +41196,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40947,6 +41282,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41032,6 +41368,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41117,6 +41454,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41202,6 +41540,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41287,6 +41626,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41371,6 +41711,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41455,6 +41796,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41539,6 +41881,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41623,6 +41966,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41707,6 +42051,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41791,6 +42136,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41875,6 +42221,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41994,6 +42341,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42113,6 +42461,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42232,6 +42581,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42351,6 +42701,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42470,6 +42821,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42589,6 +42941,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42708,6 +43061,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42825,6 +43179,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42942,6 +43297,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43059,6 +43415,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43176,6 +43533,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43293,6 +43651,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43410,6 +43769,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43527,6 +43887,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43612,6 +43973,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43697,6 +44059,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43782,6 +44145,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43867,6 +44231,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43952,6 +44317,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44037,6 +44403,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44122,6 +44489,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44206,6 +44574,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44290,6 +44659,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44374,6 +44744,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44458,6 +44829,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44542,6 +44914,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44626,6 +44999,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44710,6 +45084,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44795,6 +45170,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44880,6 +45256,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44965,6 +45342,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45050,6 +45428,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45135,6 +45514,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45220,6 +45600,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45305,6 +45686,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45458,6 +45840,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45611,6 +45994,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45764,6 +46148,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45917,6 +46302,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46070,6 +46456,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46223,6 +46610,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46376,6 +46764,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46461,6 +46850,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46546,6 +46936,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46631,6 +47022,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46716,6 +47108,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46801,6 +47194,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46886,6 +47280,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46971,6 +47366,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47056,6 +47452,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47141,6 +47538,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47226,6 +47624,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47345,6 +47744,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47464,6 +47864,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47583,6 +47984,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47702,6 +48104,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47821,6 +48224,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47940,6 +48344,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48059,6 +48464,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48176,6 +48582,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48293,6 +48700,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48410,6 +48818,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48527,6 +48936,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48644,6 +49054,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48761,6 +49172,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48878,6 +49290,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48962,6 +49375,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49046,6 +49460,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49130,6 +49545,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49214,6 +49630,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49298,6 +49715,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49382,6 +49800,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49466,6 +49885,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49583,6 +50003,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49700,6 +50121,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49817,6 +50239,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49934,6 +50357,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50051,6 +50475,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50168,6 +50593,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50285,6 +50711,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50369,6 +50796,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50453,6 +50881,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50537,6 +50966,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50621,6 +51051,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50705,6 +51136,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50789,6 +51221,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50873,6 +51306,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50925,6 +51359,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50978,8 +51413,8 @@
         {
           "MagnitudeExpression": "isPVPMap? !",
           "Probability": 0.5,
-          "Mag": 192.7614,
-          "MagPercent": 192.7614,
+          "Mag": 235.5972,
+          "MagPercent": 235.5972,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Heal",
@@ -51078,6 +51513,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51197,6 +51633,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51521,8 +51958,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51555,8 +51992,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51589,8 +52026,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51623,8 +52060,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51657,8 +52094,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51691,8 +52128,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51725,8 +52162,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51759,8 +52196,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -51793,8 +52230,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 90.356926,
-          "MagPercent": 90.356926,
+          "Mag": 60.2379761,
+          "MagPercent": 60.2379761,
           "Duration": 5.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -51824,6 +52261,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51941,6 +52379,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52058,6 +52497,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52175,6 +52615,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52292,6 +52733,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52409,6 +52851,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52526,6 +52969,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52643,6 +53087,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52991,6 +53436,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53306,6 +53752,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53621,6 +54068,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53936,6 +54384,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54251,6 +54700,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54566,6 +55016,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54881,6 +55332,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55196,6 +55648,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55281,6 +55734,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55631,6 +56085,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -55882,6 +56337,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -56133,6 +56589,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -56384,6 +56841,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -56438,8 +56896,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56471,8 +56929,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56505,8 +56963,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56539,8 +56997,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56573,8 +57031,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56607,8 +57065,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56641,8 +57099,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56675,8 +57133,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -56708,6 +57166,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -56825,6 +57284,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -56877,6 +57337,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -56993,6 +57454,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57140,6 +57602,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57191,28 +57654,29 @@
       "ForcedClass": "",
       "Effects": [
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "EffectType": 29,
-          "DamageType": 2,
+          "DamageType": 1,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
@@ -57222,231 +57686,239 @@
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 1,
           "EffectType": 29,
-          "DamageType": 1,
+          "DamageType": 2,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 2,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 2,
           "EffectType": 29,
           "DamageType": 3,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 3,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 3,
           "EffectType": 29,
           "DamageType": 4,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 4,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 4,
           "EffectType": 29,
           "DamageType": 5,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 5,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 5,
           "EffectType": 29,
           "DamageType": 6,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 6,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         },
         {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
+          "MagnitudeExpression": "",
           "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
-          "EffectId": "Ones",
+          "EffectId": "Resist",
           "Special": "",
           "nID": 6,
-          "EffectType": 29,
-          "DamageType": 8,
-          "Summon": "",
-          "nSummon": -1,
-          "Buffable": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 2,
-          "Scale": 1.0,
-          "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 7,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "100 kHitPoints% source> - 10 / 3 + 100 / @StdResult *",
-          "Probability": 1.0,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "Ones",
-          "Special": "",
-          "nID": 7,
           "EffectType": 29,
           "DamageType": 7,
           "Summon": "",
           "nSummon": -1,
-          "Buffable": true,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
-          "Scale": 1.0,
+          "Scale": 0.03,
           "nMagnitude": 1.0,
-          "nDuration": 2.25,
-          "AttribType": 2,
+          "nDuration": 10.25,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Set_Bonus.Set_Bonus.Reactive_Defenses",
+          "PowerFullName": "",
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
           "Absorbed_Class_nID": -1,
           "Absorbed_EffectID": -1,
-          "UniqueID": 8,
+          "UniqueID": 1,
+          "Override": "",
+          "nOverride": -1
+        },
+        {
+          "MagnitudeExpression": "",
+          "Probability": 1.0,
+          "Mag": 0.03,
+          "MagPercent": 3.0,
+          "Duration": 10.25,
+          "DisplayPercentage": true,
+          "BaseProbability": 1.0,
+          "Reward": "",
+          "EffectId": "Resist",
+          "Special": "",
+          "nID": 7,
+          "EffectType": 29,
+          "DamageType": 8,
+          "Summon": "",
+          "nSummon": -1,
+          "UIDClassName": "",
+          "nIDClassName": -1,
+          "ToWho": 2,
+          "Scale": 0.03,
+          "nMagnitude": 1.0,
+          "nDuration": 10.25,
+          "ModifierTable": "Melee_Ones",
+          "nModifierTable": 41,
+          "PowerFullName": "",
+          "Absorbed_PowerType": 1,
+          "Absorbed_Power_nID": -1,
+          "Absorbed_Class_nID": -1,
+          "Absorbed_EffectID": -1,
+          "UniqueID": 1,
           "Override": "",
           "nOverride": -1
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57532,6 +58004,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57847,6 +58320,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57932,6 +58406,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57986,8 +58461,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -58017,6 +58492,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58103,6 +58579,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58189,6 +58666,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58275,6 +58753,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58361,6 +58840,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58447,6 +58927,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58533,6 +59014,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58619,6 +59101,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58703,6 +59186,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58787,6 +59271,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58871,6 +59356,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58955,6 +59441,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59039,6 +59526,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59123,6 +59611,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59207,6 +59696,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59361,6 +59851,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59515,6 +60006,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59669,6 +60161,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59823,6 +60316,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59977,6 +60471,7 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60325,6 +60820,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60642,6 +61138,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -60737,6 +61234,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60925,6 +61423,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61316,6 +61815,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61435,6 +61935,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61521,6 +62022,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61607,6 +62109,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61693,6 +62196,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61779,6 +62283,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61865,6 +62370,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61951,6 +62457,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62037,6 +62544,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62121,6 +62629,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62205,6 +62714,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62289,6 +62799,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62373,6 +62884,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62457,6 +62969,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62541,6 +63054,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62625,6 +63139,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62679,8 +63194,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62712,8 +63227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62746,8 +63261,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62780,8 +63295,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62814,8 +63329,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62848,8 +63363,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62882,8 +63397,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62916,8 +63431,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3125,
-          "MagPercent": 31.25,
+          "Mag": 0.199999988,
+          "MagPercent": 19.9999981,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -62949,6 +63464,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63040,6 +63556,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63123,6 +63640,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63210,6 +63728,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -63262,6 +63781,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63378,6 +63898,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63442,8 +63963,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.18,
-          "Mag": 78.30933,
-          "MagPercent": 78.30933,
+          "Mag": 52.20624,
+          "MagPercent": 52.20624,
           "BaseProbability": 0.18,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -63471,6 +63992,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63587,6 +64109,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63911,8 +64434,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -63945,8 +64468,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -63979,8 +64502,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64013,8 +64536,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64047,8 +64570,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64081,8 +64604,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64115,8 +64638,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64149,8 +64672,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1875,
-          "MagPercent": 18.75,
+          "Mag": 0.12,
+          "MagPercent": 12.0,
           "Duration": 5.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64183,8 +64706,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "Duration": 5.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -64214,6 +64737,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -64564,6 +65088,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -64618,8 +65143,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64651,8 +65176,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64685,8 +65210,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64719,8 +65244,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64753,8 +65278,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64787,8 +65312,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64821,8 +65346,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64855,8 +65380,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0469,
-          "MagPercent": 4.69,
+          "Mag": 0.067,
+          "MagPercent": 6.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -64888,6 +65413,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -64983,6 +65509,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65105,6 +65632,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65420,6 +65948,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65735,6 +66264,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66050,6 +66580,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66365,6 +66896,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66680,6 +67212,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66995,6 +67528,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67310,6 +67844,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67363,8 +67898,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 90.356926,
-          "MagPercent": 90.356926,
+          "Mag": 60.2379761,
+          "MagPercent": 60.2379761,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -67394,6 +67929,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67516,6 +68052,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67568,6 +68105,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67718,6 +68256,7 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

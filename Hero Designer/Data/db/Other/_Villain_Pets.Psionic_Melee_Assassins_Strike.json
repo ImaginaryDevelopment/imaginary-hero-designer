@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 104.269119,
-          "MagPercent": 104.269119,
+          "Mag": 57.348,
+          "MagPercent": 57.348,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.2807369,
-          "MagPercent": 31.2807369,
+          "Mag": 17.2044,
+          "MagPercent": 17.2044,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -158,8 +158,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -227,8 +227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -423,7 +423,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Psionic_Melee_Assassins_Strike",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -496,8 +496,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 115.113106,
-          "MagPercent": 115.113106,
+          "Mag": 63.31219,
+          "MagPercent": 63.31219,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -529,8 +529,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 38.3710365,
-          "MagPercent": 38.3710365,
+          "Mag": 21.104063,
+          "MagPercent": 21.104063,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -562,8 +562,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 153.484146,
-          "MagPercent": 153.484146,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -595,8 +595,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 76.95784,
-          "MagPercent": 76.95784,
+          "Mag": 42.3268,
+          "MagPercent": 42.3268,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -629,8 +629,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.65243,
-          "MagPercent": 25.65243,
+          "Mag": 14.1088314,
+          "MagPercent": 14.1088314,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -662,8 +662,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 102.610832,
-          "MagPercent": 102.610832,
+          "Mag": 56.43594,
+          "MagPercent": 56.43594,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -786,7 +786,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Psionic_Melee_Assassins_Strike",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     }
   ]

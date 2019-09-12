@@ -254,6 +254,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Blessing_of_the_Zephyr_A",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

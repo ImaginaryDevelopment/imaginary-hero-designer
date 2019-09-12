@@ -79,8 +79,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -114,8 +114,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -150,8 +150,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -186,8 +186,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -222,8 +222,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -258,8 +258,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -294,8 +294,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -330,8 +330,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -366,8 +366,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -402,8 +402,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0325,
-          "MagPercent": 3.25,
+          "Mag": 0.0375,
+          "MagPercent": 3.75000024,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -438,8 +438,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.7266,
-          "MagPercent": -0.7266,
+          "Mag": -0.778499961,
+          "MagPercent": -0.778499961,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -473,8 +473,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.7266,
-          "MagPercent": -0.7266,
+          "Mag": -0.778499961,
+          "MagPercent": -0.778499961,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -507,7 +507,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Support",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 4.75
     },
     {
@@ -565,8 +565,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 188.906174,
-          "MagPercent": 188.906174,
+          "Mag": 230.885254,
+          "MagPercent": 230.885254,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -1086,7 +1086,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Support",
-      "CastTime": 2.93,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     }
   ]

@@ -101,8 +101,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -135,8 +135,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 50.049202,
-          "MagPercent": 50.049202,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -170,8 +170,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 21.3234634,
-          "MagPercent": 21.3234634,
+          "Mag": 10.4247961,
+          "MagPercent": 10.4247961,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -205,8 +205,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 85.2925949,
-          "MagPercent": 85.2925949,
+          "Mag": 41.6985741,
+          "MagPercent": 41.6985741,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -311,8 +311,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -348,8 +348,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.616058,
-          "MagPercent": 106.616058,
+          "Mag": 52.1233673,
+          "MagPercent": 52.1233673,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -384,7 +384,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -461,8 +461,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 40.03936,
-          "MagPercent": 40.03936,
+          "Mag": 19.5747833,
+          "MagPercent": 19.5747833,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -495,8 +495,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -530,8 +530,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.337532,
-          "MagPercent": 62.337532,
+          "Mag": 30.4761047,
+          "MagPercent": 30.4761047,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -565,8 +565,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 97.5021,
-          "MagPercent": 97.5021,
+          "Mag": 47.66766,
+          "MagPercent": 47.66766,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -671,8 +671,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -708,8 +708,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 159.839,
-          "MagPercent": 159.839,
+          "Mag": 78.1434555,
+          "MagPercent": 78.1434555,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -744,7 +744,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -824,8 +824,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -858,8 +858,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.2905922,
-          "MagPercent": 41.2905922,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -893,8 +893,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.9539,
-          "MagPercent": 17.9539,
+          "Mag": 8.777455,
+          "MagPercent": 8.777455,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -928,8 +928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 39.96178,
-          "MagPercent": 39.96178,
+          "Mag": 19.5368576,
+          "MagPercent": 19.5368576,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1034,8 +1034,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.05904,
-          "MagPercent": 60.05904,
+          "Mag": 29.362175,
+          "MagPercent": 29.362175,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1071,8 +1071,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 57.9156837,
-          "MagPercent": 57.9156837,
+          "Mag": 28.3143139,
+          "MagPercent": 28.3143139,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1107,7 +1107,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -1184,8 +1184,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1218,8 +1218,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 70.06888,
-          "MagPercent": 70.06888,
+          "Mag": 34.25587,
+          "MagPercent": 34.25587,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1253,8 +1253,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 87.49288,
-          "MagPercent": 87.49288,
+          "Mag": 42.7742653,
+          "MagPercent": 42.7742653,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1288,8 +1288,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 98.66199,
-          "MagPercent": 98.66199,
+          "Mag": 48.2347145,
+          "MagPercent": 48.2347145,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1394,8 +1394,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 132.630371,
-          "MagPercent": 132.630371,
+          "Mag": 64.84147,
+          "MagPercent": 64.84147,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1431,8 +1431,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 186.154861,
-          "MagPercent": 186.154861,
+          "Mag": 91.00898,
+          "MagPercent": 91.00898,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1467,7 +1467,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1548,8 +1548,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 47.54674,
-          "MagPercent": 47.54674,
+          "Mag": 23.2450562,
+          "MagPercent": 23.2450562,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1582,8 +1582,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 125.123,
-          "MagPercent": 125.123,
+          "Mag": 61.1712,
+          "MagPercent": 61.1712,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1617,8 +1617,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 81.9755859,
-          "MagPercent": 81.9755859,
+          "Mag": 40.0769234,
+          "MagPercent": 40.0769234,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1652,8 +1652,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 210.794724,
-          "MagPercent": 210.794724,
+          "Mag": 103.055122,
+          "MagPercent": 103.055122,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1758,8 +1758,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1795,8 +1795,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 252.154755,
-          "MagPercent": 252.154755,
+          "Mag": 123.275566,
+          "MagPercent": 123.275566,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1897,7 +1897,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 4.33,
+      "CastTime": 4.488,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1965,8 +1965,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2000,8 +2000,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2036,8 +2036,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2072,8 +2072,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2108,8 +2108,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2144,8 +2144,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2180,8 +2180,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2216,8 +2216,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2252,8 +2252,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2287,7 +2287,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2364,8 +2364,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2398,8 +2398,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2433,8 +2433,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.024601,
-          "MagPercent": 25.024601,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2470,8 +2470,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.024601,
-          "MagPercent": 25.024601,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2577,7 +2577,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.1,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2656,8 +2656,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.28075,
-          "MagPercent": 31.28075,
+          "Mag": 15.2928,
+          "MagPercent": 15.2928,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2690,8 +2690,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.024601,
-          "MagPercent": 25.024601,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2725,8 +2725,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 32.2072868,
-          "MagPercent": 32.2072868,
+          "Mag": 15.7457733,
+          "MagPercent": 15.7457733,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2760,8 +2760,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.3055019,
-          "MagPercent": 25.3055019,
+          "Mag": 12.3715687,
+          "MagPercent": 12.3715687,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2866,8 +2866,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.3053474,
-          "MagPercent": 56.3053474,
+          "Mag": 27.5270386,
+          "MagPercent": 27.5270386,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2903,8 +2903,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 57.5127869,
-          "MagPercent": 57.5127869,
+          "Mag": 28.117342,
+          "MagPercent": 28.117342,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2939,7 +2939,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3015,8 +3015,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3049,8 +3049,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684509,
-          "MagPercent": 187.684509,
+          "Mag": 91.7568,
+          "MagPercent": 91.7568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3084,8 +3084,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 48.7923431,
-          "MagPercent": 48.7923431,
+          "Mag": 23.8540154,
+          "MagPercent": 23.8540154,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3119,8 +3119,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 99.063,
-          "MagPercent": 99.063,
+          "Mag": 48.4307671,
+          "MagPercent": 48.4307671,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3154,8 +3154,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 125.123,
-          "MagPercent": 125.123,
+          "Mag": 61.1712,
+          "MagPercent": 61.1712,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3191,8 +3191,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 73.92767,
-          "MagPercent": 73.92767,
+          "Mag": 36.14239,
+          "MagPercent": 36.14239,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3298,7 +3298,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Energy_Blast",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 4.75
     }

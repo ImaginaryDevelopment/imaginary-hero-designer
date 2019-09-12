@@ -811,7 +811,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.6,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -885,8 +885,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 73.4054642,
-          "MagPercent": 73.4054642,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -918,8 +918,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 2.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -955,8 +955,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 2.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -993,8 +993,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 91.62447,
-          "MagPercent": 91.62447,
+          "Mag": 50.3934441,
+          "MagPercent": 50.3934441,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1065,8 +1065,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": -1.0,
-          "MagPercent": -1.0,
+          "Mag": -1.1,
+          "MagPercent": -1.1,
           "Duration": 2.1,
           "BaseProbability": 0.5,
           "Reward": "",
@@ -1397,7 +1397,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1620,8 +1620,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.298,
-          "MagPercent": -29.8000011,
+          "Mag": -0.3725,
+          "MagPercent": -37.25,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2022,7 +2022,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2122,8 +2122,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2156,8 +2156,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2190,8 +2190,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2224,8 +2224,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2258,8 +2258,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2292,8 +2292,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2326,8 +2326,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2360,8 +2360,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2394,8 +2394,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8125,
-          "MagPercent": 81.25,
+          "Mag": 0.52,
+          "MagPercent": 52.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2557,7 +2557,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2633,8 +2633,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 64.73027,
-          "MagPercent": 64.73027,
+          "Mag": 35.60164,
+          "MagPercent": 35.60164,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2666,8 +2666,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 21.5767574,
-          "MagPercent": 21.5767574,
+          "Mag": 11.8672132,
+          "MagPercent": 11.8672132,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2700,8 +2700,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 21.5767574,
-          "MagPercent": 21.5767574,
+          "Mag": 11.8672132,
+          "MagPercent": 11.8672132,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2735,8 +2735,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.4055557,
-          "MagPercent": 55.4055557,
+          "Mag": 30.4730453,
+          "MagPercent": 30.4730453,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2769,8 +2769,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.4687023,
-          "MagPercent": 18.4687023,
+          "Mag": 10.1577835,
+          "MagPercent": 10.1577835,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2803,8 +2803,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.4687023,
-          "MagPercent": 18.4687023,
+          "Mag": 10.1577835,
+          "MagPercent": 10.1577835,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3187,7 +3187,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3257,8 +3257,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.09518,
-          "MagPercent": 2409.518,
+          "Mag": 16.06346,
+          "MagPercent": 1606.346,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3291,8 +3291,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.23795,
-          "MagPercent": 6023.795,
+          "Mag": 40.15865,
+          "MagPercent": 4015.865,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3556,7 +3556,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3633,8 +3633,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 117.893616,
-          "MagPercent": 117.893616,
+          "Mag": 64.84147,
+          "MagPercent": 64.84147,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3666,8 +3666,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 137.20871,
-          "MagPercent": 137.20871,
+          "Mag": 75.46477,
+          "MagPercent": 75.46477,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3702,7 +3702,7 @@
           "Probability": 0.2,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 0.2,
           "Reward": "",
           "EffectId": "Fear",
@@ -3777,7 +3777,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Fear",
@@ -4147,7 +4147,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4379,8 +4379,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.0375,
+          "MagPercent": -3.75000024,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4866,7 +4866,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5094,8 +5094,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5300,8 +5300,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5334,6 +5334,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     }

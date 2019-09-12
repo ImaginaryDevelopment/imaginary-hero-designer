@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 81.32995,
-          "MagPercent": 81.32995,
+          "Mag": 39.76128,
+          "MagPercent": 39.76128,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -118,8 +118,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 3.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -153,7 +153,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_LT",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -221,8 +221,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -254,8 +254,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -289,7 +289,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_LT",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 3.06993747
     }
   ]

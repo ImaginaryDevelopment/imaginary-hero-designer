@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -178,8 +178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 26.1181755,
-          "MagPercent": 26.1181755,
+          "Mag": 12.7688761,
+          "MagPercent": 12.7688761,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -510,7 +510,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -657,8 +657,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 119.204689,
-          "MagPercent": 119.204689,
+          "Mag": 58.2778,
+          "MagPercent": 58.2778,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -692,8 +692,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 82.5811844,
-          "MagPercent": 82.5811844,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -764,8 +764,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.6452961,
-          "MagPercent": 20.6452961,
+          "Mag": 10.0932484,
+          "MagPercent": 10.0932484,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -798,7 +798,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.03,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -952,8 +952,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 35.05196,
-          "MagPercent": 35.05196,
+          "Mag": 17.1365013,
+          "MagPercent": 17.1365013,
           "Duration": 4.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1068,8 +1068,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.76353,
-          "MagPercent": 13.76353,
+          "Mag": 6.728832,
+          "MagPercent": 6.728832,
           "Duration": 4.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1455,7 +1455,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1533,8 +1533,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 122.620544,
-          "MagPercent": 122.620544,
+          "Mag": 59.9477768,
+          "MagPercent": 59.9477768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1636,8 +1636,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 67.35371,
-          "MagPercent": 67.35371,
+          "Mag": 32.9284554,
+          "MagPercent": 32.9284554,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1742,8 +1742,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 30.6551361,
-          "MagPercent": 30.6551361,
+          "Mag": 14.9869442,
+          "MagPercent": 14.9869442,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1775,7 +1775,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1857,8 +1857,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 5.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1931,8 +1931,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.676028,
-          "MagPercent": 8.676028,
+          "Mag": 4.241611,
+          "MagPercent": 4.241611,
           "Duration": 5.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2263,7 +2263,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2406,7 +2406,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2917,7 +2917,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3068,7 +3068,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -3145,7 +3145,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 17.8800011,
+          "Duration": 22.35,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3257,7 +3257,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3370,7 +3370,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Gravity_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     }

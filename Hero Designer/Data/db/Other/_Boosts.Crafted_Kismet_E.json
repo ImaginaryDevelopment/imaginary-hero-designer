@@ -111,6 +111,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Kismet_E",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

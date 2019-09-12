@@ -187,7 +187,7 @@
           "Probability": 0.02,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 0.02,
           "Reward": "",
           "EffectId": "Sleep",
@@ -335,6 +335,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Poison_Gas",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -395,7 +396,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Sleep",
@@ -468,6 +469,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Poison_Gas",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -549,6 +551,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Poison_Gas",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

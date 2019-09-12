@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.5613651,
-          "MagPercent": 11.5613651,
+          "Mag": 5.652219,
+          "MagPercent": 5.652219,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -142,8 +142,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.0351448,
-          "MagPercent": 23.0351448,
+          "Mag": 11.2616177,
+          "MagPercent": 11.2616177,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -181,8 +181,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -393,7 +393,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -586,7 +586,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 1.97,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -666,8 +666,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.3700237,
-          "MagPercent": 20.3700237,
+          "Mag": 9.958672,
+          "MagPercent": 9.958672,
           "Duration": 1.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -704,8 +704,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.0562500022,
+          "MagPercent": -5.625,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -740,8 +740,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5719337,
-          "MagPercent": 37.5719337,
+          "Mag": 18.3684883,
+          "MagPercent": 18.3684883,
           "Duration": 1.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -920,7 +920,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1468,7 +1468,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1551,8 +1551,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.9936733,
-          "MagPercent": 18.9936733,
+          "Mag": 9.285789,
+          "MagPercent": 9.285789,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1589,8 +1589,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.90761,
-          "MagPercent": 24.90761,
+          "Mag": 12.1770449,
+          "MagPercent": 12.1770449,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1628,8 +1628,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1876,7 +1876,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -2027,7 +2027,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2539,7 +2539,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 2.27,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2663,7 +2663,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 4.67,
+      "CastTime": 4.884,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3211,7 +3211,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Beast_Mastery",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 5.5
     }

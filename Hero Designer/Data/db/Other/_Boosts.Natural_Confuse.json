@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Boosts.Natural_Confuse",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

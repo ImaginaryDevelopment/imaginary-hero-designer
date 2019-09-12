@@ -111,6 +111,7 @@
         }
       ],
       "FullSetName": "Pets.RainofArrows_Critter",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -198,6 +199,7 @@
         }
       ],
       "FullSetName": "Pets.RainofArrows_Critter",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

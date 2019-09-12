@@ -169,7 +169,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
-      "CastTime": 1.53,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -253,6 +253,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -337,6 +338,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -421,6 +423,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -505,6 +508,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -589,6 +593,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -673,6 +678,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -757,6 +763,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -841,6 +848,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -925,6 +933,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1016,6 +1025,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -1158,7 +1168,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
-      "CastTime": 3.03,
+      "CastTime": 3.168,
       "AoEModifier": 2.49793243
     },
     {
@@ -1298,7 +1308,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_2",
-      "CastTime": 2.1,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     }
   ]

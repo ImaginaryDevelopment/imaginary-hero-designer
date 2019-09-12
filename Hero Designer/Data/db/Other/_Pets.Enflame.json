@@ -374,6 +374,7 @@
         }
       ],
       "FullSetName": "Pets.Enflame",
+      "CastTime": 0.132,
       "AoEModifier": 2.05
     },
     {
@@ -462,6 +463,7 @@
         }
       ],
       "FullSetName": "Pets.Enflame",
+      "CastTime": 0.132,
       "AoEModifier": 1.6
     },
     {
@@ -544,6 +546,7 @@
         }
       ],
       "FullSetName": "Pets.Enflame",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

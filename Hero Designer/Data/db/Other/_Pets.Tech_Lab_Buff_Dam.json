@@ -351,6 +351,7 @@
         }
       ],
       "FullSetName": "Pets.Tech_Lab_Buff_Dam",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     }
   ]

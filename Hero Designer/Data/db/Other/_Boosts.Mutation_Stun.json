@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Boosts.Mutation_Stun",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

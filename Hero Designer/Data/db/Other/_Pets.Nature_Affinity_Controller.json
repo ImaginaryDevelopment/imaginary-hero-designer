@@ -222,7 +222,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Nature_Affinity_Controller",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -395,7 +395,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Nature_Affinity_Controller",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     }
   ]

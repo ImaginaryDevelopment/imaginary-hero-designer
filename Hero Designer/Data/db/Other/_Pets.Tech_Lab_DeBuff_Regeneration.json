@@ -105,6 +105,7 @@
         }
       ],
       "FullSetName": "Pets.Tech_Lab_DeBuff_Regeneration",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     }
   ]

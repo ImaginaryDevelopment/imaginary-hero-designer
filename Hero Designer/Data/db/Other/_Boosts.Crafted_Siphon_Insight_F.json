@@ -112,6 +112,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Boosts.Crafted_Siphon_Insight_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

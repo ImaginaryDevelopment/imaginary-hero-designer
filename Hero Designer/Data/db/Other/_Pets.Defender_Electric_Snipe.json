@@ -303,7 +303,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Electric_Snipe",
-      "CastTime": 4.33,
+      "CastTime": 4.488,
       "AoEModifier": 1.0
     },
     {
@@ -587,7 +587,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Electric_Snipe",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     }
   ]

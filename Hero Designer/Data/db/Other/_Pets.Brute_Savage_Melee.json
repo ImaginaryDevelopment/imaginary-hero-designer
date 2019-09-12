@@ -409,7 +409,7 @@
         }
       ],
       "FullSetName": "Pets.Brute_Savage_Melee",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "AoEModifier": 2.2
     },
     {
@@ -831,7 +831,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Brute_Savage_Melee",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "AoEModifier": 3.25
     }
   ]

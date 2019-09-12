@@ -90,8 +90,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 222.718933,
-          "MagPercent": 222.718933,
+          "Mag": 108.884735,
+          "MagPercent": 108.884735,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -160,8 +160,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 147.144653,
-          "MagPercent": 147.144653,
+          "Mag": 71.93733,
+          "MagPercent": 71.93733,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -225,7 +225,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Dominator_PsionicAssault_Snipe",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -300,8 +300,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 222.718933,
-          "MagPercent": 222.718933,
+          "Mag": 108.884735,
+          "MagPercent": 108.884735,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -370,8 +370,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 331.075439,
-          "MagPercent": 331.075439,
+          "Mag": 161.859,
+          "MagPercent": 161.859,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -435,7 +435,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Dominator_PsionicAssault_Snipe",
-      "CastTime": 4.0,
+      "CastTime": 4.224,
       "AoEModifier": 1.0
     }
   ]

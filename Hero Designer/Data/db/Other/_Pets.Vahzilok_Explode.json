@@ -136,6 +136,7 @@
         }
       ],
       "FullSetName": "Pets.Vahzilok_Explode",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

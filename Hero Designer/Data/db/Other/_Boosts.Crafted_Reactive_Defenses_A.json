@@ -462,6 +462,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Reactive_Defenses_A",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

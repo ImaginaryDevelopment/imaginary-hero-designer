@@ -239,6 +239,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lich",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -375,7 +376,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lich",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -597,6 +598,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lich",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -809,7 +811,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lich",
-      "CastTime": 1.03,
+      "CastTime": 1.188,
       "AoEModifier": 3.31991267
     }
   ]

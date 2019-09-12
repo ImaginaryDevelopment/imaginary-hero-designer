@@ -79,8 +79,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 3.33661175,
-          "MagPercent": 3.33661175,
+          "Mag": 1.83513594,
+          "MagPercent": 1.83513594,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -111,8 +111,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 3.33661175,
-          "MagPercent": 3.33661175,
+          "Mag": 1.83513594,
+          "MagPercent": 1.83513594,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -147,8 +147,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 3.33661175,
-          "MagPercent": 3.33661175,
+          "Mag": 1.83513594,
+          "MagPercent": 1.83513594,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -182,6 +182,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickBurn_Corruptor",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -269,6 +270,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickBurn_Corruptor",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -352,6 +354,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickBurn_Corruptor",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -433,6 +436,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickBurn_Corruptor",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

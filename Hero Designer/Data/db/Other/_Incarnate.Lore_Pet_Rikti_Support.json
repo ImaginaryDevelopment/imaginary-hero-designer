@@ -77,8 +77,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 96.3807,
-          "MagPercent": 96.3807,
+          "Mag": 107.0897,
+          "MagPercent": 107.0897,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -108,7 +108,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_Support",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 4.75
     },
     {
@@ -167,8 +167,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -200,8 +200,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -234,8 +234,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -268,8 +268,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -302,8 +302,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -336,8 +336,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -370,8 +370,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -404,8 +404,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -709,7 +709,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_Support",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 4.75
     }
   ]

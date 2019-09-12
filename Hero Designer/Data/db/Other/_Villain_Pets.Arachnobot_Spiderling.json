@@ -90,8 +90,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.51722,
-          "MagPercent": 17.51722,
+          "Mag": 8.563968,
+          "MagPercent": 8.563968,
           "Duration": 1.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -126,8 +126,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 5.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -161,7 +161,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 1.7,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -229,8 +229,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.8149376,
-          "MagPercent": 37.8149376,
+          "Mag": 20.7982082,
+          "MagPercent": 20.7982082,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -260,7 +260,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -448,6 +448,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -632,6 +633,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -713,6 +715,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

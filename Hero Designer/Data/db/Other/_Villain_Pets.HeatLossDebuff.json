@@ -362,8 +362,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -396,8 +396,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -430,8 +430,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -464,8 +464,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -498,8 +498,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -532,8 +532,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -566,8 +566,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -600,8 +600,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.168000013,
-          "MagPercent": -16.8000011,
+          "Mag": -0.24000001,
+          "MagPercent": -24.0,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -667,6 +667,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.HeatLossDebuff",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

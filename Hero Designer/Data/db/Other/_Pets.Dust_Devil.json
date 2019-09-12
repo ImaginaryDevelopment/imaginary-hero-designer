@@ -104,6 +104,7 @@
         }
       ],
       "FullSetName": "Pets.Dust_Devil",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -189,6 +190,7 @@
         }
       ],
       "FullSetName": "Pets.Dust_Devil",
+      "CastTime": 0.132,
       "AoEModifier": 2.95
     },
     {
@@ -272,6 +274,7 @@
         }
       ],
       "FullSetName": "Pets.Dust_Devil",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -335,6 +335,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_Poison_Gas_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -468,6 +469,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_Poison_Gas_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -549,6 +551,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_Poison_Gas_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

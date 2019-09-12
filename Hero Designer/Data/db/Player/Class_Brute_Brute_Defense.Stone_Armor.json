@@ -112,8 +112,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -148,8 +148,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -185,8 +185,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -221,8 +221,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -362,7 +362,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -424,8 +424,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -457,8 +457,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -490,6 +490,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -561,8 +562,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 240.9518,
-          "MagPercent": 240.9518,
+          "Mag": 160.6346,
+          "MagPercent": 160.6346,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -594,8 +595,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 240.9518,
-          "MagPercent": 240.9518,
+          "Mag": 160.6346,
+          "MagPercent": 160.6346,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -629,8 +630,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -663,8 +664,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 481.9036,
-          "MagPercent": 481.9036,
+          "Mag": 321.2692,
+          "MagPercent": 321.2692,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -695,7 +696,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -987,8 +988,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.0098362,
-          "MagPercent": 10.0098362,
+          "Mag": 5.50540829,
+          "MagPercent": 5.50540829,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1097,7 +1098,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2414,7 +2415,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2489,8 +2490,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2524,8 +2525,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2560,8 +2561,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2595,8 +2596,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2629,7 +2630,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2704,8 +2705,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2740,8 +2741,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2777,8 +2778,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2813,8 +2814,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.112,
-          "MagPercent": 11.2000008,
+          "Mag": 0.144000009,
+          "MagPercent": 14.4000006,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2952,7 +2953,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3026,8 +3027,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3062,8 +3063,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.225000009,
+          "MagPercent": 22.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3309,7 +3310,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3400,8 +3401,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3435,8 +3436,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3471,8 +3472,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3507,8 +3508,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3543,8 +3544,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3579,8 +3580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3615,8 +3616,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3651,8 +3652,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3688,8 +3689,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3725,8 +3726,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3762,8 +3763,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3799,8 +3800,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3836,8 +3837,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3873,8 +3874,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3908,8 +3909,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3943,8 +3944,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3978,8 +3979,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4013,8 +4014,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4048,8 +4049,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4083,8 +4084,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4118,8 +4119,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4154,8 +4155,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4190,8 +4191,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4226,8 +4227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4262,8 +4263,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4298,8 +4299,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5321,7 +5322,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Stone_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     }

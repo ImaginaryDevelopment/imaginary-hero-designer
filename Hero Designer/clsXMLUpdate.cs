@@ -13,7 +13,7 @@ namespace Hero_Designer
 
         public bool RestartNeeded = false;
 
-        public static void BugReport(string at, string pri, string sec, string sData = "")
+        /*public static void BugReport(string at, string pri, string sec, string sData = "")
         {
             var targetUrl = "https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues";
             try
@@ -37,18 +37,25 @@ namespace Hero_Designer
                 + ex.Message, MsgBoxStyle.Critical, "Error");
                 ProjectData.ClearProjectError();
             }
-        }
+        }*/
 
-        public static void Donate()
+        public static void BugReport() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer/issues");
+
+        public static void KoFi()
         {
+            LaunchBrowser("https://ko-fi.com/metalios");
         }
 
-        public static void GoToCoHPlanner() =>
-                LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/");
+        public static void Patreon()
+        {
+            LaunchBrowser("https://www.patreon.com/midsreborn");
+        }
+
+        public static void GoToCoHPlanner() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer");
 
         public static void GoToForums()
         {
-            LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,6298.0.html");
+            LaunchBrowser("https://forums.homecomingservers.com/topic/7645-mids-reborn-hero-designer/");
         }
 
         static void LaunchBrowser(string iURI)

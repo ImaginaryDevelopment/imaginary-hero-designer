@@ -386,6 +386,7 @@
         }
       ],
       "FullSetName": "Boosts.Hamidon_Damage_Range",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

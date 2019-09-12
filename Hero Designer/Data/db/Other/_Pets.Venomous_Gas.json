@@ -765,6 +765,7 @@
         }
       ],
       "FullSetName": "Pets.Venomous_Gas",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

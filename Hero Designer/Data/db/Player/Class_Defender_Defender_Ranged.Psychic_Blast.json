@@ -98,8 +98,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -168,8 +168,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 168.808456,
-          "MagPercent": 168.808456,
+          "Mag": 82.52852,
+          "MagPercent": 82.52852,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -202,7 +202,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -279,8 +279,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 82.5811844,
-          "MagPercent": 82.5811844,
+          "Mag": 40.3729935,
+          "MagPercent": 40.3729935,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -390,8 +390,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 176.619247,
-          "MagPercent": 176.619247,
+          "Mag": 86.34712,
+          "MagPercent": 86.34712,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -424,7 +424,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -502,8 +502,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -639,8 +639,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 337.8121,
-          "MagPercent": 337.8121,
+          "Mag": 165.152451,
+          "MagPercent": 165.152451,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -674,7 +674,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 4.0,
+      "CastTime": 4.224,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -751,8 +751,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 65.06396,
-          "MagPercent": 65.06396,
+          "Mag": 31.8090229,
+          "MagPercent": 31.8090229,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -821,8 +821,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 97.9544144,
-          "MagPercent": 97.9544144,
+          "Mag": 47.88879,
+          "MagPercent": 47.88879,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -855,7 +855,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -932,8 +932,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -966,8 +966,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 40.03936,
-          "MagPercent": 40.03936,
+          "Mag": 19.5747833,
+          "MagPercent": 19.5747833,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1001,8 +1001,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 83.18365,
-          "MagPercent": 83.18365,
+          "Mag": 40.66753,
+          "MagPercent": 40.66753,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1036,8 +1036,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.4557648,
-          "MagPercent": 55.4557648,
+          "Mag": 27.1116886,
+          "MagPercent": 27.1116886,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1141,7 +1141,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1218,8 +1218,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 122.620544,
-          "MagPercent": 122.620544,
+          "Mag": 59.9477768,
+          "MagPercent": 59.9477768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1331,8 +1331,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 168.906052,
-          "MagPercent": 168.906052,
+          "Mag": 82.5762253,
+          "MagPercent": 82.5762253,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1365,7 +1365,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 1.1,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1444,8 +1444,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.1359472,
-          "MagPercent": 11.1359472,
+          "Mag": 5.44423676,
+          "MagPercent": 5.44423676,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1551,8 +1551,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.9568443,
-          "MagPercent": 13.9568443,
+          "Mag": 6.82334137,
+          "MagPercent": 6.82334137,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1588,7 +1588,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1665,8 +1665,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1702,7 +1702,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -1776,8 +1776,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1810,7 +1810,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1886,8 +1886,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.246,
-          "MagPercent": 250.246,
+          "Mag": 122.3424,
+          "MagPercent": 122.3424,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1920,8 +1920,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 155.781891,
-          "MagPercent": 155.781891,
+          "Mag": 76.15998,
+          "MagPercent": 76.15998,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1957,7 +1957,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -2065,7 +2065,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Psychic_Blast",
-      "CastTime": 1.97,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 4.75
     }

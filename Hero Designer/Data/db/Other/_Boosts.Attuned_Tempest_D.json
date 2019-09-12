@@ -115,8 +115,8 @@
           "ProcsPerMinute": 3.5,
           "CancelOnMiss": true,
           "Probability": 0.5833333,
-          "Mag": -3.33,
-          "MagPercent": -3.33,
+          "Mag": -3.663,
+          "MagPercent": -3.663,
           "Reward": "",
           "EffectId": "EndDrain",
           "Special": "",
@@ -147,6 +147,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Tempest_D",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

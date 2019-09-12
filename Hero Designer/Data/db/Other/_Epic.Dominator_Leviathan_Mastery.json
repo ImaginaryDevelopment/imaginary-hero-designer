@@ -141,7 +141,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Leviathan_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -223,8 +223,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 43.79305,
-          "MagPercent": 43.79305,
+          "Mag": 21.40992,
+          "MagPercent": 21.40992,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -257,8 +257,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 4.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -295,8 +295,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 54.7994957,
-          "MagPercent": 54.7994957,
+          "Mag": 26.790844,
+          "MagPercent": 26.790844,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -330,8 +330,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.96015,
-          "MagPercent": 10.96015,
+          "Mag": 5.358291,
+          "MagPercent": 5.358291,
           "Duration": 4.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -368,8 +368,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 75.07381,
-          "MagPercent": 75.07381,
+          "Mag": 36.70272,
+          "MagPercent": 36.70272,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -405,8 +405,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 134.559784,
-          "MagPercent": 134.559784,
+          "Mag": 65.78474,
+          "MagPercent": 65.78474,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -441,7 +441,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Leviathan_Mastery",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -866,7 +866,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Epic.Dominator_Leviathan_Mastery",
-      "CastTime": 0.07,
+      "CastTime": 0.264,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -955,8 +955,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -990,8 +990,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1026,8 +1026,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1062,8 +1062,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1097,8 +1097,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1132,8 +1132,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1167,8 +1167,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1202,8 +1202,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1237,8 +1237,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1272,8 +1272,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1307,8 +1307,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1341,7 +1341,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Leviathan_Mastery",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1493,7 +1493,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Leviathan_Mastery",
-      "CastTime": 3.2,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 1.0
     }

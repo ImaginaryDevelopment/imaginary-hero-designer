@@ -97,8 +97,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -131,8 +131,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 128.39183,
-          "MagPercent": 128.39183,
+          "Mag": 62.7692947,
+          "MagPercent": 62.7692947,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -165,7 +165,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -340,7 +340,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -416,8 +416,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.2905922,
-          "MagPercent": 41.2905922,
+          "Mag": 20.1864967,
+          "MagPercent": 20.1864967,
           "Duration": 0.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -488,8 +488,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 69.86055,
-          "MagPercent": 69.86055,
+          "Mag": 34.1540222,
+          "MagPercent": 34.1540222,
           "Duration": 0.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -561,7 +561,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.2,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2391,7 +2391,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.3,
+      "CastTime": 1.452,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2470,8 +2470,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.4743214,
-          "MagPercent": 16.4743214,
+          "Mag": 8.054107,
+          "MagPercent": 8.054107,
           "Duration": 0.7,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2542,8 +2542,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.8608723,
-          "MagPercent": 28.8608723,
+          "Mag": 14.10975,
+          "MagPercent": 14.10975,
           "Duration": 0.7,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2615,7 +2615,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -2763,7 +2763,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3251,7 +3251,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3362,7 +3362,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5243,7 +5243,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 5.5
     }

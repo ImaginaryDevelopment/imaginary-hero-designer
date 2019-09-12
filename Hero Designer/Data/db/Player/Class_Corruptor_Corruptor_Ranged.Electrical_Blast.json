@@ -101,8 +101,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -135,8 +135,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -172,8 +172,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.616058,
-          "MagPercent": 106.616058,
+          "Mag": 52.1233673,
+          "MagPercent": 52.1233673,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -207,8 +207,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 106.616058,
-          "MagPercent": 106.616058,
+          "Mag": 52.1233673,
+          "MagPercent": 52.1233673,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -381,7 +381,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -458,8 +458,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -492,8 +492,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -529,8 +529,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 159.839,
-          "MagPercent": 159.839,
+          "Mag": 78.1434555,
+          "MagPercent": 78.1434555,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -564,8 +564,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 159.839,
-          "MagPercent": 159.839,
+          "Mag": 78.1434555,
+          "MagPercent": 78.1434555,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -738,7 +738,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -817,8 +817,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -850,8 +850,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.26107,
-          "MagPercent": 11.26107,
+          "Mag": 5.50540829,
+          "MagPercent": 5.50540829,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -888,8 +888,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 17.51722,
-          "MagPercent": 17.51722,
+          "Mag": 8.563968,
+          "MagPercent": 8.563968,
           "Duration": 3.1,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -928,8 +928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.8092136,
-          "MagPercent": 27.8092136,
+          "Mag": 13.5956059,
+          "MagPercent": 13.5956059,
           "Duration": 3.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -966,8 +966,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.8092136,
-          "MagPercent": 27.8092136,
+          "Mag": 13.5956059,
+          "MagPercent": 13.5956059,
           "Duration": 3.1,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -1110,7 +1110,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1186,8 +1186,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.26107,
-          "MagPercent": 11.26107,
+          "Mag": 5.50540829,
+          "MagPercent": 5.50540829,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1223,8 +1223,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.26107,
-          "MagPercent": 11.26107,
+          "Mag": 5.50540829,
+          "MagPercent": 5.50540829,
           "Duration": 4.1,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -1263,8 +1263,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.96185,
-          "MagPercent": 13.96185,
+          "Mag": 6.825788,
+          "MagPercent": 6.825788,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1301,8 +1301,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.96185,
-          "MagPercent": 13.96185,
+          "Mag": 6.825788,
+          "MagPercent": 6.825788,
           "Duration": 4.1,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
@@ -1410,8 +1410,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.28075,
-          "MagPercent": 31.28075,
+          "Mag": 15.2928,
+          "MagPercent": 15.2928,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1446,8 +1446,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.28075,
-          "MagPercent": 31.28075,
+          "Mag": 15.2928,
+          "MagPercent": 15.2928,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1516,7 +1516,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1584,8 +1584,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1619,8 +1619,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1655,8 +1655,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1691,8 +1691,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1727,8 +1727,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1763,8 +1763,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1799,8 +1799,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1835,8 +1835,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1871,8 +1871,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1906,7 +1906,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1987,8 +1987,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2021,8 +2021,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 172.669739,
-          "MagPercent": 172.669739,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2058,8 +2058,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2093,8 +2093,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 292.7703,
-          "MagPercent": 292.7703,
+          "Mag": 143.132034,
+          "MagPercent": 143.132034,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2333,7 +2333,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 4.33,
+      "CastTime": 4.488,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2487,8 +2487,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2521,8 +2521,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2558,8 +2558,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2732,7 +2732,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2845,7 +2845,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2922,8 +2922,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2956,8 +2956,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684509,
-          "MagPercent": 187.684509,
+          "Mag": 91.7568,
+          "MagPercent": 91.7568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2991,8 +2991,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 57.55095,
-          "MagPercent": 57.55095,
+          "Mag": 28.136,
+          "MagPercent": 28.136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3026,8 +3026,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 116.846115,
-          "MagPercent": 116.846115,
+          "Mag": 57.1247253,
+          "MagPercent": 57.1247253,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3061,8 +3061,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 125.123,
-          "MagPercent": 125.123,
+          "Mag": 61.1712,
+          "MagPercent": 61.1712,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3098,8 +3098,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 87.1988449,
-          "MagPercent": 87.1988449,
+          "Mag": 42.6305161,
+          "MagPercent": 42.6305161,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3377,7 +3377,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Electrical_Blast",
-      "CastTime": 3.7,
+      "CastTime": 3.96,
       "Slottable": true,
       "AoEModifier": 4.75
     }

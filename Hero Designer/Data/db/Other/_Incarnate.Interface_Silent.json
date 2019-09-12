@@ -158,7 +158,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.05,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -177,6 +177,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -255,7 +256,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 4.3,
           "nMagnitude": 2.0,
           "AttribType": 1,
@@ -293,7 +294,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 2,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 2.3,
           "nMagnitude": 2.0,
           "AttribType": 1,
@@ -312,6 +313,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -324,7 +326,7 @@
       "GroupName": "Incarnate",
       "SetName": "Interface_Silent",
       "PowerName": "Damage_Debuff",
-      "DisplayName": "Paralytic Interface",
+      "DisplayName": "Paralytic Interface (DMG)",
       "Requires": {
         "ClassName": [],
         "ClassNameNot": [],
@@ -383,20 +385,19 @@
           "EffectId": "InterfaceDamage",
           "Special": "",
           "EffectType": 4,
-          "DamageType": 1,
           "Summon": "",
           "nSummon": -1,
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.05,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
           "Aspect": 3,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
+          "PowerFullName": "",
           "RequiresToHitCheck": true,
           "Absorbed_PowerType": 1,
           "Absorbed_Power_nID": -1,
@@ -405,261 +406,10 @@
           "UniqueID": 1,
           "Override": "",
           "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 1,
-          "EffectType": 4,
-          "DamageType": 2,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 2,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 2,
-          "EffectType": 4,
-          "DamageType": 3,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 3,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 3,
-          "EffectType": 4,
-          "DamageType": 4,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 4,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 4,
-          "EffectType": 4,
-          "DamageType": 5,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 5,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 5,
-          "EffectType": 4,
-          "DamageType": 6,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 6,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 6,
-          "EffectType": 4,
-          "DamageType": 8,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 7,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.05,
-          "MagPercent": -5.0,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceDamage",
-          "Special": "",
-          "nID": 7,
-          "EffectType": 4,
-          "DamageType": 7,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.05,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "Aspect": 3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Damage_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 8,
-          "Override": "",
-          "nOverride": -1
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -672,7 +422,7 @@
       "GroupName": "Incarnate",
       "SetName": "Interface_Silent",
       "PowerName": "Defense_Debuff",
-      "DisplayName": "Paralytic Interface",
+      "DisplayName": "Paralytic Interface (DEF)",
       "Requires": {
         "ClassName": [],
         "ClassNameNot": [],
@@ -736,11 +486,11 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.025,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
-          "Aspect": 4,
+          "Aspect": 1,
           "ModifierTable": "Melee_Ones",
           "nModifierTable": 41,
           "PowerFullName": "Incarnate.Interface_Silent.Defense_Debuff",
@@ -755,6 +505,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -815,6 +566,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -875,6 +627,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -935,6 +688,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -995,6 +749,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1055,6 +810,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1115,6 +871,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1175,6 +932,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1235,6 +993,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1295,6 +1054,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1355,6 +1115,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1415,6 +1176,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1475,6 +1237,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1535,6 +1298,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1595,6 +1359,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1655,6 +1420,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1715,6 +1481,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1775,6 +1542,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1835,6 +1603,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1911,7 +1680,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.125,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -1930,6 +1699,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2006,7 +1776,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.125,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2025,6 +1795,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2101,7 +1872,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.125,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2120,6 +1891,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2196,7 +1968,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.1,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2215,6 +1987,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2291,7 +2064,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.1,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2310,6 +2083,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2385,7 +2159,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.01,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2421,7 +2195,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.05,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2456,7 +2230,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 2,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.5,
           "nMagnitude": 1.0,
           "nDuration": 4.3,
@@ -2475,6 +2249,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2535,6 +2310,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2595,6 +2371,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2655,6 +2432,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2715,6 +2493,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2775,6 +2554,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2835,6 +2615,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2895,6 +2676,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2955,6 +2737,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3015,6 +2798,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3093,7 +2877,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 4.3,
           "nMagnitude": 2.0,
           "AttribType": 1,
@@ -3131,7 +2915,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 2,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 2.3,
           "nMagnitude": 2.0,
           "AttribType": 1,
@@ -3150,6 +2934,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3223,7 +3008,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 2,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.035,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3256,7 +3041,7 @@
           "UIDClassName": "",
           "nIDClassName": -1,
           "PvMode": 2,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": 0.035,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3276,6 +3061,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3353,7 +3139,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3388,7 +3174,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3423,7 +3209,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3458,7 +3244,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -3477,6 +3263,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3537,6 +3324,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3597,6 +3385,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3657,6 +3446,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3717,6 +3507,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3777,6 +3568,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3837,6 +3629,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3897,6 +3690,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3957,6 +3751,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4017,6 +3812,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4077,6 +3873,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4137,6 +3934,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4197,6 +3995,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4257,6 +4056,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4317,6 +4117,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4377,6 +4178,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4437,6 +4239,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4497,6 +4300,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4557,6 +4361,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4634,7 +4439,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -4653,6 +4458,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4729,7 +4535,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -4748,6 +4554,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4824,7 +4631,7 @@
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.1,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -4843,6 +4650,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4896,6 +4704,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4967,13 +4776,12 @@
           "EffectId": "InterfaceResistance",
           "Special": "",
           "EffectType": 29,
-          "DamageType": 1,
           "Summon": "",
           "nSummon": -1,
           "Resistible": true,
           "UIDClassName": "",
           "nIDClassName": -1,
-          "ToWho": 3,
+          "ToWho": 1,
           "Scale": -0.025,
           "nMagnitude": 1.0,
           "nDuration": 8.3,
@@ -4988,254 +4796,10 @@
           "UniqueID": 1,
           "Override": "",
           "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 1,
-          "EffectType": 29,
-          "DamageType": 2,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 2,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 2,
-          "EffectType": 29,
-          "DamageType": 3,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 3,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 3,
-          "EffectType": 29,
-          "DamageType": 4,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 4,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 4,
-          "EffectType": 29,
-          "DamageType": 5,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 5,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 5,
-          "EffectType": 29,
-          "DamageType": 6,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 6,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 6,
-          "EffectType": 29,
-          "DamageType": 7,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 7,
-          "Override": "",
-          "nOverride": -1
-        },
-        {
-          "MagnitudeExpression": "",
-          "Probability": 1.0,
-          "Mag": -0.025,
-          "MagPercent": -2.5,
-          "Duration": 8.3,
-          "DisplayPercentage": true,
-          "BaseProbability": 1.0,
-          "Reward": "",
-          "EffectId": "InterfaceResistance",
-          "Special": "",
-          "nID": 7,
-          "EffectType": 29,
-          "DamageType": 8,
-          "Summon": "",
-          "nSummon": -1,
-          "Resistible": true,
-          "UIDClassName": "",
-          "nIDClassName": -1,
-          "ToWho": 3,
-          "Scale": -0.025,
-          "nMagnitude": 1.0,
-          "nDuration": 8.3,
-          "ModifierTable": "Melee_Ones",
-          "nModifierTable": 41,
-          "PowerFullName": "Incarnate.Interface_Silent.Resistance_Debuff",
-          "RequiresToHitCheck": true,
-          "Absorbed_PowerType": 1,
-          "Absorbed_Power_nID": -1,
-          "Absorbed_Class_nID": -1,
-          "Absorbed_EffectID": -1,
-          "UniqueID": 8,
-          "Override": "",
-          "nOverride": -1
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6179,6 +5743,7 @@
         }
       ],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6232,6 +5797,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Interface_Silent",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

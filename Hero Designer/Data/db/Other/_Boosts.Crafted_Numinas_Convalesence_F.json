@@ -143,6 +143,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Numinas_Convalesence_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

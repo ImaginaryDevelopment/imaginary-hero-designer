@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Boosts.Natural_Magic_Fly",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

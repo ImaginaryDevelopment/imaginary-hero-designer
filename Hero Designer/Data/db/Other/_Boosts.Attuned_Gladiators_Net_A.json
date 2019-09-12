@@ -147,6 +147,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Gladiators_Net_A",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

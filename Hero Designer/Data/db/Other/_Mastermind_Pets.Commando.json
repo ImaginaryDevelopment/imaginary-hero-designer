@@ -408,6 +408,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -506,7 +507,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -646,7 +647,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando",
-      "CastTime": 2.2,
+      "CastTime": 2.376,
       "AoEModifier": 1.0
     },
     {
@@ -818,7 +819,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -1040,6 +1041,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Commando",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

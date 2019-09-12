@@ -98,8 +98,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 52.55166,
-          "MagPercent": 52.55166,
+          "Mag": 25.6919022,
+          "MagPercent": 25.6919022,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -132,8 +132,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 95.9693451,
-          "MagPercent": 95.9693451,
+          "Mag": 46.9183121,
+          "MagPercent": 46.9183121,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -597,7 +597,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -671,8 +671,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -705,8 +705,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.475739,
-          "MagPercent": 102.475739,
+          "Mag": 50.0992126,
+          "MagPercent": 50.0992126,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1171,7 +1171,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1248,8 +1248,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.9309654,
-          "MagPercent": 56.9309654,
+          "Mag": 27.8328972,
+          "MagPercent": 27.8328972,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1282,8 +1282,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 51.1127434,
-          "MagPercent": 51.1127434,
+          "Mag": 24.9884338,
+          "MagPercent": 24.9884338,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1316,7 +1316,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.45329237
     },
@@ -1393,8 +1393,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1466,7 +1466,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -1500,7 +1500,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1568,8 +1568,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1639,8 +1639,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1675,8 +1675,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1711,8 +1711,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1747,8 +1747,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1783,8 +1783,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1819,8 +1819,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1855,8 +1855,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1891,8 +1891,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1926,7 +1926,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2005,8 +2005,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2039,8 +2039,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5369034,
-          "MagPercent": 37.5369034,
+          "Mag": 18.35136,
+          "MagPercent": 18.35136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2074,8 +2074,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 14.3891459,
-          "MagPercent": 14.3891459,
+          "Mag": 7.034688,
+          "MagPercent": 7.034688,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2109,8 +2109,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.7157288,
-          "MagPercent": 28.7157288,
+          "Mag": 14.03879,
+          "MagPercent": 14.03879,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2177,7 +2177,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2251,8 +2251,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 122.620544,
-          "MagPercent": 122.620544,
+          "Mag": 59.9477768,
+          "MagPercent": 59.9477768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2285,8 +2285,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 169.228851,
-          "MagPercent": 169.228851,
+          "Mag": 82.73405,
+          "MagPercent": 82.73405,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2320,8 +2320,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.82018757,
-          "MagPercent": 7.82018757,
+          "Mag": 3.8232,
+          "MagPercent": 3.8232,
           "Duration": 4.125,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2357,7 +2357,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2431,8 +2431,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 142.640213,
-          "MagPercent": 142.640213,
+          "Mag": 69.73517,
+          "MagPercent": 69.73517,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2465,8 +2465,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 110.608734,
-          "MagPercent": 110.608734,
+          "Mag": 54.07534,
+          "MagPercent": 54.07534,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2499,12 +2499,12 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
     {
-      "CastTimeReal": 4.0,
+      "CastTimeReal": 2.0,
       "ToggleCost": 15.6,
       "PowerIndex": 7236,
       "PowerSetID": 3339,
@@ -2646,7 +2646,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Archery",
-      "CastTime": 4.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     }

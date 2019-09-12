@@ -116,7 +116,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Medicine_AidOther",
-      "CastTime": 2.93,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -217,7 +217,7 @@
         }
       ],
       "FullSetName": "Pets.Pool_Medicine_AidOther",
-      "CastTime": 3.93,
+      "CastTime": 4.092,
       "AoEModifier": 1.0
     }
   ]

@@ -1,5 +1,4 @@
 {
-  "IsModified": true,
   "Description": "Scirocco has taught you the ancient powers of the Mu. In their eternal struggle against the Oranbega, the Mu have unlocked many mystical powers, including their very signature crimson lightning.  Now you posses these their secrets.",
   "SetName": "Sentinel_Mu_Mastery",
   "FullName": "Epic.Sentinel_Mu_Mastery",
@@ -106,8 +105,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -144,7 +143,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 17.8800011,
+          "Duration": 22.35,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -179,8 +178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 14.2367668,
-          "MagPercent": 14.2367668,
+          "Mag": 7.83021927,
+          "MagPercent": 7.83021927,
           "Duration": 7.21,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -292,8 +291,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -1.0,
-          "MagPercent": -1.0,
+          "Mag": -1.1,
+          "MagPercent": -1.1,
           "Duration": 6.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -502,7 +501,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Mu_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -585,8 +584,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 61.17122,
-          "MagPercent": 61.17122,
+          "Mag": 33.64416,
+          "MagPercent": 33.64416,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -620,7 +619,7 @@
           "Probability": 0.5,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 5.96,
+          "Duration": 7.45,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Stun",
@@ -726,8 +725,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -791,7 +790,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Mu_Mastery",
-      "CastTime": 3.3,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 2.05
     },
@@ -967,8 +966,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.7797775,
-          "MagPercent": 25.7797775,
+          "Mag": 14.1788731,
+          "MagPercent": 14.1788731,
           "Duration": 6.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1004,8 +1003,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.34153,
-          "MagPercent": 8.34153,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "Duration": 6.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1076,8 +1075,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -1.25,
-          "MagPercent": -1.25,
+          "Mag": -1.375,
+          "MagPercent": -1.375,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "EndDrain",
@@ -1178,7 +1177,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Mu_Mastery",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1280,8 +1279,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.05904,
-          "MagPercent": 60.05904,
+          "Mag": 29.362175,
+          "MagPercent": 29.362175,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1349,8 +1348,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.894279,
-          "MagPercent": 102.894279,
+          "Mag": 50.303833,
+          "MagPercent": 50.303833,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1384,8 +1383,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.05,
-          "Mag": 102.894279,
-          "MagPercent": 102.894279,
+          "Mag": 50.303833,
+          "MagPercent": 50.303833,
           "InherentSpecial": true,
           "BaseProbability": 0.05,
           "Reward": "",
@@ -1598,8 +1597,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 27.02657,
-          "MagPercent": 27.02657,
+          "Mag": 13.2129793,
+          "MagPercent": 13.2129793,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1630,7 +1629,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Mu_Mastery",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -1789,7 +1788,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Mu_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     }

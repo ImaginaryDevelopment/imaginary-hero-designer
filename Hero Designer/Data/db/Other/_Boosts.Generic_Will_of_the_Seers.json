@@ -461,6 +461,7 @@
         }
       ],
       "FullSetName": "Boosts.Generic_Will_of_the_Seers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

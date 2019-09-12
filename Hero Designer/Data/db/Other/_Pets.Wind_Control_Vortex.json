@@ -439,7 +439,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
-      "CastTime": 1.63,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -720,7 +720,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "AoEModifier": 4.75
     },
     {
@@ -821,7 +821,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -936,6 +936,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1778,6 +1779,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1971,6 +1973,7 @@
         }
       ],
       "FullSetName": "Pets.Wind_Control_Vortex",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

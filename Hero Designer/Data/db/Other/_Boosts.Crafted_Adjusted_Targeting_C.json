@@ -180,6 +180,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Adjusted_Targeting_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

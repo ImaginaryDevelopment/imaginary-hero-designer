@@ -339,6 +339,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Protector",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -716,7 +717,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Protector",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -818,7 +819,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Protector",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -1040,6 +1041,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Protector",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

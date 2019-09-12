@@ -214,6 +214,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_TimeSpace_Manipulation_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -183,6 +183,7 @@
         }
       ],
       "FullSetName": "Pets.Lightning_Rod",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

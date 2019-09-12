@@ -175,6 +175,7 @@
         }
       ],
       "FullSetName": "Pets.VillainBomb",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -262,6 +263,7 @@
         }
       ],
       "FullSetName": "Pets.VillainBomb",
+      "CastTime": 0.132,
       "AoEModifier": 6.25
     },
     {
@@ -1507,6 +1509,7 @@
         }
       ],
       "FullSetName": "Pets.VillainBomb",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1589,6 +1592,7 @@
         }
       ],
       "FullSetName": "Pets.VillainBomb",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -90,8 +90,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -123,8 +123,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -156,6 +156,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -226,8 +227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -261,8 +262,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -297,8 +298,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -332,8 +333,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -366,7 +367,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -441,8 +442,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.453734,
-          "MagPercent": 9.453734,
+          "Mag": 5.199552,
+          "MagPercent": 5.199552,
           "Duration": 2.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -513,7 +514,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -584,8 +585,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -619,8 +620,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -655,8 +656,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -691,8 +692,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -726,8 +727,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -761,8 +762,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -796,8 +797,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -830,7 +831,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -968,8 +969,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1004,8 +1005,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1040,8 +1041,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1076,8 +1077,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1112,8 +1113,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1148,8 +1149,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1184,8 +1185,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1220,8 +1221,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1256,8 +1257,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1292,8 +1293,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1502,7 +1503,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1573,8 +1574,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1608,8 +1609,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1644,8 +1645,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1679,8 +1680,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1713,7 +1714,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1792,8 +1793,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1827,8 +1828,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1863,8 +1864,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1899,8 +1900,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1935,8 +1936,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1971,8 +1972,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2007,8 +2008,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2043,8 +2044,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2078,8 +2079,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2113,8 +2114,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2148,8 +2149,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2183,8 +2184,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2218,8 +2219,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2253,8 +2254,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2288,8 +2289,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2323,8 +2324,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 2.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2358,8 +2359,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 903.5692,
-          "MagPercent": 903.5692,
+          "Mag": 602.379761,
+          "MagPercent": 602.379761,
           "Duration": 2.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4245,6 +4246,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4355,8 +4357,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 240.9518,
-          "MagPercent": 240.9518,
+          "Mag": 160.6346,
+          "MagPercent": 160.6346,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4391,8 +4393,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 361.4277,
-          "MagPercent": 361.4277,
+          "Mag": 240.9519,
+          "MagPercent": 240.9519,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4426,8 +4428,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 481.9036,
-          "MagPercent": 481.9036,
+          "Mag": 321.2692,
+          "MagPercent": 321.2692,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4462,8 +4464,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4530,7 +4532,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5014,6 +5016,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5213,7 +5216,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 12.0,
+      "CastTime": 12.144,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5291,7 +5294,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -5324,8 +5327,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -5359,7 +5362,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -5393,7 +5396,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -5468,8 +5471,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -5500,8 +5503,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 289.1421,
-          "MagPercent": 289.1421,
+          "Mag": 353.3958,
+          "MagPercent": 353.3958,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -5668,7 +5671,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -5848,8 +5851,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -5884,8 +5887,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -5920,8 +5923,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -5956,8 +5959,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -5992,8 +5995,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -6028,8 +6031,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -6064,8 +6067,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -6100,8 +6103,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -6135,7 +6138,7 @@
         }
       ],
       "FullSetName": "Warshade_Defensive.Umbral_Aura",
-      "CastTime": 1.03,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 3.25
     }

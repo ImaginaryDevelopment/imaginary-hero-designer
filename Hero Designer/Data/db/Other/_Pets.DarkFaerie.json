@@ -614,6 +614,7 @@
         }
       ],
       "FullSetName": "Pets.DarkFaerie",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -715,7 +716,7 @@
         }
       ],
       "FullSetName": "Pets.DarkFaerie",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     }
   ]

@@ -183,6 +183,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Intangible_20",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

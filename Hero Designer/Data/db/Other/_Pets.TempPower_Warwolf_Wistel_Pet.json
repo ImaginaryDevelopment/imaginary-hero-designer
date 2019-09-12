@@ -96,6 +96,7 @@
         }
       ],
       "FullSetName": "Pets.TempPower_Warwolf_Wistel_Pet",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

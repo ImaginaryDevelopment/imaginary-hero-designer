@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 139.0255,
-          "MagPercent": 139.0255,
+          "Mag": 76.464,
+          "MagPercent": 76.464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -194,8 +194,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.2459,
-          "MagPercent": 250.2459,
+          "Mag": 137.6352,
+          "MagPercent": 137.6352,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -594,7 +594,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Dual_Blades_Assassins_Strike",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -667,8 +667,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 153.484146,
-          "MagPercent": 153.484146,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -699,8 +699,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 153.484146,
-          "MagPercent": 153.484146,
+          "Mag": 84.41625,
+          "MagPercent": 84.41625,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -732,8 +732,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 95.89757,
-          "MagPercent": 95.89757,
+          "Mag": 52.7436447,
+          "MagPercent": 52.7436447,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -765,8 +765,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 95.89757,
-          "MagPercent": 95.89757,
+          "Mag": 52.7436447,
+          "MagPercent": 52.7436447,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -1092,7 +1092,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Dual_Blades_Assassins_Strike",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     }
   ]

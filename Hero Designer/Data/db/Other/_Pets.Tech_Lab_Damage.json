@@ -206,6 +206,7 @@
         }
       ],
       "FullSetName": "Pets.Tech_Lab_Damage",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     }
   ]

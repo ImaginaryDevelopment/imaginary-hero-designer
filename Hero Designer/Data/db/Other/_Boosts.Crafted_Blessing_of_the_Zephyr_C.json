@@ -117,6 +117,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Blessing_of_the_Zephyr_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

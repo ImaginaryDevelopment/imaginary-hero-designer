@@ -179,6 +179,7 @@
         }
       ],
       "FullSetName": "Boosts.Science_Technology_Intangible",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

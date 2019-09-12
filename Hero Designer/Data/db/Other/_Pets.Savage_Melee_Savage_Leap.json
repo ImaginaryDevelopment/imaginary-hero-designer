@@ -443,6 +443,7 @@
         }
       ],
       "FullSetName": "Pets.Savage_Melee_Savage_Leap",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

@@ -148,6 +148,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Perfect_Zinger_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

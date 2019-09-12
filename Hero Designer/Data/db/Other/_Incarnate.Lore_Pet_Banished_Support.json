@@ -118,7 +118,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Support",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -323,7 +323,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Support",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 5.5
     }
   ]

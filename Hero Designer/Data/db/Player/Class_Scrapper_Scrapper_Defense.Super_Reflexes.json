@@ -94,8 +94,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -201,8 +201,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -306,7 +306,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -376,8 +376,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -482,8 +482,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -518,8 +518,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.135,
+          "MagPercent": 13.500001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -658,7 +658,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -719,8 +719,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.0675,
+          "MagPercent": 6.75000048,
           "Duration": 2.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -966,6 +966,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1699,7 +1700,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
-      "CastTime": 1.53,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1760,8 +1761,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.0675,
+          "MagPercent": 6.75000048,
           "Duration": 2.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2007,6 +2008,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2266,6 +2268,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2326,8 +2329,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.0675,
+          "MagPercent": 6.75000048,
           "Duration": 2.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2573,6 +2576,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2642,8 +2646,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2713,8 +2717,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1295,
-          "MagPercent": 12.95,
+          "Mag": 0.1665,
+          "MagPercent": 16.65,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2783,7 +2787,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2860,8 +2864,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2894,8 +2898,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2963,8 +2967,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3303,7 +3307,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Super_Reflexes",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     }

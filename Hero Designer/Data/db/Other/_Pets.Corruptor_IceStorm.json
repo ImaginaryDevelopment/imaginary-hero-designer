@@ -425,6 +425,7 @@
         }
       ],
       "FullSetName": "Pets.Corruptor_IceStorm",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -512,6 +513,7 @@
         }
       ],
       "FullSetName": "Pets.Corruptor_IceStorm",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

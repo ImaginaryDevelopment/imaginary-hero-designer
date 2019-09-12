@@ -171,6 +171,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Savage_Melee",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

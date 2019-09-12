@@ -504,8 +504,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.3336612,
-          "MagPercent": 0.3336612,
+          "Mag": 0.1835136,
+          "MagPercent": 0.1835136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -537,8 +537,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -571,8 +571,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -605,8 +605,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -639,8 +639,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -673,8 +673,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -707,8 +707,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -741,8 +741,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -775,8 +775,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -809,8 +809,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.210000008,
-          "MagPercent": -21.0,
+          "Mag": -0.3,
+          "MagPercent": -30.0000019,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -911,6 +911,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Sleet",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -998,6 +999,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Sleet",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

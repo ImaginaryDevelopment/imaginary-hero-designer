@@ -146,6 +146,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Glimpse_of_the_Abyss_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -360,6 +360,7 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Sentinel",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -446,6 +447,7 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Sentinel",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

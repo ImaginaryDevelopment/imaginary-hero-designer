@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Expedient_Reinforcement_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

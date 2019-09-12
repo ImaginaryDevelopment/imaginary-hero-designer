@@ -146,6 +146,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Essence_of_Curare_A",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

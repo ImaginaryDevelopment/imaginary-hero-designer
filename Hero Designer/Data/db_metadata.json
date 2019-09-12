@@ -17594,8 +17594,8 @@
   {
     "Archetype": "",
     "Fullname": "Mastermind_Pets.Ember_Demon",
-    "Hash": 2117942357,
-    "Length": 34328
+    "Hash": -1209605871,
+    "Length": 34204
   },
   {
     "Archetype": "",
@@ -18002,8 +18002,8 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Summon.Demon_Summoning",
-    "Hash": 801250327,
-    "Length": 119026
+    "Hash": -1387230429,
+    "Length": 118545
   },
   {
     "Archetype": "Class_Mastermind",
@@ -18026,7 +18026,7 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Summon.Robotics",
-    "Hash": 1342483260,
+    "Hash": -1172686719,
     "Length": 61102
   },
   {

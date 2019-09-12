@@ -400,6 +400,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Ascendency_of_the_Dominator_E",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

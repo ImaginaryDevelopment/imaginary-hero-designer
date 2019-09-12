@@ -334,7 +334,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_2",
-      "CastTime": 2.47,
+      "CastTime": 2.63999987,
       "AoEModifier": 1.0
     },
     {
@@ -712,7 +712,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_2",
-      "CastTime": 1.6,
+      "CastTime": 1.848,
       "AoEModifier": 3.25
     },
     {
@@ -796,6 +796,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_2",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -879,6 +880,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_2",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -962,6 +964,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Alpha_Wolf_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -81,8 +81,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 166.8306,
-          "MagPercent": 166.8306,
+          "Mag": 91.7568,
+          "MagPercent": 91.7568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -113,8 +113,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 111.2204,
-          "MagPercent": 111.2204,
+          "Mag": 61.1712,
+          "MagPercent": 61.1712,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -366,6 +366,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Bomb",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

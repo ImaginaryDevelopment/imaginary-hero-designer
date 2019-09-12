@@ -443,6 +443,7 @@
         }
       ],
       "FullSetName": "Pets.Hibernate",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     }
   ]

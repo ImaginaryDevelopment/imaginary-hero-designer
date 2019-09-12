@@ -180,6 +180,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Extreme_Measures_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

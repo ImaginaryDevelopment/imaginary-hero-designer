@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -139,7 +139,7 @@
           "Probability": 0.1,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 9.536,
+          "Duration": 11.92,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Stun",
@@ -174,8 +174,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 85.81933,
-          "MagPercent": 85.81933,
+          "Mag": 47.20062,
+          "MagPercent": 47.20062,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -357,8 +357,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 25.02459,
-          "MagPercent": 25.02459,
+          "Mag": 13.7635193,
+          "MagPercent": 13.7635193,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -388,7 +388,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -468,8 +468,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 91.20072,
-          "MagPercent": 91.20072,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -536,8 +536,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 138.9204,
-          "MagPercent": 138.9204,
+          "Mag": 76.4062,
+          "MagPercent": 76.4062,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -716,8 +716,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 41.0403252,
-          "MagPercent": 41.0403252,
+          "Mag": 22.5721722,
+          "MagPercent": 22.5721722,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -747,7 +747,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.61,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -827,8 +827,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 126.791252,
-          "MagPercent": 126.791252,
+          "Mag": 69.73517,
+          "MagPercent": 69.73517,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -895,8 +895,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 152.007141,
-          "MagPercent": 152.007141,
+          "Mag": 83.6039,
+          "MagPercent": 83.6039,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1076,8 +1076,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 57.0560646,
-          "MagPercent": 57.0560646,
+          "Mag": 31.380827,
+          "MagPercent": 31.380827,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1107,7 +1107,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.63,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1175,8 +1175,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.2,
-          "MagPercent": 20.0,
+          "Mag": 0.16,
+          "MagPercent": 16.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1210,8 +1210,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1246,8 +1246,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1282,8 +1282,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1318,8 +1318,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1354,8 +1354,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1390,8 +1390,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1426,8 +1426,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1462,8 +1462,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 0.64,
+          "MagPercent": 64.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1497,7 +1497,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1614,7 +1614,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 9.536,
+          "Duration": 11.92,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -1652,7 +1652,7 @@
           "Probability": 0.5,
           "Mag": 1.0,
           "MagPercent": 1.0,
-          "Duration": 9.536,
+          "Duration": 11.92,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Stun",
@@ -1837,8 +1837,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 27.0866165,
-          "MagPercent": 27.0866165,
+          "Mag": 14.8976345,
+          "MagPercent": 14.8976345,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1868,7 +1868,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 2.1,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2084,7 +2084,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2164,8 +2164,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 197.9723,
-          "MagPercent": 197.9723,
+          "Mag": 108.884735,
+          "MagPercent": 108.884735,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2199,7 +2199,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 9.536,
+          "Duration": 11.92,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Immobilize",
@@ -2234,8 +2234,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 169.2313,
-          "MagPercent": 169.2313,
+          "Mag": 93.07718,
+          "MagPercent": 93.07718,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2417,8 +2417,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 89.08754,
-          "MagPercent": 89.08754,
+          "Mag": 48.99813,
+          "MagPercent": 48.99813,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2448,7 +2448,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2529,8 +2529,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 91.20072,
-          "MagPercent": 91.20072,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2597,8 +2597,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 148.622711,
-          "MagPercent": 148.622711,
+          "Mag": 81.74246,
+          "MagPercent": 81.74246,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2814,8 +2814,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 41.0403252,
-          "MagPercent": 41.0403252,
+          "Mag": 22.5721722,
+          "MagPercent": 22.5721722,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2845,7 +2845,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2927,8 +2927,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2997,8 +2997,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 140.542542,
-          "MagPercent": 140.542542,
+          "Mag": 77.29838,
+          "MagPercent": 77.29838,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3179,8 +3179,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 25.02459,
-          "MagPercent": 25.02459,
+          "Mag": 13.7635193,
+          "MagPercent": 13.7635193,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3210,7 +3210,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 3.3,
+      "CastTime": 3.432,
       "Slottable": true,
       "AoEModifier": 3.25
     }

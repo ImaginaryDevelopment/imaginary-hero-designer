@@ -95,8 +95,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -130,8 +130,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -166,8 +166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.245,
-          "MagPercent": 24.5,
+          "Mag": 0.35,
+          "MagPercent": 35.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -202,8 +202,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -237,8 +237,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -272,8 +272,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.245,
-          "MagPercent": 24.5,
+          "Mag": 0.35,
+          "MagPercent": 35.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -306,7 +306,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -532,6 +532,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -602,8 +603,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.4,
+          "MagPercent": 40.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -637,8 +638,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -673,8 +674,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -709,8 +710,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -745,8 +746,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.28,
-          "MagPercent": 28.0,
+          "Mag": 0.4,
+          "MagPercent": 40.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -780,8 +781,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -815,8 +816,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -850,8 +851,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0525000021,
-          "MagPercent": 5.25,
+          "Mag": 0.075,
+          "MagPercent": 7.50000048,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -884,7 +885,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1398,8 +1399,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1434,8 +1435,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1470,8 +1471,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1506,8 +1507,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1542,8 +1543,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1887,8 +1888,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1922,8 +1923,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1957,8 +1958,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1992,8 +1993,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2027,8 +2028,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2061,7 +2062,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2147,8 +2148,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.12204,
-          "MagPercent": 11.12204,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2179,8 +2180,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.78051,
-          "MagPercent": 2.78051,
+          "Mag": 1.52928007,
+          "MagPercent": 1.52928007,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2215,8 +2216,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 132.5235,
-          "MagPercent": 132.5235,
+          "Mag": 88.34903,
+          "MagPercent": 88.34903,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -2247,8 +2248,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 26.5046978,
-          "MagPercent": 26.5046978,
+          "Mag": 17.6698055,
+          "MagPercent": 17.6698055,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -2478,7 +2479,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 1.03,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2633,8 +2634,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 1.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2668,8 +2669,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.105000004,
-          "MagPercent": -10.5,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 1.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2772,7 +2773,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2842,8 +2843,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 3.614277,
-          "MagPercent": 3.614277,
+          "Mag": 2.409519,
+          "MagPercent": 2.409519,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Ones",
@@ -2937,7 +2938,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3022,8 +3023,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.6102,
-          "MagPercent": 55.6102,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3054,8 +3055,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 5.56102,
-          "MagPercent": 5.56102,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 9.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3091,8 +3092,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.14,
-          "MagPercent": -14.0,
+          "Mag": -0.2,
+          "MagPercent": -20.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3127,8 +3128,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 120.4759,
-          "MagPercent": 120.4759,
+          "Mag": 80.3173,
+          "MagPercent": 80.3173,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -3159,8 +3160,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.023795,
-          "MagPercent": 6.023795,
+          "Mag": 4.015865,
+          "MagPercent": 4.015865,
           "Duration": 9.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3194,7 +3195,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3266,8 +3267,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3299,8 +3300,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3333,8 +3334,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3367,8 +3368,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3401,8 +3402,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3435,8 +3436,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3469,8 +3470,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3503,8 +3504,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3570,8 +3571,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3604,8 +3605,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3638,8 +3639,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3672,8 +3673,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3706,8 +3707,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3740,8 +3741,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3774,8 +3775,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3808,8 +3809,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.4125,
-          "MagPercent": 41.25,
+          "Mag": 0.264,
+          "MagPercent": 26.4,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4007,7 +4008,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Radiation_Armor",
-      "CastTime": 2.93,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     }

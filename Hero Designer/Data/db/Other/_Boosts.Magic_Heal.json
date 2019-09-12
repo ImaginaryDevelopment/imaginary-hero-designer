@@ -209,6 +209,7 @@
         }
       ],
       "FullSetName": "Boosts.Magic_Heal",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -112,8 +112,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 46.1564636,
-          "MagPercent": 46.1564636,
+          "Mag": 25.3860474,
+          "MagPercent": 25.3860474,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -145,8 +145,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 75.9424,
-          "MagPercent": 75.9424,
+          "Mag": 41.7683067,
+          "MagPercent": 41.7683067,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -255,8 +255,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 20.7704086,
-          "MagPercent": 20.7704086,
+          "Mag": 11.4237213,
+          "MagPercent": 11.4237213,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -534,7 +534,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -622,8 +622,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 68.95665,
-          "MagPercent": 68.95665,
+          "Mag": 37.9261436,
+          "MagPercent": 37.9261436,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -655,8 +655,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 99.49387,
-          "MagPercent": 99.49387,
+          "Mag": 54.7216148,
+          "MagPercent": 54.7216148,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -800,8 +800,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 31.0304928,
-          "MagPercent": 31.0304928,
+          "Mag": 17.0667648,
+          "MagPercent": 17.0667648,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -831,7 +831,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -913,8 +913,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.1515465,
-          "MagPercent": 41.1515465,
+          "Mag": 22.6333447,
+          "MagPercent": 22.6333447,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -946,8 +946,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.1515465,
-          "MagPercent": 41.1515465,
+          "Mag": 22.6333447,
+          "MagPercent": 22.6333447,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -981,8 +981,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.9522,
-          "MagPercent": 55.9522,
+          "Mag": 30.7737,
+          "MagPercent": 30.7737,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1015,8 +1015,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.9522,
-          "MagPercent": 55.9522,
+          "Mag": 30.7737,
+          "MagPercent": 30.7737,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1050,8 +1050,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1162,8 +1162,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 18.5181961,
-          "MagPercent": 18.5181961,
+          "Mag": 10.1850052,
+          "MagPercent": 10.1850052,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1193,8 +1193,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 18.5181961,
-          "MagPercent": 18.5181961,
+          "Mag": 10.1850052,
+          "MagPercent": 10.1850052,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1225,7 +1225,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1405,7 +1405,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1483,8 +1483,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 105.103271,
-          "MagPercent": 105.103271,
+          "Mag": 57.80678,
+          "MagPercent": 57.80678,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1516,8 +1516,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 98.82655,
-          "MagPercent": 98.82655,
+          "Mag": 54.3545876,
+          "MagPercent": 54.3545876,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1626,8 +1626,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 47.2964745,
-          "MagPercent": 47.2964745,
+          "Mag": 26.013052,
+          "MagPercent": 26.013052,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1657,7 +1657,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 2.5,
+      "CastTime": 2.63999987,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1741,8 +1741,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 44.48816,
-          "MagPercent": 44.48816,
+          "Mag": 24.4684811,
+          "MagPercent": 24.4684811,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1774,8 +1774,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 103.019562,
-          "MagPercent": 103.019562,
+          "Mag": 56.66074,
+          "MagPercent": 56.66074,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1808,8 +1808,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1,
-          "MagPercent": 10.0,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1845,8 +1845,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1882,8 +1882,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1919,8 +1919,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1956,8 +1956,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1993,8 +1993,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2030,8 +2030,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2067,8 +2067,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2104,8 +2104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.375,
-          "MagPercent": 37.5,
+          "Mag": 0.24,
+          "MagPercent": 24.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2217,8 +2217,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 20.0196724,
-          "MagPercent": 20.0196724,
+          "Mag": 11.0108166,
+          "MagPercent": 11.0108166,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2248,7 +2248,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2329,8 +2329,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 83.9714,
-          "MagPercent": 83.9714,
+          "Mag": 46.1842537,
+          "MagPercent": 46.1842537,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2397,8 +2397,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 78.57276,
-          "MagPercent": 78.57276,
+          "Mag": 43.215004,
+          "MagPercent": 43.215004,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2543,8 +2543,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 37.78713,
-          "MagPercent": 37.78713,
+          "Mag": 20.7829151,
+          "MagPercent": 20.7829151,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2574,7 +2574,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2654,8 +2654,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 121.285843,
-          "MagPercent": 121.285843,
+          "Mag": 66.70719,
+          "MagPercent": 66.70719,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2687,8 +2687,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 128.197632,
-          "MagPercent": 128.197632,
+          "Mag": 70.5086746,
+          "MagPercent": 70.5086746,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2721,8 +2721,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.1,
+          "MagPercent": -10.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2833,8 +2833,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 54.5786324,
-          "MagPercent": 54.5786324,
+          "Mag": 30.0182381,
+          "MagPercent": 30.0182381,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2864,7 +2864,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -2947,8 +2947,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.8395233,
-          "MagPercent": 62.8395233,
+          "Mag": 34.56173,
+          "MagPercent": 34.56173,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2980,8 +2980,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 46.7114563,
-          "MagPercent": 46.7114563,
+          "Mag": 25.6912918,
+          "MagPercent": 25.6912918,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3161,8 +3161,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 28.2777843,
-          "MagPercent": 28.2777843,
+          "Mag": 15.5527773,
+          "MagPercent": 15.5527773,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3192,7 +3192,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Claws",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 2.52997327
     }

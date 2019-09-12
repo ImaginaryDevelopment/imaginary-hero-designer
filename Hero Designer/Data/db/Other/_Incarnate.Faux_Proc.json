@@ -78,6 +78,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Faux_Proc",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -128,6 +129,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Faux_Proc",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -83,8 +83,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 87.5861,
-          "MagPercent": 87.5861,
+          "Mag": 42.81984,
+          "MagPercent": 42.81984,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -219,6 +219,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Trick_Shot_Jump2",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

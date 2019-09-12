@@ -354,6 +354,7 @@
         }
       ],
       "FullSetName": "Pets.Liquefy",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

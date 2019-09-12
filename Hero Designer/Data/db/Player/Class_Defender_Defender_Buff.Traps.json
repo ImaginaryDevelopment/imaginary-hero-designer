@@ -489,7 +489,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -601,7 +601,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -704,7 +704,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 2.77,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -816,7 +816,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 2.77,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -921,7 +921,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1027,7 +1027,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 2.77,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1175,7 +1175,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1288,7 +1288,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 5.0,
+      "CastTime": 5.148,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1400,7 +1400,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Traps",
-      "CastTime": 9.0,
+      "CastTime": 9.24,
       "Slottable": true,
       "AoEModifier": 1.0
     }

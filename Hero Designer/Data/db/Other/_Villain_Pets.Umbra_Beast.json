@@ -89,8 +89,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.02754,
-          "MagPercent": 28.02754,
+          "Mag": 15.415143,
+          "MagPercent": 15.415143,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -121,8 +121,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.6850262,
-          "MagPercent": 18.6850262,
+          "Mag": 10.2767611,
+          "MagPercent": 10.2767611,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -155,8 +155,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.951275,
-          "MagPercent": 6.951275,
+          "Mag": 3.8232,
+          "MagPercent": 3.8232,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -191,7 +191,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -258,8 +258,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.69093,
-          "MagPercent": 24.69093,
+          "Mag": 13.5800066,
+          "MagPercent": 13.5800066,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -290,8 +290,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.69093,
-          "MagPercent": 24.69093,
+          "Mag": 13.5800066,
+          "MagPercent": 13.5800066,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -324,8 +324,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.460619,
-          "MagPercent": 16.460619,
+          "Mag": 9.053338,
+          "MagPercent": 9.053338,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -357,8 +357,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.460619,
-          "MagPercent": 16.460619,
+          "Mag": 9.053338,
+          "MagPercent": 9.053338,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -392,8 +392,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.951275,
-          "MagPercent": 6.951275,
+          "Mag": 3.8232,
+          "MagPercent": 3.8232,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -428,7 +428,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.4,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -482,8 +482,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -514,8 +514,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.175,
-          "MagPercent": 17.5,
+          "Mag": 0.25,
+          "MagPercent": 25.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -547,8 +547,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.245,
-          "MagPercent": 24.5,
+          "Mag": 0.35,
+          "MagPercent": 35.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -580,8 +580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -613,8 +613,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.105000004,
-          "MagPercent": 10.5,
+          "Mag": 0.15,
+          "MagPercent": 15.000001,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -646,8 +646,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -679,8 +679,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.5,
+          "MagPercent": 50.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -712,8 +712,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1008,7 +1008,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 0.5,
+      "CastTime": 0.659999967,
       "AoEModifier": 1.0
     },
     {
@@ -1079,8 +1079,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1116,8 +1116,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 53.30803,
-          "MagPercent": 53.30803,
+          "Mag": 26.0616837,
+          "MagPercent": 26.0616837,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1231,8 +1231,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.0562500022,
+          "MagPercent": -5.625,
           "Duration": 15.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1439,7 +1439,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 2.83,
+      "CastTime": 3.036,
       "AoEModifier": 1.0
     },
     {
@@ -1509,8 +1509,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.1865025,
-          "MagPercent": 20.1865025,
+          "Mag": 11.1025734,
+          "MagPercent": 11.1025734,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1541,8 +1541,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 20.1865025,
-          "MagPercent": 20.1865025,
+          "Mag": 11.1025734,
+          "MagPercent": 11.1025734,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1575,8 +1575,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.4576683,
-          "MagPercent": 13.4576683,
+          "Mag": 7.40171528,
+          "MagPercent": 7.40171528,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1608,8 +1608,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.4576683,
-          "MagPercent": 13.4576683,
+          "Mag": 7.40171528,
+          "MagPercent": 7.40171528,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1643,8 +1643,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.951275,
-          "MagPercent": 6.951275,
+          "Mag": 3.8232,
+          "MagPercent": 3.8232,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -1679,7 +1679,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.4,
+      "CastTime": 1.584,
       "AoEModifier": 1.35699379
     },
     {
@@ -1755,8 +1755,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.3374081,
-          "MagPercent": 25.3374081,
+          "Mag": 12.3871679,
+          "MagPercent": 12.3871679,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1789,8 +1789,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 25.3374081,
-          "MagPercent": 25.3374081,
+          "Mag": 12.3871679,
+          "MagPercent": 12.3871679,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1824,8 +1824,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 110.823944,
-          "MagPercent": 110.823944,
+          "Mag": 54.1805573,
+          "MagPercent": 54.1805573,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1859,8 +1859,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 110.823944,
-          "MagPercent": 110.823944,
+          "Mag": 54.1805573,
+          "MagPercent": 54.1805573,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1894,8 +1894,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.0562500022,
+          "MagPercent": -5.625,
           "Duration": 15.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2004,7 +2004,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 2.83,
+      "CastTime": 3.036,
       "AoEModifier": 2.44994545
     }
   ]

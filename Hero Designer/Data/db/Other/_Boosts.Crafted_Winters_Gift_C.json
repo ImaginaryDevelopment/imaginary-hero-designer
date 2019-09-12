@@ -117,6 +117,7 @@
         }
       ],
       "FullSetName": "Boosts.Crafted_Winters_Gift_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

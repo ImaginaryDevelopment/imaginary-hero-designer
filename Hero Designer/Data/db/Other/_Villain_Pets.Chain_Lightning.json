@@ -177,6 +177,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Chain_Lightning",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -333,6 +334,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Chain_Lightning",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -489,6 +491,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Chain_Lightning",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -577,6 +580,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Chain_Lightning",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     }
   ]

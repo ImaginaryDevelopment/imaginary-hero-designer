@@ -346,6 +346,7 @@
         }
       ],
       "FullSetName": "Boosts.Technology_Natural_Res_Damage",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

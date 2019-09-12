@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Boosts.Technology_Immobilize",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

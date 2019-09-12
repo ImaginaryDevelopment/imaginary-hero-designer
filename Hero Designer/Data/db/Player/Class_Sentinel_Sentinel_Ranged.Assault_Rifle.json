@@ -102,8 +102,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.8916054,
-          "MagPercent": 16.8916054,
+          "Mag": 8.258112,
+          "MagPercent": 8.258112,
           "Duration": 0.91,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -139,8 +139,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -175,8 +175,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 33.84577,
-          "MagPercent": 33.84577,
+          "Mag": 16.54681,
+          "MagPercent": 16.54681,
           "Duration": 0.61,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -644,7 +644,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -721,8 +721,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 72.5713348,
-          "MagPercent": 72.5713348,
+          "Mag": 35.4792938,
+          "MagPercent": 35.4792938,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -756,7 +756,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 2.98,
+          "Duration": 3.725,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -1259,7 +1259,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 0.9,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1339,8 +1339,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.9309654,
-          "MagPercent": 56.9309654,
+          "Mag": 27.8328972,
+          "MagPercent": 27.8328972,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1445,8 +1445,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 50.8625031,
-          "MagPercent": 50.8625031,
+          "Mag": 24.8660927,
+          "MagPercent": 24.8660927,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1479,7 +1479,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 0.9,
+      "CastTime": 1.056,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -1556,8 +1556,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1662,8 +1662,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 153.651047,
-          "MagPercent": 153.651047,
+          "Mag": 75.11823,
+          "MagPercent": 75.11823,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1696,7 +1696,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1764,8 +1764,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1835,8 +1835,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1871,8 +1871,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1907,8 +1907,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1943,8 +1943,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1979,8 +1979,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2015,8 +2015,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2051,8 +2051,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2087,8 +2087,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2122,7 +2122,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2201,8 +2201,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.7684517,
-          "MagPercent": 18.7684517,
+          "Mag": 9.17568,
+          "MagPercent": 9.17568,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2235,8 +2235,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 37.5369034,
-          "MagPercent": 37.5369034,
+          "Mag": 18.35136,
+          "MagPercent": 18.35136,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2342,8 +2342,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.2679577,
-          "MagPercent": 18.2679577,
+          "Mag": 8.930995,
+          "MagPercent": 8.930995,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2377,8 +2377,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.4733543,
-          "MagPercent": 36.4733543,
+          "Mag": 17.8314056,
+          "MagPercent": 17.8314056,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2411,7 +2411,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2488,8 +2488,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.139883,
-          "MagPercent": 15.139883,
+          "Mag": 7.40171528,
+          "MagPercent": 7.40171528,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2525,8 +2525,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.0743694,
-          "MagPercent": 12.0743694,
+          "Mag": 5.903021,
+          "MagPercent": 5.903021,
           "Duration": 7.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2562,7 +2562,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -2637,8 +2637,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.9502306,
-          "MagPercent": 12.9502306,
+          "Mag": 6.331219,
+          "MagPercent": 6.331219,
           "Duration": 2.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2674,8 +2674,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.06944942,
-          "MagPercent": 7.06944942,
+          "Mag": 3.4561727,
+          "MagPercent": 3.4561727,
           "Duration": 2.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2711,7 +2711,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2788,8 +2788,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.32068,
-          "MagPercent": 8.32068,
+          "Mag": 4.067885,
+          "MagPercent": 4.067885,
           "Duration": 3.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2825,8 +2825,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.16,
-          "Mag": 3.44088244,
-          "MagPercent": 3.44088244,
+          "Mag": 1.682208,
+          "MagPercent": 1.682208,
           "Duration": 3.3,
           "BaseProbability": 0.16,
           "Reward": "",
@@ -2863,8 +2863,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.06944942,
-          "MagPercent": 7.06944942,
+          "Mag": 3.4561727,
+          "MagPercent": 3.4561727,
           "Duration": 3.3,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2900,7 +2900,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Assault_Rifle",
-      "CastTime": 4.0,
+      "CastTime": 4.224,
       "Slottable": true,
       "AoEModifier": 3.03996444
     }

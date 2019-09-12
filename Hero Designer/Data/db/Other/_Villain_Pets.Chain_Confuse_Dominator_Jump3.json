@@ -91,7 +91,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 17.8800011,
+          "Duration": 22.35,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -127,7 +127,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -230,6 +230,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Chain_Confuse_Dominator_Jump3",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

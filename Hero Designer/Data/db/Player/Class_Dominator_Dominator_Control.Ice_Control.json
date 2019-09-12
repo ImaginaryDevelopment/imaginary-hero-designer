@@ -104,8 +104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.5123005,
-          "MagPercent": 12.5123005,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -178,8 +178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.1562462,
-          "MagPercent": 24.1562462,
+          "Mag": 11.8097115,
+          "MagPercent": 11.8097115,
           "Duration": 9.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -685,7 +685,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -839,8 +839,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 177.7122,
-          "MagPercent": 177.7122,
+          "Mag": 86.8814545,
+          "MagPercent": 86.8814545,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -952,8 +952,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1305,7 +1305,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1387,8 +1387,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 5.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1461,8 +1461,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.3987055,
-          "MagPercent": 11.3987055,
+          "Mag": 5.572696,
+          "MagPercent": 5.572696,
           "Duration": 5.2,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1968,7 +1968,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2394,7 +2394,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2681,7 +2681,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 2.17,
+      "CastTime": 2.376,
       "Slottable": true,
       "AoEModifier": 5.04995537
     },
@@ -2782,7 +2782,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2862,8 +2862,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2896,8 +2896,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3091,7 +3091,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -3644,7 +3644,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3753,7 +3753,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Ice_Control",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 1.0
     }

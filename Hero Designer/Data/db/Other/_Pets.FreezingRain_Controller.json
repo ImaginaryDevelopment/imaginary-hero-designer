@@ -911,6 +911,7 @@
         }
       ],
       "FullSetName": "Pets.FreezingRain_Controller",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -998,6 +999,7 @@
         }
       ],
       "FullSetName": "Pets.FreezingRain_Controller",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

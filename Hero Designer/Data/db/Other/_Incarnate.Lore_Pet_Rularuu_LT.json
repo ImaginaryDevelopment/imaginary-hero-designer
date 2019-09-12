@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 66.73224,
-          "MagPercent": 66.73224,
+          "Mag": 36.70272,
+          "MagPercent": 36.70272,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -115,7 +115,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_LT",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -180,8 +180,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 75.07381,
-          "MagPercent": 75.07381,
+          "Mag": 36.70272,
+          "MagPercent": 36.70272,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -212,7 +212,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_LT",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -350,7 +350,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_LT",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     }
   ]

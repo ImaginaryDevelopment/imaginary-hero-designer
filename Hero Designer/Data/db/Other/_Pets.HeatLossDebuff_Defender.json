@@ -666,6 +666,7 @@
         }
       ],
       "FullSetName": "Pets.HeatLossDebuff_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

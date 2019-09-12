@@ -310,6 +310,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -367,8 +368,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 144.571045,
-          "MagPercent": 144.571045,
+          "Mag": 160.634552,
+          "MagPercent": 160.634552,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -398,7 +399,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 2.27,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -655,7 +656,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -737,6 +738,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -819,6 +821,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -901,6 +904,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -982,6 +986,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1105,7 +1110,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 3.1,
+      "CastTime": 3.3,
       "AoEModifier": 1.0
     },
     {
@@ -1187,6 +1192,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1269,6 +1275,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1351,6 +1358,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1432,6 +1440,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1583,7 +1592,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 15.0,
+      "CastTime": 15.18,
       "AoEModifier": 1.0
     },
     {
@@ -1735,7 +1744,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 15.0,
+      "CastTime": 15.18,
       "AoEModifier": 1.0
     },
     {
@@ -1818,6 +1827,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1900,6 +1910,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1981,6 +1992,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2076,8 +2088,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.035,
-          "MagPercent": -3.5,
+          "Mag": -0.05,
+          "MagPercent": -5.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2147,7 +2159,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 6.25
     },
     {
@@ -2229,6 +2241,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2310,6 +2323,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2392,6 +2406,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2474,6 +2489,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2555,6 +2571,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2607,6 +2624,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2659,6 +2677,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2740,6 +2759,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2821,6 +2841,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2879,8 +2900,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2913,8 +2934,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2948,8 +2969,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2982,7 +3003,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -3064,6 +3085,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3146,6 +3168,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3227,6 +3250,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3308,6 +3332,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3363,8 +3388,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3396,8 +3421,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3430,8 +3455,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3465,8 +3490,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3499,6 +3524,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3554,8 +3580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0420000032,
-          "MagPercent": 4.20000029,
+          "Mag": 0.0600000024,
+          "MagPercent": 6.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3587,8 +3613,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0420000032,
-          "MagPercent": 4.20000029,
+          "Mag": 0.0600000024,
+          "MagPercent": 6.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3621,8 +3647,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0270000026,
+          "MagPercent": 2.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3656,8 +3682,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0270000026,
+          "MagPercent": 2.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3690,6 +3716,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3745,8 +3772,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3778,8 +3805,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3812,8 +3839,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3846,8 +3873,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3880,8 +3907,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3914,8 +3941,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3948,8 +3975,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3982,8 +4009,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.05,
+          "MagPercent": 5.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4015,6 +4042,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4070,8 +4098,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4103,8 +4131,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4137,8 +4165,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4171,8 +4199,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4205,8 +4233,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4239,8 +4267,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4273,8 +4301,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4307,8 +4335,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0300000012,
+          "MagPercent": 3.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4340,6 +4368,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4395,8 +4424,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0200000014,
-          "MagPercent": 2.00000024,
+          "Mag": 0.016,
+          "MagPercent": 1.6,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4742,6 +4771,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4797,8 +4827,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0100000007,
-          "MagPercent": 1.00000012,
+          "Mag": 0.008,
+          "MagPercent": 0.8,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5144,6 +5174,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5230,6 +5261,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5316,6 +5348,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5400,6 +5433,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5484,6 +5518,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5571,6 +5606,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5658,6 +5694,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5745,6 +5782,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5832,6 +5870,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6126,6 +6165,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6310,6 +6350,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6365,8 +6406,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -6398,8 +6439,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -6432,6 +6473,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6487,8 +6529,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0420000032,
-          "MagPercent": 4.20000029,
+          "Mag": 0.0600000024,
+          "MagPercent": 6.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -6520,8 +6562,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0210000016,
-          "MagPercent": 2.10000014,
+          "Mag": 0.0270000026,
+          "MagPercent": 2.70000029,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -6554,6 +6596,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6636,6 +6679,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6718,6 +6762,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6799,6 +6844,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6880,6 +6926,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7004,7 +7051,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 7.33,
+      "CastTime": 7.524,
       "AoEModifier": 1.0
     },
     {
@@ -7086,6 +7133,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7167,6 +7215,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7219,6 +7268,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7300,6 +7350,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7385,6 +7436,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7470,6 +7522,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7555,6 +7608,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7640,6 +7694,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7721,6 +7776,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7803,6 +7859,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7884,6 +7941,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7965,6 +8023,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8047,6 +8106,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8129,6 +8189,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8280,7 +8341,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 15.0,
+      "CastTime": 15.18,
       "AoEModifier": 1.0
     },
     {
@@ -8432,7 +8493,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 15.0,
+      "CastTime": 15.18,
       "AoEModifier": 1.0
     },
     {
@@ -8488,8 +8549,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 240.9518,
-          "MagPercent": 240.9518,
+          "Mag": 160.6346,
+          "MagPercent": 160.6346,
           "Duration": 0.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -8621,7 +8682,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -8703,6 +8764,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8785,6 +8847,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8867,6 +8930,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8948,6 +9012,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9029,6 +9094,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9111,6 +9177,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9193,6 +9260,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9244,6 +9312,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9324,6 +9393,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9508,6 +9578,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9692,6 +9763,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9773,6 +9845,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9854,6 +9927,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9935,6 +10009,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10056,7 +10131,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 17.0,
+      "CastTime": 17.16,
       "AoEModifier": 1.0
     },
     {
@@ -10139,6 +10214,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10220,6 +10296,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10301,6 +10378,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10383,6 +10461,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10515,7 +10594,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 3.25
     },
     {
@@ -10648,7 +10727,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 3.25
     },
     {
@@ -10731,6 +10810,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10812,6 +10892,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10894,6 +10975,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10975,6 +11057,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11171,7 +11254,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 2.5
     },
     {
@@ -11253,6 +11336,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11335,6 +11419,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11417,6 +11502,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11499,6 +11585,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11718,6 +11805,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11847,7 +11935,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -11930,6 +12018,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12012,6 +12101,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12093,6 +12183,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12185,7 +12276,7 @@
           "Probability": 0.66,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 7.15200043,
+          "Duration": 8.940001,
           "BaseProbability": 0.66,
           "Reward": "",
           "EffectId": "Stun",
@@ -12257,7 +12348,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 2.87,
+      "CastTime": 3.036,
       "AoEModifier": 1.0
     },
     {
@@ -12706,7 +12797,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Day_Job_Powers",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     }
   ]

@@ -185,7 +185,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_2",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "AoEModifier": 1.0
     },
     {
@@ -270,6 +270,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_2",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -521,7 +522,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_2",
-      "CastTime": 1.87,
+      "CastTime": 2.112,
       "AoEModifier": 3.25
     }
   ]

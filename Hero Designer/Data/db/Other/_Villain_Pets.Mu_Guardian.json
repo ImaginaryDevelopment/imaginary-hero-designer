@@ -78,8 +78,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 10.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -111,8 +111,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 10.5,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -144,6 +144,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -390,8 +391,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -424,7 +425,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "AoEModifier": 4.75
     },
     {
@@ -611,6 +612,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -678,8 +680,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 102.600861,
-          "MagPercent": 102.600861,
+          "Mag": 50.1603851,
+          "MagPercent": 50.1603851,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -814,7 +816,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -882,8 +884,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 62.5615,
-          "MagPercent": 62.5615,
+          "Mag": 30.5856,
+          "MagPercent": 30.5856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1018,7 +1020,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "AoEModifier": 1.0
     },
     {
@@ -1100,6 +1102,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1200,7 +1203,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 3.17,
+      "CastTime": 3.432,
       "AoEModifier": 1.0
     },
     {
@@ -1266,8 +1269,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 192.7614,
-          "MagPercent": 192.7614,
+          "Mag": 214.1794,
+          "MagPercent": 214.1794,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -1297,7 +1300,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 2.27,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     }
   ]

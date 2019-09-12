@@ -80,8 +80,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.5,
-          "MagPercent": 2.5,
+          "Mag": 2.75,
+          "MagPercent": 2.75,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "EndDrain",
@@ -111,6 +111,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Static_Field_End_Recovery_Dominator",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

@@ -87,8 +87,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.2974186,
-          "MagPercent": 31.2974186,
+          "Mag": 17.2135754,
+          "MagPercent": 17.2135754,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -120,8 +120,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.4151478,
-          "MagPercent": 15.4151478,
+          "Mag": 8.478329,
+          "MagPercent": 8.478329,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -154,8 +154,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 32.3095245,
-          "MagPercent": 32.3095245,
+          "Mag": 17.7702332,
+          "MagPercent": 17.7702332,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -188,8 +188,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.8469391,
-          "MagPercent": 13.8469391,
+          "Mag": 7.615814,
+          "MagPercent": 7.615814,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -222,8 +222,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0525000021,
-          "MagPercent": -5.25,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 6.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -257,7 +257,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 0.83,
+      "CastTime": 1.056,
       "AoEModifier": 1.0
     },
     {
@@ -311,8 +311,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -343,8 +343,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -376,8 +376,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -709,7 +709,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 0.5,
+      "CastTime": 0.659999967,
       "AoEModifier": 1.0
     },
     {
@@ -780,7 +780,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 4.768,
+          "Duration": 5.96,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Fear",
@@ -816,7 +816,7 @@
           "Probability": 1.0,
           "Mag": 2.0,
           "MagPercent": 2.0,
-          "Duration": 2.384,
+          "Duration": 2.98,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Fear",
@@ -851,7 +851,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -933,6 +933,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

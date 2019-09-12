@@ -80,8 +80,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.105000004,
-          "MagPercent": -10.5,
+          "Mag": -0.15,
+          "MagPercent": -15.000001,
           "Duration": 15.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -190,6 +190,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shadow_Field_Dominator",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -321,6 +322,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shadow_Field_Dominator",
+      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

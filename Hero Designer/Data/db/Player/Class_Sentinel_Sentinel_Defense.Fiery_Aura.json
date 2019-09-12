@@ -95,8 +95,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -130,8 +130,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -166,8 +166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -202,8 +202,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -273,8 +273,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -308,8 +308,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -343,8 +343,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -378,8 +378,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -446,7 +446,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -511,8 +511,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -545,8 +545,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -580,8 +580,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -615,8 +615,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -650,8 +650,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -685,8 +685,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -720,8 +720,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -755,8 +755,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.08,
+          "MagPercent": 8.0,
           "Duration": 1.2,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -850,7 +850,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -922,8 +922,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 301.189758,
-          "MagPercent": 301.189758,
+          "Mag": 200.793243,
+          "MagPercent": 200.793243,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -954,8 +954,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 60.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -989,7 +989,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1051,8 +1051,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1084,8 +1084,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1282,6 +1282,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
+      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1352,8 +1353,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1387,8 +1388,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1423,8 +1424,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1459,8 +1460,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1494,8 +1495,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1529,8 +1530,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1564,8 +1565,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1974,7 +1975,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2034,10 +2035,10 @@
       "DescShort": "PBAoE, Minor DMG(Fire), Self +End",
       "DescLong": "You can drain body heat from all nearby foes in order to replenish your own Endurance. The more foes affected, the more Endurance is gained. Foes suffer minimal Fire damage. Damage: Minor, Recharge: Very Long",
       "SetTypes": [
-        0,
         4,
         22,
-        44
+        44,
+        45
       ],
       "ClickBuff": true,
       "Level": 20,
@@ -2055,8 +2056,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 22.24408,
-          "MagPercent": 22.24408,
+          "Mag": 12.2342405,
+          "MagPercent": 12.2342405,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2195,7 +2196,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2254,9 +2255,9 @@
       "DescShort": "Location (PBAoE), Moderate DoT(Fire), Self Res(Immobilize)",
       "DescLong": "You can ignite the ground beneath you, freeing yourself from Immobilization effects. Foes that enter the flames you leave behind will take damage. You must be near the ground to activate this power. Damage: Moderate(DoT), Recharge: Slow",
       "SetTypes": [
-        0,
         4,
-        44
+        44,
+        45
       ],
       "ClickBuff": true,
       "Level": 28,
@@ -2378,8 +2379,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 80.07869,
-          "MagPercent": 80.07869,
+          "Mag": 44.0432663,
+          "MagPercent": 44.0432663,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2411,7 +2412,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2481,8 +2482,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.0713863,
-          "MagPercent": 18.0713863,
+          "Mag": 12.047595,
+          "MagPercent": 12.047595,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -2512,7 +2513,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2568,12 +2569,12 @@
       "DescShort": "Self Rez, Special",
       "DescLong": "If you are defeated, you can rise from the ashes. The fiery resurrection blasts nearby foes with an explosion and knocks them down and Disorients them. You will revive with about half of your Hit Points and Endurance. Rise of the Phoenix will actually leave you invulnerable for a brief time, and protected from XP Debt for 90 seconds.  Recharge: Very Long",
       "SetTypes": [
-        0,
         4,
         9,
         11,
         22,
-        44
+        44,
+        45
       ],
       "Level": 38,
       "VariableName": "",
@@ -2589,8 +2590,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -2792,7 +2793,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Fiery_Aura",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     }

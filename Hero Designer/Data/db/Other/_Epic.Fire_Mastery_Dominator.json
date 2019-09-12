@@ -132,7 +132,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery_Dominator",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -211,8 +211,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.384226,
-          "MagPercent": 9.384226,
+          "Mag": 4.58784,
+          "MagPercent": 4.58784,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -245,8 +245,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 56.3053474,
-          "MagPercent": 56.3053474,
+          "Mag": 27.5270386,
+          "MagPercent": 27.5270386,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -280,8 +280,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.7543221,
-          "MagPercent": 10.7543221,
+          "Mag": 5.25766468,
+          "MagPercent": 5.25766468,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -315,8 +315,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 66.06182,
-          "MagPercent": 66.06182,
+          "Mag": 32.2968674,
+          "MagPercent": 32.2968674,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -350,8 +350,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 65.6895752,
-          "MagPercent": 65.6895752,
+          "Mag": 32.11488,
+          "MagPercent": 32.11488,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -387,8 +387,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 38.407753,
-          "MagPercent": 38.407753,
+          "Mag": 18.7771111,
+          "MagPercent": 18.7771111,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -425,8 +425,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 6.25615025,
-          "MagPercent": 6.25615025,
+          "Mag": 3.05856013,
+          "MagPercent": 3.05856013,
           "Duration": 2.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -462,7 +462,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery_Dominator",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -551,8 +551,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -586,8 +586,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -622,8 +622,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.2,
+          "MagPercent": 20.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -658,8 +658,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -694,8 +694,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -729,8 +729,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -764,8 +764,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.210000008,
-          "MagPercent": 21.0,
+          "Mag": 0.3,
+          "MagPercent": 30.0000019,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -799,8 +799,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -834,8 +834,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -869,8 +869,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -904,8 +904,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -939,8 +939,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.1925,
-          "MagPercent": 19.25,
+          "Mag": 0.275,
+          "MagPercent": 27.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -973,7 +973,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery_Dominator",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1067,8 +1067,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 602.3795,
-          "MagPercent": 602.3795,
+          "Mag": 401.5865,
+          "MagPercent": 401.5865,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -1270,7 +1270,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery_Dominator",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1388,8 +1388,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.07,
-          "MagPercent": -7.0,
+          "Mag": -0.075,
+          "MagPercent": -7.50000048,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1422,8 +1422,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1456,8 +1456,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1490,8 +1490,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1524,8 +1524,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1558,8 +1558,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1592,8 +1592,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1626,8 +1626,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1660,8 +1660,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.0975,
-          "MagPercent": -9.75,
+          "Mag": -0.112500004,
+          "MagPercent": -11.25,
           "Duration": 40.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1693,7 +1693,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery_Dominator",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 2.5
     }

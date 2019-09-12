@@ -105,6 +105,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -203,7 +204,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion",
-      "CastTime": 0.67,
+      "CastTime": 0.924,
       "AoEModifier": 1.0
     },
     {
@@ -302,7 +303,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion",
-      "CastTime": 2.33,
+      "CastTime": 2.508,
       "AoEModifier": 1.0
     },
     {
@@ -524,6 +525,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

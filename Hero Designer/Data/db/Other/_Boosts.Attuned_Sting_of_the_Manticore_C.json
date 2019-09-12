@@ -180,6 +180,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Sting_of_the_Manticore_C",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

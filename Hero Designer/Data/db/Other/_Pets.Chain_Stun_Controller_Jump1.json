@@ -294,6 +294,7 @@
         }
       ],
       "FullSetName": "Pets.Chain_Stun_Controller_Jump1",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

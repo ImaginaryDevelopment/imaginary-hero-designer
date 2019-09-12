@@ -96,6 +96,7 @@
         }
       ],
       "FullSetName": "Pets.Shivan_Summon_FX",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

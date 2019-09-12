@@ -146,6 +146,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Jump_25",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

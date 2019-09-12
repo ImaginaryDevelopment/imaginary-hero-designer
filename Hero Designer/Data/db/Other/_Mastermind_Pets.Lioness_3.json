@@ -159,7 +159,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lioness_3",
-      "CastTime": 2.0,
+      "CastTime": 2.244,
       "AoEModifier": 3.25
     },
     {
@@ -430,7 +430,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lioness_3",
-      "CastTime": 2.13,
+      "CastTime": 2.376,
       "AoEModifier": 1.35699379
     },
     {
@@ -514,6 +514,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Lioness_3",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -597,6 +598,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Lioness_3",
+      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -680,6 +682,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Lioness_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

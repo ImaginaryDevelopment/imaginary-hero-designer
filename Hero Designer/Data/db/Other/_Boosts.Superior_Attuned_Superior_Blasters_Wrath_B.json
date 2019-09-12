@@ -384,6 +384,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Superior_Attuned_Superior_Blasters_Wrath_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

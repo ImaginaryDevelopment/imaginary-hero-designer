@@ -272,7 +272,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
-      "CastTime": 2.87,
+      "CastTime": 3.036,
       "AoEModifier": 1.24965537
     },
     {
@@ -357,6 +357,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -567,7 +568,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
-      "CastTime": 2.87,
+      "CastTime": 3.036,
       "AoEModifier": 1.0
     },
     {
@@ -684,6 +685,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -821,7 +823,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "AoEModifier": 1.0
     },
     {
@@ -906,6 +908,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1114,7 +1117,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
-      "CastTime": 1.93,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -1252,7 +1255,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Skeleton_3",
-      "CastTime": 1.37,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     }
   ]

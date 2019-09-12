@@ -639,7 +639,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_FF_Generator_Defender",
-      "CastTime": 1.07,
+      "CastTime": 1.31999993,
       "AoEModifier": 4.75
     },
     {
@@ -790,6 +790,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_FF_Generator_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1336,6 +1337,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_FF_Generator_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

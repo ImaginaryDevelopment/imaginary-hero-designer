@@ -203,6 +203,7 @@
         }
       ],
       "FullSetName": "Pets.Transponder",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -288,6 +289,7 @@
         }
       ],
       "FullSetName": "Pets.Transponder",
+      "CastTime": 0.132,
       "AoEModifier": 1.6
     },
     {
@@ -372,6 +374,7 @@
         }
       ],
       "FullSetName": "Pets.Transponder",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1556,6 +1559,7 @@
         }
       ],
       "FullSetName": "Pets.Transponder",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

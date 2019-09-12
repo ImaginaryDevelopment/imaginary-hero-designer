@@ -445,6 +445,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -528,6 +529,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -611,6 +613,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -797,6 +800,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -933,7 +937,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "AoEModifier": 1.0
     },
     {
@@ -1109,7 +1113,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
-      "CastTime": 1.93,
+      "CastTime": 2.112,
       "AoEModifier": 1.0
     },
     {
@@ -1320,7 +1324,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     },
     {
@@ -1610,7 +1614,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 1.0
     },
     {
@@ -1692,6 +1696,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ghosts",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

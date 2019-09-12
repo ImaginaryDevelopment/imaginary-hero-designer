@@ -180,6 +180,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Extreme_Measures_F",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

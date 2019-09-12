@@ -154,6 +154,7 @@
         }
       ],
       "FullSetName": "Pets.VolcanicGeyser",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -271,6 +272,7 @@
         }
       ],
       "FullSetName": "Pets.VolcanicGeyser",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

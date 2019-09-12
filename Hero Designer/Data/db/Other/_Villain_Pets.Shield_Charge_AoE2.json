@@ -83,7 +83,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Villain_Pets.Shield_Charge_AoE2",
-      "CastTime": 1.716,
+      "CastTime": 1.848,
       "AoEModifier": 4.0
     },
     {
@@ -149,8 +149,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 33.08807,
-          "MagPercent": 33.08807,
+          "Mag": 18.1984329,
+          "MagPercent": 18.1984329,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -181,8 +181,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 80.35674,
-          "MagPercent": 80.35674,
+          "Mag": 44.1961937,
+          "MagPercent": 44.1961937,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -361,6 +361,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shield_Charge_AoE2",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

@@ -112,6 +112,7 @@
         }
       ],
       "FullSetName": "Boosts.Generic_Sleep",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

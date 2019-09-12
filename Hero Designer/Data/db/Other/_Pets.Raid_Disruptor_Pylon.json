@@ -101,6 +101,7 @@
         }
       ],
       "FullSetName": "Pets.Raid_Disruptor_Pylon",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

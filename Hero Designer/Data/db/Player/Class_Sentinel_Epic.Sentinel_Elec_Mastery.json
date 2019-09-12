@@ -319,8 +319,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 19.831995,
-          "MagPercent": 19.831995,
+          "Mag": 9.695635,
+          "MagPercent": 9.695635,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -352,7 +352,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Elec_Mastery",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -438,8 +438,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 116.78141,
-          "MagPercent": 116.78141,
+          "Mag": 64.22976,
+          "MagPercent": 64.22976,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -471,8 +471,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 35.0344238,
-          "MagPercent": 35.0344238,
+          "Mag": 19.2689285,
+          "MagPercent": 19.2689285,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -507,7 +507,7 @@
           "Probability": 0.5,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 17.8800011,
+          "Duration": 22.35,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Sleep",
@@ -648,7 +648,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Elec_Mastery",
-      "CastTime": 1.5,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -752,8 +752,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.12204,
-          "MagPercent": 11.12204,
+          "Mag": 6.11712027,
+          "MagPercent": 6.11712027,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -819,8 +819,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.5,
-          "MagPercent": -0.5,
+          "Mag": -0.55,
+          "MagPercent": -0.55,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "EndDrain",
@@ -852,7 +852,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Elec_Mastery",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -990,8 +990,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 110.108238,
-          "MagPercent": 110.108238,
+          "Mag": 53.8306541,
+          "MagPercent": 53.8306541,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1096,7 +1096,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Elec_Mastery",
-      "CastTime": 2.07,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1211,8 +1211,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 96.3807,
-          "MagPercent": 96.3807,
+          "Mag": 107.0897,
+          "MagPercent": 107.0897,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Heal",
@@ -1242,7 +1242,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Elec_Mastery",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     }

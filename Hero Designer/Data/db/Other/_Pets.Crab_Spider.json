@@ -139,6 +139,7 @@
         }
       ],
       "FullSetName": "Pets.Crab_Spider",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -268,7 +269,7 @@
         }
       ],
       "FullSetName": "Pets.Crab_Spider",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -396,7 +397,7 @@
         }
       ],
       "FullSetName": "Pets.Crab_Spider",
-      "CastTime": 0.87,
+      "CastTime": 1.056,
       "AoEModifier": 1.0
     },
     {
@@ -487,7 +488,7 @@
         }
       ],
       "FullSetName": "Pets.Crab_Spider",
-      "CastTime": 1.33,
+      "CastTime": 1.584,
       "AoEModifier": 1.0
     },
     {
@@ -584,7 +585,7 @@
         }
       ],
       "FullSetName": "Pets.Crab_Spider",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "AoEModifier": 3.02992368
     }
   ]

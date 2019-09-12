@@ -206,7 +206,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
-      "CastTime": 1.83,
+      "CastTime": 1.98,
       "AoEModifier": 2.44994545
     },
     {
@@ -290,6 +290,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -374,6 +375,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -458,6 +460,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -542,6 +545,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -626,6 +630,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -710,6 +715,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -794,6 +800,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -878,6 +885,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -962,6 +970,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1046,6 +1055,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1130,6 +1140,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Minion_3",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

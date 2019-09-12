@@ -146,6 +146,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Harmonized_Healing_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

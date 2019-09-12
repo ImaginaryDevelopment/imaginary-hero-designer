@@ -146,6 +146,7 @@
       ],
       "BoostBoostable": true,
       "FullSetName": "Boosts.Crafted_Basilisks_Gaze_B",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

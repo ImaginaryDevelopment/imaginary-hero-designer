@@ -276,6 +276,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -499,6 +500,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -722,6 +724,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1010,6 +1013,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1298,6 +1302,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1519,6 +1524,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1740,6 +1746,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1963,6 +1970,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2184,6 +2192,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2830,6 +2839,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3476,6 +3486,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3732,6 +3743,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4378,6 +4390,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5024,6 +5037,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5410,6 +5424,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5666,6 +5681,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6312,6 +6328,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6633,6 +6650,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6865,6 +6883,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -7659,6 +7678,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -8264,6 +8284,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -9548,6 +9569,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -10342,6 +10364,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -10947,6 +10970,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -11804,6 +11828,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -13088,6 +13113,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -13945,6 +13971,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -14501,6 +14528,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -15697,6 +15725,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -16399,6 +16428,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -17819,6 +17849,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -19783,6 +19814,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -20557,6 +20589,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 13.0
     },
     {
@@ -21640,6 +21673,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -23828,6 +23862,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -24983,6 +25018,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Hybrid",
+      "CastTime": 0.132,
       "AoEModifier": 13.0
     }
   ]

@@ -426,6 +426,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_Acid_Mortar_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -1831,6 +1832,7 @@
         }
       ],
       "FullSetName": "Pets.Traps_Acid_Mortar_Defender",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

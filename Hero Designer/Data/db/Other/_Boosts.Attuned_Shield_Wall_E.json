@@ -462,6 +462,7 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Shield_Wall_E",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

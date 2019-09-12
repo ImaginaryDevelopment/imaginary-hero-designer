@@ -143,6 +143,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.HeatLossBuff",
+      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

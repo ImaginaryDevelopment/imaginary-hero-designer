@@ -99,8 +99,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 65.91667,
-          "MagPercent": 65.91667,
+          "Mag": 32.2259064,
+          "MagPercent": 32.2259064,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -169,8 +169,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 109.725365,
-          "MagPercent": 109.725365,
+          "Mag": 53.6434746,
+          "MagPercent": 53.6434746,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -203,7 +203,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -280,8 +280,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 33.03247,
-          "MagPercent": 33.03247,
+          "Mag": 16.1491966,
+          "MagPercent": 16.1491966,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -314,8 +314,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 33.03247,
-          "MagPercent": 33.03247,
+          "Mag": 16.1491966,
+          "MagPercent": 16.1491966,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -349,8 +349,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 42.5193,
-          "MagPercent": 42.5193,
+          "Mag": 20.7871971,
+          "MagPercent": 20.7871971,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -384,8 +384,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 42.5193,
-          "MagPercent": 42.5193,
+          "Mag": 20.7871971,
+          "MagPercent": 20.7871971,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -489,7 +489,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.0,
+      "CastTime": 1.188,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -566,8 +566,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 108.103142,
-          "MagPercent": 108.103142,
+          "Mag": 52.8503876,
+          "MagPercent": 52.8503876,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -638,8 +638,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 119.8791,
-          "MagPercent": 119.8791,
+          "Mag": 58.6075134,
+          "MagPercent": 58.6075134,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -711,7 +711,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -779,8 +779,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -814,8 +814,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -850,8 +850,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -886,8 +886,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -922,8 +922,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -958,8 +958,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -994,8 +994,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1030,8 +1030,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1066,8 +1066,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.625,
-          "MagPercent": 62.5,
+          "Mag": 0.399999976,
+          "MagPercent": 39.9999962,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1101,7 +1101,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1178,8 +1178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 59.49536,
-          "MagPercent": 59.49536,
+          "Mag": 29.0866,
+          "MagPercent": 29.0866,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1248,8 +1248,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 63.67009,
-          "MagPercent": 63.67009,
+          "Mag": 31.1275768,
+          "MagPercent": 31.1275768,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1282,7 +1282,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 2.67,
+      "CastTime": 2.904,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -1359,8 +1359,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 86.81596,
-          "MagPercent": 86.81596,
+          "Mag": 42.44333,
+          "MagPercent": 42.44333,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1430,8 +1430,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 94.55796,
-          "MagPercent": 94.55796,
+          "Mag": 46.228302,
+          "MagPercent": 46.228302,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1502,7 +1502,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.1,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1581,8 +1581,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.7268858,
-          "MagPercent": 12.7268858,
+          "Mag": 6.22202873,
+          "MagPercent": 6.22202873,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1654,8 +1654,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.072042,
-          "MagPercent": 9.072042,
+          "Mag": 4.435218,
+          "MagPercent": 4.435218,
           "Duration": 4.1,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1762,7 +1762,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1837,8 +1837,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.6403751,
-          "MagPercent": 15.6403751,
+          "Mag": 7.6464,
+          "MagPercent": 7.6464,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1873,7 +1873,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -1946,7 +1946,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2094,7 +2094,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2170,8 +2170,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 250.246,
-          "MagPercent": 250.246,
+          "Mag": 122.3424,
+          "MagPercent": 122.3424,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2204,8 +2204,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 101.258293,
-          "MagPercent": 101.258293,
+          "Mag": 49.5040169,
+          "MagPercent": 49.5040169,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2241,7 +2241,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 11.92,
+          "Duration": 14.9,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Stun",
@@ -2349,7 +2349,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Fortunata_Training",
-      "CastTime": 1.97,
+      "CastTime": 2.112,
       "Slottable": true,
       "AoEModifier": 4.75
     }

@@ -233,6 +233,7 @@
         }
       ],
       "FullSetName": "Pets.Terror",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -396,6 +397,7 @@
         }
       ],
       "FullSetName": "Pets.Terror",
+      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -603,7 +605,7 @@
         }
       ],
       "FullSetName": "Pets.Terror",
-      "CastTime": 2.03,
+      "CastTime": 2.244,
       "AoEModifier": 1.0
     }
   ]

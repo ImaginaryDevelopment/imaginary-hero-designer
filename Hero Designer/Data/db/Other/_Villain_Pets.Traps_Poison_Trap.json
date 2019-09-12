@@ -167,6 +167,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Poison_Trap",
+      "CastTime": 0.132,
       "AoEModifier": 3.4
     },
     {
@@ -1309,6 +1310,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Poison_Trap",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

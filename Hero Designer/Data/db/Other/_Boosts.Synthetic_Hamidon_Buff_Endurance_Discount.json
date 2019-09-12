@@ -534,6 +534,7 @@
         }
       ],
       "FullSetName": "Boosts.Synthetic_Hamidon_Buff_Endurance_Discount",
+      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

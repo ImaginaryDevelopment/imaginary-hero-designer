@@ -108,6 +108,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Arsonist_Burn",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -196,6 +197,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Arsonist_Burn",
+      "CastTime": 0.132,
       "AoEModifier": 2.2
     }
   ]

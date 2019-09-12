@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.119,
-          "MagPercent": 11.9000006,
+          "Mag": 0.153000012,
+          "MagPercent": 15.3000011,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -129,8 +129,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.119,
-          "MagPercent": 11.9000006,
+          "Mag": 0.153000012,
+          "MagPercent": 15.3000011,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -166,8 +166,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -203,8 +203,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.119,
-          "MagPercent": 11.9000006,
+          "Mag": 0.153000012,
+          "MagPercent": 15.3000011,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -239,8 +239,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.119,
-          "MagPercent": 11.9000006,
+          "Mag": 0.153000012,
+          "MagPercent": 15.3000011,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -275,8 +275,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0175,
-          "MagPercent": 1.75,
+          "Mag": 0.0225,
+          "MagPercent": 2.25,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -452,7 +452,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -515,8 +515,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -549,8 +549,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -650,8 +650,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.07,
-          "MagPercent": 7.0,
+          "Mag": 0.1,
+          "MagPercent": 10.0,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -684,7 +684,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 0.5,
+      "CastTime": 0.659999967,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -753,8 +753,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -789,8 +789,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -826,8 +826,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -863,8 +863,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -899,8 +899,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -935,8 +935,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -971,8 +971,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1007,8 +1007,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.14,
-          "MagPercent": 14.0,
+          "Mag": 0.18,
+          "MagPercent": 18.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1185,8 +1185,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.098,
-          "MagPercent": 9.8,
+          "Mag": 0.126,
+          "MagPercent": 12.6,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -1255,7 +1255,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 1.67,
+      "CastTime": 1.848,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2512,7 +2512,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2575,8 +2575,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2608,8 +2608,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2642,8 +2642,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0875,
-          "MagPercent": 8.75,
+          "Mag": 0.125,
+          "MagPercent": 12.5,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2840,7 +2840,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 0.5,
+      "CastTime": 0.659999967,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2980,8 +2980,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3017,8 +3017,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3054,8 +3054,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3091,8 +3091,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3128,8 +3128,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3165,8 +3165,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3202,8 +3202,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3239,8 +3239,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3276,8 +3276,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3313,8 +3313,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3350,8 +3350,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3386,8 +3386,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3422,8 +3422,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3458,8 +3458,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3494,8 +3494,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3530,8 +3530,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3566,8 +3566,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3602,8 +3602,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3638,8 +3638,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3674,8 +3674,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.035,
-          "MagPercent": 3.5,
+          "Mag": 0.045,
+          "MagPercent": 4.5,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3777,7 +3777,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 0.73,
+      "CastTime": 0.924,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3845,8 +3845,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.596,
-          "MagPercent": 59.6000023,
+          "Mag": 0.745,
+          "MagPercent": 74.5,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3912,8 +3912,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 301.189758,
-          "MagPercent": 301.189758,
+          "Mag": 200.793243,
+          "MagPercent": 200.793243,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3944,7 +3944,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 1.17,
+      "CastTime": 1.31999993,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4054,8 +4054,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -10.0,
-          "MagPercent": -10.0,
+          "Mag": -11.0,
+          "MagPercent": -11.0,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "EndDrain",
@@ -4124,8 +4124,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4161,8 +4161,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4198,8 +4198,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4235,8 +4235,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4272,8 +4272,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4309,8 +4309,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.0035,
-          "MagPercent": 0.350000024,
+          "Mag": 0.00450000027,
+          "MagPercent": 0.450000018,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -4346,8 +4346,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4381,8 +4381,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4416,8 +4416,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4451,8 +4451,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4486,8 +4486,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4521,8 +4521,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.007,
-          "MagPercent": 0.700000048,
+          "Mag": 0.009000001,
+          "MagPercent": 0.900000036,
           "Duration": 45.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4589,7 +4589,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 2.37,
+      "CastTime": 2.508,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -4665,8 +4665,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4699,8 +4699,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4734,8 +4734,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4769,8 +4769,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4804,8 +4804,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4839,8 +4839,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.420000017,
-          "MagPercent": 42.0,
+          "Mag": 0.54,
+          "MagPercent": 54.0000038,
           "Duration": 180.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -5158,8 +5158,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 481.9036,
-          "MagPercent": 481.9036,
+          "Mag": 321.2692,
+          "MagPercent": 321.2692,
           "Duration": 180.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -5357,7 +5357,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Energy_Aura",
-      "CastTime": 3.0,
+      "CastTime": 3.168,
       "Slottable": true,
       "AoEModifier": 1.0
     }
