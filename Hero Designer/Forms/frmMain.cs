@@ -71,7 +71,7 @@ namespace Hero_Designer
         frmDPSCalc fDPSCalc;
         frmSetFind fSetFinder;
         frmSetViewer fSets;
-        frmAccolade fTemp;
+        frmTemp fTemp;
         frmTotals fTotals;
         bool HasSentBack;
         bool HasSentForwards;
@@ -383,7 +383,6 @@ namespace Hero_Designer
         internal void ChildRequestedRedraw()
             => DoRedraw();
 
-        // this just opens a window right? why set modified?
         public void accoladeButton_ButtonClicked()
         {
             if (fAccolade == null || fAccolade.IsDisposed)
@@ -414,34 +413,8 @@ namespace Hero_Designer
 
         }
 
-
-        /*void accoladeButton_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Clicks != 2)
-                return;
-            accoladeButton.Checked = false;
-            if (fAccolade == null || fAccolade.IsDisposed)
-            {
-                IPower power = !MainModule.MidsController.Toon.IsHero()
-                    ? DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3258)]
-                    : DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3257)];
-                List<IPower> iPowers = new List<IPower>();
-                int num = power.NIDSubPower.Length - 1;
-                for (int index = 0; index <= num; ++index)
-                    iPowers.Add(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
-                fAccolade = new frmAccolade(this, iPowers)
-                {
-                    Text = "Accolades"
-                };
-            }
-
-            if (!fAccolade.Visible)
-                fAccolade.Show(this);
-        }*/
-
         void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             accoladeButton_ButtonClicked();
             accoladeButton.Checked = true;
         }
@@ -2095,7 +2068,7 @@ namespace Hero_Designer
 
         void ibTotals_ButtonClicked() => FloatTotals(true);
 
-        void incarnateButton_MouseDown(object sender, MouseEventArgs e)
+        void incarnateButton_ButtonClicked()
         {
             bool flag = false;
             if (fIncarnate == null)
@@ -2108,13 +2081,19 @@ namespace Hero_Designer
                 fIncarnate = new frmIncarnate(ref iParent);
             }
 
-            if (fIncarnate.Visible)
-                return;
-            fIncarnate.Show(this);
+            if (!fIncarnate.Visible)
+            {
+                incarnateButton.Checked = true;
+                fIncarnate.Show(this);
+            }
+            else
+            {
+                incarnateButton.Checked = false;
+                fIncarnate.Close();
+            }
         }
 
-        void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
-            => incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+        void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e) => incarnateButton_ButtonClicked();
 
         void Info_Enhancement(I9Slot iEnh, int iLevel = -1) => myDataView.SetEnhancement(iEnh, iLevel);
 
@@ -4447,18 +4426,12 @@ namespace Hero_Designer
 
         void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tempPowersButton_MouseDown(sender, new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
-            tempPowersButton.Checked = true;
+            tempPowersButton_ButtonClicked();
         }
 
         void tempPowersButton_ButtonClicked()
-            => PowerModified(markModified: false);
-
-        void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Clicks != 2)
-                return;
-            tempPowersButton.Checked = false;
+            //tempPowersButton.Checked = false;
             if (fTemp == null || fTemp.IsDisposed)
             {
                 IPower power = DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3259)];
@@ -4466,14 +4439,22 @@ namespace Hero_Designer
                 int num = power.NIDSubPower.Length - 1;
                 for (int index = 0; index <= num; ++index)
                     iPowers.Add(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
-                fTemp = new frmAccolade(this, iPowers)
+                fTemp = new frmTemp(this, iPowers)
                 {
                     Text = "Temporary Powers"
                 };
             }
 
             if (!fTemp.Visible)
+            {
+                tempPowersButton.Checked = true;
                 fTemp.Show(this);
+            }
+            else
+            {
+                tempPowersButton.Checked = false;
+                fTemp.Close();
+            }
         }
 
         void tlsDPA_Click(object sender, EventArgs e)
@@ -5387,7 +5368,7 @@ namespace Hero_Designer
 
             if (this.fTemp != null)
             {
-                frmAccolade fTemp = this.fTemp;
+                frmTemp fTemp = this.fTemp;
                 if (fTemp.Visible)
                     fTemp.UpdateFonts(llPrimary.Font);
             }

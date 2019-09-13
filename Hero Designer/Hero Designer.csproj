@@ -74,6 +74,12 @@
     <Compile Include="clsHook.cs" />
     <Compile Include="FileAssocation.cs" />
     <Compile Include="Forms\MainUILogic.cs" />
+    <Compile Include="Forms\WindowMenuItems\frmTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmTemp.Designer.cs">
+      <DependentUpon>frmTemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
       <DependentUpon>frmTotals.cs</DependentUpon>
     </Compile>
@@ -240,6 +246,9 @@
     <None Include="Resources\optTO.Image.png" />
     <None Include="Resources\optSO.Image.png" />
     <None Include="Resources\optDO.Image.png" />
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmTemp.resx">
+      <DependentUpon>frmTemp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reborn.ico" />
     <Reference Include="AutoUpdater.NET, Version=1.5.7.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.5.7\lib\net40\AutoUpdater.NET.dll</HintPath>

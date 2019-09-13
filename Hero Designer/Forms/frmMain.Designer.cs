@@ -1725,10 +1725,9 @@ namespace Hero_Designer
             this.tempPowersButton.Name = "tempPowersButton";
             this.tempPowersButton.Size = new System.Drawing.Size(105, 22);
             this.tempPowersButton.TabIndex = 115;
-            this.tempPowersButton.TextOff = "Temp Pwrs (Off)";
-            this.tempPowersButton.TextOn = "Temp Pwrs (On)";
-            this.tempPowersButton.Toggle = true;
-            this.tempPowersButton.MouseDown += new System.Windows.Forms.MouseEventHandler(tempPowersButton_MouseDown);
+            this.tempPowersButton.TextOff = "Temp Powers";
+            this.tempPowersButton.TextOn = "Temp Powers";
+            this.tempPowersButton.Toggle = false;
             this.tempPowersButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(tempPowersButton_ButtonClicked);
             // 
             // accoladeButton
@@ -1741,10 +1740,9 @@ namespace Hero_Designer
             this.accoladeButton.Name = "accoladeButton";
             this.accoladeButton.Size = new System.Drawing.Size(105, 22);
             this.accoladeButton.TabIndex = 114;
-            this.accoladeButton.TextOff = "Accolades (Off)";
-            this.accoladeButton.TextOn = "Accolades (On)";
+            this.accoladeButton.TextOff = "Accolades";
+            this.accoladeButton.TextOn = "Accolades";
             this.accoladeButton.Toggle = true;
-            //this.accoladeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(accoladeButton_MouseDown);
             this.accoladeButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
             // 
             // incarnateButton
@@ -1757,10 +1755,11 @@ namespace Hero_Designer
             this.incarnateButton.Name = "incarnateButton";
             this.incarnateButton.Size = new System.Drawing.Size(105, 22);
             this.incarnateButton.TabIndex = 113;
-            this.incarnateButton.TextOff = "Incarnate";
-            this.incarnateButton.TextOn = "Incarnate";
+            this.incarnateButton.TextOff = "Incarnates";
+            this.incarnateButton.TextOn = "Incarnates";
             this.incarnateButton.Toggle = false;
-            this.incarnateButton.MouseDown += new System.Windows.Forms.MouseEventHandler(incarnateButton_MouseDown);
+            this.incarnateButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(incarnateButton_ButtonClicked);
+            //this.incarnateButton.MouseDown += new System.Windows.Forms.MouseEventHandler(incarnateButton_MouseDown);
             // 
             // i9Picker
             // 
@@ -2001,6 +2000,11 @@ namespace Hero_Designer
             this.PerformLayout();
         }
 
+        private void IncarnateButton_ButtonClicked()
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         ToolStripMenuItem tsAdvDBEdit;
@@ -2098,7 +2102,7 @@ namespace Hero_Designer
         ImageButton ibTotals;
         ImageButton ibVetPools;
         ToolStripMenuItem ImportExportToolStripMenuItem;
-        ImageButton incarnateButton;
+        public ImageButton incarnateButton;
         ToolStripMenuItem IncarnateWindowToolStripMenuItem;
         ToolStripMenuItem InGameRespecHelperToolStripMenuItem;
         GFXLabel lblAT;
@@ -2134,7 +2138,7 @@ namespace Hero_Designer
         ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem;
         ToolStripMenuItem SlotsToolStripMenuItem;
         ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem;
-        ImageButton tempPowersButton;
+        public ImageButton tempPowersButton;
         ToolStripMenuItem tlsDPA;
         Timer tmrGfx;
         ToolStripMenuItem ToolStripMenuItem1;

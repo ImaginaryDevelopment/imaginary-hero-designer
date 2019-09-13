@@ -48,7 +48,7 @@ namespace Hero_Designer
         readonly ImageButton[] buttonArray;
 
         bool Locked;
-        readonly frmMain myParent;
+        frmMain myParent;
         public IPower[] myPowers;
         internal CustomPanel Panel2;
 
@@ -98,6 +98,19 @@ namespace Hero_Designer
             Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             myParent = iParent;
             myPowers = DatabaseAPI.GetPowersetByName("Alpha", Enums.ePowerSetType.Incarnate).Powers;
+            FormClosing += FrmIncarnate_FormClosing;
+        }
+
+        private void FrmIncarnate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                myParent.incarnateButton.Checked = false;
+            }
+            if (DialogResult == DialogResult.Cancel)
+            {
+                myParent.incarnateButton.Checked = false;
+            }
         }
 
         void alphaBtn_ButtonClicked()
