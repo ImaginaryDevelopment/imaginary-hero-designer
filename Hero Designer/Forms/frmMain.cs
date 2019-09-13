@@ -384,9 +384,37 @@ namespace Hero_Designer
             => DoRedraw();
 
         // this just opens a window right? why set modified?
-        void accoladeButton_ButtonClicked() => PowerModified(markModified: false);
+        void accoladeButton_ButtonClicked()
+        {
+            if (fAccolade == null || fAccolade.IsDisposed)
+            {
+                IPower power = !MainModule.MidsController.Toon.IsHero()
+                    ? DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3258)]
+                    : DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3257)];
+                List<IPower> iPowers = new List<IPower>();
+                int num = power.NIDSubPower.Length - 1;
+                for (int index = 0; index <= num; ++index)
+                    iPowers.Add(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
+                fAccolade = new frmAccolade(this, iPowers)
+                {
+                    Text = "Accolades"
+                };
+            }
 
-        void accoladeButton_MouseDown(object sender, MouseEventArgs e)
+            if (!fAccolade.Visible)
+            {
+                accoladeButton.Checked = true;
+                fAccolade.Show(this);
+            }
+            else
+            {
+                accoladeButton.Checked = false;
+                fAccolade.Hide();
+            }
+
+        }
+
+        /*void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks != 2)
                 return;
@@ -408,11 +436,12 @@ namespace Hero_Designer
 
             if (!fAccolade.Visible)
                 fAccolade.Show(this);
-        }
+        }*/
 
         void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+            //accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+            accoladeButton_ButtonClicked();
             accoladeButton.Checked = true;
         }
 

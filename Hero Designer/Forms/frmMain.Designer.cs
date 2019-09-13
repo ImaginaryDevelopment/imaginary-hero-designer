@@ -1744,7 +1744,7 @@ namespace Hero_Designer
             this.accoladeButton.TextOff = "Accolades (Off)";
             this.accoladeButton.TextOn = "Accolades (On)";
             this.accoladeButton.Toggle = true;
-            this.accoladeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(accoladeButton_MouseDown);
+            //this.accoladeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(accoladeButton_MouseDown);
             this.accoladeButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
             // 
             // incarnateButton
