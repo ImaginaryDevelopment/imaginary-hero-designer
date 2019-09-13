@@ -1727,7 +1727,7 @@ namespace Hero_Designer
             this.tempPowersButton.TabIndex = 115;
             this.tempPowersButton.TextOff = "Temp Powers";
             this.tempPowersButton.TextOn = "Temp Powers";
-            this.tempPowersButton.Toggle = false;
+            this.tempPowersButton.Toggle = true;
             this.tempPowersButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(tempPowersButton_ButtonClicked);
             // 
             // accoladeButton
@@ -1757,7 +1757,7 @@ namespace Hero_Designer
             this.incarnateButton.TabIndex = 113;
             this.incarnateButton.TextOff = "Incarnates";
             this.incarnateButton.TextOn = "Incarnates";
-            this.incarnateButton.Toggle = false;
+            this.incarnateButton.Toggle = true;
             this.incarnateButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(incarnateButton_ButtonClicked);
             //this.incarnateButton.MouseDown += new System.Windows.Forms.MouseEventHandler(incarnateButton_MouseDown);
             // 
