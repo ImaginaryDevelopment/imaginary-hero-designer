@@ -2068,7 +2068,7 @@ namespace Hero_Designer
         ToolStripMenuItem tsViewSets;
         ToolStripMenuItem tsViewSlotLevels;
         ToolStripMenuItem tsViewTotals;
-        ImageButton accoladeButton;
+        public ImageButton accoladeButton;
         ToolStripMenuItem AccoladesWindowToolStripMenuItem;
         ToolStripMenuItem AdvancedToolStripMenuItem1;
         ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem;

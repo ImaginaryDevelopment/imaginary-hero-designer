@@ -384,7 +384,7 @@ namespace Hero_Designer
             => DoRedraw();
 
         // this just opens a window right? why set modified?
-        void accoladeButton_ButtonClicked()
+        public void accoladeButton_ButtonClicked()
         {
             if (fAccolade == null || fAccolade.IsDisposed)
             {
@@ -409,10 +409,11 @@ namespace Hero_Designer
             else
             {
                 accoladeButton.Checked = false;
-                fAccolade.Hide();
+                fAccolade.Close();
             }
 
         }
+
 
         /*void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
