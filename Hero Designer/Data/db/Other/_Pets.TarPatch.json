@@ -4,12 +4,12 @@
   "FullName": "Pets.TarPatch",
   "ImageName": "",
   "Power": [
-    6611
+    6613
   ],
   "SetType": 8,
   "DisplayName": "TarPatch",
   "nArchetype": -1,
-  "nID": 3224,
+  "nID": 3227,
   "SubName": "Dark Miasma",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6611,
-      "PowerSetID": 3224,
+      "PowerIndex": 6613,
+      "PowerSetID": 3227,
       "StaticIndex": 1726,
       "NGroupMembership": [],
       "FullName": "Pets.TarPatch.Tar",

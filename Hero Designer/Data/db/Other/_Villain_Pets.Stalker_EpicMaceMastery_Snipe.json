@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Stalker_EpicMaceMastery_Snipe",
   "ImageName": "",
   "Power": [
-    10318,
-    10319
+    10320,
+    10321
   ],
   "SetType": 8,
   "DisplayName": "Stalker_EpicMaceMastery_Snipe",
   "nArchetype": -1,
-  "nID": 3540,
+  "nID": 3543,
   "SubName": "Mace Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 17.94,
-      "PowerIndex": 10318,
-      "PowerSetID": 3540,
+      "PowerIndex": 10320,
+      "PowerSetID": 3543,
       "StaticIndex": 9829,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Stalker_EpicMaceMastery_Snipe.Mace_Beam_Quick",
@@ -444,8 +444,8 @@
     {
       "CastTimeReal": 8.0,
       "ToggleCost": 17.94,
-      "PowerIndex": 10319,
-      "PowerSetID": 3540,
+      "PowerIndex": 10321,
+      "PowerSetID": 3543,
       "PowerSetIndex": 1,
       "StaticIndex": 9830,
       "NGroupMembership": [],

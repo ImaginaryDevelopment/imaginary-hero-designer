@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Dominator_MartialAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10188,
-    10189
+    10190,
+    10191
   ],
   "SetType": 8,
   "DisplayName": "Dominator_MartialAssault_Snipe",
   "nArchetype": -1,
-  "nID": 3495,
+  "nID": 3498,
   "SubName": "Martial Assault",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 18.512,
-      "PowerIndex": 10188,
-      "PowerSetID": 3495,
+      "PowerIndex": 10190,
+      "PowerSetID": 3498,
       "StaticIndex": 9819,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dominator_MartialAssault_Snipe.Masterful_Throw_Quick",
@@ -270,8 +270,8 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 18.512,
-      "PowerIndex": 10189,
-      "PowerSetID": 3495,
+      "PowerIndex": 10191,
+      "PowerSetID": 3498,
       "PowerSetIndex": 1,
       "StaticIndex": 9820,
       "NGroupMembership": [],

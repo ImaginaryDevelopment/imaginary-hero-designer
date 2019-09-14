@@ -4,7 +4,7 @@
   "FullName": "Pets.Traps_Bomb",
   "ImageName": "",
   "Power": [
-    6672
+    6674
   ],
   "SetType": 8,
   "DisplayName": "Bomb",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6672,
+      "PowerIndex": 6674,
       "PowerSetID": 3035,
       "StaticIndex": 3537,
       "NGroupMembership": [],

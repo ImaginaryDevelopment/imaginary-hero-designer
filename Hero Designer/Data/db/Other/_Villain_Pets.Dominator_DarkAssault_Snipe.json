@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Dominator_DarkAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10178,
-    10179
+    10180,
+    10181
   ],
   "SetType": 8,
   "DisplayName": "Dominator_DarkAssault_Snipe",
   "nArchetype": -1,
-  "nID": 3490,
+  "nID": 3493,
   "SubName": "Dark Assault",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10178,
-      "PowerSetID": 3490,
+      "PowerIndex": 10180,
+      "PowerSetID": 3493,
       "StaticIndex": 9809,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dominator_DarkAssault_Snipe.Death_Shroud_Quick",
@@ -235,8 +235,8 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10179,
-      "PowerSetID": 3490,
+      "PowerIndex": 10181,
+      "PowerSetID": 3493,
       "PowerSetIndex": 1,
       "StaticIndex": 9810,
       "NGroupMembership": [],

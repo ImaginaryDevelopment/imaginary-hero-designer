@@ -4,12 +4,12 @@
   "FullName": "Pets.Transfusion",
   "ImageName": "",
   "Power": [
-    6661
+    6663
   ],
   "SetType": 8,
   "DisplayName": "Transfusion",
   "nArchetype": -1,
-  "nID": 3248,
+  "nID": 3253,
   "SubName": "Kinetics",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6661,
-      "PowerSetID": 3248,
+      "PowerIndex": 6663,
+      "PowerSetID": 3253,
       "StaticIndex": 1753,
       "NGroupMembership": [],
       "FullName": "Pets.Transfusion.Transfusion",

@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Power_Surge",
   "ImageName": "",
   "Power": [
-    10285
+    10287
   ],
   "SetType": 8,
   "DisplayName": "Electric Armor",
   "nArchetype": -1,
-  "nID": 3498,
+  "nID": 3501,
   "SubName": "Electric Armor",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10285,
-      "PowerSetID": 3498,
+      "PowerIndex": 10287,
+      "PowerSetID": 3501,
       "StaticIndex": 3144,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Power_Surge.EM_Pulse",

@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Lightning_Rod",
   "ImageName": "",
   "Power": [
-    10229
+    10231
   ],
   "SetType": 8,
   "DisplayName": "Electric Melee",
   "nArchetype": -1,
-  "nID": 3499,
+  "nID": 3504,
   "SubName": "Electric Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.716,
-      "PowerIndex": 10229,
-      "PowerSetID": 3499,
+      "PowerIndex": 10231,
+      "PowerSetID": 3504,
       "StaticIndex": 3103,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Lightning_Rod.Lightning_Rod",

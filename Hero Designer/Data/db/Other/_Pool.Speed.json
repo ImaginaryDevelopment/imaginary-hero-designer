@@ -4,16 +4,16 @@
   "FullName": "Pool.Speed",
   "ImageName": "SuperSpeed.png",
   "Power": [
-    6812,
-    6813,
     6814,
     6815,
-    6816
+    6816,
+    6817,
+    6818
   ],
   "SetType": 5,
   "DisplayName": "Speed",
   "nArchetype": -1,
-  "nID": 3293,
+  "nID": 3296,
   "SubName": "Speed",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 3.07,
       "ToggleCost": 5.46,
-      "PowerIndex": 6812,
-      "PowerSetID": 3293,
+      "PowerIndex": 6814,
+      "PowerSetID": 3296,
       "StaticIndex": 1825,
       "NGroupMembership": [],
       "FullName": "Pool.Speed.Flurry",
@@ -1214,8 +1214,8 @@
     },
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 6813,
-      "PowerSetID": 3293,
+      "PowerIndex": 6815,
+      "PowerSetID": 3296,
       "PowerSetIndex": 1,
       "StaticIndex": 1826,
       "NGroupMembership": [],
@@ -1407,8 +1407,8 @@
     },
     {
       "ToggleCost": 0.455,
-      "PowerIndex": 6814,
-      "PowerSetID": 3293,
+      "PowerIndex": 6816,
+      "PowerSetID": 3296,
       "PowerSetIndex": 2,
       "StaticIndex": 1827,
       "NGroupMembership": [
@@ -1620,8 +1620,8 @@
       "CastTimeReal": 1.0,
       "ToggleCost": 48.75,
       "IsEpic": true,
-      "PowerIndex": 6815,
-      "PowerSetID": 3293,
+      "PowerIndex": 6817,
+      "PowerSetID": 3296,
       "PowerSetIndex": 3,
       "StaticIndex": 5634,
       "NGroupMembership": [],
@@ -1652,16 +1652,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6812,
-            6813
+            6814,
+            6815
           ],
           [
-            6812,
-            6814
+            6814,
+            6816
           ],
           [
-            6813,
-            6814
+            6815,
+            6816
           ]
         ],
         "NPowerIDNot": []
@@ -3193,8 +3193,8 @@
       "CastTimeReal": 1.0,
       "ToggleCost": 0.975,
       "IsEpic": true,
-      "PowerIndex": 6816,
-      "PowerSetID": 3293,
+      "PowerIndex": 6818,
+      "PowerSetID": 3296,
       "PowerSetIndex": 4,
       "StaticIndex": 1828,
       "NGroupMembership": [],
@@ -3225,16 +3225,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6812,
-            6813
+            6814,
+            6815
           ],
           [
-            6812,
-            6814
+            6814,
+            6816
           ],
           [
-            6813,
-            6814
+            6815,
+            6816
           ]
         ],
         "NPowerIDNot": []

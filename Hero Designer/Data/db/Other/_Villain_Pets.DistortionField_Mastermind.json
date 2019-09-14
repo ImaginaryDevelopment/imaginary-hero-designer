@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.DistortionField_Mastermind",
   "ImageName": "",
   "Power": [
-    10174
+    10176
   ],
   "SetType": 8,
   "DisplayName": "Time Manipulation",
   "nArchetype": -1,
-  "nID": 3550,
+  "nID": 3553,
   "SubName": "Time Manipulation",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10174,
-      "PowerSetID": 3550,
+      "PowerIndex": 10176,
+      "PowerSetID": 3553,
       "StaticIndex": 5815,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.DistortionField_Mastermind.Distortion_Field",

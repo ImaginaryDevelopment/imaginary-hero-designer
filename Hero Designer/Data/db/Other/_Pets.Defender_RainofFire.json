@@ -4,13 +4,13 @@
   "FullName": "Pets.Defender_RainofFire",
   "ImageName": "",
   "Power": [
-    6364,
-    6365
+    6366,
+    6367
   ],
   "SetType": 8,
   "DisplayName": "Rain of Fire",
   "nArchetype": -1,
-  "nID": 3188,
+  "nID": 3191,
   "SubName": "Fire Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6364,
-      "PowerSetID": 3188,
+      "PowerIndex": 6366,
+      "PowerSetID": 3191,
       "StaticIndex": 5601,
       "NGroupMembership": [],
       "FullName": "Pets.Defender_RainofFire.RainofFire",
@@ -321,8 +321,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6365,
-      "PowerSetID": 3188,
+      "PowerIndex": 6367,
+      "PowerSetID": 3191,
       "PowerSetIndex": 1,
       "StaticIndex": 5602,
       "NGroupMembership": [],

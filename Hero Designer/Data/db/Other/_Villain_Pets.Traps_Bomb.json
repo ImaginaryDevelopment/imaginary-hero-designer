@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Traps_Bomb",
   "ImageName": "",
   "Power": [
-    10349
+    10351
   ],
   "SetType": 8,
   "DisplayName": "Bomb",
   "nArchetype": -1,
-  "nID": 3457,
+  "nID": 3460,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10349,
-      "PowerSetID": 3457,
+      "PowerIndex": 10351,
+      "PowerSetID": 3460,
       "StaticIndex": 3158,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_Bomb.Bomb",

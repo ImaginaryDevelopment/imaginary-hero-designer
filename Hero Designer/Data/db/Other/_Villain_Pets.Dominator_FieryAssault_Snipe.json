@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Dominator_FieryAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10184,
-    10185
+    10186,
+    10187
   ],
   "SetType": 8,
   "DisplayName": "Dominator_FieryAssault_Snipe",
   "nArchetype": -1,
-  "nID": 3493,
+  "nID": 3496,
   "SubName": "Fiery Assault",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 18.512,
-      "PowerIndex": 10184,
-      "PowerSetID": 3493,
+      "PowerIndex": 10186,
+      "PowerSetID": 3496,
       "StaticIndex": 9815,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dominator_FieryAssault_Snipe.Blazing_Bolt_Quick",
@@ -234,8 +234,8 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 18.512,
-      "PowerIndex": 10185,
-      "PowerSetID": 3493,
+      "PowerIndex": 10187,
+      "PowerSetID": 3496,
       "PowerSetIndex": 1,
       "StaticIndex": 9816,
       "NGroupMembership": [],

@@ -4,13 +4,13 @@
   "FullName": "Pets.Sleet_Defender",
   "ImageName": "",
   "Power": [
-    6587,
-    6588
+    6589,
+    6590
   ],
   "SetType": 8,
   "DisplayName": "Sleet",
   "nArchetype": -1,
-  "nID": 3212,
+  "nID": 3214,
   "SubName": "Cold Domination",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6587,
-      "PowerSetID": 3212,
+      "PowerIndex": 6589,
+      "PowerSetID": 3214,
       "StaticIndex": 1714,
       "NGroupMembership": [],
       "FullName": "Pets.Sleet_Defender.Sleet",
@@ -1651,8 +1651,8 @@
       "AoEModifier": 4.0
     },
     {
-      "PowerIndex": 6588,
-      "PowerSetID": 3212,
+      "PowerIndex": 6590,
+      "PowerSetID": 3214,
       "PowerSetIndex": 1,
       "StaticIndex": 1715,
       "NGroupMembership": [],

@@ -4,20 +4,20 @@
   "FullName": "Tanker_Defense.Stone_Armor",
   "ImageName": "StoneArmor.png",
   "Power": [
-    8691,
-    8692,
     8693,
     8694,
     8695,
     8696,
     8697,
     8698,
-    8699
+    8699,
+    8700,
+    8701
   ],
   "SetType": 1,
   "DisplayName": "Stone Armor",
   "nArchetype": 4,
-  "nID": 3392,
+  "nID": 3395,
   "SubName": "Stone Armor",
   "ATClass": "Class_Tanker",
   "UIDTrunkSet": "",
@@ -31,8 +31,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8691,
-      "PowerSetID": 3392,
+      "PowerIndex": 8693,
+      "PowerSetID": 3395,
       "StaticIndex": 2523,
       "NGroupMembership": [
         14
@@ -353,8 +353,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8692,
-      "PowerSetID": 3392,
+      "PowerIndex": 8694,
+      "PowerSetID": 3395,
       "PowerSetIndex": 1,
       "StaticIndex": 2524,
       "NGroupMembership": [],
@@ -483,8 +483,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 8693,
-      "PowerSetID": 3392,
+      "PowerIndex": 8695,
+      "PowerSetID": 3395,
       "PowerSetIndex": 2,
       "StaticIndex": 2525,
       "NGroupMembership": [],
@@ -690,8 +690,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.78,
-      "PowerIndex": 8694,
-      "PowerSetID": 3392,
+      "PowerIndex": 8696,
+      "PowerSetID": 3395,
       "PowerSetIndex": 3,
       "StaticIndex": 2526,
       "NGroupMembership": [],
@@ -1123,8 +1123,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8695,
-      "PowerSetID": 3392,
+      "PowerIndex": 8697,
+      "PowerSetID": 3395,
       "PowerSetIndex": 4,
       "StaticIndex": 2527,
       "NGroupMembership": [
@@ -2446,8 +2446,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8696,
-      "PowerSetID": 3392,
+      "PowerIndex": 8698,
+      "PowerSetID": 3395,
       "PowerSetIndex": 5,
       "StaticIndex": 2528,
       "NGroupMembership": [
@@ -2661,8 +2661,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8697,
-      "PowerSetID": 3392,
+      "PowerIndex": 8699,
+      "PowerSetID": 3395,
       "PowerSetIndex": 6,
       "StaticIndex": 2529,
       "NGroupMembership": [
@@ -2984,8 +2984,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8698,
-      "PowerSetID": 3392,
+      "PowerIndex": 8700,
+      "PowerSetID": 3395,
       "PowerSetIndex": 7,
       "StaticIndex": 2530,
       "NGroupMembership": [
@@ -3342,8 +3342,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8699,
-      "PowerSetID": 3392,
+      "PowerIndex": 8701,
+      "PowerSetID": 3395,
       "PowerSetIndex": 8,
       "StaticIndex": 2531,
       "NGroupMembership": [

@@ -11,7 +11,7 @@
   "SetType": 8,
   "DisplayName": "Blizzard",
   "nArchetype": -1,
-  "nID": 3030,
+  "nID": 3031,
   "SubName": "Ice Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,7 +24,7 @@
   "Powers": [
     {
       "PowerIndex": 6262,
-      "PowerSetID": 3030,
+      "PowerSetID": 3031,
       "StaticIndex": 1545,
       "NGroupMembership": [],
       "FullName": "Pets.Blizzard.Blizzard",
@@ -534,7 +534,7 @@
     },
     {
       "PowerIndex": 6263,
-      "PowerSetID": 3030,
+      "PowerSetID": 3031,
       "PowerSetIndex": 1,
       "StaticIndex": 1546,
       "NGroupMembership": [],
@@ -622,7 +622,7 @@
     },
     {
       "PowerIndex": 6264,
-      "PowerSetID": 3030,
+      "PowerSetID": 3031,
       "PowerSetIndex": 2,
       "StaticIndex": 1547,
       "NGroupMembership": [],

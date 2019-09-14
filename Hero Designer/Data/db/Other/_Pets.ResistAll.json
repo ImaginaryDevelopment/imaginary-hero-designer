@@ -4,12 +4,12 @@
   "FullName": "Pets.ResistAll",
   "ImageName": "",
   "Power": [
-    6558
+    6560
   ],
   "SetType": 8,
   "DisplayName": "ResistAll",
   "nArchetype": -1,
-  "nID": 3192,
+  "nID": 3193,
   "SubName": "Resistance",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6558,
-      "PowerSetID": 3192,
+      "PowerIndex": 6560,
+      "PowerSetID": 3193,
       "StaticIndex": 1699,
       "NGroupMembership": [],
       "FullName": "Pets.ResistAll.ResistAll",

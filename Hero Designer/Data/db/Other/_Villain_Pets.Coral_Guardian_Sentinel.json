@@ -4,19 +4,19 @@
   "FullName": "Villain_Pets.Coral_Guardian_Sentinel",
   "ImageName": "",
   "Power": [
-    10113,
-    10114,
     10115,
     10116,
     10117,
     10118,
     10119,
-    10120
+    10120,
+    10121,
+    10122
   ],
   "SetType": 8,
   "DisplayName": "Coral Guardian Sentinel",
   "nArchetype": -1,
-  "nID": 3472,
+  "nID": 3475,
   "SubName": "Leviathan Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -28,8 +28,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10113,
-      "PowerSetID": 3472,
+      "PowerIndex": 10115,
+      "PowerSetID": 3475,
       "StaticIndex": 3040,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Coral_Guardian_Sentinel.Resistance",
@@ -147,8 +147,8 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.54,
-      "PowerIndex": 10114,
-      "PowerSetID": 3472,
+      "PowerIndex": 10116,
+      "PowerSetID": 3475,
       "PowerSetIndex": 1,
       "StaticIndex": 3041,
       "NGroupMembership": [],
@@ -246,8 +246,8 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 6.5,
-      "PowerIndex": 10115,
-      "PowerSetID": 3472,
+      "PowerIndex": 10117,
+      "PowerSetID": 3475,
       "PowerSetIndex": 2,
       "StaticIndex": 3042,
       "NGroupMembership": [],
@@ -348,8 +348,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 8.58,
-      "PowerIndex": 10116,
-      "PowerSetID": 3472,
+      "PowerIndex": 10118,
+      "PowerSetID": 3475,
       "PowerSetIndex": 3,
       "StaticIndex": 3043,
       "NGroupMembership": [],
@@ -520,8 +520,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 10.66,
-      "PowerIndex": 10117,
-      "PowerSetID": 3472,
+      "PowerIndex": 10119,
+      "PowerSetID": 3475,
       "PowerSetIndex": 4,
       "StaticIndex": 3044,
       "NGroupMembership": [],
@@ -694,8 +694,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10118,
-      "PowerSetID": 3472,
+      "PowerIndex": 10120,
+      "PowerSetID": 3475,
       "PowerSetIndex": 5,
       "StaticIndex": 3045,
       "NGroupMembership": [],
@@ -778,8 +778,8 @@
     {
       "CastTimeReal": 1.93,
       "ToggleCost": 9.75,
-      "PowerIndex": 10119,
-      "PowerSetID": 3472,
+      "PowerIndex": 10121,
+      "PowerSetID": 3475,
       "PowerSetIndex": 6,
       "StaticIndex": 3046,
       "NGroupMembership": [],
@@ -1104,8 +1104,8 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 10.66,
-      "PowerIndex": 10120,
-      "PowerSetID": 3472,
+      "PowerIndex": 10122,
+      "PowerSetID": 3475,
       "PowerSetIndex": 7,
       "StaticIndex": 3047,
       "NGroupMembership": [],

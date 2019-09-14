@@ -4,14 +4,14 @@
   "FullName": "Pets.Traps_Seeker1_Defender",
   "ImageName": "",
   "Power": [
-    6684,
-    6685,
-    6686
+    6686,
+    6687,
+    6688
   ],
   "SetType": 8,
   "DisplayName": "Seeker 1",
   "nArchetype": -1,
-  "nID": 3203,
+  "nID": 3204,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6684,
-      "PowerSetID": 3203,
+      "PowerIndex": 6686,
+      "PowerSetID": 3204,
       "StaticIndex": 3546,
       "NGroupMembership": [],
       "FullName": "Pets.Traps_Seeker1_Defender.FlashPulse",
@@ -584,8 +584,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 6685,
-      "PowerSetID": 3203,
+      "PowerIndex": 6687,
+      "PowerSetID": 3204,
       "PowerSetIndex": 1,
       "StaticIndex": 3548,
       "NGroupMembership": [],
@@ -735,8 +735,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6686,
-      "PowerSetID": 3203,
+      "PowerIndex": 6688,
+      "PowerSetID": 3204,
       "PowerSetIndex": 2,
       "StaticIndex": 3547,
       "NGroupMembership": [],

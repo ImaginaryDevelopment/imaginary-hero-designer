@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.RainofArrows_Corruptor",
   "ImageName": "",
   "Power": [
-    10290,
-    10291
+    10292,
+    10293
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
   "nArchetype": -1,
-  "nID": 3524,
+  "nID": 3527,
   "SubName": "Archery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10290,
-      "PowerSetID": 3524,
+      "PowerIndex": 10292,
+      "PowerSetID": 3527,
       "StaticIndex": 4102,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.RainofArrows_Corruptor.RainofArrows",
@@ -221,8 +221,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10291,
-      "PowerSetID": 3524,
+      "PowerIndex": 10293,
+      "PowerSetID": 3527,
       "PowerSetIndex": 1,
       "StaticIndex": 4103,
       "NGroupMembership": [],

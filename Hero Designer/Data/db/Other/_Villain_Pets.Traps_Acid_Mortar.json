@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Traps_Acid_Mortar",
   "ImageName": "",
   "Power": [
-    10347,
-    10348
+    10349,
+    10350
   ],
   "SetType": 8,
   "DisplayName": "Acid Mortar",
   "nArchetype": -1,
-  "nID": 3451,
+  "nID": 3454,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10347,
-      "PowerSetID": 3451,
+      "PowerIndex": 10349,
+      "PowerSetID": 3454,
       "StaticIndex": 3156,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_Acid_Mortar.Acid_Mortar",
@@ -430,8 +430,8 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 10348,
-      "PowerSetID": 3451,
+      "PowerIndex": 10350,
+      "PowerSetID": 3454,
       "PowerSetIndex": 1,
       "StaticIndex": 3157,
       "NGroupMembership": [],

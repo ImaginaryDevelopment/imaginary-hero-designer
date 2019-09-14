@@ -4,13 +4,13 @@
   "FullName": "Pets.Whirlpool_Defender",
   "ImageName": "",
   "Power": [
-    6752,
-    6753
+    6754,
+    6755
   ],
   "SetType": 8,
   "DisplayName": "Whirlpool",
   "nArchetype": -1,
-  "nID": 3276,
+  "nID": 3280,
   "SubName": "Water Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6752,
-      "PowerSetID": 3276,
+      "PowerIndex": 6754,
+      "PowerSetID": 3280,
       "StaticIndex": 9129,
       "NGroupMembership": [],
       "FullName": "Pets.Whirlpool_Defender.Whirlpool",
@@ -365,8 +365,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6753,
-      "PowerSetID": 3276,
+      "PowerIndex": 6755,
+      "PowerSetID": 3280,
       "PowerSetIndex": 1,
       "StaticIndex": 9130,
       "NGroupMembership": [],

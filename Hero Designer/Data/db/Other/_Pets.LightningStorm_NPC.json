@@ -4,14 +4,14 @@
   "FullName": "Pets.LightningStorm_NPC",
   "ImageName": "",
   "Power": [
-    6458,
-    6459,
-    6460
+    6460,
+    6461,
+    6462
   ],
   "SetType": 8,
   "DisplayName": "LightningStorm_NPC",
   "nArchetype": -1,
-  "nID": 3134,
+  "nID": 3136,
   "SubName": "Storm Summoning",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 6458,
-      "PowerSetID": 3134,
+      "PowerIndex": 6460,
+      "PowerSetID": 3136,
       "StaticIndex": 1644,
       "NGroupMembership": [],
       "FullName": "Pets.LightningStorm_NPC.Lightning",
@@ -264,8 +264,8 @@
       "AoEModifier": 1.75
     },
     {
-      "PowerIndex": 6459,
-      "PowerSetID": 3134,
+      "PowerIndex": 6461,
+      "PowerSetID": 3136,
       "PowerSetIndex": 1,
       "StaticIndex": 1645,
       "NGroupMembership": [],
@@ -349,8 +349,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6460,
-      "PowerSetID": 3134,
+      "PowerIndex": 6462,
+      "PowerSetID": 3136,
       "PowerSetIndex": 2,
       "StaticIndex": 1646,
       "NGroupMembership": [],

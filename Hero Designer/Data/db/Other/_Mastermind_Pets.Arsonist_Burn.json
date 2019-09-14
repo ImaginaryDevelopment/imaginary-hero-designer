@@ -10,7 +10,7 @@
   "SetType": 8,
   "DisplayName": "Arsonist",
   "nArchetype": -1,
-  "nID": 2908,
+  "nID": 2911,
   "SubName": "Thugs",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,7 +23,7 @@
   "Powers": [
     {
       "PowerIndex": 5768,
-      "PowerSetID": 2908,
+      "PowerSetID": 2911,
       "StaticIndex": 1163,
       "NGroupMembership": [],
       "FullName": "Mastermind_Pets.Arsonist_Burn.Fire",
@@ -113,7 +113,7 @@
     },
     {
       "PowerIndex": 5769,
-      "PowerSetID": 2908,
+      "PowerSetID": 2911,
       "PowerSetIndex": 1,
       "StaticIndex": 1164,
       "NGroupMembership": [],

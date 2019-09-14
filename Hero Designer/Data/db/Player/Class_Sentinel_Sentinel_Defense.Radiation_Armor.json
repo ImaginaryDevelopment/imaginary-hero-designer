@@ -4,20 +4,20 @@
   "FullName": "Sentinel_Defense.Radiation_Armor",
   "ImageName": "RadiationArmor.png",
   "Power": [
-    7191,
-    7192,
     7193,
     7194,
     7195,
     7196,
     7197,
     7198,
-    7199
+    7199,
+    7200,
+    7201
   ],
   "SetType": 2,
   "DisplayName": "Radiation Armor",
   "nArchetype": 7,
-  "nID": 3335,
+  "nID": 3338,
   "SubName": "Radiation Armor",
   "ATClass": "Class_Sentinel",
   "UIDTrunkSet": "",
@@ -31,8 +31,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 7191,
-      "PowerSetID": 3335,
+      "PowerIndex": 7193,
+      "PowerSetID": 3338,
       "StaticIndex": 10474,
       "NGroupMembership": [],
       "FullName": "Sentinel_Defense.Radiation_Armor.Alpha_Barrier",
@@ -311,8 +311,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7192,
-      "PowerSetID": 3335,
+      "PowerIndex": 7194,
+      "PowerSetID": 3338,
       "PowerSetIndex": 1,
       "StaticIndex": 10673,
       "NGroupMembership": [],
@@ -539,8 +539,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 7193,
-      "PowerSetID": 3335,
+      "PowerIndex": 7195,
+      "PowerSetID": 3338,
       "PowerSetIndex": 2,
       "StaticIndex": 10475,
       "NGroupMembership": [],
@@ -892,8 +892,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 7194,
-      "PowerSetID": 3335,
+      "PowerIndex": 7196,
+      "PowerSetID": 3338,
       "PowerSetIndex": 3,
       "StaticIndex": 10476,
       "NGroupMembership": [],
@@ -2069,8 +2069,8 @@
     {
       "CastTimeReal": 1.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 7195,
-      "PowerSetID": 3335,
+      "PowerIndex": 7197,
+      "PowerSetID": 3338,
       "PowerSetIndex": 4,
       "StaticIndex": 10481,
       "NGroupMembership": [],
@@ -2269,8 +2269,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7196,
-      "PowerSetID": 3335,
+      "PowerIndex": 7198,
+      "PowerSetID": 3338,
       "PowerSetIndex": 5,
       "StaticIndex": 10674,
       "NGroupMembership": [],
@@ -2531,8 +2531,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 10.4,
-      "PowerIndex": 7197,
-      "PowerSetID": 3335,
+      "PowerIndex": 7199,
+      "PowerSetID": 3338,
       "PowerSetIndex": 6,
       "StaticIndex": 10477,
       "NGroupMembership": [],
@@ -2696,8 +2696,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 7198,
-      "PowerSetID": 3335,
+      "PowerIndex": 7200,
+      "PowerSetID": 3338,
       "PowerSetIndex": 7,
       "StaticIndex": 10478,
       "NGroupMembership": [],
@@ -2952,8 +2952,8 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 2.6,
-      "PowerIndex": 7199,
-      "PowerSetID": 3335,
+      "PowerIndex": 7201,
+      "PowerSetID": 3338,
       "PowerSetIndex": 8,
       "StaticIndex": 10479,
       "NGroupMembership": [],

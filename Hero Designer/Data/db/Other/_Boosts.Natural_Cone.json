@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Natural Range",
   "nArchetype": -1,
-  "nID": 2197,
+  "nID": 2196,
   "SubName": "Technique (Natural)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2389,
-      "PowerSetID": 2197,
+      "PowerSetID": 2196,
       "StaticIndex": 8327,
       "NGroupMembership": [],
       "FullName": "Boosts.Natural_Cone.Natural_Cone",

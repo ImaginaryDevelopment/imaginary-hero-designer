@@ -4,20 +4,20 @@
   "FullName": "Tanker_Defense.Super_Reflexes",
   "ImageName": "SuperReflexes.png",
   "Power": [
-    8700,
-    8701,
     8702,
     8703,
     8704,
     8705,
     8706,
     8707,
-    8708
+    8708,
+    8709,
+    8710
   ],
   "SetType": 1,
   "DisplayName": "Super Reflexes",
   "nArchetype": 4,
-  "nID": 3393,
+  "nID": 3396,
   "SubName": "Super Reflexes",
   "ATClass": "Class_Tanker",
   "UIDTrunkSet": "",
@@ -31,8 +31,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8700,
-      "PowerSetID": 3393,
+      "PowerIndex": 8702,
+      "PowerSetID": 3396,
       "StaticIndex": 5687,
       "NGroupMembership": [],
       "FullName": "Tanker_Defense.Super_Reflexes.Focused_Fighting",
@@ -312,8 +312,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8701,
-      "PowerSetID": 3393,
+      "PowerIndex": 8703,
+      "PowerSetID": 3396,
       "PowerSetIndex": 1,
       "StaticIndex": 5688,
       "NGroupMembership": [],
@@ -661,8 +661,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8702,
-      "PowerSetID": 3393,
+      "PowerIndex": 8704,
+      "PowerSetID": 3396,
       "PowerSetIndex": 2,
       "StaticIndex": 5689,
       "NGroupMembership": [],
@@ -971,8 +971,8 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 10.4,
-      "PowerIndex": 8703,
-      "PowerSetID": 3393,
+      "PowerIndex": 8705,
+      "PowerSetID": 3396,
       "PowerSetIndex": 3,
       "StaticIndex": 5690,
       "NGroupMembership": [],
@@ -1703,8 +1703,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8704,
-      "PowerSetID": 3393,
+      "PowerIndex": 8706,
+      "PowerSetID": 3396,
       "PowerSetIndex": 4,
       "StaticIndex": 5691,
       "NGroupMembership": [],
@@ -2013,8 +2013,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 8705,
-      "PowerSetID": 3393,
+      "PowerIndex": 8707,
+      "PowerSetID": 3396,
       "PowerSetIndex": 5,
       "StaticIndex": 5692,
       "NGroupMembership": [],
@@ -2302,8 +2302,8 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 8706,
-      "PowerSetID": 3393,
+      "PowerIndex": 8708,
+      "PowerSetID": 3396,
       "PowerSetIndex": 6,
       "StaticIndex": 5693,
       "NGroupMembership": [],
@@ -2610,8 +2610,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8707,
-      "PowerSetID": 3393,
+      "PowerIndex": 8709,
+      "PowerSetID": 3396,
       "PowerSetIndex": 7,
       "StaticIndex": 5694,
       "NGroupMembership": [],
@@ -2872,8 +2872,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 8708,
-      "PowerSetID": 3393,
+      "PowerIndex": 8710,
+      "PowerSetID": 3396,
       "PowerSetIndex": 8,
       "StaticIndex": 5695,
       "NGroupMembership": [],

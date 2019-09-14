@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Traps_Trip_Mine",
   "ImageName": "",
   "Power": [
-    10372,
-    10373,
-    10374
+    10374,
+    10375,
+    10376
   ],
   "SetType": 8,
   "DisplayName": "Mine",
   "nArchetype": -1,
-  "nID": 3511,
+  "nID": 3514,
   "SubName": "Devices",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10372,
-      "PowerSetID": 3511,
+      "PowerIndex": 10374,
+      "PowerSetID": 3514,
       "StaticIndex": 3181,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_Trip_Mine.Trip_Mine",
@@ -277,8 +277,8 @@
       "AoEModifier": 2.8
     },
     {
-      "PowerIndex": 10373,
-      "PowerSetID": 3511,
+      "PowerIndex": 10375,
+      "PowerSetID": 3514,
       "PowerSetIndex": 1,
       "StaticIndex": 3182,
       "NGroupMembership": [],
@@ -1420,8 +1420,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10374,
-      "PowerSetID": 3511,
+      "PowerIndex": 10376,
+      "PowerSetID": 3514,
       "PowerSetIndex": 2,
       "StaticIndex": 3183,
       "NGroupMembership": [],

@@ -124,7 +124,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Set_Bonus.Set_Bonus.Entomb_Proc",
-          "nSummon": 7875,
+          "nSummon": 7877,
           "Ticks": 1,
           "UIDClassName": "",
           "nIDClassName": -1,

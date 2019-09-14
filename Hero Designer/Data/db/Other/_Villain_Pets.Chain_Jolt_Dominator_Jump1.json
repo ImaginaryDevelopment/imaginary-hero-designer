@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump1",
   "ImageName": "",
   "Power": [
-    10103
+    10105
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 1",
   "nArchetype": -1,
-  "nID": 3465,
+  "nID": 3468,
   "SubName": "Chain Jolt Jump 1",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10103,
-      "PowerSetID": 3465,
+      "PowerIndex": 10105,
+      "PowerSetID": 3468,
       "StaticIndex": 4485,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump1.Charge",

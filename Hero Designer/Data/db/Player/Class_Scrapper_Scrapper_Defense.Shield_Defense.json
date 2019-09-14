@@ -4,20 +4,20 @@
   "FullName": "Scrapper_Defense.Shield_Defense",
   "ImageName": "ShieldDef.png",
   "Power": [
-    6915,
-    6916,
     6917,
     6918,
     6919,
     6920,
     6921,
     6922,
-    6923
+    6923,
+    6924,
+    6925
   ],
   "SetType": 2,
   "DisplayName": "Shield Defense",
   "nArchetype": 3,
-  "nID": 3305,
+  "nID": 3308,
   "SubName": "Shield Defense",
   "ATClass": "Class_Scrapper",
   "UIDTrunkSet": "",
@@ -33,20 +33,20 @@
     "Scrapper_Melee.Titan_Weapons"
   ],
   "nIDMutexSets": [
-    3310,
-    3312,
-    3316,
-    3322,
-    3323,
-    3325
+    3313,
+    3315,
+    3319,
+    3325,
+    3326,
+    3328
   ],
   "GroupName": "Scrapper_Defense",
   "Powers": [
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 6915,
-      "PowerSetID": 3305,
+      "PowerIndex": 6917,
+      "PowerSetID": 3308,
       "StaticIndex": 3338,
       "NGroupMembership": [],
       "FullName": "Scrapper_Defense.Shield_Defense.Active_Defense",
@@ -472,8 +472,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 6916,
-      "PowerSetID": 3305,
+      "PowerIndex": 6918,
+      "PowerSetID": 3308,
       "PowerSetIndex": 1,
       "StaticIndex": 3339,
       "NGroupMembership": [],
@@ -789,8 +789,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6917,
-      "PowerSetID": 3305,
+      "PowerIndex": 6919,
+      "PowerSetID": 3308,
       "PowerSetIndex": 2,
       "StaticIndex": 3340,
       "NGroupMembership": [],
@@ -1057,8 +1057,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.4,
-      "PowerIndex": 6918,
-      "PowerSetID": 3305,
+      "PowerIndex": 6920,
+      "PowerSetID": 3308,
       "PowerSetIndex": 3,
       "StaticIndex": 3341,
       "NGroupMembership": [],
@@ -2263,8 +2263,8 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 6919,
-      "PowerSetID": 3305,
+      "PowerIndex": 6921,
+      "PowerSetID": 3308,
       "PowerSetIndex": 4,
       "StaticIndex": 3342,
       "NGroupMembership": [],
@@ -3251,8 +3251,8 @@
     },
     {
       "CastTimeReal": 1.716,
-      "PowerIndex": 6920,
-      "PowerSetID": 3305,
+      "PowerIndex": 6922,
+      "PowerSetID": 3308,
       "PowerSetIndex": 5,
       "StaticIndex": 3343,
       "NGroupMembership": [],
@@ -3530,8 +3530,8 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 0.156,
-      "PowerIndex": 6921,
-      "PowerSetID": 3305,
+      "PowerIndex": 6923,
+      "PowerSetID": 3308,
       "PowerSetIndex": 6,
       "StaticIndex": 3344,
       "NGroupMembership": [],
@@ -3993,8 +3993,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 13.52,
-      "PowerIndex": 6922,
-      "PowerSetID": 3305,
+      "PowerIndex": 6924,
+      "PowerSetID": 3308,
       "PowerSetIndex": 7,
       "StaticIndex": 3345,
       "NGroupMembership": [],
@@ -4139,8 +4139,8 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 2.6,
-      "PowerIndex": 6923,
-      "PowerSetID": 3305,
+      "PowerIndex": 6925,
+      "PowerSetID": 3308,
       "PowerSetIndex": 8,
       "StaticIndex": 3346,
       "NGroupMembership": [],

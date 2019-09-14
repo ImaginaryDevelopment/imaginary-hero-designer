@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Mutation Magic Range",
   "nArchetype": -1,
-  "nID": 2101,
+  "nID": 2102,
   "SubName": "Focusing Device (Mutation, Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2338,
-      "PowerSetID": 2101,
+      "PowerSetID": 2102,
       "StaticIndex": 8276,
       "NGroupMembership": [],
       "FullName": "Boosts.Mutation_Magic_Range.Mutation_Magic_Range",

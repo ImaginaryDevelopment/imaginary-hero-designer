@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Stalker_EpicSoulMastery_Snipe",
   "ImageName": "",
   "Power": [
-    10322,
-    10323
+    10324,
+    10325
   ],
   "SetType": 8,
   "DisplayName": "Stalker_EpicSoulMastery_Snipe",
   "nArchetype": -1,
-  "nID": 3542,
+  "nID": 3545,
   "SubName": "Soul Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10322,
-      "PowerSetID": 3542,
+      "PowerIndex": 10324,
+      "PowerSetID": 3545,
       "StaticIndex": 9833,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Stalker_EpicSoulMastery_Snipe.Moonbeam_Quick",
@@ -342,8 +342,8 @@
     {
       "CastTimeReal": 7.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10323,
-      "PowerSetID": 3542,
+      "PowerIndex": 10325,
+      "PowerSetID": 3545,
       "PowerSetIndex": 1,
       "StaticIndex": 9834,
       "NGroupMembership": [],

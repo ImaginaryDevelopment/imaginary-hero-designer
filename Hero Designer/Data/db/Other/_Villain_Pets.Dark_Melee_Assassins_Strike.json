@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Dark_Melee_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10171,
-    10172
+    10173,
+    10174
   ],
   "SetType": 8,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3446,
+  "nID": 3441,
   "SubName": "Dark Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10171,
-      "PowerSetID": 3446,
+      "PowerIndex": 10173,
+      "PowerSetID": 3441,
       "StaticIndex": 6324,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dark_Melee_Assassins_Strike.Assassins_Eclipse_Stealth",
@@ -272,7 +272,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9325,
+          "nSummon": 9327,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -369,8 +369,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10172,
-      "PowerSetID": 3446,
+      "PowerIndex": 10174,
+      "PowerSetID": 3441,
       "PowerSetIndex": 1,
       "StaticIndex": 6325,
       "NGroupMembership": [],

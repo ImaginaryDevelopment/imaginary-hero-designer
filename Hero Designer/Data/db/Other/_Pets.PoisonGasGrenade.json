@@ -4,12 +4,12 @@
   "FullName": "Pets.PoisonGasGrenade",
   "ImageName": "",
   "Power": [
-    6516
+    6518
   ],
   "SetType": 8,
   "DisplayName": "PoisonGasGrenade",
   "nArchetype": -1,
-  "nID": 3166,
+  "nID": 3168,
   "SubName": "Trick Arrow",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6516,
-      "PowerSetID": 3166,
+      "PowerIndex": 6518,
+      "PowerSetID": 3168,
       "StaticIndex": 1684,
       "NGroupMembership": [],
       "FullName": "Pets.PoisonGasGrenade.Poison_Gas",

@@ -4,13 +4,13 @@
   "FullName": "Pets.VoltaicSentinel_Dominator",
   "ImageName": "",
   "Power": [
-    6734,
-    6735
+    6736,
+    6737
   ],
   "SetType": 8,
   "DisplayName": "Voltaic Sentinel Critter",
   "nArchetype": -1,
-  "nID": 3263,
+  "nID": 3268,
   "SubName": "Electrical Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.0,
-      "PowerIndex": 6734,
-      "PowerSetID": 3263,
+      "PowerIndex": 6736,
+      "PowerSetID": 3268,
       "StaticIndex": 3562,
       "NGroupMembership": [],
       "FullName": "Pets.VoltaicSentinel_Dominator.Electrical_Bolt",
@@ -190,8 +190,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6735,
-      "PowerSetID": 3263,
+      "PowerIndex": 6737,
+      "PowerSetID": 3268,
       "PowerSetIndex": 1,
       "StaticIndex": 3563,
       "NGroupMembership": [],

@@ -4,18 +4,18 @@
   "FullName": "Villain_Pets.Fortunata_Mistress",
   "ImageName": "",
   "Power": [
-    10207,
-    10208,
     10209,
     10210,
     10211,
     10212,
-    10213
+    10213,
+    10214,
+    10215
   ],
   "SetType": 8,
   "DisplayName": "Fortunata Mistress",
   "nArchetype": -1,
-  "nID": 3505,
+  "nID": 3508,
   "SubName": "Soul Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10207,
-      "PowerSetID": 3505,
+      "PowerIndex": 10209,
+      "PowerSetID": 3508,
       "StaticIndex": 3085,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Fortunata_Mistress.Mental_Training",
@@ -428,8 +428,8 @@
     {
       "CastTimeReal": 1.97,
       "ToggleCost": 26.0,
-      "PowerIndex": 10208,
-      "PowerSetID": 3505,
+      "PowerIndex": 10210,
+      "PowerSetID": 3508,
       "PowerSetIndex": 1,
       "StaticIndex": 3086,
       "NGroupMembership": [],
@@ -674,8 +674,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 10209,
-      "PowerSetID": 3505,
+      "PowerIndex": 10211,
+      "PowerSetID": 3508,
       "PowerSetIndex": 2,
       "StaticIndex": 3087,
       "NGroupMembership": [],
@@ -850,8 +850,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10210,
-      "PowerSetID": 3505,
+      "PowerIndex": 10212,
+      "PowerSetID": 3508,
       "PowerSetIndex": 3,
       "StaticIndex": 3088,
       "NGroupMembership": [],
@@ -934,8 +934,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 7.8,
-      "PowerIndex": 10211,
-      "PowerSetID": 3505,
+      "PowerIndex": 10213,
+      "PowerSetID": 3508,
       "PowerSetIndex": 4,
       "StaticIndex": 3089,
       "NGroupMembership": [],
@@ -1112,8 +1112,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 7.8,
-      "PowerIndex": 10212,
-      "PowerSetID": 3505,
+      "PowerIndex": 10214,
+      "PowerSetID": 3508,
       "PowerSetIndex": 5,
       "StaticIndex": 3090,
       "NGroupMembership": [],
@@ -1318,8 +1318,8 @@
     {
       "CastTimeReal": 1.1,
       "ToggleCost": 12.74,
-      "PowerIndex": 10213,
-      "PowerSetID": 3505,
+      "PowerIndex": 10215,
+      "PowerSetID": 3508,
       "PowerSetIndex": 6,
       "StaticIndex": 3091,
       "NGroupMembership": [],

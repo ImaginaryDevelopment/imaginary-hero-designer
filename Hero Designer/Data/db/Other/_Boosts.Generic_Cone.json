@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Generic Range",
   "nArchetype": -1,
-  "nID": 2004,
+  "nID": 2003,
   "SubName": "Training (All Origins)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2223,
-      "PowerSetID": 2004,
+      "PowerSetID": 2003,
       "StaticIndex": 8161,
       "NGroupMembership": [],
       "FullName": "Boosts.Generic_Cone.Generic_Cone",

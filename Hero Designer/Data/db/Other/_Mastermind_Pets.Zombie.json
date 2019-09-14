@@ -11,7 +11,7 @@
   "SetType": 8,
   "DisplayName": "Zombie",
   "nArchetype": -1,
-  "nID": 2996,
+  "nID": 2997,
   "SubName": "Zombie",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,7 +24,7 @@
   "Powers": [
     {
       "PowerIndex": 6144,
-      "PowerSetID": 2996,
+      "PowerSetID": 2997,
       "StaticIndex": 1430,
       "NGroupMembership": [],
       "FullName": "Mastermind_Pets.Zombie.Resistance",
@@ -477,7 +477,7 @@
     },
     {
       "PowerIndex": 6145,
-      "PowerSetID": 2996,
+      "PowerSetID": 2997,
       "PowerSetIndex": 1,
       "StaticIndex": 1431,
       "NGroupMembership": [],
@@ -701,7 +701,7 @@
       "CastTimeReal": 0.67,
       "ToggleCost": 5.2,
       "PowerIndex": 6146,
-      "PowerSetID": 2996,
+      "PowerSetID": 2997,
       "PowerSetIndex": 2,
       "StaticIndex": 1432,
       "NGroupMembership": [],

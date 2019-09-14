@@ -4,13 +4,13 @@
   "FullName": "Pets.Whirlpool_Corruptor",
   "ImageName": "",
   "Power": [
-    6750,
-    6751
+    6752,
+    6753
   ],
   "SetType": 8,
   "DisplayName": "Whirlpool",
   "nArchetype": -1,
-  "nID": 3275,
+  "nID": 3277,
   "SubName": "Water Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6750,
-      "PowerSetID": 3275,
+      "PowerIndex": 6752,
+      "PowerSetID": 3277,
       "StaticIndex": 9127,
       "NGroupMembership": [],
       "FullName": "Pets.Whirlpool_Corruptor.Whirlpool",
@@ -436,8 +436,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6751,
-      "PowerSetID": 3275,
+      "PowerIndex": 6753,
+      "PowerSetID": 3277,
       "PowerSetIndex": 1,
       "StaticIndex": 9128,
       "NGroupMembership": [],

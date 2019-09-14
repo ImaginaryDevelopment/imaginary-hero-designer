@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Natural Magic Range",
   "nArchetype": -1,
-  "nID": 2186,
+  "nID": 2185,
   "SubName": "Relic (Natural, Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2422,
-      "PowerSetID": 2186,
+      "PowerSetID": 2185,
       "StaticIndex": 8360,
       "NGroupMembership": [],
       "FullName": "Boosts.Natural_Magic_Range.Natural_Magic_Range",

@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Crafted Stun 10",
   "nArchetype": -1,
-  "nID": 1836,
+  "nID": 1837,
   "SubName": "Invention",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2074,
-      "PowerSetID": 1836,
+      "PowerSetID": 1837,
       "StaticIndex": 8018,
       "NGroupMembership": [],
       "FullName": "Boosts.Crafted_Stun_10.Crafted_Stun_10",

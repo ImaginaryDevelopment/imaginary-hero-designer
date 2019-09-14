@@ -4,14 +4,14 @@
   "FullName": "Pets.Overpowering_Presence",
   "ImageName": "",
   "Power": [
-    6502,
-    6503,
-    6504
+    6504,
+    6505,
+    6506
   ],
   "SetType": 8,
   "DisplayName": "Overpowering Presence",
   "nArchetype": -1,
-  "nID": 3159,
+  "nID": 3161,
   "SubName": "Overpowering Presence",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6502,
-      "PowerSetID": 3159,
+      "PowerIndex": 6504,
+      "PowerSetID": 3161,
       "StaticIndex": 9116,
       "NGroupMembership": [],
       "FullName": "Pets.Overpowering_Presence.Shocking_Aura",
@@ -148,8 +148,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 6503,
-      "PowerSetID": 3159,
+      "PowerIndex": 6505,
+      "PowerSetID": 3161,
       "PowerSetIndex": 1,
       "StaticIndex": 9117,
       "NGroupMembership": [],
@@ -232,8 +232,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6504,
-      "PowerSetID": 3159,
+      "PowerIndex": 6506,
+      "PowerSetID": 3161,
       "PowerSetIndex": 2,
       "StaticIndex": 9118,
       "NGroupMembership": [],

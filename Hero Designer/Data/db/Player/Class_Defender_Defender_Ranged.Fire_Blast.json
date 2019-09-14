@@ -1596,7 +1596,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6359,
+          "nSummon": 6361,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1614,7 +1614,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Fire_Snipe.Blazing_Bolt_Quick",
-          "nOverride": 6359
+          "nOverride": 6361
         },
         {
           "MagnitudeExpression": "",
@@ -1630,7 +1630,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6358,
+          "nSummon": 6360,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1647,7 +1647,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Fire_Snipe.Blazing_Bolt_Normal",
-          "nOverride": 6358
+          "nOverride": 6360
         },
         {
           "MagnitudeExpression": "",

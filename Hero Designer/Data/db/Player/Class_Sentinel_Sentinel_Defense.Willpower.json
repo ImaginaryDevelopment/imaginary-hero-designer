@@ -4,20 +4,20 @@
   "FullName": "Sentinel_Defense.Willpower",
   "ImageName": "Willpower.png",
   "Power": [
-    7219,
-    7220,
     7221,
     7222,
     7223,
     7224,
     7225,
     7226,
-    7227
+    7227,
+    7228,
+    7229
   ],
   "SetType": 2,
   "DisplayName": "Willpower",
   "nArchetype": 7,
-  "nID": 3338,
+  "nID": 3341,
   "SubName": "Willpower",
   "ATClass": "Class_Sentinel",
   "UIDTrunkSet": "",
@@ -29,8 +29,8 @@
   "GroupName": "Sentinel_Defense",
   "Powers": [
     {
-      "PowerIndex": 7219,
-      "PowerSetID": 3338,
+      "PowerIndex": 7221,
+      "PowerSetID": 3341,
       "StaticIndex": 10341,
       "NGroupMembership": [],
       "FullName": "Sentinel_Defense.Willpower.High_Pain_Tolerance",
@@ -431,8 +431,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 7220,
-      "PowerSetID": 3338,
+      "PowerIndex": 7222,
+      "PowerSetID": 3341,
       "PowerSetIndex": 1,
       "StaticIndex": 10342,
       "NGroupMembership": [],
@@ -711,8 +711,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7221,
-      "PowerSetID": 3338,
+      "PowerIndex": 7223,
+      "PowerSetID": 3341,
       "PowerSetIndex": 2,
       "StaticIndex": 10343,
       "NGroupMembership": [],
@@ -839,8 +839,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 7222,
-      "PowerSetID": 3338,
+      "PowerIndex": 7224,
+      "PowerSetID": 3341,
       "PowerSetIndex": 3,
       "StaticIndex": 10344,
       "NGroupMembership": [],
@@ -2051,8 +2051,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.208,
-      "PowerIndex": 7223,
-      "PowerSetID": 3338,
+      "PowerIndex": 7225,
+      "PowerSetID": 3341,
       "PowerSetIndex": 4,
       "StaticIndex": 10677,
       "NGroupMembership": [],
@@ -2188,8 +2188,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7224,
-      "PowerSetID": 3338,
+      "PowerIndex": 7226,
+      "PowerSetID": 3341,
       "PowerSetIndex": 5,
       "StaticIndex": 10346,
       "NGroupMembership": [],
@@ -2283,8 +2283,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 7225,
-      "PowerSetID": 3338,
+      "PowerIndex": 7227,
+      "PowerSetID": 3341,
       "PowerSetIndex": 6,
       "StaticIndex": 10347,
       "NGroupMembership": [],
@@ -2892,8 +2892,8 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 7226,
-      "PowerSetID": 3338,
+      "PowerIndex": 7228,
+      "PowerSetID": 3341,
       "PowerSetIndex": 7,
       "StaticIndex": 10348,
       "NGroupMembership": [],
@@ -3979,8 +3979,8 @@
     {
       "CastTimeReal": 3.1,
       "ToggleCost": 2.6,
-      "PowerIndex": 7227,
-      "PowerSetID": 3338,
+      "PowerIndex": 7229,
+      "PowerSetID": 3341,
       "PowerSetIndex": 8,
       "StaticIndex": 10349,
       "NGroupMembership": [],

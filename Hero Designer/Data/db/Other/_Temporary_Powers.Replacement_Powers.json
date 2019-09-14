@@ -4,14 +4,14 @@
   "FullName": "Temporary_Powers.Replacement_Powers",
   "ImageName": "",
   "Power": [
-    9202,
-    9203,
-    9204
+    9204,
+    9205,
+    9206
   ],
   "SetType": 7,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3420,
+  "nID": 3423,
   "SubName": "Temporary Powers",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 9202,
-      "PowerSetID": 3420,
+      "PowerIndex": 9204,
+      "PowerSetID": 3423,
       "StaticIndex": 6259,
       "NGroupMembership": [],
       "FullName": "Temporary_Powers.Replacement_Powers.Panther_Stealth",
@@ -214,8 +214,8 @@
     {
       "CastTimeReal": 2.1,
       "ToggleCost": 11.7,
-      "PowerIndex": 9203,
-      "PowerSetID": 3420,
+      "PowerIndex": 9205,
+      "PowerSetID": 3423,
       "PowerSetIndex": 1,
       "StaticIndex": 8987,
       "NGroupMembership": [],
@@ -271,8 +271,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 9204,
-      "PowerSetID": 3420,
+      "PowerIndex": 9206,
+      "PowerSetID": 3423,
       "PowerSetIndex": 2,
       "StaticIndex": 8986,
       "NGroupMembership": [],

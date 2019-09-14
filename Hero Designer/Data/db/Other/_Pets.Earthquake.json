@@ -4,12 +4,12 @@
   "FullName": "Pets.Earthquake",
   "ImageName": "",
   "Power": [
-    6376
+    6378
   ],
   "SetType": 8,
   "DisplayName": "Earthquake",
   "nArchetype": -1,
-  "nID": 3071,
+  "nID": 3073,
   "SubName": "Earth Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6376,
-      "PowerSetID": 3071,
+      "PowerIndex": 6378,
+      "PowerSetID": 3073,
       "StaticIndex": 1589,
       "NGroupMembership": [],
       "FullName": "Pets.Earthquake.Earthquake",

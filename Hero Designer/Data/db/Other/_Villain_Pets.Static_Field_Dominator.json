@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Static_Field_Dominator",
   "ImageName": "",
   "Power": [
-    10324
+    10326
   ],
   "SetType": 8,
   "DisplayName": "Static Field Dominator",
   "nArchetype": -1,
-  "nID": 3543,
+  "nID": 3546,
   "SubName": "Electrical Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10324,
-      "PowerSetID": 3543,
+      "PowerIndex": 10326,
+      "PowerSetID": 3546,
       "StaticIndex": 4489,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Static_Field_Dominator.Static_Field",

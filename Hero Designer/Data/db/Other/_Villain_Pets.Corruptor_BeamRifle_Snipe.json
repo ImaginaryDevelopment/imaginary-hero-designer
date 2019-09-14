@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Corruptor_BeamRifle_Snipe",
   "ImageName": "",
   "Power": [
-    10148,
-    10149
+    10150,
+    10151
   ],
   "SetType": 8,
   "DisplayName": "Corruptor_BeamRifle_Snipe",
   "nArchetype": -1,
-  "nID": 3478,
+  "nID": 3481,
   "SubName": "Beam Rifle",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10148,
-      "PowerSetID": 3478,
+      "PowerIndex": 10150,
+      "PowerSetID": 3481,
       "StaticIndex": 9795,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Corruptor_BeamRifle_Snipe.Penetrating_Ray_Quick",
@@ -429,8 +429,8 @@
     {
       "CastTimeReal": 4.4,
       "ToggleCost": 14.352,
-      "PowerIndex": 10149,
-      "PowerSetID": 3478,
+      "PowerIndex": 10151,
+      "PowerSetID": 3481,
       "PowerSetIndex": 1,
       "StaticIndex": 9796,
       "NGroupMembership": [],

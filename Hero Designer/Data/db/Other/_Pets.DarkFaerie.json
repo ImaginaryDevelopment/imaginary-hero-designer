@@ -4,13 +4,13 @@
   "FullName": "Pets.DarkFaerie",
   "ImageName": "",
   "Power": [
-    6320,
-    6321
+    6322,
+    6323
   ],
   "SetType": 8,
   "DisplayName": "DarkFaerie",
   "nArchetype": -1,
-  "nID": 3063,
+  "nID": 3065,
   "SubName": "Pet",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6320,
-      "PowerSetID": 3063,
+      "PowerIndex": 6322,
+      "PowerSetID": 3065,
       "StaticIndex": 1567,
       "NGroupMembership": [],
       "FullName": "Pets.DarkFaerie.Dark_Blessing",
@@ -620,8 +620,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 20.8,
-      "PowerIndex": 6321,
-      "PowerSetID": 3063,
+      "PowerIndex": 6323,
+      "PowerSetID": 3065,
       "PowerSetIndex": 1,
       "StaticIndex": 1568,
       "NGroupMembership": [],

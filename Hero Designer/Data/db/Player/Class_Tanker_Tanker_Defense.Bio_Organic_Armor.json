@@ -4,8 +4,6 @@
   "FullName": "Tanker_Defense.Bio_Organic_Armor",
   "ImageName": "BioArmor.png",
   "Power": [
-    8616,
-    8617,
     8618,
     8619,
     8620,
@@ -15,12 +13,14 @@
     8624,
     8625,
     8626,
-    8627
+    8627,
+    8628,
+    8629
   ],
   "SetType": 1,
   "DisplayName": "Bio Armor",
   "nArchetype": 4,
-  "nID": 3384,
+  "nID": 3387,
   "SubName": "Bio Armor",
   "ATClass": "Class_Tanker",
   "UIDTrunkSet": "",
@@ -35,8 +35,8 @@
       "CastTimeReal": 1.0,
       "IsEpic": true,
       "LocationIndex": 11,
-      "PowerIndex": 8616,
-      "PowerSetID": 3384,
+      "PowerIndex": 8618,
+      "PowerSetID": 3387,
       "StaticIndex": 9207,
       "NGroupMembership": [
         1
@@ -60,7 +60,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            8622,
+            8624,
             -1
           ]
         ],
@@ -141,7 +141,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Defensive_Adaptation_Proc",
-          "nSummon": 9512,
+          "nSummon": 9514,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -472,8 +472,8 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 34,
-      "PowerIndex": 8617,
-      "PowerSetID": 3384,
+      "PowerIndex": 8619,
+      "PowerSetID": 3387,
       "PowerSetIndex": 1,
       "StaticIndex": 9206,
       "NGroupMembership": [
@@ -498,7 +498,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            8622,
+            8624,
             -1
           ]
         ],
@@ -576,8 +576,8 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 35,
-      "PowerIndex": 8618,
-      "PowerSetID": 3384,
+      "PowerIndex": 8620,
+      "PowerSetID": 3387,
       "PowerSetIndex": 2,
       "StaticIndex": 9208,
       "NGroupMembership": [
@@ -602,7 +602,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            8622,
+            8624,
             -1
           ]
         ],
@@ -682,7 +682,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Offensive_Adaptation_Proc",
-          "nSummon": 9785,
+          "nSummon": 9787,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -1012,8 +1012,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8619,
-      "PowerSetID": 3384,
+      "PowerIndex": 8621,
+      "PowerSetID": 3387,
       "PowerSetIndex": 3,
       "StaticIndex": 9202,
       "NGroupMembership": [],
@@ -1753,8 +1753,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8620,
-      "PowerSetID": 3384,
+      "PowerIndex": 8622,
+      "PowerSetID": 3387,
       "PowerSetIndex": 4,
       "StaticIndex": 9203,
       "NGroupMembership": [],
@@ -2249,8 +2249,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8621,
-      "PowerSetID": 3384,
+      "PowerIndex": 8623,
+      "PowerSetID": 3387,
       "PowerSetIndex": 5,
       "StaticIndex": 9204,
       "NGroupMembership": [],
@@ -3231,8 +3231,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8622,
-      "PowerSetID": 3384,
+      "PowerIndex": 8624,
+      "PowerSetID": 3387,
       "PowerSetIndex": 6,
       "StaticIndex": 9205,
       "NGroupMembership": [],
@@ -3320,8 +3320,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 8623,
-      "PowerSetID": 3384,
+      "PowerIndex": 8625,
+      "PowerSetID": 3387,
       "PowerSetIndex": 7,
       "StaticIndex": 9209,
       "NGroupMembership": [],
@@ -3585,8 +3585,8 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 0.26,
-      "PowerIndex": 8624,
-      "PowerSetID": 3384,
+      "PowerIndex": 8626,
+      "PowerSetID": 3387,
       "PowerSetIndex": 8,
       "StaticIndex": 9210,
       "NGroupMembership": [],
@@ -6126,8 +6126,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 13.0,
-      "PowerIndex": 8625,
-      "PowerSetID": 3384,
+      "PowerIndex": 8627,
+      "PowerSetID": 3387,
       "PowerSetIndex": 9,
       "StaticIndex": 9211,
       "NGroupMembership": [],
@@ -6750,8 +6750,8 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 0.52,
-      "PowerIndex": 8626,
-      "PowerSetID": 3384,
+      "PowerIndex": 8628,
+      "PowerSetID": 3387,
       "PowerSetIndex": 10,
       "StaticIndex": 9212,
       "NGroupMembership": [],
@@ -7511,8 +7511,8 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 18.2,
-      "PowerIndex": 8627,
-      "PowerSetID": 3384,
+      "PowerIndex": 8629,
+      "PowerSetID": 3387,
       "PowerSetIndex": 11,
       "StaticIndex": 9213,
       "NGroupMembership": [],

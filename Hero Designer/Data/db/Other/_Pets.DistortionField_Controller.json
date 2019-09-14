@@ -4,12 +4,12 @@
   "FullName": "Pets.DistortionField_Controller",
   "ImageName": "",
   "Power": [
-    6371
+    6373
   ],
   "SetType": 8,
   "DisplayName": "Time Manipulation",
   "nArchetype": -1,
-  "nID": 3243,
+  "nID": 3245,
   "SubName": "Time Manipulation",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6371,
-      "PowerSetID": 3243,
+      "PowerIndex": 6373,
+      "PowerSetID": 3245,
       "StaticIndex": 5605,
       "NGroupMembership": [],
       "FullName": "Pets.DistortionField_Controller.Distortion_Field",

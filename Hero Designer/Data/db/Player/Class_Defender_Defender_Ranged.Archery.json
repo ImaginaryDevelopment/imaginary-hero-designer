@@ -1469,7 +1469,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6344,
+          "nSummon": 6346,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1487,7 +1487,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Archery_Snipe.Ranged_Shot_Quick",
-          "nOverride": 6344
+          "nOverride": 6346
         },
         {
           "MagnitudeExpression": "",
@@ -1503,7 +1503,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6343,
+          "nSummon": 6345,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1520,7 +1520,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Archery_Snipe.Ranged_Shot_Normal",
-          "nOverride": 6343
+          "nOverride": 6345
         }
       ],
       "HasPowerOverrideEffect": true,

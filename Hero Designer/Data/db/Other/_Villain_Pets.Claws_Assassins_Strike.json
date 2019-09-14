@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Claws_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10111,
-    10112
+    10113,
+    10114
   ],
   "SetType": 8,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3435,
+  "nID": 3445,
   "SubName": "Claws",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10111,
-      "PowerSetID": 3435,
+      "PowerIndex": 10113,
+      "PowerSetID": 3445,
       "StaticIndex": 6322,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Claws_Assassins_Strike.Assassins_Claw_Stealth",
@@ -239,7 +239,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9325,
+          "nSummon": 9327,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -336,8 +336,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10112,
-      "PowerSetID": 3435,
+      "PowerIndex": 10114,
+      "PowerSetID": 3445,
       "PowerSetIndex": 1,
       "StaticIndex": 6323,
       "NGroupMembership": [],

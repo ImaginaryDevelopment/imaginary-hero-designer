@@ -16,7 +16,7 @@
   "SetType": 8,
   "DisplayName": "Arsonist",
   "nArchetype": -1,
-  "nID": 2911,
+  "nID": 2908,
   "SubName": "Thugs",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -31,7 +31,7 @@
       "CastTimeReal": 2.83,
       "ToggleCost": 15.184,
       "PowerIndex": 6031,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "StaticIndex": 1323,
       "NGroupMembership": [],
       "FullName": "Mastermind_Pets.Thug_Arsonist_2.Spit_Fire",
@@ -216,7 +216,7 @@
     },
     {
       "PowerIndex": 6032,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 1,
       "StaticIndex": 4106,
       "NGroupMembership": [],
@@ -300,7 +300,7 @@
     },
     {
       "PowerIndex": 6033,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 2,
       "StaticIndex": 1324,
       "NGroupMembership": [],
@@ -385,7 +385,7 @@
     },
     {
       "PowerIndex": 6034,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 3,
       "StaticIndex": 1325,
       "NGroupMembership": [],
@@ -470,7 +470,7 @@
     },
     {
       "PowerIndex": 6035,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 4,
       "StaticIndex": 1326,
       "NGroupMembership": [],
@@ -555,7 +555,7 @@
     },
     {
       "PowerIndex": 6036,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 5,
       "StaticIndex": 1327,
       "NGroupMembership": [],
@@ -640,7 +640,7 @@
     },
     {
       "PowerIndex": 6037,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 6,
       "StaticIndex": 1328,
       "NGroupMembership": [],
@@ -725,7 +725,7 @@
     },
     {
       "PowerIndex": 6038,
-      "PowerSetID": 2911,
+      "PowerSetID": 2908,
       "PowerSetIndex": 7,
       "StaticIndex": 1329,
       "NGroupMembership": [],

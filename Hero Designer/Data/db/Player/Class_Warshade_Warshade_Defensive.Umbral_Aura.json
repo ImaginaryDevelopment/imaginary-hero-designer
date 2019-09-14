@@ -4,8 +4,6 @@
   "FullName": "Warshade_Defensive.Umbral_Aura",
   "ImageName": "UmbralAura.png",
   "Power": [
-    10395,
-    10396,
     10397,
     10398,
     10399,
@@ -16,12 +14,14 @@
     10404,
     10405,
     10406,
-    10407
+    10407,
+    10408,
+    10409
   ],
   "SetType": 2,
   "DisplayName": "Umbral Aura",
   "nArchetype": 6,
-  "nID": 3570,
+  "nID": 3573,
   "SubName": "Warshades Defensive",
   "ATClass": "Class_Warshade",
   "UIDTrunkSet": "",
@@ -33,8 +33,8 @@
   "GroupName": "Warshade_Defensive",
   "Powers": [
     {
-      "PowerIndex": 10395,
-      "PowerSetID": 3570,
+      "PowerIndex": 10397,
+      "PowerSetID": 3573,
       "StaticIndex": 3189,
       "NGroupMembership": [],
       "FullName": "Warshade_Defensive.Umbral_Aura.Absorption",
@@ -163,8 +163,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 10396,
-      "PowerSetID": 3570,
+      "PowerIndex": 10398,
+      "PowerSetID": 3573,
       "PowerSetIndex": 1,
       "StaticIndex": 3190,
       "NGroupMembership": [],
@@ -374,8 +374,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.78,
-      "PowerIndex": 10397,
-      "PowerSetID": 3570,
+      "PowerIndex": 10399,
+      "PowerSetID": 3573,
       "PowerSetIndex": 2,
       "StaticIndex": 3191,
       "NGroupMembership": [],
@@ -521,8 +521,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 10398,
-      "PowerSetID": 3570,
+      "PowerIndex": 10400,
+      "PowerSetID": 3573,
       "PowerSetIndex": 3,
       "StaticIndex": 3192,
       "NGroupMembership": [],
@@ -838,8 +838,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.26,
-      "PowerIndex": 10399,
-      "PowerSetID": 3570,
+      "PowerIndex": 10401,
+      "PowerSetID": 3573,
       "PowerSetIndex": 4,
       "StaticIndex": 3193,
       "NGroupMembership": [
@@ -1510,8 +1510,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 10400,
-      "PowerSetID": 3570,
+      "PowerIndex": 10402,
+      "PowerSetID": 3573,
       "PowerSetIndex": 5,
       "StaticIndex": 3194,
       "NGroupMembership": [],
@@ -1720,8 +1720,8 @@
     },
     {
       "ToggleCost": 0.26,
-      "PowerIndex": 10401,
-      "PowerSetID": 3570,
+      "PowerIndex": 10403,
+      "PowerSetID": 3573,
       "PowerSetIndex": 6,
       "StaticIndex": 3195,
       "NGroupMembership": [
@@ -4253,8 +4253,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 15.6,
-      "PowerIndex": 10402,
-      "PowerSetID": 3570,
+      "PowerIndex": 10404,
+      "PowerSetID": 3573,
       "PowerSetIndex": 7,
       "StaticIndex": 3196,
       "NGroupMembership": [],
@@ -4538,8 +4538,8 @@
     },
     {
       "ToggleCost": 2.6,
-      "PowerIndex": 10403,
-      "PowerSetID": 3570,
+      "PowerIndex": 10405,
+      "PowerSetID": 3573,
       "PowerSetIndex": 8,
       "StaticIndex": 3197,
       "NGroupMembership": [
@@ -4961,7 +4961,7 @@
           "nID": 10,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.NoPhase",
-          "nSummon": 9777,
+          "nSummon": 9779,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -5023,8 +5023,8 @@
     {
       "CastTimeReal": 12.0,
       "ToggleCost": 26.0,
-      "PowerIndex": 10404,
-      "PowerSetID": 3570,
+      "PowerIndex": 10406,
+      "PowerSetID": 3573,
       "PowerSetIndex": 9,
       "StaticIndex": 5826,
       "NGroupMembership": [],
@@ -5223,8 +5223,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.078,
-      "PowerIndex": 10405,
-      "PowerSetID": 3570,
+      "PowerIndex": 10407,
+      "PowerSetID": 3573,
       "PowerSetIndex": 10,
       "StaticIndex": 3198,
       "NGroupMembership": [],
@@ -5402,8 +5402,8 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 10406,
-      "PowerSetID": 3570,
+      "PowerIndex": 10408,
+      "PowerSetID": 3573,
       "PowerSetIndex": 11,
       "StaticIndex": 3199,
       "NGroupMembership": [],
@@ -5678,8 +5678,8 @@
     {
       "CastTimeReal": 1.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 10407,
-      "PowerSetID": 3570,
+      "PowerIndex": 10409,
+      "PowerSetID": 3573,
       "PowerSetIndex": 12,
       "StaticIndex": 3200,
       "NGroupMembership": [],

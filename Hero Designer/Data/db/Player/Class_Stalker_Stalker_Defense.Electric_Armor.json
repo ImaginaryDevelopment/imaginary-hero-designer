@@ -4,20 +4,20 @@
   "FullName": "Stalker_Defense.Electric_Armor",
   "ImageName": "ElectricArmor.png",
   "Power": [
-    8364,
-    8365,
     8366,
     8367,
     8368,
     8369,
     8370,
     8371,
-    8372
+    8372,
+    8373,
+    8374
   ],
   "SetType": 2,
   "DisplayName": "Electric Armor",
   "nArchetype": 12,
-  "nID": 3356,
+  "nID": 3359,
   "SubName": "Electric Armor",
   "ATClass": "Class_Stalker",
   "UIDTrunkSet": "",
@@ -30,8 +30,8 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8364,
-      "PowerSetID": 3356,
+      "PowerIndex": 8366,
+      "PowerSetID": 3359,
       "StaticIndex": 2361,
       "NGroupMembership": [
         8
@@ -1567,8 +1567,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8365,
-      "PowerSetID": 3356,
+      "PowerIndex": 8367,
+      "PowerSetID": 3359,
       "PowerSetIndex": 1,
       "StaticIndex": 2362,
       "NGroupMembership": [],
@@ -1850,8 +1850,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8366,
-      "PowerSetID": 3356,
+      "PowerIndex": 8368,
+      "PowerSetID": 3359,
       "PowerSetIndex": 2,
       "StaticIndex": 2363,
       "NGroupMembership": [],
@@ -2203,8 +2203,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8367,
-      "PowerSetID": 3356,
+      "PowerIndex": 8369,
+      "PowerSetID": 3359,
       "PowerSetIndex": 3,
       "StaticIndex": 2364,
       "NGroupMembership": [],
@@ -2856,8 +2856,8 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 8368,
-      "PowerSetID": 3356,
+      "PowerIndex": 8370,
+      "PowerSetID": 3359,
       "PowerSetIndex": 4,
       "StaticIndex": 2365,
       "NGroupMembership": [],
@@ -3122,8 +3122,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8369,
-      "PowerSetID": 3356,
+      "PowerIndex": 8371,
+      "PowerSetID": 3359,
       "PowerSetIndex": 5,
       "StaticIndex": 2366,
       "NGroupMembership": [],
@@ -3384,8 +3384,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 10.4,
-      "PowerIndex": 8370,
-      "PowerSetID": 3356,
+      "PowerIndex": 8372,
+      "PowerSetID": 3359,
       "PowerSetIndex": 6,
       "StaticIndex": 2367,
       "NGroupMembership": [],
@@ -3551,8 +3551,8 @@
     {
       "CastTimeReal": 3.828,
       "ToggleCost": 13.0,
-      "PowerIndex": 8371,
-      "PowerSetID": 3356,
+      "PowerIndex": 8373,
+      "PowerSetID": 3359,
       "PowerSetIndex": 7,
       "StaticIndex": 2368,
       "NGroupMembership": [],
@@ -3763,8 +3763,8 @@
     {
       "CastTimeReal": 1.96,
       "ToggleCost": 2.6,
-      "PowerIndex": 8372,
-      "PowerSetID": 3356,
+      "PowerIndex": 8374,
+      "PowerSetID": 3359,
       "PowerSetIndex": 8,
       "StaticIndex": 2369,
       "NGroupMembership": [],

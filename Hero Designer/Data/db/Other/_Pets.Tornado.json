@@ -4,15 +4,15 @@
   "FullName": "Pets.Tornado",
   "ImageName": "",
   "Power": [
-    6653,
-    6654,
     6655,
-    6656
+    6656,
+    6657,
+    6658
   ],
   "SetType": 8,
   "DisplayName": "Tornado",
   "nArchetype": -1,
-  "nID": 3244,
+  "nID": 3247,
   "SubName": "Storm Summoning",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6653,
-      "PowerSetID": 3244,
+      "PowerIndex": 6655,
+      "PowerSetID": 3247,
       "StaticIndex": 1746,
       "NGroupMembership": [],
       "FullName": "Pets.Tornado.Tornado",
@@ -340,8 +340,8 @@
       "AoEModifier": 2.05
     },
     {
-      "PowerIndex": 6654,
-      "PowerSetID": 3244,
+      "PowerIndex": 6656,
+      "PowerSetID": 3247,
       "PowerSetIndex": 1,
       "StaticIndex": 1747,
       "NGroupMembership": [],
@@ -524,8 +524,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6655,
-      "PowerSetID": 3244,
+      "PowerIndex": 6657,
+      "PowerSetID": 3247,
       "PowerSetIndex": 2,
       "StaticIndex": 1748,
       "NGroupMembership": [],
@@ -608,8 +608,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6656,
-      "PowerSetID": 3244,
+      "PowerIndex": 6658,
+      "PowerSetID": 3247,
       "PowerSetIndex": 3,
       "StaticIndex": 1749,
       "NGroupMembership": [],

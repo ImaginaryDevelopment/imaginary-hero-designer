@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Inherent",
   "ImageName": "",
   "Power": [
-    6624
+    6626
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3236,
+  "nID": 3230,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6624,
-      "PowerSetID": 3236,
+      "PowerIndex": 6626,
+      "PowerSetID": 3230,
       "StaticIndex": 1737,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Inherent.Resistance",

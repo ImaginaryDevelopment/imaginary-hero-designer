@@ -4,13 +4,13 @@
   "FullName": "Pets.Water_Blast_Blaster",
   "ImageName": "",
   "Power": [
-    6742,
-    6743
+    6744,
+    6745
   ],
   "SetType": 8,
   "DisplayName": "Water Blast",
   "nArchetype": -1,
-  "nID": 3272,
+  "nID": 3275,
   "SubName": "Water Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.43,
       "ToggleCost": 10.192,
-      "PowerIndex": 6742,
-      "PowerSetID": 3272,
+      "PowerIndex": 6744,
+      "PowerSetID": 3275,
       "StaticIndex": 9119,
       "NGroupMembership": [],
       "FullName": "Pets.Water_Blast_Blaster.Water_Jet_Normal",
@@ -386,7 +386,7 @@
           "nID": 8,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Tidal_Power",
-          "nSummon": 9990,
+          "nSummon": 9992,
           "SpecialCase": 42,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -694,8 +694,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 5.096,
-      "PowerIndex": 6743,
-      "PowerSetID": 3272,
+      "PowerIndex": 6745,
+      "PowerSetID": 3275,
       "PowerSetIndex": 1,
       "StaticIndex": 9120,
       "NGroupMembership": [],

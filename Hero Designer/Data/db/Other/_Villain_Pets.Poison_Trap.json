@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Poison_Trap",
   "ImageName": "",
   "Power": [
-    10283,
-    10284
+    10285,
+    10286
   ],
   "SetType": 8,
   "DisplayName": "Poison Trap",
   "nArchetype": -1,
-  "nID": 3523,
+  "nID": 3525,
   "SubName": "Poison",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10283,
-      "PowerSetID": 3523,
+      "PowerIndex": 10285,
+      "PowerSetID": 3525,
       "StaticIndex": 3142,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Poison_Trap.Self_Destruct",
@@ -180,8 +180,8 @@
       "AoEModifier": 3.4
     },
     {
-      "PowerIndex": 10284,
-      "PowerSetID": 3523,
+      "PowerIndex": 10286,
+      "PowerSetID": 3525,
       "PowerSetIndex": 1,
       "StaticIndex": 3143,
       "NGroupMembership": [],

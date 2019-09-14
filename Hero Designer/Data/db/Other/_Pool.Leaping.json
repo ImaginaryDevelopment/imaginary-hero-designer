@@ -4,16 +4,16 @@
   "FullName": "Pool.Leaping",
   "ImageName": "Leaping.png",
   "Power": [
-    6791,
-    6792,
     6793,
     6794,
-    6795
+    6795,
+    6796,
+    6797
   ],
   "SetType": 5,
   "DisplayName": "Leaping",
   "nArchetype": -1,
-  "nID": 3289,
+  "nID": 3292,
   "SubName": "Leaping",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 5.46,
-      "PowerIndex": 6791,
-      "PowerSetID": 3289,
+      "PowerIndex": 6793,
+      "PowerSetID": 3292,
       "StaticIndex": 1813,
       "NGroupMembership": [],
       "FullName": "Pool.Leaping.Jump_Kick",
@@ -1009,8 +1009,8 @@
     },
     {
       "ToggleCost": 0.456,
-      "PowerIndex": 6792,
-      "PowerSetID": 3289,
+      "PowerIndex": 6794,
+      "PowerSetID": 3292,
       "PowerSetIndex": 1,
       "StaticIndex": 1815,
       "NGroupMembership": [
@@ -1369,8 +1369,8 @@
     {
       "CastTimeReal": 1.716,
       "ToggleCost": 0.065,
-      "PowerIndex": 6793,
-      "PowerSetID": 3289,
+      "PowerIndex": 6795,
+      "PowerSetID": 3292,
       "PowerSetIndex": 2,
       "StaticIndex": 1814,
       "NGroupMembership": [
@@ -2387,8 +2387,8 @@
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
       "IsEpic": true,
-      "PowerIndex": 6794,
-      "PowerSetID": 3289,
+      "PowerIndex": 6796,
+      "PowerSetID": 3292,
       "PowerSetIndex": 3,
       "StaticIndex": 1816,
       "NGroupMembership": [],
@@ -2419,16 +2419,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6791,
-            6793
-          ],
-          [
-            6791,
-            6792
+            6793,
+            6795
           ],
           [
             6793,
-            6792
+            6794
+          ],
+          [
+            6795,
+            6794
           ]
         ],
         "NPowerIDNot": []
@@ -2864,8 +2864,8 @@
       "CastTimeReal": 1.5,
       "ToggleCost": 13.52,
       "IsEpic": true,
-      "PowerIndex": 6795,
-      "PowerSetID": 3289,
+      "PowerIndex": 6797,
+      "PowerSetID": 3292,
       "PowerSetIndex": 4,
       "StaticIndex": 5633,
       "NGroupMembership": [],
@@ -2896,16 +2896,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6791,
-            6793
-          ],
-          [
-            6791,
-            6792
+            6793,
+            6795
           ],
           [
             6793,
-            6792
+            6794
+          ],
+          [
+            6795,
+            6794
           ]
         ],
         "NPowerIDNot": []

@@ -4,12 +4,12 @@
   "FullName": "Pets.Target",
   "ImageName": "",
   "Power": [
-    6610
+    6612
   ],
   "SetType": 8,
   "DisplayName": "Target",
   "nArchetype": -1,
-  "nID": 3223,
+  "nID": 3225,
   "SubName": "Resistance",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6610,
-      "PowerSetID": 3223,
+      "PowerIndex": 6612,
+      "PowerSetID": 3225,
       "StaticIndex": 1725,
       "NGroupMembership": [],
       "FullName": "Pets.Target.Resistance",

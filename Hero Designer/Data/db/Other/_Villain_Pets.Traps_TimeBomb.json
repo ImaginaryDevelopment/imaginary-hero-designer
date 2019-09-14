@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Traps_TimeBomb",
   "ImageName": "",
   "Power": [
-    10368,
-    10369,
-    10370
+    10370,
+    10371,
+    10372
   ],
   "SetType": 8,
   "DisplayName": "Bomb",
   "nArchetype": -1,
-  "nID": 3456,
+  "nID": 3459,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10368,
-      "PowerSetID": 3456,
+      "PowerIndex": 10370,
+      "PowerSetID": 3459,
       "StaticIndex": 3177,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_TimeBomb.Time_Bomb",
@@ -306,8 +306,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10369,
-      "PowerSetID": 3456,
+      "PowerIndex": 10371,
+      "PowerSetID": 3459,
       "PowerSetIndex": 1,
       "StaticIndex": 3178,
       "NGroupMembership": [],
@@ -1546,8 +1546,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10370,
-      "PowerSetID": 3456,
+      "PowerIndex": 10372,
+      "PowerSetID": 3459,
       "PowerSetIndex": 2,
       "StaticIndex": 3179,
       "NGroupMembership": [],

@@ -4,14 +4,14 @@
   "FullName": "Pets.Enflame",
   "ImageName": "",
   "Power": [
-    6382,
-    6383,
-    6384
+    6384,
+    6385,
+    6386
   ],
   "SetType": 8,
   "DisplayName": "Enflame",
   "nArchetype": -1,
-  "nID": 3084,
+  "nID": 3086,
   "SubName": "Sorcery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6382,
-      "PowerSetID": 3084,
+      "PowerIndex": 6384,
+      "PowerSetID": 3086,
       "StaticIndex": 9586,
       "NGroupMembership": [],
       "FullName": "Pets.Enflame.Enflame",
@@ -378,8 +378,8 @@
       "AoEModifier": 2.05
     },
     {
-      "PowerIndex": 6383,
-      "PowerSetID": 3084,
+      "PowerIndex": 6385,
+      "PowerSetID": 3086,
       "PowerSetIndex": 1,
       "StaticIndex": 9587,
       "NGroupMembership": [],
@@ -467,8 +467,8 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6384,
-      "PowerSetID": 3084,
+      "PowerIndex": 6386,
+      "PowerSetID": 3086,
       "PowerSetIndex": 2,
       "StaticIndex": 9588,
       "NGroupMembership": [],

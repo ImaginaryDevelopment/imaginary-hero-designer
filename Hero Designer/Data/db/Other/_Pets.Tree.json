@@ -4,13 +4,13 @@
   "FullName": "Pets.Tree",
   "ImageName": "",
   "Power": [
-    6706,
-    6707
+    6708,
+    6709
   ],
   "SetType": 8,
   "DisplayName": "Tree",
   "nArchetype": -1,
-  "nID": 3252,
+  "nID": 3255,
   "SubName": "Devouring Earth",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6706,
-      "PowerSetID": 3252,
+      "PowerIndex": 6708,
+      "PowerSetID": 3255,
       "StaticIndex": 1759,
       "NGroupMembership": [],
       "FullName": "Pets.Tree.Tree",
@@ -110,8 +110,8 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 6707,
-      "PowerSetID": 3252,
+      "PowerIndex": 6709,
+      "PowerSetID": 3255,
       "PowerSetIndex": 1,
       "StaticIndex": 1760,
       "NGroupMembership": [],

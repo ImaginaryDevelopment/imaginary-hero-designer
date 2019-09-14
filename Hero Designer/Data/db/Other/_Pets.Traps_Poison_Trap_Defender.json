@@ -4,13 +4,13 @@
   "FullName": "Pets.Traps_Poison_Trap_Defender",
   "ImageName": "",
   "Power": [
-    6679,
-    6680
+    6681,
+    6682
   ],
   "SetType": 8,
   "DisplayName": "Poison Trap",
   "nArchetype": -1,
-  "nID": 3165,
+  "nID": 3167,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6679,
-      "PowerSetID": 3165,
+      "PowerIndex": 6681,
+      "PowerSetID": 3167,
       "StaticIndex": 3544,
       "NGroupMembership": [],
       "FullName": "Pets.Traps_Poison_Trap_Defender.Self_Destruct",
@@ -171,8 +171,8 @@
       "AoEModifier": 3.4
     },
     {
-      "PowerIndex": 6680,
-      "PowerSetID": 3165,
+      "PowerIndex": 6682,
+      "PowerSetID": 3167,
       "PowerSetIndex": 1,
       "StaticIndex": 3545,
       "NGroupMembership": [],

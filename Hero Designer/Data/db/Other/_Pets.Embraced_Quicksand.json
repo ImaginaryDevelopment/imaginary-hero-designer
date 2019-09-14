@@ -4,12 +4,12 @@
   "FullName": "Pets.Embraced_Quicksand",
   "ImageName": "",
   "Power": [
-    6381
+    6383
   ],
   "SetType": 8,
   "DisplayName": "Quicksand",
   "nArchetype": -1,
-  "nID": 3173,
+  "nID": 3175,
   "SubName": "Quicksand",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6381,
-      "PowerSetID": 3173,
+      "PowerIndex": 6383,
+      "PowerSetID": 3175,
       "StaticIndex": 4421,
       "NGroupMembership": [],
       "FullName": "Pets.Embraced_Quicksand.Quicksand",

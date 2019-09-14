@@ -4,16 +4,16 @@
   "FullName": "Pool.Flight",
   "ImageName": "Flight.png",
   "Power": [
-    6776,
-    6777,
     6778,
     6779,
-    6780
+    6780,
+    6781,
+    6782
   ],
   "SetType": 5,
   "DisplayName": "Flight",
   "nArchetype": -1,
-  "nID": 3287,
+  "nID": 3290,
   "SubName": "Flight",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 6.5,
-      "PowerIndex": 6776,
-      "PowerSetID": 3287,
+      "PowerIndex": 6778,
+      "PowerSetID": 3290,
       "StaticIndex": 1802,
       "NGroupMembership": [],
       "FullName": "Pool.Flight.Air_Superiority",
@@ -1078,8 +1078,8 @@
     {
       "CastTimeReal": 1.716,
       "ToggleCost": 1.0,
-      "PowerIndex": 6777,
-      "PowerSetID": 3287,
+      "PowerIndex": 6779,
+      "PowerSetID": 3290,
       "PowerSetIndex": 1,
       "StaticIndex": 1803,
       "NGroupMembership": [
@@ -1497,8 +1497,8 @@
     },
     {
       "ToggleCost": 0.195,
-      "PowerIndex": 6778,
-      "PowerSetID": 3287,
+      "PowerIndex": 6780,
+      "PowerSetID": 3290,
       "PowerSetIndex": 2,
       "StaticIndex": 1801,
       "NGroupMembership": [
@@ -2540,8 +2540,8 @@
     {
       "ToggleCost": 0.65,
       "IsEpic": true,
-      "PowerIndex": 6779,
-      "PowerSetID": 3287,
+      "PowerIndex": 6781,
+      "PowerSetID": 3290,
       "PowerSetIndex": 3,
       "StaticIndex": 5632,
       "NGroupMembership": [],
@@ -2572,16 +2572,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6778,
-            6776
+            6780,
+            6778
+          ],
+          [
+            6780,
+            6779
           ],
           [
             6778,
-            6777
-          ],
-          [
-            6776,
-            6777
+            6779
           ]
         ],
         "NPowerIDNot": []
@@ -3535,8 +3535,8 @@
       "CastTimeReal": 2.03,
       "ToggleCost": 0.65,
       "IsEpic": true,
-      "PowerIndex": 6780,
-      "PowerSetID": 3287,
+      "PowerIndex": 6782,
+      "PowerSetID": 3290,
       "PowerSetIndex": 4,
       "StaticIndex": 1804,
       "NGroupMembership": [
@@ -3570,16 +3570,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6778,
-            6776
+            6780,
+            6778
+          ],
+          [
+            6780,
+            6779
           ],
           [
             6778,
-            6777
-          ],
-          [
-            6776,
-            6777
+            6779
           ]
         ],
         "NPowerIDNot": []

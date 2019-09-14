@@ -1157,7 +1157,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Envenomed_Blades",
-          "nSummon": 9558,
+          "nSummon": 9560,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1969,7 +1969,7 @@
           "nID": 4,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10188,
+          "nSummon": 10190,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1987,7 +1987,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 5,
           "Override": "Villain_Pets.Dominator_MartialAssault_Snipe.Masterful_Throw_Quick",
-          "nOverride": 10188
+          "nOverride": 10190
         },
         {
           "MagnitudeExpression": "",
@@ -2002,7 +2002,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10189,
+          "nSummon": 10191,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2019,7 +2019,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Dominator_MartialAssault_Snipe.Masterful_Throw_Normal",
-          "nOverride": 10189
+          "nOverride": 10191
         }
       ],
       "HasPowerOverrideEffect": true,

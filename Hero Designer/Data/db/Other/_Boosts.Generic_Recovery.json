@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Generic Endurance",
   "nArchetype": -1,
-  "nID": 1991,
+  "nID": 1990,
   "SubName": "Training (All Origins)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2242,
-      "PowerSetID": 1991,
+      "PowerSetID": 1990,
       "StaticIndex": 8180,
       "NGroupMembership": [],
       "FullName": "Boosts.Generic_Recovery.Generic_Recovery",

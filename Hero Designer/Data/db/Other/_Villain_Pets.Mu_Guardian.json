@@ -4,19 +4,19 @@
   "FullName": "Villain_Pets.Mu_Guardian",
   "ImageName": "",
   "Power": [
-    10243,
-    10244,
     10245,
     10246,
     10247,
     10248,
     10249,
-    10250
+    10250,
+    10251,
+    10252
   ],
   "SetType": 8,
   "DisplayName": "Mu Guardian",
   "nArchetype": -1,
-  "nID": 3513,
+  "nID": 3516,
   "SubName": "Mu Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -28,8 +28,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10243,
-      "PowerSetID": 3513,
+      "PowerIndex": 10245,
+      "PowerSetID": 3516,
       "StaticIndex": 3113,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Mu_Guardian.Resistance",
@@ -150,8 +150,8 @@
     {
       "CastTimeReal": 3.17,
       "ToggleCost": 14.3,
-      "PowerIndex": 10244,
-      "PowerSetID": 3513,
+      "PowerIndex": 10246,
+      "PowerSetID": 3516,
       "PowerSetIndex": 1,
       "StaticIndex": 3114,
       "NGroupMembership": [],
@@ -429,8 +429,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10245,
-      "PowerSetID": 3513,
+      "PowerIndex": 10247,
+      "PowerSetID": 3516,
       "PowerSetIndex": 2,
       "StaticIndex": 3115,
       "NGroupMembership": [],
@@ -618,8 +618,8 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 10.66,
-      "PowerIndex": 10246,
-      "PowerSetID": 3513,
+      "PowerIndex": 10248,
+      "PowerSetID": 3516,
       "PowerSetIndex": 3,
       "StaticIndex": 3116,
       "NGroupMembership": [],
@@ -822,8 +822,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 6.5,
-      "PowerIndex": 10247,
-      "PowerSetID": 3513,
+      "PowerIndex": 10249,
+      "PowerSetID": 3516,
       "PowerSetIndex": 4,
       "StaticIndex": 3117,
       "NGroupMembership": [],
@@ -1024,8 +1024,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10248,
-      "PowerSetID": 3513,
+      "PowerIndex": 10250,
+      "PowerSetID": 3516,
       "PowerSetIndex": 5,
       "StaticIndex": 3118,
       "NGroupMembership": [],
@@ -1108,8 +1108,8 @@
     {
       "CastTimeReal": 3.17,
       "ToggleCost": 13.0,
-      "PowerIndex": 10249,
-      "PowerSetID": 3513,
+      "PowerIndex": 10251,
+      "PowerSetID": 3516,
       "PowerSetIndex": 6,
       "StaticIndex": 3119,
       "NGroupMembership": [],
@@ -1209,8 +1209,8 @@
     {
       "CastTimeReal": 2.27,
       "ToggleCost": 7.8,
-      "PowerIndex": 10250,
-      "PowerSetID": 3513,
+      "PowerIndex": 10252,
+      "PowerSetID": 3516,
       "PowerSetIndex": 7,
       "StaticIndex": 3120,
       "NGroupMembership": [],

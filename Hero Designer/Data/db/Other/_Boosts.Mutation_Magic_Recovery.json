@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Mutation Magic Endurance",
   "nArchetype": -1,
-  "nID": 2090,
+  "nID": 2089,
   "SubName": "Focusing Device (Mutation, Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2340,
-      "PowerSetID": 2090,
+      "PowerSetID": 2089,
       "StaticIndex": 8278,
       "NGroupMembership": [],
       "FullName": "Boosts.Mutation_Magic_Recovery.Mutation_Magic_Recovery",

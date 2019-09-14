@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Fiery_Melee_Assassins_Blaze",
   "ImageName": "",
   "Power": [
-    10200,
-    10201
+    10202,
+    10203
   ],
   "SetType": 8,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3437,
+  "nID": 3448,
   "SubName": "Fiery Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10200,
-      "PowerSetID": 3437,
+      "PowerIndex": 10202,
+      "PowerSetID": 3448,
       "StaticIndex": 10702,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Fiery_Melee_Assassins_Blaze.Assassins_Blaze_Stealth",
@@ -238,7 +238,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9325,
+          "nSummon": 9327,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -335,8 +335,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10201,
-      "PowerSetID": 3437,
+      "PowerIndex": 10203,
+      "PowerSetID": 3448,
       "PowerSetIndex": 1,
       "StaticIndex": 10703,
       "NGroupMembership": [],

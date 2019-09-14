@@ -4,19 +4,19 @@
   "FullName": "Training_Gadgets.Training_and_Gadgets",
   "ImageName": "i12_Sec_Soldier.png",
   "Power": [
-    10056,
-    10057,
     10058,
     10059,
     10060,
     10061,
     10062,
-    10063
+    10063,
+    10064,
+    10065
   ],
   "SetType": 2,
   "DisplayName": "Training and Gadgets",
   "nArchetype": 13,
-  "nID": 3431,
+  "nID": 3434,
   "SubName": "Training and Gadgets",
   "ATClass": "Class_Arachnos_Soldier",
   "UIDTrunkSet": "",
@@ -28,8 +28,8 @@
   "GroupName": "Training_Gadgets",
   "Powers": [
     {
-      "PowerIndex": 10056,
-      "PowerSetID": 3431,
+      "PowerIndex": 10058,
+      "PowerSetID": 3434,
       "StaticIndex": 2998,
       "NGroupMembership": [],
       "FullName": "Training_Gadgets.Training_and_Gadgets.Wolf_Spider_Armor",
@@ -1178,8 +1178,8 @@
     },
     {
       "CastTimeReal": 0.67,
-      "PowerIndex": 10057,
-      "PowerSetID": 3431,
+      "PowerIndex": 10059,
+      "PowerSetID": 3434,
       "PowerSetIndex": 1,
       "StaticIndex": 2999,
       "NGroupMembership": [],
@@ -1273,8 +1273,8 @@
     },
     {
       "CastTimeReal": 0.67,
-      "PowerIndex": 10058,
-      "PowerSetID": 3431,
+      "PowerIndex": 10060,
+      "PowerSetID": 3434,
       "PowerSetIndex": 2,
       "StaticIndex": 3000,
       "NGroupMembership": [],
@@ -1400,8 +1400,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10059,
-      "PowerSetID": 3431,
+      "PowerIndex": 10061,
+      "PowerSetID": 3434,
       "PowerSetIndex": 3,
       "StaticIndex": 3001,
       "NGroupMembership": [],
@@ -2200,8 +2200,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10060,
-      "PowerSetID": 3431,
+      "PowerIndex": 10062,
+      "PowerSetID": 3434,
       "PowerSetIndex": 4,
       "StaticIndex": 3002,
       "NGroupMembership": [],
@@ -2616,8 +2616,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10061,
-      "PowerSetID": 3431,
+      "PowerIndex": 10063,
+      "PowerSetID": 3434,
       "PowerSetIndex": 5,
       "StaticIndex": 3003,
       "NGroupMembership": [],
@@ -3003,8 +3003,8 @@
       "AoEModifier": 10.0
     },
     {
-      "PowerIndex": 10062,
-      "PowerSetID": 3431,
+      "PowerIndex": 10064,
+      "PowerSetID": 3434,
       "PowerSetIndex": 6,
       "StaticIndex": 3004,
       "NGroupMembership": [],
@@ -3265,8 +3265,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 26.0,
-      "PowerIndex": 10063,
-      "PowerSetID": 3431,
+      "PowerIndex": 10065,
+      "PowerSetID": 3434,
       "PowerSetIndex": 7,
       "StaticIndex": 3005,
       "NGroupMembership": [],

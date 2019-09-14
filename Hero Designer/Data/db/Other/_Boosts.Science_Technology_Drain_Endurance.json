@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Science Technology endurance",
   "nArchetype": -1,
-  "nID": 2239,
+  "nID": 2238,
   "SubName": "Invention (Science, Technology)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2476,
-      "PowerSetID": 2239,
+      "PowerSetID": 2238,
       "StaticIndex": 8414,
       "NGroupMembership": [],
       "FullName": "Boosts.Science_Technology_Drain_Endurance.Science_Technology_Drain_Endurance",

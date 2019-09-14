@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Magic Endurance",
   "nArchetype": -1,
-  "nID": 2044,
+  "nID": 2045,
   "SubName": "Dimensional Entities (Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2282,
-      "PowerSetID": 2044,
+      "PowerSetID": 2045,
       "StaticIndex": 8220,
       "NGroupMembership": [],
       "FullName": "Boosts.Magic_Drain_Endurance.Magic_Drain_Endurance",

@@ -9,7 +9,7 @@
   "SetType": 8,
   "DisplayName": "Electric Melee",
   "nArchetype": -1,
-  "nID": 3076,
+  "nID": 3078,
   "SubName": "Electric Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 6305,
-      "PowerSetID": 3076,
+      "PowerSetID": 3078,
       "StaticIndex": 6224,
       "NGroupMembership": [],
       "FullName": "Pets.Contaminated_Lightning_Rod_Tanker.Lightning_Rod",

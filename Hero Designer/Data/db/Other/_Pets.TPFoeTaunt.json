@@ -4,12 +4,12 @@
   "FullName": "Pets.TPFoeTaunt",
   "ImageName": "",
   "Power": [
-    6657
+    6659
   ],
   "SetType": 8,
   "DisplayName": "Teleport Foe",
   "nArchetype": -1,
-  "nID": 3238,
+  "nID": 3241,
   "SubName": "Taunt",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6657,
-      "PowerSetID": 3238,
+      "PowerIndex": 6659,
+      "PowerSetID": 3241,
       "StaticIndex": 1750,
       "NGroupMembership": [],
       "FullName": "Pets.TPFoeTaunt.TPFoeTaunt",

@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Mutation Magic Endurance",
   "nArchetype": -1,
-  "nID": 2089,
+  "nID": 2090,
   "SubName": "Focusing Device (Mutation, Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2327,
-      "PowerSetID": 2089,
+      "PowerSetID": 2090,
       "StaticIndex": 8265,
       "NGroupMembership": [],
       "FullName": "Boosts.Mutation_Magic_Drain_Endurance.Mutation_Magic_Drain_Endurance",

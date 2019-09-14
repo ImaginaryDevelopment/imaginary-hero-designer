@@ -4,20 +4,20 @@
   "FullName": "Stalker_Defense.Super_Reflexes",
   "ImageName": "SuperReflexes.png",
   "Power": [
-    8445,
-    8446,
     8447,
     8448,
     8449,
     8450,
     8451,
     8452,
-    8453
+    8453,
+    8454,
+    8455
   ],
   "SetType": 2,
   "DisplayName": "Super Reflexes",
   "nArchetype": 12,
-  "nID": 3365,
+  "nID": 3368,
   "SubName": "Super Reflexes",
   "ATClass": "Class_Stalker",
   "UIDTrunkSet": "",
@@ -30,8 +30,8 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8445,
-      "PowerSetID": 3365,
+      "PowerIndex": 8447,
+      "PowerSetID": 3368,
       "StaticIndex": 2397,
       "NGroupMembership": [
         8
@@ -1567,8 +1567,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8446,
-      "PowerSetID": 3365,
+      "PowerIndex": 8448,
+      "PowerSetID": 3368,
       "PowerSetIndex": 1,
       "StaticIndex": 2398,
       "NGroupMembership": [],
@@ -1849,8 +1849,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8447,
-      "PowerSetID": 3365,
+      "PowerIndex": 8449,
+      "PowerSetID": 3368,
       "PowerSetIndex": 2,
       "StaticIndex": 2399,
       "NGroupMembership": [],
@@ -2199,8 +2199,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8448,
-      "PowerSetID": 3365,
+      "PowerIndex": 8450,
+      "PowerSetID": 3368,
       "PowerSetIndex": 3,
       "StaticIndex": 2400,
       "NGroupMembership": [],
@@ -2509,8 +2509,8 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 10.4,
-      "PowerIndex": 8449,
-      "PowerSetID": 3365,
+      "PowerIndex": 8451,
+      "PowerSetID": 3368,
       "PowerSetIndex": 4,
       "StaticIndex": 2401,
       "NGroupMembership": [],
@@ -3245,8 +3245,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8450,
-      "PowerSetID": 3365,
+      "PowerIndex": 8452,
+      "PowerSetID": 3368,
       "PowerSetIndex": 5,
       "StaticIndex": 2402,
       "NGroupMembership": [],
@@ -3553,8 +3553,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8451,
-      "PowerSetID": 3365,
+      "PowerIndex": 8453,
+      "PowerSetID": 3368,
       "PowerSetIndex": 6,
       "StaticIndex": 2403,
       "NGroupMembership": [],
@@ -3815,8 +3815,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 8452,
-      "PowerSetID": 3365,
+      "PowerIndex": 8454,
+      "PowerSetID": 3368,
       "PowerSetIndex": 7,
       "StaticIndex": 2404,
       "NGroupMembership": [],
@@ -4026,8 +4026,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 8453,
-      "PowerSetID": 3365,
+      "PowerIndex": 8455,
+      "PowerSetID": 3368,
       "PowerSetIndex": 8,
       "StaticIndex": 2405,
       "NGroupMembership": [],

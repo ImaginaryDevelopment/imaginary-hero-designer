@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Martial_Arts_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10232,
-    10233
+    10234,
+    10235
   ],
   "SetType": 8,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3434,
+  "nID": 3436,
   "SubName": "Martial Arts",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10232,
-      "PowerSetID": 3434,
+      "PowerIndex": 10234,
+      "PowerSetID": 3436,
       "StaticIndex": 6334,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Martial_Arts_Assassins_Strike.Assassins_Blow_Stealth",
@@ -299,7 +299,7 @@
           "nID": 6,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9325,
+          "nSummon": 9327,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -396,8 +396,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10233,
-      "PowerSetID": 3434,
+      "PowerIndex": 10235,
+      "PowerSetID": 3436,
       "PowerSetIndex": 1,
       "StaticIndex": 6335,
       "NGroupMembership": [],

@@ -4,14 +4,14 @@
   "FullName": "Pets.Terror",
   "ImageName": "",
   "Power": [
-    6628,
-    6629,
-    6630
+    6630,
+    6631,
+    6632
   ],
   "SetType": 8,
   "DisplayName": "Terror",
   "nArchetype": -1,
-  "nID": 3239,
+  "nID": 3242,
   "SubName": "Illusion Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6628,
-      "PowerSetID": 3239,
+      "PowerIndex": 6630,
+      "PowerSetID": 3242,
       "StaticIndex": 1741,
       "NGroupMembership": [],
       "FullName": "Pets.Terror.Translucency",
@@ -237,8 +237,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6629,
-      "PowerSetID": 3239,
+      "PowerIndex": 6631,
+      "PowerSetID": 3242,
       "PowerSetIndex": 1,
       "StaticIndex": 1742,
       "NGroupMembership": [],
@@ -402,8 +402,8 @@
     },
     {
       "CastTimeReal": 2.03,
-      "PowerIndex": 6630,
-      "PowerSetID": 3239,
+      "PowerIndex": 6632,
+      "PowerSetID": 3242,
       "PowerSetIndex": 2,
       "StaticIndex": 1743,
       "NGroupMembership": [],

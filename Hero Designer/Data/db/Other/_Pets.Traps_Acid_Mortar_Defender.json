@@ -4,13 +4,13 @@
   "FullName": "Pets.Traps_Acid_Mortar_Defender",
   "ImageName": "",
   "Power": [
-    6670,
-    6671
+    6672,
+    6673
   ],
   "SetType": 8,
   "DisplayName": "Acid Mortar",
   "nArchetype": -1,
-  "nID": 3020,
+  "nID": 3019,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6670,
-      "PowerSetID": 3020,
+      "PowerIndex": 6672,
+      "PowerSetID": 3019,
       "StaticIndex": 3535,
       "NGroupMembership": [],
       "FullName": "Pets.Traps_Acid_Mortar_Defender.Acid_Mortar",
@@ -430,8 +430,8 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 6671,
-      "PowerSetID": 3020,
+      "PowerIndex": 6673,
+      "PowerSetID": 3019,
       "PowerSetIndex": 1,
       "StaticIndex": 3536,
       "NGroupMembership": [],

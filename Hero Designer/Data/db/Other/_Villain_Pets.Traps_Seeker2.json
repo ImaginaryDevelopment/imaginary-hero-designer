@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Traps_Seeker2",
   "ImageName": "",
   "Power": [
-    10361,
-    10362,
-    10363
+    10363,
+    10364,
+    10365
   ],
   "SetType": 8,
   "DisplayName": "Seeker 2",
   "nArchetype": -1,
-  "nID": 3527,
+  "nID": 3530,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10361,
-      "PowerSetID": 3527,
+      "PowerIndex": 10363,
+      "PowerSetID": 3530,
       "StaticIndex": 3170,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_Seeker2.FlashPulse",
@@ -584,8 +584,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 10362,
-      "PowerSetID": 3527,
+      "PowerIndex": 10364,
+      "PowerSetID": 3530,
       "PowerSetIndex": 1,
       "StaticIndex": 3171,
       "NGroupMembership": [],
@@ -735,8 +735,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10363,
-      "PowerSetID": 3527,
+      "PowerIndex": 10365,
+      "PowerSetID": 3530,
       "PowerSetIndex": 2,
       "StaticIndex": 3172,
       "NGroupMembership": [],

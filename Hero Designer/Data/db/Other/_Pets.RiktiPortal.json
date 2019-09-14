@@ -4,14 +4,14 @@
   "FullName": "Pets.RiktiPortal",
   "ImageName": "",
   "Power": [
-    6567,
-    6568,
-    6569
+    6569,
+    6570,
+    6571
   ],
   "SetType": 8,
   "DisplayName": "Portal",
   "nArchetype": -1,
-  "nID": 3167,
+  "nID": 3169,
   "SubName": "Rikti",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6567,
-      "PowerSetID": 3167,
+      "PowerIndex": 6569,
+      "PowerSetID": 3169,
       "StaticIndex": 1701,
       "NGroupMembership": [],
       "FullName": "Pets.RiktiPortal.Transport",
@@ -446,8 +446,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6568,
-      "PowerSetID": 3167,
+      "PowerIndex": 6570,
+      "PowerSetID": 3169,
       "PowerSetIndex": 1,
       "StaticIndex": 1702,
       "NGroupMembership": [],
@@ -532,8 +532,8 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6569,
-      "PowerSetID": 3167,
+      "PowerIndex": 6571,
+      "PowerSetID": 3169,
       "PowerSetIndex": 2,
       "StaticIndex": 1703,
       "NGroupMembership": [],

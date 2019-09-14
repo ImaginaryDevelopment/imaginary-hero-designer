@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Damage",
   "ImageName": "",
   "Power": [
-    6618
+    6620
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3235,
+  "nID": 3240,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6618,
-      "PowerSetID": 3235,
+      "PowerIndex": 6620,
+      "PowerSetID": 3240,
       "StaticIndex": 1731,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Damage.Explosion",

@@ -4,16 +4,16 @@
   "FullName": "Villain_Pets.Fly_Trap",
   "ImageName": "",
   "Power": [
-    10202,
-    10203,
     10204,
     10205,
-    10206
+    10206,
+    10207,
+    10208
   ],
   "SetType": 8,
   "DisplayName": "Fly Trap",
   "nArchetype": -1,
-  "nID": 3503,
+  "nID": 3506,
   "SubName": "Plant Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 7.8,
-      "PowerIndex": 10202,
-      "PowerSetID": 3503,
+      "PowerIndex": 10204,
+      "PowerSetID": 3506,
       "StaticIndex": 3080,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Fly_Trap.Entangle",
@@ -426,8 +426,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 5.2,
-      "PowerIndex": 10203,
-      "PowerSetID": 3503,
+      "PowerIndex": 10205,
+      "PowerSetID": 3506,
       "PowerSetIndex": 1,
       "StaticIndex": 3081,
       "NGroupMembership": [],
@@ -601,8 +601,8 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 13.0,
-      "PowerIndex": 10204,
-      "PowerSetID": 3503,
+      "PowerIndex": 10206,
+      "PowerSetID": 3506,
       "PowerSetIndex": 2,
       "StaticIndex": 3082,
       "NGroupMembership": [],
@@ -782,8 +782,8 @@
       "AoEModifier": 2.03496885
     },
     {
-      "PowerIndex": 10205,
-      "PowerSetID": 3503,
+      "PowerIndex": 10207,
+      "PowerSetID": 3506,
       "PowerSetIndex": 3,
       "StaticIndex": 3083,
       "NGroupMembership": [],
@@ -1109,8 +1109,8 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 4.368,
-      "PowerIndex": 10206,
-      "PowerSetID": 3503,
+      "PowerIndex": 10208,
+      "PowerSetID": 3506,
       "PowerSetIndex": 4,
       "StaticIndex": 3084,
       "NGroupMembership": [],

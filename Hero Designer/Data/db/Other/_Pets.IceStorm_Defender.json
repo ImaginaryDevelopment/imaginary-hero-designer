@@ -4,13 +4,13 @@
   "FullName": "Pets.IceStorm_Defender",
   "ImageName": "",
   "Power": [
-    6425,
-    6426
+    6427,
+    6428
   ],
   "SetType": 8,
   "DisplayName": "Ice Storm",
   "nArchetype": -1,
-  "nID": 3109,
+  "nID": 3112,
   "SubName": "Ice Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6425,
-      "PowerSetID": 3109,
+      "PowerIndex": 6427,
+      "PowerSetID": 3112,
       "StaticIndex": 9590,
       "NGroupMembership": [],
       "FullName": "Pets.IceStorm_Defender.IceStorm",
@@ -426,8 +426,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6426,
-      "PowerSetID": 3109,
+      "PowerIndex": 6428,
+      "PowerSetID": 3112,
       "PowerSetIndex": 1,
       "StaticIndex": 9591,
       "NGroupMembership": [],

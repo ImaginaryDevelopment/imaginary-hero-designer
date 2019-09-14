@@ -4,13 +4,13 @@
   "FullName": "Pets.Wind_Control_Vacuum_Controller",
   "ImageName": "",
   "Power": [
-    6757,
-    6758
+    6759,
+    6760
   ],
   "SetType": 8,
   "DisplayName": "Wind Control",
   "nArchetype": -1,
-  "nID": 3278,
+  "nID": 3282,
   "SubName": "Wind Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6757,
-      "PowerSetID": 3278,
+      "PowerIndex": 6759,
+      "PowerSetID": 3282,
       "StaticIndex": 9602,
       "NGroupMembership": [],
       "FullName": "Pets.Wind_Control_Vacuum_Controller.Vacuum_Over_Time",
@@ -468,8 +468,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6758,
-      "PowerSetID": 3278,
+      "PowerIndex": 6760,
+      "PowerSetID": 3282,
       "PowerSetIndex": 1,
       "StaticIndex": 9603,
       "NGroupMembership": [],

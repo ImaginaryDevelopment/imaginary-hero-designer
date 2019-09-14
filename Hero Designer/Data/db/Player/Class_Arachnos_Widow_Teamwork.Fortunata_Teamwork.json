@@ -4,20 +4,20 @@
   "FullName": "Teamwork.Fortunata_Teamwork",
   "ImageName": "i12_Sec_Fortunata.png",
   "Power": [
-    8919,
-    8920,
     8921,
     8922,
-    8923
+    8923,
+    8924,
+    8925
   ],
   "SetType": 2,
   "DisplayName": "Fortunata Teamwork",
   "nArchetype": 14,
-  "nID": 3417,
+  "nID": 3420,
   "SubName": "Fortunata Teamwork",
   "ATClass": "Class_Arachnos_Widow",
   "UIDTrunkSet": "Teamwork.Teamwork",
-  "nIDTrunkSet": 3418,
+  "nIDTrunkSet": 3421,
   "UIDLinkSecondary": "",
   "nIDLinkSecondary": -1,
   "UIDMutexSets": [],
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 8919,
-      "PowerSetID": 3417,
+      "PowerIndex": 8921,
+      "PowerSetID": 3420,
       "StaticIndex": 2622,
       "NGroupMembership": [
         19
@@ -1557,8 +1557,8 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 10.192,
-      "PowerIndex": 8920,
-      "PowerSetID": 3417,
+      "PowerIndex": 8922,
+      "PowerSetID": 3420,
       "PowerSetIndex": 1,
       "StaticIndex": 2623,
       "NGroupMembership": [],
@@ -2047,8 +2047,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 8.528,
-      "PowerIndex": 8921,
-      "PowerSetID": 3417,
+      "PowerIndex": 8923,
+      "PowerSetID": 3420,
       "PowerSetIndex": 2,
       "StaticIndex": 2624,
       "NGroupMembership": [],
@@ -2192,8 +2192,8 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 8922,
-      "PowerSetID": 3417,
+      "PowerIndex": 8924,
+      "PowerSetID": 3420,
       "PowerSetIndex": 3,
       "StaticIndex": 2625,
       "NGroupMembership": [],
@@ -3427,8 +3427,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 26.0,
-      "PowerIndex": 8923,
-      "PowerSetID": 3417,
+      "PowerIndex": 8925,
+      "PowerSetID": 3420,
       "PowerSetIndex": 4,
       "StaticIndex": 2626,
       "NGroupMembership": [],

@@ -20,7 +20,7 @@
   "SetType": 8,
   "DisplayName": "Thug Lieutenant",
   "nArchetype": -1,
-  "nID": 2980,
+  "nID": 2982,
   "SubName": "Thugs",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -35,7 +35,7 @@
       "CastTimeReal": 3.03,
       "ToggleCost": 15.184,
       "PowerIndex": 6092,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "StaticIndex": 1380,
       "NGroupMembership": [],
       "FullName": "Mastermind_Pets.Thug_Lt_3.Dual_UZIs",
@@ -176,7 +176,7 @@
     },
     {
       "PowerIndex": 6093,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 1,
       "StaticIndex": 1381,
       "NGroupMembership": [],
@@ -507,7 +507,7 @@
       "CastTimeReal": 2.5,
       "ToggleCost": 15.184,
       "PowerIndex": 6094,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 2,
       "StaticIndex": 1382,
       "NGroupMembership": [],
@@ -606,7 +606,7 @@
     },
     {
       "PowerIndex": 6095,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 3,
       "StaticIndex": 1383,
       "NGroupMembership": [],
@@ -690,7 +690,7 @@
     },
     {
       "PowerIndex": 6096,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 4,
       "StaticIndex": 1384,
       "NGroupMembership": [],
@@ -775,7 +775,7 @@
     },
     {
       "PowerIndex": 6097,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 5,
       "StaticIndex": 1385,
       "NGroupMembership": [],
@@ -860,7 +860,7 @@
     },
     {
       "PowerIndex": 6098,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 6,
       "StaticIndex": 1386,
       "NGroupMembership": [],
@@ -945,7 +945,7 @@
     },
     {
       "PowerIndex": 6099,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 7,
       "StaticIndex": 1387,
       "NGroupMembership": [],
@@ -1030,7 +1030,7 @@
     },
     {
       "PowerIndex": 6100,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 8,
       "StaticIndex": 1388,
       "NGroupMembership": [],
@@ -1115,7 +1115,7 @@
     },
     {
       "PowerIndex": 6101,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 9,
       "StaticIndex": 1389,
       "NGroupMembership": [],
@@ -1200,7 +1200,7 @@
     },
     {
       "PowerIndex": 6102,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 10,
       "StaticIndex": 1390,
       "NGroupMembership": [],
@@ -1285,7 +1285,7 @@
     },
     {
       "PowerIndex": 6103,
-      "PowerSetID": 2980,
+      "PowerSetID": 2982,
       "PowerSetIndex": 11,
       "StaticIndex": 1391,
       "NGroupMembership": [],

@@ -4,20 +4,20 @@
   "FullName": "Stalker_Defense.Ninjitsu",
   "ImageName": "Ninjitsu.png",
   "Power": [
-    8409,
-    8410,
     8411,
     8412,
     8413,
     8414,
     8415,
     8416,
-    8417
+    8417,
+    8418,
+    8419
   ],
   "SetType": 2,
   "DisplayName": "Ninjitsu",
   "nArchetype": 12,
-  "nID": 3361,
+  "nID": 3364,
   "SubName": "Ninjitsu",
   "ATClass": "Class_Stalker",
   "UIDTrunkSet": "",
@@ -30,8 +30,8 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8409,
-      "PowerSetID": 3361,
+      "PowerIndex": 8411,
+      "PowerSetID": 3364,
       "StaticIndex": 2379,
       "NGroupMembership": [
         8
@@ -1567,8 +1567,8 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 0.26,
-      "PowerIndex": 8410,
-      "PowerSetID": 3361,
+      "PowerIndex": 8412,
+      "PowerSetID": 3364,
       "PowerSetIndex": 1,
       "StaticIndex": 2380,
       "NGroupMembership": [],
@@ -1778,8 +1778,8 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 0.364,
-      "PowerIndex": 8411,
-      "PowerSetID": 3361,
+      "PowerIndex": 8413,
+      "PowerSetID": 3364,
       "PowerSetIndex": 2,
       "StaticIndex": 2381,
       "NGroupMembership": [],
@@ -2166,8 +2166,8 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 8412,
-      "PowerSetID": 3361,
+      "PowerIndex": 8414,
+      "PowerSetID": 3364,
       "PowerSetIndex": 3,
       "StaticIndex": 2382,
       "NGroupMembership": [],
@@ -2277,8 +2277,8 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 10.4,
-      "PowerIndex": 8413,
-      "PowerSetID": 3361,
+      "PowerIndex": 8415,
+      "PowerSetID": 3364,
       "PowerSetIndex": 4,
       "StaticIndex": 2383,
       "NGroupMembership": [],
@@ -3057,8 +3057,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 10.4,
-      "PowerIndex": 8414,
-      "PowerSetID": 3361,
+      "PowerIndex": 8416,
+      "PowerSetID": 3364,
       "PowerSetIndex": 5,
       "StaticIndex": 2384,
       "NGroupMembership": [],
@@ -3196,8 +3196,8 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 2.6,
-      "PowerIndex": 8415,
-      "PowerSetID": 3361,
+      "PowerIndex": 8417,
+      "PowerSetID": 3364,
       "PowerSetIndex": 6,
       "StaticIndex": 2385,
       "NGroupMembership": [],
@@ -3332,8 +3332,8 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 8416,
-      "PowerSetID": 3361,
+      "PowerIndex": 8418,
+      "PowerSetID": 3364,
       "PowerSetIndex": 7,
       "StaticIndex": 2386,
       "NGroupMembership": [],
@@ -3666,8 +3666,8 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 2.6,
-      "PowerIndex": 8417,
-      "PowerSetID": 3361,
+      "PowerIndex": 8419,
+      "PowerSetID": 3364,
       "PowerSetIndex": 8,
       "StaticIndex": 2387,
       "NGroupMembership": [],

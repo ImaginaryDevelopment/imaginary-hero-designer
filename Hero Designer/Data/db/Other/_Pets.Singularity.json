@@ -4,16 +4,16 @@
   "FullName": "Pets.Singularity",
   "ImageName": "",
   "Power": [
-    6579,
-    6580,
     6581,
     6582,
-    6583
+    6583,
+    6584,
+    6585
   ],
   "SetType": 8,
   "DisplayName": "Singularity",
   "nArchetype": -1,
-  "nID": 3208,
+  "nID": 3210,
   "SubName": "Gravity Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -25,8 +25,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6579,
-      "PowerSetID": 3208,
+      "PowerIndex": 6581,
+      "PowerSetID": 3210,
       "StaticIndex": 1707,
       "NGroupMembership": [],
       "FullName": "Pets.Singularity.Repel",
@@ -156,8 +156,8 @@
     },
     {
       "CastTimeReal": 1.33,
-      "PowerIndex": 6580,
-      "PowerSetID": 3208,
+      "PowerIndex": 6582,
+      "PowerSetID": 3210,
       "PowerSetIndex": 1,
       "StaticIndex": 1708,
       "NGroupMembership": [],
@@ -547,8 +547,8 @@
     },
     {
       "CastTimeReal": 1.83,
-      "PowerIndex": 6581,
-      "PowerSetID": 3208,
+      "PowerIndex": 6583,
+      "PowerSetID": 3210,
       "PowerSetIndex": 2,
       "StaticIndex": 1709,
       "NGroupMembership": [],
@@ -1041,8 +1041,8 @@
     },
     {
       "CastTimeReal": 1.03,
-      "PowerIndex": 6582,
-      "PowerSetID": 3208,
+      "PowerIndex": 6584,
+      "PowerSetID": 3210,
       "PowerSetIndex": 3,
       "StaticIndex": 1710,
       "NGroupMembership": [],
@@ -1209,8 +1209,8 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 6583,
-      "PowerSetID": 3208,
+      "PowerIndex": 6585,
+      "PowerSetID": 3210,
       "PowerSetIndex": 4,
       "StaticIndex": 1711,
       "NGroupMembership": [],

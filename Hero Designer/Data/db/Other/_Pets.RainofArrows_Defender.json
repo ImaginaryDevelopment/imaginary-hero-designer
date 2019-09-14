@@ -4,13 +4,13 @@
   "FullName": "Pets.RainofArrows_Defender",
   "ImageName": "",
   "Power": [
-    6549,
-    6550
+    6551,
+    6552
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
   "nArchetype": -1,
-  "nID": 3185,
+  "nID": 3184,
   "SubName": "Archery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6549,
-      "PowerSetID": 3185,
+      "PowerIndex": 6551,
+      "PowerSetID": 3184,
       "StaticIndex": 1694,
       "NGroupMembership": [],
       "FullName": "Pets.RainofArrows_Defender.RainofArrows",
@@ -148,8 +148,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6550,
-      "PowerSetID": 3185,
+      "PowerIndex": 6552,
+      "PowerSetID": 3184,
       "PowerSetIndex": 1,
       "StaticIndex": 1695,
       "NGroupMembership": [],

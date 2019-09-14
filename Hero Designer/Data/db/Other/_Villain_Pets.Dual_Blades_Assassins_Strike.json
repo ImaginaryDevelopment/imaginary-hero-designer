@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Dual_Blades_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10194,
-    10195
+    10196,
+    10197
   ],
   "SetType": 8,
   "DisplayName": "",
   "nArchetype": -1,
-  "nID": 3439,
+  "nID": 3447,
   "SubName": "Dual Blades",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10194,
-      "PowerSetID": 3439,
+      "PowerIndex": 10196,
+      "PowerSetID": 3447,
       "StaticIndex": 6326,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dual_Blades_Assassins_Strike.Assassins_Blades_Stealth",
@@ -239,7 +239,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9325,
+          "nSummon": 9327,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -600,8 +600,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10195,
-      "PowerSetID": 3439,
+      "PowerIndex": 10197,
+      "PowerSetID": 3447,
       "PowerSetIndex": 1,
       "StaticIndex": 6327,
       "NGroupMembership": [],

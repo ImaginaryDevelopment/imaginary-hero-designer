@@ -4,21 +4,21 @@
   "FullName": "Teamwork.Widow_Teamwork",
   "ImageName": "i12_Sec_Nightwidow.png",
   "Power": [
-    8931,
-    8932,
     8933,
     8934,
     8935,
-    8936
+    8936,
+    8937,
+    8938
   ],
   "SetType": 2,
   "DisplayName": "Widow Teamwork",
   "nArchetype": 14,
-  "nID": 3419,
+  "nID": 3422,
   "SubName": "Widow Teamwork",
   "ATClass": "Class_Arachnos_Widow",
   "UIDTrunkSet": "Teamwork.Teamwork",
-  "nIDTrunkSet": 3418,
+  "nIDTrunkSet": 3421,
   "UIDLinkSecondary": "",
   "nIDLinkSecondary": -1,
   "UIDMutexSets": [],
@@ -28,8 +28,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 8931,
-      "PowerSetID": 3419,
+      "PowerIndex": 8933,
+      "PowerSetID": 3422,
       "StaticIndex": 2634,
       "NGroupMembership": [
         19
@@ -1552,8 +1552,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8932,
-      "PowerSetID": 3419,
+      "PowerIndex": 8934,
+      "PowerSetID": 3422,
       "PowerSetIndex": 1,
       "StaticIndex": 2635,
       "NGroupMembership": [],
@@ -1814,8 +1814,8 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 10.192,
-      "PowerIndex": 8933,
-      "PowerSetID": 3419,
+      "PowerIndex": 8935,
+      "PowerSetID": 3422,
       "PowerSetIndex": 2,
       "StaticIndex": 2636,
       "NGroupMembership": [],
@@ -2304,8 +2304,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 2.6,
-      "PowerIndex": 8934,
-      "PowerSetID": 3419,
+      "PowerIndex": 8936,
+      "PowerSetID": 3422,
       "PowerSetIndex": 3,
       "StaticIndex": 2637,
       "NGroupMembership": [],
@@ -2582,8 +2582,8 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 8935,
-      "PowerSetID": 3419,
+      "PowerIndex": 8937,
+      "PowerSetID": 3422,
       "PowerSetIndex": 4,
       "StaticIndex": 2638,
       "NGroupMembership": [],
@@ -3817,8 +3817,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 8936,
-      "PowerSetID": 3419,
+      "PowerIndex": 8938,
+      "PowerSetID": 3422,
       "PowerSetIndex": 5,
       "StaticIndex": 2639,
       "NGroupMembership": [],

@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_Archery_Snipe",
   "ImageName": "",
   "Power": [
-    6343,
-    6344
+    6345,
+    6346
   ],
   "SetType": 8,
   "DisplayName": "Archery",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6343,
+      "PowerIndex": 6345,
       "PowerSetID": 3023,
       "StaticIndex": 9567,
       "NGroupMembership": [],
@@ -169,7 +169,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6344,
+      "PowerIndex": 6346,
       "PowerSetID": 3023,
       "PowerSetIndex": 1,
       "StaticIndex": 9568,

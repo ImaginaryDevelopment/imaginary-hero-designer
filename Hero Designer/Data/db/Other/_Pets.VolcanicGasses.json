@@ -4,13 +4,13 @@
   "FullName": "Pets.VolcanicGasses",
   "ImageName": "",
   "Power": [
-    6722,
-    6723
+    6724,
+    6725
   ],
   "SetType": 8,
   "DisplayName": "Volcanic Gasses",
   "nArchetype": -1,
-  "nID": 3258,
+  "nID": 3261,
   "SubName": "Earth Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6722,
-      "PowerSetID": 3258,
+      "PowerIndex": 6724,
+      "PowerSetID": 3261,
       "StaticIndex": 1773,
       "NGroupMembership": [],
       "FullName": "Pets.VolcanicGasses.Volcanic_Gasses",
@@ -140,8 +140,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6723,
-      "PowerSetID": 3258,
+      "PowerIndex": 6725,
+      "PowerSetID": 3261,
       "PowerSetIndex": 1,
       "StaticIndex": 1774,
       "NGroupMembership": [],

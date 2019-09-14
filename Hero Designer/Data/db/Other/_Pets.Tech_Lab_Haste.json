@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Haste",
   "ImageName": "",
   "Power": [
-    6623
+    6625
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3229,
+  "nID": 3233,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6623,
-      "PowerSetID": 3229,
+      "PowerIndex": 6625,
+      "PowerSetID": 3233,
       "StaticIndex": 1736,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Haste.Haste",

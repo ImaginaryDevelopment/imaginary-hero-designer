@@ -4,20 +4,20 @@
   "FullName": "Stalker_Defense.Ice_Armor",
   "ImageName": "IceArmor.png",
   "Power": [
-    8391,
-    8392,
     8393,
     8394,
     8395,
     8396,
     8397,
     8398,
-    8399
+    8399,
+    8400,
+    8401
   ],
   "SetType": 2,
   "DisplayName": "Ice Armor",
   "nArchetype": 12,
-  "nID": 3359,
+  "nID": 3362,
   "SubName": "Ice Armor",
   "ATClass": "Class_Stalker",
   "UIDTrunkSet": "",
@@ -30,8 +30,8 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8391,
-      "PowerSetID": 3359,
+      "PowerIndex": 8393,
+      "PowerSetID": 3362,
       "StaticIndex": 5678,
       "NGroupMembership": [
         8
@@ -1566,8 +1566,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8392,
-      "PowerSetID": 3359,
+      "PowerIndex": 8394,
+      "PowerSetID": 3362,
       "PowerSetIndex": 1,
       "StaticIndex": 10055,
       "NGroupMembership": [],
@@ -2026,8 +2026,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 14.56,
-      "PowerIndex": 8393,
-      "PowerSetID": 3359,
+      "PowerIndex": 8395,
+      "PowerSetID": 3362,
       "PowerSetIndex": 2,
       "StaticIndex": 10056,
       "NGroupMembership": [],
@@ -2232,8 +2232,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8394,
-      "PowerSetID": 3359,
+      "PowerIndex": 8396,
+      "PowerSetID": 3362,
       "PowerSetIndex": 3,
       "StaticIndex": 5681,
       "NGroupMembership": [],
@@ -3805,8 +3805,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8395,
-      "PowerSetID": 3359,
+      "PowerIndex": 8397,
+      "PowerSetID": 3362,
       "PowerSetIndex": 4,
       "StaticIndex": 5682,
       "NGroupMembership": [],
@@ -4376,8 +4376,8 @@
       "AoEModifier": 2.5
     },
     {
-      "PowerIndex": 8396,
-      "PowerSetID": 3359,
+      "PowerIndex": 8398,
+      "PowerSetID": 3362,
       "PowerSetIndex": 5,
       "StaticIndex": 5683,
       "NGroupMembership": [],
@@ -4671,8 +4671,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8397,
-      "PowerSetID": 3359,
+      "PowerIndex": 8399,
+      "PowerSetID": 3362,
       "PowerSetIndex": 6,
       "StaticIndex": 5684,
       "NGroupMembership": [],
@@ -5198,8 +5198,8 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 13.0,
-      "PowerIndex": 8398,
-      "PowerSetID": 3359,
+      "PowerIndex": 8400,
+      "PowerSetID": 3362,
       "PowerSetIndex": 7,
       "StaticIndex": 5685,
       "NGroupMembership": [],
@@ -5972,8 +5972,8 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 2.6,
-      "PowerIndex": 8399,
-      "PowerSetID": 3359,
+      "PowerIndex": 8401,
+      "PowerSetID": 3362,
       "PowerSetIndex": 8,
       "StaticIndex": 5686,
       "NGroupMembership": [],

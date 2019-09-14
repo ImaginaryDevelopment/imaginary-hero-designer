@@ -4,20 +4,20 @@
   "FullName": "Scrapper_Defense.Super_Reflexes",
   "ImageName": "SuperReflexes.png",
   "Power": [
-    6924,
-    6925,
     6926,
     6927,
     6928,
     6929,
     6930,
     6931,
-    6932
+    6932,
+    6933,
+    6934
   ],
   "SetType": 2,
   "DisplayName": "Super Reflexes",
   "nArchetype": 3,
-  "nID": 3306,
+  "nID": 3309,
   "SubName": "Super Reflexes",
   "ATClass": "Class_Scrapper",
   "UIDTrunkSet": "",
@@ -31,8 +31,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 6924,
-      "PowerSetID": 3306,
+      "PowerIndex": 6926,
+      "PowerSetID": 3309,
       "StaticIndex": 1869,
       "NGroupMembership": [],
       "FullName": "Scrapper_Defense.Super_Reflexes.Focused_Fighting",
@@ -313,8 +313,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 6925,
-      "PowerSetID": 3306,
+      "PowerIndex": 6927,
+      "PowerSetID": 3309,
       "PowerSetIndex": 1,
       "StaticIndex": 1870,
       "NGroupMembership": [],
@@ -663,8 +663,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6926,
-      "PowerSetID": 3306,
+      "PowerIndex": 6928,
+      "PowerSetID": 3309,
       "PowerSetIndex": 2,
       "StaticIndex": 1871,
       "NGroupMembership": [],
@@ -973,8 +973,8 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 10.4,
-      "PowerIndex": 6927,
-      "PowerSetID": 3306,
+      "PowerIndex": 6929,
+      "PowerSetID": 3309,
       "PowerSetIndex": 3,
       "StaticIndex": 1872,
       "NGroupMembership": [],
@@ -1705,8 +1705,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6928,
-      "PowerSetID": 3306,
+      "PowerIndex": 6930,
+      "PowerSetID": 3309,
       "PowerSetIndex": 4,
       "StaticIndex": 1873,
       "NGroupMembership": [],
@@ -2013,8 +2013,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6929,
-      "PowerSetID": 3306,
+      "PowerIndex": 6931,
+      "PowerSetID": 3309,
       "PowerSetIndex": 5,
       "StaticIndex": 1874,
       "NGroupMembership": [],
@@ -2273,8 +2273,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6930,
-      "PowerSetID": 3306,
+      "PowerIndex": 6932,
+      "PowerSetID": 3309,
       "PowerSetIndex": 6,
       "StaticIndex": 1875,
       "NGroupMembership": [],
@@ -2583,8 +2583,8 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 6931,
-      "PowerSetID": 3306,
+      "PowerIndex": 6933,
+      "PowerSetID": 3309,
       "PowerSetIndex": 7,
       "StaticIndex": 1876,
       "NGroupMembership": [],
@@ -2794,8 +2794,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 6932,
-      "PowerSetID": 3306,
+      "PowerIndex": 6934,
+      "PowerSetID": 3309,
       "PowerSetIndex": 8,
       "StaticIndex": 1877,
       "NGroupMembership": [],

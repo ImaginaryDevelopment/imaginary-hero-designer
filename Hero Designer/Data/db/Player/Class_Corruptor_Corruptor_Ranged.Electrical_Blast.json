@@ -2278,7 +2278,7 @@
           "nID": 8,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10152,
+          "nSummon": 10154,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2296,7 +2296,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 9,
           "Override": "Villain_Pets.Corruptor_ElectricalBlast_Snipe.Zapp_Quick",
-          "nOverride": 10152
+          "nOverride": 10154
         },
         {
           "MagnitudeExpression": "",
@@ -2311,7 +2311,7 @@
           "nID": 9,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10153,
+          "nSummon": 10155,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2328,7 +2328,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 10,
           "Override": "Villain_Pets.Corruptor_ElectricalBlast_Snipe.Zapp_Normal",
-          "nOverride": 10153
+          "nOverride": 10155
         }
       ],
       "HasPowerOverrideEffect": true,

@@ -4,15 +4,15 @@
   "FullName": "Villain_Pets.Shade",
   "ImageName": "",
   "Power": [
-    10295,
-    10296,
     10297,
-    10298
+    10298,
+    10299,
+    10300
   ],
   "SetType": 8,
   "DisplayName": "Shade",
   "nArchetype": -1,
-  "nID": 3529,
+  "nID": 3532,
   "SubName": "Darkness Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -26,8 +26,8 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 4.55,
-      "PowerIndex": 10295,
-      "PowerSetID": 3529,
+      "PowerIndex": 10297,
+      "PowerSetID": 3532,
       "StaticIndex": 6338,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Shade.Shadow_Punch",
@@ -262,8 +262,8 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 10296,
-      "PowerSetID": 3529,
+      "PowerIndex": 10298,
+      "PowerSetID": 3532,
       "PowerSetIndex": 1,
       "StaticIndex": 6339,
       "NGroupMembership": [],
@@ -715,8 +715,8 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 7.8,
-      "PowerIndex": 10297,
-      "PowerSetID": 3529,
+      "PowerIndex": 10299,
+      "PowerSetID": 3532,
       "PowerSetIndex": 2,
       "StaticIndex": 6340,
       "NGroupMembership": [],
@@ -855,8 +855,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10298,
-      "PowerSetID": 3529,
+      "PowerIndex": 10300,
+      "PowerSetID": 3532,
       "PowerSetIndex": 3,
       "StaticIndex": 6341,
       "NGroupMembership": [],

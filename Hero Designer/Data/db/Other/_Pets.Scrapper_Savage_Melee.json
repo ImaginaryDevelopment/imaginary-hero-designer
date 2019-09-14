@@ -4,13 +4,13 @@
   "FullName": "Pets.Scrapper_Savage_Melee",
   "ImageName": "",
   "Power": [
-    6573,
-    6574
+    6575,
+    6576
   ],
   "SetType": 8,
   "DisplayName": "Savage Melee",
   "nArchetype": -1,
-  "nID": 3198,
+  "nID": 3202,
   "SubName": "Savage Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 2.17,
       "ToggleCost": 13.52,
-      "PowerIndex": 6573,
-      "PowerSetID": 3198,
+      "PowerIndex": 6575,
+      "PowerSetID": 3202,
       "StaticIndex": 10631,
       "NGroupMembership": [],
       "FullName": "Pets.Scrapper_Savage_Melee.Rending_Flurry_Normal",
@@ -434,8 +434,8 @@
     {
       "CastTimeReal": 2.17,
       "ToggleCost": 13.52,
-      "PowerIndex": 6574,
-      "PowerSetID": 3198,
+      "PowerIndex": 6576,
+      "PowerSetID": 3202,
       "PowerSetIndex": 1,
       "StaticIndex": 10632,
       "NGroupMembership": [],
@@ -683,7 +683,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Savage_Melee_Exhausted",
-          "nSummon": 9903,
+          "nSummon": 9905,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,

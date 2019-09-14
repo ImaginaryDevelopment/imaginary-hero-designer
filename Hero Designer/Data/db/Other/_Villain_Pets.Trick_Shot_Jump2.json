@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Trick_Shot_Jump2",
   "ImageName": "",
   "Power": [
-    10376
+    10378
   ],
   "SetType": 8,
   "DisplayName": "Trick Shot Jump 2",
   "nArchetype": -1,
-  "nID": 3555,
+  "nID": 3558,
   "SubName": "Trick Shot Jump 2",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10376,
-      "PowerSetID": 3555,
+      "PowerIndex": 10378,
+      "PowerSetID": 3558,
       "StaticIndex": 9836,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Trick_Shot_Jump2.Bounce",

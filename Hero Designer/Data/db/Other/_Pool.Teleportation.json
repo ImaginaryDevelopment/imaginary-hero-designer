@@ -4,16 +4,16 @@
   "FullName": "Pool.Teleportation",
   "ImageName": "Teleportation.png",
   "Power": [
-    6817,
-    6818,
     6819,
     6820,
-    6821
+    6821,
+    6822,
+    6823
   ],
   "SetType": 5,
   "DisplayName": "Teleportation",
   "nArchetype": -1,
-  "nID": 3294,
+  "nID": 3297,
   "SubName": "Teleportation",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 5.93,
       "ToggleCost": 15.0,
-      "PowerIndex": 6817,
-      "PowerSetID": 3294,
+      "PowerIndex": 6819,
+      "PowerSetID": 3297,
       "StaticIndex": 1829,
       "NGroupMembership": [],
       "FullName": "Pool.Teleportation.Recall_Friend",
@@ -164,8 +164,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 6818,
-      "PowerSetID": 3294,
+      "PowerIndex": 6820,
+      "PowerSetID": 3297,
       "PowerSetIndex": 1,
       "StaticIndex": 1831,
       "NGroupMembership": [],
@@ -437,8 +437,8 @@
     {
       "CastTimeReal": 5.676,
       "ToggleCost": 15.0,
-      "PowerIndex": 6819,
-      "PowerSetID": 3294,
+      "PowerIndex": 6821,
+      "PowerSetID": 3297,
       "PowerSetIndex": 2,
       "StaticIndex": 1830,
       "NGroupMembership": [],
@@ -906,8 +906,8 @@
       "CastTimeReal": 12.0,
       "ToggleCost": 26.0,
       "IsEpic": true,
-      "PowerIndex": 6820,
-      "PowerSetID": 3294,
+      "PowerIndex": 6822,
+      "PowerSetID": 3297,
       "PowerSetIndex": 3,
       "StaticIndex": 5635,
       "NGroupMembership": [],
@@ -938,16 +938,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6817,
-            6819
-          ],
-          [
-            6817,
-            6818
+            6819,
+            6821
           ],
           [
             6819,
-            6818
+            6820
+          ],
+          [
+            6821,
+            6820
           ]
         ],
         "NPowerIDNot": []
@@ -1133,8 +1133,8 @@
       "CastTimeReal": 1.67,
       "ToggleCost": 20.0,
       "IsEpic": true,
-      "PowerIndex": 6821,
-      "PowerSetID": 3294,
+      "PowerIndex": 6823,
+      "PowerSetID": 3297,
       "PowerSetIndex": 4,
       "StaticIndex": 1832,
       "NGroupMembership": [],
@@ -1165,16 +1165,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6817,
-            6819
-          ],
-          [
-            6817,
-            6818
+            6819,
+            6821
           ],
           [
             6819,
-            6818
+            6820
+          ],
+          [
+            6821,
+            6820
           ]
         ],
         "NPowerIDNot": []

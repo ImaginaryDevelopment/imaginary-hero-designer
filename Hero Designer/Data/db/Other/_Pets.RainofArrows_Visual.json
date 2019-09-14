@@ -4,12 +4,12 @@
   "FullName": "Pets.RainofArrows_Visual",
   "ImageName": "",
   "Power": [
-    6553
+    6555
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
   "nArchetype": -1,
-  "nID": 3183,
+  "nID": 3186,
   "SubName": "Archery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6553,
-      "PowerSetID": 3183,
+      "PowerIndex": 6555,
+      "PowerSetID": 3186,
       "StaticIndex": 1696,
       "NGroupMembership": [],
       "FullName": "Pets.RainofArrows_Visual.RainofArrows",

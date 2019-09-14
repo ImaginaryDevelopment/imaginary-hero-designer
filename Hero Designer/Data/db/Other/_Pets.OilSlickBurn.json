@@ -4,15 +4,15 @@
   "FullName": "Pets.OilSlickBurn",
   "ImageName": "",
   "Power": [
-    6491,
-    6492,
     6493,
-    6494
+    6494,
+    6495,
+    6496
   ],
   "SetType": 8,
   "DisplayName": "Oil Slick Fire",
   "nArchetype": -1,
-  "nID": 3158,
+  "nID": 3160,
   "SubName": "Trick Arrow",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6491,
-      "PowerSetID": 3158,
+      "PowerIndex": 6493,
+      "PowerSetID": 3160,
       "StaticIndex": 1664,
       "NGroupMembership": [],
       "FullName": "Pets.OilSlickBurn.Fire",
@@ -114,8 +114,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6492,
-      "PowerSetID": 3158,
+      "PowerIndex": 6494,
+      "PowerSetID": 3160,
       "PowerSetIndex": 1,
       "StaticIndex": 1665,
       "NGroupMembership": [],
@@ -199,8 +199,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6493,
-      "PowerSetID": 3158,
+      "PowerIndex": 6495,
+      "PowerSetID": 3160,
       "PowerSetIndex": 2,
       "StaticIndex": 1666,
       "NGroupMembership": [],
@@ -283,8 +283,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6494,
-      "PowerSetID": 3158,
+      "PowerIndex": 6496,
+      "PowerSetID": 3160,
       "PowerSetIndex": 3,
       "StaticIndex": 1667,
       "NGroupMembership": [],

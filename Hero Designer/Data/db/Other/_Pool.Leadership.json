@@ -4,16 +4,16 @@
   "FullName": "Pool.Leadership",
   "ImageName": "Leadership.png",
   "Power": [
-    6786,
-    6787,
     6788,
     6789,
-    6790
+    6790,
+    6791,
+    6792
   ],
   "SetType": 5,
   "DisplayName": "Leadership",
   "nArchetype": -1,
-  "nID": 3288,
+  "nID": 3291,
   "SubName": "Leadership",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 0.39,
-      "PowerIndex": 6786,
-      "PowerSetID": 3288,
+      "PowerIndex": 6788,
+      "PowerSetID": 3291,
       "StaticIndex": 1809,
       "NGroupMembership": [],
       "FullName": "Pool.Leadership.Defense",
@@ -827,8 +827,8 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 0.39,
-      "PowerIndex": 6787,
-      "PowerSetID": 3288,
+      "PowerIndex": 6789,
+      "PowerSetID": 3291,
       "PowerSetIndex": 1,
       "StaticIndex": 1810,
       "NGroupMembership": [],
@@ -1244,8 +1244,8 @@
       "CastTimeReal": 3.67,
       "ToggleCost": 0.39,
       "IsEpic": true,
-      "PowerIndex": 6788,
-      "PowerSetID": 3288,
+      "PowerIndex": 6790,
+      "PowerSetID": 3291,
       "PowerSetIndex": 2,
       "StaticIndex": 1811,
       "NGroupMembership": [],
@@ -1272,11 +1272,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6786,
+            6788,
             -1
           ],
           [
-            6787,
+            6789,
             -1
           ]
         ],
@@ -1579,8 +1579,8 @@
     {
       "CastTimeReal": 1.17,
       "IsEpic": true,
-      "PowerIndex": 6789,
-      "PowerSetID": 3288,
+      "PowerIndex": 6791,
+      "PowerSetID": 3291,
       "PowerSetIndex": 3,
       "StaticIndex": 1812,
       "NGroupMembership": [],
@@ -1611,16 +1611,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6786,
-            6787
+            6788,
+            6789
           ],
           [
-            6786,
-            6788
+            6788,
+            6790
           ],
           [
-            6787,
-            6788
+            6789,
+            6790
           ]
         ],
         "NPowerIDNot": []
@@ -2807,8 +2807,8 @@
       "CastTimeReal": 1.17,
       "ToggleCost": 9.75,
       "IsEpic": true,
-      "PowerIndex": 6790,
-      "PowerSetID": 3288,
+      "PowerIndex": 6792,
+      "PowerSetID": 3291,
       "PowerSetIndex": 4,
       "StaticIndex": 9614,
       "NGroupMembership": [],
@@ -2851,28 +2851,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6786,
-            6787
-          ],
-          [
-            6786,
-            6788
-          ],
-          [
-            6786,
-            6789
-          ],
-          [
-            6787,
-            6788
-          ],
-          [
-            6787,
+            6788,
             6789
           ],
           [
             6788,
-            6789
+            6790
+          ],
+          [
+            6788,
+            6791
+          ],
+          [
+            6789,
+            6790
+          ],
+          [
+            6789,
+            6791
+          ],
+          [
+            6790,
+            6791
           ]
         ],
         "NPowerIDNot": []

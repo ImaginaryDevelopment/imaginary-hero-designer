@@ -4,12 +4,12 @@
   "FullName": "Pets.Quicksand",
   "ImageName": "",
   "Power": [
-    6537
+    6539
   ],
   "SetType": 8,
   "DisplayName": "Quicksand",
   "nArchetype": -1,
-  "nID": 3174,
+  "nID": 3176,
   "SubName": "Earth Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6537,
-      "PowerSetID": 3174,
+      "PowerIndex": 6539,
+      "PowerSetID": 3176,
       "StaticIndex": 1687,
       "NGroupMembership": [],
       "FullName": "Pets.Quicksand.Quicksand",

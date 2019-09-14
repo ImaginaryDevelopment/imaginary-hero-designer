@@ -4,12 +4,12 @@
   "FullName": "Pets.Transference_Mastermind",
   "ImageName": "",
   "Power": [
-    6660
+    6662
   ],
   "SetType": 8,
   "DisplayName": "Transference",
   "nArchetype": -1,
-  "nID": 3245,
+  "nID": 3250,
   "SubName": "",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6660,
-      "PowerSetID": 3245,
+      "PowerIndex": 6662,
+      "PowerSetID": 3250,
       "StaticIndex": 10769,
       "NGroupMembership": [],
       "FullName": "Pets.Transference_Mastermind.Transference",

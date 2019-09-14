@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Buff_Recovery",
   "ImageName": "",
   "Power": [
-    6616
+    6618
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3226,
+  "nID": 3237,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6616,
-      "PowerSetID": 3226,
+      "PowerIndex": 6618,
+      "PowerSetID": 3237,
       "StaticIndex": 1729,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Buff_Recovery.Stimulated",

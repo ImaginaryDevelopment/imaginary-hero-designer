@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Natural Magic Range",
   "nArchetype": -1,
-  "nID": 2185,
+  "nID": 2186,
   "SubName": "Relic (Natural, Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2406,
-      "PowerSetID": 2185,
+      "PowerSetID": 2186,
       "StaticIndex": 8344,
       "NGroupMembership": [],
       "FullName": "Boosts.Natural_Magic_Cone.Natural_Magic_Cone",

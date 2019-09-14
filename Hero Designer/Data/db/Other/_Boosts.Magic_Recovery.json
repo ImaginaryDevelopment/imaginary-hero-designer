@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Magic Endurance",
   "nArchetype": -1,
-  "nID": 2045,
+  "nID": 2044,
   "SubName": "Dimensional Entities (Magic)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2295,
-      "PowerSetID": 2045,
+      "PowerSetID": 2044,
       "StaticIndex": 8233,
       "NGroupMembership": [],
       "FullName": "Boosts.Magic_Recovery.Magic_Recovery",

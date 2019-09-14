@@ -4,19 +4,19 @@
   "FullName": "Villain_Pets.Arachnobot_Disrupter",
   "ImageName": "",
   "Power": [
-    10072,
-    10073,
     10074,
     10075,
     10076,
     10077,
     10078,
-    10079
+    10079,
+    10080,
+    10081
   ],
   "SetType": 8,
   "DisplayName": "Arachnobot Disrupter",
   "nArchetype": -1,
-  "nID": 3453,
+  "nID": 3456,
   "SubName": "Mace Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -30,8 +30,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 6.5,
-      "PowerIndex": 10072,
-      "PowerSetID": 3453,
+      "PowerIndex": 10074,
+      "PowerSetID": 3456,
       "StaticIndex": 3014,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Arachnobot_Disrupter.Disruptor_Bolt",
@@ -235,8 +235,8 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 2.34,
-      "PowerIndex": 10073,
-      "PowerSetID": 3453,
+      "PowerIndex": 10075,
+      "PowerSetID": 3456,
       "PowerSetIndex": 1,
       "StaticIndex": 3015,
       "NGroupMembership": [],
@@ -334,8 +334,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 12.74,
-      "PowerIndex": 10074,
-      "PowerSetID": 3453,
+      "PowerIndex": 10076,
+      "PowerSetID": 3456,
       "PowerSetIndex": 2,
       "StaticIndex": 3016,
       "NGroupMembership": [],
@@ -578,8 +578,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 8.58,
-      "PowerIndex": 10075,
-      "PowerSetID": 3453,
+      "PowerIndex": 10077,
+      "PowerSetID": 3456,
       "PowerSetIndex": 3,
       "StaticIndex": 3017,
       "NGroupMembership": [],
@@ -860,8 +860,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10076,
-      "PowerSetID": 3453,
+      "PowerIndex": 10078,
+      "PowerSetID": 3456,
       "PowerSetIndex": 4,
       "StaticIndex": 3018,
       "NGroupMembership": [],
@@ -1048,8 +1048,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10077,
-      "PowerSetID": 3453,
+      "PowerIndex": 10079,
+      "PowerSetID": 3456,
       "PowerSetIndex": 5,
       "StaticIndex": 3019,
       "NGroupMembership": [],
@@ -1232,8 +1232,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10078,
-      "PowerSetID": 3453,
+      "PowerIndex": 10080,
+      "PowerSetID": 3456,
       "PowerSetIndex": 6,
       "StaticIndex": 3020,
       "NGroupMembership": [],
@@ -1316,8 +1316,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 13.0,
-      "PowerIndex": 10079,
-      "PowerSetID": 3453,
+      "PowerIndex": 10081,
+      "PowerSetID": 3456,
       "PowerSetIndex": 7,
       "StaticIndex": 3021,
       "NGroupMembership": [],

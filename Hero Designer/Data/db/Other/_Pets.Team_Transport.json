@@ -4,13 +4,13 @@
   "FullName": "Pets.Team_Transport",
   "ImageName": "",
   "Power": [
-    6612,
-    6613
+    6614,
+    6615
   ],
   "SetType": 8,
   "DisplayName": "Team Transport",
   "nArchetype": -1,
-  "nID": 3225,
+  "nID": 3228,
   "SubName": "Inherent",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "Powers": [
     {
       "CastTimeReal": 2.0,
-      "PowerIndex": 6612,
-      "PowerSetID": 3225,
+      "PowerIndex": 6614,
+      "PowerSetID": 3228,
       "StaticIndex": 6229,
       "NGroupMembership": [],
       "FullName": "Pets.Team_Transport.Team_Transport_Powers",
@@ -111,8 +111,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 6613,
-      "PowerSetID": 3225,
+      "PowerIndex": 6615,
+      "PowerSetID": 3228,
       "PowerSetIndex": 1,
       "StaticIndex": 6230,
       "NGroupMembership": [],

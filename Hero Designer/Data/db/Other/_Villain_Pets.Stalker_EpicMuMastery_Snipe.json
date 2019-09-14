@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Stalker_EpicMuMastery_Snipe",
   "ImageName": "",
   "Power": [
-    10320,
-    10321
+    10322,
+    10323
   ],
   "SetType": 8,
   "DisplayName": "Stalker_EpicMuMastery_Snipe",
   "nArchetype": -1,
-  "nID": 3541,
+  "nID": 3544,
   "SubName": "Mu Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10320,
-      "PowerSetID": 3541,
+      "PowerIndex": 10322,
+      "PowerSetID": 3544,
       "StaticIndex": 9831,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Stalker_EpicMuMastery_Snipe.Zapp_Quick",
@@ -448,8 +448,8 @@
     {
       "CastTimeReal": 7.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10321,
-      "PowerSetID": 3541,
+      "PowerIndex": 10323,
+      "PowerSetID": 3544,
       "PowerSetIndex": 1,
       "StaticIndex": 9832,
       "NGroupMembership": [],

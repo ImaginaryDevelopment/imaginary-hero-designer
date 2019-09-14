@@ -557,7 +557,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6353,
+          "nSummon": 6355,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -575,7 +575,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Dark_Snipe.Moonbeam_Quick",
-          "nOverride": 6353
+          "nOverride": 6355
         },
         {
           "MagnitudeExpression": "",
@@ -591,7 +591,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6352,
+          "nSummon": 6354,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -608,7 +608,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Dark_Snipe.Moonbeam_Normal",
-          "nOverride": 6352
+          "nOverride": 6354
         },
         {
           "MagnitudeExpression": "",

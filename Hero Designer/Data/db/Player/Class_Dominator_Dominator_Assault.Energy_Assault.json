@@ -3429,7 +3429,7 @@
           "nID": 7,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10182,
+          "nSummon": 10184,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -3447,7 +3447,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 8,
           "Override": "Villain_Pets.Dominator_EnergyAssault_Snipe.Sniper_Blast_Quick",
-          "nOverride": 10182
+          "nOverride": 10184
         },
         {
           "MagnitudeExpression": "",
@@ -3462,7 +3462,7 @@
           "nID": 8,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10183,
+          "nSummon": 10185,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -3479,7 +3479,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 9,
           "Override": "Villain_Pets.Dominator_EnergyAssault_Snipe.Sniper_Blast_Normal",
-          "nOverride": 10183
+          "nOverride": 10185
         }
       ],
       "HasPowerOverrideEffect": true,

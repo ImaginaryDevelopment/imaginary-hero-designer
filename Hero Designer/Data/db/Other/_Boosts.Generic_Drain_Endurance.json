@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Generic endurance",
   "nArchetype": -1,
-  "nID": 1990,
+  "nID": 1991,
   "SubName": "Training (All Origins)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2228,
-      "PowerSetID": 1990,
+      "PowerSetID": 1991,
       "StaticIndex": 8166,
       "NGroupMembership": [],
       "FullName": "Boosts.Generic_Drain_Endurance.Generic_Drain_Endurance",

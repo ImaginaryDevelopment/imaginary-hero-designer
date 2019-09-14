@@ -4,15 +4,15 @@
   "FullName": "Pets.Transponder",
   "ImageName": "",
   "Power": [
-    6664,
-    6665,
     6666,
-    6667
+    6667,
+    6668,
+    6669
   ],
   "SetType": 8,
   "DisplayName": "Transponder",
   "nArchetype": -1,
-  "nID": 3251,
+  "nID": 3254,
   "SubName": "Rikti",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -24,8 +24,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6664,
-      "PowerSetID": 3251,
+      "PowerIndex": 6666,
+      "PowerSetID": 3254,
       "StaticIndex": 1755,
       "NGroupMembership": [],
       "FullName": "Pets.Transponder.Transport",
@@ -207,8 +207,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6665,
-      "PowerSetID": 3251,
+      "PowerIndex": 6667,
+      "PowerSetID": 3254,
       "PowerSetIndex": 1,
       "StaticIndex": 1756,
       "NGroupMembership": [],
@@ -293,8 +293,8 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6666,
-      "PowerSetID": 3251,
+      "PowerIndex": 6668,
+      "PowerSetID": 3254,
       "PowerSetIndex": 2,
       "StaticIndex": 1757,
       "NGroupMembership": [],
@@ -378,8 +378,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6667,
-      "PowerSetID": 3251,
+      "PowerIndex": 6669,
+      "PowerSetID": 3254,
       "PowerSetIndex": 3,
       "StaticIndex": 1758,
       "NGroupMembership": [],

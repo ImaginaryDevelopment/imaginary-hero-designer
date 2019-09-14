@@ -4,16 +4,16 @@
   "FullName": "Pets.Resistance_Rifle",
   "ImageName": "",
   "Power": [
-    6562,
-    6563,
     6564,
     6565,
-    6566
+    6566,
+    6567,
+    6568
   ],
   "SetType": 8,
   "DisplayName": "Resistance_Rifle",
   "nArchetype": -1,
-  "nID": 3195,
+  "nID": 3197,
   "SubName": "Resistance",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -25,8 +25,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6562,
-      "PowerSetID": 3195,
+      "PowerIndex": 6564,
+      "PowerSetID": 3197,
       "StaticIndex": 4433,
       "NGroupMembership": [],
       "FullName": "Pets.Resistance_Rifle.Resistances",
@@ -178,8 +178,8 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 6.5,
-      "PowerIndex": 6563,
-      "PowerSetID": 3195,
+      "PowerIndex": 6565,
+      "PowerSetID": 3197,
       "PowerSetIndex": 1,
       "StaticIndex": 4434,
       "NGroupMembership": [],
@@ -345,8 +345,8 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 6.5,
-      "PowerIndex": 6564,
-      "PowerSetID": 3195,
+      "PowerIndex": 6566,
+      "PowerSetID": 3197,
       "PowerSetIndex": 2,
       "StaticIndex": 4435,
       "NGroupMembership": [],
@@ -472,8 +472,8 @@
     {
       "CastTimeReal": 2.2,
       "ToggleCost": 6.5,
-      "PowerIndex": 6565,
-      "PowerSetID": 3195,
+      "PowerIndex": 6567,
+      "PowerSetID": 3197,
       "PowerSetIndex": 3,
       "StaticIndex": 4436,
       "NGroupMembership": [],
@@ -746,8 +746,8 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 11.96,
-      "PowerIndex": 6566,
-      "PowerSetID": 3195,
+      "PowerIndex": 6568,
+      "PowerSetID": 3197,
       "PowerSetIndex": 4,
       "StaticIndex": 4437,
       "NGroupMembership": [],

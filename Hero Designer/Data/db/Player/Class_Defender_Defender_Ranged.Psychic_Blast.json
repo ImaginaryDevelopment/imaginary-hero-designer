@@ -583,7 +583,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6361,
+          "nSummon": 6363,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -601,7 +601,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Psychic_Snipe.Psionic_Lance_Quick",
-          "nOverride": 6361
+          "nOverride": 6363
         },
         {
           "MagnitudeExpression": "",
@@ -617,7 +617,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6360,
+          "nSummon": 6362,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -634,7 +634,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Psychic_Snipe.Psionic_Lance_Normal",
-          "nOverride": 6360
+          "nOverride": 6362
         },
         {
           "MagnitudeExpression": "",
