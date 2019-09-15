@@ -58,6 +58,7 @@ namespace Hero_Designer
         frmStats fGraphStats;
         bool FileModified { get; set; }
         frmIncarnate fIncarnate;
+        frmMMPowers fMMPets;
         bool FlipActive;
         PowerEntry FlipGP;
         readonly int FlipInterval;
@@ -170,6 +171,7 @@ namespace Hero_Designer
             tsKoFi.Enabled = true;
             tsPatreon.Visible = true;
             tsPatreon.Enabled = true;
+            
 
             tmrGfx.Tick += tmrGfx_Tick;
             //adding events
@@ -1381,6 +1383,26 @@ namespace Hero_Designer
             return true;
         }
 
+        bool EditMMPowers(int hIDPower)
+        {
+            if (hIDPower <= -1 || MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length <= 0)
+                return false;
+
+            List<IPower> iPowers = new List<IPower>();
+            int num1 = MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length - 1;
+            for (int index = 0; index <= num1; ++index)
+                iPowers.Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers[index].nIDPower]);
+            frmMMPowers frmMMPowers = new frmMMPowers(this, iPowers)
+            {
+                Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower]
+                    .DisplayName
+            };
+            frmMMPowers.ShowDialog(this);
+            EnhancementModified();
+            LastClickPlacedSlot = false;
+            return true;
+        }
+
         void EndFlip()
         {
             FlipActive = false;
@@ -2487,6 +2509,16 @@ namespace Hero_Designer
                 fTemp.Dispose();
             if (fIncarnate != null && !fIncarnate.IsDisposed)
                 fIncarnate.Dispose();
+            if (MidsContext.Character.Archetype.DisplayName != "Mastermind")
+            {
+                petsButton.Visible = false;
+                petsButton.Enabled = false;
+            }
+            else
+            {
+                petsButton.Visible = true;
+                petsButton.Enabled = true;
+            }
             NewDraw(skipDraw);
             UpdateControls();
             SetTitleBar(MidsContext.Character.IsHero());
@@ -4429,6 +4461,11 @@ namespace Hero_Designer
             tempPowersButton_ButtonClicked();
         }
 
+        void petsButton_ButtonClicked()
+        {
+            return;
+        }
+
         void tempPowersButton_ButtonClicked()
         {
             //tempPowersButton.Checked = false;
@@ -5099,7 +5136,7 @@ namespace Hero_Designer
 
             var ibs = new[]
             {
-                ibSets, ibPvX, incarnateButton, tempPowersButton, accoladeButton, heroVillain, ibVetPools, ibTotals, ibMode, ibSlotLevels,
+                ibSets, ibPvX, incarnateButton, tempPowersButton, petsButton, accoladeButton, heroVillain, ibVetPools, ibTotals, ibMode, ibSlotLevels,
                 ibPopup, ibRecipe, ibAccolade
             };
             foreach (var ib in ibs)

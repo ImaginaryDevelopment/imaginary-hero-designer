@@ -186,6 +186,7 @@ namespace Hero_Designer
             this.heroVillain = new midsControls.ImageButton();
             this.tempPowersButton = new midsControls.ImageButton();
             this.accoladeButton = new midsControls.ImageButton();
+            this.petsButton = new midsControls.ImageButton();
             this.incarnateButton = new midsControls.ImageButton();
             this.i9Picker = new midsControls.I9Picker();
             this.I9Popup = new midsControls.ctlPopUp();
@@ -1744,6 +1745,21 @@ namespace Hero_Designer
             this.accoladeButton.TextOn = "Accolades";
             this.accoladeButton.Toggle = true;
             this.accoladeButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
+            //
+            // petsButton
+            //
+            this.petsButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            this.petsButton.Checked = false;
+            this.petsButton.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
+            this.petsButton.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
+            this.petsButton.Location = new System.Drawing.Point(630, 50);
+            this.petsButton.Name = "petsButton";
+            this.petsButton.Size = new System.Drawing.Size(105, 22);
+            this.petsButton.TabIndex = 117;
+            this.petsButton.TextOff = "Pet Powers";
+            this.petsButton.TextOn = "Pet Powers";
+            this.petsButton.Toggle = true;
+            this.petsButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(petsButton_ButtonClicked);
             // 
             // incarnateButton
             // 
@@ -1930,6 +1946,7 @@ namespace Hero_Designer
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1056, 752);
             this.Controls.Add(this.heroVillain);
+            this.Controls.Add(this.petsButton);
             this.Controls.Add(this.tempPowersButton);
             this.Controls.Add(this.accoladeButton);
             this.Controls.Add(this.incarnateButton);
@@ -2000,11 +2017,6 @@ namespace Hero_Designer
             this.PerformLayout();
         }
 
-        private void IncarnateButton_ButtonClicked()
-        {
-            throw new System.NotImplementedException();
-        }
-
         #endregion
 
         ToolStripMenuItem tsAdvDBEdit;
@@ -2073,6 +2085,7 @@ namespace Hero_Designer
         ToolStripMenuItem tsViewSlotLevels;
         ToolStripMenuItem tsViewTotals;
         public ImageButton accoladeButton;
+        public ImageButton petsButton;
         ToolStripMenuItem AccoladesWindowToolStripMenuItem;
         ToolStripMenuItem AdvancedToolStripMenuItem1;
         ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem;

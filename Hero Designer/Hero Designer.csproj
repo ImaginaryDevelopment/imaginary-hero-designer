@@ -74,6 +74,12 @@
     <Compile Include="clsHook.cs" />
     <Compile Include="FileAssocation.cs" />
     <Compile Include="Forms\MainUILogic.cs" />
+    <Compile Include="Forms\WindowMenuItems\frmMMPowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmMMPowers.Designer.cs">
+      <DependentUpon>frmMMPowers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WindowMenuItems\frmTemp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     <None Include="Resources\optTO.Image.png" />
     <None Include="Resources\optSO.Image.png" />
     <None Include="Resources\optDO.Image.png" />
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmMMPowers.resx">
+      <DependentUpon>frmMMPowers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WindowMenuItems\frmTemp.resx">
       <DependentUpon>frmTemp.cs</DependentUpon>
     </EmbeddedResource>
