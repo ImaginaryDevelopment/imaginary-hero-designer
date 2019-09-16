@@ -286,6 +286,34 @@ public static class Enums
         return str1;
     }
 
+    public enum eMMpets
+    {
+        Summon_Wolves,
+        Summon_Lions,
+        Summon_Dire_Wolf,
+        Summon_Demonlings,
+        Summon_Demons,
+        Hell_on_Earth,
+        Summon_Demon_Prince,
+        Soldiers,
+        Spec_Ops,
+        Commando,
+        Zombie_Horde,
+        Grave_Knight,
+        Soul_Extraction,
+        Lich,
+        Call_Genin,
+        Call_Jounin,
+        Oni,
+        Battle_Drones,
+        Protector_Bots,
+        Assault_Bot,
+        Call_Thugs,
+        Call_Enforcer,
+        Gang_War,
+        Call_Brusier
+    }
+
     public enum eEnhance
     {
         None,

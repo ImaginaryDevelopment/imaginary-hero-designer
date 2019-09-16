@@ -21,13 +21,17 @@ namespace Hero_Designer
         ListLabelV2 llLeft;
         ListLabelV2 llRight;
 
-        ComboBox cbSelPet;
+        ComboBox cbSelPetPower;
+        ComboBox cbSelPets;
 
         bool _locked;
 
         frmMain _myParent;
 
         readonly List<IPower> _myPowers;
+
+        public List<string> PetPowers { get; set; }
+
         Panel Panel1;
 
         ctlPopUp PopInfo;
@@ -36,7 +40,9 @@ namespace Hero_Designer
 
         internal frmIncarnate.CustomPanel Panel2;
 
-        public frmMMPowers(frmMain iParent, List<IPower> iPowers)
+        //public frmMMPowers(frmMain iParent, List<IPower> iPowers)
+
+        public frmMMPowers(frmMain iParent, List<string> PetPowersList)
         {
             Load += frmMMPowers_Load;
             _locked = false;
@@ -45,7 +51,8 @@ namespace Hero_Designer
             Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             Name = nameof(frmMMPowers);
             _myParent = iParent;
-            _myPowers = iPowers;
+            //_myPowers = iPowers;
+            PetPowers = PetPowersList;
         }
 
         public void UpdateFonts(Font font)
@@ -128,6 +135,22 @@ namespace Hero_Designer
             PopInfo.SetPopup(iPopup);
             ChangedScrollFrameContents();
             FillLists();
+        }
+
+        public void UpdatePetPowersCombo(List<string> pPowersList)
+        {
+            foreach (var power in pPowersList)
+            {
+                cbSelPetPower.Items.Add(power);
+            }
+        }
+
+        public void UpdatePetsListCombo()
+        {
+            List<string> Pets = new List<string>();
+            var SelectedPet = cbSelPetPower.SelectedItem.ToString();
+            var SelStaticIndex = DatabaseAPI.NidFromUidPower(SelectedPet);
+            
         }
 
         void ibClose_ButtonClicked()

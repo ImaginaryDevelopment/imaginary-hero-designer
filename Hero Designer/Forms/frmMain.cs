@@ -9,6 +9,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -105,6 +107,8 @@ namespace Hero_Designer
         internal OpenFileDialog DlgOpen;
 
         internal SaveFileDialog DlgSave;
+
+        public List<string> MMPets { get; set; } = new List<string>();
 
         ComboBoxT<string> GetCbOrigin() => new ComboBoxT<string>(cbOrigin);
 
@@ -1183,6 +1187,16 @@ namespace Hero_Designer
 
             FileModified = false;
             drawing.Highlight = -1;
+            if (MidsContext.Character.Archetype.DisplayName != "Mastermind")
+            {
+                petsButton.Visible = false;
+                petsButton.Enabled = false;
+            }
+            else
+            {
+                petsButton.Visible = true;
+                petsButton.Enabled = true;
+            }
             NewDraw();
             UpdateControls();
             SetFormHeight();
@@ -1383,24 +1397,38 @@ namespace Hero_Designer
             return true;
         }
 
-        bool EditMMPowers(int hIDPower)
+        bool EditMMPowers()
         {
-            if (hIDPower <= -1 || MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length <= 0)
-                return false;
-
-            List<IPower> iPowers = new List<IPower>();
-            int num1 = MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length - 1;
-            for (int index = 0; index <= num1; ++index)
-                iPowers.Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers[index].nIDPower]);
-            frmMMPowers frmMMPowers = new frmMMPowers(this, iPowers)
+            var ent = DatabaseAPI.NidFromUidEntity("Pets_Cold_Demonlings");
+            var pset = DatabaseAPI.Database.Entities[ent].GetNPowerset();
+            foreach (var entity in pset)
             {
-                Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower]
-                    .DisplayName
-            };
-            frmMMPowers.ShowDialog(this);
-            EnhancementModified();
-            LastClickPlacedSlot = false;
-            return true;
+                MessageBox.Show(DatabaseAPI.Database.Powersets[entity].DisplayName);
+                var powers = DatabaseAPI.Database.Powersets[entity].Powers;
+                foreach (var power in powers)
+                {
+                    MessageBox.Show(power.DisplayName);
+                }
+            }
+            /*var selind = DatabaseAPI.NidFromUidPowerset("Mastermind_Pets.Cold_Demonling");
+            var sub = DatabaseAPI.Database.Powersets[selind].Powers;
+            foreach (var power in sub)
+            {
+                MessageBox.Show(power.DisplayName);
+            }*/
+            
+            Enums.eMMpets KnownPets;
+            var CurrentPowers = MidsContext.Character.CurrentBuild.Powers;
+            foreach (var item in CurrentPowers)
+            {
+                bool PetExists = Enum.TryParse(item.Name, out KnownPets);
+                if (PetExists)
+                {
+                    MessageBox.Show(item.Name);
+                }
+            }
+
+            return false;
         }
 
         void EndFlip()
@@ -2752,7 +2780,9 @@ namespace Hero_Designer
                 if (hIDPower < 0 | hIDPower >= MidsContext.Character.CurrentBuild.Powers.Count)
                     return;
                 bool flag = MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower < 0;
-                if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditAccoladesOrTemps(hIDPower))
+                /*if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditAccoladesOrTemps(hIDPower))
+                    return;*/
+                if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditMMPowers())
                     return;
                 if (drawing.InterfaceMode == Enums.eInterfaceMode.PowerToggle & e.Button == MouseButtons.Left)
                 {
@@ -4463,7 +4493,16 @@ namespace Hero_Designer
 
         void petsButton_ButtonClicked()
         {
-            return;
+            var CurrentPowers = MidsContext.Character.CurrentBuild.Powers;
+            foreach (var item in CurrentPowers)
+            {
+                bool PetExists = Enum.GetNames(typeof(Enums.eMMpets)).Contains(item.Name.Replace(" ", "_"));
+                if (PetExists)
+                {
+                    MMPets.Add(item.Name);
+                }
+            }
+            fMMPets = new frmMMPowers(this, MMPets);
         }
 
         void tempPowersButton_ButtonClicked()

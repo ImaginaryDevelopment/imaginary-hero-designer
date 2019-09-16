@@ -32,7 +32,8 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            this.cbSelPet = new System.Windows.Forms.ComboBox();
+            this.cbSelPetPower = new System.Windows.Forms.ComboBox();
+            this.cbSelPets = new System.Windows.Forms.ComboBox();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.VScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.PopInfo = new midsControls.ctlPopUp();
@@ -46,18 +47,19 @@ namespace Hero_Designer
             this.SuspendLayout();
 
 
-            this.cbSelPet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSelPet.Items.AddRange(new object[] {
-                "Pet 1",
-                "Pet 2",
-                "Pet 3",
-                "Pet 4",
-                "Pet 5",
-                "Pet 6"});
-            this.cbSelPet.Location = new System.Drawing.Point(12, 10);
-            this.cbSelPet.Name = "cbSelPet";
-            this.cbSelPet.Size = new System.Drawing.Size(167, 22);
-            this.cbSelPet.TabIndex = 33;
+            this.cbSelPetPower.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelPetPower.Items.AddRange(new object[] {});
+            this.cbSelPetPower.Location = new System.Drawing.Point(12, 10);
+            this.cbSelPetPower.Name = "cbSelPetPower";
+            this.cbSelPetPower.Size = new System.Drawing.Size(167, 22);
+            this.cbSelPetPower.TabIndex = 33;
+
+            this.cbSelPets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelPets.Items.AddRange(new object[] {});
+            this.cbSelPets.Location = new System.Drawing.Point(270, 10);
+            this.cbSelPets.Name = "cbSelPets";
+            this.cbSelPets.Size = new System.Drawing.Size(167, 22);
+            this.cbSelPets.TabIndex = 34;
 
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel1.Controls.Add((System.Windows.Forms.Control)this.VScrollBar1);
@@ -183,7 +185,8 @@ namespace Hero_Designer
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
 
             this.ClientSize = new System.Drawing.Size(450, 450);
-            this.Controls.Add((System.Windows.Forms.Control)this.cbSelPet);
+            this.Controls.Add((System.Windows.Forms.Control)this.cbSelPetPower);
+            this.Controls.Add((System.Windows.Forms.Control)this.cbSelPets);
             this.Controls.Add((System.Windows.Forms.Control)this.Panel2);
             this.Controls.Add((System.Windows.Forms.Control)this.lblLock);
             this.Controls.Add((System.Windows.Forms.Control)this.Panel1);

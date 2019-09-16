@@ -508,7 +508,6 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 19.5,
-      "IsModified": true,
       "PowerIndex": 6162,
       "PowerSetID": 3000,
       "PowerSetIndex": 1,
@@ -640,6 +639,7 @@
           "Reward": "",
           "EffectId": "Levelminus2",
           "Special": "",
+          "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Cold_Demonlings",
           "nSummon": 434,
@@ -673,6 +673,7 @@
           "Reward": "",
           "EffectId": "Levelminus2",
           "Special": "",
+          "nID": 2,
           "EffectType": 38,
           "Summon": "Pets_Hellfire_Demonlings",
           "nSummon": 436,
@@ -2383,14 +2384,23 @@
       "ClickBuff": true,
       "Level": 12,
       "VariableName": "",
-      "NIDSubPower": [],
-      "UIDSubPower": [],
+      "NIDSubPower": [
+        5837,
+        5838,
+        5836,
+        5839,
+        5840
+      ],
+      "UIDSubPower": [
+        "Mastermind_Pets.Ember_Demon.Ember_Shield_Owner",
+        "Mastermind_Pets.Ember_Demon.Fire_Blast",
+        "Mastermind_Pets.Ember_Demon.Resistance",
+        "Mastermind_Pets.Ember_Demon.Shield_of_Hellfire",
+        "Mastermind_Pets.Ember_Demon.Super_Leap"
+      ],
       "IgnoreEnh": [],
       "Ignore_Buff": [],
       "MutexAuto": true,
-      "AbsorbSummonEffects": true,
-      "AbsorbSummonAttributes": true,
-      "ShowSummonAnyway": true,
       "ForcedClass": "",
       "Effects": [
         {
@@ -3178,7 +3188,6 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 19.5,
-      "IsModified": true,
       "PowerIndex": 6168,
       "PowerSetID": 3000,
       "PowerSetIndex": 7,
