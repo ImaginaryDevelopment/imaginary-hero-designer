@@ -37,7 +37,7 @@ namespace Hero_Designer
             this.dvFloat.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             //this.dvFloat.DrawVillain = false;
             this.dvFloat.Floating = true;
-            this.dvFloat.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.dvFloat.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.dvFloat.Location = new System.Drawing.Point(0, 0);
             this.dvFloat.Name = "dvFloat";
 
@@ -51,7 +51,7 @@ namespace Hero_Designer
             this.dvFloat.TabChanged += this.dvFloat_TabChanged;
             this.dvFloat.SlotUpdate += new DataView.SlotUpdateEventHandler(this.dvFloat_SlotUpdate);
             this.dvFloat.SlotFlip += new DataView.SlotFlipEventHandler(this.dvFloat_SlotFlip);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
 
             this.ClientSize = new System.Drawing.Size(298, 348);

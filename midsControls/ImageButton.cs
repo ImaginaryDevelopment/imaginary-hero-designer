@@ -310,6 +310,7 @@ namespace midsControls
             Font font = Font;
             float outlineSpace = 1f;
             Graphics graphics6 = bxOut.Graphics;
+            graphics6.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             DrawOutlineText(iStr, bounds3, whiteSmoke, outline, font, outlineSpace, ref graphics6);
         }
 

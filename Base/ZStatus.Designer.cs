@@ -47,7 +47,7 @@ public partial class ZStatus : Form
         this.lblStatus1.Size = new System.Drawing.Size(472, 16);
         this.lblStatus1.TabIndex = 4;
         this.lblStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        this.lblTitle.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+        this.lblTitle.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
         this.lblTitle.Location = new System.Drawing.Point(8, 6);
         this.lblTitle.Name = "lblTitle";
         this.lblTitle.Size = new System.Drawing.Size(472, 20);

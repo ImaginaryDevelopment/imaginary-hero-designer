@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Base.Display;
@@ -115,8 +116,8 @@ namespace midsControls
 		private void InitializeComponent()
 		{
 			SuspendLayout();
-			AutoScaleMode = AutoScaleMode.None;
-			Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
+			AutoScaleMode = AutoScaleMode.Dpi;
+			Font = new Font("Arial", 11.5f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
 			Name = "ctlPopUp";
 			Size size = new Size(167, 104);
 			Size = size;
@@ -162,7 +163,10 @@ namespace midsControls
 			}
 
 			myBX = new ExtendedBitmap(Size.Width, pBXHeight);
-			myBX.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+			myBX.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+			myBX.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+			myBX.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+			myBX.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 		}
 
 		// Token: 0x06000127 RID: 295 RVA: 0x0000A834 File Offset: 0x00008A34
@@ -218,8 +222,9 @@ namespace midsControls
 					{
 						unchecked
 						{
-							Font font = new Font(Font.FontFamily, Font.Size * pData.Sections[i].Content[j].tSize,
-								pData.Sections[i].Content[j].tFormat, Font.Unit);
+							/*Font font = new Font(Font.FontFamily, Font.Size * pData.Sections[i].Content[j].tSize,
+								pData.Sections[i].Content[j].tFormat, Font.Unit);*/
+							Font font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel, 1);
 							RectangleF layoutRectangle = new RectangleF(pInternalPadding + pData.Sections[i].Content[j].tIndent * Font.Size,
 								num + pInternalPadding,
 								Width - (checked(pInternalPadding * 2) + pData.Sections[i].Content[j].tIndent * Font.Size), myBX.Size.Height);

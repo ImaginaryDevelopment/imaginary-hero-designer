@@ -1789,11 +1789,10 @@ namespace Hero_Designer
 
                 if (DatabaseAPI.Database.Power[CurrentBuild.Powers[hIDX].NIDPower].UIDSubPower.Length > 0)
                 {
-                    //MMPets.Add(CurrentBuild.Powers[hIDX].Power.DisplayName);
-                    /*int index2 = popupData.Add();
+                    int index2 = popupData.Add();
                     string iText = "This virtual power contains additional powers which can be individually selected.\r\n" +
                                    "To change which powers are selected, either Control+Shift+Click or Double-Click on this power.\r\n\r\nRemember that the selected powers will only be active if this power's toggle button is switched on.";
-                    popupData.Sections[index2].Add(iText, PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);*/
+                    popupData.Sections[index2].Add(iText, PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
                 }
 
                 string empty = string.Empty;

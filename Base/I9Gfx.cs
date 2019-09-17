@@ -1,7 +1,9 @@
 
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
 using Base.Data_Classes;
@@ -50,6 +52,10 @@ public static class I9Gfx
     public static void LoadPowersetImages()
     {
         Powersets = new ExtendedBitmap(DatabaseAPI.Database.Powersets.Length * 16, 16);
+        Powersets.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Powersets.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Powersets.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Powersets.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
         {
             int x = index * 16;
@@ -69,6 +75,10 @@ public static class I9Gfx
     public static void LoadOriginImages()
     {
         Origins = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 16, 16);
+        Origins.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Origins.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Origins.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Origins.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index <= DatabaseAPI.Database.Origins.Count - 1; ++index)
         {
             int x = index * 16;
@@ -85,6 +95,10 @@ public static class I9Gfx
     public static void LoadArchetypeImages()
     {
         Archetypes = new ExtendedBitmap(DatabaseAPI.Database.Classes.Length * 16, 16);
+        Archetypes.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Archetypes.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Archetypes.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Archetypes.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
         {
             int x = index * 16;
@@ -165,6 +179,10 @@ public static class I9Gfx
     public static void LoadClasses()
     {
         Classes = new ExtendedBitmap(DatabaseAPI.Database.EnhancementClasses.Length * 30, 30);
+        Classes.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Classes.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Classes.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Classes.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         using (ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(ImagePath() + "Overlay\\Class.png"))
         {
             for (int index = 0; index <= DatabaseAPI.Database.EnhancementClasses.Length - 1; ++index)
@@ -213,6 +231,10 @@ public static class I9Gfx
     public static void LoadSets()
     {
         Sets = new ExtendedBitmap(DatabaseAPI.Database.EnhancementSets.Count * 30, 30);
+        Sets.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Sets.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Sets.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Sets.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets.Count - 1; ++index)
         {
             if (!string.IsNullOrEmpty(DatabaseAPI.Database.EnhancementSets[index].Image))
@@ -256,6 +278,10 @@ public static class I9Gfx
         string[] names = Enum.GetNames(typeof(Enums.eSetType));
         int length = values.Length;
         SetTypes = new ExtendedBitmap(length * 30, 30);
+        SetTypes.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        SetTypes.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        SetTypes.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        SetTypes.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index <= length - 1; ++index)
         {
             int x = index * 30;
@@ -279,6 +305,10 @@ public static class I9Gfx
         string[] names1 = Enum.GetNames(typeof(Enums.eType));
         names1[3] = "HamiO";
         EnhTypes = new ExtendedBitmap(values1.Length * 30, 30);
+        EnhTypes.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        EnhTypes.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        EnhTypes.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        EnhTypes.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index < values1.Length; ++index)
         {
             int x = index * 30;
@@ -297,6 +327,10 @@ public static class I9Gfx
         Array values2 = Enum.GetValues(typeof(Enums.eEnhGrade));
         string[] names2 = Enum.GetNames(typeof(Enums.eEnhGrade));
         EnhGrades = new ExtendedBitmap(values2.Length * 30, 30);
+        EnhGrades.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        EnhGrades.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        EnhGrades.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        EnhGrades.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index < values2.Length; ++index)
         {
             int x = index * 30;
@@ -315,6 +349,10 @@ public static class I9Gfx
         Array values3 = Enum.GetValues(typeof(Enums.eSubtype));
         string[] names3 = Enum.GetNames(typeof(Enums.eSubtype));
         EnhSpecials = new ExtendedBitmap(values3.Length * 30, 30);
+        EnhSpecials.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        EnhSpecials.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        EnhSpecials.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        EnhSpecials.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index = 0; index < values3.Length; ++index)
         {
             int x = index * 30;
@@ -335,6 +373,10 @@ public static class I9Gfx
     public static void LoadBorders()
     {
         Borders = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 30, 180);
+        Borders.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+        Borders.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        Borders.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+        Borders.Graphics.SmoothingMode = SmoothingMode.HighQuality;
         for (int index1 = 0; index1 <= DatabaseAPI.Database.Origins.Count - 1; ++index1)
         {
             int x = index1 * 30;

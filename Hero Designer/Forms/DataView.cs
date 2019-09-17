@@ -86,7 +86,7 @@ namespace Hero_Designer
 
         public Rectangle SnapLocation;
         public int TabPage;
-        bool VillainColour;
+        //bool VillainColour;
 
         public event FloatChangeEventHandler FloatChange;
 
@@ -1791,7 +1791,7 @@ namespace Hero_Designer
                              pBase.AffectsSelf(Enums.eEffectType.Regeneration) | pBase.AffectsSelf(Enums.eEffectType.Recovery) |
                              pBase.AffectsSelf(Enums.eEffectType.Endurance) | pBase.AffectsSelf(Enums.eEffectType.Absorb);
                 if (flag1 & !flag2)
-                    iLabel.Text = "Health / Endurance  (Target)";
+                    iLabel.Text = "Health / Endurance (Target)";
                 else if (!flag1 & flag2)
                     iLabel.Text = "Health / Endurance (Self)";
                 else
@@ -2771,7 +2771,7 @@ namespace Hero_Designer
             PowerScaler.ColorMarkerInner = Color.Red;
             PowerScaler.ColorMarkerOuter = Color.Black;
             PowerScaler.Dual = false;
-            PowerScaler.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PowerScaler.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             PowerScaler.ForcedMax = 0.0f;
             PowerScaler.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             PowerScaler.Highlight = true;
@@ -2835,7 +2835,7 @@ namespace Hero_Designer
             Info_Damage.PaddingH = 1;
             Info_Damage.PaddingV = 1;
 
-            Info_Damage.Size = new Size(295, 66);
+            Info_Damage.Size = new Size(295, 56);
             Info_Damage.Style = Enums.eDDStyle.TextUnderGraph;
             Info_Damage.TabIndex = 20;
             Info_Damage.TextAlign = Enums.eDDAlign.Left;
@@ -2843,7 +2843,7 @@ namespace Hero_Designer
             info_DataList.BackColor = Color.FromArgb(0, 0, 32);
             info_DataList.Columns = 2;
             info_DataList.DoHighlight = true;
-            info_DataList.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 178);
+            info_DataList.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             info_DataList.ForceBold = false;
             info_DataList.HighlightColor = Color.FromArgb(128, 128, byte.MaxValue);
             info_DataList.HighlightTextColor = Color.Black;
@@ -2896,6 +2896,7 @@ namespace Hero_Designer
             pnlFX.Name = "pnlFX";
 
             pnlFX.Size = new Size(300, 320);
+            pnlFX.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel);
             pnlFX.TabIndex = 63;
             fx_Title.BackColor = Color.FromArgb(64, 64, 64);
             fx_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -2921,7 +2922,8 @@ namespace Hero_Designer
             fx_List3.BackColor = Color.FromArgb(64, 64, 64);
             fx_List3.Columns = 2;
             fx_List3.DoHighlight = true;
-            fx_List3.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 178);
+            //fx_List3.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 178);
+            fx_List3.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             fx_List3.ForceBold = false;
             fx_List3.HighlightColor = Color.FromArgb(128, 128, byte.MaxValue);
             fx_List3.HighlightTextColor = Color.Black;
@@ -2960,7 +2962,7 @@ namespace Hero_Designer
             fx_List2.BackColor = Color.FromArgb(64, 64, 64);
             fx_List2.Columns = 2;
             fx_List2.DoHighlight = true;
-            fx_List2.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 178);
+            fx_List2.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             fx_List2.ForceBold = false;
             fx_List2.HighlightColor = Color.FromArgb(128, 128, byte.MaxValue);
             fx_List2.HighlightTextColor = Color.Black;
@@ -2979,7 +2981,7 @@ namespace Hero_Designer
             fx_List1.BackColor = Color.FromArgb(64, 64, 64);
             fx_List1.Columns = 2;
             fx_List1.DoHighlight = true;
-            fx_List1.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 178);
+            fx_List1.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             fx_List1.ForceBold = false;
             fx_List1.HighlightColor = Color.FromArgb(128, 128, byte.MaxValue);
             fx_List1.HighlightTextColor = Color.Black;
@@ -3034,7 +3036,7 @@ namespace Hero_Designer
             gRes2.ColorMarkerInner = Color.Black;
             gRes2.ColorMarkerOuter = Color.Yellow;
             gRes2.Dual = false;
-            gRes2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gRes2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             gRes2.ForcedMax = 0.0f;
             gRes2.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             gRes2.Highlight = true;
@@ -3067,7 +3069,7 @@ namespace Hero_Designer
             gRes1.ColorMarkerInner = Color.Black;
             gRes1.ColorMarkerOuter = Color.Yellow;
             gRes1.Dual = false;
-            gRes1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gRes1.Font = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             gRes1.ForcedMax = 0.0f;
             gRes1.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             gRes1.Highlight = true;
@@ -3100,7 +3102,7 @@ namespace Hero_Designer
             gDef2.ColorMarkerInner = Color.Black;
             gDef2.ColorMarkerOuter = Color.Yellow;
             gDef2.Dual = false;
-            gDef2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gDef2.Font = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             gDef2.ForcedMax = 0.0f;
             gDef2.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             gDef2.Highlight = true;
@@ -3133,7 +3135,7 @@ namespace Hero_Designer
             gDef1.ColorMarkerInner = Color.Black;
             gDef1.ColorMarkerOuter = Color.Yellow;
             gDef1.Dual = false;
-            gDef1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gDef1.Font = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             gDef1.ForcedMax = 0.0f;
             gDef1.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
             gDef1.Highlight = true;
@@ -3338,7 +3340,7 @@ namespace Hero_Designer
             Controls.Add(pnlTotal);
             Controls.Add(pnlEnh);
             Controls.Add(pnlFX);
-            Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
 
             Size = new Size(564, 540);
             pnlInfo.ResumeLayout(false);
@@ -3650,7 +3652,7 @@ namespace Hero_Designer
             lblDmg.Top = info_DataList.Bottom + 4;
             Info_Damage.Top = lblDmg.Bottom + 4;
             Info_Damage.PaddingV = 1;
-            Info_Damage.Height = 66;
+            Info_Damage.Height = 46;
             enhListing.Height = Info_Damage.Bottom - (enhListing.Top + (pnlEnhActive.Height + 4) * 2);
             pnlEnhActive.Top = enhListing.Bottom + 4;
             pnlEnhInactive.Top = pnlEnhActive.Bottom + 4;
@@ -3886,7 +3888,8 @@ namespace Hero_Designer
         public void SetFontData()
         {
             info_DataList.Font = new Font(info_DataList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            fx_List1.Font = new Font(fx_List1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
+            //fx_List1.Font = new Font(fx_List1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
+            fx_List1.Font = new Font("Arial", 10f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             fx_List2.Font = new Font(fx_List2.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
             fx_List3.Font = new Font(fx_List3.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
             total_Misc.Font = new Font(total_Misc.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
@@ -3898,7 +3901,8 @@ namespace Hero_Designer
             fx_List3.ForceBold = MidsContext.Config.RtFont.PairedBold;
             total_Misc.ForceBold = MidsContext.Config.RtFont.PairedBold;
             enhListing.ForceBold = MidsContext.Config.RtFont.PairedBold;
-            gDef1.Font = new Font(gDef1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold);
+            //gDef1.Font = new Font(gDef1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold);
+            gDef1.Font = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel);
             gDef2.Font = gDef1.Font;
             gRes1.Font = gDef1.Font;
             gRes2.Font = gDef1.Font;

@@ -524,7 +524,8 @@ namespace midsControls
             if (sizeF.Width > layoutRectangle.Width)
             {
                 bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-                Font font = new Font(Font.Name, Font.Size * (layoutRectangle.Width / sizeF.Width), Font.Style, GraphicsUnit.Point);
+                //Font font = new Font(Font.Name, Font.Size * (layoutRectangle.Width / sizeF.Width), Font.Style, GraphicsUnit.Point);
+                Font font = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel);
                 bxBuffer.Graphics.DrawString(pString, font, brush, layoutRectangle, stringFormat);
             }
             else

@@ -54,7 +54,8 @@ namespace midsControls
         {
             gTarget = iTarget.CreateGraphics();
             cTarget = iTarget;
-            DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
+            //DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
+            DefaultFont = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             BackColor = iTarget.BackColor;
         }
 
@@ -83,16 +84,21 @@ namespace midsControls
                 szBuffer = GetMaxDrawingArea();
                 Size size = new Size(szBuffer.Width, szBuffer.Height);
                 bxBuffer = new ExtendedBitmap(size);
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                bxBuffer.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                bxBuffer.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+                bxBuffer.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
                 szBuffer = GetRequiredDrawingArea();
                 bxNewSlot = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + GfxPath + "Addslot.png");
                 gTarget = iTarget.CreateGraphics();
                 cTarget = iTarget;
                 gTarget.CompositingMode = CompositingMode.SourceCopy;
-                gTarget.CompositingQuality = CompositingQuality.HighSpeed;
-                gTarget.InterpolationMode = InterpolationMode.NearestNeighbor;
-                gTarget.SmoothingMode = SmoothingMode.None;
-                DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
+                gTarget.CompositingQuality = CompositingQuality.HighQuality;
+                gTarget.InterpolationMode = InterpolationMode.HighQualityBilinear;
+                gTarget.SmoothingMode = SmoothingMode.HighQuality;
+                gTarget.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                //DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
+                DefaultFont = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
                 BackColor = iTarget.BackColor;
                 if (szBuffer.Height < cTarget.Height)
                 {
@@ -225,7 +231,8 @@ namespace midsControls
             };
             Pen pen2 = new Pen(Color.Black);
             Rectangle rectangle = default;
-            Font font = new Font(DefaultFont.FontFamily, FontScale(DefaultFont.SizeInPoints), DefaultFont.Style, GraphicsUnit.Point);
+            //Font font = new Font(DefaultFont.FontFamily, FontScale(DefaultFont.SizeInPoints), DefaultFont.Style, GraphicsUnit.Point);
+            Font font = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             int slotChk = MidsContext.Character.SlotCheck(iSlot);
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
@@ -509,6 +516,11 @@ namespace midsControls
                     Font bFont5 = font;
                     float outlineSpace5 = 1f;
                     Graphics graphics5 = bxBuffer.Graphics;
+                    graphics5.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics5.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics5.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                    graphics5.PageUnit = GraphicsUnit.Pixel;
+                    graphics5.InterpolationMode = InterpolationMode.HighQualityBilinear;
                     DrawOutlineText(iStr4, bounds5, whiteSmoke, outline5, bFont5, outlineSpace5, graphics5, false, true);
                 }
                 else

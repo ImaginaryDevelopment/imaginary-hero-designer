@@ -173,7 +173,7 @@ namespace midsControls
             MouseLeave += Listlabel_MouseLeave;
             BackColorChanged += ctlPairedList_BackColorChanged;
             ValueColorD = Color.Aqua;
-            LinePadding = 3;
+            LinePadding = 2;
             myForceBold = false;
             InitializeComponent();
         }
@@ -227,6 +227,7 @@ namespace midsControls
             MyItems = new ItemPair[0];
             myGFX = CreateGraphics();
             bxBuffer = new ExtendedBitmap(Width, Height);
+            bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             AddItem(new ItemPair("Item 1:", "Value", false));
             AddItem(new ItemPair("Item 2:", "Alternate", true));
             AddItem(new ItemPair("Item 3:", "1000", false));
@@ -254,7 +255,7 @@ namespace midsControls
             {
                 if (bxBuffer == null)
                     return;
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
                 Rectangle rect = new Rectangle(0, 0, Width, Height);
                 RectangleF rectangleF = new RectangleF(0f, 0f, 0f, 0f);
                 StringFormat stringFormat = new StringFormat();
@@ -266,8 +267,10 @@ namespace midsControls
                     newStyle = FontStyle.Bold;
                 }
 
-                Font font = new Font(Font, newStyle);
-                Font font2 = new Font(Font, newStyle2);
+                //Font font = new Font(Font, newStyle);
+                Font font = new Font("Arial", 10.5f, newStyle, GraphicsUnit.Pixel);
+                //Font font2 = new Font(Font, newStyle2);
+                Font font2 = new Font("Arial", 10.5f, newStyle2, GraphicsUnit.Pixel);
                 rectangleF.X = 0f;
                 if (myColumns < 1)
                 {
@@ -278,7 +281,7 @@ namespace midsControls
                 int num2 = (int) Math.Round(num * (myValueWidth / 100f));
                 int num3 = num - num2;
                 rectangleF.Height = LineHeight;
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
                 Brush brush = new SolidBrush(BackColor);
                 bxBuffer.Graphics.FillRectangle(brush, rect);
                 if (MyItems == null)
@@ -299,7 +302,7 @@ namespace midsControls
                     int num7 = MyItems.Length - 1;
                     for (int i = num6; i <= num7; i++)
                     {
-                        PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
+                        PointF location = new PointF(num * num5 - 9, rectangleF.Height * num4 + checked(LinePadding * num4));
                         rectangleF.Location = location;
                         rectangleF.Width = num3;
                         stringFormat.Alignment = StringAlignment.Far;
@@ -323,9 +326,9 @@ namespace midsControls
                         }
 
                         bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
-                        location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
+                        location = new PointF(num * num5 + num3 - 10, rectangleF.Height * num4 + checked(LinePadding * num4));
                         rectangleF.Location = location;
-                        rectangleF.Width = num2;
+                        rectangleF.Width = num2 + 12;
                         if (Highlightable & CurrentHighlight == i)
                         {
                             brush = new SolidBrush(myHighlightColor);
@@ -350,6 +353,7 @@ namespace midsControls
                         }
 
                         stringFormat.Alignment = StringAlignment.Near;
+                        stringFormat.LineAlignment = StringAlignment.Near;
                         bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
                         num5++;
                         if (num5 < myColumns)

@@ -8003,7 +8003,7 @@
     },
     {
       "UID": "Pets_Cold_Demonling",
-      "DisplayName": "Cold Demonlings",
+      "DisplayName": "Cold Demonling",
       "PowersetFullName": [
         "Mastermind_Pets.Cold_Demonling",
         "Mastermind_Pets.Cold_Demonling_2",
@@ -8018,7 +8018,7 @@
     },
     {
       "UID": "Pets_Fiery_Demonling",
-      "DisplayName": "Fiery Demonlings",
+      "DisplayName": "Fiery Demonling",
       "PowersetFullName": [
         "Mastermind_Pets.Fiery_Demonling",
         "Mastermind_Pets.Fiery_Demonling_2",
@@ -8033,7 +8033,7 @@
     },
     {
       "UID": "Pets_Hellfire_Demonling",
-      "DisplayName": "Hellfire Demonlings",
+      "DisplayName": "Hellfire Demonling",
       "PowersetFullName": [
         "Mastermind_Pets.Hellfire_Demonling",
         "Mastermind_Pets.Hellfire_Demonling_2",
