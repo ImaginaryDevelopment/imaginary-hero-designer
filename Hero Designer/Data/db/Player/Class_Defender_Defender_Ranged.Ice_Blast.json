@@ -1952,7 +1952,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_IceStorm_Defender",
-          "nSummon": 345,
+          "nSummon": 344,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

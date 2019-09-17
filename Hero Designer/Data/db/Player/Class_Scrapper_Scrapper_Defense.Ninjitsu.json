@@ -4,15 +4,15 @@
   "FullName": "Scrapper_Defense.Ninjitsu",
   "ImageName": "Ninjitsu.png",
   "Power": [
-    6890,
-    6891,
-    6892,
-    6893,
-    6894,
-    6895,
-    6896,
-    6897,
-    6898
+    6766,
+    6767,
+    6768,
+    6769,
+    6770,
+    6771,
+    6772,
+    6773,
+    6774
   ],
   "SetType": 2,
   "DisplayName": "Ninjitsu",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 0.26,
-      "PowerIndex": 6890,
+      "PowerIndex": 6766,
       "PowerSetID": 3305,
       "StaticIndex": 10501,
       "NGroupMembership": [],
@@ -242,7 +242,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 0.26,
-      "PowerIndex": 6891,
+      "PowerIndex": 6767,
       "PowerSetID": 3305,
       "PowerSetIndex": 1,
       "StaticIndex": 10502,
@@ -629,7 +629,7 @@
     },
     {
       "ToggleCost": 0.26,
-      "PowerIndex": 6892,
+      "PowerIndex": 6768,
       "PowerSetID": 3305,
       "PowerSetIndex": 2,
       "StaticIndex": 10503,
@@ -1685,7 +1685,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 10.4,
-      "PowerIndex": 6893,
+      "PowerIndex": 6769,
       "PowerSetID": 3305,
       "PowerSetIndex": 3,
       "StaticIndex": 10504,
@@ -2467,7 +2467,7 @@
     },
     {
       "CastTimeReal": 1.83,
-      "PowerIndex": 6894,
+      "PowerIndex": 6770,
       "PowerSetID": 3305,
       "PowerSetIndex": 4,
       "StaticIndex": 10505,
@@ -2563,7 +2563,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 10.4,
-      "PowerIndex": 6895,
+      "PowerIndex": 6771,
       "PowerSetID": 3305,
       "PowerSetIndex": 5,
       "StaticIndex": 10506,
@@ -2700,7 +2700,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6896,
+      "PowerIndex": 6772,
       "PowerSetID": 3305,
       "PowerSetIndex": 6,
       "StaticIndex": 10507,
@@ -3240,7 +3240,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 6897,
+      "PowerIndex": 6773,
       "PowerSetID": 3305,
       "PowerSetIndex": 7,
       "StaticIndex": 10508,
@@ -3574,7 +3574,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 2.6,
-      "PowerIndex": 6898,
+      "PowerIndex": 6774,
       "PowerSetID": 3305,
       "PowerSetIndex": 8,
       "StaticIndex": 10509,

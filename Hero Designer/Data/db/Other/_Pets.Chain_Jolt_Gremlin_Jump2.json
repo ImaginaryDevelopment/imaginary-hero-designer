@@ -4,7 +4,7 @@
   "FullName": "Pets.Chain_Jolt_Gremlin_Jump2",
   "ImageName": "",
   "Power": [
-    6297
+    6173
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 2",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6297,
+      "PowerIndex": 6173,
       "PowerSetID": 3054,
       "StaticIndex": 4414,
       "NGroupMembership": [],
@@ -131,7 +131,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Gremlin_Jump3",
-          "nSummon": 270,
+          "nSummon": 269,
           "DelayedTime": 1.0,
           "Stacking": 1,
           "Buffable": true,
@@ -168,7 +168,7 @@
           "nID": 2,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Gremlin_Jump3",
-          "nSummon": 270,
+          "nSummon": 269,
           "DelayedTime": 2.0,
           "Stacking": 1,
           "Buffable": true,

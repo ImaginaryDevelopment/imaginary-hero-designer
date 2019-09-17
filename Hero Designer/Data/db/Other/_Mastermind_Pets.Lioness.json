@@ -4,13 +4,13 @@
   "FullName": "Mastermind_Pets.Lioness",
   "ImageName": "",
   "Power": [
-    5934,
-    5935,
-    5936,
-    5937,
-    5938,
-    5939,
-    5940
+    5897,
+    5898,
+    5899,
+    5900,
+    5901,
+    5902,
+    5903
   ],
   "SetType": 8,
   "DisplayName": "Lioness",
@@ -27,7 +27,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5934,
+      "PowerIndex": 5897,
       "PowerSetID": 2955,
       "StaticIndex": 6197,
       "NGroupMembership": [],
@@ -517,7 +517,7 @@
     {
       "CastTimeReal": 1.27,
       "ToggleCost": 4.368,
-      "PowerIndex": 5935,
+      "PowerIndex": 5898,
       "PowerSetID": 2955,
       "PowerSetIndex": 1,
       "StaticIndex": 6198,
@@ -682,7 +682,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5936,
+      "PowerIndex": 5899,
       "PowerSetID": 2955,
       "PowerSetIndex": 2,
       "StaticIndex": 6199,
@@ -740,7 +740,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
-          "nSummon": 9793,
+          "nSummon": 9669,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -766,7 +766,7 @@
       "AoEModifier": 5.5
     },
     {
-      "PowerIndex": 5937,
+      "PowerIndex": 5900,
       "PowerSetID": 2955,
       "PowerSetIndex": 3,
       "StaticIndex": 6201,
@@ -824,7 +824,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Pack_Mentality",
-          "nSummon": 9793,
+          "nSummon": 9669,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -850,7 +850,7 @@
       "AoEModifier": 5.5
     },
     {
-      "PowerIndex": 5938,
+      "PowerIndex": 5901,
       "PowerSetID": 2955,
       "PowerSetIndex": 4,
       "StaticIndex": 6202,
@@ -1074,7 +1074,7 @@
     {
       "CastTimeReal": 1.47,
       "ToggleCost": 6.032,
-      "PowerIndex": 5939,
+      "PowerIndex": 5902,
       "PowerSetID": 2955,
       "PowerSetIndex": 5,
       "StaticIndex": 6200,
@@ -1241,7 +1241,7 @@
     {
       "CastTimeReal": 0.6,
       "ToggleCost": 5.2,
-      "PowerIndex": 5940,
+      "PowerIndex": 5903,
       "PowerSetID": 2955,
       "PowerSetIndex": 6,
       "StaticIndex": 6203,

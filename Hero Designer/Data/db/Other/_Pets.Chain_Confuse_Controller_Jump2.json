@@ -4,7 +4,7 @@
   "FullName": "Pets.Chain_Confuse_Controller_Jump2",
   "ImageName": "",
   "Power": [
-    6287
+    6163
   ],
   "SetType": 8,
   "DisplayName": "Chain Confuse Jump 2",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6287,
+      "PowerIndex": 6163,
       "PowerSetID": 3045,
       "StaticIndex": 4408,
       "NGroupMembership": [],
@@ -211,7 +211,7 @@
           "nID": 3,
           "EffectType": 38,
           "Summon": "Pets_Chain_Confuse_Controller_Jump3",
-          "nSummon": 264,
+          "nSummon": 263,
           "DelayedTime": 4.0,
           "Stacking": 1,
           "Buffable": true,
@@ -248,7 +248,7 @@
           "nID": 4,
           "EffectType": 38,
           "Summon": "Pets_Chain_Confuse_Controller_Jump3",
-          "nSummon": 264,
+          "nSummon": 263,
           "DelayedTime": 8.0,
           "Stacking": 1,
           "Buffable": true,

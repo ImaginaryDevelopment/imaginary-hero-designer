@@ -4,13 +4,13 @@
   "FullName": "Pets.Longbow_Heavy",
   "ImageName": "",
   "Power": [
-    6469,
-    6470,
-    6471,
-    6472,
-    6473,
-    6474,
-    6475
+    6345,
+    6346,
+    6347,
+    6348,
+    6349,
+    6350,
+    6351
   ],
   "SetType": 8,
   "DisplayName": "Longbow Heavy",
@@ -29,7 +29,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 9.1,
-      "PowerIndex": 6469,
+      "PowerIndex": 6345,
       "PowerSetID": 3143,
       "StaticIndex": 1649,
       "NGroupMembership": [],
@@ -156,7 +156,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 19.5,
-      "PowerIndex": 6470,
+      "PowerIndex": 6346,
       "PowerSetID": 3143,
       "PowerSetIndex": 1,
       "StaticIndex": 1650,
@@ -218,7 +218,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Air_Bomb",
-          "nSummon": 125,
+          "nSummon": 124,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 19.5,
-      "PowerIndex": 6471,
+      "PowerIndex": 6347,
       "PowerSetID": 3143,
       "PowerSetIndex": 2,
       "StaticIndex": 1651,
@@ -411,7 +411,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 5.2,
-      "PowerIndex": 6472,
+      "PowerIndex": 6348,
       "PowerSetID": 3143,
       "PowerSetIndex": 3,
       "StaticIndex": 1652,
@@ -571,7 +571,7 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 5.2,
-      "PowerIndex": 6473,
+      "PowerIndex": 6349,
       "PowerSetID": 3143,
       "PowerSetIndex": 4,
       "StaticIndex": 1653,
@@ -728,7 +728,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6474,
+      "PowerIndex": 6350,
       "PowerSetID": 3143,
       "PowerSetIndex": 5,
       "StaticIndex": 1654,
@@ -913,7 +913,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 12.35,
-      "PowerIndex": 6475,
+      "PowerIndex": 6351,
       "PowerSetID": 3143,
       "PowerSetIndex": 6,
       "StaticIndex": 1655,

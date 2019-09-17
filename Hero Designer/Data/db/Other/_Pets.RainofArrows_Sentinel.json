@@ -4,8 +4,8 @@
   "FullName": "Pets.RainofArrows_Sentinel",
   "ImageName": "",
   "Power": [
-    6553,
-    6554
+    6429,
+    6430
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6553,
+      "PowerIndex": 6429,
       "PowerSetID": 3187,
       "StaticIndex": 10626,
       "NGroupMembership": [],
@@ -180,7 +180,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6554,
+      "PowerIndex": 6430,
       "PowerSetID": 3187,
       "PowerSetIndex": 1,
       "StaticIndex": 10627,

@@ -2361,7 +2361,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6254,
+          "nSummon": 6130,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2379,7 +2379,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Blaster_Energy_Snipe.Sniper_Blast_Quick",
-          "nOverride": 6254
+          "nOverride": 6130
         },
         {
           "MagnitudeExpression": "",
@@ -2395,7 +2395,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6253,
+          "nSummon": 6129,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2412,7 +2412,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Blaster_Energy_Snipe.Sniper_Blast_Normal",
-          "nOverride": 6253
+          "nOverride": 6129
         },
         {
           "MagnitudeExpression": "",

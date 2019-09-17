@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Radiation_Melee_Assassins_Corruption",
   "ImageName": "",
   "Power": [
-    10290,
-    10291
+    10166,
+    10167
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10290,
+      "PowerIndex": 10166,
       "PowerSetID": 3444,
       "StaticIndex": 9825,
       "NGroupMembership": [],
@@ -271,7 +271,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
-          "nSummon": 9881,
+          "nSummon": 9757,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -302,7 +302,7 @@
           "nID": 6,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9327,
+          "nSummon": 9203,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -399,7 +399,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 14.352,
-      "PowerIndex": 10291,
+      "PowerIndex": 10167,
       "PowerSetID": 3444,
       "PowerSetIndex": 1,
       "StaticIndex": 9826,
@@ -674,7 +674,7 @@
           "nID": 6,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
-          "nSummon": 9881,
+          "nSummon": 9757,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,

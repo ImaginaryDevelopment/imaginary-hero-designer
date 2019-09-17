@@ -4,7 +4,7 @@
   "FullName": "Mastermind_Pets.Thug_Pose_Knife",
   "ImageName": "",
   "Power": [
-    6138
+    6016
   ],
   "SetType": 8,
   "DisplayName": "Thug Posse",
@@ -23,7 +23,7 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 4.368,
-      "PowerIndex": 6138,
+      "PowerIndex": 6016,
       "PowerSetID": 2989,
       "StaticIndex": 1424,
       "NGroupMembership": [],

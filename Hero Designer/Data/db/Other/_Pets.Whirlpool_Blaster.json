@@ -4,8 +4,8 @@
   "FullName": "Pets.Whirlpool_Blaster",
   "ImageName": "",
   "Power": [
-    6750,
-    6751
+    6626,
+    6627
   ],
   "SetType": 8,
   "DisplayName": "Whirlpool",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6750,
+      "PowerIndex": 6626,
       "PowerSetID": 3278,
       "StaticIndex": 9125,
       "NGroupMembership": [],
@@ -365,7 +365,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6751,
+      "PowerIndex": 6627,
       "PowerSetID": 3278,
       "PowerSetIndex": 1,
       "StaticIndex": 9126,

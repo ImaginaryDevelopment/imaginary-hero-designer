@@ -4,7 +4,7 @@
   "FullName": "Pets.Static_Field_Controller",
   "ImageName": "",
   "Power": [
-    6596
+    6472
   ],
   "SetType": 8,
   "DisplayName": "Static Field Controller",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6596,
+      "PowerIndex": 6472,
       "PowerSetID": 3218,
       "StaticIndex": 4438,
       "NGroupMembership": [],
@@ -278,7 +278,7 @@
           "nID": 5,
           "EffectType": 38,
           "Summon": "Pets_Static_Field_End_Recovery_Controller",
-          "nSummon": 266,
+          "nSummon": 265,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

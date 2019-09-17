@@ -4,14 +4,14 @@
   "FullName": "Training_Gadgets.Training_and_Gadgets",
   "ImageName": "i12_Sec_Soldier.png",
   "Power": [
-    10058,
-    10059,
-    10060,
-    10061,
-    10062,
-    10063,
-    10064,
-    10065
+    9934,
+    9935,
+    9936,
+    9937,
+    9938,
+    9939,
+    9940,
+    9941
   ],
   "SetType": 2,
   "DisplayName": "Training and Gadgets",
@@ -28,7 +28,7 @@
   "GroupName": "Training_Gadgets",
   "Powers": [
     {
-      "PowerIndex": 10058,
+      "PowerIndex": 9934,
       "PowerSetID": 3434,
       "StaticIndex": 2998,
       "NGroupMembership": [],
@@ -1178,7 +1178,7 @@
     },
     {
       "CastTimeReal": 0.67,
-      "PowerIndex": 10059,
+      "PowerIndex": 9935,
       "PowerSetID": 3434,
       "PowerSetIndex": 1,
       "StaticIndex": 2999,
@@ -1273,7 +1273,7 @@
     },
     {
       "CastTimeReal": 0.67,
-      "PowerIndex": 10060,
+      "PowerIndex": 9936,
       "PowerSetID": 3434,
       "PowerSetIndex": 2,
       "StaticIndex": 3000,
@@ -1400,7 +1400,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10061,
+      "PowerIndex": 9937,
       "PowerSetID": 3434,
       "PowerSetIndex": 3,
       "StaticIndex": 3001,
@@ -2200,7 +2200,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10062,
+      "PowerIndex": 9938,
       "PowerSetID": 3434,
       "PowerSetIndex": 4,
       "StaticIndex": 3002,
@@ -2616,7 +2616,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 10063,
+      "PowerIndex": 9939,
       "PowerSetID": 3434,
       "PowerSetIndex": 5,
       "StaticIndex": 3003,
@@ -3003,7 +3003,7 @@
       "AoEModifier": 10.0
     },
     {
-      "PowerIndex": 10064,
+      "PowerIndex": 9940,
       "PowerSetID": 3434,
       "PowerSetIndex": 6,
       "StaticIndex": 3004,
@@ -3265,7 +3265,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 26.0,
-      "PowerIndex": 10065,
+      "PowerIndex": 9941,
       "PowerSetID": 3434,
       "PowerSetIndex": 7,
       "StaticIndex": 3005,
@@ -3344,7 +3344,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Disrupter",
-          "nSummon": 169,
+          "nSummon": 168,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 3,
@@ -3377,7 +3377,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Disrupter",
-          "nSummon": 169,
+          "nSummon": 168,
           "DelayedTime": 1.0,
           "UIDClassName": "",
           "nIDClassName": -1,

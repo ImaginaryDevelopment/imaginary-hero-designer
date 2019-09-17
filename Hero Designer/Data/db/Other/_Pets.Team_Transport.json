@@ -4,8 +4,8 @@
   "FullName": "Pets.Team_Transport",
   "ImageName": "",
   "Power": [
-    6614,
-    6615
+    6490,
+    6491
   ],
   "SetType": 8,
   "DisplayName": "Team Transport",
@@ -23,7 +23,7 @@
   "Powers": [
     {
       "CastTimeReal": 2.0,
-      "PowerIndex": 6614,
+      "PowerIndex": 6490,
       "PowerSetID": 3228,
       "StaticIndex": 6229,
       "NGroupMembership": [],
@@ -111,7 +111,7 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 6615,
+      "PowerIndex": 6491,
       "PowerSetID": 3228,
       "PowerSetIndex": 1,
       "StaticIndex": 6230,

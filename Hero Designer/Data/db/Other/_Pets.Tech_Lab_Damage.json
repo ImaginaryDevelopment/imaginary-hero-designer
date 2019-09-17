@@ -4,7 +4,7 @@
   "FullName": "Pets.Tech_Lab_Damage",
   "ImageName": "",
   "Power": [
-    6620
+    6496
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6620,
+      "PowerIndex": 6496,
       "PowerSetID": 3240,
       "StaticIndex": 1731,
       "NGroupMembership": [],

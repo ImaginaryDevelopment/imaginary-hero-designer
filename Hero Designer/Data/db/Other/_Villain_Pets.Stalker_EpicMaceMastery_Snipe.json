@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Stalker_EpicMaceMastery_Snipe",
   "ImageName": "",
   "Power": [
-    10320,
-    10321
+    10196,
+    10197
   ],
   "SetType": 8,
   "DisplayName": "Stalker_EpicMaceMastery_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 17.94,
-      "PowerIndex": 10320,
+      "PowerIndex": 10196,
       "PowerSetID": 3543,
       "StaticIndex": 9829,
       "NGroupMembership": [],
@@ -444,7 +444,7 @@
     {
       "CastTimeReal": 8.0,
       "ToggleCost": 17.94,
-      "PowerIndex": 10321,
+      "PowerIndex": 10197,
       "PowerSetID": 3543,
       "PowerSetIndex": 1,
       "StaticIndex": 9830,

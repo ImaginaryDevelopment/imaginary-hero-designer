@@ -744,7 +744,7 @@
           "nID": 3,
           "EffectType": 38,
           "Summon": "Pets_Trick_Shot_Jump1",
-          "nSummon": 378,
+          "nSummon": 377,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,
@@ -1157,7 +1157,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Envenomed_Blades",
-          "nSummon": 9560,
+          "nSummon": 9436,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1969,7 +1969,7 @@
           "nID": 4,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10190,
+          "nSummon": 10066,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1987,7 +1987,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 5,
           "Override": "Villain_Pets.Dominator_MartialAssault_Snipe.Masterful_Throw_Quick",
-          "nOverride": 10190
+          "nOverride": 10066
         },
         {
           "MagnitudeExpression": "",
@@ -2002,7 +2002,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10191,
+          "nSummon": 10067,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2019,7 +2019,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Dominator_MartialAssault_Snipe.Masterful_Throw_Normal",
-          "nOverride": 10191
+          "nOverride": 10067
         }
       ],
       "HasPowerOverrideEffect": true,

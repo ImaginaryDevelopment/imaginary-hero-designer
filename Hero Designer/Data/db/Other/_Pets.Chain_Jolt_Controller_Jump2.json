@@ -4,7 +4,7 @@
   "FullName": "Pets.Chain_Jolt_Controller_Jump2",
   "ImageName": "",
   "Power": [
-    6294
+    6170
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 2",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6294,
+      "PowerIndex": 6170,
       "PowerSetID": 3053,
       "StaticIndex": 4411,
       "NGroupMembership": [],
@@ -236,7 +236,7 @@
           "nID": 4,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Controller_Jump3",
-          "nSummon": 260,
+          "nSummon": 259,
           "DelayedTime": 1.0,
           "Stacking": 1,
           "Buffable": true,
@@ -273,7 +273,7 @@
           "nID": 5,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Controller_Jump3",
-          "nSummon": 260,
+          "nSummon": 259,
           "DelayedTime": 2.0,
           "Stacking": 1,
           "Buffable": true,

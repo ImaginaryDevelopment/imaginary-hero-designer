@@ -2608,7 +2608,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Embraced_IceStorm",
-          "nSummon": 251,
+          "nSummon": 250,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

@@ -2079,7 +2079,7 @@
           "nID": 4,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10192,
+          "nSummon": 10068,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2097,7 +2097,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 5,
           "Override": "Villain_Pets.Dominator_PsionicAssault_Snipe.Psionic_Lance_Quick",
-          "nOverride": 10192
+          "nOverride": 10068
         },
         {
           "MagnitudeExpression": "",
@@ -2112,7 +2112,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10193,
+          "nSummon": 10069,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2129,7 +2129,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Dominator_PsionicAssault_Snipe.Psionic_Lance_Normal",
-          "nOverride": 10193
+          "nOverride": 10069
         }
       ],
       "HasPowerOverrideEffect": true,

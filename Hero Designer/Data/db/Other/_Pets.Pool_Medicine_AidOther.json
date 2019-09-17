@@ -4,8 +4,8 @@
   "FullName": "Pets.Pool_Medicine_AidOther",
   "ImageName": "",
   "Power": [
-    6525,
-    6526
+    6401,
+    6402
   ],
   "SetType": 8,
   "DisplayName": "Medicine",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 6.5,
-      "PowerIndex": 6525,
+      "PowerIndex": 6401,
       "PowerSetID": 3146,
       "StaticIndex": 9599,
       "NGroupMembership": [],
@@ -122,7 +122,7 @@
     {
       "CastTimeReal": 3.93,
       "ToggleCost": 6.5,
-      "PowerIndex": 6526,
+      "PowerIndex": 6402,
       "PowerSetID": 3146,
       "PowerSetIndex": 1,
       "StaticIndex": 9600,

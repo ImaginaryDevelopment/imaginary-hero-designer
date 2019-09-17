@@ -4,15 +4,15 @@
   "FullName": "Tanker_Melee.Katana",
   "ImageName": "Katana.png",
   "Power": [
-    8810,
-    8811,
-    8812,
-    8813,
-    8814,
-    8815,
-    8816,
-    8817,
-    8818
+    8686,
+    8687,
+    8688,
+    8689,
+    8690,
+    8691,
+    8692,
+    8693,
+    8694
   ],
   "SetType": 2,
   "DisplayName": "Katana",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 6.032,
-      "PowerIndex": 8810,
+      "PowerIndex": 8686,
       "PowerSetID": 3407,
       "StaticIndex": 10149,
       "NGroupMembership": [],
@@ -583,7 +583,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 4.368,
-      "PowerIndex": 8811,
+      "PowerIndex": 8687,
       "PowerSetID": 3407,
       "PowerSetIndex": 1,
       "StaticIndex": 10150,
@@ -896,7 +896,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 6.864,
-      "PowerIndex": 8812,
+      "PowerIndex": 8688,
       "PowerSetID": 3407,
       "PowerSetIndex": 2,
       "StaticIndex": 10151,
@@ -1190,7 +1190,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 8813,
+      "PowerIndex": 8689,
       "PowerSetID": 3407,
       "PowerSetIndex": 3,
       "StaticIndex": 10152,
@@ -1371,7 +1371,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 4.368,
-      "PowerIndex": 8814,
+      "PowerIndex": 8690,
       "PowerSetID": 3407,
       "PowerSetIndex": 4,
       "StaticIndex": 10157,
@@ -1700,7 +1700,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 5.2,
-      "PowerIndex": 8815,
+      "PowerIndex": 8691,
       "PowerSetID": 3407,
       "PowerSetIndex": 5,
       "StaticIndex": 10153,
@@ -2090,7 +2090,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 13.52,
-      "PowerIndex": 8816,
+      "PowerIndex": 8692,
       "PowerSetID": 3407,
       "PowerSetIndex": 6,
       "StaticIndex": 10154,
@@ -2455,7 +2455,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 9.36,
-      "PowerIndex": 8817,
+      "PowerIndex": 8693,
       "PowerSetID": 3407,
       "PowerSetIndex": 7,
       "StaticIndex": 10155,
@@ -2823,7 +2823,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 11.856,
-      "PowerIndex": 8818,
+      "PowerIndex": 8694,
       "PowerSetID": 3407,
       "PowerSetIndex": 8,
       "StaticIndex": 10156,

@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Arachnobot_Disrupter",
   "ImageName": "",
   "Power": [
-    10074,
-    10075,
-    10076,
-    10077,
-    10078,
-    10079,
-    10080,
-    10081
+    9950,
+    9951,
+    9952,
+    9953,
+    9954,
+    9955,
+    9956,
+    9957
   ],
   "SetType": 8,
   "DisplayName": "Arachnobot Disrupter",
@@ -30,7 +30,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 6.5,
-      "PowerIndex": 10074,
+      "PowerIndex": 9950,
       "PowerSetID": 3456,
       "StaticIndex": 3014,
       "NGroupMembership": [],
@@ -235,7 +235,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 2.34,
-      "PowerIndex": 10075,
+      "PowerIndex": 9951,
       "PowerSetID": 3456,
       "PowerSetIndex": 1,
       "StaticIndex": 3015,
@@ -334,7 +334,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 12.74,
-      "PowerIndex": 10076,
+      "PowerIndex": 9952,
       "PowerSetID": 3456,
       "PowerSetIndex": 2,
       "StaticIndex": 3016,
@@ -578,7 +578,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 8.58,
-      "PowerIndex": 10077,
+      "PowerIndex": 9953,
       "PowerSetID": 3456,
       "PowerSetIndex": 3,
       "StaticIndex": 3017,
@@ -860,7 +860,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10078,
+      "PowerIndex": 9954,
       "PowerSetID": 3456,
       "PowerSetIndex": 4,
       "StaticIndex": 3018,
@@ -1048,7 +1048,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10079,
+      "PowerIndex": 9955,
       "PowerSetID": 3456,
       "PowerSetIndex": 5,
       "StaticIndex": 3019,
@@ -1232,7 +1232,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10080,
+      "PowerIndex": 9956,
       "PowerSetID": 3456,
       "PowerSetIndex": 6,
       "StaticIndex": 3020,
@@ -1316,7 +1316,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 13.0,
-      "PowerIndex": 10081,
+      "PowerIndex": 9957,
       "PowerSetID": 3456,
       "PowerSetIndex": 7,
       "StaticIndex": 3021,

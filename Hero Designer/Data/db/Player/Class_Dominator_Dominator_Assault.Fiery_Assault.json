@@ -1867,7 +1867,7 @@
           "nID": 4,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10186,
+          "nSummon": 10062,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1885,7 +1885,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 5,
           "Override": "Villain_Pets.Dominator_FieryAssault_Snipe.Blazing_Bolt_Quick",
-          "nOverride": 10186
+          "nOverride": 10062
         },
         {
           "MagnitudeExpression": "",
@@ -1900,7 +1900,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10187,
+          "nSummon": 10063,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1917,7 +1917,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Dominator_FieryAssault_Snipe.Blazing_Bolt_Normal",
-          "nOverride": 10187
+          "nOverride": 10063
         }
       ],
       "HasPowerOverrideEffect": true,

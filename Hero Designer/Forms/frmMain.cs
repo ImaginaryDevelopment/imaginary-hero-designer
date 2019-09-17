@@ -108,6 +108,8 @@ namespace Hero_Designer
 
         internal SaveFileDialog DlgSave;
 
+        public bool petWindowFlag { get; set; }
+
         public List<string> MMPets { get; set; } = new List<string>();
 
         ComboBoxT<string> GetCbOrigin() => new ComboBoxT<string>(cbOrigin);
@@ -1395,40 +1397,6 @@ namespace Hero_Designer
             EnhancementModified();
             LastClickPlacedSlot = false;
             return true;
-        }
-
-        bool EditMMPowers()
-        {
-            var ent = DatabaseAPI.NidFromUidEntity("Pets_Cold_Demonlings");
-            var pset = DatabaseAPI.Database.Entities[ent].GetNPowerset();
-            foreach (var entity in pset)
-            {
-                MessageBox.Show(DatabaseAPI.Database.Powersets[entity].DisplayName);
-                var powers = DatabaseAPI.Database.Powersets[entity].Powers;
-                foreach (var power in powers)
-                {
-                    MessageBox.Show(power.DisplayName);
-                }
-            }
-            /*var selind = DatabaseAPI.NidFromUidPowerset("Mastermind_Pets.Cold_Demonling");
-            var sub = DatabaseAPI.Database.Powersets[selind].Powers;
-            foreach (var power in sub)
-            {
-                MessageBox.Show(power.DisplayName);
-            }*/
-            
-            Enums.eMMpets KnownPets;
-            var CurrentPowers = MidsContext.Character.CurrentBuild.Powers;
-            foreach (var item in CurrentPowers)
-            {
-                bool PetExists = Enum.TryParse(item.Name, out KnownPets);
-                if (PetExists)
-                {
-                    MessageBox.Show(item.Name);
-                }
-            }
-
-            return false;
         }
 
         void EndFlip()
@@ -2782,7 +2750,7 @@ namespace Hero_Designer
                 bool flag = MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower < 0;
                 /*if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditAccoladesOrTemps(hIDPower))
                     return;*/
-                if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditMMPowers())
+                if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control) && EditAccoladesOrTemps(hIDPower))
                     return;
                 if (drawing.InterfaceMode == Enums.eInterfaceMode.PowerToggle & e.Button == MouseButtons.Left)
                 {
@@ -4493,16 +4461,52 @@ namespace Hero_Designer
 
         void petsButton_ButtonClicked()
         {
-            var CurrentPowers = MidsContext.Character.CurrentBuild.Powers;
-            foreach (var item in CurrentPowers)
+            if (petWindowFlag)
             {
-                bool PetExists = Enum.GetNames(typeof(Enums.eMMpets)).Contains(item.Name.Replace(" ", "_"));
-                if (PetExists)
+                petsButton.Checked = false;
+                fMMPets.Close();
+                petWindowFlag = false;
+            }
+            else
+            {
+                MMPets.Clear();
+                var CurrentPowers = MidsContext.Character.CurrentBuild.Powers;
+                foreach (var item in CurrentPowers)
                 {
-                    MMPets.Add(item.Name);
+                    bool PetExists = Enum.GetNames(typeof(Enums.eMMpets)).Contains(item.Name.Replace(" ", "_"));
+                    if (PetExists)
+                    {
+                        MMPets.Add(item.Name);
+                    }
+                }
+
+                bool isEmpty = !MMPets.Any();
+                if (!isEmpty)
+                {
+                    fMMPets = new frmMMPowers(this, MMPets)
+                    {
+                        Text = "Mastermind Pets"
+                    };
+
+                    if (!fMMPets.Visible)
+                    {
+                        petsButton.Checked = true;
+                        petWindowFlag = true;
+                        fMMPets.Show(this);
+                    }
+                    else
+                    {
+                        petsButton.Checked = false;
+                        fMMPets.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You haven't selected an pet abilities for your mastermind.", "Unavailable", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                    petsButton.Checked = false;
                 }
             }
-            fMMPets = new frmMMPowers(this, MMPets);
         }
 
         void tempPowersButton_ButtonClicked()

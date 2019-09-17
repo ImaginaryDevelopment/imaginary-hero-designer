@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Mu_Striker",
   "ImageName": "",
   "Power": [
-    10253,
-    10254,
-    10255,
-    10256,
-    10257,
-    10258,
-    10259,
-    10260
+    10129,
+    10130,
+    10131,
+    10132,
+    10133,
+    10134,
+    10135,
+    10136
   ],
   "SetType": 8,
   "DisplayName": "Mu Striker",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10253,
+      "PowerIndex": 10129,
       "PowerSetID": 3517,
       "StaticIndex": 3121,
       "NGroupMembership": [],
@@ -150,7 +150,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 13.0,
-      "PowerIndex": 10254,
+      "PowerIndex": 10130,
       "PowerSetID": 3517,
       "PowerSetIndex": 1,
       "StaticIndex": 3122,
@@ -393,7 +393,7 @@
     {
       "CastTimeReal": 3.17,
       "ToggleCost": 14.3,
-      "PowerIndex": 10255,
+      "PowerIndex": 10131,
       "PowerSetID": 3517,
       "PowerSetIndex": 2,
       "StaticIndex": 3123,
@@ -672,7 +672,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10256,
+      "PowerIndex": 10132,
       "PowerSetID": 3517,
       "PowerSetIndex": 3,
       "StaticIndex": 3124,
@@ -861,7 +861,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 10.66,
-      "PowerIndex": 10257,
+      "PowerIndex": 10133,
       "PowerSetID": 3517,
       "PowerSetIndex": 4,
       "StaticIndex": 3125,
@@ -1065,7 +1065,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 6.5,
-      "PowerIndex": 10258,
+      "PowerIndex": 10134,
       "PowerSetID": 3517,
       "PowerSetIndex": 5,
       "StaticIndex": 3126,
@@ -1267,7 +1267,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10259,
+      "PowerIndex": 10135,
       "PowerSetID": 3517,
       "PowerSetIndex": 6,
       "StaticIndex": 3127,
@@ -1351,7 +1351,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 13.0,
-      "PowerIndex": 10260,
+      "PowerIndex": 10136,
       "PowerSetID": 3517,
       "PowerSetIndex": 7,
       "StaticIndex": 3128,

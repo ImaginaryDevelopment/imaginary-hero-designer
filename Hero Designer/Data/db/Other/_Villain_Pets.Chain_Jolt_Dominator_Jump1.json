@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump1",
   "ImageName": "",
   "Power": [
-    10105
+    9981
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 1",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10105,
+      "PowerIndex": 9981,
       "PowerSetID": 3468,
       "StaticIndex": 4485,
       "NGroupMembership": [],
@@ -167,7 +167,7 @@
           "nID": 2,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Dominator_Jump2",
-          "nSummon": 272,
+          "nSummon": 271,
           "DelayedTime": 0.5,
           "Stacking": 1,
           "Buffable": true,
@@ -204,7 +204,7 @@
           "nID": 3,
           "EffectType": 38,
           "Summon": "Pets_Chain_Jolt_Dominator_Jump2",
-          "nSummon": 272,
+          "nSummon": 271,
           "DelayedTime": 1.0,
           "Stacking": 1,
           "Buffable": true,

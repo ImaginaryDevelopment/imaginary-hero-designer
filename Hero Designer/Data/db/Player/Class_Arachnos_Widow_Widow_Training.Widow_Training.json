@@ -4,14 +4,14 @@
   "FullName": "Widow_Training.Widow_Training",
   "ImageName": "i12_Pri_Widow.png",
   "Power": [
-    10440,
-    10441,
-    10442,
-    10443,
-    10444,
-    10445,
-    10446,
-    10447
+    10316,
+    10317,
+    10318,
+    10319,
+    10320,
+    10321,
+    10322,
+    10323
   ],
   "SetType": 1,
   "DisplayName": "Widow Training",
@@ -30,7 +30,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 5.2,
-      "PowerIndex": 10440,
+      "PowerIndex": 10316,
       "PowerSetID": 3577,
       "StaticIndex": 3231,
       "NGroupMembership": [],
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 4.16,
-      "PowerIndex": 10441,
+      "PowerIndex": 10317,
       "PowerSetID": 3577,
       "PowerSetIndex": 1,
       "StaticIndex": 3232,
@@ -676,7 +676,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 7.47398,
-      "PowerIndex": 10442,
+      "PowerIndex": 10318,
       "PowerSetID": 3577,
       "PowerSetIndex": 2,
       "StaticIndex": 3233,
@@ -1106,7 +1106,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 8.528,
-      "PowerIndex": 10443,
+      "PowerIndex": 10319,
       "PowerSetID": 3577,
       "PowerSetIndex": 3,
       "StaticIndex": 3234,
@@ -1328,7 +1328,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 7.8,
-      "PowerIndex": 10444,
+      "PowerIndex": 10320,
       "PowerSetID": 3577,
       "PowerSetIndex": 4,
       "StaticIndex": 3235,
@@ -1353,7 +1353,7 @@
         "NPowerID": [],
         "NPowerIDNot": [
           [
-            10435,
+            10311,
             -1
           ]
         ]
@@ -1888,7 +1888,7 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 15.444,
-      "PowerIndex": 10445,
+      "PowerIndex": 10321,
       "PowerSetID": 3577,
       "PowerSetIndex": 5,
       "StaticIndex": 3236,
@@ -2319,7 +2319,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 9.4848,
-      "PowerIndex": 10446,
+      "PowerIndex": 10322,
       "PowerSetID": 3577,
       "PowerSetIndex": 6,
       "StaticIndex": 3237,
@@ -2748,7 +2748,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 10447,
+      "PowerIndex": 10323,
       "PowerSetID": 3577,
       "PowerSetIndex": 7,
       "StaticIndex": 3238,

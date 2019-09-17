@@ -4,10 +4,10 @@
   "FullName": "Mastermind_Pets.Genin",
   "ImageName": "",
   "Power": [
-    5855,
-    5856,
-    5857,
-    5858
+    5837,
+    5838,
+    5839,
+    5840
   ],
   "SetType": 8,
   "DisplayName": "Genin",
@@ -24,7 +24,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5855,
+      "PowerIndex": 5837,
       "PowerSetID": 2937,
       "StaticIndex": 1196,
       "NGroupMembership": [],
@@ -320,7 +320,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 5.2,
-      "PowerIndex": 5856,
+      "PowerIndex": 5838,
       "PowerSetID": 2937,
       "PowerSetIndex": 1,
       "StaticIndex": 1197,
@@ -453,7 +453,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5857,
+      "PowerIndex": 5839,
       "PowerSetID": 2937,
       "PowerSetIndex": 2,
       "StaticIndex": 1198,
@@ -681,7 +681,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 5.2,
-      "PowerIndex": 5858,
+      "PowerIndex": 5840,
       "PowerSetID": 2937,
       "PowerSetIndex": 3,
       "StaticIndex": 1199,

@@ -4,8 +4,8 @@
   "FullName": "Pets.Nature_Affinity_Mastermind",
   "ImageName": "",
   "Power": [
-    6489,
-    6490
+    6365,
+    6366
   ],
   "SetType": 8,
   "DisplayName": "Nature Affinity",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 32.5,
-      "PowerIndex": 6489,
+      "PowerIndex": 6365,
       "PowerSetID": 3154,
       "StaticIndex": 9114,
       "NGroupMembership": [],
@@ -200,7 +200,7 @@
           "nID": 3,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Bloom",
-          "nSummon": 9457,
+          "nSummon": 9333,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -228,7 +228,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 16.25,
-      "PowerIndex": 6490,
+      "PowerIndex": 6366,
       "PowerSetID": 3154,
       "PowerSetIndex": 1,
       "StaticIndex": 9115,
@@ -373,7 +373,7 @@
           "nID": 2,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Bloom",
-          "nSummon": 9457,
+          "nSummon": 9333,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,

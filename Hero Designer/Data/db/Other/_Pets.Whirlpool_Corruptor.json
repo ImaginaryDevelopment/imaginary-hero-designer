@@ -4,8 +4,8 @@
   "FullName": "Pets.Whirlpool_Corruptor",
   "ImageName": "",
   "Power": [
-    6752,
-    6753
+    6628,
+    6629
   ],
   "SetType": 8,
   "DisplayName": "Whirlpool",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6752,
+      "PowerIndex": 6628,
       "PowerSetID": 3277,
       "StaticIndex": 9127,
       "NGroupMembership": [],
@@ -436,7 +436,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6753,
+      "PowerIndex": 6629,
       "PowerSetID": 3277,
       "PowerSetIndex": 1,
       "StaticIndex": 9128,

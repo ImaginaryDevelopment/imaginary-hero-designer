@@ -4,7 +4,7 @@
   "FullName": "Pets.Cross_Punch_Buff_Damage2",
   "ImageName": "",
   "Power": [
-    6321
+    6197
   ],
   "SetType": 8,
   "DisplayName": "Cross-Punch Buff 2",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "IsEpic": true,
-      "PowerIndex": 6321,
+      "PowerIndex": 6197,
       "PowerSetID": 3062,
       "StaticIndex": 10794,
       "NGroupMembership": [],
@@ -45,7 +45,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6774,
+            6650,
             -1
           ]
         ],

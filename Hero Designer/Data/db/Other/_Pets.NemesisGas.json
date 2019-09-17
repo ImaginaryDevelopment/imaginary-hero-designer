@@ -4,7 +4,7 @@
   "FullName": "Pets.NemesisGas",
   "ImageName": "",
   "Power": [
-    6492
+    6368
   ],
   "SetType": 8,
   "DisplayName": "Nemesis Gas",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6492,
+      "PowerIndex": 6368,
       "PowerSetID": 3157,
       "StaticIndex": 1663,
       "NGroupMembership": [],

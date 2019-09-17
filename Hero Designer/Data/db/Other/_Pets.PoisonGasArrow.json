@@ -4,8 +4,8 @@
   "FullName": "Pets.PoisonGasArrow",
   "ImageName": "",
   "Power": [
-    6514,
-    6515
+    6390,
+    6391
   ],
   "SetType": 8,
   "DisplayName": "Poison Gas Arrow",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6514,
+      "PowerIndex": 6390,
       "PowerSetID": 3166,
       "StaticIndex": 1680,
       "NGroupMembership": [],
@@ -1069,7 +1069,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6515,
+      "PowerIndex": 6391,
       "PowerSetID": 3166,
       "PowerSetIndex": 1,
       "StaticIndex": 1681,

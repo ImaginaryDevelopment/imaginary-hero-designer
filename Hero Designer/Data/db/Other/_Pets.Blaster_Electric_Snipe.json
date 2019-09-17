@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Electric_Snipe",
   "ImageName": "",
   "Power": [
-    6251,
-    6252
+    6127,
+    6128
   ],
   "SetType": 8,
   "DisplayName": "Electric Blast",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6251,
+      "PowerIndex": 6127,
       "PowerSetID": 3074,
       "StaticIndex": 9555,
       "NGroupMembership": [],
@@ -623,7 +623,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6252,
+      "PowerIndex": 6128,
       "PowerSetID": 3074,
       "PowerSetIndex": 1,
       "StaticIndex": 9556,

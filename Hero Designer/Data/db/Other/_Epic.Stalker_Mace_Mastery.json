@@ -889,7 +889,7 @@
           "nID": 10,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10320,
+          "nSummon": 10196,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -907,7 +907,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 11,
           "Override": "Villain_Pets.Stalker_EpicMaceMastery_Snipe.Mace_Beam_Quick",
-          "nOverride": 10320
+          "nOverride": 10196
         },
         {
           "MagnitudeExpression": "",
@@ -922,7 +922,7 @@
           "nID": 11,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10321,
+          "nSummon": 10197,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -939,7 +939,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 12,
           "Override": "Villain_Pets.Stalker_EpicMaceMastery_Snipe.Mace_Beam_Normal",
-          "nOverride": 10321
+          "nOverride": 10197
         }
       ],
       "HasPowerOverrideEffect": true,
@@ -1862,7 +1862,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 3,
@@ -1895,7 +1895,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "DelayedTime": 1.0,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1929,7 +1929,7 @@
           "nID": 2,
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "DelayedTime": 2.0,
           "UIDClassName": "",
           "nIDClassName": -1,

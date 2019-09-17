@@ -2117,7 +2117,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10158,
+          "nSummon": 10034,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2135,7 +2135,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Corruptor_FireBlast_Snipe.Blazing_Bolt_Quick",
-          "nOverride": 10158
+          "nOverride": 10034
         },
         {
           "MagnitudeExpression": "",
@@ -2150,7 +2150,7 @@
           "nID": 6,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10159,
+          "nSummon": 10035,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2167,7 +2167,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 7,
           "Override": "Villain_Pets.Corruptor_FireBlast_Snipe.Blazing_Bolt_Normal",
-          "nOverride": 10159
+          "nOverride": 10035
         }
       ],
       "HasPowerOverrideEffect": true,

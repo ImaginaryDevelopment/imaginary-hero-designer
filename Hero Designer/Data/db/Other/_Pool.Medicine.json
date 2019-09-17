@@ -4,11 +4,11 @@
   "FullName": "Pool.Medicine",
   "ImageName": "Medicine.png",
   "Power": [
-    6803,
-    6804,
-    6805,
-    6806,
-    6807
+    6679,
+    6680,
+    6681,
+    6682,
+    6683
   ],
   "SetType": 5,
   "DisplayName": "Medicine",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 3.93,
       "ToggleCost": 6.5,
-      "PowerIndex": 6803,
+      "PowerIndex": 6679,
       "PowerSetID": 3293,
       "StaticIndex": 1821,
       "NGroupMembership": [],
@@ -101,7 +101,7 @@
           "Special": "",
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6525,
+          "nSummon": 6401,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -118,7 +118,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 1,
           "Override": "Pets.Pool_Medicine_AidOther.AidOther_NoInterrupt",
-          "nOverride": 6525
+          "nOverride": 6401
         },
         {
           "MagnitudeExpression": "",
@@ -134,7 +134,7 @@
           "nID": 1,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6526,
+          "nSummon": 6402,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -151,7 +151,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 2,
           "Override": "Pets.Pool_Medicine_AidOther.AidOther_Interrupt",
-          "nOverride": 6526
+          "nOverride": 6402
         },
         {
           "MagnitudeExpression": "",
@@ -196,7 +196,7 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 13.0,
-      "PowerIndex": 6804,
+      "PowerIndex": 6680,
       "PowerSetID": 3293,
       "PowerSetIndex": 1,
       "StaticIndex": 1822,
@@ -1433,7 +1433,7 @@
       "CastTimeReal": 4.33,
       "ToggleCost": 13.0,
       "IsEpic": true,
-      "PowerIndex": 6805,
+      "PowerIndex": 6681,
       "PowerSetID": 3293,
       "PowerSetIndex": 2,
       "StaticIndex": 1823,
@@ -1461,11 +1461,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6803,
+            6679,
             -1
           ],
           [
-            6804,
+            6680,
             -1
           ]
         ],
@@ -1624,7 +1624,7 @@
       "CastTimeReal": 3.33,
       "ToggleCost": 19.5,
       "IsEpic": true,
-      "PowerIndex": 6806,
+      "PowerIndex": 6682,
       "PowerSetID": 3293,
       "PowerSetIndex": 3,
       "StaticIndex": 9616,
@@ -1668,28 +1668,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6803,
-            6804
+            6679,
+            6680
           ],
           [
-            6803,
-            6805
+            6679,
+            6681
           ],
           [
-            6803,
-            6807
+            6679,
+            6683
           ],
           [
-            6804,
-            6805
+            6680,
+            6681
           ],
           [
-            6804,
-            6807
+            6680,
+            6683
           ],
           [
-            6805,
-            6807
+            6681,
+            6683
           ]
         ],
         "NPowerIDNot": []
@@ -1808,7 +1808,7 @@
       "CastTimeReal": 7.33,
       "ToggleCost": 32.5,
       "IsEpic": true,
-      "PowerIndex": 6807,
+      "PowerIndex": 6683,
       "PowerSetID": 3293,
       "PowerSetIndex": 4,
       "StaticIndex": 1824,
@@ -1840,16 +1840,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6803,
-            6804
+            6679,
+            6680
           ],
           [
-            6803,
-            6805
+            6679,
+            6681
           ],
           [
-            6804,
-            6805
+            6680,
+            6681
           ]
         ],
         "NPowerIDNot": []

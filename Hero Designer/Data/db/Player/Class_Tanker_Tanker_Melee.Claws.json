@@ -4,15 +4,15 @@
   "FullName": "Tanker_Melee.Claws",
   "ImageName": "ClawsHero.png",
   "Power": [
-    8747,
-    8748,
-    8749,
-    8750,
-    8751,
-    8752,
-    8753,
-    8754,
-    8755
+    8623,
+    8624,
+    8625,
+    8626,
+    8627,
+    8628,
+    8629,
+    8630,
+    8631
   ],
   "SetType": 2,
   "DisplayName": "Claws",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 3.4944,
-      "PowerIndex": 8747,
+      "PowerIndex": 8623,
       "PowerSetID": 3400,
       "StaticIndex": 10140,
       "NGroupMembership": [],
@@ -541,7 +541,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 5.4912,
-      "PowerIndex": 8748,
+      "PowerIndex": 8624,
       "PowerSetID": 3400,
       "PowerSetIndex": 1,
       "StaticIndex": 10141,
@@ -838,7 +838,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 6.8224,
-      "PowerIndex": 8749,
+      "PowerIndex": 8625,
       "PowerSetID": 3400,
       "PowerSetIndex": 2,
       "StaticIndex": 10142,
@@ -1231,7 +1231,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 8750,
+      "PowerIndex": 8626,
       "PowerSetID": 3400,
       "PowerSetIndex": 3,
       "StaticIndex": 10143,
@@ -1412,7 +1412,7 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 13.1456,
-      "PowerIndex": 8751,
+      "PowerIndex": 8627,
       "PowerSetID": 3400,
       "PowerSetIndex": 4,
       "StaticIndex": 10144,
@@ -1664,7 +1664,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 7.8,
-      "PowerIndex": 8752,
+      "PowerIndex": 8628,
       "PowerSetID": 3400,
       "PowerSetIndex": 5,
       "StaticIndex": 10145,
@@ -2255,7 +2255,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 8.1536,
-      "PowerIndex": 8753,
+      "PowerIndex": 8629,
       "PowerSetID": 3400,
       "PowerSetIndex": 6,
       "StaticIndex": 10146,
@@ -2581,7 +2581,7 @@
     {
       "CastTimeReal": 2.33,
       "ToggleCost": 11.4816,
-      "PowerIndex": 8754,
+      "PowerIndex": 8630,
       "PowerSetID": 3400,
       "PowerSetIndex": 7,
       "StaticIndex": 10147,
@@ -2871,7 +2871,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 13.4784,
-      "PowerIndex": 8755,
+      "PowerIndex": 8631,
       "PowerSetID": 3400,
       "PowerSetIndex": 8,
       "StaticIndex": 10148,

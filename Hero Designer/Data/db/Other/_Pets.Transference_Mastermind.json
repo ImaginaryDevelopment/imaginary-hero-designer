@@ -4,7 +4,7 @@
   "FullName": "Pets.Transference_Mastermind",
   "ImageName": "",
   "Power": [
-    6662
+    6538
   ],
   "SetType": 8,
   "DisplayName": "Transference",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6662,
+      "PowerIndex": 6538,
       "PowerSetID": 3250,
       "StaticIndex": 10769,
       "NGroupMembership": [],

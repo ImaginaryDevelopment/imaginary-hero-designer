@@ -4,7 +4,7 @@
   "FullName": "Pets.Air_Bomb",
   "ImageName": "",
   "Power": [
-    6242
+    6118
   ],
   "SetType": 8,
   "DisplayName": "Air_Bomb",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6242,
+      "PowerIndex": 6118,
       "PowerSetID": 3021,
       "StaticIndex": 1543,
       "NGroupMembership": [],

@@ -4,7 +4,7 @@
   "FullName": "Pets.Twilight",
   "ImageName": "",
   "Power": [
-    6713
+    6589
   ],
   "SetType": 8,
   "DisplayName": "Twilight",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6713,
+      "PowerIndex": 6589,
       "PowerSetID": 3257,
       "StaticIndex": 1764,
       "NGroupMembership": [],

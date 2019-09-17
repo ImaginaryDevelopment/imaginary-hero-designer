@@ -4,7 +4,7 @@
   "FullName": "Pets.Chain_Induction_Jump4_Scrapper",
   "ImageName": "",
   "Power": [
-    6292
+    6168
   ],
   "SetType": 8,
   "DisplayName": "Chain Induction Jump 4",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6292,
+      "PowerIndex": 6168,
       "PowerSetID": 3050,
       "StaticIndex": 3529,
       "NGroupMembership": [],

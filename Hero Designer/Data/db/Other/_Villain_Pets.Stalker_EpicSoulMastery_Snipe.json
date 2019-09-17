@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Stalker_EpicSoulMastery_Snipe",
   "ImageName": "",
   "Power": [
-    10324,
-    10325
+    10200,
+    10201
   ],
   "SetType": 8,
   "DisplayName": "Stalker_EpicSoulMastery_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10324,
+      "PowerIndex": 10200,
       "PowerSetID": 3545,
       "StaticIndex": 9833,
       "NGroupMembership": [],
@@ -342,7 +342,7 @@
     {
       "CastTimeReal": 7.33,
       "ToggleCost": 17.94,
-      "PowerIndex": 10325,
+      "PowerIndex": 10201,
       "PowerSetID": 3545,
       "PowerSetIndex": 1,
       "StaticIndex": 9834,

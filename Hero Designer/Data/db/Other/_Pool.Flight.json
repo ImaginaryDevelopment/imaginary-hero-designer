@@ -4,11 +4,11 @@
   "FullName": "Pool.Flight",
   "ImageName": "Flight.png",
   "Power": [
-    6778,
-    6779,
-    6780,
-    6781,
-    6782
+    6654,
+    6655,
+    6656,
+    6657,
+    6658
   ],
   "SetType": 5,
   "DisplayName": "Flight",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 6.5,
-      "PowerIndex": 6778,
+      "PowerIndex": 6654,
       "PowerSetID": 3290,
       "StaticIndex": 1802,
       "NGroupMembership": [],
@@ -1078,7 +1078,7 @@
     {
       "CastTimeReal": 1.716,
       "ToggleCost": 1.0,
-      "PowerIndex": 6779,
+      "PowerIndex": 6655,
       "PowerSetID": 3290,
       "PowerSetIndex": 1,
       "StaticIndex": 1803,
@@ -1497,7 +1497,7 @@
     },
     {
       "ToggleCost": 0.195,
-      "PowerIndex": 6780,
+      "PowerIndex": 6656,
       "PowerSetID": 3290,
       "PowerSetIndex": 2,
       "StaticIndex": 1801,
@@ -2540,7 +2540,7 @@
     {
       "ToggleCost": 0.65,
       "IsEpic": true,
-      "PowerIndex": 6781,
+      "PowerIndex": 6657,
       "PowerSetID": 3290,
       "PowerSetIndex": 3,
       "StaticIndex": 5632,
@@ -2572,16 +2572,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6780,
-            6778
+            6656,
+            6654
           ],
           [
-            6780,
-            6779
+            6656,
+            6655
           ],
           [
-            6778,
-            6779
+            6654,
+            6655
           ]
         ],
         "NPowerIDNot": []
@@ -3535,7 +3535,7 @@
       "CastTimeReal": 2.03,
       "ToggleCost": 0.65,
       "IsEpic": true,
-      "PowerIndex": 6782,
+      "PowerIndex": 6658,
       "PowerSetID": 3290,
       "PowerSetIndex": 4,
       "StaticIndex": 1804,
@@ -3570,16 +3570,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6780,
-            6778
+            6656,
+            6654
           ],
           [
-            6780,
-            6779
+            6656,
+            6655
           ],
           [
-            6778,
-            6779
+            6654,
+            6655
           ]
         ],
         "NPowerIDNot": []

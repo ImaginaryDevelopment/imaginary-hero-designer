@@ -4,11 +4,11 @@
   "FullName": "Pool.Leaping",
   "ImageName": "Leaping.png",
   "Power": [
-    6793,
-    6794,
-    6795,
-    6796,
-    6797
+    6669,
+    6670,
+    6671,
+    6672,
+    6673
   ],
   "SetType": 5,
   "DisplayName": "Leaping",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 5.46,
-      "PowerIndex": 6793,
+      "PowerIndex": 6669,
       "PowerSetID": 3292,
       "StaticIndex": 1813,
       "NGroupMembership": [],
@@ -1009,7 +1009,7 @@
     },
     {
       "ToggleCost": 0.456,
-      "PowerIndex": 6794,
+      "PowerIndex": 6670,
       "PowerSetID": 3292,
       "PowerSetIndex": 1,
       "StaticIndex": 1815,
@@ -1369,7 +1369,7 @@
     {
       "CastTimeReal": 1.716,
       "ToggleCost": 0.065,
-      "PowerIndex": 6795,
+      "PowerIndex": 6671,
       "PowerSetID": 3292,
       "PowerSetIndex": 2,
       "StaticIndex": 1814,
@@ -2387,7 +2387,7 @@
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
       "IsEpic": true,
-      "PowerIndex": 6796,
+      "PowerIndex": 6672,
       "PowerSetID": 3292,
       "PowerSetIndex": 3,
       "StaticIndex": 1816,
@@ -2419,16 +2419,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6793,
-            6795
+            6669,
+            6671
           ],
           [
-            6793,
-            6794
+            6669,
+            6670
           ],
           [
-            6795,
-            6794
+            6671,
+            6670
           ]
         ],
         "NPowerIDNot": []
@@ -2864,7 +2864,7 @@
       "CastTimeReal": 1.5,
       "ToggleCost": 13.52,
       "IsEpic": true,
-      "PowerIndex": 6797,
+      "PowerIndex": 6673,
       "PowerSetID": 3292,
       "PowerSetIndex": 4,
       "StaticIndex": 5633,
@@ -2896,16 +2896,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6793,
-            6795
+            6669,
+            6671
           ],
           [
-            6793,
-            6794
+            6669,
+            6670
           ],
           [
-            6795,
-            6794
+            6671,
+            6670
           ]
         ],
         "NPowerIDNot": []
@@ -3006,7 +3006,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Spring_Attack",
-          "nSummon": 285,
+          "nSummon": 284,
           "DelayedTime": 0.625,
           "UIDClassName": "",
           "nIDClassName": -1,

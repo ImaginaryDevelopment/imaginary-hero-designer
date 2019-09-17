@@ -4,7 +4,7 @@
   "FullName": "Pets.Chain_Stun_Controller_Jump1",
   "ImageName": "",
   "Power": [
-    6299
+    6175
   ],
   "SetType": 8,
   "DisplayName": "Chain Stun Jump 1",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6299,
+      "PowerIndex": 6175,
       "PowerSetID": 3057,
       "StaticIndex": 4416,
       "NGroupMembership": [],

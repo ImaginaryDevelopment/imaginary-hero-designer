@@ -4,18 +4,18 @@
   "FullName": "Sentinel_Defense.Bio_Organic_Armor",
   "ImageName": "BioArmor.png",
   "Power": [
-    7118,
-    7119,
-    7120,
-    7121,
-    7122,
-    7123,
-    7124,
-    7125,
-    7126,
-    7127,
-    7128,
-    7129
+    6994,
+    6995,
+    6996,
+    6997,
+    6998,
+    6999,
+    7000,
+    7001,
+    7002,
+    7003,
+    7004,
+    7005
   ],
   "SetType": 2,
   "DisplayName": "Bio Armor",
@@ -35,7 +35,7 @@
       "CastTimeReal": 1.0,
       "IsEpic": true,
       "LocationIndex": 11,
-      "PowerIndex": 7118,
+      "PowerIndex": 6994,
       "PowerSetID": 3330,
       "StaticIndex": 10523,
       "NGroupMembership": [
@@ -60,7 +60,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            7124,
+            7000,
             -1
           ]
         ],
@@ -141,7 +141,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Defensive_Adaptation_Proc",
-          "nSummon": 9514,
+          "nSummon": 9390,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -472,7 +472,7 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 34,
-      "PowerIndex": 7119,
+      "PowerIndex": 6995,
       "PowerSetID": 3330,
       "PowerSetIndex": 1,
       "StaticIndex": 10524,
@@ -498,7 +498,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            7124,
+            7000,
             -1
           ]
         ],
@@ -576,7 +576,7 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 35,
-      "PowerIndex": 7120,
+      "PowerIndex": 6996,
       "PowerSetID": 3330,
       "PowerSetIndex": 2,
       "StaticIndex": 10526,
@@ -602,7 +602,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            7124,
+            7000,
             -1
           ]
         ],
@@ -682,7 +682,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Offensive_Adaptation_Proc",
-          "nSummon": 9787,
+          "nSummon": 9663,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -1012,7 +1012,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 7121,
+      "PowerIndex": 6997,
       "PowerSetID": 3330,
       "PowerSetIndex": 3,
       "StaticIndex": 10519,
@@ -1753,7 +1753,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7122,
+      "PowerIndex": 6998,
       "PowerSetID": 3330,
       "PowerSetIndex": 4,
       "StaticIndex": 10520,
@@ -2249,7 +2249,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 7123,
+      "PowerIndex": 6999,
       "PowerSetID": 3330,
       "PowerSetIndex": 5,
       "StaticIndex": 10521,
@@ -3231,7 +3231,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7124,
+      "PowerIndex": 7000,
       "PowerSetID": 3330,
       "PowerSetIndex": 6,
       "StaticIndex": 10665,
@@ -3320,7 +3320,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 7125,
+      "PowerIndex": 7001,
       "PowerSetID": 3330,
       "PowerSetIndex": 7,
       "StaticIndex": 10522,
@@ -3520,7 +3520,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 13.0,
-      "PowerIndex": 7126,
+      "PowerIndex": 7002,
       "PowerSetID": 3330,
       "PowerSetIndex": 8,
       "StaticIndex": 10528,
@@ -3788,7 +3788,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7127,
+      "PowerIndex": 7003,
       "PowerSetID": 3330,
       "PowerSetIndex": 9,
       "StaticIndex": 10530,
@@ -4261,7 +4261,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7128,
+      "PowerIndex": 7004,
       "PowerSetID": 3330,
       "PowerSetIndex": 10,
       "StaticIndex": 10531,
@@ -4940,7 +4940,7 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 18.2,
-      "PowerIndex": 7129,
+      "PowerIndex": 7005,
       "PowerSetID": 3330,
       "PowerSetIndex": 11,
       "StaticIndex": 10529,

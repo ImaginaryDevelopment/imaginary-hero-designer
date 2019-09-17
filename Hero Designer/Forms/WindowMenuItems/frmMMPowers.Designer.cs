@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -53,6 +54,7 @@ namespace Hero_Designer
             this.cbSelPetPower.Name = "cbSelPetPower";
             this.cbSelPetPower.Size = new System.Drawing.Size(167, 22);
             this.cbSelPetPower.TabIndex = 33;
+            this.cbSelPetPower.SelectedIndexChanged += new EventHandler(cbSelPetPower_SelectedIndexChanged);
 
             this.cbSelPets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelPets.Items.AddRange(new object[] {});
@@ -60,6 +62,7 @@ namespace Hero_Designer
             this.cbSelPets.Name = "cbSelPets";
             this.cbSelPets.Size = new System.Drawing.Size(167, 22);
             this.cbSelPets.TabIndex = 34;
+            this.cbSelPets.SelectedIndexChanged += new EventHandler(cbSelPet_SelectedIndexChanged);
 
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel1.Controls.Add((System.Windows.Forms.Control)this.VScrollBar1);

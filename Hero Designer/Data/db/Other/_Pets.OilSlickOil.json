@@ -4,9 +4,9 @@
   "FullName": "Pets.OilSlickOil",
   "ImageName": "",
   "Power": [
-    6497,
-    6498,
-    6499
+    6373,
+    6374,
+    6375
   ],
   "SetType": 8,
   "DisplayName": "Oil Slick",
@@ -23,7 +23,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6497,
+      "PowerIndex": 6373,
       "PowerSetID": 3158,
       "StaticIndex": 1668,
       "NGroupMembership": [],
@@ -321,7 +321,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6498,
+      "PowerIndex": 6374,
       "PowerSetID": 3158,
       "PowerSetIndex": 1,
       "StaticIndex": 4426,
@@ -409,7 +409,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6499,
+      "PowerIndex": 6375,
       "PowerSetID": 3158,
       "PowerSetIndex": 2,
       "StaticIndex": 4427,

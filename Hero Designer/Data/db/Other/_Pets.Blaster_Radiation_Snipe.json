@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Radiation_Snipe",
   "ImageName": "",
   "Power": [
-    6259,
-    6260
+    6135,
+    6136
   ],
   "SetType": 8,
   "DisplayName": "Radiation Blast",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6259,
+      "PowerIndex": 6135,
       "PowerSetID": 3177,
       "StaticIndex": 9563,
       "NGroupMembership": [],
@@ -530,7 +530,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6260,
+      "PowerIndex": 6136,
       "PowerSetID": 3177,
       "PowerSetIndex": 1,
       "StaticIndex": 9564,

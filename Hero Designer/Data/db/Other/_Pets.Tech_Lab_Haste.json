@@ -4,7 +4,7 @@
   "FullName": "Pets.Tech_Lab_Haste",
   "ImageName": "",
   "Power": [
-    6625
+    6501
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6625,
+      "PowerIndex": 6501,
       "PowerSetID": 3233,
       "StaticIndex": 1736,
       "NGroupMembership": [],

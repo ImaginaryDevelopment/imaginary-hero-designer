@@ -4,8 +4,8 @@
   "FullName": "Pets.Traps_Acid_Mortar_Defender",
   "ImageName": "",
   "Power": [
-    6672,
-    6673
+    6548,
+    6549
   ],
   "SetType": 8,
   "DisplayName": "Acid Mortar",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6672,
+      "PowerIndex": 6548,
       "PowerSetID": 3019,
       "StaticIndex": 3535,
       "NGroupMembership": [],
@@ -430,7 +430,7 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 6673,
+      "PowerIndex": 6549,
       "PowerSetID": 3019,
       "PowerSetIndex": 1,
       "StaticIndex": 3536,

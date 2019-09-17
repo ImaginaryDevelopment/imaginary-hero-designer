@@ -4,8 +4,8 @@
   "FullName": "Pets.Quartz",
   "ImageName": "",
   "Power": [
-    6537,
-    6538
+    6413,
+    6414
   ],
   "SetType": 8,
   "DisplayName": "Quartz",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6537,
+      "PowerIndex": 6413,
       "PowerSetID": 3173,
       "StaticIndex": 1685,
       "NGroupMembership": [],
@@ -110,7 +110,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 6538,
+      "PowerIndex": 6414,
       "PowerSetID": 3173,
       "PowerSetIndex": 1,
       "StaticIndex": 1686,

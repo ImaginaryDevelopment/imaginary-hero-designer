@@ -4,7 +4,7 @@
   "FullName": "Pets.Infected_Explosion",
   "ImageName": "",
   "Power": [
-    6433
+    6309
   ],
   "SetType": 8,
   "DisplayName": "Infected Explosion",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6433,
+      "PowerIndex": 6309,
       "PowerSetID": 3118,
       "StaticIndex": 1623,
       "NGroupMembership": [],

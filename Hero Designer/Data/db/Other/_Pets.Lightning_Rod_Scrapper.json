@@ -4,7 +4,7 @@
   "FullName": "Pets.Lightning_Rod_Scrapper",
   "ImageName": "",
   "Power": [
-    6464
+    6340
   ],
   "SetType": 8,
   "DisplayName": "Electric Melee",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6464,
+      "PowerIndex": 6340,
       "PowerSetID": 3083,
       "StaticIndex": 3533,
       "NGroupMembership": [],

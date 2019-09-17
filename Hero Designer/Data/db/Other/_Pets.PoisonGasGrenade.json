@@ -4,7 +4,7 @@
   "FullName": "Pets.PoisonGasGrenade",
   "ImageName": "",
   "Power": [
-    6518
+    6394
   ],
   "SetType": 8,
   "DisplayName": "PoisonGasGrenade",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6518,
+      "PowerIndex": 6394,
       "PowerSetID": 3168,
       "StaticIndex": 1684,
       "NGroupMembership": [],

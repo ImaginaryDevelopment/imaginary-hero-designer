@@ -4,15 +4,15 @@
   "FullName": "Pets.Decoy",
   "ImageName": "",
   "Power": [
-    6330,
-    6331,
-    6332,
-    6333,
-    6334,
-    6335,
-    6336,
-    6337,
-    6338
+    6206,
+    6207,
+    6208,
+    6209,
+    6210,
+    6211,
+    6212,
+    6213,
+    6214
   ],
   "SetType": 8,
   "DisplayName": "Decoy",
@@ -29,7 +29,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6330,
+      "PowerIndex": 6206,
       "PowerSetID": 3066,
       "StaticIndex": 1575,
       "NGroupMembership": [],
@@ -213,7 +213,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 6331,
+      "PowerIndex": 6207,
       "PowerSetID": 3066,
       "PowerSetIndex": 1,
       "StaticIndex": 1576,
@@ -410,7 +410,7 @@
     },
     {
       "CastTimeReal": 1.33,
-      "PowerIndex": 6332,
+      "PowerIndex": 6208,
       "PowerSetID": 3066,
       "PowerSetIndex": 2,
       "StaticIndex": 1577,
@@ -606,7 +606,7 @@
     },
     {
       "CastTimeReal": 2.5,
-      "PowerIndex": 6333,
+      "PowerIndex": 6209,
       "PowerSetID": 3066,
       "PowerSetIndex": 3,
       "StaticIndex": 1578,
@@ -773,7 +773,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 6334,
+      "PowerIndex": 6210,
       "PowerSetID": 3066,
       "PowerSetIndex": 4,
       "StaticIndex": 1579,
@@ -970,7 +970,7 @@
     },
     {
       "CastTimeReal": 1.33,
-      "PowerIndex": 6335,
+      "PowerIndex": 6211,
       "PowerSetID": 3066,
       "PowerSetIndex": 5,
       "StaticIndex": 1580,
@@ -1166,7 +1166,7 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 6336,
+      "PowerIndex": 6212,
       "PowerSetID": 3066,
       "PowerSetIndex": 6,
       "StaticIndex": 1581,
@@ -1332,7 +1332,7 @@
     },
     {
       "CastTimeReal": 1.0,
-      "PowerIndex": 6337,
+      "PowerIndex": 6213,
       "PowerSetID": 3066,
       "PowerSetIndex": 7,
       "StaticIndex": 1582,
@@ -1498,7 +1498,7 @@
     },
     {
       "CastTimeReal": 1.2,
-      "PowerIndex": 6338,
+      "PowerIndex": 6214,
       "PowerSetID": 3066,
       "PowerSetIndex": 8,
       "StaticIndex": 1583,

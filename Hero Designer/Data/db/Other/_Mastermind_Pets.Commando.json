@@ -4,11 +4,11 @@
   "FullName": "Mastermind_Pets.Commando",
   "ImageName": "",
   "Power": [
-    5788,
-    5789,
-    5790,
-    5791,
-    5792
+    5782,
+    5783,
+    5784,
+    5785,
+    5786
   ],
   "SetType": 8,
   "DisplayName": "Commando",
@@ -25,7 +25,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5788,
+      "PowerIndex": 5782,
       "PowerSetID": 2919,
       "StaticIndex": 1175,
       "NGroupMembership": [],
@@ -414,7 +414,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 4.368,
-      "PowerIndex": 5789,
+      "PowerIndex": 5783,
       "PowerSetID": 2919,
       "PowerSetIndex": 1,
       "StaticIndex": 1176,
@@ -513,7 +513,7 @@
     {
       "CastTimeReal": 2.2,
       "ToggleCost": 5.2,
-      "PowerIndex": 5790,
+      "PowerIndex": 5784,
       "PowerSetID": 2919,
       "PowerSetIndex": 2,
       "StaticIndex": 1177,
@@ -653,7 +653,7 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 8.528,
-      "PowerIndex": 5791,
+      "PowerIndex": 5785,
       "PowerSetID": 2919,
       "PowerSetIndex": 3,
       "StaticIndex": 1178,
@@ -823,7 +823,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5792,
+      "PowerIndex": 5786,
       "PowerSetID": 2919,
       "PowerSetIndex": 4,
       "StaticIndex": 1179,

@@ -4,9 +4,9 @@
   "FullName": "Pets.Traps_FF_Generator_Defender",
   "ImageName": "",
   "Power": [
-    6675,
-    6676,
-    6677
+    6551,
+    6552,
+    6553
   ],
   "SetType": 8,
   "DisplayName": "Force Field Generator",
@@ -24,7 +24,7 @@
   "Powers": [
     {
       "CastTimeReal": 1.07,
-      "PowerIndex": 6675,
+      "PowerIndex": 6551,
       "PowerSetID": 3095,
       "StaticIndex": 3538,
       "NGroupMembership": [],
@@ -643,7 +643,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6676,
+      "PowerIndex": 6552,
       "PowerSetID": 3095,
       "PowerSetIndex": 1,
       "StaticIndex": 3539,
@@ -794,7 +794,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6677,
+      "PowerIndex": 6553,
       "PowerSetID": 3095,
       "PowerSetIndex": 2,
       "StaticIndex": 3540,

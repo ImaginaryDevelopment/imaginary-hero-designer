@@ -4,11 +4,11 @@
   "FullName": "Mastermind_Pets.Skeleton",
   "ImageName": "Necromancy.png",
   "Power": [
-    5984,
-    5985,
-    5986,
-    5987,
-    5988
+    5939,
+    5940,
+    5941,
+    5942,
+    5943
   ],
   "SetType": 8,
   "DisplayName": "Skeleton",
@@ -25,7 +25,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5984,
+      "PowerIndex": 5939,
       "PowerSetID": 2968,
       "StaticIndex": 1276,
       "NGroupMembership": [],
@@ -446,7 +446,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 5985,
+      "PowerIndex": 5940,
       "PowerSetID": 2968,
       "PowerSetIndex": 1,
       "StaticIndex": 1277,
@@ -583,7 +583,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 4.16,
-      "PowerIndex": 5986,
+      "PowerIndex": 5941,
       "PowerSetID": 2968,
       "PowerSetIndex": 2,
       "StaticIndex": 1278,
@@ -721,7 +721,7 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 2.6,
-      "PowerIndex": 5987,
+      "PowerIndex": 5942,
       "PowerSetID": 2968,
       "PowerSetIndex": 3,
       "StaticIndex": 1279,
@@ -857,7 +857,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5988,
+      "PowerIndex": 5943,
       "PowerSetID": 2968,
       "PowerSetIndex": 4,
       "StaticIndex": 1280,

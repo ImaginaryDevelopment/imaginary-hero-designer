@@ -4,8 +4,8 @@
   "FullName": "Pets.IceStorm_Sentinel",
   "ImageName": "",
   "Power": [
-    6429,
-    6430
+    6305,
+    6306
   ],
   "SetType": 8,
   "DisplayName": "Ice Storm",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6429,
+      "PowerIndex": 6305,
       "PowerSetID": 3114,
       "StaticIndex": 10621,
       "NGroupMembership": [],
@@ -425,7 +425,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6430,
+      "PowerIndex": 6306,
       "PowerSetID": 3114,
       "PowerSetIndex": 1,
       "StaticIndex": 10622,

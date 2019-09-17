@@ -4,10 +4,10 @@
   "FullName": "Villain_Pets.Shade",
   "ImageName": "",
   "Power": [
-    10297,
-    10298,
-    10299,
-    10300
+    10173,
+    10174,
+    10175,
+    10176
   ],
   "SetType": 8,
   "DisplayName": "Shade",
@@ -26,7 +26,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 4.55,
-      "PowerIndex": 10297,
+      "PowerIndex": 10173,
       "PowerSetID": 3532,
       "StaticIndex": 6338,
       "NGroupMembership": [],
@@ -262,7 +262,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 10298,
+      "PowerIndex": 10174,
       "PowerSetID": 3532,
       "PowerSetIndex": 1,
       "StaticIndex": 6339,
@@ -715,7 +715,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 7.8,
-      "PowerIndex": 10299,
+      "PowerIndex": 10175,
       "PowerSetID": 3532,
       "PowerSetIndex": 2,
       "StaticIndex": 6340,
@@ -855,7 +855,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10300,
+      "PowerIndex": 10176,
       "PowerSetID": 3532,
       "PowerSetIndex": 3,
       "StaticIndex": 6341,

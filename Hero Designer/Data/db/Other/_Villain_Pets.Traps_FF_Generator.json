@@ -4,9 +4,9 @@
   "FullName": "Villain_Pets.Traps_FF_Generator",
   "ImageName": "",
   "Power": [
-    10352,
-    10353,
-    10354
+    10228,
+    10229,
+    10230
   ],
   "SetType": 8,
   "DisplayName": "Force Field Generator",
@@ -24,7 +24,7 @@
   "Powers": [
     {
       "CastTimeReal": 1.07,
-      "PowerIndex": 10352,
+      "PowerIndex": 10228,
       "PowerSetID": 3507,
       "StaticIndex": 3159,
       "NGroupMembership": [],
@@ -643,7 +643,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10353,
+      "PowerIndex": 10229,
       "PowerSetID": 3507,
       "PowerSetIndex": 1,
       "StaticIndex": 3160,
@@ -794,7 +794,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10354,
+      "PowerIndex": 10230,
       "PowerSetID": 3507,
       "PowerSetIndex": 2,
       "StaticIndex": 3161,

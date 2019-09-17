@@ -4,18 +4,18 @@
   "FullName": "Scrapper_Defense.Bio_Organic_Armor",
   "ImageName": "BioArmor.png",
   "Power": [
-    6824,
-    6825,
-    6826,
-    6827,
-    6828,
-    6829,
-    6830,
-    6831,
-    6832,
-    6833,
-    6834,
-    6835
+    6700,
+    6701,
+    6702,
+    6703,
+    6704,
+    6705,
+    6706,
+    6707,
+    6708,
+    6709,
+    6710,
+    6711
   ],
   "SetType": 2,
   "DisplayName": "Bio Armor",
@@ -35,7 +35,7 @@
       "CastTimeReal": 1.0,
       "IsEpic": true,
       "LocationIndex": 11,
-      "PowerIndex": 6824,
+      "PowerIndex": 6700,
       "PowerSetID": 3298,
       "StaticIndex": 9137,
       "NGroupMembership": [
@@ -60,7 +60,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6830,
+            6706,
             -1
           ]
         ],
@@ -141,7 +141,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Defensive_Adaptation_Proc",
-          "nSummon": 9514,
+          "nSummon": 9390,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -472,7 +472,7 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 34,
-      "PowerIndex": 6825,
+      "PowerIndex": 6701,
       "PowerSetID": 3298,
       "PowerSetIndex": 1,
       "StaticIndex": 9184,
@@ -498,7 +498,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6830,
+            6706,
             -1
           ]
         ],
@@ -609,7 +609,7 @@
       "CastTimeReal": 0.67,
       "IsEpic": true,
       "LocationIndex": 35,
-      "PowerIndex": 6826,
+      "PowerIndex": 6702,
       "PowerSetID": 3298,
       "PowerSetIndex": 2,
       "StaticIndex": 9138,
@@ -635,7 +635,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6830,
+            6706,
             -1
           ]
         ],
@@ -715,7 +715,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Offensive_Adaptation_Proc",
-          "nSummon": 9787,
+          "nSummon": 9663,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -1079,7 +1079,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 6827,
+      "PowerIndex": 6703,
       "PowerSetID": 3298,
       "PowerSetIndex": 3,
       "StaticIndex": 9180,
@@ -1783,7 +1783,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6828,
+      "PowerIndex": 6704,
       "PowerSetID": 3298,
       "PowerSetIndex": 4,
       "StaticIndex": 9181,
@@ -2279,7 +2279,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 6829,
+      "PowerIndex": 6705,
       "PowerSetID": 3298,
       "PowerSetIndex": 5,
       "StaticIndex": 9182,
@@ -3234,7 +3234,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6830,
+      "PowerIndex": 6706,
       "PowerSetID": 3298,
       "PowerSetIndex": 6,
       "StaticIndex": 9183,
@@ -3323,7 +3323,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 6831,
+      "PowerIndex": 6707,
       "PowerSetID": 3298,
       "PowerSetIndex": 7,
       "StaticIndex": 9185,
@@ -3588,7 +3588,7 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 0.26,
-      "PowerIndex": 6832,
+      "PowerIndex": 6708,
       "PowerSetID": 3298,
       "PowerSetIndex": 8,
       "StaticIndex": 9186,
@@ -6129,7 +6129,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 13.0,
-      "PowerIndex": 6833,
+      "PowerIndex": 6709,
       "PowerSetID": 3298,
       "PowerSetIndex": 9,
       "StaticIndex": 9187,
@@ -6656,7 +6656,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 0.52,
-      "PowerIndex": 6834,
+      "PowerIndex": 6710,
       "PowerSetID": 3298,
       "PowerSetIndex": 10,
       "StaticIndex": 9188,
@@ -7314,7 +7314,7 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 18.2,
-      "PowerIndex": 6835,
+      "PowerIndex": 6711,
       "PowerSetID": 3298,
       "PowerSetIndex": 11,
       "StaticIndex": 9189,

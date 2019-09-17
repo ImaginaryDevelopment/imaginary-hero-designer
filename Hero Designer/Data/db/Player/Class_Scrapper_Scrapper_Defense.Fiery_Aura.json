@@ -4,15 +4,15 @@
   "FullName": "Scrapper_Defense.Fiery_Aura",
   "ImageName": "FireMastery2.png",
   "Power": [
-    6863,
-    6864,
-    6865,
-    6866,
-    6867,
-    6868,
-    6869,
-    6870,
-    6871
+    6739,
+    6740,
+    6741,
+    6742,
+    6743,
+    6744,
+    6745,
+    6746,
+    6747
   ],
   "SetType": 2,
   "DisplayName": "Fiery Aura",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 6863,
+      "PowerIndex": 6739,
       "PowerSetID": 3302,
       "StaticIndex": 1842,
       "NGroupMembership": [],
@@ -453,7 +453,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 6864,
+      "PowerIndex": 6740,
       "PowerSetID": 3302,
       "PowerSetIndex": 1,
       "StaticIndex": 1843,
@@ -590,7 +590,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.4,
-      "PowerIndex": 6865,
+      "PowerIndex": 6741,
       "PowerSetID": 3302,
       "PowerSetIndex": 2,
       "StaticIndex": 1844,
@@ -727,7 +727,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6866,
+      "PowerIndex": 6742,
       "PowerSetID": 3302,
       "PowerSetIndex": 3,
       "StaticIndex": 1845,
@@ -1022,7 +1022,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 6867,
+      "PowerIndex": 6743,
       "PowerSetID": 3302,
       "PowerSetIndex": 4,
       "StaticIndex": 1846,
@@ -1715,7 +1715,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 6868,
+      "PowerIndex": 6744,
       "PowerSetID": 3302,
       "PowerSetIndex": 5,
       "StaticIndex": 1847,
@@ -1967,7 +1967,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 5.2,
-      "PowerIndex": 6869,
+      "PowerIndex": 6745,
       "PowerSetID": 3302,
       "PowerSetIndex": 6,
       "StaticIndex": 1848,
@@ -2216,7 +2216,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 7.8,
-      "PowerIndex": 6870,
+      "PowerIndex": 6746,
       "PowerSetID": 3302,
       "PowerSetIndex": 7,
       "StaticIndex": 1849,
@@ -2607,7 +2607,7 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 6871,
+      "PowerIndex": 6747,
       "PowerSetID": 3302,
       "PowerSetIndex": 8,
       "StaticIndex": 1850,

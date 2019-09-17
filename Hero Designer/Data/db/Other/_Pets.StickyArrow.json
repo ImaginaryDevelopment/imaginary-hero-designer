@@ -4,8 +4,8 @@
   "FullName": "Pets.StickyArrow",
   "ImageName": "",
   "Power": [
-    6598,
-    6599
+    6474,
+    6475
   ],
   "SetType": 8,
   "DisplayName": "Sticky Arrow",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6598,
+      "PowerIndex": 6474,
       "PowerSetID": 3221,
       "StaticIndex": 1719,
       "NGroupMembership": [],
@@ -281,7 +281,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6599,
+      "PowerIndex": 6475,
       "PowerSetID": 3221,
       "PowerSetIndex": 1,
       "StaticIndex": 1720,

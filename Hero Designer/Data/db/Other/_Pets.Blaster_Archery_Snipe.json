@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Archery_Snipe",
   "ImageName": "",
   "Power": [
-    6243,
-    6244
+    6119,
+    6120
   ],
   "SetType": 8,
   "DisplayName": "Archery",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6243,
+      "PowerIndex": 6119,
       "PowerSetID": 3024,
       "StaticIndex": 9549,
       "NGroupMembership": [],
@@ -483,7 +483,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6244,
+      "PowerIndex": 6120,
       "PowerSetID": 3024,
       "PowerSetIndex": 1,
       "StaticIndex": 9550,

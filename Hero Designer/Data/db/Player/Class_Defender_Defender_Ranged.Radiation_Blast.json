@@ -1002,7 +1002,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6365,
+          "nSummon": 6241,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1020,7 +1020,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Radiation_Snipe.Proton_Volley_Quick",
-          "nOverride": 6365
+          "nOverride": 6241
         },
         {
           "MagnitudeExpression": "",
@@ -1036,7 +1036,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6364,
+          "nSummon": 6240,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1053,7 +1053,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Radiation_Snipe.Proton_Volley_Normal",
-          "nOverride": 6364
+          "nOverride": 6240
         },
         {
           "MagnitudeExpression": "",

@@ -4,10 +4,10 @@
   "FullName": "Mastermind_Pets.Oni",
   "ImageName": "",
   "Power": [
-    5962,
-    5963,
-    5964,
-    5965
+    5921,
+    5922,
+    5923,
+    5924
   ],
   "SetType": 8,
   "DisplayName": "Oni",
@@ -24,7 +24,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5962,
+      "PowerIndex": 5921,
       "PowerSetID": 2962,
       "StaticIndex": 1254,
       "NGroupMembership": [],
@@ -419,7 +419,7 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 5.2,
-      "PowerIndex": 5963,
+      "PowerIndex": 5922,
       "PowerSetID": 2962,
       "PowerSetIndex": 1,
       "StaticIndex": 1255,
@@ -592,7 +592,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 4.368,
-      "PowerIndex": 5964,
+      "PowerIndex": 5923,
       "PowerSetID": 2962,
       "PowerSetIndex": 2,
       "StaticIndex": 1256,
@@ -795,7 +795,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5965,
+      "PowerIndex": 5924,
       "PowerSetID": 2962,
       "PowerSetIndex": 3,
       "StaticIndex": 1257,

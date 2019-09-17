@@ -4,7 +4,7 @@
   "FullName": "Pets.HeatLossDebuff_Defender",
   "ImageName": "",
   "Power": [
-    6413
+    6289
   ],
   "SetType": 8,
   "DisplayName": "Heat Loss",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6413,
+      "PowerIndex": 6289,
       "PowerSetID": 3103,
       "StaticIndex": 1607,
       "NGroupMembership": [],
@@ -644,7 +644,7 @@
           "nID": 16,
           "EffectType": 38,
           "Summon": "Pets_HeatLossBuff_Defender",
-          "nSummon": 133,
+          "nSummon": 132,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,

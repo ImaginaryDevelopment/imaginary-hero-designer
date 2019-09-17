@@ -4,8 +4,8 @@
   "FullName": "Pets.Radiation_Melee",
   "ImageName": "",
   "Power": [
-    6541,
-    6542
+    6417,
+    6418
   ],
   "SetType": 8,
   "DisplayName": "Radiation Melee",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6541,
+      "PowerIndex": 6417,
       "PowerSetID": 3179,
       "StaticIndex": 10623,
       "NGroupMembership": [],
@@ -256,7 +256,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
-          "nSummon": 9881,
+          "nSummon": 9757,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -281,7 +281,7 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 6542,
+      "PowerIndex": 6418,
       "PowerSetID": 3179,
       "PowerSetIndex": 1,
       "StaticIndex": 10624,

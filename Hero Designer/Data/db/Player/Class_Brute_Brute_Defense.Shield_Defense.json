@@ -4095,7 +4095,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Shield_Charge_Brute",
-          "nSummon": 222,
+          "nSummon": 221,
           "DelayedTime": 0.625,
           "UIDClassName": "",
           "nIDClassName": -1,

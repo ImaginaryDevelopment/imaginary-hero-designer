@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Coral_Guardian_Warder",
   "ImageName": "",
   "Power": [
-    10123,
-    10124,
-    10125,
-    10126,
-    10127,
-    10128,
-    10129,
-    10130
+    9999,
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006
   ],
   "SetType": 8,
   "DisplayName": "Coral Guardian Warder",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10123,
+      "PowerIndex": 9999,
       "PowerSetID": 3476,
       "StaticIndex": 3048,
       "NGroupMembership": [],
@@ -147,7 +147,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.54,
-      "PowerIndex": 10124,
+      "PowerIndex": 10000,
       "PowerSetID": 3476,
       "PowerSetIndex": 1,
       "StaticIndex": 3049,
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 6.5,
-      "PowerIndex": 10125,
+      "PowerIndex": 10001,
       "PowerSetID": 3476,
       "PowerSetIndex": 2,
       "StaticIndex": 3050,
@@ -418,7 +418,7 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 6.5,
-      "PowerIndex": 10126,
+      "PowerIndex": 10002,
       "PowerSetID": 3476,
       "PowerSetIndex": 3,
       "StaticIndex": 3051,
@@ -520,7 +520,7 @@
     {
       "CastTimeReal": 2.07,
       "ToggleCost": 10.66,
-      "PowerIndex": 10127,
+      "PowerIndex": 10003,
       "PowerSetID": 3476,
       "PowerSetIndex": 4,
       "StaticIndex": 3052,
@@ -875,7 +875,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10128,
+      "PowerIndex": 10004,
       "PowerSetID": 3476,
       "PowerSetIndex": 5,
       "StaticIndex": 3053,
@@ -959,7 +959,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 8.58,
-      "PowerIndex": 10129,
+      "PowerIndex": 10005,
       "PowerSetID": 3476,
       "PowerSetIndex": 6,
       "StaticIndex": 3054,
@@ -1135,7 +1135,7 @@
     {
       "CastTimeReal": 0.9,
       "ToggleCost": 10.66,
-      "PowerIndex": 10130,
+      "PowerIndex": 10006,
       "PowerSetID": 3476,
       "PowerSetIndex": 7,
       "StaticIndex": 3055,

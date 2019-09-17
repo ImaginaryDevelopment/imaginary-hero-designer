@@ -686,7 +686,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Defender_RainofFire",
-          "nSummon": 282,
+          "nSummon": 281,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,
@@ -1596,7 +1596,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6361,
+          "nSummon": 6237,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1614,7 +1614,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Fire_Snipe.Blazing_Bolt_Quick",
-          "nOverride": 6361
+          "nOverride": 6237
         },
         {
           "MagnitudeExpression": "",
@@ -1630,7 +1630,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6360,
+          "nSummon": 6236,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1647,7 +1647,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Fire_Snipe.Blazing_Bolt_Normal",
-          "nOverride": 6360
+          "nOverride": 6236
         },
         {
           "MagnitudeExpression": "",

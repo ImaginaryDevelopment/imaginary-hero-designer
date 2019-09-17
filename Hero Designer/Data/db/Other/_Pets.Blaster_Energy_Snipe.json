@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Energy_Snipe",
   "ImageName": "",
   "Power": [
-    6253,
-    6254
+    6129,
+    6130
   ],
   "SetType": 8,
   "DisplayName": "Energy Blast",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6253,
+      "PowerIndex": 6129,
       "PowerSetID": 3085,
       "StaticIndex": 9557,
       "NGroupMembership": [],
@@ -592,7 +592,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6254,
+      "PowerIndex": 6130,
       "PowerSetID": 3085,
       "PowerSetIndex": 1,
       "StaticIndex": 9558,

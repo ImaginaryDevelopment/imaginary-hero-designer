@@ -4,8 +4,8 @@
   "FullName": "Pets.Corruptor_FlameThrower",
   "ImageName": "",
   "Power": [
-    6309,
-    6310
+    6185,
+    6186
   ],
   "SetType": 8,
   "DisplayName": "Flame Thrower",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6309,
+      "PowerIndex": 6185,
       "PowerSetID": 3094,
       "StaticIndex": 1561,
       "NGroupMembership": [],
@@ -184,7 +184,7 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6310,
+      "PowerIndex": 6186,
       "PowerSetID": 3094,
       "PowerSetIndex": 1,
       "StaticIndex": 1562,

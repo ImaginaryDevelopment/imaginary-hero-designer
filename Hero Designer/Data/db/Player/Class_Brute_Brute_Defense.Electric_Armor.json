@@ -3621,7 +3621,7 @@
           "nID": 26,
           "EffectType": 38,
           "Summon": "Pets_Power_Surge",
-          "nSummon": 161,
+          "nSummon": 160,
           "DelayedTime": 179.0,
           "UIDClassName": "",
           "nIDClassName": -1,

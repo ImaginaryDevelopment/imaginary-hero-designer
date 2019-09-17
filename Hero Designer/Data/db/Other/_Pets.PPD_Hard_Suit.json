@@ -4,11 +4,11 @@
   "FullName": "Pets.PPD_Hard_Suit",
   "ImageName": "",
   "Power": [
-    6527,
-    6528,
-    6529,
-    6530,
-    6531
+    6403,
+    6404,
+    6405,
+    6406,
+    6407
   ],
   "SetType": 8,
   "DisplayName": "PPD Hard Suit",
@@ -25,7 +25,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6527,
+      "PowerIndex": 6403,
       "PowerSetID": 3170,
       "StaticIndex": 4263,
       "NGroupMembership": [],
@@ -178,7 +178,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 5.46,
-      "PowerIndex": 6528,
+      "PowerIndex": 6404,
       "PowerSetID": 3170,
       "PowerSetIndex": 1,
       "StaticIndex": 4264,
@@ -273,7 +273,7 @@
     {
       "CastTimeReal": 0.57,
       "ToggleCost": 6.5,
-      "PowerIndex": 6529,
+      "PowerIndex": 6405,
       "PowerSetID": 3170,
       "PowerSetIndex": 2,
       "StaticIndex": 4265,
@@ -472,7 +472,7 @@
     {
       "CastTimeReal": 3.87,
       "ToggleCost": 9.1,
-      "PowerIndex": 6530,
+      "PowerIndex": 6406,
       "PowerSetID": 3170,
       "PowerSetIndex": 3,
       "StaticIndex": 4266,
@@ -569,7 +569,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 8.45,
-      "PowerIndex": 6531,
+      "PowerIndex": 6407,
       "PowerSetID": 3170,
       "PowerSetIndex": 4,
       "StaticIndex": 4267,

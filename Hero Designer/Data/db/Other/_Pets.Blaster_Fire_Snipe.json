@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Fire_Snipe",
   "ImageName": "",
   "Power": [
-    6255,
-    6256
+    6131,
+    6132
   ],
   "SetType": 8,
   "DisplayName": "Fire Blast",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6255,
+      "PowerIndex": 6131,
       "PowerSetID": 3092,
       "StaticIndex": 9559,
       "NGroupMembership": [],
@@ -522,7 +522,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6256,
+      "PowerIndex": 6132,
       "PowerSetID": 3092,
       "PowerSetIndex": 1,
       "StaticIndex": 9560,

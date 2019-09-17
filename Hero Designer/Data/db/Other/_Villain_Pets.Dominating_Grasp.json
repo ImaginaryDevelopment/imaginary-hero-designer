@@ -4,9 +4,9 @@
   "FullName": "Villain_Pets.Dominating_Grasp",
   "ImageName": "",
   "Power": [
-    10177,
-    10178,
-    10179
+    10053,
+    10054,
+    10055
   ],
   "SetType": 8,
   "DisplayName": "Dominating Grasp",
@@ -23,7 +23,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10177,
+      "PowerIndex": 10053,
       "PowerSetID": 3492,
       "StaticIndex": 9024,
       "NGroupMembership": [],
@@ -148,7 +148,7 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 10178,
+      "PowerIndex": 10054,
       "PowerSetID": 3492,
       "PowerSetIndex": 1,
       "StaticIndex": 9025,
@@ -232,7 +232,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10179,
+      "PowerIndex": 10055,
       "PowerSetID": 3492,
       "PowerSetIndex": 2,
       "StaticIndex": 9026,

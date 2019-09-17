@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Chain_Induction_Jump2",
   "ImageName": "",
   "Power": [
-    10102
+    9978
   ],
   "SetType": 8,
   "DisplayName": "Chain Induction Jump 2",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10102,
+      "PowerIndex": 9978,
       "PowerSetID": 3465,
       "StaticIndex": 3263,
       "NGroupMembership": [],
@@ -126,7 +126,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Chain_Induction_Jump3",
-          "nSummon": 220,
+          "nSummon": 219,
           "DelayedTime": 0.5,
           "Stacking": 1,
           "Buffable": true,

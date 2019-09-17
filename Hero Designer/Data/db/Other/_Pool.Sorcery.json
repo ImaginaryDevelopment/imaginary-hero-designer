@@ -4,12 +4,12 @@
   "FullName": "Pool.Sorcery",
   "ImageName": "Sorcery.png",
   "Power": [
-    6808,
-    6809,
-    6810,
-    6811,
-    6812,
-    6813
+    6684,
+    6685,
+    6686,
+    6687,
+    6688,
+    6689
   ],
   "SetType": 5,
   "DisplayName": "Sorcery",
@@ -29,7 +29,7 @@
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
       "IsEpic": true,
-      "PowerIndex": 6808,
+      "PowerIndex": 6684,
       "PowerSetID": 3295,
       "StaticIndex": 9620,
       "NGroupMembership": [],
@@ -52,7 +52,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6811,
+            6687,
             -1
           ]
         ],
@@ -160,7 +160,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 7.8,
-      "PowerIndex": 6809,
+      "PowerIndex": 6685,
       "PowerSetID": 3295,
       "PowerSetIndex": 1,
       "StaticIndex": 9617,
@@ -555,7 +555,7 @@
     {
       "CastTimeReal": 2.07,
       "ToggleCost": 7.696,
-      "PowerIndex": 6810,
+      "PowerIndex": 6686,
       "PowerSetID": 3295,
       "PowerSetIndex": 2,
       "StaticIndex": 9618,
@@ -1596,7 +1596,7 @@
     },
     {
       "ToggleCost": 0.364,
-      "PowerIndex": 6811,
+      "PowerIndex": 6687,
       "PowerSetID": 3295,
       "PowerSetIndex": 3,
       "StaticIndex": 9619,
@@ -2014,7 +2014,7 @@
       "CastTimeReal": 2.07,
       "ToggleCost": 5.2,
       "IsEpic": true,
-      "PowerIndex": 6812,
+      "PowerIndex": 6688,
       "PowerSetID": 3295,
       "PowerSetIndex": 4,
       "StaticIndex": 9621,
@@ -2046,16 +2046,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6809,
-            6810
+            6685,
+            6686
           ],
           [
-            6809,
-            6811
+            6685,
+            6687
           ],
           [
-            6810,
-            6811
+            6686,
+            6687
           ]
         ],
         "NPowerIDNot": []
@@ -2340,7 +2340,7 @@
       "CastTimeReal": 2.03,
       "ToggleCost": 2.6,
       "IsEpic": true,
-      "PowerIndex": 6813,
+      "PowerIndex": 6689,
       "PowerSetID": 3295,
       "PowerSetIndex": 5,
       "StaticIndex": 9622,
@@ -2372,16 +2372,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6809,
-            6810
+            6685,
+            6686
           ],
           [
-            6809,
-            6811
+            6685,
+            6687
           ],
           [
-            6810,
-            6811
+            6686,
+            6687
           ]
         ],
         "NPowerIDNot": []

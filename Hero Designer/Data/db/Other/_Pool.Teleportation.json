@@ -4,11 +4,11 @@
   "FullName": "Pool.Teleportation",
   "ImageName": "Teleportation.png",
   "Power": [
-    6819,
-    6820,
-    6821,
-    6822,
-    6823
+    6695,
+    6696,
+    6697,
+    6698,
+    6699
   ],
   "SetType": 5,
   "DisplayName": "Teleportation",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 5.93,
       "ToggleCost": 15.0,
-      "PowerIndex": 6819,
+      "PowerIndex": 6695,
       "PowerSetID": 3297,
       "StaticIndex": 1829,
       "NGroupMembership": [],
@@ -164,7 +164,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 6820,
+      "PowerIndex": 6696,
       "PowerSetID": 3297,
       "PowerSetIndex": 1,
       "StaticIndex": 1831,
@@ -437,7 +437,7 @@
     {
       "CastTimeReal": 5.676,
       "ToggleCost": 15.0,
-      "PowerIndex": 6821,
+      "PowerIndex": 6697,
       "PowerSetID": 3297,
       "PowerSetIndex": 2,
       "StaticIndex": 1830,
@@ -906,7 +906,7 @@
       "CastTimeReal": 12.0,
       "ToggleCost": 26.0,
       "IsEpic": true,
-      "PowerIndex": 6822,
+      "PowerIndex": 6698,
       "PowerSetID": 3297,
       "PowerSetIndex": 3,
       "StaticIndex": 5635,
@@ -938,16 +938,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6819,
-            6821
+            6695,
+            6697
           ],
           [
-            6819,
-            6820
+            6695,
+            6696
           ],
           [
-            6821,
-            6820
+            6697,
+            6696
           ]
         ],
         "NPowerIDNot": []
@@ -1133,7 +1133,7 @@
       "CastTimeReal": 1.67,
       "ToggleCost": 20.0,
       "IsEpic": true,
-      "PowerIndex": 6823,
+      "PowerIndex": 6699,
       "PowerSetID": 3297,
       "PowerSetIndex": 4,
       "StaticIndex": 1832,
@@ -1165,16 +1165,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6819,
-            6821
+            6695,
+            6697
           ],
           [
-            6819,
-            6820
+            6695,
+            6696
           ],
           [
-            6821,
-            6820
+            6697,
+            6696
           ]
         ],
         "NPowerIDNot": []

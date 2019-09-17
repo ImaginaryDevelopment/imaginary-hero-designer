@@ -4,8 +4,8 @@
   "FullName": "Pets.RainofArrows_Critter",
   "ImageName": "",
   "Power": [
-    6549,
-    6550
+    6425,
+    6426
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6549,
+      "PowerIndex": 6425,
       "PowerSetID": 3188,
       "StaticIndex": 4268,
       "NGroupMembership": [],
@@ -115,7 +115,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6550,
+      "PowerIndex": 6426,
       "PowerSetID": 3188,
       "PowerSetIndex": 1,
       "StaticIndex": 4269,

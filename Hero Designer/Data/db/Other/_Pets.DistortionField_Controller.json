@@ -4,7 +4,7 @@
   "FullName": "Pets.DistortionField_Controller",
   "ImageName": "",
   "Power": [
-    6373
+    6249
   ],
   "SetType": 8,
   "DisplayName": "Time Manipulation",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6373,
+      "PowerIndex": 6249,
       "PowerSetID": 3245,
       "StaticIndex": 5605,
       "NGroupMembership": [],

@@ -4,8 +4,8 @@
   "FullName": "Pets.RainofArrows_Defender",
   "ImageName": "",
   "Power": [
-    6551,
-    6552
+    6427,
+    6428
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6551,
+      "PowerIndex": 6427,
       "PowerSetID": 3184,
       "StaticIndex": 1694,
       "NGroupMembership": [],
@@ -148,7 +148,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6552,
+      "PowerIndex": 6428,
       "PowerSetID": 3184,
       "PowerSetIndex": 1,
       "StaticIndex": 1695,

@@ -4,12 +4,12 @@
   "FullName": "Mastermind_Pets.Spec_Ops",
   "ImageName": "",
   "Power": [
-    6014,
-    6015,
-    6016,
-    6017,
-    6018,
-    6019
+    5962,
+    5963,
+    5964,
+    5965,
+    5966,
+    5967
   ],
   "SetType": 8,
   "DisplayName": "Spec Ops",
@@ -26,7 +26,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 6014,
+      "PowerIndex": 5962,
       "PowerSetID": 2975,
       "StaticIndex": 1306,
       "NGroupMembership": [],
@@ -247,7 +247,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 4.368,
-      "PowerIndex": 6015,
+      "PowerIndex": 5963,
       "PowerSetID": 2975,
       "PowerSetIndex": 1,
       "StaticIndex": 1307,
@@ -346,7 +346,7 @@
     {
       "CastTimeReal": 2.2,
       "ToggleCost": 4.368,
-      "PowerIndex": 6016,
+      "PowerIndex": 5964,
       "PowerSetID": 2975,
       "PowerSetIndex": 2,
       "StaticIndex": 1308,
@@ -486,7 +486,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 6.864,
-      "PowerIndex": 6017,
+      "PowerIndex": 5965,
       "PowerSetID": 2975,
       "PowerSetIndex": 3,
       "StaticIndex": 1309,
@@ -624,7 +624,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6018,
+      "PowerIndex": 5966,
       "PowerSetID": 2975,
       "PowerSetIndex": 4,
       "StaticIndex": 1310,
@@ -848,7 +848,7 @@
     {
       "CastTimeReal": 1.87,
       "ToggleCost": 7.8,
-      "PowerIndex": 6019,
+      "PowerIndex": 5967,
       "PowerSetID": 2975,
       "PowerSetIndex": 5,
       "StaticIndex": 1311,

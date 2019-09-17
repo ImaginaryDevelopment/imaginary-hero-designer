@@ -4,11 +4,11 @@
   "FullName": "Mastermind_Pets.Hellfire_Gargoyle",
   "ImageName": "",
   "Power": [
-    5883,
-    5884,
-    5885,
-    5886,
-    5887
+    5858,
+    5859,
+    5860,
+    5861,
+    5862
   ],
   "SetType": 8,
   "DisplayName": "Hellfire Gargoyle",
@@ -25,7 +25,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5883,
+      "PowerIndex": 5858,
       "PowerSetID": 2944,
       "StaticIndex": 4234,
       "NGroupMembership": [],
@@ -447,7 +447,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 4.368,
-      "PowerIndex": 5884,
+      "PowerIndex": 5859,
       "PowerSetID": 2944,
       "PowerSetIndex": 1,
       "StaticIndex": 4235,
@@ -578,7 +578,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 6.864,
-      "PowerIndex": 5885,
+      "PowerIndex": 5860,
       "PowerSetID": 2944,
       "PowerSetIndex": 2,
       "StaticIndex": 4236,
@@ -850,7 +850,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 6.5,
-      "PowerIndex": 5886,
+      "PowerIndex": 5861,
       "PowerSetID": 2944,
       "PowerSetIndex": 3,
       "StaticIndex": 4237,
@@ -1266,7 +1266,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5887,
+      "PowerIndex": 5862,
       "PowerSetID": 2944,
       "PowerSetIndex": 4,
       "StaticIndex": 4238,

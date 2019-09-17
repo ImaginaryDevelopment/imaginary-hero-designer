@@ -4,7 +4,7 @@
   "FullName": "Mastermind_Pets.Thug_Pose_Pipe",
   "ImageName": "",
   "Power": [
-    6139
+    6017
   ],
   "SetType": 8,
   "DisplayName": "Thug Posse",
@@ -23,7 +23,7 @@
     {
       "CastTimeReal": 2.87,
       "ToggleCost": 6.864,
-      "PowerIndex": 6139,
+      "PowerIndex": 6017,
       "PowerSetID": 2986,
       "StaticIndex": 1425,
       "NGroupMembership": [],

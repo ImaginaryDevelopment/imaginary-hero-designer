@@ -4,8 +4,8 @@
   "FullName": "Pets.DisintegrateSpread",
   "ImageName": "",
   "Power": [
-    6371,
-    6372
+    6247,
+    6248
   ],
   "SetType": 8,
   "DisplayName": "Disintegrate Spread",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6371,
+      "PowerIndex": 6247,
       "PowerSetID": 3070,
       "StaticIndex": 5604,
       "NGroupMembership": [],
@@ -88,7 +88,7 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 6372,
+      "PowerIndex": 6248,
       "PowerSetID": 3070,
       "PowerSetIndex": 1,
       "StaticIndex": 6227,
@@ -305,7 +305,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Beam_Rifle_Debuff",
-          "nSummon": 9452,
+          "nSummon": 9328,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,

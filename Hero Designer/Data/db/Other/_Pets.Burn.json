@@ -4,8 +4,8 @@
   "FullName": "Pets.Burn",
   "ImageName": "",
   "Power": [
-    6281,
-    6282
+    6157,
+    6158
   ],
   "SetType": 8,
   "DisplayName": "Burn",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6281,
+      "PowerIndex": 6157,
       "PowerSetID": 3040,
       "StaticIndex": 1553,
       "NGroupMembership": [],
@@ -113,7 +113,7 @@
     },
     {
       "CastTimeReal": 1.716,
-      "PowerIndex": 6282,
+      "PowerIndex": 6158,
       "PowerSetID": 3040,
       "PowerSetIndex": 1,
       "StaticIndex": 1554,

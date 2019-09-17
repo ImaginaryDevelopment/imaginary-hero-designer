@@ -4,7 +4,7 @@
   "FullName": "Pets.HowlingVillain",
   "ImageName": "",
   "Power": [
-    6422
+    6298
   ],
   "SetType": 8,
   "DisplayName": "Howling",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6422,
+      "PowerIndex": 6298,
       "PowerSetID": 3108,
       "StaticIndex": 1616,
       "NGroupMembership": [],

@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_Radiation_Snipe",
   "ImageName": "",
   "Power": [
-    6364,
-    6365
+    6240,
+    6241
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6364,
+      "PowerIndex": 6240,
       "PowerSetID": 3012,
       "StaticIndex": 9584,
       "NGroupMembership": [],
@@ -216,7 +216,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6365,
+      "PowerIndex": 6241,
       "PowerSetID": 3012,
       "PowerSetIndex": 1,
       "StaticIndex": 9585,

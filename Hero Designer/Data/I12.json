@@ -1,7 +1,7 @@
 {
   "name": "Mids' Hero Designer Database MK II",
-  "Version": 19.0902,
-  "Date": "2019-09-02T16:21:48.0451884-05:00",
+  "Version": 19.0916,
+  "Date": "2019-09-16T17:10:23.3689327-05:00",
   "Issue": 25,
   "ArchetypeVersion": {
     "RevisionDate": "2014-05-01T03:01:23.5767113-05:00",
@@ -5124,15 +5124,6 @@
       "ClassName": "Class_Minion_Pets"
     },
     {
-      "UID": "Pets_Zombie",
-      "DisplayName": "Zombie",
-      "PowersetFullName": [
-        "Pets.Zombie"
-      ],
-      "UpgradePowerFullName": [],
-      "ClassName": "Class_Minion_Pets"
-    },
-    {
       "UID": "Pets_Raid_Disruptor_Pylon_Nuke",
       "DisplayName": "Raid_Disruptor_Pylon_Nuke",
       "PowersetFullName": [
@@ -7948,45 +7939,6 @@
       "ClassName": ""
     },
     {
-      "UID": "Pets_Protector_Bot1",
-      "DisplayName": "Protector Bot",
-      "PowersetFullName": [
-        "Mastermind_Pets.Protector"
-      ],
-      "UpgradePowerFullName": [],
-      "ClassName": "Class_Minion_Pets"
-    },
-    {
-      "UID": "Pets_Ember_Demon",
-      "DisplayName": "Ember Demon",
-      "PowersetFullName": [
-        "Mastermind_Pets.Ember_Demon",
-        "Mastermind_Pets.Ember_Demon_2",
-        "Mastermind_Pets.Ember_Demon_3"
-      ],
-      "UpgradePowerFullName": [
-        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
-        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
-      ],
-      "ClassName": "Class_Minion_Henchman",
-      "EntityType": 1
-    },
-    {
-      "UID": "Pets_Hellfire_Gargoyle",
-      "DisplayName": "Hellfire Gargoyle",
-      "PowersetFullName": [
-        "Mastermind_Pets.Hellfire_Gargoyle",
-        "Mastermind_Pets.Hellfire_Gargoyle_2",
-        "Mastermind_Pets.Hellfire_Gargoyle_3"
-      ],
-      "UpgradePowerFullName": [
-        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
-        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
-      ],
-      "ClassName": "Class_Minion_Henchman",
-      "EntityType": 1
-    },
-    {
       "UID": "Pet_Cross_Punch_Buff",
       "DisplayName": "Cross Punch Buff",
       "PowersetFullName": [
@@ -8005,6 +7957,36 @@
       "ClassName": "Class_Minion_Pets"
     },
     {
+      "UID": "Pets_Ember_Demon",
+      "DisplayName": "Ember Demon",
+      "PowersetFullName": [
+        "Mastermind_Pets.Ember_Demon",
+        "Mastermind_Pets.Ember_Demon_2",
+        "Mastermind_Pets.Ember_Demon_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Hellfire_Gargoyle",
+      "DisplayName": "Hellfire Gargoyle",
+      "PowersetFullName": [
+        "Mastermind_Pets.Hellfire_Gargoyle",
+        "Mastermind_Pets.Hellfire_Gargoyle_2",
+        "Mastermind_Pets.Hellfire_Gargoyle_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
+        "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
       "UID": "Pets_Demon_Prince",
       "DisplayName": "Demon Prince",
       "PowersetFullName": [
@@ -8016,10 +7998,11 @@
         "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
         "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
       ],
-      "ClassName": "Class_Minion_Henchman"
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
     },
     {
-      "UID": "Pets_Cold_Demonlings",
+      "UID": "Pets_Cold_Demonling",
       "DisplayName": "Cold Demonlings",
       "PowersetFullName": [
         "Mastermind_Pets.Cold_Demonling",
@@ -8030,10 +8013,11 @@
         "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
         "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
       ],
-      "ClassName": "Class_Minion_Henchman"
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
     },
     {
-      "UID": "Pets_Fiery_Demonlings",
+      "UID": "Pets_Fiery_Demonling",
       "DisplayName": "Fiery Demonlings",
       "PowersetFullName": [
         "Mastermind_Pets.Fiery_Demonling",
@@ -8044,10 +8028,11 @@
         "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
         "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
       ],
-      "ClassName": "Class_Minion_Henchman"
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
     },
     {
-      "UID": "Pets_Hellfire_Demonlings",
+      "UID": "Pets_Hellfire_Demonling",
       "DisplayName": "Hellfire Demonlings",
       "PowersetFullName": [
         "Mastermind_Pets.Hellfire_Demonling",
@@ -8058,7 +8043,359 @@
         "Mastermind_Summon.Demon_Summoning.Enchant_Demon",
         "Mastermind_Summon.Demon_Summoning.Abyssal_Empowerment"
       ],
-      "ClassName": "Class_Minion_Henchman"
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Living_Hellfire",
+      "DisplayName": "Living Hellfire",
+      "PowersetFullName": [
+        "Mastermind_Pets.Living_Hellfire"
+      ],
+      "UpgradePowerFullName": [],
+      "ClassName": "Class_Minion_Pets"
+    },
+    {
+      "UID": "Pets_Howler_Wolf",
+      "DisplayName": "Howler Wolf",
+      "PowersetFullName": [
+        "Mastermind_Pets.Howler_Wolf",
+        "Mastermind_Pets.Howler_Wolf_2",
+        "Mastermind_Pets.Howler_Wolf_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+        "Mastermind_Summon.Beast_Mastery.Tame_Beasts"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Alpha_Wolf",
+      "DisplayName": "Alpha Wolf",
+      "PowersetFullName": [
+        "Mastermind_Pets.Alpha_Wolf",
+        "Mastermind_Pets.Alpha_Wolf_2",
+        "Mastermind_Pets.Alpha_Wolf_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+        "Mastermind_Summon.Beast_Mastery.Tame_Beasts"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Lioness",
+      "DisplayName": "Lioness",
+      "PowersetFullName": [
+        "Mastermind_Pets.Lioness",
+        "Mastermind_Pets.Lioness_2",
+        "Mastermind_Pets.Lioness_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+        "Mastermind_Summon.Beast_Mastery.Tame_Beasts"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Dire_Wolf",
+      "DisplayName": "Dire Wolf",
+      "PowersetFullName": [
+        "Mastermind_Pets.Dire_Wolf",
+        "Mastermind_Pets.Dire_Wolf_2",
+        "Mastermind_Pets.Dire_Wolf_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Beast_Mastery.Train_Beasts",
+        "Mastermind_Summon.Beast_Mastery.Tame_Beasts"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Soldier",
+      "DisplayName": "Soldier",
+      "PowersetFullName": [
+        "Mastermind_Pets.Soldier",
+        "Mastermind_Pets.Soldier_2",
+        "Mastermind_Pets.Soldier_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Mercenaries.Equip_Mercenary",
+        "Mastermind_Summon.Mercenaries.Tactical_Upgrade"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Medic",
+      "DisplayName": "Medic",
+      "PowersetFullName": [
+        "Mastermind_Pets.Medic",
+        "Mastermind_Pets.Medic_2",
+        "Mastermind_Pets.Medic_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Mercenaries.Equip_Mercenary",
+        "Mastermind_Summon.Mercenaries.Tactical_Upgrade"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Spec_Ops",
+      "DisplayName": "Spec Ops",
+      "PowersetFullName": [
+        "Mastermind_Pets.Spec_Ops",
+        "Mastermind_Pets.Spec_Ops_2",
+        "Mastermind_Pets.Spec_Ops_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Mercenaries.Equip_Mercenary",
+        "Mastermind_Summon.Mercenaries.Tactical_Upgrade"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Commando",
+      "DisplayName": "Commando",
+      "PowersetFullName": [
+        "Mastermind_Pets.Commando",
+        "Mastermind_Pets.Commando_2",
+        "Mastermind_Pets.Commando_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Mercenaries.Equip_Mercenary",
+        "Mastermind_Summon.Mercenaries.Tactical_Upgrade"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Zombie",
+      "DisplayName": "Zombie",
+      "PowersetFullName": [
+        "Mastermind_Pets.Zombie",
+        "Mastermind_Pets.Zombie_2",
+        "Mastermind_Pets.Zombie_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Necromancy.Enchant_Undead",
+        "Mastermind_Summon.Necromancy.Dark_Empowerment"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Skeletal_Warrior",
+      "DisplayName": "Skeletal Warrior",
+      "PowersetFullName": [
+        "Mastermind_Pets.Skeleton",
+        "Mastermind_Pets.Skeleton_2",
+        "Mastermind_Pets.Skeleton_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Necromancy.Enchant_Undead",
+        "Mastermind_Summon.Necromancy.Dark_Empowerment"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Ghost",
+      "DisplayName": "Ghost",
+      "PowersetFullName": [
+        "Mastermind_Pets.Ghosts"
+      ],
+      "UpgradePowerFullName": [],
+      "ClassName": "Class_Minion_Pets"
+    },
+    {
+      "UID": "Pets_Lich",
+      "DisplayName": "Lich",
+      "PowersetFullName": [
+        "Mastermind_Pets.Lich",
+        "Mastermind_Pets.Lich_2",
+        "Mastermind_Pets.Lich_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Necromancy.Enchant_Undead",
+        "Mastermind_Summon.Necromancy.Dark_Empowerment"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Genin",
+      "DisplayName": "Genin",
+      "PowersetFullName": [
+        "Mastermind_Pets.Genin",
+        "Mastermind_Pets.Genin_2",
+        "Mastermind_Pets.Genin_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Ninjas.Train_Ninjas",
+        "Mastermind_Summon.Ninjas.Kuji_In_Zen"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Jounin",
+      "DisplayName": "Jounin",
+      "PowersetFullName": [
+        "Mastermind_Pets.Jonin",
+        "Mastermind_Pets.Jonin_2",
+        "Mastermind_Pets.Jonin_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Ninjas.Train_Ninjas",
+        "Mastermind_Summon.Ninjas.Kuji_In_Zen"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Oni",
+      "DisplayName": "Oni",
+      "PowersetFullName": [
+        "Mastermind_Pets.Oni",
+        "Mastermind_Pets.Oni_2",
+        "Mastermind_Pets.Oni_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Ninjas.Train_Ninjas",
+        "Mastermind_Summon.Ninjas.Kuji_In_Zen"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Droid",
+      "DisplayName": "Droid",
+      "PowersetFullName": [
+        "Mastermind_Pets.Droid",
+        "Mastermind_Pets.Droid_2",
+        "Mastermind_Pets.Droid_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Robotics.Equip_Robot",
+        "Mastermind_Summon.Robotics.Upgrade_Robot"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Protector_Bot",
+      "DisplayName": "Protector Bot",
+      "PowersetFullName": [
+        "Mastermind_Pets.Protector",
+        "Mastermind_Pets.Protector_2",
+        "Mastermind_Pets.Protector_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Robotics.Equip_Robot",
+        "Mastermind_Summon.Robotics.Upgrade_Robot"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Assault_Bot",
+      "DisplayName": "Assault Bot",
+      "PowersetFullName": [
+        "Mastermind_Pets.Assault",
+        "Mastermind_Pets.Assault_2",
+        "Mastermind_Pets.Assault_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Robotics.Equip_Robot",
+        "Mastermind_Summon.Robotics.Upgrade_Robot"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Thug",
+      "DisplayName": "Thug",
+      "PowersetFullName": [
+        "Mastermind_Pets.Thug_Minion",
+        "Mastermind_Pets.Thug_Minion_2",
+        "Mastermind_Pets.Thug_Minion_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Thugs.Equip_Thugs",
+        "Mastermind_Summon.Thugs.Upgrade_Equipment"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Arsonist",
+      "DisplayName": "Arsonist",
+      "PowersetFullName": [
+        "Mastermind_Pets.Thug_Arsonist",
+        "Mastermind_Pets.Thug_Arsonist_2",
+        "Mastermind_Pets.Thug_Arsonist_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Thugs.Equip_Thugs",
+        "Mastermind_Summon.Thugs.Upgrade_Equipment"
+      ],
+      "ClassName": "Class_Minion_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Thug_Lt",
+      "DisplayName": "Thug_Lt",
+      "PowersetFullName": [
+        "Mastermind_Pets.Thug_Lt",
+        "Mastermind_Pets.Thug_Lt_2",
+        "Mastermind_Pets.Thug_Lt_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Thugs.Equip_Thugs",
+        "Mastermind_Summon.Thugs.Upgrade_Equipment"
+      ],
+      "ClassName": "Class_Lt_Henchman",
+      "EntityType": 1
+    },
+    {
+      "UID": "Pets_Thug_Posse",
+      "DisplayName": "Thug Posse",
+      "PowersetFullName": [
+        "Mastermind_Pets.Thug_Pose",
+        "Mastermind_Pets.Thug_Pose_Brawl",
+        "Mastermind_Pets.Thug_Pose_Rock",
+        "Mastermind_Pets.Thug_Pose_Pipe",
+        "Mastermind_Pets.Thug_Pose_Knife",
+        "Mastermind_Pets.Thug_Pose_Revolver",
+        "Mastermind_Pets.Thug_Pose_Pistol",
+        "Mastermind_Pets.Thug_Pose_Sledgehammer",
+        "Mastermind_Pets.Thug_Pose_Bat",
+        "Mastermind_Pets.Thug_Pose_Axe"
+      ],
+      "UpgradePowerFullName": [],
+      "ClassName": "Class_Minion_Pets"
+    },
+    {
+      "UID": "Pets_Thug_Boss",
+      "DisplayName": "Thug Boss",
+      "PowersetFullName": [
+        "Mastermind_Pets.Thug_Boss",
+        "Mastermind_Pets.Thug_Boss_2",
+        "Mastermind_Pets.Thug_Boss_3"
+      ],
+      "UpgradePowerFullName": [
+        "Mastermind_Summon.Thugs.Equip_Thugs",
+        "Mastermind_Summon.Thugs.Upgrade_Equipment"
+      ],
+      "ClassName": "Class_Boss_Henchman",
+      "EntityType": 1
     }
   ]
 }

@@ -4,11 +4,11 @@
   "FullName": "Mastermind_Pets.Jonin",
   "ImageName": "",
   "Power": [
-    5906,
-    5907,
-    5908,
-    5909,
-    5910
+    5877,
+    5878,
+    5879,
+    5880,
+    5881
   ],
   "SetType": 8,
   "DisplayName": "Jounin",
@@ -25,7 +25,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5906,
+      "PowerIndex": 5877,
       "PowerSetID": 2950,
       "StaticIndex": 1216,
       "NGroupMembership": [],
@@ -321,7 +321,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 5907,
+      "PowerIndex": 5878,
       "PowerSetID": 2950,
       "PowerSetIndex": 1,
       "StaticIndex": 1217,
@@ -460,7 +460,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 6.032,
-      "PowerIndex": 5908,
+      "PowerIndex": 5879,
       "PowerSetID": 2950,
       "PowerSetIndex": 2,
       "StaticIndex": 1218,
@@ -633,7 +633,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 4.368,
-      "PowerIndex": 5909,
+      "PowerIndex": 5880,
       "PowerSetID": 2950,
       "PowerSetIndex": 3,
       "StaticIndex": 1219,
@@ -804,7 +804,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5910,
+      "PowerIndex": 5881,
       "PowerSetID": 2950,
       "PowerSetIndex": 4,
       "StaticIndex": 1220,

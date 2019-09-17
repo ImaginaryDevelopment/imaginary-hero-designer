@@ -4,15 +4,15 @@
   "FullName": "Tanker_Defense.Electric_Armor",
   "ImageName": "ElectricArmor.png",
   "Power": [
-    8639,
-    8640,
-    8641,
-    8642,
-    8643,
-    8644,
-    8645,
-    8646,
-    8647
+    8515,
+    8516,
+    8517,
+    8518,
+    8519,
+    8520,
+    8521,
+    8522,
+    8523
   ],
   "SetType": 1,
   "DisplayName": "Electric Armor",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8639,
+      "PowerIndex": 8515,
       "PowerSetID": 3389,
       "StaticIndex": 4036,
       "NGroupMembership": [],
@@ -313,7 +313,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 8640,
+      "PowerIndex": 8516,
       "PowerSetID": 3389,
       "PowerSetIndex": 1,
       "StaticIndex": 4037,
@@ -602,7 +602,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8641,
+      "PowerIndex": 8517,
       "PowerSetID": 3389,
       "PowerSetIndex": 2,
       "StaticIndex": 4038,
@@ -955,7 +955,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8642,
+      "PowerIndex": 8518,
       "PowerSetID": 3389,
       "PowerSetIndex": 3,
       "StaticIndex": 4039,
@@ -1641,7 +1641,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 8643,
+      "PowerIndex": 8519,
       "PowerSetID": 3389,
       "PowerSetIndex": 4,
       "StaticIndex": 4040,
@@ -1944,7 +1944,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 10.4,
-      "PowerIndex": 8644,
+      "PowerIndex": 8520,
       "PowerSetID": 3389,
       "PowerSetIndex": 5,
       "StaticIndex": 4041,
@@ -2109,7 +2109,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8645,
+      "PowerIndex": 8521,
       "PowerSetID": 3389,
       "PowerSetIndex": 6,
       "StaticIndex": 4042,
@@ -2371,7 +2371,7 @@
     {
       "CastTimeReal": 3.828,
       "ToggleCost": 13.0,
-      "PowerIndex": 8646,
+      "PowerIndex": 8522,
       "PowerSetID": 3389,
       "PowerSetIndex": 7,
       "StaticIndex": 4043,
@@ -2621,7 +2621,7 @@
     {
       "CastTimeReal": 1.96,
       "ToggleCost": 2.6,
-      "PowerIndex": 8647,
+      "PowerIndex": 8523,
       "PowerSetID": 3389,
       "PowerSetIndex": 8,
       "StaticIndex": 4044,
@@ -3576,7 +3576,7 @@
           "nID": 26,
           "EffectType": 38,
           "Summon": "Pets_Power_Surge",
-          "nSummon": 161,
+          "nSummon": 160,
           "DelayedTime": 179.0,
           "UIDClassName": "",
           "nIDClassName": -1,

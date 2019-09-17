@@ -4,12 +4,12 @@
   "FullName": "Pets.Pool_Leadership_VictoryRush",
   "ImageName": "",
   "Power": [
-    6519,
-    6520,
-    6521,
-    6522,
-    6523,
-    6524
+    6395,
+    6396,
+    6397,
+    6398,
+    6399,
+    6400
   ],
   "SetType": 8,
   "DisplayName": "Leadership",
@@ -26,7 +26,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6519,
+      "PowerIndex": 6395,
       "PowerSetID": 3128,
       "StaticIndex": 9593,
       "NGroupMembership": [],
@@ -153,7 +153,7 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6520,
+      "PowerIndex": 6396,
       "PowerSetID": 3128,
       "PowerSetIndex": 1,
       "StaticIndex": 9598,
@@ -280,7 +280,7 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6521,
+      "PowerIndex": 6397,
       "PowerSetID": 3128,
       "PowerSetIndex": 2,
       "StaticIndex": 9596,
@@ -407,7 +407,7 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6522,
+      "PowerIndex": 6398,
       "PowerSetID": 3128,
       "PowerSetIndex": 3,
       "StaticIndex": 9597,
@@ -534,7 +534,7 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6523,
+      "PowerIndex": 6399,
       "PowerSetID": 3128,
       "PowerSetIndex": 4,
       "StaticIndex": 9595,
@@ -661,7 +661,7 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6524,
+      "PowerIndex": 6400,
       "PowerSetID": 3128,
       "PowerSetIndex": 5,
       "StaticIndex": 9594,

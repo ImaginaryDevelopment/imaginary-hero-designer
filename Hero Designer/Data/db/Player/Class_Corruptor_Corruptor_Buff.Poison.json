@@ -5849,7 +5849,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Poison_Trap",
-          "nSummon": 144,
+          "nSummon": 143,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

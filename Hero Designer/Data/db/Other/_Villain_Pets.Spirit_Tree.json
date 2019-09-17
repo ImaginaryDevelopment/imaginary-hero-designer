@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Spirit_Tree",
   "ImageName": "",
   "Power": [
-    10317
+    10193
   ],
   "SetType": 8,
   "DisplayName": "Spirit Tree",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10317,
+      "PowerIndex": 10193,
       "PowerSetID": 3542,
       "StaticIndex": 3147,
       "NGroupMembership": [],

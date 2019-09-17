@@ -685,7 +685,7 @@
           "nID": 7,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10324,
+          "nSummon": 10200,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -703,7 +703,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 8,
           "Override": "Villain_Pets.Stalker_EpicSoulMastery_Snipe.Moonbeam_Quick",
-          "nOverride": 10324
+          "nOverride": 10200
         },
         {
           "MagnitudeExpression": "",
@@ -718,7 +718,7 @@
           "nID": 8,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10325,
+          "nSummon": 10201,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -735,7 +735,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 9,
           "Override": "Villain_Pets.Stalker_EpicSoulMastery_Snipe.Moonbeam_Normal",
-          "nOverride": 10325
+          "nOverride": 10201
         }
       ],
       "HasPowerOverrideEffect": true,
@@ -1578,7 +1578,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Night_Widow",
-          "nSummon": 166,
+          "nSummon": 165,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 3,

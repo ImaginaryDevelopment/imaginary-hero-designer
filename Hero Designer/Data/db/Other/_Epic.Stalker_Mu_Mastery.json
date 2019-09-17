@@ -893,7 +893,7 @@
           "nID": 10,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10322,
+          "nSummon": 10198,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -911,7 +911,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 11,
           "Override": "Villain_Pets.Stalker_EpicMuMastery_Snipe.Zapp_Quick",
-          "nOverride": 10322
+          "nOverride": 10198
         },
         {
           "MagnitudeExpression": "",
@@ -926,7 +926,7 @@
           "nID": 11,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10323,
+          "nSummon": 10199,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -943,7 +943,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 12,
           "Override": "Villain_Pets.Stalker_EpicMuMastery_Snipe.Zapp_Normal",
-          "nOverride": 10323
+          "nOverride": 10199
         }
       ],
       "HasPowerOverrideEffect": true,
@@ -1947,7 +1947,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Mu_Adept",
-          "nSummon": 176,
+          "nSummon": 175,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 3,

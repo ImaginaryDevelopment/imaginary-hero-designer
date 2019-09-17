@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Ice_Melee_Assassins_Frost",
   "ImageName": "",
   "Power": [
-    10226,
-    10227
+    10102,
+    10103
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10226,
+      "PowerIndex": 10102,
       "PowerSetID": 3438,
       "StaticIndex": 10704,
       "NGroupMembership": [],
@@ -171,7 +171,7 @@
           "nID": 2,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9327,
+          "nSummon": 9203,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -268,7 +268,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10227,
+      "PowerIndex": 10103,
       "PowerSetID": 3438,
       "PowerSetIndex": 1,
       "StaticIndex": 10705,

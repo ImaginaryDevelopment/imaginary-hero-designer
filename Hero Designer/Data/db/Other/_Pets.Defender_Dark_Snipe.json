@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_Dark_Snipe",
   "ImageName": "",
   "Power": [
-    6354,
-    6355
+    6230,
+    6231
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6354,
+      "PowerIndex": 6230,
       "PowerSetID": 3008,
       "StaticIndex": 9574,
       "NGroupMembership": [],
@@ -209,7 +209,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6355,
+      "PowerIndex": 6231,
       "PowerSetID": 3008,
       "PowerSetIndex": 1,
       "StaticIndex": 9575,

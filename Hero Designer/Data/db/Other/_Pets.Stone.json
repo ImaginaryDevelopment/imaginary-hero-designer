@@ -4,11 +4,11 @@
   "FullName": "Pets.Stone",
   "ImageName": "",
   "Power": [
-    6603,
-    6604,
-    6605,
-    6606,
-    6607
+    6479,
+    6480,
+    6481,
+    6482,
+    6483
   ],
   "SetType": 8,
   "DisplayName": "Stone",
@@ -26,7 +26,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.57,
-      "PowerIndex": 6603,
+      "PowerIndex": 6479,
       "PowerSetID": 3222,
       "StaticIndex": 1721,
       "NGroupMembership": [],
@@ -235,7 +235,7 @@
     {
       "CastTimeReal": 3.83,
       "ToggleCost": 9.36,
-      "PowerIndex": 6604,
+      "PowerIndex": 6480,
       "PowerSetID": 3222,
       "PowerSetIndex": 1,
       "StaticIndex": 1722,
@@ -407,7 +407,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 6605,
+      "PowerIndex": 6481,
       "PowerSetID": 3222,
       "PowerSetIndex": 2,
       "StaticIndex": 1723,
@@ -1019,7 +1019,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 23.14,
-      "PowerIndex": 6606,
+      "PowerIndex": 6482,
       "PowerSetID": 3222,
       "PowerSetIndex": 3,
       "StaticIndex": 3270,
@@ -1229,7 +1229,7 @@
     {
       "CastTimeReal": 2.904,
       "IsEpic": true,
-      "PowerIndex": 6607,
+      "PowerIndex": 6483,
       "PowerSetID": 3222,
       "PowerSetIndex": 4,
       "StaticIndex": 1724,
@@ -1273,28 +1273,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6603,
-            6604
+            6479,
+            6480
           ],
           [
-            6603,
-            6605
+            6479,
+            6481
           ],
           [
-            6603,
-            6606
+            6479,
+            6482
           ],
           [
-            6604,
-            6605
+            6480,
+            6481
           ],
           [
-            6604,
-            6606
+            6480,
+            6482
           ],
           [
-            6605,
-            6606
+            6481,
+            6482
           ]
         ],
         "NPowerIDNot": []

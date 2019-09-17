@@ -2974,7 +2974,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_SoulAbsorptionBuff",
-          "nSummon": 302,
+          "nSummon": 301,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,

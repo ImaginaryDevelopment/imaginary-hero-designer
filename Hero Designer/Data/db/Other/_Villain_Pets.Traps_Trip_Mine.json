@@ -4,9 +4,9 @@
   "FullName": "Villain_Pets.Traps_Trip_Mine",
   "ImageName": "",
   "Power": [
-    10374,
-    10375,
-    10376
+    10250,
+    10251,
+    10252
   ],
   "SetType": 8,
   "DisplayName": "Mine",
@@ -23,7 +23,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10374,
+      "PowerIndex": 10250,
       "PowerSetID": 3514,
       "StaticIndex": 3181,
       "NGroupMembership": [],
@@ -277,7 +277,7 @@
       "AoEModifier": 2.8
     },
     {
-      "PowerIndex": 10375,
+      "PowerIndex": 10251,
       "PowerSetID": 3514,
       "PowerSetIndex": 1,
       "StaticIndex": 3182,
@@ -1420,7 +1420,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10376,
+      "PowerIndex": 10252,
       "PowerSetID": 3514,
       "PowerSetIndex": 2,
       "StaticIndex": 3183,

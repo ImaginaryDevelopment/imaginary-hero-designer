@@ -4,7 +4,7 @@
   "FullName": "Pets.Warburg_Afterglow",
   "ImageName": "",
   "Power": [
-    6740
+    6616
   ],
   "SetType": 8,
   "DisplayName": "Warburg_Afterglow",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6740,
+      "PowerIndex": 6616,
       "PowerSetID": 3269,
       "StaticIndex": 1785,
       "NGroupMembership": [],

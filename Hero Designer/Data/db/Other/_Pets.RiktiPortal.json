@@ -4,9 +4,9 @@
   "FullName": "Pets.RiktiPortal",
   "ImageName": "",
   "Power": [
-    6569,
-    6570,
-    6571
+    6445,
+    6446,
+    6447
   ],
   "SetType": 8,
   "DisplayName": "Portal",
@@ -23,7 +23,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6569,
+      "PowerIndex": 6445,
       "PowerSetID": 3169,
       "StaticIndex": 1701,
       "NGroupMembership": [],
@@ -446,7 +446,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6570,
+      "PowerIndex": 6446,
       "PowerSetID": 3169,
       "PowerSetIndex": 1,
       "StaticIndex": 1702,
@@ -532,7 +532,7 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6571,
+      "PowerIndex": 6447,
       "PowerSetID": 3169,
       "PowerSetIndex": 2,
       "StaticIndex": 1703,

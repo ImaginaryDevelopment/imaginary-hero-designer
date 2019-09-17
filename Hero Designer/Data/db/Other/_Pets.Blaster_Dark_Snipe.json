@@ -4,8 +4,8 @@
   "FullName": "Pets.Blaster_Dark_Snipe",
   "ImageName": "",
   "Power": [
-    6249,
-    6250
+    6125,
+    6126
   ],
   "SetType": 8,
   "DisplayName": "Dark Blast",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6249,
+      "PowerIndex": 6125,
       "PowerSetID": 3063,
       "StaticIndex": 9553,
       "NGroupMembership": [],
@@ -523,7 +523,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 14.352,
-      "PowerIndex": 6250,
+      "PowerIndex": 6126,
       "PowerSetID": 3063,
       "PowerSetIndex": 1,
       "StaticIndex": 9554,

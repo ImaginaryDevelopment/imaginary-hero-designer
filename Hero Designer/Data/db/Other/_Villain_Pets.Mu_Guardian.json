@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Mu_Guardian",
   "ImageName": "",
   "Power": [
-    10245,
-    10246,
-    10247,
-    10248,
-    10249,
-    10250,
-    10251,
-    10252
+    10121,
+    10122,
+    10123,
+    10124,
+    10125,
+    10126,
+    10127,
+    10128
   ],
   "SetType": 8,
   "DisplayName": "Mu Guardian",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10245,
+      "PowerIndex": 10121,
       "PowerSetID": 3516,
       "StaticIndex": 3113,
       "NGroupMembership": [],
@@ -150,7 +150,7 @@
     {
       "CastTimeReal": 3.17,
       "ToggleCost": 14.3,
-      "PowerIndex": 10246,
+      "PowerIndex": 10122,
       "PowerSetID": 3516,
       "PowerSetIndex": 1,
       "StaticIndex": 3114,
@@ -429,7 +429,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10247,
+      "PowerIndex": 10123,
       "PowerSetID": 3516,
       "PowerSetIndex": 2,
       "StaticIndex": 3115,
@@ -618,7 +618,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 10.66,
-      "PowerIndex": 10248,
+      "PowerIndex": 10124,
       "PowerSetID": 3516,
       "PowerSetIndex": 3,
       "StaticIndex": 3116,
@@ -822,7 +822,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 6.5,
-      "PowerIndex": 10249,
+      "PowerIndex": 10125,
       "PowerSetID": 3516,
       "PowerSetIndex": 4,
       "StaticIndex": 3117,
@@ -1024,7 +1024,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10250,
+      "PowerIndex": 10126,
       "PowerSetID": 3516,
       "PowerSetIndex": 5,
       "StaticIndex": 3118,
@@ -1108,7 +1108,7 @@
     {
       "CastTimeReal": 3.17,
       "ToggleCost": 13.0,
-      "PowerIndex": 10251,
+      "PowerIndex": 10127,
       "PowerSetID": 3516,
       "PowerSetIndex": 6,
       "StaticIndex": 3119,
@@ -1209,7 +1209,7 @@
     {
       "CastTimeReal": 2.27,
       "ToggleCost": 7.8,
-      "PowerIndex": 10252,
+      "PowerIndex": 10128,
       "PowerSetID": 3516,
       "PowerSetIndex": 7,
       "StaticIndex": 3120,

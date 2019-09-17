@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Creeper_Entangle",
   "ImageName": "",
   "Power": [
-    10164,
-    10165
+    10040,
+    10041
   ],
   "SetType": 8,
   "DisplayName": "Creeper Patch",
@@ -22,7 +22,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10164,
+      "PowerIndex": 10040,
       "PowerSetID": 3488,
       "StaticIndex": 3071,
       "NGroupMembership": [],
@@ -416,7 +416,7 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 10165,
+      "PowerIndex": 10041,
       "PowerSetID": 3488,
       "PowerSetIndex": 1,
       "StaticIndex": 3072,

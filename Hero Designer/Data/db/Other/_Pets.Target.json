@@ -4,7 +4,7 @@
   "FullName": "Pets.Target",
   "ImageName": "",
   "Power": [
-    6612
+    6488
   ],
   "SetType": 8,
   "DisplayName": "Target",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6612,
+      "PowerIndex": 6488,
       "PowerSetID": 3225,
       "StaticIndex": 1725,
       "NGroupMembership": [],

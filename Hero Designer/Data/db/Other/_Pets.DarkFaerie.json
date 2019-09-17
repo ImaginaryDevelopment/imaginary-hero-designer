@@ -4,8 +4,8 @@
   "FullName": "Pets.DarkFaerie",
   "ImageName": "",
   "Power": [
-    6322,
-    6323
+    6198,
+    6199
   ],
   "SetType": 8,
   "DisplayName": "DarkFaerie",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6322,
+      "PowerIndex": 6198,
       "PowerSetID": 3065,
       "StaticIndex": 1567,
       "NGroupMembership": [],
@@ -620,7 +620,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 20.8,
-      "PowerIndex": 6323,
+      "PowerIndex": 6199,
       "PowerSetID": 3065,
       "PowerSetIndex": 1,
       "StaticIndex": 1568,

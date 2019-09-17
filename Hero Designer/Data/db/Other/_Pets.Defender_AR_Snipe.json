@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_AR_Snipe",
   "ImageName": "",
   "Power": [
-    6347,
-    6348
+    6223,
+    6224
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6347,
+      "PowerIndex": 6223,
       "PowerSetID": 3017,
       "StaticIndex": 9565,
       "NGroupMembership": [],
@@ -243,7 +243,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6348,
+      "PowerIndex": 6224,
       "PowerSetID": 3017,
       "PowerSetIndex": 1,
       "StaticIndex": 9566,

@@ -2015,7 +2015,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Thorntrops",
-          "nSummon": 137,
+          "nSummon": 136,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

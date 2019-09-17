@@ -4,9 +4,9 @@
   "FullName": "Pets.Guard",
   "ImageName": "",
   "Power": [
-    6409,
-    6410,
-    6411
+    6285,
+    6286,
+    6287
   ],
   "SetType": 8,
   "DisplayName": "Guard",
@@ -23,7 +23,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6409,
+      "PowerIndex": 6285,
       "PowerSetID": 3101,
       "StaticIndex": 1603,
       "NGroupMembership": [],
@@ -350,7 +350,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6410,
+      "PowerIndex": 6286,
       "PowerSetID": 3101,
       "PowerSetIndex": 1,
       "StaticIndex": 1604,
@@ -470,7 +470,7 @@
       "AoEModifier": 10.0
     },
     {
-      "PowerIndex": 6411,
+      "PowerIndex": 6287,
       "PowerSetID": 3101,
       "PowerSetIndex": 2,
       "StaticIndex": 1605,

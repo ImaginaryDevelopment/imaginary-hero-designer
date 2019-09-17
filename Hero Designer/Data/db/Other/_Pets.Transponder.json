@@ -4,10 +4,10 @@
   "FullName": "Pets.Transponder",
   "ImageName": "",
   "Power": [
-    6666,
-    6667,
-    6668,
-    6669
+    6542,
+    6543,
+    6544,
+    6545
   ],
   "SetType": 8,
   "DisplayName": "Transponder",
@@ -24,7 +24,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6666,
+      "PowerIndex": 6542,
       "PowerSetID": 3254,
       "StaticIndex": 1755,
       "NGroupMembership": [],
@@ -207,7 +207,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6667,
+      "PowerIndex": 6543,
       "PowerSetID": 3254,
       "PowerSetIndex": 1,
       "StaticIndex": 1756,
@@ -293,7 +293,7 @@
       "AoEModifier": 1.6
     },
     {
-      "PowerIndex": 6668,
+      "PowerIndex": 6544,
       "PowerSetID": 3254,
       "PowerSetIndex": 2,
       "StaticIndex": 1757,
@@ -378,7 +378,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6669,
+      "PowerIndex": 6545,
       "PowerSetID": 3254,
       "PowerSetIndex": 3,
       "StaticIndex": 1758,

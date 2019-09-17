@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_BR_Snipe",
   "ImageName": "",
   "Power": [
-    6352,
-    6353
+    6228,
+    6229
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.4,
       "ToggleCost": 14.352,
-      "PowerIndex": 6352,
+      "PowerIndex": 6228,
       "PowerSetID": 3010,
       "StaticIndex": 9572,
       "NGroupMembership": [],
@@ -329,7 +329,7 @@
           "nID": 6,
           "EffectType": 38,
           "Summon": "Pets_DisintegrateSpread",
-          "nSummon": 291,
+          "nSummon": 290,
           "Ticks": 1,
           "Stacking": 1,
           "SpecialCase": 16,
@@ -359,7 +359,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6353,
+      "PowerIndex": 6229,
       "PowerSetID": 3010,
       "PowerSetIndex": 1,
       "StaticIndex": 9573,
@@ -663,7 +663,7 @@
           "nID": 6,
           "EffectType": 38,
           "Summon": "Pets_DisintegrateSpread",
-          "nSummon": 291,
+          "nSummon": 290,
           "Ticks": 1,
           "Stacking": 1,
           "SpecialCase": 16,

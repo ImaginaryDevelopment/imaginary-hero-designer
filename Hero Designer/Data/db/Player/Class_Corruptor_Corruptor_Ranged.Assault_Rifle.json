@@ -1801,7 +1801,7 @@
           "nID": 6,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10148,
+          "nSummon": 10024,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1819,7 +1819,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 7,
           "Override": "Villain_Pets.Corruptor_AssaultRifle_Snipe.Sniper_Rifle_Quick",
-          "nOverride": 10148
+          "nOverride": 10024
         },
         {
           "MagnitudeExpression": "",
@@ -1834,7 +1834,7 @@
           "nID": 7,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10149,
+          "nSummon": 10025,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1851,7 +1851,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 8,
           "Override": "Villain_Pets.Corruptor_AssaultRifle_Snipe.Sniper_Rifle_Normal",
-          "nOverride": 10149
+          "nOverride": 10025
         }
       ],
       "HasPowerOverrideEffect": true,

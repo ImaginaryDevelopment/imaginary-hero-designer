@@ -4,15 +4,15 @@
   "FullName": "Tanker_Defense.Shield_Defense",
   "ImageName": "ShieldDef.png",
   "Power": [
-    8684,
-    8685,
-    8686,
-    8687,
-    8688,
-    8689,
-    8690,
-    8691,
-    8692
+    8560,
+    8561,
+    8562,
+    8563,
+    8564,
+    8565,
+    8566,
+    8567,
+    8568
   ],
   "SetType": 1,
   "DisplayName": "Shield Defense",
@@ -39,7 +39,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 8684,
+      "PowerIndex": 8560,
       "PowerSetID": 3394,
       "StaticIndex": 3396,
       "NGroupMembership": [],
@@ -442,7 +442,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 8685,
+      "PowerIndex": 8561,
       "PowerSetID": 3394,
       "PowerSetIndex": 1,
       "StaticIndex": 3397,
@@ -769,7 +769,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8686,
+      "PowerIndex": 8562,
       "PowerSetID": 3394,
       "PowerSetIndex": 2,
       "StaticIndex": 3398,
@@ -1037,7 +1037,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.4,
-      "PowerIndex": 8687,
+      "PowerIndex": 8563,
       "PowerSetID": 3394,
       "PowerSetIndex": 3,
       "StaticIndex": 3399,
@@ -2244,7 +2244,7 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 0.208,
-      "PowerIndex": 8688,
+      "PowerIndex": 8564,
       "PowerSetID": 3394,
       "PowerSetIndex": 4,
       "StaticIndex": 3400,
@@ -3261,7 +3261,7 @@
     },
     {
       "CastTimeReal": 1.716,
-      "PowerIndex": 8689,
+      "PowerIndex": 8565,
       "PowerSetID": 3394,
       "PowerSetIndex": 5,
       "StaticIndex": 3401,
@@ -3541,7 +3541,7 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 0.156,
-      "PowerIndex": 8690,
+      "PowerIndex": 8566,
       "PowerSetID": 3394,
       "PowerSetIndex": 6,
       "StaticIndex": 3402,
@@ -4004,7 +4004,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 13.52,
-      "PowerIndex": 8691,
+      "PowerIndex": 8567,
       "PowerSetID": 3394,
       "PowerSetIndex": 7,
       "StaticIndex": 3403,
@@ -4124,7 +4124,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Shield_Charge_Tanker",
-          "nSummon": 223,
+          "nSummon": 222,
           "DelayedTime": 0.625,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -4153,7 +4153,7 @@
     {
       "CastTimeReal": 2.5,
       "ToggleCost": 2.6,
-      "PowerIndex": 8692,
+      "PowerIndex": 8568,
       "PowerSetID": 3394,
       "PowerSetIndex": 8,
       "StaticIndex": 3404,

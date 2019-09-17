@@ -4,8 +4,8 @@
   "FullName": "Mastermind_Pets.Arsonist_Burn",
   "ImageName": "",
   "Power": [
-    5768,
-    5769
+    5766,
+    5767
   ],
   "SetType": 8,
   "DisplayName": "Arsonist",
@@ -22,7 +22,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5768,
+      "PowerIndex": 5766,
       "PowerSetID": 2911,
       "StaticIndex": 1163,
       "NGroupMembership": [],
@@ -112,7 +112,7 @@
       "AoEModifier": 2.2
     },
     {
-      "PowerIndex": 5769,
+      "PowerIndex": 5767,
       "PowerSetID": 2911,
       "PowerSetIndex": 1,
       "StaticIndex": 1164,

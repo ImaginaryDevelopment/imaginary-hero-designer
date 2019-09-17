@@ -4,7 +4,7 @@
   "FullName": "Pets.Warburg_Nuclear",
   "ImageName": "",
   "Power": [
-    6743
+    6619
   ],
   "SetType": 8,
   "DisplayName": "Warburg_Nuclear",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6743,
+      "PowerIndex": 6619,
       "PowerSetID": 3272,
       "StaticIndex": 1788,
       "NGroupMembership": [],

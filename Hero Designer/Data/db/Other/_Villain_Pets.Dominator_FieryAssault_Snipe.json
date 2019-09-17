@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_FieryAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10186,
-    10187
+    10062,
+    10063
   ],
   "SetType": 8,
   "DisplayName": "Dominator_FieryAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 18.512,
-      "PowerIndex": 10186,
+      "PowerIndex": 10062,
       "PowerSetID": 3496,
       "StaticIndex": 9815,
       "NGroupMembership": [],
@@ -234,7 +234,7 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 18.512,
-      "PowerIndex": 10187,
+      "PowerIndex": 10063,
       "PowerSetID": 3496,
       "PowerSetIndex": 1,
       "StaticIndex": 9816,

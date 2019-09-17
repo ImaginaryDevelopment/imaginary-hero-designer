@@ -4,7 +4,7 @@
   "FullName": "Pets.Lifegiving_Spores_Controller",
   "ImageName": "",
   "Power": [
-    6448
+    6324
   ],
   "SetType": 8,
   "DisplayName": "Lifegiving Spores",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "CastTimeReal": 3.1,
-      "PowerIndex": 6448,
+      "PowerIndex": 6324,
       "PowerSetID": 3132,
       "StaticIndex": 9104,
       "NGroupMembership": [],

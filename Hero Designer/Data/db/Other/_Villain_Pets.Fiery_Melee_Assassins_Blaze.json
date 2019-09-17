@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Fiery_Melee_Assassins_Blaze",
   "ImageName": "",
   "Power": [
-    10202,
-    10203
+    10078,
+    10079
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10202,
+      "PowerIndex": 10078,
       "PowerSetID": 3448,
       "StaticIndex": 10702,
       "NGroupMembership": [],
@@ -238,7 +238,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9327,
+          "nSummon": 9203,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -335,7 +335,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10203,
+      "PowerIndex": 10079,
       "PowerSetID": 3448,
       "PowerSetIndex": 1,
       "StaticIndex": 10703,

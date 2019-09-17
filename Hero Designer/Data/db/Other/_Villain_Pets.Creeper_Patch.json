@@ -4,9 +4,9 @@
   "FullName": "Villain_Pets.Creeper_Patch",
   "ImageName": "",
   "Power": [
-    10166,
-    10167,
-    10168
+    10042,
+    10043,
+    10044
   ],
   "SetType": 8,
   "DisplayName": "Creeper Patch",
@@ -23,7 +23,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10166,
+      "PowerIndex": 10042,
       "PowerSetID": 3489,
       "StaticIndex": 3073,
       "NGroupMembership": [],
@@ -94,7 +94,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Creeper_Entangle",
-          "nSummon": 142,
+          "nSummon": 141,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -118,7 +118,7 @@
       "AoEModifier": 4.0
     },
     {
-      "PowerIndex": 10167,
+      "PowerIndex": 10043,
       "PowerSetID": 3489,
       "PowerSetIndex": 1,
       "StaticIndex": 3074,
@@ -314,7 +314,7 @@
       "AoEModifier": 4.0
     },
     {
-      "PowerIndex": 10168,
+      "PowerIndex": 10044,
       "PowerSetID": 3489,
       "PowerSetIndex": 2,
       "StaticIndex": 3075,
@@ -389,7 +389,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Creeper_Vine",
-          "nSummon": 143,
+          "nSummon": 142,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,

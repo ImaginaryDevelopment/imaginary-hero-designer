@@ -1759,7 +1759,7 @@
           "nID": 2,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6357,
+          "nSummon": 6233,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1777,7 +1777,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 3,
           "Override": "Pets.Defender_Electric_Snipe.Zapp_Quick",
-          "nOverride": 6357
+          "nOverride": 6233
         },
         {
           "MagnitudeExpression": "",
@@ -1793,7 +1793,7 @@
           "nID": 3,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6356,
+          "nSummon": 6232,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1810,7 +1810,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 4,
           "Override": "Pets.Defender_Electric_Snipe.Zapp_Normal",
-          "nOverride": 6356
+          "nOverride": 6232
         },
         {
           "MagnitudeExpression": "",

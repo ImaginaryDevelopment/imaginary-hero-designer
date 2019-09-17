@@ -4,8 +4,8 @@
   "FullName": "Pets.RainofFire",
   "ImageName": "",
   "Power": [
-    6556,
-    6557
+    6432,
+    6433
   ],
   "SetType": 8,
   "DisplayName": "Rain of Fire",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6556,
+      "PowerIndex": 6432,
       "PowerSetID": 3192,
       "StaticIndex": 1697,
       "NGroupMembership": [],
@@ -355,7 +355,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6557,
+      "PowerIndex": 6433,
       "PowerSetID": 3192,
       "PowerSetIndex": 1,
       "StaticIndex": 1698,

@@ -4,15 +4,15 @@
   "FullName": "Sentinel_Defense.Willpower",
   "ImageName": "Willpower.png",
   "Power": [
-    7221,
-    7222,
-    7223,
-    7224,
-    7225,
-    7226,
-    7227,
-    7228,
-    7229
+    7097,
+    7098,
+    7099,
+    7100,
+    7101,
+    7102,
+    7103,
+    7104,
+    7105
   ],
   "SetType": 2,
   "DisplayName": "Willpower",
@@ -29,7 +29,7 @@
   "GroupName": "Sentinel_Defense",
   "Powers": [
     {
-      "PowerIndex": 7221,
+      "PowerIndex": 7097,
       "PowerSetID": 3341,
       "StaticIndex": 10341,
       "NGroupMembership": [],
@@ -431,7 +431,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 7222,
+      "PowerIndex": 7098,
       "PowerSetID": 3341,
       "PowerSetIndex": 1,
       "StaticIndex": 10342,
@@ -711,7 +711,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7223,
+      "PowerIndex": 7099,
       "PowerSetID": 3341,
       "PowerSetIndex": 2,
       "StaticIndex": 10343,
@@ -839,7 +839,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 7224,
+      "PowerIndex": 7100,
       "PowerSetID": 3341,
       "PowerSetIndex": 3,
       "StaticIndex": 10344,
@@ -2051,7 +2051,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.208,
-      "PowerIndex": 7225,
+      "PowerIndex": 7101,
       "PowerSetID": 3341,
       "PowerSetIndex": 4,
       "StaticIndex": 10677,
@@ -2188,7 +2188,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 7226,
+      "PowerIndex": 7102,
       "PowerSetID": 3341,
       "PowerSetIndex": 5,
       "StaticIndex": 10346,
@@ -2283,7 +2283,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 7227,
+      "PowerIndex": 7103,
       "PowerSetID": 3341,
       "PowerSetIndex": 6,
       "StaticIndex": 10347,
@@ -2892,7 +2892,7 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 7228,
+      "PowerIndex": 7104,
       "PowerSetID": 3341,
       "PowerSetIndex": 7,
       "StaticIndex": 10348,
@@ -3979,7 +3979,7 @@
     {
       "CastTimeReal": 3.1,
       "ToggleCost": 2.6,
-      "PowerIndex": 7229,
+      "PowerIndex": 7105,
       "PowerSetID": 3341,
       "PowerSetIndex": 8,
       "StaticIndex": 10349,

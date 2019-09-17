@@ -4,10 +4,10 @@
   "FullName": "Training_Gadgets.Crab_Spider_Training",
   "ImageName": "i12_Sec_Crab.png",
   "Power": [
-    10054,
-    10055,
-    10056,
-    10057
+    9930,
+    9931,
+    9932,
+    9933
   ],
   "SetType": 2,
   "DisplayName": "Crab Spider Training",
@@ -24,7 +24,7 @@
   "GroupName": "Training_Gadgets",
   "Powers": [
     {
-      "PowerIndex": 10054,
+      "PowerIndex": 9930,
       "PowerSetID": 3433,
       "StaticIndex": 2994,
       "NGroupMembership": [],
@@ -932,7 +932,7 @@
     {
       "CastTimeReal": 2.33,
       "ToggleCost": 0.208,
-      "PowerIndex": 10055,
+      "PowerIndex": 9931,
       "PowerSetID": 3433,
       "PowerSetIndex": 1,
       "StaticIndex": 2995,
@@ -1809,7 +1809,7 @@
     {
       "CastTimeReal": 1.3,
       "ToggleCost": 10.4,
-      "PowerIndex": 10056,
+      "PowerIndex": 9932,
       "PowerSetID": 3433,
       "PowerSetIndex": 2,
       "StaticIndex": 2996,
@@ -1977,7 +1977,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 26.0,
-      "PowerIndex": 10057,
+      "PowerIndex": 9933,
       "PowerSetID": 3433,
       "PowerSetIndex": 3,
       "StaticIndex": 2997,
@@ -2056,7 +2056,7 @@
           "Special": "",
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 3,
@@ -2089,7 +2089,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "DelayedTime": 1.0,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2123,7 +2123,7 @@
           "nID": 2,
           "EffectType": 38,
           "Summon": "Pets_Patron_Powers_Arachnobot_Spiderling",
-          "nSummon": 168,
+          "nSummon": 167,
           "DelayedTime": 2.0,
           "UIDClassName": "",
           "nIDClassName": -1,

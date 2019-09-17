@@ -4,7 +4,7 @@
   "FullName": "Pets.Warburg_Chemical",
   "ImageName": "",
   "Power": [
-    6742
+    6618
   ],
   "SetType": 8,
   "DisplayName": "Warburg_Chemical",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6742,
+      "PowerIndex": 6618,
       "PowerSetID": 3271,
       "StaticIndex": 1787,
       "NGroupMembership": [],

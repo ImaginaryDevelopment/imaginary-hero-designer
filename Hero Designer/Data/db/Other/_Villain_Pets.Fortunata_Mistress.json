@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Fortunata_Mistress",
   "ImageName": "",
   "Power": [
-    10209,
-    10210,
-    10211,
-    10212,
-    10213,
-    10214,
-    10215
+    10085,
+    10086,
+    10087,
+    10088,
+    10089,
+    10090,
+    10091
   ],
   "SetType": 8,
   "DisplayName": "Fortunata Mistress",
@@ -27,7 +27,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10209,
+      "PowerIndex": 10085,
       "PowerSetID": 3508,
       "StaticIndex": 3085,
       "NGroupMembership": [],
@@ -428,7 +428,7 @@
     {
       "CastTimeReal": 1.97,
       "ToggleCost": 26.0,
-      "PowerIndex": 10210,
+      "PowerIndex": 10086,
       "PowerSetID": 3508,
       "PowerSetIndex": 1,
       "StaticIndex": 3086,
@@ -674,7 +674,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 10211,
+      "PowerIndex": 10087,
       "PowerSetID": 3508,
       "PowerSetIndex": 2,
       "StaticIndex": 3087,
@@ -850,7 +850,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10212,
+      "PowerIndex": 10088,
       "PowerSetID": 3508,
       "PowerSetIndex": 3,
       "StaticIndex": 3088,
@@ -934,7 +934,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 7.8,
-      "PowerIndex": 10213,
+      "PowerIndex": 10089,
       "PowerSetID": 3508,
       "PowerSetIndex": 4,
       "StaticIndex": 3089,
@@ -1112,7 +1112,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 7.8,
-      "PowerIndex": 10214,
+      "PowerIndex": 10090,
       "PowerSetID": 3508,
       "PowerSetIndex": 5,
       "StaticIndex": 3090,
@@ -1318,7 +1318,7 @@
     {
       "CastTimeReal": 1.1,
       "ToggleCost": 12.74,
-      "PowerIndex": 10215,
+      "PowerIndex": 10091,
       "PowerSetID": 3508,
       "PowerSetIndex": 6,
       "StaticIndex": 3091,

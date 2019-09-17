@@ -4,11 +4,11 @@
   "FullName": "Pool.Fighting",
   "ImageName": "Fighting.png",
   "Power": [
-    6773,
-    6774,
-    6775,
-    6776,
-    6777
+    6649,
+    6650,
+    6651,
+    6652,
+    6653
   ],
   "SetType": 5,
   "DisplayName": "Fighting",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 4.42,
-      "PowerIndex": 6773,
+      "PowerIndex": 6649,
       "PowerSetID": 3289,
       "StaticIndex": 1793,
       "NGroupMembership": [],
@@ -2310,7 +2310,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 4.94,
-      "PowerIndex": 6774,
+      "PowerIndex": 6650,
       "PowerSetID": 3289,
       "PowerSetIndex": 1,
       "StaticIndex": 1794,
@@ -4277,7 +4277,7 @@
       "CastTimeReal": 1.67,
       "ToggleCost": 10.66,
       "IsEpic": true,
-      "PowerIndex": 6775,
+      "PowerIndex": 6651,
       "PowerSetID": 3289,
       "PowerSetIndex": 2,
       "StaticIndex": 9612,
@@ -4321,28 +4321,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6773,
-            6774
+            6649,
+            6650
           ],
           [
-            6773,
-            6776
+            6649,
+            6652
           ],
           [
-            6773,
-            6777
+            6649,
+            6653
           ],
           [
-            6774,
-            6776
+            6650,
+            6652
           ],
           [
-            6774,
-            6777
+            6650,
+            6653
           ],
           [
-            6776,
-            6777
+            6652,
+            6653
           ]
         ],
         "NPowerIDNot": []
@@ -4445,7 +4445,7 @@
           "nID": 1,
           "EffectType": 38,
           "Summon": "Pet_Cross_Punch_Buff",
-          "nSummon": 431,
+          "nSummon": 427,
           "UIDClassName": "",
           "nIDClassName": -1,
           "Scale": 1.0,
@@ -4474,7 +4474,7 @@
           "nID": 2,
           "EffectType": 38,
           "Summon": "Pet_Cross_Punch_Buff2",
-          "nSummon": 432,
+          "nSummon": 428,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -5022,7 +5022,7 @@
       "CastTimeReal": 3.1,
       "ToggleCost": 0.325,
       "IsEpic": true,
-      "PowerIndex": 6776,
+      "PowerIndex": 6652,
       "PowerSetID": 3289,
       "PowerSetIndex": 3,
       "StaticIndex": 1795,
@@ -5050,11 +5050,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6773,
+            6649,
             -1
           ],
           [
-            6774,
+            6650,
             -1
           ]
         ],
@@ -5462,7 +5462,7 @@
       "CastTimeReal": 0.67,
       "ToggleCost": 0.325,
       "IsEpic": true,
-      "PowerIndex": 6777,
+      "PowerIndex": 6653,
       "PowerSetID": 3289,
       "PowerSetIndex": 4,
       "StaticIndex": 1796,
@@ -5494,16 +5494,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6773,
-            6774
+            6649,
+            6650
           ],
           [
-            6773,
-            6776
+            6649,
+            6652
           ],
           [
-            6774,
-            6776
+            6650,
+            6652
           ]
         ],
         "NPowerIDNot": []

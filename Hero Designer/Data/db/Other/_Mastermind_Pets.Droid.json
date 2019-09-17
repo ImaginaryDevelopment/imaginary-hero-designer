@@ -4,10 +4,10 @@
   "FullName": "Mastermind_Pets.Droid",
   "ImageName": "",
   "Power": [
-    5828,
-    5829,
-    5830,
-    5831
+    5816,
+    5817,
+    5818,
+    5819
   ],
   "SetType": 8,
   "DisplayName": "Droid",
@@ -24,7 +24,7 @@
   "GroupName": "Mastermind_Pets",
   "Powers": [
     {
-      "PowerIndex": 5828,
+      "PowerIndex": 5816,
       "PowerSetID": 2927,
       "StaticIndex": 1188,
       "NGroupMembership": [],
@@ -345,7 +345,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 5.2,
-      "PowerIndex": 5829,
+      "PowerIndex": 5817,
       "PowerSetID": 2927,
       "PowerSetIndex": 1,
       "StaticIndex": 1189,
@@ -447,7 +447,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 5.2,
-      "PowerIndex": 5830,
+      "PowerIndex": 5818,
       "PowerSetID": 2927,
       "PowerSetIndex": 2,
       "StaticIndex": 1190,
@@ -544,7 +544,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 5831,
+      "PowerIndex": 5819,
       "PowerSetID": 2927,
       "PowerSetIndex": 3,
       "StaticIndex": 1191,

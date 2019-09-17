@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Static_Field_Dominator",
   "ImageName": "",
   "Power": [
-    10326
+    10202
   ],
   "SetType": 8,
   "DisplayName": "Static Field Dominator",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10326,
+      "PowerIndex": 10202,
       "PowerSetID": 3546,
       "StaticIndex": 4489,
       "NGroupMembership": [],
@@ -239,7 +239,7 @@
           "nID": 4,
           "EffectType": 38,
           "Summon": "Pets_Static_Field_End_Recovery_Dominator",
-          "nSummon": 279,
+          "nSummon": 278,
           "Stacking": 1,
           "Buffable": true,
           "Resistible": true,

@@ -4,7 +4,7 @@
   "FullName": "Pets.Raid_Disruptor_Pylon",
   "ImageName": "",
   "Power": [
-    6543
+    6419
   ],
   "SetType": 8,
   "DisplayName": "Raid_Disruptor_Pylon",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6543,
+      "PowerIndex": 6419,
       "PowerSetID": 3180,
       "StaticIndex": 1688,
       "NGroupMembership": [],
