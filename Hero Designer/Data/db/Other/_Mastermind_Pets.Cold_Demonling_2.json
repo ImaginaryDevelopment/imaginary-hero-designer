@@ -23,6 +23,8 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 8.528,
+      "IsEpic": true,
+      "IsModified": true,
       "PowerIndex": 5780,
       "PowerSetID": 2916,
       "StaticIndex": 4193,
@@ -39,7 +41,12 @@
         "PowerIDNot": [],
         "NClassName": [],
         "NClassNameNot": [],
-        "NPowerID": [],
+        "NPowerID": [
+          [
+            6040,
+            -1
+          ]
+        ],
         "NPowerIDNot": []
       },
       "ModesDisallowed": 2,
@@ -125,7 +132,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 4,
           "Summon": "",
@@ -161,7 +167,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 2,
           "EffectType": 9,
           "ETModifies": 16,
           "Summon": "",
@@ -197,7 +202,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 3,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -233,7 +237,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 4,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -269,7 +272,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 5,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -305,7 +307,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 6,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",

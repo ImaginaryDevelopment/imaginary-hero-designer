@@ -2811,7 +2811,7 @@ namespace Hero_Designer
             lblDmg.Location = new Point(4, 272);
             lblDmg.Name = "lblDmg";
 
-            lblDmg.Size = new Size(292, 13);
+            lblDmg.Size = new Size(292, 15);
             lblDmg.TabIndex = 15;
             lblDmg.Text = "Damage:";
             lblDmg.TextAlign = ContentAlignment.MiddleCenter;
@@ -2822,23 +2822,23 @@ namespace Hero_Designer
             Info_Damage.ColorBaseStart = Color.Blue;
             Info_Damage.ColorEnhEnd = Color.Yellow;
             Info_Damage.ColorEnhStart = Color.Yellow;
-            Info_Damage.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Info_Damage.Font = new Font("Arial", 10f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
             Info_Damage.GraphType = Enums.eDDGraph.Enhanced;
 
-            Info_Damage.Location = new Point(4, 288);
+            Info_Damage.Location = new Point(2, 288);
             Info_Damage.Name = "Info_Damage";
             Info_Damage.nBaseVal = 100f;
             Info_Damage.nEnhVal = 150f;
             Info_Damage.nHighBase = 200f;
             Info_Damage.nHighEnh = 214f;
             Info_Damage.nMaxEnhVal = 207f;
-            Info_Damage.PaddingH = 3;
-            Info_Damage.PaddingV = 6;
+            Info_Damage.PaddingH = 1;
+            Info_Damage.PaddingV = 1;
 
-            Info_Damage.Size = new Size(292, 36);
+            Info_Damage.Size = new Size(295, 66);
             Info_Damage.Style = Enums.eDDStyle.TextUnderGraph;
             Info_Damage.TabIndex = 20;
-            Info_Damage.TextAlign = Enums.eDDAlign.Center;
+            Info_Damage.TextAlign = Enums.eDDAlign.Left;
             Info_Damage.TextColor = Color.FromArgb(192, 192, byte.MaxValue);
             info_DataList.BackColor = Color.FromArgb(0, 0, 32);
             info_DataList.Columns = 2;
@@ -3649,8 +3649,8 @@ namespace Hero_Designer
             lblDmg.Visible = true;
             lblDmg.Top = info_DataList.Bottom + 4;
             Info_Damage.Top = lblDmg.Bottom + 4;
-            Info_Damage.PaddingV = 6;
-            Info_Damage.Height = 36;
+            Info_Damage.PaddingV = 1;
+            Info_Damage.Height = 66;
             enhListing.Height = Info_Damage.Bottom - (enhListing.Top + (pnlEnhActive.Height + 4) * 2);
             pnlEnhActive.Top = enhListing.Bottom + 4;
             pnlEnhInactive.Top = pnlEnhActive.Bottom + 4;
