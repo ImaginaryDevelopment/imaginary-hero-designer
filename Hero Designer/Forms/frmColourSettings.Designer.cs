@@ -230,7 +230,7 @@ namespace Hero_Designer
 
             this.Label19.Size = new System.Drawing.Size(118, 16);
             this.Label19.TabIndex = 33;
-            this.Label19.Text = "Hero Background:";
+            this.Label19.Text = "Background:";
             this.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cPicker.FullOpen = true;
 

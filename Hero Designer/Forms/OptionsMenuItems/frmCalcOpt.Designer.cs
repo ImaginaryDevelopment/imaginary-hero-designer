@@ -352,16 +352,18 @@ namespace Hero_Designer
             // 
             // chkColorInherent
             // 
-            this.chkColorInherent.Location = new System.Drawing.Point(144, 100);
+            this.chkColorInherent.Enabled = false;
+            this.chkColorInherent.Location = new System.Drawing.Point(11, 117);
             this.chkColorInherent.Name = "chkColorInherent";
             this.chkColorInherent.Size = new System.Drawing.Size(222, 20);
             this.chkColorInherent.TabIndex = 70;
             this.chkColorInherent.Text = "Use alternate colors for inherents";
             this.myTip.SetToolTip(this.chkColorInherent, "Draws villain builds in red rather than blue.");
+            this.chkColorInherent.Visible = false;
             // 
             // chkHighVis
             // 
-            this.chkHighVis.Location = new System.Drawing.Point(10, 74);
+            this.chkHighVis.Location = new System.Drawing.Point(140, 91);
             this.chkHighVis.Name = "chkHighVis";
             this.chkHighVis.Size = new System.Drawing.Size(222, 20);
             this.chkHighVis.TabIndex = 69;
@@ -398,7 +400,7 @@ namespace Hero_Designer
             // 
             // btnFontColour
             // 
-            this.btnFontColour.Location = new System.Drawing.Point(312, 19);
+            this.btnFontColour.Location = new System.Drawing.Point(312, 36);
             this.btnFontColour.Name = "btnFontColour";
             this.btnFontColour.Size = new System.Drawing.Size(172, 27);
             this.btnFontColour.TabIndex = 61;
@@ -417,12 +419,14 @@ namespace Hero_Designer
             // 
             // chkVillainColour
             // 
-            this.chkVillainColour.Location = new System.Drawing.Point(277, 74);
+            this.chkVillainColour.Enabled = false;
+            this.chkVillainColour.Location = new System.Drawing.Point(262, 117);
             this.chkVillainColour.Name = "chkVillainColour";
             this.chkVillainColour.Size = new System.Drawing.Size(222, 20);
             this.chkVillainColour.TabIndex = 68;
             this.chkVillainColour.Text = "Use alternate colors for villains";
             this.myTip.SetToolTip(this.chkVillainColour, "Draws villain builds in red rather than blue.");
+            this.chkVillainColour.Visible = false;
             // 
             // Label21
             // 

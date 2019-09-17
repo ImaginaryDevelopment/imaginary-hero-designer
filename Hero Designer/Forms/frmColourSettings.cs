@@ -25,6 +25,9 @@ namespace Hero_Designer
             var componentResourceManager = new ComponentResourceManager(typeof(frmColourSettings));
             Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             myFS.Assign(MidsContext.Config.RtFont);
+            Label20.Visible = false;
+            csVillain.Visible = false;
+            csVillain.Enabled = false;
         }
 
         void btnCancel_Click(object sender, EventArgs e)
