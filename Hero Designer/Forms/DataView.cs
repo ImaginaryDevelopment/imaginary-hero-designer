@@ -22,7 +22,7 @@ namespace Hero_Designer
 
         protected const int szDataList = 104;
         protected const int szLargeText = 100;
-        protected const int szLineHeight = 16;
+        protected const int szLineHeight = -10;
         protected const int szPadding = 4;
         ToolTip dbTip;
         GFXLabel Enh_Title;
@@ -864,7 +864,7 @@ namespace Hero_Designer
 
         void DisplayData(bool noLevel = false, int iEnhLevel = -1)
         {
-            if (MidsContext.Config.DisableDataDamageGraph)
+            if (!MidsContext.Config.DisableDataDamageGraph)
             {
                 Info_Damage.GraphType = MidsContext.Config.DataGraphType;
                 switch (MidsContext.Config.DataGraphType)
@@ -872,22 +872,22 @@ namespace Hero_Designer
                     case Enums.eDDGraph.Simple:
                         ctlDamageDisplay infoDamage1 = Info_Damage;
                         infoDamage1.TextAlign = Enums.eDDAlign.Center;
-                        infoDamage1.Style = Enums.eDDStyle.TextUnderGraph;
+                        infoDamage1.Style = Enums.eDDStyle.Text;
                         break;
                     case Enums.eDDGraph.Enhanced:
                         ctlDamageDisplay infoDamage2 = Info_Damage;
                         infoDamage2.TextAlign = Enums.eDDAlign.Center;
-                        infoDamage2.Style = Enums.eDDStyle.TextUnderGraph;
+                        infoDamage2.Style = Enums.eDDStyle.Text;
                         break;
                     case Enums.eDDGraph.Both:
                         ctlDamageDisplay infoDamage3 = Info_Damage;
                         infoDamage3.TextAlign = Enums.eDDAlign.Center;
-                        infoDamage3.Style = Enums.eDDStyle.TextUnderGraph;
+                        infoDamage3.Style = Enums.eDDStyle.Text;
                         break;
                     case Enums.eDDGraph.Stacked:
                         ctlDamageDisplay infoDamage4 = Info_Damage;
                         infoDamage4.TextAlign = Enums.eDDAlign.Center;
-                        infoDamage4.Style = Enums.eDDStyle.TextUnderGraph;
+                        infoDamage4.Style = Enums.eDDStyle.Text;
                         break;
                 }
             }
@@ -2822,10 +2822,10 @@ namespace Hero_Designer
             Info_Damage.ColorBaseStart = Color.Blue;
             Info_Damage.ColorEnhEnd = Color.Yellow;
             Info_Damage.ColorEnhStart = Color.Yellow;
-            Info_Damage.Font = new Font("Arial", 10f, FontStyle.Regular, GraphicsUnit.Pixel, 1);
+            Info_Damage.Font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel, 1);
             Info_Damage.GraphType = Enums.eDDGraph.Enhanced;
 
-            Info_Damage.Location = new Point(2, 288);
+            Info_Damage.Location = new Point(2, 284);
             Info_Damage.Name = "Info_Damage";
             Info_Damage.nBaseVal = 100f;
             Info_Damage.nEnhVal = 150f;
@@ -2836,7 +2836,7 @@ namespace Hero_Designer
             Info_Damage.PaddingV = 1;
 
             Info_Damage.Size = new Size(295, 56);
-            Info_Damage.Style = Enums.eDDStyle.TextUnderGraph;
+            Info_Damage.Style = Enums.eDDStyle.Text;
             Info_Damage.TabIndex = 20;
             Info_Damage.TextAlign = Enums.eDDAlign.Left;
             Info_Damage.TextColor = Color.FromArgb(192, 192, byte.MaxValue);

@@ -55,7 +55,7 @@ namespace midsControls
             gTarget = iTarget.CreateGraphics();
             cTarget = iTarget;
             //DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
-            DefaultFont = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
+            DefaultFont = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
             BackColor = iTarget.BackColor;
         }
 
@@ -98,7 +98,7 @@ namespace midsControls
                 gTarget.SmoothingMode = SmoothingMode.HighQuality;
                 gTarget.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
                 //DefaultFont = new Font(iTarget.Font.FontFamily, iTarget.Font.Size, FontStyle.Bold, iTarget.Font.Unit);
-                DefaultFont = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
+                DefaultFont = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
                 BackColor = iTarget.BackColor;
                 if (szBuffer.Height < cTarget.Height)
                 {
@@ -232,7 +232,7 @@ namespace midsControls
             Pen pen2 = new Pen(Color.Black);
             Rectangle rectangle = default;
             //Font font = new Font(DefaultFont.FontFamily, FontScale(DefaultFont.SizeInPoints), DefaultFont.Style, GraphicsUnit.Point);
-            Font font = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
             int slotChk = MidsContext.Character.SlotCheck(iSlot);
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
@@ -835,21 +835,21 @@ namespace midsControls
                     ? (float) (drawingArea.Width / (double) iSize.Width)
                     : (float) (drawingArea.Height / (double) iSize.Height);
                 ResetTarget();
-                bxBuffer.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
+                bxBuffer.Graphics.CompositingQuality = CompositingQuality.HighQuality;
                 bxBuffer.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 bxBuffer.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 bxBuffer.Graphics.SmoothingMode = SmoothingMode.HighQuality;
                 if (!(Math.Abs(ScaleValue - scaleValue) > float.Epsilon))
                     return;
                 FullRedraw();
-                bxBuffer.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
+                bxBuffer.Graphics.CompositingQuality = CompositingQuality.HighQuality;
                 bxBuffer.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 bxBuffer.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 bxBuffer.Graphics.SmoothingMode = SmoothingMode.HighQuality;
             }
             else
             {
-                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
                 ScaleValue = 1f;
                 ResetTarget();
                 Scaling = false;
@@ -862,13 +862,13 @@ namespace midsControls
 
         void ResetTarget()
         {
-            bxBuffer.Graphics.TextRenderingHint = ScaleValue > 1.125 ? TextRenderingHint.ClearTypeGridFit : TextRenderingHint.AntiAliasGridFit;
+            bxBuffer.Graphics.TextRenderingHint = ScaleValue > 1.125 ? TextRenderingHint.ClearTypeGridFit : TextRenderingHint.ClearTypeGridFit;
             gTarget.Dispose();
             gTarget = cTarget.CreateGraphics();
-            gTarget.CompositingQuality = CompositingQuality.AssumeLinear;
+            gTarget.CompositingQuality = CompositingQuality.HighQuality;
             gTarget.CompositingMode = CompositingMode.SourceCopy;
             gTarget.PixelOffsetMode = PixelOffsetMode.None;
-            gTarget.SmoothingMode = SmoothingMode.None;
+            gTarget.SmoothingMode = SmoothingMode.HighQuality;
         }
 
         public int ScaleDown(int iValue)
