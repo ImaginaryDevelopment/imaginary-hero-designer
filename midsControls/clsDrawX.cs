@@ -109,7 +109,7 @@ namespace midsControls
 
         void DrawSplit()
         {
-            Pen pen = new Pen(Color.SlateGray, 2f);
+            Pen pen = new Pen(Color.Goldenrod, 2f);
             checked
             {
                 int iValue = 4 + vcRowsPowers * (SzPower.Height + 18) - 10;
