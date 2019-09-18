@@ -218,7 +218,7 @@ namespace Hero_Designer
         static void SetFontDataSingle(ref ctlMultiGraph iGraph)
         {
             //iGraph.Font = new Font(iGraph.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
-            iGraph.Font = new Font("Calibri", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
+            iGraph.Font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
         }
 
         void SetFonts()

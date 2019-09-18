@@ -7940,7 +7940,7 @@
     },
     {
       "UID": "Pet_Cross_Punch_Buff",
-      "DisplayName": "Cross Punch Buff",
+      "DisplayName": "Boxing Buff",
       "PowersetFullName": [
         "Pets.Cross_Punch_Buff_Damage"
       ],
@@ -7949,7 +7949,7 @@
     },
     {
       "UID": "Pet_Cross_Punch_Buff2",
-      "DisplayName": "Cross-Punch Buff 2",
+      "DisplayName": "Kick Buff",
       "PowersetFullName": [
         "Pets.Cross_Punch_Buff_Damage2"
       ],

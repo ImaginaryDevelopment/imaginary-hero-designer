@@ -633,11 +633,11 @@ public class ConfigData
             ColorWarning = Color.FromArgb(byte.MaxValue, 0, 0);
             ColorPlName = Color.FromArgb(192, 192, byte.MaxValue);
             ColorPlSpecial = Color.FromArgb(128, 128, byte.MaxValue);
-            ColorPowerAvailable = Color.DodgerBlue;
-            ColorPowerTaken = Color.Gold;
-            ColorPowerTakenDark = Color.Goldenrod;
+            ColorPowerAvailable = Color.Gold;
+            ColorPowerTaken = Color.DodgerBlue;
+            ColorPowerTakenDark = Color.DodgerBlue;
             ColorPowerHighlight = Color.FromArgb(64, 64, 96);
-            ColorPowerDisabled = Color.Silver;
+            ColorPowerDisabled = Color.LightGray;
             PairedBase = 8.25f;
             PairedBold = false;
         }

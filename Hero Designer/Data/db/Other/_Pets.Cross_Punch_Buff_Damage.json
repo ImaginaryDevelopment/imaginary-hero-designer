@@ -22,6 +22,7 @@
   "Powers": [
     {
       "IsEpic": true,
+      "IsModified": true,
       "PowerIndex": 6196,
       "PowerSetID": 3061,
       "StaticIndex": 10793,
@@ -51,8 +52,12 @@
         ],
         "NPowerIDNot": []
       },
+      "PowerType": 1,
       "GroupMembership": [],
+      "EntitiesAffected": 2048,
+      "Target": 2048,
       "TargetLoS": true,
+      "EffectArea": 1,
       "MaxBoosts": "",
       "BoostsAllowed": [],
       "Enhancements": [],

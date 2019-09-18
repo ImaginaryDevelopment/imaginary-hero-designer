@@ -170,8 +170,8 @@
   {
     "Archetype": "Class_Blaster",
     "Fullname": "Blaster_Support.Temporal_Manipulation",
-    "Hash": 1720612158,
-    "Length": 163777
+    "Hash": 1417668096,
+    "Length": 163918
   },
   {
     "Archetype": "",
@@ -18368,14 +18368,14 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Cross_Punch_Buff_Damage",
-    "Hash": 1437569198,
-    "Length": 2843
+    "Hash": 1651973733,
+    "Length": 2973
   },
   {
     "Archetype": "",
     "Fullname": "Pets.Cross_Punch_Buff_Damage2",
-    "Hash": -468883302,
-    "Length": 2807
+    "Hash": 1355798157,
+    "Length": 2937
   },
   {
     "Archetype": "",
@@ -19736,8 +19736,8 @@
   {
     "Archetype": "",
     "Fullname": "Pool.Fighting",
-    "Hash": 1973848060,
-    "Length": 193246
+    "Hash": -564146581,
+    "Length": 192953
   },
   {
     "Archetype": "",

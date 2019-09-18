@@ -526,7 +526,7 @@ namespace Hero_Designer
             iList.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb(byte.MaxValue, 0, 0));
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
             //iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
-            iList.Font = new Font("Calibri", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
+            iList.Font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
         }
 
         void VitaeButton_ButtonClicked()

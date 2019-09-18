@@ -5155,7 +5155,7 @@ namespace Hero_Designer
             I9Popup.ForeColor = I9Picker.ForeColor;
             myDataView.BackColor = BackColor;
             //var font = new Font(llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
-            var font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
+            var font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             var toColor = new Control[]
             {
                 llPrimary, llSecondary, llPool0, llPool1, llPool2, llPool3, llAncillary, lblName, lblAT, lblOrigin, lblHero, pnlGFX
@@ -5286,7 +5286,7 @@ namespace Hero_Designer
             llSecondary.PaddingY = 2;
             FixPrimarySecondaryHeight();
             //llPrimary.Font = new Font(llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
-            llPrimary.Font = new Font("Arial", 11.5f, FontStyle.Bold, GraphicsUnit.Pixel);
+            llPrimary.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             llSecondary.Font = llPrimary.Font;
             int num1 = llPrimary.Items.Length - 1;
             for (int index = 0; index <= num1; ++index)
