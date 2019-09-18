@@ -491,12 +491,15 @@ namespace Hero_Designer
         }
 
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
-
         {
-            VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
-            if (VScrollBar1.Value > VScrollBar1.Maximum - 9)
-                VScrollBar1.Value = VScrollBar1.Maximum - 9;
-            VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            var ConVal = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
+            if (ConVal != -1)
+            {
+                VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
+                if (VScrollBar1.Value > VScrollBar1.Maximum - 9)
+                    VScrollBar1.Value = VScrollBar1.Maximum - 9;
+                VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            }
         }
 
         void SetPowerSet(string Setname, ref ImageButton button)

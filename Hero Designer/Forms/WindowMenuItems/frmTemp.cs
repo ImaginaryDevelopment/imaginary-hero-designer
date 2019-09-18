@@ -324,10 +324,14 @@ namespace Hero_Designer
 
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
-            VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
-            if (VScrollBar1.Value > VScrollBar1.Maximum - 9)
-                VScrollBar1.Value = VScrollBar1.Maximum - 9;
-            VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            var ConVal = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
+            if (ConVal != -1)
+            {
+                VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
+                if (VScrollBar1.Value > VScrollBar1.Maximum - 9)
+                    VScrollBar1.Value = VScrollBar1.Maximum - 9;
+                VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            }
         }
 
         static void UpdateLlColours(ref ListLabelV2 iList)
@@ -343,6 +347,8 @@ namespace Hero_Designer
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
+            if (VScrollBar1.Value == -1)
+                return;
             PopInfo.ScrollY = (float)(VScrollBar1.Value / (double)(VScrollBar1.Maximum - VScrollBar1.LargeChange) * (PopInfo.lHeight - (double)Panel1.Height));
         }
     }
