@@ -211,8 +211,8 @@ namespace Hero_Designer
             ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
             PopUp.PopupData iPopup = new PopUp.PopupData();
             int index = iPopup.Add();
-            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title);
-            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f);
+            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
             PopInfo.SetPopup(iPopup);
             ChangedScrollFrameContents();
             FillLists();
@@ -414,8 +414,8 @@ namespace Hero_Designer
                         str1 = "(Toggle)";
                         break;
                 }
-                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title);
-                iPopup.Sections[index1].Add(str1 + " " + power1.DescShort, PopUp.Colors.Text, 0.9f);
+                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                iPopup.Sections[index1].Add(str1 + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
                 string str2 = power1.DescLong.Replace("<br>", "\r\n");
                 iPopup.Sections[index1].Add(str1 + " " + str2, PopUp.Colors.Common, 1f, FontStyle.Regular);
                 int index2 = iPopup.Add();
@@ -447,7 +447,7 @@ namespace Hero_Designer
                 IPower power2 = power1;
                 if (power2.Effects.Length > 0)
                 {
-                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title);
+                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     char[] chArray = { '^' };
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)

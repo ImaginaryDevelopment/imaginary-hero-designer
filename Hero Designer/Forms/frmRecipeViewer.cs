@@ -149,12 +149,12 @@ namespace Hero_Designer
                                     MidsContext.Character.CurrentBuild
                                         .Powers[Conversions.ToInteger(lvPower.CheckedItems[0].Tag)].NIDPower]
                                 .DisplayName
-                            : "All Powers", PopUp.Colors.Title);
+                            : "All Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 }
                 else
-                    popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title);
+                    popupData.Sections[index3].Add(Conversions.ToString(lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 if (!chkRecipe.Checked)
-                    popupData.Sections[index3].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title);
+                    popupData.Sections[index3].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 if (Mini)
                 {
                     string str = "Buy:";
@@ -195,7 +195,7 @@ namespace Hero_Designer
                 {
                     RecipeInfo.ColumnPosition = 0.75f;
                     int index1 = popupData.Add();
-                    popupData.Sections[index1].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title);
+                    popupData.Sections[index1].Add(Conversions.ToString(lvDPA.Items.Count - nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     int num7 = numArray2.Length - 1;
                     for (int index2 = 0; index2 <= num7; ++index2)
                     {
@@ -237,7 +237,7 @@ namespace Hero_Designer
                 }
                 int index5 = popupData.Add();
                 string iText1 = !Mini ? Conversions.ToString(num4) + " Salvage Items:" : Conversions.ToString(num4) + " Items:";
-                popupData.Sections[index5].Add(iText1, PopUp.Colors.Title);
+                popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 int num9 = numArray1.Length - 1;
                 for (int index1 = 0; index1 <= num9; ++index1)
                 {
@@ -257,7 +257,7 @@ namespace Hero_Designer
                             break;
                     }
                     if (Mini)
-                        popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f);
+                        popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, FontStyle.Bold, 0);
                     else
                         popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, FontStyle.Bold, 1);
                 }
@@ -267,13 +267,13 @@ namespace Hero_Designer
                 {
                     int index1 = popupData.Add();
                     string iText2 = !Mini ? Conversions.ToString(nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(nonRecipeCount - 1) + " Enhs:";
-                    popupData.Sections[index1].Add(iText2, PopUp.Colors.Title);
+                    popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     int num7 = tl.Length - 1;
                     for (int index2 = 0; index2 <= num7; ++index2)
                     {
                         Color common = PopUp.Colors.Common;
                         if (Mini)
-                            popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f);
+                            popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, FontStyle.Bold, 0);
                         else
                             popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, FontStyle.Bold, 1);
                     }

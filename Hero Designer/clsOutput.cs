@@ -259,7 +259,7 @@ namespace Hero_Designer
 
         {
             string str1 = formatColor(formatUnderline(formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + LineBreak();
-            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus").Length - 1 + 1];
+            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {

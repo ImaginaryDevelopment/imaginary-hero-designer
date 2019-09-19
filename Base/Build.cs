@@ -420,7 +420,7 @@ public class Build
         PopUp.PopupData popupData = new PopUp.PopupData();
         HistoryMap[] historyMapArray = BuildHistoryMap(true);
         int index1 = popupData.Add();
-        popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f);
+        popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         foreach (HistoryMap historyMap in historyMapArray)
         {
             if (historyMap.HID <= -1 || DatabaseAPI.Database.Levels[historyMap.Level].Powers <= 0 || historyMap.Level > iLevel)
@@ -434,7 +434,7 @@ public class Build
                 iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
             else
                 iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
-            popupData.Sections[index2].Add(iText1, PopUp.Colors.Text);
+            popupData.Sections[index2].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
             int slots = SlotsAtLevel(historyMap.HID, iLevel);
             if (slots <= 0)
                 continue;
@@ -467,7 +467,7 @@ public class Build
         PopUp.PopupData popupData = new PopUp.PopupData();
         HistoryMap[] historyMapArray = BuildHistoryMap(true);
         int index = popupData.Add();
-        popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f);
+        popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         int histLvl = 0;
         foreach (HistoryMap historyMap in historyMapArray)
         {
@@ -486,7 +486,7 @@ public class Build
                     iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
                 else
                     iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
-                popupData.Sections[index].Add(iText1, PopUp.Colors.Text);
+                popupData.Sections[index].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                 if (!longFormat)
                     continue;
                 string empty = string.Empty;
@@ -509,7 +509,7 @@ public class Build
                     ? "Level " + (historyMap.Level + 1) + ": Added Slot To "
                     : "Level " + (historyMap.Level + 1) + ": Received Slot - ";
                 string iText1 = power.Power == null ? str + "[Empty]" : str + power.Power.DisplayName;
-                popupData.Sections[index].Add(iText1, PopUp.Colors.Effect);
+                popupData.Sections[index].Add(iText1, PopUp.Colors.Effect, 1f, FontStyle.Bold, 0);
                 if (!longFormat)
                     continue;
                 string iText2;
@@ -1072,7 +1072,7 @@ Note: Normal and Special enhancements cannot go above +3, and Inventions cannot 
         IPower power1 = new Power();
         if (MidsContext.Config.I9.IgnoreSetBonusFX)
             return power1;
-        var nidPowers = DatabaseAPI.NidPowers("set_bonus");
+        var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
         int[] setCount = new int[nidPowers.Length];
         for (int index = 0; index < setCount.Length; ++index)
             setCount[index] = 0;
