@@ -42,6 +42,8 @@ namespace Hero_Designer
         public static void BugReportCrytilis() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer/issues");
         public static void BugReportImaginary() => LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues");
 
+        public static void DownloadFromDomain() => LaunchBrowser("http://midsreborn.com/download/MRB_Setup.exe");
+
         public static void KoFi()
         {
             LaunchBrowser("https://ko-fi.com/metalios");

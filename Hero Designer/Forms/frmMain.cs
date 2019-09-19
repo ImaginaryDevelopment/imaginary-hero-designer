@@ -205,7 +205,7 @@ namespace Hero_Designer
             dvAnchored.Moved += dvAnchored_Move;
             dvAnchored.TabChanged += dvAnchored_TabChanged;
             var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
-            var icon = (Icon) componentResourceManager.GetObject("$this.Icon");
+            var icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             Icon = icon;
             Name = nameof(frmMain);
         }
@@ -243,7 +243,7 @@ namespace Hero_Designer
                     MessageBox.Show(
                         "As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.",
                         "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clsXMLUpdate.GoToCoHPlanner();
+                    clsXMLUpdate.DownloadFromDomain();
                     Application.Exit();
                     return;
                 }
