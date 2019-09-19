@@ -39,7 +39,8 @@ namespace Hero_Designer
             }
         }*/
 
-        public static void BugReport() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer/issues");
+        public static void BugReportCrytilis() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer/issues");
+        public static void BugReportImaginary() => LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues");
 
         public static void KoFi()
         {
@@ -51,7 +52,9 @@ namespace Hero_Designer
             LaunchBrowser("https://www.patreon.com/midsreborn");
         }
 
-        public static void GoToCoHPlanner() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer");
+        public static void GoToGitHubCrytilis() => LaunchBrowser("https://github.com/Crytilis/mids-reborn-hero-designer");
+
+        public static void GoToGitHubImaginary() => LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer");
 
         public static void GoToForums()
         {

@@ -4654,7 +4654,8 @@ namespace Hero_Designer
 
         void tsKoFi_Click(object sender, EventArgs e) => clsXMLUpdate.KoFi();
         void tsPatreon_Click(object sender, EventArgs e) => clsXMLUpdate.Patreon();
-        void tsBugReport_Click(object sender, EventArgs e) => clsXMLUpdate.BugReport();
+        void tsBugReportCrytilis_Click(object sender, EventArgs e) => clsXMLUpdate.BugReportCrytilis();
+        void tsBugReportImaginary_Click(object sender, EventArgs e) => clsXMLUpdate.BugReportImaginary();
 
         void tsDynamic_Click(object sender, EventArgs e)
         {
@@ -4974,8 +4975,11 @@ namespace Hero_Designer
         void tsForumLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToForums();
 
-        void tsPlannerLink(object sender, EventArgs e)
-            => clsXMLUpdate.GoToCoHPlanner();
+        void tsCrytilisLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToGitHubCrytilis();
+
+        void tsImaginaryLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToGitHubImaginary();
 
         private void AutoUpdater_ApplicationExitEvent()
         {
