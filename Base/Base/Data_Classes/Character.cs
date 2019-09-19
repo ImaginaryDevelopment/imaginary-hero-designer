@@ -537,7 +537,7 @@ namespace Base.Data_Classes
                     case Enums.eType.SpecialO:
                     case Enums.eType.SetO:
                         if (!string.IsNullOrEmpty(enhancement.Desc))
-                            popupData1.Sections[index1].Add(enhancement.Desc, PopUp.Colors.Title, 1f FontStyle.Bold, 0);
+                            popupData1.Sections[index1].Add(enhancement.Desc, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int index4 = popupData1.Add();
                         string[] strArray3 = BreakByNewLine(iSlot.GetEnhancementStringLong());
                         for (int index3 = 0; index3 <= strArray3.Length - 1; ++index3)
@@ -823,7 +823,7 @@ namespace Base.Data_Classes
                 PopUp.PopupData popupData1 = new PopUp.PopupData();
                 int index1 = popupData1.Add();
                 popupData1.Sections[index1].Add(enhancementSet.DisplayName, iColor, 1.25f, FontStyle.Bold, 0);
-                popupData1.Sections[index1].Add("Set Type: " + DatabaseAPI.Database.SetTypeStringLong[(int)enhancementSet.SetType], PopUp.Colors.Invention, 1f FontStyle.Bold, 0);
+                popupData1.Sections[index1].Add("Set Type: " + DatabaseAPI.Database.SetTypeStringLong[(int)enhancementSet.SetType], PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
                 string str = enhancementSet.LevelMin != enhancementSet.LevelMax ? (enhancementSet.LevelMin + 1) + " to " + (enhancementSet.LevelMax + 1) : (enhancementSet.LevelMin + 1).ToString(CultureInfo.InvariantCulture);
                 popupData1.Sections[index1].Add("Level Range: " + str, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                 popupData1.Add(PopSetEnhList(sIdx, powerEntry));
