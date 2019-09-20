@@ -32,6 +32,7 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetListingPvP));
             this.ilSets = new System.Windows.Forms.ImageList(this.components);
             this.lvSets = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -234,6 +235,7 @@ namespace Hero_Designer
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.lvSets);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSetListingPvP";
