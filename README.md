@@ -21,18 +21,18 @@ https://twitter.com/midsreborn
 
 ## Requirements
 
-* **_Windows_**
+#### Windows
 
    * [.NET 4.7.2](https://dotnet.microsoft.com/download/thank-you/net472)
 
-* **_MacOS_**
+#### MacOS
 
    * [Homebrew](https://brew.sh/)  
    * [Wine](https://www.winehq.org/)  
    * [Winetricks](https://brewformulas.org/Winetricks)  
    * [.NET 4.7.2](https://dotnet.microsoft.com/download/thank-you/net472)  
 
-* **_Linux_**
+#### Linux
 
    * [Wine](https://www.winehq.org/)  
    * [Winetricks](https://github.com/Winetricks/winetricks)  
