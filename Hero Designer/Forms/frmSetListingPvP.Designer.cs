@@ -239,7 +239,7 @@ namespace Hero_Designer
             this.Name = "frmSetListingPvP";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Invention Set Editor";
+            this.Text = "PvP Invention Set Editor";
             this.ResumeLayout(false);
 
         }
