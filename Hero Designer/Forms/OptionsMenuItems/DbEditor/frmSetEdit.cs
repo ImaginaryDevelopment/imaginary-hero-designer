@@ -18,7 +18,6 @@ namespace Hero_Designer
         protected bool Loading;
         public EnhancementSet mySet;
         protected int[] SetBonusList;
-        protected int[] SetBonusListPVP;
 
         ListView lvBonusList
         {
@@ -93,7 +92,6 @@ namespace Hero_Designer
         {
             Load += new EventHandler(frmSetEdit_Load);
             SetBonusList = new int[0];
-            SetBonusListPVP = new int[0];
             Loading = true;
             InitializeComponent();
             Name = nameof(frmSetEdit);
@@ -384,18 +382,6 @@ namespace Hero_Designer
                     Tag = SetBonusList[index]
                 });
             }
-            int num2 = SetBonusListPVP.Length - 1;
-            for (int index = 0; index <= num2; ++index)
-            {
-                items[1] = "";
-                if (DatabaseAPI.Database.Power[SetBonusListPVP[index]].Effects.Length > 0)
-                    items[1] = DatabaseAPI.Database.Power[SetBonusListPVP[index]].Effects[0].BuildEffectStringShort(false, true, false);
-                items[0] = DatabaseAPI.Database.Power[SetBonusListPVP[index]].PowerName + " (PVP Only)";
-                lvBonusList.Items.Add(new ListViewItem(items)
-                {
-                    Tag = SetBonusListPVP[index]
-                });
-            }
             lvBonusList.Sort();
             lvBonusList.EndUpdate();
         }
@@ -447,7 +433,6 @@ namespace Hero_Designer
             if (MidsContext.Config.MasterMode)
                 btnPaste.Visible = true;
             SetBonusList = DatabaseAPI.NidPowers("set_bonus.set_bonus", "");
-            SetBonusListPVP = DatabaseAPI.NidPowers("set_bonus.pvp_set_bonus", "");
             if (mySet.Bonus.Length < 1)
                 mySet.InitBonus();
             FillComboBoxes();

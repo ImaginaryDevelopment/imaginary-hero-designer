@@ -210,18 +210,11 @@ namespace Hero_Designer
                     EnhancementSet.BonusItem[] bonus = mySet.Bonus;
                     var index3 = num2;
 
-                    //bonus[index3].Slotted = BonusSlot;
                     bonus[index3].PvMode = BonusMode;
                     bonus[index3].Name = (string[]) Utils.CopyArray(bonus[index3].Name, (Array) new string[bonus[index3].Name.Length + 1]);
                     bonus[index3].Index = (int[]) Utils.CopyArray(bonus[index3].Index, (Array) new int[bonus[index3].Index.Length + 1]);
                     bonus[index3].Index[bonus[index3].Index.Length - 1] = nBonus;
                     bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[nBonus].FullName;
-                    //Array.Resize(ref bonus[nMin].Name, bonus[nMin].Name.Length + 1);
-                    //Array.Resize(ref bonus[nMin].Index, bonus[nMin].Index.Length + 1);
-                    //bonus[nMin].Index[bonus[nMin].Index.Length - 1] = nBonus;
-                    //bonus[nMin].Name[bonus[nMin].Name.Length - 1] = DatabaseAPI.Database.Power[nBonus].FullName;
-                    //bonus[nMin].PvMode = BonusMode;
-                    //bonus[nMin].Slotted = BonusSlot;
                 }
             }
 
@@ -577,7 +570,6 @@ namespace Hero_Designer
             cbSlotCount.BeginUpdate();
             cbSlotCount.Items.Clear();
             var num0 = mySet.Enhancements.Length;
-            //var num0 = mySet.Enhancements.Length * 2;
             var num1 = num0 + num0 -1;
             for (int index = 0; index <= num1; ++index)
             {
@@ -614,28 +606,6 @@ namespace Hero_Designer
                         cbSlotCount.Items.Add((Conversions.ToString(index - 5) + " Enhancements (PVP Effect)"));
                         break;
                 }
-                /*if (index <= num0)
-                {
-                    cbSlotCount.Items.Add((Conversions.ToString(index) + " Enhancements"));
-                }
-                else
-                {
-                    switch (num1)
-                    {
-                        case 5:
-                            cbSlotCount.Items.Add((Conversions.ToString(index - 2) + " Enhancements (PVP Effects)"));
-                            break;
-                        case 7:
-                            cbSlotCount.Items.Add((Conversions.ToString(index - 3) + " Enhancements (PVP Effects)"));
-                            break;
-                        case 9:
-                            cbSlotCount.Items.Add((Conversions.ToString(index - 4) + " Enhancements (PVP Effects)"));
-                            break;
-                        case 11:
-                            cbSlotCount.Items.Add((Conversions.ToString(index - 5) + " Enhancements (PVP Effects)"));
-                            break;
-                    }
-                }*/
             }
 
             int num2 = mySet.Enhancements.Length - 1;
