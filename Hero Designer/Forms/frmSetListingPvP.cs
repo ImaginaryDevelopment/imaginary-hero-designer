@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Base.Display;
 using Hero_Designer.My;
@@ -133,9 +134,10 @@ namespace Hero_Designer
             string uidOld = "";
             int selectedIndex1 = lvSets.SelectedIndices[0];
             EnhancementSetCollection enhancementSets = DatabaseAPI.Database.EnhancementSets;
-            int selectedIndex2 = lvSets.SelectedIndices[0];
-            EnhancementSet iSet = enhancementSets[selectedIndex2];
-            enhancementSets[selectedIndex2] = iSet;
+            string setName = Regex.Replace(lvSets.SelectedItems[0].Text, @"( \(\w+\))", "");
+            var setNameIndex = enhancementSets.FindIndex(x => x.DisplayName == setName);
+            EnhancementSet iSet = enhancementSets[setNameIndex];
+            enhancementSets[setNameIndex] = iSet;
             frmSetEditPvP frmSetEditPvP = new frmSetEditPvP(ref iSet);
             int num = (int)frmSetEditPvP.ShowDialog();
             if (frmSetEditPvP.DialogResult != DialogResult.OK)
