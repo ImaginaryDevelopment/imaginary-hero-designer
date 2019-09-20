@@ -21,6 +21,24 @@ public class EnhancementSet
 
     public void InitBonus()
     {
+        for (int index = 0; index <= Bonus.Length - 1; ++index)
+        {
+            Bonus[index].Special = -1;
+            Bonus[index].AltString = string.Empty;
+            Bonus[index].Name = new string[0];
+            Bonus[index].Index = new int[0];
+        }
+        for (int index = 0; index <= SpecialBonus.Length - 1; ++index)
+        {
+            SpecialBonus[index].Special = -1;
+            SpecialBonus[index].AltString = string.Empty;
+            SpecialBonus[index].Name = new string[0];
+            SpecialBonus[index].Index = new int[0];
+        }
+    }
+
+    public void InitBonusPvP()
+    {
         Array.Resize(ref Bonus, 11);
         for (int index = 0; index <= Bonus.Length - 1; ++index)
         {
@@ -131,6 +149,7 @@ public class EnhancementSet
         for (int index = 0; index <= Enhancements.Length - 1; ++index)
             Enhancements[index] = reader.ReadInt32();
         InitBonus();
+        InitBonusPvP();
         Bonus = new BonusItem[reader.ReadInt32() + 1];
         for (int index1 = 0; index1 < Bonus.Length; ++index1)
         {

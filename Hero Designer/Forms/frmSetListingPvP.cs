@@ -12,15 +12,15 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    public partial class frmSetListing : Form
+    public partial class frmSetListingPvP : Form
     {
 
-        public frmSetListing()
+        public frmSetListingPvP()
         {
-            Load += frmSetListing_Load;
+            Load += frmSetListingPvP_Load;
             InitializeComponent();
-            Name = nameof(frmSetListing);
-            var componentResourceManager = new ComponentResourceManager(typeof(frmSetListing));
+            Name = nameof(frmSetListingPvP);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmSetListingPvP));
             Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
@@ -41,7 +41,7 @@ namespace Hero_Designer
                     ++num1;
             }
             items[5] = Conversions.ToString(num1);
-            if (num1 <= 5)
+            if (num1 > 5)
             {
                 lvSets.Items.Add(new ListViewItem(items, Index));
                 lvSets.Items[lvSets.Items.Count - 1].Selected = true;
@@ -53,11 +53,11 @@ namespace Hero_Designer
 
         {
             EnhancementSet iSet = new EnhancementSet();
-            frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
-            int num = (int)frmSetEdit.ShowDialog();
-            if (frmSetEdit.DialogResult != DialogResult.OK)
+            frmSetEditPvP frmSetEditPvP = new frmSetEditPvP(ref iSet);
+            int num = (int)frmSetEditPvP.ShowDialog();
+            if (frmSetEditPvP.DialogResult != DialogResult.OK)
                 return;
-            DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEdit.mySet));
+            DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEditPvP.mySet));
             ImageUpdate();
             AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
         }
@@ -75,11 +75,11 @@ namespace Hero_Designer
                 return;
             EnhancementSet iSet = new EnhancementSet(DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]]);
             iSet.DisplayName += " Copy";
-            frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
-            int num = (int)frmSetEdit.ShowDialog();
-            if (frmSetEdit.DialogResult != DialogResult.OK)
+            frmSetEditPvP frmSetEditPvP = new frmSetEditPvP(ref iSet);
+            int num = (int)frmSetEditPvP.ShowDialog();
+            if (frmSetEditPvP.DialogResult != DialogResult.OK)
                 return;
-            DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEdit.mySet));
+            DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEditPvP.mySet));
             ImageUpdate();
             AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
         }
@@ -136,21 +136,21 @@ namespace Hero_Designer
             int selectedIndex2 = lvSets.SelectedIndices[0];
             EnhancementSet iSet = enhancementSets[selectedIndex2];
             enhancementSets[selectedIndex2] = iSet;
-            frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
-            int num = (int)frmSetEdit.ShowDialog();
-            if (frmSetEdit.DialogResult != DialogResult.OK)
+            frmSetEditPvP frmSetEditPvP = new frmSetEditPvP(ref iSet);
+            int num = (int)frmSetEditPvP.ShowDialog();
+            if (frmSetEditPvP.DialogResult != DialogResult.OK)
                 return;
-            if (frmSetEdit.mySet.Uid != DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]].Uid)
+            if (frmSetEditPvP.mySet.Uid != DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]].Uid)
             {
                 flag = true;
                 uidOld = DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]].Uid;
             }
-            DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]] = new EnhancementSet(frmSetEdit.mySet);
+            DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]] = new EnhancementSet(frmSetEditPvP.mySet);
             ImageUpdate();
             UpdateListItem(selectedIndex1);
             if (!flag)
                 return;
-            RenameIOSet(uidOld, frmSetEdit.mySet.Uid);
+            RenameIOSet(uidOld, frmSetEditPvP.mySet.Uid);
             DatabaseAPI.MatchEnhancementIDs();
         }
 
@@ -231,7 +231,7 @@ namespace Hero_Designer
             }
         }
 
-        void frmSetListing_Load(object sender, EventArgs e)
+        void frmSetListingPvP_Load(object sender, EventArgs e)
 
         {
             DisplayList();
@@ -292,7 +292,7 @@ namespace Hero_Designer
                     ++num1;
             }
             strArray[5] = Conversions.ToString(num1);
-            if (num1 <= 5)
+            if (num1 > 5)
             {
                 int num3 = strArray.Length - 1;
                 for (int index = 0; index <= num3; ++index)

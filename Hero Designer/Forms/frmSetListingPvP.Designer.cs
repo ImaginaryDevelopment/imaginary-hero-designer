@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public partial class frmSetListing
+    public partial class frmSetListingPvP
     {
         /// <summary>
         /// Required designer variable.
@@ -156,7 +156,7 @@ namespace Hero_Designer
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 29;
-            this.btnEdit.Text = "Edit...";
+            this.btnEdit.Text = "Edit (PvE)";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -164,7 +164,7 @@ namespace Hero_Designer
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(624, 211);
+            this.btnDelete.Location = new System.Drawing.Point(624, 212);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 28;
@@ -218,7 +218,7 @@ namespace Hero_Designer
             this.NoReload.Text = "Disable Image Reload";
             this.NoReload.CheckedChanged += new System.EventHandler(this.NoReload_CheckedChanged);
             // 
-            // frmSetListing
+            // frmSetListingPvP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
@@ -236,7 +236,7 @@ namespace Hero_Designer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmSetListing";
+            this.Name = "frmSetListingPvP";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Invention Set Editor";

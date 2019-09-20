@@ -21,7 +21,9 @@ namespace Hero_Designer
 
         Button btnEditEntity;
 
-        Button btnEditIOSet;
+        Button btnEditIOSetPvE;
+
+        Button btnEditIOSetPvP;
 
         Button btnFileReport;
 
@@ -118,6 +120,12 @@ namespace Hero_Designer
         void btnEditIOSet_Click(object sender, EventArgs e)
         {
             new frmSetListing().ShowDialog();
+            DisplayInfo();
+        }
+
+        void btnEditIOSetPvP_Click(object sender, EventArgs e)
+        {
+            new frmSetListingPvP().ShowDialog();
             DisplayInfo();
         }
 

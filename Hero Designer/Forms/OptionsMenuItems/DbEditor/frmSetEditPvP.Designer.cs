@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public partial class frmSetEdit
+    public partial class frmSetEditPvP
     {
         /// <summary>
         /// Required designer variable.
@@ -372,11 +372,6 @@ namespace Hero_Designer
             this.Label16.TabIndex = 15;
             this.Label16.Text = "Bonus for slotting:";
             this.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbSlotCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            /*this.cbSlotCount.Items.AddRange(new object[5]
-            {
-                "2", "3", "4", "5", "6"
-            });*/
 
             this.cbSlotCount.Items.AddRange(new object[10]
                 {
@@ -455,7 +450,7 @@ namespace Hero_Designer
             this.MinimizeBox = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PvE Invention Set Editor";
+            this.Text = "PvP Invention Set Editor";
             this.gbBasic.ResumeLayout(false);
             this.gbBasic.PerformLayout();
             this.udMinLevel.EndInit();
