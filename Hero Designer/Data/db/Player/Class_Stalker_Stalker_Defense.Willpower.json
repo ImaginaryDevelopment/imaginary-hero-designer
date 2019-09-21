@@ -4808,7 +4808,7 @@
           "MagnitudeExpression": "",
           "Probability": 1.0,
           "Mag": 0.3,
-          "MagPercent": 30.0,
+          "MagPercent": 30.0000019,
           "Duration": 90.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,

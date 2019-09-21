@@ -2189,7 +2189,7 @@
           "MagnitudeExpression": "",
           "Probability": 1.0,
           "Mag": 0.1365,
-          "MagPercent": 13.6500006,
+          "MagPercent": 13.65,
           "Duration": 10.25,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -2501,7 +2501,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 4.092,
+      "CastTime": 3.96,
       "Slottable": true,
       "AoEModifier": 2.5
     },

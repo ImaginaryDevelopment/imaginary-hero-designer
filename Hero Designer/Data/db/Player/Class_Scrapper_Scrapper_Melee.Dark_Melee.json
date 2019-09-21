@@ -2413,7 +2413,7 @@
           "MagnitudeExpression": "",
           "Probability": 1.0,
           "Mag": 0.0200000014,
-          "MagPercent": 2.0,
+          "MagPercent": 2.00000024,
           "Duration": 30.0,
           "DisplayPercentage": true,
           "VariableModified": true,
