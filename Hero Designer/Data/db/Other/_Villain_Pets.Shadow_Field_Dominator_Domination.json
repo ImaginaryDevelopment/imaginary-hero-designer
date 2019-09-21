@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Shadow_Field_Dominator_Domination",
   "ImageName": "",
   "Power": [
-    10181,
-    10182
+    10182,
+    10183
   ],
   "SetType": 8,
   "DisplayName": "Shadow Field",
@@ -22,7 +22,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10181,
+      "PowerIndex": 10182,
       "PowerSetID": 3535,
       "StaticIndex": 6346,
       "NGroupMembership": [],
@@ -194,7 +194,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10182,
+      "PowerIndex": 10183,
       "PowerSetID": 3535,
       "PowerSetIndex": 1,
       "StaticIndex": 6347,

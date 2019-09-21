@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Corolax_Red_Hybrid",
   "ImageName": "",
   "Power": [
-    10015,
     10016,
     10017,
     10018,
     10019,
     10020,
-    10021
+    10021,
+    10022
   ],
   "SetType": 8,
   "DisplayName": "Coralax Red Hybrid",
@@ -27,7 +27,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10015,
+      "PowerIndex": 10016,
       "PowerSetID": 3478,
       "StaticIndex": 3064,
       "NGroupMembership": [],
@@ -147,7 +147,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.66,
-      "PowerIndex": 10016,
+      "PowerIndex": 10017,
       "PowerSetID": 3478,
       "PowerSetIndex": 1,
       "StaticIndex": 3065,
@@ -211,8 +211,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 68.40063,
-          "MagPercent": 68.40063,
+          "Mag": 102.600861,
+          "MagPercent": 102.600861,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -243,8 +243,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.3,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.3,
           "Reward": "",
           "EffectId": "Knockback",
@@ -278,8 +278,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.3,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.3,
           "Reward": "",
           "EffectId": "Knockback",
@@ -319,7 +319,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 8.58,
-      "PowerIndex": 10017,
+      "PowerIndex": 10018,
       "PowerSetID": 3478,
       "PowerSetIndex": 2,
       "StaticIndex": 3066,
@@ -456,7 +456,7 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 6.5,
-      "PowerIndex": 10018,
+      "PowerIndex": 10019,
       "PowerSetID": 3478,
       "PowerSetIndex": 3,
       "StaticIndex": 3067,
@@ -520,8 +520,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -552,8 +552,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Knockback",
@@ -587,8 +587,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Knockback",
@@ -626,7 +626,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10019,
+      "PowerIndex": 10020,
       "PowerSetID": 3478,
       "PowerSetIndex": 4,
       "StaticIndex": 3068,
@@ -710,7 +710,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 8.58,
-      "PowerIndex": 10020,
+      "PowerIndex": 10021,
       "PowerSetID": 3478,
       "PowerSetIndex": 5,
       "StaticIndex": 3069,
@@ -888,7 +888,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 10021,
+      "PowerIndex": 10022,
       "PowerSetID": 3478,
       "PowerSetIndex": 6,
       "StaticIndex": 3070,

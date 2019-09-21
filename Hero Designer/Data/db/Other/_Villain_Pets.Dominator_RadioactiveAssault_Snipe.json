@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_RadioactiveAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10070,
-    10071
+    10071,
+    10072
   ],
   "SetType": 8,
   "DisplayName": "Dominator_RadioactiveAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10070,
+      "PowerIndex": 10071,
       "PowerSetID": 3500,
       "StaticIndex": 10700,
       "NGroupMembership": [],
@@ -219,7 +219,7 @@
           "nID": 3,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
-          "nSummon": 9757,
+          "nSummon": 9758,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -348,7 +348,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10071,
+      "PowerIndex": 10072,
       "PowerSetID": 3500,
       "PowerSetIndex": 1,
       "StaticIndex": 10701,
@@ -544,7 +544,7 @@
           "nID": 3,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Radiation_Melee_Contaminated",
-          "nSummon": 9757,
+          "nSummon": 9758,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,

@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump2",
   "ImageName": "",
   "Power": [
-    9982
+    9983
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 2",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9982,
+      "PowerIndex": 9983,
       "PowerSetID": 3469,
       "StaticIndex": 4486,
       "NGroupMembership": [],
@@ -88,8 +88,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.34154,
-          "MagPercent": 8.34154,
+          "Mag": 12.5123005,
+          "MagPercent": 12.5123005,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -121,8 +121,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.9163065,
-          "MagPercent": 11.9163065,
+          "Mag": 17.8744469,
+          "MagPercent": 17.8744469,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",

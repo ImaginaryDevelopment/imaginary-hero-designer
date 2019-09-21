@@ -4,7 +4,6 @@
   "FullName": "Warshade_Defensive.Umbral_Aura",
   "ImageName": "UmbralAura.png",
   "Power": [
-    10273,
     10274,
     10275,
     10276,
@@ -16,7 +15,8 @@
     10282,
     10283,
     10284,
-    10285
+    10285,
+    10286
   ],
   "SetType": 2,
   "DisplayName": "Umbral Aura",
@@ -33,7 +33,7 @@
   "GroupName": "Warshade_Defensive",
   "Powers": [
     {
-      "PowerIndex": 10273,
+      "PowerIndex": 10274,
       "PowerSetID": 3573,
       "StaticIndex": 3189,
       "NGroupMembership": [],
@@ -163,7 +163,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 10274,
+      "PowerIndex": 10275,
       "PowerSetID": 3573,
       "PowerSetIndex": 1,
       "StaticIndex": 3190,
@@ -374,7 +374,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.78,
-      "PowerIndex": 10275,
+      "PowerIndex": 10276,
       "PowerSetID": 3573,
       "PowerSetIndex": 2,
       "StaticIndex": 3191,
@@ -442,8 +442,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.09030867,
-          "MagPercent": 7.09030867,
+          "Mag": 10.6354551,
+          "MagPercent": 10.6354551,
           "Duration": 2.5,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -521,7 +521,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 10276,
+      "PowerIndex": 10277,
       "PowerSetID": 3573,
       "PowerSetIndex": 3,
       "StaticIndex": 3192,
@@ -838,7 +838,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.26,
-      "PowerIndex": 10277,
+      "PowerIndex": 10278,
       "PowerSetID": 3573,
       "PowerSetIndex": 4,
       "StaticIndex": 3193,
@@ -1510,7 +1510,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 10278,
+      "PowerIndex": 10279,
       "PowerSetID": 3573,
       "PowerSetIndex": 5,
       "StaticIndex": 3194,
@@ -1720,7 +1720,7 @@
     },
     {
       "ToggleCost": 0.26,
-      "PowerIndex": 10279,
+      "PowerIndex": 10280,
       "PowerSetID": 3573,
       "PowerSetIndex": 6,
       "StaticIndex": 3195,
@@ -2359,8 +2359,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1124.44128,
-          "MagPercent": 1124.44128,
+          "Mag": 1003.96582,
+          "MagPercent": 1003.96582,
           "Duration": 2.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4253,7 +4253,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 15.6,
-      "PowerIndex": 10280,
+      "PowerIndex": 10281,
       "PowerSetID": 3573,
       "PowerSetIndex": 7,
       "StaticIndex": 3196,
@@ -4357,8 +4357,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4393,8 +4393,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 449.77652,
-          "MagPercent": 449.77652,
+          "Mag": 401.5863,
+          "MagPercent": 401.5863,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4428,8 +4428,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 599.702,
-          "MagPercent": 599.702,
+          "Mag": 535.4484,
+          "MagPercent": 535.4484,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4464,8 +4464,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4538,7 +4538,7 @@
     },
     {
       "ToggleCost": 2.6,
-      "PowerIndex": 10281,
+      "PowerIndex": 10282,
       "PowerSetID": 3573,
       "PowerSetIndex": 8,
       "StaticIndex": 3197,
@@ -4961,7 +4961,7 @@
           "nID": 10,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.NoPhase",
-          "nSummon": 9655,
+          "nSummon": 9656,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -5023,7 +5023,7 @@
     {
       "CastTimeReal": 12.0,
       "ToggleCost": 26.0,
-      "PowerIndex": 10282,
+      "PowerIndex": 10283,
       "PowerSetID": 3573,
       "PowerSetIndex": 9,
       "StaticIndex": 5826,
@@ -5223,7 +5223,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.078,
-      "PowerIndex": 10283,
+      "PowerIndex": 10284,
       "PowerSetID": 3573,
       "PowerSetIndex": 10,
       "StaticIndex": 3198,
@@ -5327,8 +5327,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 4.17077,
-          "MagPercent": 4.17077,
+          "Mag": 6.25615025,
+          "MagPercent": 6.25615025,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -5402,7 +5402,7 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 10284,
+      "PowerIndex": 10285,
       "PowerSetID": 3573,
       "PowerSetIndex": 11,
       "StaticIndex": 3199,
@@ -5471,8 +5471,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -5678,7 +5678,7 @@
     {
       "CastTimeReal": 1.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 10285,
+      "PowerIndex": 10286,
       "PowerSetID": 3573,
       "PowerSetIndex": 12,
       "StaticIndex": 3200,

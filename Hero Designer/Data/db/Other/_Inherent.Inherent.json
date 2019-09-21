@@ -216,7 +216,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -271,7 +271,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 16.4,
+          "Duration": 12.32,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -307,7 +307,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 10.25,
+          "Duration": 7.7,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -452,7 +452,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -545,8 +545,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 262.369629,
-          "MagPercent": 262.369629,
+          "Mag": 234.258682,
+          "MagPercent": 234.258682,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -873,7 +873,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -1183,8 +1183,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.15625,
+          "MagPercent": 15.625,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1219,8 +1219,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.125,
-          "MagPercent": 12.5,
+          "Mag": 0.15625,
+          "MagPercent": 15.625,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1292,7 +1292,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -1926,7 +1926,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -2217,7 +2217,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10279,
+            10280,
             -1
           ]
         ],
@@ -2891,8 +2891,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2959,8 +2959,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Knockback",
@@ -3497,8 +3497,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -3532,8 +3532,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -3805,7 +3805,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10289,
+            10290,
             -1
           ]
         ],
@@ -4111,8 +4111,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.1,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Knockback",
@@ -4182,7 +4182,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10289,
+            10290,
             -1
           ]
         ],
@@ -4522,7 +4522,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10289,
+            10290,
             -1
           ]
         ],
@@ -4617,8 +4617,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -4901,7 +4901,7 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            10289,
+            10290,
             -1
           ]
         ],
@@ -6831,7 +6831,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 41.0,
+          "Duration": 30.8,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -6867,7 +6867,7 @@
           "Probability": 1.0,
           "Mag": 4.0,
           "MagPercent": 4.0,
-          "Duration": 10.25,
+          "Duration": 7.7,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -8592,8 +8592,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 655.9241,
-          "MagPercent": 655.9241,
+          "Mag": 585.6467,
+          "MagPercent": 585.6467,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -8745,15 +8745,15 @@
             -1
           ],
           [
-            8341,
-            -1
-          ],
-          [
             8342,
             -1
           ],
           [
-            8605,
+            8343,
+            -1
+          ],
+          [
+            8606,
             -1
           ],
           [
@@ -8773,15 +8773,15 @@
             -1
           ],
           [
-            8485,
-            -1
-          ],
-          [
             8486,
             -1
           ],
           [
-            8752,
+            8487,
+            -1
+          ],
+          [
+            8753,
             -1
           ],
           [
@@ -8953,15 +8953,15 @@
             -1
           ],
           [
-            8341,
-            -1
-          ],
-          [
             8342,
             -1
           ],
           [
-            8605,
+            8343,
+            -1
+          ],
+          [
+            8606,
             -1
           ],
           [
@@ -8981,15 +8981,15 @@
             -1
           ],
           [
-            8485,
-            -1
-          ],
-          [
             8486,
             -1
           ],
           [
-            8752,
+            8487,
+            -1
+          ],
+          [
+            8753,
             -1
           ],
           [
@@ -9161,15 +9161,15 @@
             -1
           ],
           [
-            8341,
-            -1
-          ],
-          [
             8342,
             -1
           ],
           [
-            8605,
+            8343,
+            -1
+          ],
+          [
+            8606,
             -1
           ],
           [
@@ -9189,15 +9189,15 @@
             -1
           ],
           [
-            8485,
-            -1
-          ],
-          [
             8486,
             -1
           ],
           [
-            8752,
+            8487,
+            -1
+          ],
+          [
+            8753,
             -1
           ],
           [
@@ -9528,7 +9528,7 @@
             -1
           ],
           [
-            8779,
+            8780,
             -1
           ]
         ],
@@ -9683,7 +9683,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Alt_Granted_Frisbee",
-          "nSummon": 9239,
+          "nSummon": 9240,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -10866,8 +10866,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.0147724,
-          "MagPercent": 15.0147724,
+          "Mag": 22.52214,
+          "MagPercent": 22.52214,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -10928,8 +10928,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.0147724,
-          "MagPercent": 15.0147724,
+          "Mag": 22.52214,
+          "MagPercent": 22.52214,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -17352,8 +17352,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -18093,16 +18093,16 @@
       "Level": 1,
       "VariableName": "",
       "NIDSubPower": [
-        8816,
-        8818,
-        8820,
+        8817,
+        8819,
         8821,
-        8827,
+        8822,
         8828,
         8829,
-        8832,
+        8830,
         8833,
-        8834
+        8834,
+        8835
       ],
       "UIDSubPower": [
         "Temporary_Powers.Accolades.Crey_CBX-9_Pistol",
@@ -18176,16 +18176,16 @@
       "Level": 1,
       "VariableName": "",
       "NIDSubPower": [
-        8815,
-        8817,
-        8819,
-        8822,
+        8816,
+        8818,
+        8820,
         8823,
-        8825,
+        8824,
         8826,
         8827,
-        8829,
-        8830
+        8828,
+        8830,
+        8831
       ],
       "UIDSubPower": [
         "Temporary_Powers.Accolades.Born_In_Battle",
@@ -18243,22 +18243,22 @@
       "Level": 1,
       "VariableName": "",
       "NIDSubPower": [
-        8870,
-        9322,
-        9371,
-        9475,
+        8871,
+        9323,
+        9372,
         9476,
         9477,
         9478,
-        9611,
-        9613,
+        9479,
+        9612,
         9614,
         9615,
         9616,
-        9619,
-        9626,
-        9904,
-        9912
+        9617,
+        9620,
+        9627,
+        9905,
+        9913
       ],
       "UIDSubPower": [
         "Temporary_Powers.Day_Job_Powers.Combat_Shield",
@@ -18361,7 +18361,7 @@
           "Special": "",
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Mystic_Fortune",
-          "nSummon": 9641,
+          "nSummon": 9642,
           "DelayedTime": 1.0,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -21747,7 +21747,7 @@
           "nID": 1,
           "EffectType": 12,
           "Summon": "Temporary_Powers.SilentPowers.Inner_Inspiration_Lock",
-          "nSummon": 9143,
+          "nSummon": 9144,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -21821,8 +21821,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 149.9255,
-          "MagPercent": 149.9255,
+          "Mag": 133.8621,
+          "MagPercent": 133.8621,
           "Duration": 10.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -23076,8 +23076,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.3856,
-          "MagPercent": 10.3856,
+          "Mag": 8.3084,
+          "MagPercent": 8.3084,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -23110,8 +23110,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.3856,
-          "MagPercent": 10.3856,
+          "Mag": 8.3084,
+          "MagPercent": 8.3084,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -23276,8 +23276,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.3856,
-          "MagPercent": 10.3856,
+          "Mag": 8.3084,
+          "MagPercent": 8.3084,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -23310,8 +23310,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.3856,
-          "MagPercent": 10.3856,
+          "Mag": 8.3084,
+          "MagPercent": 8.3084,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -25000,8 +25000,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -25179,7 +25179,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Phenomenal_Luck",
-          "nSummon": 9693,
+          "nSummon": 9694,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -25209,7 +25209,7 @@
           "nID": 6,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Robust",
-          "nSummon": 9774,
+          "nSummon": 9775,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -25239,7 +25239,7 @@
           "nID": 7,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Uncanny_Insight",
-          "nSummon": 9877,
+          "nSummon": 9878,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -25269,7 +25269,7 @@
           "nID": 8,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Righteous_Rage",
-          "nSummon": 9768,
+          "nSummon": 9769,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -25299,7 +25299,7 @@
           "nID": 9,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Escape",
-          "nSummon": 9437,
+          "nSummon": 9438,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,
@@ -27004,8 +27004,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -28313,8 +28313,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.00107946363,
-          "MagPercent": 0.107946366,
+          "Mag": 0.0009638072,
+          "MagPercent": 0.0963807255,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "IgnoreED": true,
@@ -28344,8 +28344,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.002398808,
-          "MagPercent": 0.2398808,
+          "Mag": 0.00214179372,
+          "MagPercent": 0.214179367,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -31822,8 +31822,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.00115442649,
-          "MagPercent": 0.115442649,
+          "Mag": 0.00103073823,
+          "MagPercent": 0.10307382,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "IgnoreED": true,
@@ -31853,8 +31853,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.00239880849,
-          "MagPercent": 0.239880845,
+          "Mag": 0.002141794,
+          "MagPercent": 0.2141794,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -36383,7 +36383,7 @@
           "nID": 12,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Replacement_Powers.Panther_Stealth",
-          "nSummon": 9080,
+          "nSummon": 9081,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,

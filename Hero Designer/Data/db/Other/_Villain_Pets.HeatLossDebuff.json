@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.HeatLossDebuff",
   "ImageName": "",
   "Power": [
-    10101
+    10102
   ],
   "SetType": 8,
   "DisplayName": "Heat Loss",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10101,
+      "PowerIndex": 10102,
       "PowerSetID": 3510,
       "StaticIndex": 3101,
       "NGroupMembership": [],

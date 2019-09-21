@@ -4,7 +4,6 @@
   "FullName": "Tanker_Defense.Fiery_Aura",
   "ImageName": "FireMastery2.png",
   "Power": [
-    8524,
     8525,
     8526,
     8527,
@@ -12,7 +11,8 @@
     8529,
     8530,
     8531,
-    8532
+    8532,
+    8533
   ],
   "SetType": 1,
   "DisplayName": "Fiery Aura",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 8524,
+      "PowerIndex": 8525,
       "PowerSetID": 3390,
       "StaticIndex": 2496,
       "NGroupMembership": [],
@@ -101,8 +101,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 9.17569351,
-          "MagPercent": 9.17569351,
+          "Mag": 13.76353,
+          "MagPercent": 13.76353,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -209,8 +209,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 4.129062,
-          "MagPercent": 4.129062,
+          "Mag": 6.19358873,
+          "MagPercent": 6.19358873,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -247,7 +247,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8525,
+      "PowerIndex": 8526,
       "PowerSetID": 3390,
       "PowerSetIndex": 1,
       "StaticIndex": 2497,
@@ -669,7 +669,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.4,
-      "PowerIndex": 8526,
+      "PowerIndex": 8527,
       "PowerSetID": 3390,
       "PowerSetIndex": 2,
       "StaticIndex": 2498,
@@ -734,8 +734,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 374.813782,
-          "MagPercent": 374.813782,
+          "Mag": 334.655273,
+          "MagPercent": 334.655273,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -806,7 +806,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8527,
+      "PowerIndex": 8528,
       "PowerSetID": 3390,
       "PowerSetIndex": 3,
       "StaticIndex": 2499,
@@ -1101,7 +1101,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 8528,
+      "PowerIndex": 8529,
       "PowerSetID": 3390,
       "PowerSetIndex": 4,
       "StaticIndex": 2500,
@@ -1178,8 +1178,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.68308,
-          "MagPercent": 16.68308,
+          "Mag": 25.024601,
+          "MagPercent": 25.024601,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1395,8 +1395,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 20.3149872,
-          "MagPercent": 20.3149872,
+          "Mag": 30.472456,
+          "MagPercent": 30.472456,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1433,7 +1433,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 8529,
+      "PowerIndex": 8530,
       "PowerSetID": 3390,
       "PowerSetIndex": 5,
       "StaticIndex": 2501,
@@ -2126,7 +2126,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 5.2,
-      "PowerIndex": 8530,
+      "PowerIndex": 8531,
       "PowerSetID": 3390,
       "PowerSetIndex": 6,
       "StaticIndex": 2502,
@@ -2302,8 +2302,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.05909,
-          "MagPercent": 60.05909,
+          "Mag": 90.08856,
+          "MagPercent": 90.08856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -2335,8 +2335,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 37.16156,
-          "MagPercent": 37.16156,
+          "Mag": 55.7422943,
+          "MagPercent": 55.7422943,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -2374,7 +2374,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 7.8,
-      "PowerIndex": 8531,
+      "PowerIndex": 8532,
       "PowerSetID": 3390,
       "PowerSetIndex": 7,
       "StaticIndex": 2503,
@@ -2431,8 +2431,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 1.0,
-          "MagPercent": 100.0,
+          "Mag": 1.25,
+          "MagPercent": 125.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2467,8 +2467,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2504,8 +2504,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2541,8 +2541,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2578,8 +2578,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2615,8 +2615,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2652,8 +2652,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2689,8 +2689,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.8,
-          "MagPercent": 80.0,
+          "Mag": 1.0,
+          "MagPercent": 100.0,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2765,7 +2765,7 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 8532,
+      "PowerIndex": 8533,
       "PowerSetID": 3390,
       "PowerSetIndex": 8,
       "StaticIndex": 2504,
@@ -2836,8 +2836,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,

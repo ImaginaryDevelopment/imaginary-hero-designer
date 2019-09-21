@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Scourging_Blast_Proc",
   "ImageName": "",
   "Power": [
-    10172
+    10173
   ],
   "SetType": 8,
   "DisplayName": "Scourging Blast",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10172,
+      "PowerIndex": 10173,
       "PowerSetID": 3528,
       "StaticIndex": 9027,
       "NGroupMembership": [],

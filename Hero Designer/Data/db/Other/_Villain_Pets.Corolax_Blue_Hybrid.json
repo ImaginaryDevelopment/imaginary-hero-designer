@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Corolax_Blue_Hybrid",
   "ImageName": "",
   "Power": [
-    10007,
     10008,
     10009,
     10010,
     10011,
     10012,
     10013,
-    10014
+    10014,
+    10015
   ],
   "SetType": 8,
   "DisplayName": "Coralax Blue Hybrid",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10007,
+      "PowerIndex": 10008,
       "PowerSetID": 3477,
       "StaticIndex": 3056,
       "NGroupMembership": [],
@@ -147,7 +147,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 2.34,
-      "PowerIndex": 10008,
+      "PowerIndex": 10009,
       "PowerSetID": 3477,
       "PowerSetIndex": 1,
       "StaticIndex": 3057,
@@ -209,8 +209,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.0147724,
-          "MagPercent": 15.0147724,
+          "Mag": 22.52214,
+          "MagPercent": 22.52214,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 6.5,
-      "PowerIndex": 10009,
+      "PowerIndex": 10010,
       "PowerSetID": 3477,
       "PowerSetIndex": 2,
       "StaticIndex": 3058,
@@ -308,8 +308,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 27.1100025,
-          "MagPercent": 27.1100025,
+          "Mag": 40.6649742,
+          "MagPercent": 40.6649742,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -340,8 +340,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 14.5976944,
-          "MagPercent": 14.5976944,
+          "Mag": 21.8965244,
+          "MagPercent": 21.8965244,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -378,7 +378,7 @@
     {
       "CastTimeReal": 2.27,
       "ToggleCost": 10.66,
-      "PowerIndex": 10010,
+      "PowerIndex": 10011,
       "PowerSetID": 3477,
       "PowerSetIndex": 3,
       "StaticIndex": 3059,
@@ -443,8 +443,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -475,8 +475,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 13.3464632,
-          "MagPercent": 13.3464632,
+          "Mag": 20.01968,
+          "MagPercent": 20.01968,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -511,7 +511,7 @@
       "AoEModifier": 1.45966136
     },
     {
-      "PowerIndex": 10011,
+      "PowerIndex": 10012,
       "PowerSetID": 3477,
       "PowerSetIndex": 4,
       "StaticIndex": 3060,
@@ -595,7 +595,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.54,
-      "PowerIndex": 10012,
+      "PowerIndex": 10013,
       "PowerSetID": 3477,
       "PowerSetIndex": 5,
       "StaticIndex": 3061,
@@ -694,7 +694,7 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 10.66,
-      "PowerIndex": 10013,
+      "PowerIndex": 10014,
       "PowerSetID": 3477,
       "PowerSetIndex": 6,
       "StaticIndex": 3062,
@@ -796,7 +796,7 @@
     {
       "CastTimeReal": 0.9,
       "ToggleCost": 10.66,
-      "PowerIndex": 10014,
+      "PowerIndex": 10015,
       "PowerSetID": 3477,
       "PowerSetIndex": 7,
       "StaticIndex": 3063,

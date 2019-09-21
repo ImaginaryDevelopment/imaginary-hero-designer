@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_KineticAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10064,
-    10065
+    10065,
+    10066
   ],
   "SetType": 8,
   "DisplayName": "Dominator_KineticAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 18.512,
-      "PowerIndex": 10064,
+      "PowerIndex": 10065,
       "PowerSetID": 3497,
       "StaticIndex": 9817,
       "NGroupMembership": [],
@@ -661,7 +661,7 @@
           "nID": 16,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Kinetic_Assault_Impulse",
-          "nSummon": 9575,
+          "nSummon": 9576,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -720,7 +720,7 @@
     {
       "CastTimeReal": 4.0,
       "ToggleCost": 18.512,
-      "PowerIndex": 10065,
+      "PowerIndex": 10066,
       "PowerSetID": 3497,
       "PowerSetIndex": 1,
       "StaticIndex": 9818,
@@ -1360,7 +1360,7 @@
           "nID": 16,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Kinetic_Assault_Impulse",
-          "nSummon": 9575,
+          "nSummon": 9576,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,

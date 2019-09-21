@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Shadow_Field",
   "ImageName": "",
   "Power": [
-    10177,
-    10178
+    10178,
+    10179
   ],
   "SetType": 8,
   "DisplayName": "Shadow Field",
@@ -22,7 +22,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10177,
+      "PowerIndex": 10178,
       "PowerSetID": 3533,
       "StaticIndex": 6342,
       "NGroupMembership": [],
@@ -194,7 +194,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10178,
+      "PowerIndex": 10179,
       "PowerSetID": 3533,
       "PowerSetIndex": 1,
       "StaticIndex": 6343,

@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Chain_Induction_Jump4",
   "ImageName": "",
   "Power": [
-    9980
+    9981
   ],
   "SetType": 8,
   "DisplayName": "Chain Induction Jump 4",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9980,
+      "PowerIndex": 9981,
       "PowerSetID": 3467,
       "StaticIndex": 3265,
       "NGroupMembership": [],
@@ -83,8 +83,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 29.1953888,
-          "MagPercent": 29.1953888,
+          "Mag": 43.79305,
+          "MagPercent": 43.79305,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",

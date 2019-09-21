@@ -1032,8 +1032,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1068,8 +1068,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1104,8 +1104,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1140,8 +1140,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1176,8 +1176,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1212,8 +1212,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1248,8 +1248,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1284,8 +1284,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1537,8 +1537,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -1572,8 +1572,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 5.1928,
-          "MagPercent": 5.1928,
+          "Mag": 4.1542,
+          "MagPercent": 4.1542,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -1912,7 +1912,7 @@
           "nID": 4,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10022,
+          "nSummon": 10023,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1930,7 +1930,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 5,
           "Override": "Villain_Pets.Corruptor_Archery_Snipe.Ranged_Shot_Quick",
-          "nOverride": 10022
+          "nOverride": 10023
         },
         {
           "MagnitudeExpression": "",
@@ -1945,7 +1945,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10023,
+          "nSummon": 10024,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1962,7 +1962,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Corruptor_Archery_Snipe.Ranged_Shot_Normal",
-          "nOverride": 10023
+          "nOverride": 10024
         }
       ],
       "HasPowerOverrideEffect": true,

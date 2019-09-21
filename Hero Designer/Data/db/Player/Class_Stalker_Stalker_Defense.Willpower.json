@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Willpower",
   "ImageName": "Willpower.png",
   "Power": [
-    8332,
     8333,
     8334,
     8335,
@@ -12,7 +11,8 @@
     8337,
     8338,
     8339,
-    8340
+    8340,
+    8341
   ],
   "SetType": 2,
   "DisplayName": "Willpower",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8332,
+      "PowerIndex": 8333,
       "PowerSetID": 3369,
       "StaticIndex": 2406,
       "NGroupMembership": [
@@ -1565,7 +1565,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8333,
+      "PowerIndex": 8334,
       "PowerSetID": 3369,
       "PowerSetIndex": 1,
       "StaticIndex": 2407,
@@ -1625,8 +1625,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 149.9255,
-          "MagPercent": 149.9255,
+          "Mag": 133.8621,
+          "MagPercent": 133.8621,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1656,8 +1656,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 149.9255,
-          "MagPercent": 149.9255,
+          "Mag": 133.8621,
+          "MagPercent": 133.8621,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1967,7 +1967,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 10.4,
-      "PowerIndex": 8334,
+      "PowerIndex": 8335,
       "PowerSetID": 3369,
       "PowerSetIndex": 2,
       "StaticIndex": 2408,
@@ -2031,8 +2031,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 374.813782,
-          "MagPercent": 374.813782,
+          "Mag": 334.655273,
+          "MagPercent": 334.655273,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2105,7 +2105,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 8335,
+      "PowerIndex": 8336,
       "PowerSetID": 3369,
       "PowerSetIndex": 3,
       "StaticIndex": 2409,
@@ -2387,7 +2387,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 8336,
+      "PowerIndex": 8337,
       "PowerSetID": 3369,
       "PowerSetIndex": 4,
       "StaticIndex": 2410,
@@ -3561,7 +3561,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 8337,
+      "PowerIndex": 8338,
       "PowerSetID": 3369,
       "PowerSetIndex": 5,
       "StaticIndex": 2411,
@@ -4169,7 +4169,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8338,
+      "PowerIndex": 8339,
       "PowerSetID": 3369,
       "PowerSetIndex": 6,
       "StaticIndex": 2412,
@@ -4296,7 +4296,7 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 8339,
+      "PowerIndex": 8340,
       "PowerSetID": 3369,
       "PowerSetIndex": 7,
       "StaticIndex": 2413,
@@ -5383,7 +5383,7 @@
     {
       "CastTimeReal": 3.1,
       "ToggleCost": 2.6,
-      "PowerIndex": 8340,
+      "PowerIndex": 8341,
       "PowerSetID": 3369,
       "PowerSetIndex": 8,
       "StaticIndex": 2414,

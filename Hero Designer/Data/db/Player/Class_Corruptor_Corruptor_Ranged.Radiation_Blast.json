@@ -1067,8 +1067,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.25,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.25,
           "Reward": "",
           "EffectId": "Knockback",
@@ -1102,8 +1102,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.25,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.25,
           "Reward": "",
           "EffectId": "Knockback",
@@ -1421,7 +1421,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10038,
+          "nSummon": 10039,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -1439,7 +1439,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Quick",
-          "nOverride": 10038
+          "nOverride": 10039
         },
         {
           "MagnitudeExpression": "",
@@ -1454,7 +1454,7 @@
           "nID": 6,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10039,
+          "nSummon": 10040,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -1471,7 +1471,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 7,
           "Override": "Villain_Pets.Corruptor_RadiationBlast_Snipe.Proton_Volley_Normal",
-          "nOverride": 10039
+          "nOverride": 10040
         }
       ],
       "HasPowerOverrideEffect": true,
@@ -1579,8 +1579,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1615,8 +1615,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1651,8 +1651,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1687,8 +1687,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1723,8 +1723,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1759,8 +1759,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1795,8 +1795,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1831,8 +1831,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,

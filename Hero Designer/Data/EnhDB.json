@@ -33330,7 +33330,6 @@
       "LongName": "Panacea: Heal"
     },
     {
-      "IsModified": true,
       "StaticIndex": 801,
       "Name": "+Hit Points/Endurance",
       "ShortName": "Heal/+End",
@@ -33363,6 +33362,7 @@
             "Resistible": true,
             "UIDClassName": "",
             "nIDClassName": -1,
+            "isEnhancementEffect": true,
             "Aspect": 3,
             "ModifierTable": "Melee_Ones",
             "nModifierTable": 41,
@@ -33396,6 +33396,7 @@
             "Resistible": true,
             "UIDClassName": "",
             "nIDClassName": -1,
+            "isEnhancementEffect": true,
             "Aspect": 3,
             "ModifierTable": "Melee_Ones",
             "nModifierTable": 41,
@@ -54846,6 +54847,7 @@
       "Schedule": 4
     },
     {
+      "IsModified": true,
       "StaticIndex": 1251,
       "Name": "Knockback to Knockdown",
       "ShortName": "-KB/+KD",
@@ -54857,14 +54859,6 @@
       "nIDSet": 214,
       "UIDSet": "Sudden_Acceleration",
       "Effect": [
-        {
-          "Enhance": {
-            "ID": 12,
-            "SubID": 4
-          },
-          "Schedule": 3,
-          "Multiplier": -1.29
-        },
         {
           "Mode": 1,
           "Enhance": {
@@ -54880,6 +54874,8 @@
             "Reward": "",
             "EffectId": "Ones",
             "Special": "",
+            "EffectType": 12,
+            "MezType": 4,
             "Summon": "",
             "nSummon": -1,
             "Buffable": true,
@@ -54898,14 +54894,6 @@
             "Override": "",
             "nOverride": -1
           }
-        },
-        {
-          "Enhance": {
-            "ID": 12,
-            "SubID": 5
-          },
-          "Schedule": 3,
-          "Multiplier": -1.29
         }
       ],
       "EffectChance": 1.0,
@@ -54915,10 +54903,8 @@
       "RecipeIDX": -1,
       "UID": "Crafted_Sudden_Acceleration_F",
       "Probability": 1.0,
-      "HasEnhEffect": true,
       "HasPowerEffect": true,
-      "LongName": "Sudden Acceleration: Knockback to Knockdown",
-      "Schedule": 4
+      "LongName": "Sudden Acceleration: Knockback to Knockdown"
     },
     {
       "StaticIndex": 1252,
@@ -78902,9 +78888,13 @@
           "AltString": ""
         },
         {
-          "Special": -1,
-          "Name": [],
-          "Index": [],
+          "Special": 5,
+          "Name": [
+            "Set_Bonus.Set_Bonus.Sudden_Acceleration"
+          ],
+          "Index": [
+            8197
+          ],
           "AltString": ""
         }
       ],

@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Ice_Armor",
   "ImageName": "IceArmor.png",
   "Power": [
-    8269,
     8270,
     8271,
     8272,
@@ -12,7 +11,8 @@
     8274,
     8275,
     8276,
-    8277
+    8277,
+    8278
   ],
   "SetType": 2,
   "DisplayName": "Ice Armor",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8269,
+      "PowerIndex": 8270,
       "PowerSetID": 3362,
       "StaticIndex": 5678,
       "NGroupMembership": [
@@ -1566,7 +1566,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8270,
+      "PowerIndex": 8271,
       "PowerSetID": 3362,
       "PowerSetIndex": 1,
       "StaticIndex": 10055,
@@ -2026,7 +2026,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 14.56,
-      "PowerIndex": 8271,
+      "PowerIndex": 8272,
       "PowerSetID": 3362,
       "PowerSetIndex": 2,
       "StaticIndex": 10056,
@@ -2091,8 +2091,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -2124,8 +2124,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -2193,8 +2193,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 599.702,
-          "MagPercent": 599.702,
+          "Mag": 535.4484,
+          "MagPercent": 535.4484,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2232,7 +2232,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8272,
+      "PowerIndex": 8273,
       "PowerSetID": 3362,
       "PowerSetIndex": 3,
       "StaticIndex": 5681,
@@ -3805,7 +3805,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8273,
+      "PowerIndex": 8274,
       "PowerSetID": 3362,
       "PowerSetIndex": 4,
       "StaticIndex": 5682,
@@ -4376,7 +4376,7 @@
       "AoEModifier": 2.5
     },
     {
-      "PowerIndex": 8274,
+      "PowerIndex": 8275,
       "PowerSetID": 3362,
       "PowerSetIndex": 5,
       "StaticIndex": 5683,
@@ -4671,7 +4671,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8275,
+      "PowerIndex": 8276,
       "PowerSetID": 3362,
       "PowerSetIndex": 6,
       "StaticIndex": 5684,
@@ -5198,7 +5198,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 13.0,
-      "PowerIndex": 8276,
+      "PowerIndex": 8277,
       "PowerSetID": 3362,
       "PowerSetIndex": 7,
       "StaticIndex": 5685,
@@ -5972,7 +5972,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 2.6,
-      "PowerIndex": 8277,
+      "PowerIndex": 8278,
       "PowerSetID": 3362,
       "PowerSetIndex": 8,
       "StaticIndex": 5686,

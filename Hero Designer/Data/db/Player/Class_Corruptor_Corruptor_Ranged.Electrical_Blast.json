@@ -1619,8 +1619,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1655,8 +1655,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1691,8 +1691,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1727,8 +1727,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1763,8 +1763,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1799,8 +1799,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1835,8 +1835,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1871,8 +1871,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2278,7 +2278,7 @@
           "nID": 8,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10030,
+          "nSummon": 10031,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2296,7 +2296,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 9,
           "Override": "Villain_Pets.Corruptor_ElectricalBlast_Snipe.Zapp_Quick",
-          "nOverride": 10030
+          "nOverride": 10031
         },
         {
           "MagnitudeExpression": "",
@@ -2311,7 +2311,7 @@
           "nID": 9,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10031,
+          "nSummon": 10032,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2328,7 +2328,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 10,
           "Override": "Villain_Pets.Corruptor_ElectricalBlast_Snipe.Zapp_Normal",
-          "nOverride": 10031
+          "nOverride": 10032
         }
       ],
       "HasPowerOverrideEffect": true,

@@ -1501,7 +1501,7 @@
           "nID": 7,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Beam_Rifle_Debuff",
-          "nSummon": 9328,
+          "nSummon": 9329,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 1,
@@ -1626,8 +1626,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1662,8 +1662,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1698,8 +1698,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1734,8 +1734,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1770,8 +1770,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1806,8 +1806,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1842,8 +1842,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -1878,8 +1878,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.5,
-          "MagPercent": 50.0,
+          "Mag": 0.625,
+          "MagPercent": 62.5,
           "Duration": 10.0,
           "DisplayPercentage": true,
           "VariableModified": true,
@@ -2620,8 +2620,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.45,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.45,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2655,8 +2655,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.45,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.45,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2738,7 +2738,7 @@
           "nID": 9,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10026,
+          "nSummon": 10027,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -2756,7 +2756,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 10,
           "Override": "Villain_Pets.Corruptor_BeamRifle_Snipe.Penetrating_Ray_Quick",
-          "nOverride": 10026
+          "nOverride": 10027
         },
         {
           "MagnitudeExpression": "",
@@ -2771,7 +2771,7 @@
           "nID": 10,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10027,
+          "nSummon": 10028,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -2788,7 +2788,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 11,
           "Override": "Villain_Pets.Corruptor_BeamRifle_Snipe.Penetrating_Ray_Normal",
-          "nOverride": 10027
+          "nOverride": 10028
         }
       ],
       "HasPowerOverrideEffect": true,

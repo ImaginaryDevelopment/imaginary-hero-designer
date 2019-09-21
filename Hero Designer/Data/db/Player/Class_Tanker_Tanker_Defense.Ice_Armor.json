@@ -4,7 +4,6 @@
   "FullName": "Tanker_Defense.Ice_Armor",
   "ImageName": "IceArmor.png",
   "Power": [
-    8533,
     8534,
     8535,
     8536,
@@ -12,7 +11,8 @@
     8538,
     8539,
     8540,
-    8541
+    8541,
+    8542
   ],
   "SetType": 1,
   "DisplayName": "Ice Armor",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8533,
+      "PowerIndex": 8534,
       "PowerSetID": 3391,
       "StaticIndex": 2505,
       "NGroupMembership": [],
@@ -492,7 +492,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 14.56,
-      "PowerIndex": 8534,
+      "PowerIndex": 8535,
       "PowerSetID": 3391,
       "PowerSetIndex": 1,
       "StaticIndex": 2506,
@@ -557,8 +557,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -590,8 +590,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -659,8 +659,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 599.702,
-          "MagPercent": 599.702,
+          "Mag": 535.4484,
+          "MagPercent": 535.4484,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -698,7 +698,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8535,
+      "PowerIndex": 8536,
       "PowerSetID": 3391,
       "PowerSetIndex": 2,
       "StaticIndex": 2507,
@@ -1353,7 +1353,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8536,
+      "PowerIndex": 8537,
       "PowerSetID": 3391,
       "PowerSetIndex": 3,
       "StaticIndex": 2508,
@@ -2925,7 +2925,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8537,
+      "PowerIndex": 8538,
       "PowerSetID": 3391,
       "PowerSetIndex": 4,
       "StaticIndex": 2509,
@@ -3220,7 +3220,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 0.52,
-      "PowerIndex": 8538,
+      "PowerIndex": 8539,
       "PowerSetID": 3391,
       "PowerSetIndex": 5,
       "StaticIndex": 2510,
@@ -3290,8 +3290,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.34154,
-          "MagPercent": 8.34154,
+          "Mag": 12.5123005,
+          "MagPercent": 12.5123005,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3398,8 +3398,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 3.753693,
-          "MagPercent": 3.753693,
+          "Mag": 5.630535,
+          "MagPercent": 5.630535,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -3436,7 +3436,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8539,
+      "PowerIndex": 8540,
       "PowerSetID": 3391,
       "PowerSetIndex": 6,
       "StaticIndex": 2511,
@@ -3964,7 +3964,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 13.0,
-      "PowerIndex": 8540,
+      "PowerIndex": 8541,
       "PowerSetID": 3391,
       "PowerSetIndex": 7,
       "StaticIndex": 2512,
@@ -4818,7 +4818,7 @@
     {
       "CastTimeReal": 0.07,
       "ToggleCost": 0.26,
-      "PowerIndex": 8541,
+      "PowerIndex": 8542,
       "PowerSetID": 3391,
       "PowerSetIndex": 8,
       "StaticIndex": 2513,
@@ -5203,7 +5203,7 @@
           "nID": 9,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.NoPhase",
-          "nSummon": 9655,
+          "nSummon": 9656,
           "UIDClassName": "",
           "nIDClassName": -1,
           "ToWho": 2,

@@ -4,11 +4,11 @@
   "FullName": "Teamwork.Fortunata_Teamwork",
   "ImageName": "i12_Sec_Fortunata.png",
   "Power": [
-    8797,
     8798,
     8799,
     8800,
-    8801
+    8801,
+    8802
   ],
   "SetType": 2,
   "DisplayName": "Fortunata Teamwork",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.208,
-      "PowerIndex": 8797,
+      "PowerIndex": 8798,
       "PowerSetID": 3420,
       "StaticIndex": 2622,
       "NGroupMembership": [
@@ -1557,7 +1557,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 10.192,
-      "PowerIndex": 8798,
+      "PowerIndex": 8799,
       "PowerSetID": 3420,
       "PowerSetIndex": 1,
       "StaticIndex": 2623,
@@ -2047,7 +2047,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 8.528,
-      "PowerIndex": 8799,
+      "PowerIndex": 8800,
       "PowerSetID": 3420,
       "PowerSetIndex": 2,
       "StaticIndex": 2624,
@@ -2192,7 +2192,7 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 8800,
+      "PowerIndex": 8801,
       "PowerSetID": 3420,
       "PowerSetIndex": 3,
       "StaticIndex": 2625,
@@ -3115,8 +3115,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3149,8 +3149,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3183,8 +3183,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3217,8 +3217,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3251,8 +3251,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3285,8 +3285,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3319,8 +3319,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3353,8 +3353,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 0.35,
-          "MagPercent": 35.0,
+          "Mag": 0.4375,
+          "MagPercent": 43.75,
           "Duration": 120.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -3427,7 +3427,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 26.0,
-      "PowerIndex": 8801,
+      "PowerIndex": 8802,
       "PowerSetID": 3420,
       "PowerSetIndex": 4,
       "StaticIndex": 2626,

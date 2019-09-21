@@ -4,10 +4,10 @@
   "FullName": "Villain_Pets.OilSlickTarget_Corruptor",
   "ImageName": "",
   "Power": [
-    10154,
     10155,
     10156,
-    10157
+    10157,
+    10158
   ],
   "SetType": 8,
   "DisplayName": "Oil Slick",
@@ -24,7 +24,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10154,
+      "PowerIndex": 10155,
       "PowerSetID": 3520,
       "StaticIndex": 4098,
       "NGroupMembership": [],
@@ -113,7 +113,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10155,
+      "PowerIndex": 10156,
       "PowerSetID": 3520,
       "PowerSetIndex": 1,
       "StaticIndex": 4099,
@@ -197,7 +197,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10156,
+      "PowerIndex": 10157,
       "PowerSetID": 3520,
       "PowerSetIndex": 2,
       "StaticIndex": 4100,
@@ -608,8 +608,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -1484.26245,
-          "MagPercent": -1484.26245,
+          "Mag": -1325.23474,
+          "MagPercent": -1325.23474,
           "Duration": 999999.0,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1535,7 +1535,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10157,
+      "PowerIndex": 10158,
       "PowerSetID": 3520,
       "PowerSetIndex": 3,
       "StaticIndex": 4101,

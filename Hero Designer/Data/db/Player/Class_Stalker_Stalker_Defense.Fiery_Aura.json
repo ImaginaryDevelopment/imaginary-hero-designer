@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Fiery_Aura",
   "ImageName": "FireMastery2.png",
   "Power": [
-    8260,
     8261,
     8262,
     8263,
@@ -12,7 +11,8 @@
     8265,
     8266,
     8267,
-    8268
+    8268,
+    8269
   ],
   "SetType": 2,
   "DisplayName": "Fiery Aura",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8260,
+      "PowerIndex": 8261,
       "PowerSetID": 3361,
       "StaticIndex": 10045,
       "NGroupMembership": [
@@ -1566,7 +1566,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8261,
+      "PowerIndex": 8262,
       "PowerSetID": 3361,
       "PowerSetIndex": 1,
       "StaticIndex": 10046,
@@ -1989,7 +1989,7 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 10.4,
-      "PowerIndex": 8262,
+      "PowerIndex": 8263,
       "PowerSetID": 3361,
       "PowerSetIndex": 2,
       "StaticIndex": 10047,
@@ -2054,8 +2054,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 374.813782,
-          "MagPercent": 374.813782,
+          "Mag": 334.655273,
+          "MagPercent": 334.655273,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2126,7 +2126,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8263,
+      "PowerIndex": 8264,
       "PowerSetID": 3361,
       "PowerSetIndex": 3,
       "StaticIndex": 10048,
@@ -2421,7 +2421,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 8264,
+      "PowerIndex": 8265,
       "PowerSetID": 3361,
       "PowerSetIndex": 4,
       "StaticIndex": 10049,
@@ -3114,7 +3114,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.52,
-      "PowerIndex": 8265,
+      "PowerIndex": 8266,
       "PowerSetID": 3361,
       "PowerSetIndex": 5,
       "StaticIndex": 10050,
@@ -3188,8 +3188,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 16.68308,
-          "MagPercent": 16.68308,
+          "Mag": 25.024601,
+          "MagPercent": 25.024601,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3221,8 +3221,8 @@
         {
           "MagnitudeExpression": "30 source.TeamSize> 0.03 * 0.07 + rand >= @StdResult *",
           "Probability": 0.1,
-          "Mag": 16.68308,
-          "MagPercent": 16.68308,
+          "Mag": 25.024601,
+          "MagPercent": 25.024601,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Damage",
@@ -3255,8 +3255,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 16.68308,
-          "MagPercent": 16.68308,
+          "Mag": 25.024601,
+          "MagPercent": 25.024601,
           "InherentSpecial": true,
           "BaseProbability": 0.5,
           "Reward": "",
@@ -3405,7 +3405,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 5.2,
-      "PowerIndex": 8266,
+      "PowerIndex": 8267,
       "PowerSetID": 3361,
       "PowerSetIndex": 6,
       "StaticIndex": 10051,
@@ -3581,8 +3581,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 60.05909,
-          "MagPercent": 60.05909,
+          "Mag": 90.08856,
+          "MagPercent": 90.08856,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3615,8 +3615,8 @@
         {
           "MagnitudeExpression": "30 source.TeamSize> 0.03 * 0.07 + rand >= @StdResult *",
           "Probability": 0.1,
-          "Mag": 60.05909,
-          "MagPercent": 60.05909,
+          "Mag": 90.08856,
+          "MagPercent": 90.08856,
           "BaseProbability": 0.1,
           "Reward": "",
           "EffectId": "Damage",
@@ -3649,8 +3649,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 60.05909,
-          "MagPercent": 60.05909,
+          "Mag": 90.08856,
+          "MagPercent": 90.08856,
           "InherentSpecial": true,
           "BaseProbability": 0.5,
           "Reward": "",
@@ -3691,7 +3691,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.065,
-      "PowerIndex": 8267,
+      "PowerIndex": 8268,
       "PowerSetID": 3361,
       "PowerSetIndex": 7,
       "StaticIndex": 10679,
@@ -3754,8 +3754,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.2444134,
-          "MagPercent": 11.2444134,
+          "Mag": 10.0396585,
+          "MagPercent": 10.0396585,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "HealSelf",
@@ -3791,7 +3791,7 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 8268,
+      "PowerIndex": 8269,
       "PowerSetID": 3361,
       "PowerSetIndex": 8,
       "StaticIndex": 10053,
@@ -3862,8 +3862,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 749.627563,
-          "MagPercent": 749.627563,
+          "Mag": 669.310547,
+          "MagPercent": 669.310547,
           "Duration": 0.5,
           "VariableModified": true,
           "BaseProbability": 1.0,

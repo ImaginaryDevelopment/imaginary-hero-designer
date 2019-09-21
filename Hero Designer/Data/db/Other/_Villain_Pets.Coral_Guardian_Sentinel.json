@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Coral_Guardian_Sentinel",
   "ImageName": "",
   "Power": [
-    9991,
     9992,
     9993,
     9994,
     9995,
     9996,
     9997,
-    9998
+    9998,
+    9999
   ],
   "SetType": 8,
   "DisplayName": "Coral Guardian Sentinel",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9991,
+      "PowerIndex": 9992,
       "PowerSetID": 3475,
       "StaticIndex": 3040,
       "NGroupMembership": [],
@@ -147,7 +147,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.54,
-      "PowerIndex": 9992,
+      "PowerIndex": 9993,
       "PowerSetID": 3475,
       "PowerSetIndex": 1,
       "StaticIndex": 3041,
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 6.5,
-      "PowerIndex": 9993,
+      "PowerIndex": 9994,
       "PowerSetID": 3475,
       "PowerSetIndex": 2,
       "StaticIndex": 3042,
@@ -348,7 +348,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 8.58,
-      "PowerIndex": 9994,
+      "PowerIndex": 9995,
       "PowerSetID": 3475,
       "PowerSetIndex": 3,
       "StaticIndex": 3043,
@@ -412,8 +412,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.0541649,
-          "MagPercent": 55.0541649,
+          "Mag": 82.5811844,
+          "MagPercent": 82.5811844,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -444,8 +444,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.3,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.3,
           "Reward": "",
           "EffectId": "Knockback",
@@ -479,8 +479,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.3,
-          "Mag": 2.5964,
-          "MagPercent": 2.5964,
+          "Mag": 2.0771,
+          "MagPercent": 2.0771,
           "BaseProbability": 0.3,
           "Reward": "",
           "EffectId": "Knockback",
@@ -520,7 +520,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 10.66,
-      "PowerIndex": 9995,
+      "PowerIndex": 9996,
       "PowerSetID": 3475,
       "PowerSetIndex": 4,
       "StaticIndex": 3044,
@@ -584,8 +584,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 68.40063,
-          "MagPercent": 68.40063,
+          "Mag": 102.600861,
+          "MagPercent": 102.600861,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -694,7 +694,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 9996,
+      "PowerIndex": 9997,
       "PowerSetID": 3475,
       "PowerSetIndex": 5,
       "StaticIndex": 3045,
@@ -778,7 +778,7 @@
     {
       "CastTimeReal": 1.93,
       "ToggleCost": 9.75,
-      "PowerIndex": 9997,
+      "PowerIndex": 9998,
       "PowerSetID": 3475,
       "PowerSetIndex": 6,
       "StaticIndex": 3046,
@@ -1104,7 +1104,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 10.66,
-      "PowerIndex": 9998,
+      "PowerIndex": 9999,
       "PowerSetID": 3475,
       "PowerSetIndex": 7,
       "StaticIndex": 3047,

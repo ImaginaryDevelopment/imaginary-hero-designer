@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Trick_Shot_Jump3",
   "ImageName": "",
   "Power": [
-    10255
+    10256
   ],
   "SetType": 8,
   "DisplayName": "Trick Shot Jump 3",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10255,
+      "PowerIndex": 10256,
       "PowerSetID": 3559,
       "StaticIndex": 9837,
       "NGroupMembership": [],

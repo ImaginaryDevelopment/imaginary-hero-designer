@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Dark_Armor",
   "ImageName": "DarkArmor.png",
   "Power": [
-    8233,
     8234,
     8235,
     8236,
@@ -12,7 +11,8 @@
     8238,
     8239,
     8240,
-    8241
+    8241,
+    8242
   ],
   "SetType": 2,
   "DisplayName": "Dark Armor",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8233,
+      "PowerIndex": 8234,
       "PowerSetID": 3358,
       "StaticIndex": 2352,
       "NGroupMembership": [
@@ -1567,7 +1567,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
-      "PowerIndex": 8234,
+      "PowerIndex": 8235,
       "PowerSetID": 3358,
       "PowerSetIndex": 1,
       "StaticIndex": 2353,
@@ -1920,7 +1920,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8235,
+      "PowerIndex": 8236,
       "PowerSetID": 3358,
       "PowerSetIndex": 2,
       "StaticIndex": 2354,
@@ -2339,7 +2339,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8236,
+      "PowerIndex": 8237,
       "PowerSetID": 3358,
       "PowerSetIndex": 3,
       "StaticIndex": 2355,
@@ -2888,7 +2888,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8237,
+      "PowerIndex": 8238,
       "PowerSetID": 3358,
       "PowerSetIndex": 4,
       "StaticIndex": 2356,
@@ -3542,7 +3542,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 33.8,
-      "PowerIndex": 8238,
+      "PowerIndex": 8239,
       "PowerSetID": 3358,
       "PowerSetIndex": 5,
       "StaticIndex": 2357,
@@ -3614,8 +3614,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.34154,
-          "MagPercent": 8.34154,
+          "Mag": 12.5123005,
+          "MagPercent": 12.5123005,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -3646,8 +3646,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 449.77652,
-          "MagPercent": 449.77652,
+          "Mag": 401.5863,
+          "MagPercent": 401.5863,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3686,7 +3686,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.52,
-      "PowerIndex": 8239,
+      "PowerIndex": 8240,
       "PowerSetID": 3358,
       "PowerSetIndex": 6,
       "StaticIndex": 2358,
@@ -3869,7 +3869,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.078,
-      "PowerIndex": 8240,
+      "PowerIndex": 8241,
       "PowerSetID": 3358,
       "PowerSetIndex": 7,
       "StaticIndex": 2359,
@@ -3971,8 +3971,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 4.17077,
-          "MagPercent": 4.17077,
+          "Mag": 6.25615025,
+          "MagPercent": 6.25615025,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -4046,7 +4046,7 @@
     },
     {
       "CastTimeReal": 1.17,
-      "PowerIndex": 8241,
+      "PowerIndex": 8242,
       "PowerSetID": 3358,
       "PowerSetIndex": 8,
       "StaticIndex": 2360,
@@ -4120,8 +4120,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",

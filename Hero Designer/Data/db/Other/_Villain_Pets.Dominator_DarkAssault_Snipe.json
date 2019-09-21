@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_DarkAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10056,
-    10057
+    10057,
+    10058
   ],
   "SetType": 8,
   "DisplayName": "Dominator_DarkAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10056,
+      "PowerIndex": 10057,
       "PowerSetID": 3493,
       "StaticIndex": 9809,
       "NGroupMembership": [],
@@ -235,7 +235,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10057,
+      "PowerIndex": 10058,
       "PowerSetID": 3493,
       "PowerSetIndex": 1,
       "StaticIndex": 9810,

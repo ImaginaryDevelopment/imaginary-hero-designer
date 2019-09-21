@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Ice_Melee_Assassins_Frost",
   "ImageName": "",
   "Power": [
-    10102,
-    10103
+    10103,
+    10104
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10102,
+      "PowerIndex": 10103,
       "PowerSetID": 3438,
       "StaticIndex": 10704,
       "NGroupMembership": [],
@@ -92,8 +92,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 104.269249,
-          "MagPercent": 104.269249,
+          "Mag": 156.403748,
+          "MagPercent": 156.403748,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -126,8 +126,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684647,
-          "MagPercent": 187.684647,
+          "Mag": 281.526764,
+          "MagPercent": 281.526764,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -171,7 +171,7 @@
           "nID": 2,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9203,
+          "nSummon": 9204,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -268,7 +268,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10103,
+      "PowerIndex": 10104,
       "PowerSetID": 3438,
       "PowerSetIndex": 1,
       "StaticIndex": 10705,
@@ -334,8 +334,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -367,8 +367,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 73.40555,
-          "MagPercent": 73.40555,
+          "Mag": 110.108238,
+          "MagPercent": 110.108238,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -400,8 +400,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 115.113251,
-          "MagPercent": 115.113251,
+          "Mag": 172.669739,
+          "MagPercent": 172.669739,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -433,8 +433,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 36.7065277,
-          "MagPercent": 36.7065277,
+          "Mag": 55.05975,
+          "MagPercent": 55.05975,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -467,8 +467,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.0595856,
-          "MagPercent": 55.0595856,
+          "Mag": 82.58931,
+          "MagPercent": 82.58931,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -500,8 +500,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 91.7657,
-          "MagPercent": 91.7657,
+          "Mag": 137.648438,
+          "MagPercent": 137.648438,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",

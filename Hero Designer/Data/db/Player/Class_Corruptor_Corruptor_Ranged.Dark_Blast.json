@@ -819,7 +819,7 @@
           "nID": 5,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10028,
+          "nSummon": 10029,
           "Stacking": 1,
           "SpecialCase": 43,
           "UIDClassName": "",
@@ -837,7 +837,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 6,
           "Override": "Villain_Pets.Corruptor_DarkBlast_Snipe.Moonbeam_Quick",
-          "nOverride": 10028
+          "nOverride": 10029
         },
         {
           "MagnitudeExpression": "",
@@ -852,7 +852,7 @@
           "nID": 6,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 10029,
+          "nSummon": 10030,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -869,7 +869,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 7,
           "Override": "Villain_Pets.Corruptor_DarkBlast_Snipe.Moonbeam_Normal",
-          "nOverride": 10029
+          "nOverride": 10030
         }
       ],
       "HasPowerOverrideEffect": true,
@@ -1978,8 +1978,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.982,
-          "MagPercent": 12.982,
+          "Mag": 10.3855,
+          "MagPercent": 10.3855,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2013,8 +2013,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 12.982,
-          "MagPercent": 12.982,
+          "Mag": 10.3855,
+          "MagPercent": 10.3855,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2309,8 +2309,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 149.9255,
-          "MagPercent": 149.9255,
+          "Mag": 133.8621,
+          "MagPercent": 133.8621,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",

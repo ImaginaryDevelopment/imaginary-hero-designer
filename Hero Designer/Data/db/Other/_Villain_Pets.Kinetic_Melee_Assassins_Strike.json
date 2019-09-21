@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Kinetic_Melee_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10104,
-    10105
+    10105,
+    10106
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 2.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10104,
+      "PowerIndex": 10105,
       "PowerSetID": 3437,
       "StaticIndex": 6332,
       "NGroupMembership": [],
@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 72.98847,
-          "MagPercent": 72.98847,
+          "Mag": 109.482628,
+          "MagPercent": 109.482628,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.2807732,
-          "MagPercent": 31.2807732,
+          "Mag": 46.9211273,
+          "MagPercent": 46.9211273,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -158,8 +158,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684647,
-          "MagPercent": 187.684647,
+          "Mag": 281.526764,
+          "MagPercent": 281.526764,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -227,8 +227,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684647,
-          "MagPercent": 187.684647,
+          "Mag": 281.526764,
+          "MagPercent": 281.526764,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -272,7 +272,7 @@
           "nID": 5,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9203,
+          "nSummon": 9204,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -369,7 +369,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10105,
+      "PowerIndex": 10106,
       "PowerSetID": 3437,
       "PowerSetIndex": 1,
       "StaticIndex": 6333,
@@ -436,8 +436,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 80.57928,
-          "MagPercent": 80.57928,
+          "Mag": 120.86882,
+          "MagPercent": 120.86882,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -469,8 +469,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 34.5339737,
-          "MagPercent": 34.5339737,
+          "Mag": 51.8009224,
+          "MagPercent": 51.8009224,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -502,8 +502,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 115.113251,
-          "MagPercent": 115.113251,
+          "Mag": 172.669739,
+          "MagPercent": 172.669739,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -535,8 +535,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 43.5053024,
-          "MagPercent": 43.5053024,
+          "Mag": 65.2579041,
+          "MagPercent": 65.2579041,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -569,8 +569,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 18.64501,
-          "MagPercent": 18.64501,
+          "Mag": 27.9674931,
+          "MagPercent": 27.9674931,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -602,8 +602,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 62.15031,
-          "MagPercent": 62.15031,
+          "Mag": 93.2253952,
+          "MagPercent": 93.2253952,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",

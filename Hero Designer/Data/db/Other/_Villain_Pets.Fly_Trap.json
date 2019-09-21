@@ -4,11 +4,11 @@
   "FullName": "Villain_Pets.Fly_Trap",
   "ImageName": "",
   "Power": [
-    10080,
     10081,
     10082,
     10083,
-    10084
+    10084,
+    10085
   ],
   "SetType": 8,
   "DisplayName": "Fly Trap",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 7.8,
-      "PowerIndex": 10080,
+      "PowerIndex": 10081,
       "PowerSetID": 3506,
       "StaticIndex": 3080,
       "NGroupMembership": [],
@@ -426,7 +426,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 5.2,
-      "PowerIndex": 10081,
+      "PowerIndex": 10082,
       "PowerSetID": 3506,
       "PowerSetIndex": 1,
       "StaticIndex": 3081,
@@ -490,8 +490,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -523,8 +523,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.8,
-          "Mag": 4.17077,
-          "MagPercent": 4.17077,
+          "Mag": 6.25615025,
+          "MagPercent": 6.25615025,
           "Duration": 3.1,
           "BaseProbability": 0.8,
           "Reward": "",
@@ -601,7 +601,7 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 13.0,
-      "PowerIndex": 10082,
+      "PowerIndex": 10083,
       "PowerSetID": 3506,
       "PowerSetIndex": 2,
       "StaticIndex": 3082,
@@ -782,7 +782,7 @@
       "AoEModifier": 2.03496885
     },
     {
-      "PowerIndex": 10083,
+      "PowerIndex": 10084,
       "PowerSetID": 3506,
       "PowerSetIndex": 3,
       "StaticIndex": 3083,
@@ -1109,7 +1109,7 @@
     {
       "CastTimeReal": 1.2,
       "ToggleCost": 4.368,
-      "PowerIndex": 10084,
+      "PowerIndex": 10085,
       "PowerSetID": 3506,
       "PowerSetIndex": 4,
       "StaticIndex": 3084,

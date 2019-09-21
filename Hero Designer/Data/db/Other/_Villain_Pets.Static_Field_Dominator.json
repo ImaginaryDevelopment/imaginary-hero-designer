@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Static_Field_Dominator",
   "ImageName": "",
   "Power": [
-    10202
+    10203
   ],
   "SetType": 8,
   "DisplayName": "Static Field Dominator",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10202,
+      "PowerIndex": 10203,
       "PowerSetID": 3546,
       "StaticIndex": 4489,
       "NGroupMembership": [],

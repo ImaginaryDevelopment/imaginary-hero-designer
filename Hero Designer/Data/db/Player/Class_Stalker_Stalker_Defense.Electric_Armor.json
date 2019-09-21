@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Electric_Armor",
   "ImageName": "ElectricArmor.png",
   "Power": [
-    8242,
     8243,
     8244,
     8245,
@@ -12,7 +11,8 @@
     8247,
     8248,
     8249,
-    8250
+    8250,
+    8251
   ],
   "SetType": 2,
   "DisplayName": "Electric Armor",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8242,
+      "PowerIndex": 8243,
       "PowerSetID": 3359,
       "StaticIndex": 2361,
       "NGroupMembership": [
@@ -1567,7 +1567,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8243,
+      "PowerIndex": 8244,
       "PowerSetID": 3359,
       "PowerSetIndex": 1,
       "StaticIndex": 2362,
@@ -1850,7 +1850,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8244,
+      "PowerIndex": 8245,
       "PowerSetID": 3359,
       "PowerSetIndex": 2,
       "StaticIndex": 2363,
@@ -2203,7 +2203,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8245,
+      "PowerIndex": 8246,
       "PowerSetID": 3359,
       "PowerSetIndex": 3,
       "StaticIndex": 2364,
@@ -2856,7 +2856,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 8246,
+      "PowerIndex": 8247,
       "PowerSetID": 3359,
       "PowerSetIndex": 4,
       "StaticIndex": 2365,
@@ -3013,8 +3013,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -15.5784,
-          "MagPercent": -15.5784,
+          "Mag": -12.4626007,
+          "MagPercent": -12.4626007,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3048,8 +3048,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -15.5784,
-          "MagPercent": -15.5784,
+          "Mag": -12.4626007,
+          "MagPercent": -12.4626007,
           "Duration": 10.25,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3122,7 +3122,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8247,
+      "PowerIndex": 8248,
       "PowerSetID": 3359,
       "PowerSetIndex": 5,
       "StaticIndex": 2366,
@@ -3384,7 +3384,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 10.4,
-      "PowerIndex": 8248,
+      "PowerIndex": 8249,
       "PowerSetID": 3359,
       "PowerSetIndex": 6,
       "StaticIndex": 2367,
@@ -3512,8 +3512,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 374.813782,
-          "MagPercent": 374.813782,
+          "Mag": 334.655273,
+          "MagPercent": 334.655273,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3551,7 +3551,7 @@
     {
       "CastTimeReal": 3.828,
       "ToggleCost": 13.0,
-      "PowerIndex": 8249,
+      "PowerIndex": 8250,
       "PowerSetID": 3359,
       "PowerSetIndex": 7,
       "StaticIndex": 2368,
@@ -3763,7 +3763,7 @@
     {
       "CastTimeReal": 1.96,
       "ToggleCost": 2.6,
-      "PowerIndex": 8250,
+      "PowerIndex": 8251,
       "PowerSetID": 3359,
       "PowerSetIndex": 8,
       "StaticIndex": 2369,

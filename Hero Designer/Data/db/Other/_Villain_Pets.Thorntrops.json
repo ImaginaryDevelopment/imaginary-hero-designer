@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Thorntrops",
   "ImageName": "",
   "Power": [
-    10207
+    10208
   ],
   "SetType": 8,
   "DisplayName": "Thorntrops",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10207,
+      "PowerIndex": 10208,
       "PowerSetID": 3551,
       "StaticIndex": 3148,
       "NGroupMembership": [],
@@ -113,8 +113,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.085385,
-          "MagPercent": 2.085385,
+          "Mag": 3.12807512,
+          "MagPercent": 3.12807512,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",

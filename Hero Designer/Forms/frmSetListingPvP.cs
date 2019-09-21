@@ -42,12 +42,9 @@ namespace Hero_Designer
                     ++num1;
             }
             items[5] = Conversions.ToString(num1);
-            if (num1 > 5)
-            {
-                lvSets.Items.Add(new ListViewItem(items, Index));
-                lvSets.Items[lvSets.Items.Count - 1].Selected = true;
-                lvSets.Items[lvSets.Items.Count - 1].EnsureVisible();
-            }
+            lvSets.Items.Add(new ListViewItem(items, Index));
+            lvSets.Items[lvSets.Items.Count - 1].Selected = true;
+            lvSets.Items[lvSets.Items.Count - 1].EnsureVisible();
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -134,10 +131,11 @@ namespace Hero_Designer
             string uidOld = "";
             int selectedIndex1 = lvSets.SelectedIndices[0];
             EnhancementSetCollection enhancementSets = DatabaseAPI.Database.EnhancementSets;
-            string setName = Regex.Replace(lvSets.SelectedItems[0].Text, @"( \(\w+\))", "");
-            var setNameIndex = enhancementSets.FindIndex(x => x.DisplayName == setName);
-            EnhancementSet iSet = enhancementSets[setNameIndex];
-            enhancementSets[setNameIndex] = iSet;
+            int selectedIndex2 = this.lvSets.SelectedIndices[0];
+            /*string setName = Regex.Replace(lvSets.SelectedItems[0].Text, @"( \(\w+\))", "");
+            var setNameIndex = enhancementSets.FindIndex(x => x.DisplayName == setName);*/
+            EnhancementSet iSet = enhancementSets[selectedIndex2];
+            enhancementSets[selectedIndex2] = iSet;
             frmSetEditPvP frmSetEditPvP = new frmSetEditPvP(ref iSet);
             int num = (int)frmSetEditPvP.ShowDialog();
             if (frmSetEditPvP.DialogResult != DialogResult.OK)

@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_EnergyAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10060,
-    10061
+    10061,
+    10062
   ],
   "SetType": 8,
   "DisplayName": "Dominator_EnergyAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10060,
+      "PowerIndex": 10061,
       "PowerSetID": 3495,
       "StaticIndex": 9813,
       "NGroupMembership": [],
@@ -232,8 +232,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -267,8 +267,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -340,7 +340,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10061,
+      "PowerIndex": 10062,
       "PowerSetID": 3495,
       "PowerSetIndex": 1,
       "StaticIndex": 9814,
@@ -551,8 +551,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",
@@ -586,8 +586,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.5,
-          "Mag": 1.81748,
-          "MagPercent": 1.81748,
+          "Mag": 1.45397,
+          "MagPercent": 1.45397,
           "BaseProbability": 0.5,
           "Reward": "",
           "EffectId": "Knockback",

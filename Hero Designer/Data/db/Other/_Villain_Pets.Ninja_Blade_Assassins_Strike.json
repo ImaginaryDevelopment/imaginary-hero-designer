@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Ninja_Blade_Assassins_Strike",
   "ImageName": "",
   "Power": [
-    10146,
-    10147
+    10147,
+    10148
   ],
   "SetType": 8,
   "DisplayName": "",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 3.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10146,
+      "PowerIndex": 10147,
       "PowerSetID": 3450,
       "StaticIndex": 6336,
       "NGroupMembership": [],
@@ -93,8 +93,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 104.269249,
-          "MagPercent": 104.269249,
+          "Mag": 156.403748,
+          "MagPercent": 156.403748,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684647,
-          "MagPercent": 187.684647,
+          "Mag": 281.526764,
+          "MagPercent": 281.526764,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -194,8 +194,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 187.684647,
-          "MagPercent": 187.684647,
+          "Mag": 281.526764,
+          "MagPercent": 281.526764,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -239,7 +239,7 @@
           "nID": 4,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.Demoralized",
-          "nSummon": 9203,
+          "nSummon": 9204,
           "SpecialCase": 9,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -336,7 +336,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 10147,
+      "PowerIndex": 10148,
       "PowerSetID": 3450,
       "PowerSetIndex": 1,
       "StaticIndex": 6337,
@@ -403,8 +403,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 115.113251,
-          "MagPercent": 115.113251,
+          "Mag": 172.669739,
+          "MagPercent": 172.669739,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -435,8 +435,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 115.113251,
-          "MagPercent": 115.113251,
+          "Mag": 172.669739,
+          "MagPercent": 172.669739,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",
@@ -468,8 +468,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 91.7657,
-          "MagPercent": 91.7657,
+          "Mag": 137.648438,
+          "MagPercent": 137.648438,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -501,8 +501,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 91.7657,
-          "MagPercent": 91.7657,
+          "Mag": 137.648438,
+          "MagPercent": 137.648438,
           "Reward": "",
           "EffectId": "ASCrit",
           "Special": "",

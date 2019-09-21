@@ -42,12 +42,9 @@ namespace Hero_Designer
                     ++num1;
             }
             items[5] = Conversions.ToString(num1);
-            if (num1 <= 5)
-            {
-                lvSets.Items.Add(new ListViewItem(items, Index));
-                lvSets.Items[lvSets.Items.Count - 1].Selected = true;
-                lvSets.Items[lvSets.Items.Count - 1].EnsureVisible();
-            }
+            lvSets.Items.Add(new ListViewItem(items, Index));
+            lvSets.Items[lvSets.Items.Count - 1].Selected = true;
+            lvSets.Items[lvSets.Items.Count - 1].EnsureVisible();
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -134,10 +131,11 @@ namespace Hero_Designer
             string uidOld = "";
             int selectedIndex1 = lvSets.SelectedIndices[0];
             EnhancementSetCollection enhancementSets = DatabaseAPI.Database.EnhancementSets;
-            string setName = Regex.Replace(lvSets.SelectedItems[0].Text, @"( \(\w+\))", "");
-            var setNameIndex = enhancementSets.FindIndex(x => x.DisplayName == setName);
-            EnhancementSet iSet = enhancementSets[setNameIndex];
-            enhancementSets[setNameIndex] = iSet;
+            int selectedIndex2 = this.lvSets.SelectedIndices[0];
+            /*string setName = Regex.Replace(lvSets.SelectedItems[0].Text, @"( \(\w+\))", "");
+            var setNameIndex = enhancementSets.FindIndex(x => x.DisplayName == setName);*/
+            EnhancementSet iSet = enhancementSets[selectedIndex2];
+            enhancementSets[selectedIndex2] = iSet;
             frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
             int num = (int)frmSetEdit.ShowDialog();
             if (frmSetEdit.DialogResult != DialogResult.OK)
@@ -294,14 +292,13 @@ namespace Hero_Designer
                     ++num1;
             }
             strArray[5] = Conversions.ToString(num1);
-            if (num1 <= 5)
+            int num3 = strArray.Length - 1;
+            for (int index = 0; index <= num3; ++index)
             {
-                int num3 = strArray.Length - 1;
-                for (int index = 0; index <= num3; ++index)
-                    lvSets.Items[Index].SubItems[index].Text = strArray[index];
-                lvSets.Items[Index].ImageIndex = Index;
-                lvSets.Refresh();
+                lvSets.Items[Index].SubItems[index].Text = strArray[index];
             }
+            lvSets.Items[Index].ImageIndex = Index;
+            lvSets.Refresh();
         }
     }
 }

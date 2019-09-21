@@ -4,10 +4,10 @@
   "FullName": "Training_Gadgets.Crab_Spider_Training",
   "ImageName": "i12_Sec_Crab.png",
   "Power": [
-    9930,
     9931,
     9932,
-    9933
+    9933,
+    9934
   ],
   "SetType": 2,
   "DisplayName": "Crab Spider Training",
@@ -24,7 +24,7 @@
   "GroupName": "Training_Gadgets",
   "Powers": [
     {
-      "PowerIndex": 9930,
+      "PowerIndex": 9931,
       "PowerSetID": 3433,
       "StaticIndex": 2994,
       "NGroupMembership": [],
@@ -932,7 +932,7 @@
     {
       "CastTimeReal": 2.33,
       "ToggleCost": 0.208,
-      "PowerIndex": 9931,
+      "PowerIndex": 9932,
       "PowerSetID": 3433,
       "PowerSetIndex": 1,
       "StaticIndex": 2995,
@@ -1809,7 +1809,7 @@
     {
       "CastTimeReal": 1.3,
       "ToggleCost": 10.4,
-      "PowerIndex": 9932,
+      "PowerIndex": 9933,
       "PowerSetID": 3433,
       "PowerSetIndex": 2,
       "StaticIndex": 2996,
@@ -1870,8 +1870,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -1903,8 +1903,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -1938,8 +1938,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 599.702,
-          "MagPercent": 599.702,
+          "Mag": 535.4484,
+          "MagPercent": 535.4484,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -1977,7 +1977,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 26.0,
-      "PowerIndex": 9933,
+      "PowerIndex": 9934,
       "PowerSetID": 3433,
       "PowerSetIndex": 3,
       "StaticIndex": 2997,

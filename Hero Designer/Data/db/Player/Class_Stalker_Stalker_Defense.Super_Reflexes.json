@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Super_Reflexes",
   "ImageName": "SuperReflexes.png",
   "Power": [
-    8323,
     8324,
     8325,
     8326,
@@ -12,7 +11,8 @@
     8328,
     8329,
     8330,
-    8331
+    8331,
+    8332
   ],
   "SetType": 2,
   "DisplayName": "Super Reflexes",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8323,
+      "PowerIndex": 8324,
       "PowerSetID": 3368,
       "StaticIndex": 2397,
       "NGroupMembership": [
@@ -1567,7 +1567,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.26,
-      "PowerIndex": 8324,
+      "PowerIndex": 8325,
       "PowerSetID": 3368,
       "PowerSetIndex": 1,
       "StaticIndex": 2398,
@@ -1849,7 +1849,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8325,
+      "PowerIndex": 8326,
       "PowerSetID": 3368,
       "PowerSetIndex": 2,
       "StaticIndex": 2399,
@@ -2199,7 +2199,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8326,
+      "PowerIndex": 8327,
       "PowerSetID": 3368,
       "PowerSetIndex": 3,
       "StaticIndex": 2400,
@@ -2509,7 +2509,7 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 10.4,
-      "PowerIndex": 8327,
+      "PowerIndex": 8328,
       "PowerSetID": 3368,
       "PowerSetIndex": 4,
       "StaticIndex": 2401,
@@ -3245,7 +3245,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8328,
+      "PowerIndex": 8329,
       "PowerSetID": 3368,
       "PowerSetIndex": 5,
       "StaticIndex": 2402,
@@ -3553,7 +3553,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8329,
+      "PowerIndex": 8330,
       "PowerSetID": 3368,
       "PowerSetIndex": 6,
       "StaticIndex": 2403,
@@ -3815,7 +3815,7 @@
     {
       "CastTimeReal": 3.0,
       "ToggleCost": 0.26,
-      "PowerIndex": 8330,
+      "PowerIndex": 8331,
       "PowerSetID": 3368,
       "PowerSetIndex": 7,
       "StaticIndex": 2404,
@@ -4026,7 +4026,7 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 2.6,
-      "PowerIndex": 8331,
+      "PowerIndex": 8332,
       "PowerSetID": 3368,
       "PowerSetIndex": 8,
       "StaticIndex": 2405,

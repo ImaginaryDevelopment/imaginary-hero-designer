@@ -4,10 +4,10 @@
   "FullName": "Villain_Pets.Shade",
   "ImageName": "",
   "Power": [
-    10173,
     10174,
     10175,
-    10176
+    10176,
+    10177
   ],
   "SetType": 8,
   "DisplayName": "Shade",
@@ -26,7 +26,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 4.55,
-      "PowerIndex": 10173,
+      "PowerIndex": 10174,
       "PowerSetID": 3532,
       "StaticIndex": 6338,
       "NGroupMembership": [],
@@ -87,8 +87,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.473093,
-          "MagPercent": 23.473093,
+          "Mag": 35.2096138,
+          "MagPercent": 35.2096138,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -120,8 +120,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 11.5613747,
-          "MagPercent": 11.5613747,
+          "Mag": 17.3420486,
+          "MagPercent": 17.3420486,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -154,8 +154,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 24.232172,
-          "MagPercent": 24.232172,
+          "Mag": 36.34823,
+          "MagPercent": 36.34823,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -188,8 +188,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 10.3852167,
-          "MagPercent": 10.3852167,
+          "Mag": 15.5778131,
+          "MagPercent": 15.5778131,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -262,7 +262,7 @@
     },
     {
       "CastTimeReal": 0.5,
-      "PowerIndex": 10174,
+      "PowerIndex": 10175,
       "PowerSetID": 3532,
       "PowerSetIndex": 1,
       "StaticIndex": 6339,
@@ -715,7 +715,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 7.8,
-      "PowerIndex": 10175,
+      "PowerIndex": 10176,
       "PowerSetID": 3532,
       "PowerSetIndex": 2,
       "StaticIndex": 6340,
@@ -855,7 +855,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10176,
+      "PowerIndex": 10177,
       "PowerSetID": 3532,
       "PowerSetIndex": 3,
       "StaticIndex": 6341,

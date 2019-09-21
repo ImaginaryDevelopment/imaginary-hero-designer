@@ -4,10 +4,10 @@
   "FullName": "Villain_Pets.Creeper_Vine",
   "ImageName": "",
   "Power": [
-    10045,
     10046,
     10047,
-    10048
+    10048,
+    10049
   ],
   "SetType": 8,
   "DisplayName": "Creeper Vine",
@@ -26,7 +26,7 @@
     {
       "CastTimeReal": 0.9,
       "ToggleCost": 5.2,
-      "PowerIndex": 10045,
+      "PowerIndex": 10046,
       "PowerSetID": 3490,
       "StaticIndex": 3076,
       "NGroupMembership": [],
@@ -92,8 +92,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 8.34154,
-          "MagPercent": 8.34154,
+          "Mag": 12.5123005,
+          "MagPercent": 12.5123005,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -125,8 +125,8 @@
           "MagnitudeExpression": "",
           "CancelOnMiss": true,
           "Probability": 0.9,
-          "Mag": 4.17077,
-          "MagPercent": 4.17077,
+          "Mag": 6.25615025,
+          "MagPercent": 6.25615025,
           "Duration": 4.0,
           "BaseProbability": 0.9,
           "Reward": "",
@@ -450,7 +450,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10046,
+      "PowerIndex": 10047,
       "PowerSetID": 3490,
       "PowerSetIndex": 1,
       "StaticIndex": 3077,
@@ -842,7 +842,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10047,
+      "PowerIndex": 10048,
       "PowerSetID": 3490,
       "PowerSetIndex": 2,
       "StaticIndex": 3078,
@@ -926,7 +926,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 5.2,
-      "PowerIndex": 10048,
+      "PowerIndex": 10049,
       "PowerSetID": 3490,
       "PowerSetIndex": 3,
       "StaticIndex": 3079,

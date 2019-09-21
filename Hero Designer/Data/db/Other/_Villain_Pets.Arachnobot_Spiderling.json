@@ -4,11 +4,11 @@
   "FullName": "Villain_Pets.Arachnobot_Spiderling",
   "ImageName": "",
   "Power": [
-    9958,
     9959,
     9960,
     9961,
-    9962
+    9962,
+    9963
   ],
   "SetType": 8,
   "DisplayName": "Arachnobot Spiderling",
@@ -27,7 +27,7 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 5.46,
-      "PowerIndex": 9958,
+      "PowerIndex": 9959,
       "PowerSetID": 3457,
       "StaticIndex": 3022,
       "NGroupMembership": [],
@@ -167,7 +167,7 @@
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 4.42,
-      "PowerIndex": 9959,
+      "PowerIndex": 9960,
       "PowerSetID": 3457,
       "PowerSetIndex": 1,
       "StaticIndex": 3023,
@@ -229,8 +229,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 28.3612347,
-          "MagPercent": 28.3612347,
+          "Mag": 42.54182,
+          "MagPercent": 42.54182,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -264,7 +264,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 9960,
+      "PowerIndex": 9961,
       "PowerSetID": 3457,
       "PowerSetIndex": 2,
       "StaticIndex": 3024,
@@ -452,7 +452,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 9961,
+      "PowerIndex": 9962,
       "PowerSetID": 3457,
       "PowerSetIndex": 3,
       "StaticIndex": 3025,
@@ -637,7 +637,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 9962,
+      "PowerIndex": 9963,
       "PowerSetID": 3457,
       "PowerSetIndex": 4,
       "StaticIndex": 3026,

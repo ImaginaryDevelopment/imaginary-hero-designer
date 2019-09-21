@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Coral_Guardian_Warder",
   "ImageName": "",
   "Power": [
-    9999,
     10000,
     10001,
     10002,
     10003,
     10004,
     10005,
-    10006
+    10006,
+    10007
   ],
   "SetType": 8,
   "DisplayName": "Coral Guardian Warder",
@@ -28,7 +28,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9999,
+      "PowerIndex": 10000,
       "PowerSetID": 3476,
       "StaticIndex": 3048,
       "NGroupMembership": [],
@@ -147,7 +147,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.54,
-      "PowerIndex": 10000,
+      "PowerIndex": 10001,
       "PowerSetID": 3476,
       "PowerSetIndex": 1,
       "StaticIndex": 3049,
@@ -246,7 +246,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 6.5,
-      "PowerIndex": 10001,
+      "PowerIndex": 10002,
       "PowerSetID": 3476,
       "PowerSetIndex": 2,
       "StaticIndex": 3050,
@@ -310,8 +310,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 41.7077,
-          "MagPercent": 41.7077,
+          "Mag": 62.5615,
+          "MagPercent": 62.5615,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -342,8 +342,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.2,
-          "Mag": 1.739588,
-          "MagPercent": 1.739588,
+          "Mag": 1.39165711,
+          "MagPercent": 1.39165711,
           "BaseProbability": 0.2,
           "Reward": "",
           "EffectId": "Knockback",
@@ -377,8 +377,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 0.2,
-          "Mag": 1.739588,
-          "MagPercent": 1.739588,
+          "Mag": 1.39165711,
+          "MagPercent": 1.39165711,
           "BaseProbability": 0.2,
           "Reward": "",
           "EffectId": "Knockback",
@@ -418,7 +418,7 @@
     {
       "CastTimeReal": 1.7,
       "ToggleCost": 6.5,
-      "PowerIndex": 10002,
+      "PowerIndex": 10003,
       "PowerSetID": 3476,
       "PowerSetIndex": 3,
       "StaticIndex": 3051,
@@ -520,7 +520,7 @@
     {
       "CastTimeReal": 2.07,
       "ToggleCost": 10.66,
-      "PowerIndex": 10003,
+      "PowerIndex": 10004,
       "PowerSetID": 3476,
       "PowerSetIndex": 4,
       "StaticIndex": 3052,
@@ -875,7 +875,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10004,
+      "PowerIndex": 10005,
       "PowerSetID": 3476,
       "PowerSetIndex": 5,
       "StaticIndex": 3053,
@@ -959,7 +959,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 8.58,
-      "PowerIndex": 10005,
+      "PowerIndex": 10006,
       "PowerSetID": 3476,
       "PowerSetIndex": 6,
       "StaticIndex": 3054,
@@ -1023,8 +1023,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 55.0541649,
-          "MagPercent": 55.0541649,
+          "Mag": 82.5811844,
+          "MagPercent": 82.5811844,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1135,7 +1135,7 @@
     {
       "CastTimeReal": 0.9,
       "ToggleCost": 10.66,
-      "PowerIndex": 10006,
+      "PowerIndex": 10007,
       "PowerSetID": 3476,
       "PowerSetIndex": 7,
       "StaticIndex": 3055,

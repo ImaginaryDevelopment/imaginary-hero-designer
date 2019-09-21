@@ -4,8 +4,8 @@
   "FullName": "Villain_Pets.Dominator_ElectricityAssault_Snipe",
   "ImageName": "",
   "Power": [
-    10058,
-    10059
+    10059,
+    10060
   ],
   "SetType": 8,
   "DisplayName": "Dominator_ElectricityAssault_Snipe",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 1.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10058,
+      "PowerIndex": 10059,
       "PowerSetID": 3494,
       "StaticIndex": 9811,
       "NGroupMembership": [],
@@ -335,7 +335,7 @@
     {
       "CastTimeReal": 4.33,
       "ToggleCost": 18.512,
-      "PowerIndex": 10059,
+      "PowerIndex": 10060,
       "PowerSetID": 3494,
       "PowerSetIndex": 1,
       "StaticIndex": 9812,

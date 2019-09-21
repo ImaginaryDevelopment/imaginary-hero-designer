@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.DistortionField_Corruptor",
   "ImageName": "",
   "Power": [
-    10051
+    10052
   ],
   "SetType": 8,
   "DisplayName": "Time Manipulation",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10051,
+      "PowerIndex": 10052,
       "PowerSetID": 3554,
       "StaticIndex": 5814,
       "NGroupMembership": [],

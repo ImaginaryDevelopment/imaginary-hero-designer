@@ -4,10 +4,10 @@
   "FullName": "Villain_Pets.OilSlickBurn_Corruptor",
   "ImageName": "",
   "Power": [
-    10149,
     10150,
     10151,
-    10152
+    10152,
+    10153
   ],
   "SetType": 8,
   "DisplayName": "Oil Slick Fire",
@@ -24,7 +24,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10149,
+      "PowerIndex": 10150,
       "PowerSetID": 3522,
       "StaticIndex": 4093,
       "NGroupMembership": [],
@@ -79,8 +79,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.502462,
-          "MagPercent": 2.502462,
+          "Mag": 3.75369,
+          "MagPercent": 3.75369,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -111,8 +111,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.502462,
-          "MagPercent": 2.502462,
+          "Mag": 3.75369,
+          "MagPercent": 3.75369,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -147,8 +147,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 2.502462,
-          "MagPercent": 2.502462,
+          "Mag": 3.75369,
+          "MagPercent": 3.75369,
           "InherentSpecial": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -186,7 +186,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10150,
+      "PowerIndex": 10151,
       "PowerSetID": 3522,
       "PowerSetIndex": 1,
       "StaticIndex": 4094,
@@ -274,7 +274,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10151,
+      "PowerIndex": 10152,
       "PowerSetID": 3522,
       "PowerSetIndex": 2,
       "StaticIndex": 4096,
@@ -358,7 +358,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10152,
+      "PowerIndex": 10153,
       "PowerSetID": 3522,
       "PowerSetIndex": 3,
       "StaticIndex": 4095,

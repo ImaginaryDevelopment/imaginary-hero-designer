@@ -4,7 +4,6 @@
   "FullName": "Tanker_Defense.Stone_Armor",
   "ImageName": "StoneArmor.png",
   "Power": [
-    8569,
     8570,
     8571,
     8572,
@@ -12,7 +11,8 @@
     8574,
     8575,
     8576,
-    8577
+    8577,
+    8578
   ],
   "SetType": 1,
   "DisplayName": "Stone Armor",
@@ -31,7 +31,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8569,
+      "PowerIndex": 8570,
       "PowerSetID": 3395,
       "StaticIndex": 2523,
       "NGroupMembership": [
@@ -353,7 +353,7 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8570,
+      "PowerIndex": 8571,
       "PowerSetID": 3395,
       "PowerSetIndex": 1,
       "StaticIndex": 2524,
@@ -483,7 +483,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 10.4,
-      "PowerIndex": 8571,
+      "PowerIndex": 8572,
       "PowerSetID": 3395,
       "PowerSetIndex": 2,
       "StaticIndex": 2525,
@@ -548,8 +548,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -581,8 +581,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 299.851,
-          "MagPercent": 299.851,
+          "Mag": 267.7242,
+          "MagPercent": 267.7242,
           "Duration": 120.0,
           "VariableModified": true,
           "BaseProbability": 1.0,
@@ -650,8 +650,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 599.702,
-          "MagPercent": 599.702,
+          "Mag": 535.4484,
+          "MagPercent": 535.4484,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -690,7 +690,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.78,
-      "PowerIndex": 8572,
+      "PowerIndex": 8573,
       "PowerSetID": 3395,
       "PowerSetIndex": 3,
       "StaticIndex": 2526,
@@ -975,8 +975,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.507386,
-          "MagPercent": 7.507386,
+          "Mag": 11.26107,
+          "MagPercent": 11.26107,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -1085,8 +1085,8 @@
         },
         {
           "MagnitudeExpression": "",
-          "Mag": 3.37832355,
-          "MagPercent": 3.37832355,
+          "Mag": 5.06748152,
+          "MagPercent": 5.06748152,
           "Reward": "",
           "EffectId": "FieryEmbrace",
           "Special": "",
@@ -1123,7 +1123,7 @@
     {
       "CastTimeReal": 1.17,
       "ToggleCost": 0.208,
-      "PowerIndex": 8573,
+      "PowerIndex": 8574,
       "PowerSetID": 3395,
       "PowerSetIndex": 4,
       "StaticIndex": 2527,
@@ -2446,7 +2446,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8574,
+      "PowerIndex": 8575,
       "PowerSetID": 3395,
       "PowerSetIndex": 5,
       "StaticIndex": 2528,
@@ -2661,7 +2661,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 0.26,
-      "PowerIndex": 8575,
+      "PowerIndex": 8576,
       "PowerSetID": 3395,
       "PowerSetIndex": 6,
       "StaticIndex": 2529,
@@ -2984,7 +2984,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8576,
+      "PowerIndex": 8577,
       "PowerSetID": 3395,
       "PowerSetIndex": 7,
       "StaticIndex": 2530,
@@ -3342,7 +3342,7 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.26,
-      "PowerIndex": 8577,
+      "PowerIndex": 8578,
       "PowerSetID": 3395,
       "PowerSetIndex": 8,
       "StaticIndex": 2531,

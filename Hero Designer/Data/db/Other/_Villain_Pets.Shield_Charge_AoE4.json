@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Shield_Charge_AoE4",
   "ImageName": "",
   "Power": [
-    10188
+    10189
   ],
   "SetType": 8,
   "DisplayName": "Shield Defense",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10188,
+      "PowerIndex": 10189,
       "PowerSetID": 3536,
       "StaticIndex": 10706,
       "NGroupMembership": [],
@@ -82,8 +82,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 31.030529,
-          "MagPercent": 31.030529,
+          "Mag": 46.5457573,
+          "MagPercent": 46.5457573,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",
@@ -114,8 +114,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 75.3241043,
-          "MagPercent": 75.3241043,
+          "Mag": 112.986069,
+          "MagPercent": 112.986069,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Damage",

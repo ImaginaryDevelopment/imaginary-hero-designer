@@ -4,7 +4,6 @@
   "FullName": "Stalker_Defense.Ninjitsu",
   "ImageName": "Ninjitsu.png",
   "Power": [
-    8287,
     8288,
     8289,
     8290,
@@ -12,7 +11,8 @@
     8292,
     8293,
     8294,
-    8295
+    8295,
+    8296
   ],
   "SetType": 2,
   "DisplayName": "Ninjitsu",
@@ -30,7 +30,7 @@
   "Powers": [
     {
       "CastTimeReal": 0.73,
-      "PowerIndex": 8287,
+      "PowerIndex": 8288,
       "PowerSetID": 3364,
       "StaticIndex": 2379,
       "NGroupMembership": [
@@ -1567,7 +1567,7 @@
     {
       "CastTimeReal": 1.53,
       "ToggleCost": 0.26,
-      "PowerIndex": 8288,
+      "PowerIndex": 8289,
       "PowerSetID": 3364,
       "PowerSetIndex": 1,
       "StaticIndex": 2380,
@@ -1778,7 +1778,7 @@
     {
       "CastTimeReal": 0.83,
       "ToggleCost": 0.364,
-      "PowerIndex": 8289,
+      "PowerIndex": 8290,
       "PowerSetID": 3364,
       "PowerSetIndex": 2,
       "StaticIndex": 2381,
@@ -2166,7 +2166,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 8290,
+      "PowerIndex": 8291,
       "PowerSetID": 3364,
       "PowerSetIndex": 3,
       "StaticIndex": 2382,
@@ -2277,7 +2277,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 10.4,
-      "PowerIndex": 8291,
+      "PowerIndex": 8292,
       "PowerSetID": 3364,
       "PowerSetIndex": 4,
       "StaticIndex": 2383,
@@ -3057,7 +3057,7 @@
     {
       "CastTimeReal": 1.0,
       "ToggleCost": 10.4,
-      "PowerIndex": 8292,
+      "PowerIndex": 8293,
       "PowerSetID": 3364,
       "PowerSetIndex": 5,
       "StaticIndex": 2384,
@@ -3122,8 +3122,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 374.813782,
-          "MagPercent": 374.813782,
+          "Mag": 334.655273,
+          "MagPercent": 334.655273,
           "VariableModified": true,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -3196,7 +3196,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 2.6,
-      "PowerIndex": 8293,
+      "PowerIndex": 8294,
       "PowerSetID": 3364,
       "PowerSetIndex": 6,
       "StaticIndex": 2385,
@@ -3255,7 +3255,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 16.4,
+          "Duration": 12.32,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -3291,7 +3291,7 @@
           "Probability": 1.0,
           "Mag": 3.0,
           "MagPercent": 3.0,
-          "Duration": 12.2999992,
+          "Duration": 9.24,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Taunt",
@@ -3332,7 +3332,7 @@
     {
       "CastTimeReal": 1.07,
       "ToggleCost": 7.8,
-      "PowerIndex": 8294,
+      "PowerIndex": 8295,
       "PowerSetID": 3364,
       "PowerSetIndex": 7,
       "StaticIndex": 2386,
@@ -3666,7 +3666,7 @@
     {
       "CastTimeReal": 1.83,
       "ToggleCost": 2.6,
-      "PowerIndex": 8295,
+      "PowerIndex": 8296,
       "PowerSetID": 3364,
       "PowerSetIndex": 8,
       "StaticIndex": 2387,
