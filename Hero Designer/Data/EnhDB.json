@@ -45237,6 +45237,7 @@
       "LongName": "Superior Unrelenting Fury: RechargeTime/+Regen/+End"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1042,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear",
@@ -45253,49 +45254,49 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         }
       ],
       "EffectChance": 1.0,
@@ -45308,6 +45309,7 @@
       "LongName": "Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1043,
       "Name": "Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/RechargeTime",
       "ShortName": "Conf/Hold/Immob/Sleep/Stun/Fear/Rchg",
@@ -45324,49 +45326,49 @@
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         }
       ],
       "EffectChance": 1.0,
@@ -45415,6 +45417,7 @@
       "LongName": "Overpowering Presence: Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1045,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear/EndRdx",
@@ -45431,56 +45434,56 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         },
         {
           "Enhance": {
             "ID": 4,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.5
         }
       ],
       "EffectChance": 1.0,
@@ -45493,6 +45496,7 @@
       "LongName": "Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1046,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance/RechargeTime",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear/EndRdx/Rchg",
@@ -45509,63 +45513,63 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 4,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         }
       ],
       "EffectChance": 1.0,
@@ -45578,6 +45582,7 @@
       "LongName": "Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1047,
       "Name": "RechargeTime/Energy Font",
       "ShortName": "Rchg/Energy Font",
@@ -45594,7 +45599,7 @@
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Mode": 1,
@@ -45644,6 +45649,7 @@
       "LongName": "Overpowering Presence: RechargeTime/Energy Font"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1048,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear",
@@ -45660,49 +45666,49 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.438
         }
       ],
       "EffectChance": 1.0,
@@ -45716,6 +45722,7 @@
       "LongName": "Superior Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1049,
       "Name": "Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/RechargeTime",
       "ShortName": "Conf/Hold/Immob/Sleep/Stun/Fear/Rchg",
@@ -45732,49 +45739,49 @@
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Enhance": {
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         }
       ],
       "EffectChance": 1.0,
@@ -45825,6 +45832,7 @@
       "LongName": "Superior Overpowering Presence: Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1051,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear/EndRdx",
@@ -45841,56 +45849,56 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         },
         {
           "Enhance": {
             "ID": 4,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4925
         }
       ],
       "EffectChance": 1.0,
@@ -45904,6 +45912,7 @@
       "LongName": "Superior Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1052,
       "Name": "Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance/RechargeTime",
       "ShortName": "Acc/Conf/Hold/Immob/Sleep/Stun/Fear/EndRdx/Rchg",
@@ -45920,63 +45929,63 @@
             "ID": 1,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 2
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 3
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 9
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 10
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 12,
             "SubID": 12
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 4,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         },
         {
           "Enhance": {
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.4375
         }
       ],
       "EffectChance": 1.0,
@@ -45990,6 +45999,7 @@
       "LongName": "Superior Overpowering Presence: Accuracy/Confused/Hold/Immobilized/Sleep/Stunned/Terrorized/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1053,
       "Name": "RechargeTime/Energy Font",
       "ShortName": "Rchg/Energy Font",
@@ -46006,7 +46016,7 @@
             "ID": 14,
             "SubID": -1
           },
-          "Multiplier": 1.0
+          "Multiplier": 0.625
         },
         {
           "Mode": 1,
@@ -54847,7 +54857,6 @@
       "Schedule": 4
     },
     {
-      "IsModified": true,
       "StaticIndex": 1251,
       "Name": "Knockback to Knockdown",
       "ShortName": "-KB/+KD",
@@ -55247,7 +55256,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -55696,7 +55705,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 3
@@ -55945,7 +55954,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -56015,7 +56024,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -56675,7 +56684,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -57191,7 +57200,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -57337,7 +57346,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -57769,7 +57778,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -57883,7 +57892,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -58429,7 +58438,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -58739,7 +58748,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -58853,7 +58862,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -59387,7 +59396,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -59501,7 +59510,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -59733,7 +59742,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -60043,7 +60052,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -60157,7 +60166,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -60389,7 +60398,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -60699,7 +60708,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -60927,7 +60936,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -61441,7 +61450,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -61599,7 +61608,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -62373,7 +62382,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -63001,7 +63010,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_2"
           ],
           "Index": [
-            8211
+            8212
           ],
           "AltString": "",
           "Slotted": 2
@@ -63375,7 +63384,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -63489,7 +63498,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -63705,7 +63714,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -63819,7 +63828,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -63933,7 +63942,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -64025,7 +64034,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_2"
           ],
           "Index": [
-            8211
+            8212
           ],
           "AltString": "",
           "Slotted": 4
@@ -64127,7 +64136,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_3"
           ],
           "Index": [
-            8212
+            8213
           ],
           "AltString": "",
           "Slotted": 4
@@ -64263,7 +64272,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -66493,7 +66502,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_2"
           ],
           "Index": [
-            8211
+            8212
           ],
           "AltString": "",
           "Slotted": 2
@@ -66999,7 +67008,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_1"
           ],
           "Index": [
-            8210
+            8211
           ],
           "AltString": "",
           "Slotted": 2
@@ -67313,7 +67322,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 6
@@ -67427,7 +67436,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -67541,7 +67550,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -67769,7 +67778,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -67872,7 +67881,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 5
@@ -67997,7 +68006,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -68111,7 +68120,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -68225,7 +68234,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -68339,7 +68348,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -69105,7 +69114,7 @@
             "Set_Bonus.Set_Bonus.Winters_Gift"
           ],
           "Index": [
-            8220
+            8221
           ],
           "AltString": ""
         },
@@ -69850,7 +69859,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 5
@@ -70221,7 +70230,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 6
@@ -70353,7 +70362,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 4
@@ -71053,7 +71062,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_6"
           ],
           "Index": [
-            8215
+            8216
           ],
           "AltString": "",
           "Slotted": 6
@@ -71864,7 +71873,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 5
@@ -72214,7 +72223,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_5"
           ],
           "Index": [
-            8214
+            8215
           ],
           "AltString": "",
           "Slotted": 5
@@ -72339,7 +72348,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_6"
           ],
           "Index": [
-            8215
+            8216
           ],
           "AltString": "",
           "Slotted": 6
@@ -72457,7 +72466,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -72728,7 +72737,7 @@
             "Set_Bonus.Set_Bonus.Superior_Brutes_Fury"
           ],
           "Index": [
-            8199
+            8200
           ],
           "AltString": ""
         }
@@ -73279,7 +73288,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 6
@@ -73322,7 +73331,7 @@
             "Set_Bonus.Set_Bonus.Superior_Kheldians_Grace"
           ],
           "Index": [
-            8205
+            8206
           ],
           "AltString": ""
         }
@@ -73386,7 +73395,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 5
@@ -73440,7 +73449,7 @@
             "Set_Bonus.Set_Bonus.Superior_Command_of_the_Mastermind"
           ],
           "Index": [
-            8200
+            8201
           ],
           "AltString": ""
         }
@@ -73736,7 +73745,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_7"
           ],
           "Index": [
-            8216
+            8217
           ],
           "AltString": "",
           "Slotted": 5
@@ -74313,7 +74322,7 @@
             "Set_Bonus.Set_Bonus.Toxic_Psi_Mez_Res_4"
           ],
           "Index": [
-            8213
+            8214
           ],
           "AltString": "",
           "Slotted": 5
@@ -74367,7 +74376,7 @@
             "Set_Bonus.Set_Bonus.Unbreakable_Guard"
           ],
           "Index": [
-            8217
+            8218
           ],
           "AltString": ""
         }
@@ -76255,7 +76264,7 @@
             "Set_Bonus.Set_Bonus.Superior_Mark_of_Supremacy"
           ],
           "Index": [
-            8206
+            8207
           ],
           "AltString": ""
         }
@@ -76719,7 +76728,7 @@
             "Set_Bonus.Set_Bonus.Superior_Spiders_Bite"
           ],
           "Index": [
-            8208
+            8209
           ],
           "AltString": ""
         }

@@ -303,7 +303,7 @@
           "CancelOnMiss": true,
           "Probability": 1.0,
           "Mag": -0.15,
-          "MagPercent": -15.000001,
+          "MagPercent": -15.0,
           "Duration": 8.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,

@@ -100,8 +100,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.56,
-          "MagPercent": -56.0,
+          "Mag": -0.7,
+          "MagPercent": -70.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -134,8 +134,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.56,
-          "MagPercent": -56.0,
+          "Mag": -0.7,
+          "MagPercent": -70.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -169,8 +169,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.56,
-          "MagPercent": -56.0,
+          "Mag": -0.7,
+          "MagPercent": -70.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -238,8 +238,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.56,
-          "MagPercent": -56.0,
+          "Mag": -0.7,
+          "MagPercent": -70.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -273,8 +273,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.56,
-          "MagPercent": -56.0,
+          "Mag": -0.7,
+          "MagPercent": -70.0,
           "Duration": 20.0,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -698,8 +698,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.4,
-          "MagPercent": -40.0,
+          "Mag": -0.5,
+          "MagPercent": -50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -732,8 +732,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.4,
-          "MagPercent": -40.0,
+          "Mag": -0.5,
+          "MagPercent": -50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -767,8 +767,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.4,
-          "MagPercent": -40.0,
+          "Mag": -0.5,
+          "MagPercent": -50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -836,8 +836,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.4,
-          "MagPercent": -40.0,
+          "Mag": -0.5,
+          "MagPercent": -50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -871,8 +871,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": -0.4,
-          "MagPercent": -40.0,
+          "Mag": -0.5,
+          "MagPercent": -50.0,
           "Duration": 0.75,
           "DisplayPercentage": true,
           "BaseProbability": 1.0,
@@ -4997,7 +4997,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Cold_Domination",
-      "CastTime": 4.092,
+      "CastTime": 4.224,
       "Slottable": true,
       "AoEModifier": 1.0
     }
