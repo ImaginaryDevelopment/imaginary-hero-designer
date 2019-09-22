@@ -15644,8 +15644,8 @@
   {
     "Archetype": "Class_Brute",
     "Fullname": "Brute_Melee.Savage_Melee",
-    "Hash": 1785937072,
-    "Length": 109498
+    "Hash": 2113789168,
+    "Length": 109404
   },
   {
     "Archetype": "Class_Brute",
@@ -16412,14 +16412,14 @@
   {
     "Archetype": "Class_Defender",
     "Fullname": "Epic.Def_Flame_Mastery",
-    "Hash": -1740550357,
-    "Length": 57895
+    "Hash": 1549455855,
+    "Length": 57733
   },
   {
     "Archetype": "",
     "Fullname": "Epic.Corr_Flame_Mastery",
-    "Hash": 557760099,
-    "Length": 58039
+    "Hash": -83807452,
+    "Length": 57877
   },
   {
     "Archetype": "",
