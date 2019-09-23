@@ -44,19 +44,6 @@ namespace Hero_Designer
             Name = nameof(frmAccolade);
             _myParent = iParent;
             _myPowers = iPowers;
-            FormClosing += FrmAccolade_FormClosing;
-        }
-
-        private void FrmAccolade_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                _myParent.accoladeButton.Checked = false;
-            }
-            if (DialogResult == DialogResult.Cancel)
-            {
-                _myParent.accoladeButton.Checked = false;
-            }
         }
 
         public void UpdateFonts(Font font)

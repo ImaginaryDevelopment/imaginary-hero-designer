@@ -44,19 +44,6 @@ namespace Hero_Designer
             Name = nameof(frmTemp);
             _myParent = iParent;
             _myPowers = iPowers;
-            FormClosing += FrmTemp_FormClosing;
-        }
-
-        private void FrmTemp_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                _myParent.tempPowersButton.Checked = false;
-            }
-            if (DialogResult == DialogResult.Cancel)
-            {
-                _myParent.tempPowersButton.Checked = false;
-            }
         }
 
         public void UpdateFonts(Font font)

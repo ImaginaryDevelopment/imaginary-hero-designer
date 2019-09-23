@@ -1745,9 +1745,10 @@ namespace Hero_Designer
             this.tempPowersButton.Name = "tempPowersButton";
             this.tempPowersButton.Size = new System.Drawing.Size(105, 22);
             this.tempPowersButton.TabIndex = 115;
-            this.tempPowersButton.TextOff = "Temp Powers";
-            this.tempPowersButton.TextOn = "Temp Powers";
+            this.tempPowersButton.TextOff = "Temp Powers (Off)";
+            this.tempPowersButton.TextOn = "Temp Powers (On)";
             this.tempPowersButton.Toggle = true;
+            this.tempPowersButton.MouseDown += new System.Windows.Forms.MouseEventHandler(tempPowersButton_MouseDown);
             this.tempPowersButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(tempPowersButton_ButtonClicked);
             // 
             // accoladeButton
@@ -1760,9 +1761,10 @@ namespace Hero_Designer
             this.accoladeButton.Name = "accoladeButton";
             this.accoladeButton.Size = new System.Drawing.Size(105, 22);
             this.accoladeButton.TabIndex = 114;
-            this.accoladeButton.TextOff = "Accolades";
-            this.accoladeButton.TextOn = "Accolades";
+            this.accoladeButton.TextOff = "Accolades (Off)";
+            this.accoladeButton.TextOn = "Accolades (On)";
             this.accoladeButton.Toggle = true;
+            this.accoladeButton.MouseDown += new MouseEventHandler(accoladeButton_MouseDown);
             this.accoladeButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
             //
             // petsButton

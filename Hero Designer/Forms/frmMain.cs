@@ -391,40 +391,30 @@ namespace Hero_Designer
         internal void ChildRequestedRedraw()
             => DoRedraw();
 
-        public void accoladeButton_ButtonClicked()
+        void accoladeButton_ButtonClicked() => this.PowerModified(markModified: false);
+
+        void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
-            if (fAccolade == null || fAccolade.IsDisposed)
+            if (e.Clicks != 2)
+                return;
+            this.accoladeButton.Checked = false;
+            if (this.fAccolade == null || this.fAccolade.IsDisposed)
             {
-                IPower power = !MainModule.MidsController.Toon.IsHero()
-                    ? DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3258)]
-                    : DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3257)];
+                IPower power = !MainModule.MidsController.Toon.IsHero() ? DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3258)] : DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3257)];
                 List<IPower> iPowers = new List<IPower>();
                 int num = power.NIDSubPower.Length - 1;
                 for (int index = 0; index <= num; ++index)
                     iPowers.Add(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
-                fAccolade = new frmAccolade(this, iPowers)
-                {
-                    Text = "Accolades"
-                };
+                this.fAccolade = new frmAccolade(this, iPowers) { Text = "Accolades" };
             }
-
-            if (!fAccolade.Visible)
-            {
-                accoladeButton.Checked = true;
-                fAccolade.Show(this);
-            }
-            else
-            {
-                accoladeButton.Checked = false;
-                fAccolade.Close();
-            }
-
+            if (!this.fAccolade.Visible)
+                this.fAccolade.Show(this);
         }
 
         void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            accoladeButton_ButtonClicked();
-            accoladeButton.Checked = true;
+            this.accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+            this.accoladeButton.Checked = true;
         }
 
         static int ArchetypeIndirectToIndex(int iIndirect)
@@ -4456,8 +4446,12 @@ namespace Hero_Designer
 
         void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tempPowersButton_ButtonClicked();
+            tempPowersButton_MouseDown(sender, new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+            tempPowersButton.Checked = true;
         }
+
+        void tempPowersButton_ButtonClicked()
+            => PowerModified(markModified: false);
 
         void petsButton_ButtonClicked()
         {
@@ -4509,9 +4503,11 @@ namespace Hero_Designer
             }
         }
 
-        void tempPowersButton_ButtonClicked()
+        void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
-            //tempPowersButton.Checked = false;
+            if (e.Clicks != 2)
+                return;
+            tempPowersButton.Checked = false;
             if (fTemp == null || fTemp.IsDisposed)
             {
                 IPower power = DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3259)];
@@ -4526,15 +4522,7 @@ namespace Hero_Designer
             }
 
             if (!fTemp.Visible)
-            {
-                tempPowersButton.Checked = true;
                 fTemp.Show(this);
-            }
-            else
-            {
-                tempPowersButton.Checked = false;
-                fTemp.Close();
-            }
         }
 
         void tlsDPA_Click(object sender, EventArgs e)
