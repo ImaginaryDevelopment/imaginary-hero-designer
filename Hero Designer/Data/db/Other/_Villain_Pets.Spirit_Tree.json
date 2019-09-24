@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Spirit_Tree",
   "ImageName": "",
   "Power": [
-    10194
+    10192
   ],
   "SetType": 8,
   "DisplayName": "Spirit Tree",
   "nArchetype": -1,
-  "nID": 3542,
+  "nID": 3540,
   "SubName": "Plant Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10194,
-      "PowerSetID": 3542,
+      "PowerIndex": 10192,
+      "PowerSetID": 3540,
       "StaticIndex": 3147,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Spirit_Tree.Spirit_Tree",

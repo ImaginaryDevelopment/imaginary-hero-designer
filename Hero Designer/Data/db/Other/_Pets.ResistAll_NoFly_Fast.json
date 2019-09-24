@@ -4,12 +4,12 @@
   "FullName": "Pets.ResistAll_NoFly_Fast",
   "ImageName": "",
   "Power": [
-    6439
+    6437
   ],
   "SetType": 8,
   "DisplayName": "ResistAll NoFly Fast",
   "nArchetype": -1,
-  "nID": 3196,
+  "nID": 3194,
   "SubName": "Resistance",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6439,
-      "PowerSetID": 3196,
+      "PowerIndex": 6437,
+      "PowerSetID": 3194,
       "StaticIndex": 6007,
       "NGroupMembership": [],
       "FullName": "Pets.ResistAll_NoFly_Fast.ResistAll",
@@ -110,7 +110,6 @@
           "Reward": "",
           "EffectId": "SpeedRunning",
           "Special": "",
-          "nID": 1,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,

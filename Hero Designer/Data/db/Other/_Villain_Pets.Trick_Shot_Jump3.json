@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Trick_Shot_Jump3",
   "ImageName": "",
   "Power": [
-    10256
+    10254
   ],
   "SetType": 8,
   "DisplayName": "Trick Shot Jump 3",
   "nArchetype": -1,
-  "nID": 3559,
+  "nID": 3557,
   "SubName": "Trick Shot Jump 3",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10256,
-      "PowerSetID": 3559,
+      "PowerIndex": 10254,
+      "PowerSetID": 3557,
       "StaticIndex": 9837,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Trick_Shot_Jump3.Bounce",
@@ -124,7 +124,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 38,
           "Summon": "Pets_Trick_Shot_Jump4",
           "nSummon": 380,
@@ -160,7 +159,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -194,7 +192,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 77,
           "Summon": "",
           "nSummon": -1,

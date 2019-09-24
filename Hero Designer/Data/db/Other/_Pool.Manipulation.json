@@ -4,16 +4,16 @@
   "FullName": "Pool.Manipulation",
   "ImageName": "Presence.png",
   "Power": [
+    6672,
+    6673,
     6674,
     6675,
-    6676,
-    6677,
-    6678
+    6676
   ],
   "SetType": 5,
   "DisplayName": "Presence",
   "nArchetype": -1,
-  "nID": 3294,
+  "nID": 3292,
   "SubName": "Presence",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 6.5,
-      "PowerIndex": 6674,
-      "PowerSetID": 3294,
+      "PowerIndex": 6672,
+      "PowerSetID": 3292,
       "StaticIndex": 1817,
       "NGroupMembership": [],
       "FullName": "Pool.Manipulation.Challenge",
@@ -131,7 +131,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 7,
           "Summon": "",
@@ -166,8 +165,8 @@
     },
     {
       "CastTimeReal": 1.67,
-      "PowerIndex": 6675,
-      "PowerSetID": 3294,
+      "PowerIndex": 6673,
+      "PowerSetID": 3292,
       "PowerSetIndex": 1,
       "StaticIndex": 1818,
       "NGroupMembership": [],
@@ -273,7 +272,6 @@
           "Reward": "",
           "EffectId": "Taunt",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -310,8 +308,8 @@
       "CastTimeReal": 1.67,
       "ToggleCost": 10.0,
       "IsEpic": true,
-      "PowerIndex": 6676,
-      "PowerSetID": 3294,
+      "PowerIndex": 6674,
+      "PowerSetID": 3292,
       "PowerSetIndex": 2,
       "StaticIndex": 1819,
       "NGroupMembership": [],
@@ -338,11 +336,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6674,
+            6672,
             -1
           ],
           [
-            6675,
+            6673,
             -1
           ]
         ],
@@ -436,7 +434,6 @@
           "Reward": "",
           "EffectId": "Fear",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -473,7 +470,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -511,7 +507,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -550,7 +545,6 @@
           "Reward": "",
           "EffectId": "Fear",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -589,7 +583,6 @@
           "Reward": "",
           "EffectId": "Fear",
           "Special": "",
-          "nID": 5,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -627,8 +620,8 @@
       "CastTimeReal": 1.97,
       "ToggleCost": 18.0,
       "IsEpic": true,
-      "PowerIndex": 6677,
-      "PowerSetID": 3294,
+      "PowerIndex": 6675,
+      "PowerSetID": 3292,
       "PowerSetIndex": 3,
       "StaticIndex": 1820,
       "NGroupMembership": [],
@@ -659,16 +652,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6674,
-            6675
+            6672,
+            6673
           ],
           [
-            6674,
-            6676
+            6672,
+            6674
           ],
           [
-            6675,
-            6676
+            6673,
+            6674
           ]
         ],
         "NPowerIDNot": []
@@ -760,7 +753,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -798,7 +790,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -837,7 +828,6 @@
           "Reward": "",
           "EffectId": "Fear",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -876,7 +866,6 @@
           "Reward": "",
           "EffectId": "Fear",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -913,8 +902,8 @@
     {
       "CastTimeReal": 1.97,
       "IsEpic": true,
-      "PowerIndex": 6678,
-      "PowerSetID": 3294,
+      "PowerIndex": 6676,
+      "PowerSetID": 3292,
       "PowerSetIndex": 4,
       "StaticIndex": 9615,
       "NGroupMembership": [],
@@ -957,28 +946,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6674,
+            6672,
+            6673
+          ],
+          [
+            6672,
+            6674
+          ],
+          [
+            6672,
+            6675
+          ],
+          [
+            6673,
+            6674
+          ],
+          [
+            6673,
             6675
           ],
           [
             6674,
-            6676
-          ],
-          [
-            6674,
-            6677
-          ],
-          [
-            6675,
-            6676
-          ],
-          [
-            6675,
-            6677
-          ],
-          [
-            6676,
-            6677
+            6675
           ]
         ],
         "NPowerIDNot": []
@@ -1069,7 +1058,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -1105,7 +1093,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 26,
           "Summon": "",
           "nSummon": -1,
@@ -1141,7 +1128,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 3,
           "EffectType": 4,
           "DamageType": 1,
           "Summon": "",
@@ -1178,7 +1164,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 4,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -1215,7 +1200,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 5,
           "EffectType": 4,
           "DamageType": 3,
           "Summon": "",
@@ -1252,7 +1236,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 6,
           "EffectType": 4,
           "DamageType": 4,
           "Summon": "",
@@ -1289,7 +1272,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 7,
           "EffectType": 4,
           "DamageType": 5,
           "Summon": "",
@@ -1326,7 +1308,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 8,
           "EffectType": 4,
           "DamageType": 6,
           "Summon": "",
@@ -1363,7 +1344,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 9,
           "EffectType": 4,
           "DamageType": 7,
           "Summon": "",
@@ -1400,7 +1380,6 @@
           "Reward": "",
           "EffectId": "Buff_Dmg",
           "Special": "",
-          "nID": 10,
           "EffectType": 4,
           "DamageType": 8,
           "Summon": "",
@@ -1437,7 +1416,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 11,
           "EffectType": 13,
           "Summon": "",
           "nSummon": -1,

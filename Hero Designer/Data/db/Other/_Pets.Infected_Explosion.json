@@ -4,12 +4,12 @@
   "FullName": "Pets.Infected_Explosion",
   "ImageName": "",
   "Power": [
-    6309
+    6307
   ],
   "SetType": 8,
   "DisplayName": "Infected Explosion",
   "nArchetype": -1,
-  "nID": 3118,
+  "nID": 3116,
   "SubName": "Infected",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6309,
-      "PowerSetID": 3118,
+      "PowerIndex": 6307,
+      "PowerSetID": 3116,
       "StaticIndex": 1623,
       "NGroupMembership": [],
       "FullName": "Pets.Infected_Explosion.Infected_Explosion",
@@ -111,7 +111,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -146,7 +145,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 43,
           "Summon": "",
           "nSummon": -1,

@@ -4,12 +4,12 @@
   "FullName": "Pets.Raid_Disruptor_Pylon_Create",
   "ImageName": "",
   "Power": [
-    6420
+    6418
   ],
   "SetType": 8,
   "DisplayName": "Raid_Disruptor_Pylon_Create",
   "nArchetype": -1,
-  "nID": 3181,
+  "nID": 3179,
   "SubName": "Object",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6420,
-      "PowerSetID": 3181,
+      "PowerIndex": 6418,
+      "PowerSetID": 3179,
       "StaticIndex": 1689,
       "NGroupMembership": [],
       "FullName": "Pets.Raid_Disruptor_Pylon_Create.Create",
@@ -108,7 +108,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 43,
           "Summon": "",
           "nSummon": -1,

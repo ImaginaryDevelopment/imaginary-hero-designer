@@ -4,16 +4,16 @@
   "FullName": "Pool.Teleportation",
   "ImageName": "Teleportation.png",
   "Power": [
+    6693,
+    6694,
     6695,
     6696,
-    6697,
-    6698,
-    6699
+    6697
   ],
   "SetType": 5,
   "DisplayName": "Teleportation",
   "nArchetype": -1,
-  "nID": 3297,
+  "nID": 3295,
   "SubName": "Teleportation",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 5.93,
       "ToggleCost": 15.0,
-      "PowerIndex": 6695,
-      "PowerSetID": 3297,
+      "PowerIndex": 6693,
+      "PowerSetID": 3295,
       "StaticIndex": 1829,
       "NGroupMembership": [],
       "FullName": "Pool.Teleportation.Recall_Friend",
@@ -130,7 +130,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -164,8 +163,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 6696,
-      "PowerSetID": 3297,
+      "PowerIndex": 6694,
+      "PowerSetID": 3295,
       "PowerSetIndex": 1,
       "StaticIndex": 1831,
       "NGroupMembership": [],
@@ -263,7 +262,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -300,7 +298,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,
@@ -335,7 +332,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -370,7 +366,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 21,
           "Summon": "",
           "nSummon": -1,
@@ -405,7 +400,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 22,
           "Summon": "",
           "nSummon": -1,
@@ -437,8 +431,8 @@
     {
       "CastTimeReal": 5.676,
       "ToggleCost": 15.0,
-      "PowerIndex": 6697,
-      "PowerSetID": 3297,
+      "PowerIndex": 6695,
+      "PowerSetID": 3295,
       "PowerSetIndex": 2,
       "StaticIndex": 1830,
       "NGroupMembership": [],
@@ -545,7 +539,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -582,7 +575,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 20,
           "MezType": 14,
           "Summon": "",
@@ -617,7 +609,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 41,
           "Summon": "",
           "nSummon": -1,
@@ -653,7 +644,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 36,
           "Summon": "",
           "nSummon": -1,
@@ -689,7 +679,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 19,
           "MezType": 19,
           "Summon": "",
@@ -726,7 +715,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 6,
           "EffectType": 19,
           "MezType": 13,
           "Summon": "",
@@ -764,7 +752,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 7,
           "EffectType": 39,
           "Summon": "",
           "nSummon": -1,
@@ -799,7 +786,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 8,
           "EffectType": 19,
           "MezType": 6,
           "Summon": "",
@@ -837,7 +823,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 9,
           "EffectType": 18,
           "Summon": "",
           "nSummon": -1,
@@ -873,7 +858,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 10,
           "EffectType": 38,
           "Summon": "Pets_TPFoeTaunt",
           "nSummon": 77,
@@ -906,8 +890,8 @@
       "CastTimeReal": 12.0,
       "ToggleCost": 26.0,
       "IsEpic": true,
-      "PowerIndex": 6698,
-      "PowerSetID": 3297,
+      "PowerIndex": 6696,
+      "PowerSetID": 3295,
       "PowerSetIndex": 3,
       "StaticIndex": 5635,
       "NGroupMembership": [],
@@ -938,16 +922,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6695,
-            6697
+            6693,
+            6695
+          ],
+          [
+            6693,
+            6694
           ],
           [
             6695,
-            6696
-          ],
-          [
-            6697,
-            6696
+            6694
           ]
         ],
         "NPowerIDNot": []
@@ -1028,7 +1012,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1063,7 +1046,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1098,7 +1080,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1133,8 +1114,8 @@
       "CastTimeReal": 1.67,
       "ToggleCost": 20.0,
       "IsEpic": true,
-      "PowerIndex": 6699,
-      "PowerSetID": 3297,
+      "PowerIndex": 6697,
+      "PowerSetID": 3295,
       "PowerSetIndex": 4,
       "StaticIndex": 1832,
       "NGroupMembership": [],
@@ -1165,16 +1146,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6695,
-            6697
+            6693,
+            6695
+          ],
+          [
+            6693,
+            6694
           ],
           [
             6695,
-            6696
-          ],
-          [
-            6697,
-            6696
+            6694
           ]
         ],
         "NPowerIDNot": []
@@ -1262,7 +1243,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1298,7 +1278,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,
@@ -1332,7 +1311,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -1366,7 +1344,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 21,
           "Summon": "",
           "nSummon": -1,
@@ -1400,7 +1377,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 22,
           "Summon": "",
           "nSummon": -1,

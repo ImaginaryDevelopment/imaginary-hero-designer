@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.HeatLossBuff",
   "ImageName": "",
   "Power": [
-    10101
+    10099
   ],
   "SetType": 8,
   "DisplayName": "Heat Loss",
   "nArchetype": -1,
-  "nID": 3511,
+  "nID": 3509,
   "SubName": "Cold Domination",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10101,
-      "PowerSetID": 3511,
+      "PowerIndex": 10099,
+      "PowerSetID": 3509,
       "StaticIndex": 3100,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.HeatLossBuff.Heat_Loss",
@@ -118,7 +118,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 26,
           "Summon": "",
           "nSummon": -1,

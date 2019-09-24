@@ -4,13 +4,13 @@
   "FullName": "Pets.VoltaicSentinel_Critter",
   "ImageName": "",
   "Power": [
-    6608,
-    6609
+    6606,
+    6607
   ],
   "SetType": 8,
   "DisplayName": "Voltaic Sentinel Critter",
   "nArchetype": -1,
-  "nID": 3266,
+  "nID": 3264,
   "SubName": "Electrical Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.0,
-      "PowerIndex": 6608,
-      "PowerSetID": 3266,
+      "PowerIndex": 6606,
+      "PowerSetID": 3264,
       "StaticIndex": 1781,
       "NGroupMembership": [],
       "FullName": "Pets.VoltaicSentinel_Critter.Electrical_Bolt",
@@ -124,7 +124,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 7,
           "Summon": "",
           "nSummon": -1,
@@ -159,7 +158,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 26,
           "Summon": "",
           "nSummon": -1,
@@ -190,8 +188,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6609,
-      "PowerSetID": 3266,
+      "PowerIndex": 6607,
+      "PowerSetID": 3264,
       "PowerSetIndex": 1,
       "StaticIndex": 1782,
       "NGroupMembership": [],
@@ -280,7 +278,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,
@@ -313,7 +310,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -347,7 +343,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 28,
           "ETModifies": 13,
           "Summon": "",

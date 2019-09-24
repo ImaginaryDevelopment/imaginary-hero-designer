@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Chain_Stun_Dominator_Jump1",
   "ImageName": "",
   "Power": [
-    9989
+    9987
   ],
   "SetType": 8,
   "DisplayName": "Chain Stun Jump 1",
   "nArchetype": -1,
-  "nID": 3472,
+  "nID": 3470,
   "SubName": "Chain Stun Jump 1",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9989,
-      "PowerSetID": 3472,
+      "PowerIndex": 9987,
+      "PowerSetID": 3470,
       "StaticIndex": 4488,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Chain_Stun_Dominator_Jump1.Charge",
@@ -127,7 +127,6 @@
           "Reward": "",
           "EffectId": "Stun",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -163,7 +162,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -201,7 +199,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -235,7 +232,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 77,
           "Summon": "",
           "nSummon": -1,

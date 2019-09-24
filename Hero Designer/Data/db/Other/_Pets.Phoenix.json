@@ -4,12 +4,12 @@
   "FullName": "Pets.Phoenix",
   "ImageName": "",
   "Power": [
-    6389
+    6387
   ],
   "SetType": 8,
   "DisplayName": "Phoenix",
   "nArchetype": -1,
-  "nID": 3163,
+  "nID": 3161,
   "SubName": "Phoenix",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6389,
-      "PowerSetID": 3163,
+      "PowerIndex": 6387,
+      "PowerSetID": 3161,
       "StaticIndex": 1679,
       "NGroupMembership": [],
       "FullName": "Pets.Phoenix.Phoenix",
@@ -119,7 +119,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -154,7 +153,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -191,7 +189,6 @@
           "Reward": "",
           "EffectId": "Stun",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -228,7 +225,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",

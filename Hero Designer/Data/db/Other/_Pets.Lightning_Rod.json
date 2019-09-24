@@ -4,12 +4,12 @@
   "FullName": "Pets.Lightning_Rod",
   "ImageName": "",
   "Power": [
-    6339
+    6337
   ],
   "SetType": 8,
   "DisplayName": "Electric Melee",
   "nArchetype": -1,
-  "nID": 3076,
+  "nID": 3074,
   "SubName": "Electric Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6339,
-      "PowerSetID": 3076,
+      "PowerIndex": 6337,
+      "PowerSetID": 3074,
       "StaticIndex": 4262,
       "NGroupMembership": [],
       "FullName": "Pets.Lightning_Rod.Lightning_Rod",
@@ -122,7 +122,6 @@
           "Reward": "",
           "EffectId": "TempDamage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 5,
           "Summon": "",
@@ -156,7 +155,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",

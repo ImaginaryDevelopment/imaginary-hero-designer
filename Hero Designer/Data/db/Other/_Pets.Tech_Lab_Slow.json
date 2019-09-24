@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Slow",
   "ImageName": "",
   "Power": [
-    6503
+    6501
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3234,
+  "nID": 3232,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6503,
-      "PowerSetID": 3234,
+      "PowerIndex": 6501,
+      "PowerSetID": 3232,
       "StaticIndex": 1738,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Slow.Slow",
@@ -115,7 +115,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 16,
           "Summon": "",
@@ -151,7 +150,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 2,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -187,7 +185,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -223,7 +220,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 4,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,

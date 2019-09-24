@@ -4,12 +4,12 @@
   "FullName": "Pets.Transfusion_Mastermind",
   "ImageName": "",
   "Power": [
-    6541
+    6539
   ],
   "SetType": 8,
   "DisplayName": "Transfusion",
   "nArchetype": -1,
-  "nID": 3252,
+  "nID": 3250,
   "SubName": "",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6541,
-      "PowerSetID": 3252,
+      "PowerIndex": 6539,
+      "PowerSetID": 3250,
       "StaticIndex": 10767,
       "NGroupMembership": [],
       "FullName": "Pets.Transfusion_Mastermind.Transfusion",

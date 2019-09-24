@@ -4,8 +4,8 @@
   "FullName": "Pets.RainofArrows",
   "ImageName": "",
   "Power": [
-    6423,
-    6424
+    6421,
+    6422
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
@@ -22,7 +22,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6423,
+      "PowerIndex": 6421,
       "PowerSetID": 3185,
       "StaticIndex": 1692,
       "NGroupMembership": [],
@@ -118,7 +118,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -152,7 +151,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 2,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -183,7 +181,7 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6424,
+      "PowerIndex": 6422,
       "PowerSetID": 3185,
       "PowerSetIndex": 1,
       "StaticIndex": 1693,

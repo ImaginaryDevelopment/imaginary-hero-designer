@@ -4,12 +4,12 @@
   "FullName": "Pets.Vigilant_Assault_Proc",
   "ImageName": "",
   "Power": [
-    6592
+    6590
   ],
   "SetType": 8,
   "DisplayName": "Vigilant Assault",
   "nArchetype": -1,
-  "nID": 3260,
+  "nID": 3258,
   "SubName": "Vigilant Assault",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6592,
-      "PowerSetID": 3260,
+      "PowerIndex": 6590,
+      "PowerSetID": 3258,
       "StaticIndex": 8970,
       "NGroupMembership": [],
       "FullName": "Pets.Vigilant_Assault_Proc.Vigilant_Assault",
@@ -107,7 +107,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 66,
           "Summon": "",
           "nSummon": -1,

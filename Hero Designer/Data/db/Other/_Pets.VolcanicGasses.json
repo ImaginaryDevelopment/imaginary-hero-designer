@@ -4,13 +4,13 @@
   "FullName": "Pets.VolcanicGasses",
   "ImageName": "",
   "Power": [
-    6600,
-    6601
+    6598,
+    6599
   ],
   "SetType": 8,
   "DisplayName": "Volcanic Gasses",
   "nArchetype": -1,
-  "nID": 3261,
+  "nID": 3259,
   "SubName": "Earth Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6600,
-      "PowerSetID": 3261,
+      "PowerIndex": 6598,
+      "PowerSetID": 3259,
       "StaticIndex": 1773,
       "NGroupMembership": [],
       "FullName": "Pets.VolcanicGasses.Volcanic_Gasses",
@@ -111,7 +111,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -140,8 +139,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6601,
-      "PowerSetID": 3261,
+      "PowerIndex": 6599,
+      "PowerSetID": 3259,
       "PowerSetIndex": 1,
       "StaticIndex": 1774,
       "NGroupMembership": [],
@@ -236,7 +235,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 77,
           "Summon": "",
           "nSummon": -1,
@@ -267,7 +265,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 16,
           "Summon": "",

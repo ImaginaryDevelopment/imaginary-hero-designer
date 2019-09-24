@@ -4,8 +4,8 @@
   "FullName": "Pets.Defender_Archery_Snipe",
   "ImageName": "",
   "Power": [
-    6221,
-    6222
+    6219,
+    6220
   ],
   "SetType": 8,
   "DisplayName": "Archery",
@@ -24,7 +24,7 @@
     {
       "CastTimeReal": 4.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6221,
+      "PowerIndex": 6219,
       "PowerSetID": 3023,
       "StaticIndex": 9567,
       "NGroupMembership": [],
@@ -135,7 +135,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -169,7 +168,7 @@
     {
       "CastTimeReal": 1.67,
       "ToggleCost": 14.352,
-      "PowerIndex": 6222,
+      "PowerIndex": 6220,
       "PowerSetID": 3023,
       "PowerSetIndex": 1,
       "StaticIndex": 9568,
@@ -279,7 +278,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",

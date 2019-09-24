@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Scourging_Blast_Proc",
   "ImageName": "",
   "Power": [
-    10173
+    10171
   ],
   "SetType": 8,
   "DisplayName": "Scourging Blast",
   "nArchetype": -1,
-  "nID": 3528,
+  "nID": 3526,
   "SubName": "Scourging Blast",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10173,
-      "PowerSetID": 3528,
+      "PowerIndex": 10171,
+      "PowerSetID": 3526,
       "StaticIndex": 9027,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Scourging_Blast_Proc.Scourging_Blast",
@@ -115,7 +115,6 @@
           "Reward": "",
           "EffectId": "Heal",
           "Special": "",
-          "nID": 1,
           "EffectType": 13,
           "Summon": "",
           "nSummon": -1,

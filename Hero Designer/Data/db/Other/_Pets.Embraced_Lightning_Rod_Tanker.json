@@ -4,12 +4,12 @@
   "FullName": "Pets.Embraced_Lightning_Rod_Tanker",
   "ImageName": "",
   "Power": [
-    6258
+    6256
   ],
   "SetType": 8,
   "DisplayName": "Electric Melee",
   "nArchetype": -1,
-  "nID": 3079,
+  "nID": 3077,
   "SubName": "Electric Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6258,
-      "PowerSetID": 3079,
+      "PowerIndex": 6256,
+      "PowerSetID": 3077,
       "StaticIndex": 4420,
       "NGroupMembership": [],
       "FullName": "Pets.Embraced_Lightning_Rod_Tanker.Lightning_Rod",

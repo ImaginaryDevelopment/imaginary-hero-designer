@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Traps_Set_TimeBomb",
   "ImageName": "",
   "Power": [
-    10246
+    10244
   ],
   "SetType": 8,
   "DisplayName": "Time Bomb",
   "nArchetype": -1,
-  "nID": 3552,
+  "nID": 3550,
   "SubName": "Traps",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "Powers": [
     {
       "CastTimeReal": 2.17,
-      "PowerIndex": 10246,
-      "PowerSetID": 3552,
+      "PowerIndex": 10244,
+      "PowerSetID": 3550,
       "StaticIndex": 3176,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Traps_Set_TimeBomb.Time_Bomb",
@@ -119,7 +119,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 16,
           "Summon": "",
@@ -152,7 +151,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -185,7 +183,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 43,
           "Summon": "",
           "nSummon": -1,

@@ -4,16 +4,16 @@
   "FullName": "Villain_Pets.Water_Spout",
   "ImageName": "",
   "Power": [
+    10262,
+    10263,
     10264,
     10265,
-    10266,
-    10267,
-    10268
+    10266
   ],
   "SetType": 8,
   "DisplayName": "Water Spout",
   "nArchetype": -1,
-  "nID": 3564,
+  "nID": 3561,
   "SubName": "Leviathan Mastery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -25,8 +25,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10264,
-      "PowerSetID": 3564,
+      "PowerIndex": 10262,
+      "PowerSetID": 3561,
       "StaticIndex": 3184,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Water_Spout.Water_Spout",
@@ -131,7 +131,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 1,
           "Summon": "",
@@ -167,7 +166,6 @@
           "Reward": "",
           "EffectId": "Stun",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -204,7 +202,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -244,7 +241,6 @@
           "Reward": "",
           "EffectId": "Debuff_Def",
           "Special": "",
-          "nID": 4,
           "EffectType": 5,
           "Summon": "",
           "nSummon": -1,
@@ -274,8 +270,8 @@
       "AoEModifier": 2.05
     },
     {
-      "PowerIndex": 10265,
-      "PowerSetID": 3564,
+      "PowerIndex": 10263,
+      "PowerSetID": 3561,
       "PowerSetIndex": 1,
       "StaticIndex": 3185,
       "NGroupMembership": [],
@@ -364,7 +360,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -397,7 +392,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 28,
           "ETModifies": 13,
           "Summon": "",
@@ -430,7 +424,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 23,
           "Summon": "",
           "nSummon": -1,
@@ -458,8 +451,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10266,
-      "PowerSetID": 3564,
+      "PowerIndex": 10264,
+      "PowerSetID": 3561,
       "PowerSetIndex": 2,
       "StaticIndex": 3186,
       "NGroupMembership": [],
@@ -540,8 +533,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10267,
-      "PowerSetID": 3564,
+      "PowerIndex": 10265,
+      "PowerSetID": 3561,
       "PowerSetIndex": 3,
       "StaticIndex": 3187,
       "NGroupMembership": [],
@@ -625,8 +618,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10268,
-      "PowerSetID": 3564,
+      "PowerIndex": 10266,
+      "PowerSetID": 3561,
       "PowerSetIndex": 4,
       "StaticIndex": 3188,
       "NGroupMembership": [],

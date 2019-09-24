@@ -4,16 +4,16 @@
   "FullName": "Pets.DecoyPhantasm",
   "ImageName": "",
   "Power": [
+    6213,
+    6214,
     6215,
     6216,
-    6217,
-    6218,
-    6219
+    6217
   ],
   "SetType": 8,
   "DisplayName": "Decoy Phantasm",
   "nArchetype": -1,
-  "nID": 3067,
+  "nID": 3065,
   "SubName": "Illusion Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -26,8 +26,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.0,
-      "PowerIndex": 6215,
-      "PowerSetID": 3067,
+      "PowerIndex": 6213,
+      "PowerSetID": 3065,
       "StaticIndex": 1584,
       "NGroupMembership": [],
       "FullName": "Pets.DecoyPhantasm.Power_Bolt",
@@ -121,7 +121,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 8,
           "Summon": "",
@@ -157,7 +156,6 @@
           "Reward": "",
           "EffectId": "InherentTaunt",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -191,8 +189,8 @@
     },
     {
       "CastTimeReal": 1.07,
-      "PowerIndex": 6216,
-      "PowerSetID": 3067,
+      "PowerIndex": 6214,
+      "PowerSetID": 3065,
       "PowerSetIndex": 1,
       "StaticIndex": 1585,
       "NGroupMembership": [],
@@ -289,7 +287,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 8,
           "Summon": "",
@@ -325,7 +322,6 @@
           "Reward": "",
           "EffectId": "InherentTaunt",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -358,8 +354,8 @@
       "AoEModifier": 2.37995839
     },
     {
-      "PowerIndex": 6217,
-      "PowerSetID": 3067,
+      "PowerIndex": 6215,
+      "PowerSetID": 3065,
       "PowerSetIndex": 2,
       "StaticIndex": 1586,
       "NGroupMembership": [],
@@ -448,7 +444,6 @@
           "Reward": "",
           "EffectId": "Control",
           "Special": "",
-          "nID": 1,
           "EffectType": 21,
           "Summon": "",
           "nSummon": -1,
@@ -480,7 +475,6 @@
           "Reward": "",
           "EffectId": "SpeedFlying",
           "Special": "",
-          "nID": 2,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -512,7 +506,6 @@
           "Reward": "",
           "EffectId": "Friction",
           "Special": "",
-          "nID": 3,
           "EffectType": 22,
           "Summon": "",
           "nSummon": -1,
@@ -542,8 +535,8 @@
     {
       "CastTimeReal": 1.716,
       "IsEpic": true,
-      "PowerIndex": 6218,
-      "PowerSetID": 3067,
+      "PowerIndex": 6216,
+      "PowerSetID": 3065,
       "PowerSetIndex": 3,
       "StaticIndex": 1587,
       "NGroupMembership": [],
@@ -570,11 +563,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6215,
+            6213,
             -1
           ],
           [
-            6216,
+            6214,
             -1
           ]
         ],
@@ -610,8 +603,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 6219,
-      "PowerSetID": 3067,
+      "PowerIndex": 6217,
+      "PowerSetID": 3065,
       "PowerSetIndex": 4,
       "StaticIndex": 1588,
       "NGroupMembership": [],
@@ -698,7 +691,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 13,
           "Summon": "",
@@ -731,7 +723,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 19,
           "Summon": "",
@@ -765,7 +756,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 39,
           "Summon": "",
           "nSummon": -1,
@@ -798,7 +788,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 28,
           "ETModifies": 13,
           "Summon": "",

@@ -4,16 +4,16 @@
   "FullName": "Pool.Medicine",
   "ImageName": "Medicine.png",
   "Power": [
+    6677,
+    6678,
     6679,
     6680,
-    6681,
-    6682,
-    6683
+    6681
   ],
   "SetType": 5,
   "DisplayName": "Medicine",
   "nArchetype": -1,
-  "nID": 3293,
+  "nID": 3291,
   "SubName": "Medicine",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -27,8 +27,8 @@
     {
       "CastTimeReal": 3.93,
       "ToggleCost": 6.5,
-      "PowerIndex": 6679,
-      "PowerSetID": 3293,
+      "PowerIndex": 6677,
+      "PowerSetID": 3291,
       "StaticIndex": 1821,
       "NGroupMembership": [],
       "FullName": "Pool.Medicine.Aid_Other",
@@ -101,7 +101,7 @@
           "Special": "",
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6401,
+          "nSummon": 6399,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -118,7 +118,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 1,
           "Override": "Pets.Pool_Medicine_AidOther.AidOther_NoInterrupt",
-          "nOverride": 6401
+          "nOverride": 6399
         },
         {
           "MagnitudeExpression": "",
@@ -131,10 +131,9 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 53,
           "Summon": "",
-          "nSummon": 6402,
+          "nSummon": 6400,
           "Stacking": 1,
           "UIDClassName": "",
           "nIDClassName": -1,
@@ -151,7 +150,7 @@
           "Absorbed_EffectID": -1,
           "UniqueID": 2,
           "Override": "Pets.Pool_Medicine_AidOther.AidOther_Interrupt",
-          "nOverride": 6402
+          "nOverride": 6400
         },
         {
           "MagnitudeExpression": "",
@@ -162,7 +161,6 @@
           "Reward": "",
           "EffectId": "Heal",
           "Special": "",
-          "nID": 2,
           "EffectType": 13,
           "Summon": "",
           "nSummon": -1,
@@ -196,8 +194,8 @@
     {
       "CastTimeReal": 2.93,
       "ToggleCost": 13.0,
-      "PowerIndex": 6680,
-      "PowerSetID": 3293,
+      "PowerIndex": 6678,
+      "PowerSetID": 3291,
       "PowerSetIndex": 1,
       "StaticIndex": 1822,
       "NGroupMembership": [],
@@ -305,7 +303,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 9,
           "Summon": "",
@@ -341,7 +338,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -377,7 +373,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
@@ -413,7 +408,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 1,
           "Summon": "",
@@ -449,7 +443,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 5,
           "EffectType": 19,
           "MezType": 12,
           "Summon": "",
@@ -486,7 +479,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 6,
           "EffectType": 20,
           "MezType": 10,
           "Summon": "",
@@ -521,7 +513,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 7,
           "EffectType": 20,
           "MezType": 9,
           "Summon": "",
@@ -556,7 +547,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 8,
           "EffectType": 20,
           "MezType": 3,
           "Summon": "",
@@ -591,7 +581,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 9,
           "EffectType": 20,
           "MezType": 2,
           "Summon": "",
@@ -626,7 +615,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 10,
           "EffectType": 20,
           "MezType": 1,
           "Summon": "",
@@ -661,7 +649,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 11,
           "EffectType": 20,
           "MezType": 12,
           "Summon": "",
@@ -696,7 +683,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 12,
           "EffectType": 4,
           "DamageType": 1,
           "Summon": "",
@@ -733,7 +719,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 13,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -770,7 +755,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 14,
           "EffectType": 4,
           "DamageType": 3,
           "Summon": "",
@@ -807,7 +791,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 15,
           "EffectType": 4,
           "DamageType": 4,
           "Summon": "",
@@ -844,7 +827,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 16,
           "EffectType": 4,
           "DamageType": 5,
           "Summon": "",
@@ -881,7 +863,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 17,
           "EffectType": 4,
           "DamageType": 6,
           "Summon": "",
@@ -918,7 +899,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 18,
           "EffectType": 4,
           "DamageType": 7,
           "Summon": "",
@@ -955,7 +935,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 19,
           "EffectType": 4,
           "DamageType": 8,
           "Summon": "",
@@ -992,7 +971,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 20,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -1029,7 +1007,6 @@
           "Reward": "",
           "EffectId": "DeBuff_ToHit",
           "Special": "",
-          "nID": 21,
           "EffectType": 40,
           "Summon": "",
           "nSummon": -1,
@@ -1065,7 +1042,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 22,
           "EffectType": 4,
           "DamageType": 1,
           "Summon": "",
@@ -1102,7 +1078,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 23,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -1139,7 +1114,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 24,
           "EffectType": 4,
           "DamageType": 3,
           "Summon": "",
@@ -1176,7 +1150,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 25,
           "EffectType": 4,
           "DamageType": 4,
           "Summon": "",
@@ -1213,7 +1186,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 26,
           "EffectType": 4,
           "DamageType": 5,
           "Summon": "",
@@ -1250,7 +1222,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 27,
           "EffectType": 4,
           "DamageType": 6,
           "Summon": "",
@@ -1287,7 +1258,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 28,
           "EffectType": 4,
           "DamageType": 7,
           "Summon": "",
@@ -1324,7 +1294,6 @@
           "Reward": "",
           "EffectId": "Debuff_Dam",
           "Special": "",
-          "nID": 29,
           "EffectType": 4,
           "DamageType": 8,
           "Summon": "",
@@ -1361,7 +1330,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 30,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -1398,7 +1366,6 @@
           "Reward": "",
           "EffectId": "DeBuff_ToHit",
           "Special": "",
-          "nID": 31,
           "EffectType": 40,
           "Summon": "",
           "nSummon": -1,
@@ -1433,8 +1400,8 @@
       "CastTimeReal": 4.33,
       "ToggleCost": 13.0,
       "IsEpic": true,
-      "PowerIndex": 6681,
-      "PowerSetID": 3293,
+      "PowerIndex": 6679,
+      "PowerSetID": 3291,
       "PowerSetIndex": 2,
       "StaticIndex": 1823,
       "NGroupMembership": [],
@@ -1461,11 +1428,11 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6679,
+            6677,
             -1
           ],
           [
-            6680,
+            6678,
             -1
           ]
         ],
@@ -1556,7 +1523,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 7,
           "Summon": "",
           "nSummon": -1,
@@ -1591,7 +1557,6 @@
           "Reward": "",
           "EffectId": "Res_Boolean",
           "Special": "",
-          "nID": 2,
           "EffectType": 20,
           "MezType": 10,
           "Summon": "",
@@ -1624,8 +1589,8 @@
       "CastTimeReal": 3.33,
       "ToggleCost": 19.5,
       "IsEpic": true,
-      "PowerIndex": 6682,
-      "PowerSetID": 3293,
+      "PowerIndex": 6680,
+      "PowerSetID": 3291,
       "PowerSetIndex": 3,
       "StaticIndex": 9616,
       "NGroupMembership": [],
@@ -1668,28 +1633,28 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6679,
-            6680
+            6677,
+            6678
           ],
           [
-            6679,
+            6677,
+            6679
+          ],
+          [
+            6677,
+            6681
+          ],
+          [
+            6678,
+            6679
+          ],
+          [
+            6678,
             6681
           ],
           [
             6679,
-            6683
-          ],
-          [
-            6680,
             6681
-          ],
-          [
-            6680,
-            6683
-          ],
-          [
-            6681,
-            6683
           ]
         ],
         "NPowerIDNot": []
@@ -1775,7 +1740,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 28,
           "ETModifies": 13,
           "Summon": "",
@@ -1808,8 +1772,8 @@
       "CastTimeReal": 7.33,
       "ToggleCost": 32.5,
       "IsEpic": true,
-      "PowerIndex": 6683,
-      "PowerSetID": 3293,
+      "PowerIndex": 6681,
+      "PowerSetID": 3291,
       "PowerSetIndex": 4,
       "StaticIndex": 1824,
       "NGroupMembership": [],
@@ -1840,16 +1804,16 @@
         "NClassNameNot": [],
         "NPowerID": [
           [
-            6679,
-            6680
+            6677,
+            6678
           ],
           [
-            6679,
-            6681
+            6677,
+            6679
           ],
           [
-            6680,
-            6681
+            6678,
+            6679
           ]
         ],
         "NPowerIDNot": []
@@ -1940,7 +1904,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 42,
           "Summon": "",
           "nSummon": -1,

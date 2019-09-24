@@ -4,12 +4,12 @@
   "FullName": "Pets.ResistAllFast",
   "ImageName": "",
   "Power": [
-    6437
+    6435
   ],
   "SetType": 8,
   "DisplayName": "ResistAll",
   "nArchetype": -1,
-  "nID": 3194,
+  "nID": 3192,
   "SubName": "Resistance",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6437,
-      "PowerSetID": 3194,
+      "PowerIndex": 6435,
+      "PowerSetID": 3192,
       "StaticIndex": 8968,
       "NGroupMembership": [],
       "FullName": "Pets.ResistAllFast.ResistAll",
@@ -110,7 +110,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,
@@ -143,7 +142,6 @@
           "Reward": "",
           "EffectId": "SpeedFlying",
           "Special": "",
-          "nID": 2,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -176,7 +174,6 @@
           "Reward": "",
           "EffectId": "SpeedRunning",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,

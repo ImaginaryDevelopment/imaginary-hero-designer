@@ -4,13 +4,13 @@
   "FullName": "Pets.RainofArrows_Sentinel",
   "ImageName": "",
   "Power": [
-    6429,
-    6430
+    6427,
+    6428
   ],
   "SetType": 8,
   "DisplayName": "Rain of Arrows",
   "nArchetype": -1,
-  "nID": 3187,
+  "nID": 3183,
   "SubName": "Archery",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6429,
-      "PowerSetID": 3187,
+      "PowerIndex": 6427,
+      "PowerSetID": 3183,
       "StaticIndex": 10626,
       "NGroupMembership": [],
       "FullName": "Pets.RainofArrows_Sentinel.RainofArrows",
@@ -116,7 +116,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -149,7 +148,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 2,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -180,8 +178,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 6430,
-      "PowerSetID": 3187,
+      "PowerIndex": 6428,
+      "PowerSetID": 3183,
       "PowerSetIndex": 1,
       "StaticIndex": 10627,
       "NGroupMembership": [],

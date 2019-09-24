@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Damage",
   "ImageName": "",
   "Power": [
-    6496
+    6494
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3240,
+  "nID": 3238,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6496,
-      "PowerSetID": 3240,
+      "PowerIndex": 6494,
+      "PowerSetID": 3238,
       "StaticIndex": 1731,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Damage.Explosion",
@@ -110,7 +110,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 3,
           "Summon": "",
@@ -144,7 +143,6 @@
           "Reward": "",
           "EffectId": "Stun",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -179,7 +177,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",

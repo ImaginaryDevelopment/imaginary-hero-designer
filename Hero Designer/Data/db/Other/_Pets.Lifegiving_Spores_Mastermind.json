@@ -4,12 +4,12 @@
   "FullName": "Pets.Lifegiving_Spores_Mastermind",
   "ImageName": "",
   "Power": [
-    6327
+    6325
   ],
   "SetType": 8,
   "DisplayName": "Lifegiving Spores",
   "nArchetype": -1,
-  "nID": 3131,
+  "nID": 3128,
   "SubName": "Nature Affinity",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "Powers": [
     {
       "CastTimeReal": 3.1,
-      "PowerIndex": 6327,
-      "PowerSetID": 3131,
+      "PowerIndex": 6325,
+      "PowerSetID": 3128,
       "StaticIndex": 9107,
       "NGroupMembership": [],
       "FullName": "Pets.Lifegiving_Spores_Mastermind.Lifegiving_Spores",
@@ -118,7 +118,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 7,
           "Summon": "",
           "nSummon": -1,

@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Technology Endurance",
   "nArchetype": -1,
-  "nID": 2514,
+  "nID": 2513,
   "SubName": "Cybernetics (Technology)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2751,
-      "PowerSetID": 2514,
+      "PowerSetID": 2513,
       "StaticIndex": 8587,
       "NGroupMembership": [],
       "FullName": "Boosts.Technology_Drain_Endurance.Technology_Drain_Endurance",
@@ -116,7 +116,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 26,
           "Summon": "",

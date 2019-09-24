@@ -4,17 +4,17 @@
   "FullName": "Pets.Pool_Leadership_VictoryRush",
   "ImageName": "",
   "Power": [
+    6393,
+    6394,
     6395,
     6396,
     6397,
-    6398,
-    6399,
-    6400
+    6398
   ],
   "SetType": 8,
   "DisplayName": "Leadership",
   "nArchetype": -1,
-  "nID": 3128,
+  "nID": 3126,
   "SubName": "Leadership",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -26,8 +26,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6395,
-      "PowerSetID": 3128,
+      "PowerIndex": 6393,
+      "PowerSetID": 3126,
       "StaticIndex": 9593,
       "NGroupMembership": [],
       "FullName": "Pets.Pool_Leadership_VictoryRush.VictoryRush_Base",
@@ -124,7 +124,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",
@@ -153,8 +152,8 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6396,
-      "PowerSetID": 3128,
+      "PowerIndex": 6394,
+      "PowerSetID": 3126,
       "PowerSetIndex": 1,
       "StaticIndex": 9598,
       "NGroupMembership": [],
@@ -251,7 +250,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",
@@ -280,8 +278,8 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6397,
-      "PowerSetID": 3128,
+      "PowerIndex": 6395,
+      "PowerSetID": 3126,
       "PowerSetIndex": 2,
       "StaticIndex": 9596,
       "NGroupMembership": [],
@@ -378,7 +376,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",
@@ -407,8 +404,8 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6398,
-      "PowerSetID": 3128,
+      "PowerIndex": 6396,
+      "PowerSetID": 3126,
       "PowerSetIndex": 3,
       "StaticIndex": 9597,
       "NGroupMembership": [],
@@ -505,7 +502,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",
@@ -534,8 +530,8 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6399,
-      "PowerSetID": 3128,
+      "PowerIndex": 6397,
+      "PowerSetID": 3126,
       "PowerSetIndex": 4,
       "StaticIndex": 9595,
       "NGroupMembership": [],
@@ -632,7 +628,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",
@@ -661,8 +656,8 @@
       "AoEModifier": 23.5
     },
     {
-      "PowerIndex": 6400,
-      "PowerSetID": 3128,
+      "PowerIndex": 6398,
+      "PowerSetID": 3126,
       "PowerSetIndex": 5,
       "StaticIndex": 9594,
       "NGroupMembership": [],
@@ -759,7 +754,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",

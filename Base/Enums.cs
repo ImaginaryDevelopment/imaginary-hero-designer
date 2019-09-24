@@ -1194,7 +1194,9 @@ public static class Enums
         EfficientAdaptation,
         OffensiveAdaptation,
         NotDefensiveAdaptation,
-        NotDefensiveNorOffensiveAdaptation
+        NotDefensiveNorOffensiveAdaptation,
+        BoxingBuff,
+        KickBuff
     }
 
     public enum eDDStyle

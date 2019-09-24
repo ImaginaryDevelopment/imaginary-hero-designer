@@ -4,6 +4,8 @@
   "FullName": "Temporary_Powers.Day_Job_Powers",
   "ImageName": "",
   "Power": [
+    8842,
+    8843,
     8844,
     8845,
     8846,
@@ -110,14 +112,12 @@
     8947,
     8948,
     8949,
-    8950,
-    8951,
-    8952
+    8950
   ],
   "SetType": 7,
   "DisplayName": "Day Job Powers",
   "nArchetype": -1,
-  "nID": 3428,
+  "nID": 3426,
   "SubName": "Day Job Powers",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -129,8 +129,8 @@
   "GroupName": "Temporary_Powers",
   "Powers": [
     {
-      "PowerIndex": 8844,
-      "PowerSetID": 3428,
+      "PowerIndex": 8842,
+      "PowerSetID": 3426,
       "StaticIndex": 4694,
       "NGroupMembership": [],
       "FullName": "Temporary_Powers.Day_Job_Powers.Day_Job_Movement_Increase_Lesser",
@@ -220,7 +220,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -253,7 +252,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 16,
           "Summon": "",
           "nSummon": -1,
@@ -286,7 +284,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -316,8 +313,8 @@
     {
       "CastTimeReal": 2.27,
       "ToggleCost": 13.0,
-      "PowerIndex": 8845,
-      "PowerSetID": 3428,
+      "PowerIndex": 8843,
+      "PowerSetID": 3426,
       "PowerSetIndex": 1,
       "StaticIndex": 4749,
       "NGroupMembership": [],
@@ -405,8 +402,8 @@
     {
       "CastTimeReal": 2.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 8846,
-      "PowerSetID": 3428,
+      "PowerIndex": 8844,
+      "PowerSetID": 3426,
       "PowerSetIndex": 2,
       "StaticIndex": 4760,
       "NGroupMembership": [],
@@ -493,7 +490,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -529,7 +525,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,
@@ -563,7 +558,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -597,7 +591,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 21,
           "Summon": "",
           "nSummon": -1,
@@ -631,7 +624,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 22,
           "Summon": "",
           "nSummon": -1,
@@ -660,8 +652,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8847,
-      "PowerSetID": 3428,
+      "PowerIndex": 8845,
+      "PowerSetID": 3426,
       "PowerSetIndex": 3,
       "StaticIndex": 6070,
       "NGroupMembership": [],
@@ -742,8 +734,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8848,
-      "PowerSetID": 3428,
+      "PowerIndex": 8846,
+      "PowerSetID": 3426,
       "PowerSetIndex": 4,
       "StaticIndex": 4722,
       "NGroupMembership": [],
@@ -825,8 +817,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8849,
-      "PowerSetID": 3428,
+      "PowerIndex": 8847,
+      "PowerSetID": 3426,
       "PowerSetIndex": 5,
       "StaticIndex": 4721,
       "NGroupMembership": [],
@@ -908,8 +900,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8850,
-      "PowerSetID": 3428,
+      "PowerIndex": 8848,
+      "PowerSetID": 3426,
       "PowerSetIndex": 6,
       "StaticIndex": 6069,
       "NGroupMembership": [],
@@ -992,8 +984,8 @@
     {
       "CastTimeReal": 3.1,
       "ToggleCost": 18.98,
-      "PowerIndex": 8851,
-      "PowerSetID": 3428,
+      "PowerIndex": 8849,
+      "PowerSetID": 3426,
       "PowerSetIndex": 7,
       "StaticIndex": 4754,
       "NGroupMembership": [],
@@ -1083,7 +1075,6 @@
           "Reward": "",
           "EffectId": "TempDamage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 5,
           "Summon": "",
@@ -1114,8 +1105,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8852,
-      "PowerSetID": 3428,
+      "PowerIndex": 8850,
+      "PowerSetID": 3426,
       "PowerSetIndex": 8,
       "StaticIndex": 6073,
       "NGroupMembership": [],
@@ -1196,8 +1187,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8853,
-      "PowerSetID": 3428,
+      "PowerIndex": 8851,
+      "PowerSetID": 3426,
       "PowerSetIndex": 9,
       "StaticIndex": 4744,
       "NGroupMembership": [],
@@ -1279,8 +1270,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8854,
-      "PowerSetID": 3428,
+      "PowerIndex": 8852,
+      "PowerSetID": 3426,
       "PowerSetIndex": 10,
       "StaticIndex": 4743,
       "NGroupMembership": [],
@@ -1362,8 +1353,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8855,
-      "PowerSetID": 3428,
+      "PowerIndex": 8853,
+      "PowerSetID": 3426,
       "PowerSetIndex": 11,
       "StaticIndex": 6057,
       "NGroupMembership": [],
@@ -1445,8 +1436,8 @@
     },
     {
       "CastTimeReal": 15.0,
-      "PowerIndex": 8856,
-      "PowerSetID": 3428,
+      "PowerIndex": 8854,
+      "PowerSetID": 3426,
       "PowerSetIndex": 12,
       "StaticIndex": 4729,
       "NGroupMembership": [],
@@ -1532,7 +1523,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1568,7 +1558,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -1597,8 +1586,8 @@
     },
     {
       "CastTimeReal": 15.0,
-      "PowerIndex": 8857,
-      "PowerSetID": 3428,
+      "PowerIndex": 8855,
+      "PowerSetID": 3426,
       "PowerSetIndex": 13,
       "StaticIndex": 4728,
       "NGroupMembership": [],
@@ -1684,7 +1673,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -1720,7 +1708,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -1748,8 +1735,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8858,
-      "PowerSetID": 3428,
+      "PowerIndex": 8856,
+      "PowerSetID": 3426,
       "PowerSetIndex": 14,
       "StaticIndex": 4714,
       "NGroupMembership": [],
@@ -1831,8 +1818,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8859,
-      "PowerSetID": 3428,
+      "PowerIndex": 8857,
+      "PowerSetID": 3426,
       "PowerSetIndex": 15,
       "StaticIndex": 4713,
       "NGroupMembership": [],
@@ -1914,8 +1901,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8860,
-      "PowerSetID": 3428,
+      "PowerIndex": 8858,
+      "PowerSetID": 3426,
       "PowerSetIndex": 16,
       "StaticIndex": 6055,
       "NGroupMembership": [],
@@ -1998,8 +1985,8 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 9.75,
-      "PowerIndex": 8861,
-      "PowerSetID": 3428,
+      "PowerIndex": 8859,
+      "PowerSetID": 3426,
       "PowerSetIndex": 17,
       "StaticIndex": 4757,
       "NGroupMembership": [],
@@ -2096,7 +2083,6 @@
           "Reward": "",
           "EffectId": "DeBuff_ToHit",
           "Special": "",
-          "nID": 1,
           "EffectType": 40,
           "Summon": "",
           "nSummon": -1,
@@ -2131,7 +2117,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 23,
           "Summon": "",
           "nSummon": -1,
@@ -2163,8 +2148,8 @@
       "AoEModifier": 6.25
     },
     {
-      "PowerIndex": 8862,
-      "PowerSetID": 3428,
+      "PowerIndex": 8860,
+      "PowerSetID": 3426,
       "PowerSetIndex": 18,
       "StaticIndex": 6052,
       "NGroupMembership": [],
@@ -2245,8 +2230,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8863,
-      "PowerSetID": 3428,
+      "PowerIndex": 8861,
+      "PowerSetID": 3426,
       "PowerSetIndex": 19,
       "StaticIndex": 6063,
       "NGroupMembership": [],
@@ -2327,8 +2312,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8864,
-      "PowerSetID": 3428,
+      "PowerIndex": 8862,
+      "PowerSetID": 3426,
       "PowerSetIndex": 20,
       "StaticIndex": 4710,
       "NGroupMembership": [],
@@ -2410,8 +2395,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8865,
-      "PowerSetID": 3428,
+      "PowerIndex": 8863,
+      "PowerSetID": 3426,
       "PowerSetIndex": 21,
       "StaticIndex": 4709,
       "NGroupMembership": [],
@@ -2493,8 +2478,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8866,
-      "PowerSetID": 3428,
+      "PowerIndex": 8864,
+      "PowerSetID": 3426,
       "PowerSetIndex": 22,
       "StaticIndex": 6046,
       "NGroupMembership": [],
@@ -2575,8 +2560,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8867,
-      "PowerSetID": 3428,
+      "PowerIndex": 8865,
+      "PowerSetID": 3426,
       "PowerSetIndex": 23,
       "StaticIndex": 4733,
       "NGroupMembership": [],
@@ -2628,8 +2613,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8868,
-      "PowerSetID": 3428,
+      "PowerIndex": 8866,
+      "PowerSetID": 3426,
       "PowerSetIndex": 24,
       "StaticIndex": 4732,
       "NGroupMembership": [],
@@ -2681,8 +2666,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8869,
-      "PowerSetID": 3428,
+      "PowerIndex": 8867,
+      "PowerSetID": 3426,
       "PowerSetIndex": 25,
       "StaticIndex": 6062,
       "NGroupMembership": [],
@@ -2763,8 +2748,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8870,
-      "PowerSetID": 3428,
+      "PowerIndex": 8868,
+      "PowerSetID": 3426,
       "PowerSetIndex": 26,
       "StaticIndex": 6056,
       "NGroupMembership": [],
@@ -2847,8 +2832,8 @@
     {
       "CastTimeReal": 0.73,
       "ToggleCost": 0.325,
-      "PowerIndex": 8871,
-      "PowerSetID": 3428,
+      "PowerIndex": 8869,
+      "PowerSetID": 3426,
       "PowerSetIndex": 27,
       "StaticIndex": 4755,
       "NGroupMembership": [],
@@ -2942,7 +2927,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 1,
           "EffectType": 5,
           "DamageType": 2,
           "Summon": "",
@@ -2977,7 +2961,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 2,
           "EffectType": 5,
           "DamageType": 5,
           "Summon": "",
@@ -3007,8 +2990,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8872,
-      "PowerSetID": 3428,
+      "PowerIndex": 8870,
+      "PowerSetID": 3426,
       "PowerSetIndex": 28,
       "StaticIndex": 6048,
       "NGroupMembership": [],
@@ -3089,8 +3072,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8873,
-      "PowerSetID": 3428,
+      "PowerIndex": 8871,
+      "PowerSetID": 3426,
       "PowerSetIndex": 29,
       "StaticIndex": 4726,
       "NGroupMembership": [],
@@ -3172,8 +3155,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8874,
-      "PowerSetID": 3428,
+      "PowerIndex": 8872,
+      "PowerSetID": 3426,
       "PowerSetIndex": 30,
       "StaticIndex": 6067,
       "NGroupMembership": [],
@@ -3254,8 +3237,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8875,
-      "PowerSetID": 3428,
+      "PowerIndex": 8873,
+      "PowerSetID": 3426,
       "PowerSetIndex": 31,
       "StaticIndex": 6233,
       "NGroupMembership": [],
@@ -3336,8 +3319,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8876,
-      "PowerSetID": 3428,
+      "PowerIndex": 8874,
+      "PowerSetID": 3426,
       "PowerSetIndex": 32,
       "StaticIndex": 6232,
       "NGroupMembership": [],
@@ -3429,7 +3412,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 1,
           "EffectType": 29,
           "DamageType": 6,
           "Summon": "",
@@ -3463,7 +3445,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 2,
           "EffectType": 5,
           "DamageType": 4,
           "Summon": "",
@@ -3498,7 +3479,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 3,
           "EffectType": 5,
           "DamageType": 6,
           "Summon": "",
@@ -3528,8 +3508,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8877,
-      "PowerSetID": 3428,
+      "PowerIndex": 8875,
+      "PowerSetID": 3426,
       "PowerSetIndex": 33,
       "StaticIndex": 6231,
       "NGroupMembership": [],
@@ -3621,7 +3601,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 1,
           "EffectType": 29,
           "DamageType": 6,
           "Summon": "",
@@ -3655,7 +3634,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 2,
           "EffectType": 5,
           "DamageType": 4,
           "Summon": "",
@@ -3690,7 +3668,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 3,
           "EffectType": 5,
           "DamageType": 6,
           "Summon": "",
@@ -3720,8 +3697,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8878,
-      "PowerSetID": 3428,
+      "PowerIndex": 8876,
+      "PowerSetID": 3426,
       "PowerSetIndex": 34,
       "StaticIndex": 4705,
       "NGroupMembership": [],
@@ -3813,7 +3790,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 1,
           "EffectType": 29,
           "DamageType": 1,
           "Summon": "",
@@ -3847,7 +3823,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 2,
           "EffectType": 29,
           "DamageType": 3,
           "Summon": "",
@@ -3881,7 +3856,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 3,
           "EffectType": 29,
           "DamageType": 8,
           "Summon": "",
@@ -3915,7 +3889,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 4,
           "EffectType": 29,
           "DamageType": 4,
           "Summon": "",
@@ -3949,7 +3922,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 5,
           "EffectType": 29,
           "DamageType": 5,
           "Summon": "",
@@ -3983,7 +3955,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 6,
           "EffectType": 29,
           "DamageType": 6,
           "Summon": "",
@@ -4017,7 +3988,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 7,
           "EffectType": 29,
           "DamageType": 7,
           "Summon": "",
@@ -4046,8 +4016,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8879,
-      "PowerSetID": 3428,
+      "PowerIndex": 8877,
+      "PowerSetID": 3426,
       "PowerSetIndex": 35,
       "StaticIndex": 4704,
       "NGroupMembership": [],
@@ -4139,7 +4109,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 1,
           "EffectType": 29,
           "DamageType": 1,
           "Summon": "",
@@ -4173,7 +4142,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 2,
           "EffectType": 29,
           "DamageType": 3,
           "Summon": "",
@@ -4207,7 +4175,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 3,
           "EffectType": 29,
           "DamageType": 8,
           "Summon": "",
@@ -4241,7 +4208,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 4,
           "EffectType": 29,
           "DamageType": 4,
           "Summon": "",
@@ -4275,7 +4241,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 5,
           "EffectType": 29,
           "DamageType": 5,
           "Summon": "",
@@ -4309,7 +4274,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 6,
           "EffectType": 29,
           "DamageType": 6,
           "Summon": "",
@@ -4343,7 +4307,6 @@
           "Reward": "",
           "EffectId": "Res_Dmg",
           "Special": "",
-          "nID": 7,
           "EffectType": 29,
           "DamageType": 7,
           "Summon": "",
@@ -4372,8 +4335,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8880,
-      "PowerSetID": 3428,
+      "PowerIndex": 8878,
+      "PowerSetID": 3426,
       "PowerSetIndex": 36,
       "StaticIndex": 5708,
       "NGroupMembership": [],
@@ -4465,7 +4428,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 4,
           "DamageType": 1,
           "Summon": "",
@@ -4500,7 +4462,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -4535,7 +4496,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 4,
           "DamageType": 3,
           "Summon": "",
@@ -4570,7 +4530,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 4,
           "DamageType": 8,
           "Summon": "",
@@ -4605,7 +4564,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 4,
           "DamageType": 4,
           "Summon": "",
@@ -4640,7 +4598,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 6,
           "EffectType": 4,
           "DamageType": 5,
           "Summon": "",
@@ -4675,7 +4632,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 7,
           "EffectType": 4,
           "DamageType": 6,
           "Summon": "",
@@ -4710,7 +4666,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 8,
           "EffectType": 4,
           "DamageType": 7,
           "Summon": "",
@@ -4745,7 +4700,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 9,
           "EffectType": 9,
           "ETModifies": 24,
           "Summon": "",
@@ -4775,8 +4729,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8881,
-      "PowerSetID": 3428,
+      "PowerIndex": 8879,
+      "PowerSetID": 3426,
       "PowerSetIndex": 37,
       "StaticIndex": 5707,
       "NGroupMembership": [],
@@ -4868,7 +4822,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 4,
           "DamageType": 1,
           "Summon": "",
@@ -4903,7 +4856,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -4938,7 +4890,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 4,
           "DamageType": 3,
           "Summon": "",
@@ -4973,7 +4924,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 4,
           "DamageType": 8,
           "Summon": "",
@@ -5008,7 +4958,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 4,
           "DamageType": 4,
           "Summon": "",
@@ -5043,7 +4992,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 6,
           "EffectType": 4,
           "DamageType": 5,
           "Summon": "",
@@ -5078,7 +5026,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 7,
           "EffectType": 4,
           "DamageType": 6,
           "Summon": "",
@@ -5113,7 +5060,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 8,
           "EffectType": 4,
           "DamageType": 7,
           "Summon": "",
@@ -5148,7 +5094,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 9,
           "EffectType": 9,
           "ETModifies": 24,
           "Summon": "",
@@ -5178,8 +5123,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8882,
-      "PowerSetID": 3428,
+      "PowerIndex": 8880,
+      "PowerSetID": 3426,
       "PowerSetIndex": 38,
       "StaticIndex": 4707,
       "NGroupMembership": [],
@@ -5265,8 +5210,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8883,
-      "PowerSetID": 3428,
+      "PowerIndex": 8881,
+      "PowerSetID": 3426,
       "PowerSetIndex": 39,
       "StaticIndex": 4706,
       "NGroupMembership": [],
@@ -5352,8 +5297,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8884,
-      "PowerSetID": 3428,
+      "PowerIndex": 8882,
+      "PowerSetID": 3426,
       "PowerSetIndex": 40,
       "StaticIndex": 4701,
       "NGroupMembership": [],
@@ -5437,8 +5382,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8885,
-      "PowerSetID": 3428,
+      "PowerIndex": 8883,
+      "PowerSetID": 3426,
       "PowerSetIndex": 41,
       "StaticIndex": 4700,
       "NGroupMembership": [],
@@ -5522,8 +5467,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8886,
-      "PowerSetID": 3428,
+      "PowerIndex": 8884,
+      "PowerSetID": 3426,
       "PowerSetIndex": 42,
       "StaticIndex": 4703,
       "NGroupMembership": [],
@@ -5610,8 +5555,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8887,
-      "PowerSetID": 3428,
+      "PowerIndex": 8885,
+      "PowerSetID": 3426,
       "PowerSetIndex": 43,
       "StaticIndex": 4702,
       "NGroupMembership": [],
@@ -5698,8 +5643,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8888,
-      "PowerSetID": 3428,
+      "PowerIndex": 8886,
+      "PowerSetID": 3426,
       "PowerSetIndex": 44,
       "StaticIndex": 4699,
       "NGroupMembership": [],
@@ -5786,8 +5731,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8889,
-      "PowerSetID": 3428,
+      "PowerIndex": 8887,
+      "PowerSetID": 3426,
       "PowerSetIndex": 45,
       "StaticIndex": 4698,
       "NGroupMembership": [],
@@ -5875,8 +5820,8 @@
     },
     {
       "ToggleCost": 0.195,
-      "PowerIndex": 8890,
-      "PowerSetID": 3428,
+      "PowerIndex": 8888,
+      "PowerSetID": 3426,
       "PowerSetIndex": 46,
       "StaticIndex": 4742,
       "NGroupMembership": [
@@ -5971,7 +5916,6 @@
           "Reward": "",
           "EffectId": "SpeedFlying",
           "Special": "",
-          "nID": 1,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -6006,7 +5950,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -6040,7 +5983,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -6073,7 +6015,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -6106,7 +6047,6 @@
           "Reward": "",
           "EffectId": "Control",
           "Special": "",
-          "nID": 5,
           "EffectType": 21,
           "Summon": "",
           "nSummon": -1,
@@ -6140,7 +6080,6 @@
           "Reward": "",
           "EffectId": "Friction",
           "Special": "",
-          "nID": 6,
           "EffectType": 22,
           "Summon": "",
           "nSummon": -1,
@@ -6169,8 +6108,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8891,
-      "PowerSetID": 3428,
+      "PowerIndex": 8889,
+      "PowerSetID": 3426,
       "PowerSetIndex": 47,
       "StaticIndex": 4695,
       "NGroupMembership": [],
@@ -6260,7 +6199,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -6293,7 +6231,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 16,
           "Summon": "",
           "nSummon": -1,
@@ -6326,7 +6263,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -6354,8 +6290,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8892,
-      "PowerSetID": 3428,
+      "PowerIndex": 8890,
+      "PowerSetID": 3426,
       "PowerSetIndex": 48,
       "StaticIndex": 5706,
       "NGroupMembership": [],
@@ -6447,7 +6383,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 1,
           "EffectType": 5,
           "DamageType": 8,
           "Summon": "",
@@ -6477,8 +6412,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8893,
-      "PowerSetID": 3428,
+      "PowerIndex": 8891,
+      "PowerSetID": 3426,
       "PowerSetIndex": 49,
       "StaticIndex": 5705,
       "NGroupMembership": [],
@@ -6570,7 +6505,6 @@
           "Reward": "",
           "EffectId": "Buff_Def",
           "Special": "",
-          "nID": 1,
           "EffectType": 5,
           "DamageType": 8,
           "Summon": "",
@@ -6600,8 +6534,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8894,
-      "PowerSetID": 3428,
+      "PowerIndex": 8892,
+      "PowerSetID": 3426,
       "PowerSetIndex": 50,
       "StaticIndex": 4712,
       "NGroupMembership": [],
@@ -6683,8 +6617,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8895,
-      "PowerSetID": 3428,
+      "PowerIndex": 8893,
+      "PowerSetID": 3426,
       "PowerSetIndex": 51,
       "StaticIndex": 4711,
       "NGroupMembership": [],
@@ -6766,8 +6700,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8896,
-      "PowerSetID": 3428,
+      "PowerIndex": 8894,
+      "PowerSetID": 3426,
       "PowerSetIndex": 52,
       "StaticIndex": 6072,
       "NGroupMembership": [],
@@ -6848,8 +6782,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8897,
-      "PowerSetID": 3428,
+      "PowerIndex": 8895,
+      "PowerSetID": 3426,
       "PowerSetIndex": 53,
       "StaticIndex": 6050,
       "NGroupMembership": [],
@@ -6932,8 +6866,8 @@
     {
       "CastTimeReal": 7.33,
       "ToggleCost": 32.5,
-      "PowerIndex": 8898,
-      "PowerSetID": 3428,
+      "PowerIndex": 8896,
+      "PowerSetID": 3426,
       "PowerSetIndex": 54,
       "StaticIndex": 4748,
       "NGroupMembership": [],
@@ -7027,7 +6961,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 42,
           "Summon": "",
           "nSummon": -1,
@@ -7055,8 +6988,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8899,
-      "PowerSetID": 3428,
+      "PowerIndex": 8897,
+      "PowerSetID": 3426,
       "PowerSetIndex": 55,
       "StaticIndex": 6061,
       "NGroupMembership": [],
@@ -7137,8 +7070,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8900,
-      "PowerSetID": 3428,
+      "PowerIndex": 8898,
+      "PowerSetID": 3426,
       "PowerSetIndex": 56,
       "StaticIndex": 6075,
       "NGroupMembership": [],
@@ -7219,8 +7152,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8901,
-      "PowerSetID": 3428,
+      "PowerIndex": 8899,
+      "PowerSetID": 3426,
       "PowerSetIndex": 57,
       "StaticIndex": 4758,
       "NGroupMembership": [],
@@ -7272,8 +7205,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8902,
-      "PowerSetID": 3428,
+      "PowerIndex": 8900,
+      "PowerSetID": 3426,
       "PowerSetIndex": 58,
       "StaticIndex": 6066,
       "NGroupMembership": [],
@@ -7354,8 +7287,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8903,
-      "PowerSetID": 3428,
+      "PowerIndex": 8901,
+      "PowerSetID": 3426,
       "PowerSetIndex": 59,
       "StaticIndex": 4739,
       "NGroupMembership": [],
@@ -7440,8 +7373,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8904,
-      "PowerSetID": 3428,
+      "PowerIndex": 8902,
+      "PowerSetID": 3426,
       "PowerSetIndex": 60,
       "StaticIndex": 4738,
       "NGroupMembership": [],
@@ -7526,8 +7459,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8905,
-      "PowerSetID": 3428,
+      "PowerIndex": 8903,
+      "PowerSetID": 3426,
       "PowerSetIndex": 61,
       "StaticIndex": 4741,
       "NGroupMembership": [],
@@ -7612,8 +7545,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8906,
-      "PowerSetID": 3428,
+      "PowerIndex": 8904,
+      "PowerSetID": 3426,
       "PowerSetIndex": 62,
       "StaticIndex": 4740,
       "NGroupMembership": [],
@@ -7698,8 +7631,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8907,
-      "PowerSetID": 3428,
+      "PowerIndex": 8905,
+      "PowerSetID": 3426,
       "PowerSetIndex": 63,
       "StaticIndex": 6064,
       "NGroupMembership": [],
@@ -7780,8 +7713,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8908,
-      "PowerSetID": 3428,
+      "PowerIndex": 8906,
+      "PowerSetID": 3426,
       "PowerSetIndex": 64,
       "StaticIndex": 4725,
       "NGroupMembership": [],
@@ -7863,8 +7796,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8909,
-      "PowerSetID": 3428,
+      "PowerIndex": 8907,
+      "PowerSetID": 3426,
       "PowerSetIndex": 65,
       "StaticIndex": 6051,
       "NGroupMembership": [],
@@ -7945,8 +7878,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8910,
-      "PowerSetID": 3428,
+      "PowerIndex": 8908,
+      "PowerSetID": 3426,
       "PowerSetIndex": 66,
       "StaticIndex": 6047,
       "NGroupMembership": [],
@@ -8027,8 +7960,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8911,
-      "PowerSetID": 3428,
+      "PowerIndex": 8909,
+      "PowerSetID": 3426,
       "PowerSetIndex": 67,
       "StaticIndex": 4720,
       "NGroupMembership": [],
@@ -8110,8 +8043,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8912,
-      "PowerSetID": 3428,
+      "PowerIndex": 8910,
+      "PowerSetID": 3426,
       "PowerSetIndex": 68,
       "StaticIndex": 4719,
       "NGroupMembership": [],
@@ -8194,8 +8127,8 @@
     },
     {
       "CastTimeReal": 15.0,
-      "PowerIndex": 8913,
-      "PowerSetID": 3428,
+      "PowerIndex": 8911,
+      "PowerSetID": 3426,
       "PowerSetIndex": 69,
       "StaticIndex": 4731,
       "NGroupMembership": [],
@@ -8281,7 +8214,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -8317,7 +8249,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -8346,8 +8277,8 @@
     },
     {
       "CastTimeReal": 15.0,
-      "PowerIndex": 8914,
-      "PowerSetID": 3428,
+      "PowerIndex": 8912,
+      "PowerSetID": 3426,
       "PowerSetIndex": 70,
       "StaticIndex": 4730,
       "NGroupMembership": [],
@@ -8433,7 +8364,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -8469,7 +8399,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,
@@ -8498,8 +8427,8 @@
     },
     {
       "CastTimeReal": 1.5,
-      "PowerIndex": 8915,
-      "PowerSetID": 3428,
+      "PowerIndex": 8913,
+      "PowerSetID": 3426,
       "PowerSetIndex": 71,
       "StaticIndex": 4759,
       "NGroupMembership": [],
@@ -8590,7 +8519,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 13,
           "Summon": "",
@@ -8624,7 +8552,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -8658,7 +8585,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 42,
           "Summon": "",
           "nSummon": -1,
@@ -8686,8 +8612,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8916,
-      "PowerSetID": 3428,
+      "PowerIndex": 8914,
+      "PowerSetID": 3426,
       "PowerSetIndex": 72,
       "StaticIndex": 6059,
       "NGroupMembership": [],
@@ -8768,8 +8694,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8917,
-      "PowerSetID": 3428,
+      "PowerIndex": 8915,
+      "PowerSetID": 3426,
       "PowerSetIndex": 73,
       "StaticIndex": 4736,
       "NGroupMembership": [],
@@ -8851,8 +8777,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8918,
-      "PowerSetID": 3428,
+      "PowerIndex": 8916,
+      "PowerSetID": 3426,
       "PowerSetIndex": 74,
       "StaticIndex": 4737,
       "NGroupMembership": [],
@@ -8934,8 +8860,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8919,
-      "PowerSetID": 3428,
+      "PowerIndex": 8917,
+      "PowerSetID": 3426,
       "PowerSetIndex": 75,
       "StaticIndex": 6060,
       "NGroupMembership": [],
@@ -9016,8 +8942,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8920,
-      "PowerSetID": 3428,
+      "PowerIndex": 8918,
+      "PowerSetID": 3426,
       "PowerSetIndex": 76,
       "StaticIndex": 6065,
       "NGroupMembership": [],
@@ -9098,8 +9024,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8921,
-      "PowerSetID": 3428,
+      "PowerIndex": 8919,
+      "PowerSetID": 3426,
       "PowerSetIndex": 77,
       "StaticIndex": 4718,
       "NGroupMembership": [],
@@ -9181,8 +9107,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8922,
-      "PowerSetID": 3428,
+      "PowerIndex": 8920,
+      "PowerSetID": 3426,
       "PowerSetIndex": 78,
       "StaticIndex": 4717,
       "NGroupMembership": [],
@@ -9264,8 +9190,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8923,
-      "PowerSetID": 3428,
+      "PowerIndex": 8921,
+      "PowerSetID": 3426,
       "PowerSetIndex": 79,
       "StaticIndex": 4708,
       "NGroupMembership": [],
@@ -9316,8 +9242,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8924,
-      "PowerSetID": 3428,
+      "PowerIndex": 8922,
+      "PowerSetID": 3426,
       "PowerSetIndex": 80,
       "StaticIndex": 6054,
       "NGroupMembership": [],
@@ -9397,8 +9323,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8925,
-      "PowerSetID": 3428,
+      "PowerIndex": 8923,
+      "PowerSetID": 3426,
       "PowerSetIndex": 81,
       "StaticIndex": 4697,
       "NGroupMembership": [],
@@ -9488,7 +9414,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -9521,7 +9446,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 16,
           "Summon": "",
           "nSummon": -1,
@@ -9554,7 +9478,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -9582,8 +9505,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8926,
-      "PowerSetID": 3428,
+      "PowerIndex": 8924,
+      "PowerSetID": 3426,
       "PowerSetIndex": 82,
       "StaticIndex": 4696,
       "NGroupMembership": [],
@@ -9673,7 +9596,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 17,
           "Summon": "",
           "nSummon": -1,
@@ -9706,7 +9628,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 16,
           "Summon": "",
           "nSummon": -1,
@@ -9739,7 +9660,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -9767,8 +9687,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8927,
-      "PowerSetID": 3428,
+      "PowerIndex": 8925,
+      "PowerSetID": 3426,
       "PowerSetIndex": 83,
       "StaticIndex": 6068,
       "NGroupMembership": [],
@@ -9849,8 +9769,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8928,
-      "PowerSetID": 3428,
+      "PowerIndex": 8926,
+      "PowerSetID": 3426,
       "PowerSetIndex": 84,
       "StaticIndex": 6074,
       "NGroupMembership": [],
@@ -9931,8 +9851,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8929,
-      "PowerSetID": 3428,
+      "PowerIndex": 8927,
+      "PowerSetID": 3426,
       "PowerSetIndex": 85,
       "StaticIndex": 6077,
       "NGroupMembership": [],
@@ -10015,8 +9935,8 @@
     {
       "CastTimeReal": 17.0,
       "ToggleCost": 13.0,
-      "PowerIndex": 8930,
-      "PowerSetID": 3428,
+      "PowerIndex": 8928,
+      "PowerSetID": 3426,
       "PowerSetIndex": 86,
       "StaticIndex": 4751,
       "NGroupMembership": [],
@@ -10104,7 +10024,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 14,
           "Summon": "",
@@ -10135,8 +10054,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8931,
-      "PowerSetID": 3428,
+      "PowerIndex": 8929,
+      "PowerSetID": 3426,
       "PowerSetIndex": 87,
       "StaticIndex": 5709,
       "NGroupMembership": [],
@@ -10218,8 +10137,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8932,
-      "PowerSetID": 3428,
+      "PowerIndex": 8930,
+      "PowerSetID": 3426,
       "PowerSetIndex": 88,
       "StaticIndex": 6076,
       "NGroupMembership": [],
@@ -10300,8 +10219,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8933,
-      "PowerSetID": 3428,
+      "PowerIndex": 8931,
+      "PowerSetID": 3426,
       "PowerSetIndex": 89,
       "StaticIndex": 6053,
       "NGroupMembership": [],
@@ -10382,8 +10301,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8934,
-      "PowerSetID": 3428,
+      "PowerIndex": 8932,
+      "PowerSetID": 3426,
       "PowerSetIndex": 90,
       "StaticIndex": 4727,
       "NGroupMembership": [],
@@ -10467,8 +10386,8 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 18.98,
-      "PowerIndex": 8935,
-      "PowerSetID": 3428,
+      "PowerIndex": 8933,
+      "PowerSetID": 3426,
       "PowerSetIndex": 91,
       "StaticIndex": 4747,
       "NGroupMembership": [],
@@ -10564,7 +10483,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 9,
           "Summon": "",
@@ -10600,8 +10518,8 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 18.98,
-      "PowerIndex": 8936,
-      "PowerSetID": 3428,
+      "PowerIndex": 8934,
+      "PowerSetID": 3426,
       "PowerSetIndex": 92,
       "StaticIndex": 4746,
       "NGroupMembership": [],
@@ -10697,7 +10615,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
@@ -10731,8 +10648,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 8937,
-      "PowerSetID": 3428,
+      "PowerIndex": 8935,
+      "PowerSetID": 3426,
       "PowerSetIndex": 93,
       "StaticIndex": 4723,
       "NGroupMembership": [],
@@ -10814,8 +10731,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8938,
-      "PowerSetID": 3428,
+      "PowerIndex": 8936,
+      "PowerSetID": 3426,
       "PowerSetIndex": 94,
       "StaticIndex": 6049,
       "NGroupMembership": [],
@@ -10896,8 +10813,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8939,
-      "PowerSetID": 3428,
+      "PowerIndex": 8937,
+      "PowerSetID": 3426,
       "PowerSetIndex": 95,
       "StaticIndex": 4724,
       "NGroupMembership": [],
@@ -10979,8 +10896,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8940,
-      "PowerSetID": 3428,
+      "PowerIndex": 8938,
+      "PowerSetID": 3426,
       "PowerSetIndex": 96,
       "StaticIndex": 6071,
       "NGroupMembership": [],
@@ -11063,8 +10980,8 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 15.184,
-      "PowerIndex": 8941,
-      "PowerSetID": 3428,
+      "PowerIndex": 8939,
+      "PowerSetID": 3426,
       "PowerSetIndex": 97,
       "StaticIndex": 4750,
       "NGroupMembership": [],
@@ -11156,7 +11073,6 @@
           "Reward": "",
           "EffectId": "TempDamage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 2,
           "Summon": "",
@@ -11190,7 +11106,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -11225,7 +11140,6 @@
           "Reward": "",
           "EffectId": "Knockback",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -11258,8 +11172,8 @@
       "AoEModifier": 2.5
     },
     {
-      "PowerIndex": 8942,
-      "PowerSetID": 3428,
+      "PowerIndex": 8940,
+      "PowerSetID": 3426,
       "PowerSetIndex": 98,
       "StaticIndex": 6078,
       "NGroupMembership": [],
@@ -11340,8 +11254,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8943,
-      "PowerSetID": 3428,
+      "PowerIndex": 8941,
+      "PowerSetID": 3426,
       "PowerSetIndex": 99,
       "StaticIndex": 5710,
       "NGroupMembership": [],
@@ -11423,8 +11337,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8944,
-      "PowerSetID": 3428,
+      "PowerIndex": 8942,
+      "PowerSetID": 3426,
       "PowerSetIndex": 100,
       "StaticIndex": 4716,
       "NGroupMembership": [],
@@ -11506,8 +11420,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8945,
-      "PowerSetID": 3428,
+      "PowerIndex": 8943,
+      "PowerSetID": 3426,
       "PowerSetIndex": 101,
       "StaticIndex": 4715,
       "NGroupMembership": [],
@@ -11589,8 +11503,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8946,
-      "PowerSetID": 3428,
+      "PowerIndex": 8944,
+      "PowerSetID": 3426,
       "PowerSetIndex": 102,
       "StaticIndex": 4753,
       "NGroupMembership": [],
@@ -11681,7 +11595,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 28,
           "ETModifies": 32,
           "Summon": "",
@@ -11714,7 +11627,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 28,
           "ETModifies": 25,
           "Summon": "",
@@ -11747,7 +11659,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 28,
           "ETModifies": 11,
           "Summon": "",
@@ -11780,7 +11691,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 20,
           "MezType": 14,
           "Summon": "",
@@ -11811,8 +11721,8 @@
     {
       "CastTimeReal": 1.5,
       "ToggleCost": 3.25,
-      "PowerIndex": 8947,
-      "PowerSetID": 3428,
+      "PowerIndex": 8945,
+      "PowerSetID": 3426,
       "PowerSetIndex": 103,
       "StaticIndex": 4752,
       "NGroupMembership": [],
@@ -11906,7 +11816,6 @@
           "Reward": "",
           "EffectId": "Taunt",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 7,
           "Summon": "",
@@ -11939,8 +11848,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8948,
-      "PowerSetID": 3428,
+      "PowerIndex": 8946,
+      "PowerSetID": 3426,
       "PowerSetIndex": 104,
       "StaticIndex": 4735,
       "NGroupMembership": [],
@@ -12022,8 +11931,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8949,
-      "PowerSetID": 3428,
+      "PowerIndex": 8947,
+      "PowerSetID": 3426,
       "PowerSetIndex": 105,
       "StaticIndex": 4734,
       "NGroupMembership": [],
@@ -12105,8 +12014,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 8950,
-      "PowerSetID": 3428,
+      "PowerIndex": 8948,
+      "PowerSetID": 3426,
       "PowerSetIndex": 106,
       "StaticIndex": 6058,
       "NGroupMembership": [],
@@ -12189,8 +12098,8 @@
     {
       "CastTimeReal": 2.87,
       "ToggleCost": 7.15,
-      "PowerIndex": 8951,
-      "PowerSetID": 3428,
+      "PowerIndex": 8949,
+      "PowerSetID": 3426,
       "PowerSetIndex": 107,
       "StaticIndex": 4745,
       "NGroupMembership": [],
@@ -12281,7 +12190,6 @@
           "Reward": "",
           "EffectId": "Stun",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -12318,7 +12226,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -12354,8 +12261,8 @@
     {
       "CastTimeReal": 1.37,
       "ToggleCost": 9.75,
-      "PowerIndex": 8952,
-      "PowerSetID": 3428,
+      "PowerIndex": 8950,
+      "PowerSetID": 3426,
       "PowerSetIndex": 108,
       "StaticIndex": 4756,
       "NGroupMembership": [],
@@ -12449,7 +12356,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -12488,7 +12394,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 2,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -12524,7 +12429,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 3,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -12560,7 +12464,6 @@
           "Reward": "",
           "EffectId": "Slow",
           "Special": "",
-          "nID": 4,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,
@@ -12596,7 +12499,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 20,
           "MezType": 4,
           "Summon": "",
@@ -12631,7 +12533,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 6,
           "EffectType": 20,
           "MezType": 5,
           "Summon": "",
@@ -12665,7 +12566,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 7,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -12700,7 +12600,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 8,
           "EffectType": 19,
           "MezType": 5,
           "Summon": "",
@@ -12736,7 +12635,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 9,
           "EffectType": 16,
           "Summon": "",
           "nSummon": -1,
@@ -12771,7 +12669,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 10,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,

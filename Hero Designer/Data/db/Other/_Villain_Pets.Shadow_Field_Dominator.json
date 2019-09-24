@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Shadow_Field_Dominator",
   "ImageName": "",
   "Power": [
-    10180,
-    10181
+    10178,
+    10179
   ],
   "SetType": 8,
   "DisplayName": "Shadow Field",
   "nArchetype": -1,
-  "nID": 3534,
+  "nID": 3532,
   "SubName": "Darkness Control",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,8 +22,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10180,
-      "PowerSetID": 3534,
+      "PowerIndex": 10178,
+      "PowerSetID": 3532,
       "StaticIndex": 6344,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Shadow_Field_Dominator.Shadow_Field",
@@ -121,7 +121,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
@@ -159,7 +158,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
@@ -194,8 +192,8 @@
       "AoEModifier": 4.75
     },
     {
-      "PowerIndex": 10181,
-      "PowerSetID": 3534,
+      "PowerIndex": 10179,
+      "PowerSetID": 3532,
       "PowerSetIndex": 1,
       "StaticIndex": 6345,
       "NGroupMembership": [],
@@ -293,7 +291,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",

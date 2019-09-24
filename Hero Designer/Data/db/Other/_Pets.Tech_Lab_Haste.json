@@ -4,12 +4,12 @@
   "FullName": "Pets.Tech_Lab_Haste",
   "ImageName": "",
   "Power": [
-    6501
+    6499
   ],
   "SetType": 8,
   "DisplayName": "Tech Lab",
   "nArchetype": -1,
-  "nID": 3233,
+  "nID": 3231,
   "SubName": "Lab Equipment",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6501,
-      "PowerSetID": 3233,
+      "PowerIndex": 6499,
+      "PowerSetID": 3231,
       "StaticIndex": 1736,
       "NGroupMembership": [],
       "FullName": "Pets.Tech_Lab_Haste.Haste",
@@ -115,7 +115,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 32,
           "Summon": "",
           "nSummon": -1,
@@ -150,7 +149,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 11,
           "Summon": "",
           "nSummon": -1,

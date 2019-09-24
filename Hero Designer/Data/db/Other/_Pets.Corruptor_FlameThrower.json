@@ -10,7 +10,7 @@
   "SetType": 8,
   "DisplayName": "Flame Thrower",
   "nArchetype": -1,
-  "nID": 3094,
+  "nID": 3092,
   "SubName": "Fire",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,7 +23,7 @@
   "Powers": [
     {
       "PowerIndex": 6185,
-      "PowerSetID": 3094,
+      "PowerSetID": 3092,
       "StaticIndex": 1561,
       "NGroupMembership": [],
       "FullName": "Pets.Corruptor_FlameThrower.Flame_Thrower",
@@ -116,7 +116,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 3,
           "Summon": "",
@@ -152,7 +151,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 2,
           "EffectType": 3,
           "DamageType": 3,
           "Summon": "",
@@ -185,7 +183,7 @@
     },
     {
       "PowerIndex": 6186,
-      "PowerSetID": 3094,
+      "PowerSetID": 3092,
       "PowerSetIndex": 1,
       "StaticIndex": 1562,
       "NGroupMembership": [],

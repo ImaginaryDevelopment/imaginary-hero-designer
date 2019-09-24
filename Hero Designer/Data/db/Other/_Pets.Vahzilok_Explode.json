@@ -4,12 +4,12 @@
   "FullName": "Pets.Vahzilok_Explode",
   "ImageName": "",
   "Power": [
-    6590
+    6588
   ],
   "SetType": 8,
   "DisplayName": "Vahzilok Explosion",
   "nArchetype": -1,
-  "nID": 3258,
+  "nID": 3256,
   "SubName": "Vahzilok",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6590,
-      "PowerSetID": 3258,
+      "PowerIndex": 6588,
+      "PowerSetID": 3256,
       "StaticIndex": 1765,
       "NGroupMembership": [],
       "FullName": "Pets.Vahzilok_Explode.Explode",
@@ -110,7 +110,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 3,
           "Summon": "",

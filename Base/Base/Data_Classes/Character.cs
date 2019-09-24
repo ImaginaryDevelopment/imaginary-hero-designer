@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Windows.Forms;
 using Base.Display;
 using Base.Master_Classes;
 
@@ -126,6 +127,10 @@ namespace Base.Data_Classes
         public bool EfficientAdaptation { get; private set; }
 
         public bool OffensiveAdaptation { get; private set; }
+
+        public bool BoxingBuff { get; private set; }
+
+        public bool KickBuff { get; private set; }
 
         public Dictionary<string, float> ModifyEffects { get; protected set; }
 
@@ -329,6 +334,8 @@ namespace Base.Data_Classes
             EfficientAdaptation = false;
             OffensiveAdaptation = false;
             PerfectionType = string.Empty;
+            BoxingBuff = false;
+            KickBuff = false;
             Totals.Init();
             TotalsCapped.Init();
             RequestedLevel = -1;
@@ -353,6 +360,83 @@ namespace Base.Data_Classes
             EfficientAdaptation = false;
             OffensiveAdaptation = false;
             PerfectionType = string.Empty;
+            BoxingBuff = false;
+            KickBuff = false;
+
+            foreach (var power in CurrentBuild.Powers)
+            {
+                //if (power == null || power.Power == null || power.StatInclude == false) continue;
+
+                switch (power.Name.ToUpper())
+                {
+                    case "TIME_CRAWL":
+                        DelayedActive = true;
+                        break;
+                    case "TARGETING_DRONE":
+                        TargetDroneActive = true;
+                        break;
+                    case "TEMPORAL_SELECTION":
+                        AcceleratedActive = true;
+                        break;
+                    case "DISINTEGRATE":
+                        DisintegrateActive = true;
+                        break;
+                    case "COMBO_LEVEL_1":
+                        ActiveComboLevel = 1;
+                        break;
+                    case "COMBO_LEVEL_2":
+                        ActiveComboLevel = 2;
+                        break;
+                    case "COMBO_LEVEL_3":
+                        ActiveComboLevel = 3;
+                        break;
+                    case "FAST_MODE":
+                        FastModeActive = true;
+                        break;
+                    case "DEFIANCE":
+                        Defiance = true;
+                        break;
+                    case "ASSASSINATION":
+                        Assassination = true;
+                        break;
+                    case "DOMINATION":
+                        Domination = true;
+                        break;
+                    case "CRITICAL_HIT":
+                        CriticalHits = true;
+                        break;
+                    case "CONTAINMENT":
+                        Containment = true;
+                        break;
+                    case "SCOURGE":
+                        Scourge = true;
+                        break;
+                    case "FORM_OF_THE_BODY":
+                        PerfectionType = "body";
+                        break;
+                    case "FORM_OF_THE_MIND":
+                        PerfectionType = "mind";
+                        break;
+                    case "FORM_OF_THE_SOUL":
+                        PerfectionType = "soul";
+                        break;
+                    case "DEFENSIVE_ADAPTATION":
+                        DefensiveAdaptation = true;
+                        break;
+                    case "EFFICIENT_ADAPTATION":
+                        EfficientAdaptation = true;
+                        break;
+                    case "OFFENSIVE_ADAPTATION":
+                        OffensiveAdaptation = true;
+                        break;
+                    case "BOXING":
+                        BoxingBuff = true;
+                        break;
+                    case "KICK":
+                        KickBuff = true;
+                        break;
+                }
+            }
         }
 
         public void Validate()

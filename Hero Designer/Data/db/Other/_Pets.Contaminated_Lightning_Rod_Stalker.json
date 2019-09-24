@@ -9,7 +9,7 @@
   "SetType": 8,
   "DisplayName": "Electric Melee",
   "nArchetype": -1,
-  "nID": 3081,
+  "nID": 3079,
   "SubName": "Electric Melee",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 6180,
-      "PowerSetID": 3081,
+      "PowerSetID": 3079,
       "StaticIndex": 6223,
       "NGroupMembership": [],
       "FullName": "Pets.Contaminated_Lightning_Rod_Stalker.Lightning_Rod",

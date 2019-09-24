@@ -4,12 +4,12 @@
   "FullName": "Pets.ShockDef",
   "ImageName": "",
   "Power": [
-    6455
+    6453
   ],
   "SetType": 8,
   "DisplayName": "Liquefy",
   "nArchetype": -1,
-  "nID": 3139,
+  "nID": 3137,
   "SubName": "Sonic Attack",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6455,
-      "PowerSetID": 3139,
+      "PowerIndex": 6453,
+      "PowerSetID": 3137,
       "StaticIndex": 1706,
       "NGroupMembership": [],
       "FullName": "Pets.ShockDef.Liquefy",
@@ -124,7 +124,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
@@ -161,7 +160,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 2,
           "EffectType": 3,
           "DamageType": 1,
           "Summon": "",
@@ -194,7 +192,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 3,
           "EffectType": 3,
           "DamageType": 5,
           "Summon": "",
@@ -229,7 +226,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 10,
           "Summon": "",
           "nSummon": -1,

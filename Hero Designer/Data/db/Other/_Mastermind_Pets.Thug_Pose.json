@@ -10,7 +10,7 @@
   "SetType": 8,
   "DisplayName": "Thug Posse",
   "nArchetype": -1,
-  "nID": 2991,
+  "nID": 2990,
   "SubName": "Thugs",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,7 +23,7 @@
   "Powers": [
     {
       "PowerIndex": 6011,
-      "PowerSetID": 2991,
+      "PowerSetID": 2990,
       "StaticIndex": 1419,
       "NGroupMembership": [],
       "FullName": "Mastermind_Pets.Thug_Pose.Resistance",
@@ -113,7 +113,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 4,
           "DamageType": 2,
           "Summon": "",
@@ -146,7 +145,6 @@
           "Reward": "",
           "EffectId": "HealSelf",
           "Special": "",
-          "nID": 2,
           "EffectType": 14,
           "Summon": "",
           "nSummon": -1,
@@ -175,7 +173,7 @@
     },
     {
       "PowerIndex": 6012,
-      "PowerSetID": 2991,
+      "PowerSetID": 2990,
       "PowerSetIndex": 1,
       "StaticIndex": 1420,
       "NGroupMembership": [],

@@ -4,14 +4,14 @@
   "FullName": "Villain_Pets.Dominating_Grasp",
   "ImageName": "",
   "Power": [
-    10054,
-    10055,
-    10056
+    10052,
+    10053,
+    10054
   ],
   "SetType": 8,
   "DisplayName": "Dominating Grasp",
   "nArchetype": -1,
-  "nID": 3492,
+  "nID": 3490,
   "SubName": "Dominating Grasp",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10054,
-      "PowerSetID": 3492,
+      "PowerIndex": 10052,
+      "PowerSetID": 3490,
       "StaticIndex": 9024,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Dominating_Grasp.Blazing_Aura",
@@ -114,7 +114,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 10,
           "Summon": "",
@@ -148,8 +147,8 @@
       "AoEModifier": 3.25
     },
     {
-      "PowerIndex": 10055,
-      "PowerSetID": 3492,
+      "PowerIndex": 10053,
+      "PowerSetID": 3490,
       "PowerSetIndex": 1,
       "StaticIndex": 9025,
       "NGroupMembership": [],
@@ -232,8 +231,8 @@
       "AoEModifier": 1.0
     },
     {
-      "PowerIndex": 10056,
-      "PowerSetID": 3492,
+      "PowerIndex": 10054,
+      "PowerSetID": 3490,
       "PowerSetIndex": 2,
       "StaticIndex": 9026,
       "NGroupMembership": [],

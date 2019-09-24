@@ -4,12 +4,12 @@
   "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump3",
   "ImageName": "",
   "Power": [
-    9984
+    9982
   ],
   "SetType": 8,
   "DisplayName": "Chain Jolt Jump 3",
   "nArchetype": -1,
-  "nID": 3470,
+  "nID": 3468,
   "SubName": "Chain Jolt Jump 3",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -21,8 +21,8 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 9984,
-      "PowerSetID": 3470,
+      "PowerIndex": 9982,
+      "PowerSetID": 3468,
       "StaticIndex": 4487,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Chain_Jolt_Dominator_Jump3.Charge",
@@ -127,7 +127,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 5,
           "Summon": "",
@@ -164,7 +163,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 77,
           "Summon": "",
           "nSummon": -1,
@@ -196,7 +194,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -232,7 +229,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 34,
           "Summon": "",
           "nSummon": -1,

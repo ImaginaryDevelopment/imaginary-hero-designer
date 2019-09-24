@@ -4,7 +4,7 @@
   "FullName": "Villain_Pets.Shield_Charge_AoE4",
   "ImageName": "",
   "Power": [
-    10189
+    10187
   ],
   "SetType": 8,
   "DisplayName": "Shield Defense",
@@ -21,7 +21,7 @@
   "GroupName": "Villain_Pets",
   "Powers": [
     {
-      "PowerIndex": 10189,
+      "PowerIndex": 10187,
       "PowerSetID": 3536,
       "StaticIndex": 10706,
       "NGroupMembership": [],
@@ -120,7 +120,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 1,
           "Summon": "",
@@ -153,7 +152,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -188,7 +186,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",

@@ -4,7 +4,7 @@
   "FullName": "Pets.TempPower_Amy_Jonsson_Pet",
   "ImageName": "",
   "Power": [
-    6504
+    6502
   ],
   "SetType": 8,
   "DisplayName": "Amy Jonsson",
@@ -21,7 +21,7 @@
   "GroupName": "Pets",
   "Powers": [
     {
-      "PowerIndex": 6504,
+      "PowerIndex": 6502,
       "PowerSetID": 3022,
       "StaticIndex": 1739,
       "NGroupMembership": [],

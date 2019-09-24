@@ -4,13 +4,13 @@
   "FullName": "Villain_Pets.Shield_Charge_AoE2",
   "ImageName": "",
   "Power": [
-    10186,
-    10187
+    10184,
+    10185
   ],
   "SetType": 8,
   "DisplayName": "Shield Defense",
   "nArchetype": -1,
-  "nID": 3538,
+  "nID": 3535,
   "SubName": "Shield Defense",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -23,8 +23,8 @@
   "Powers": [
     {
       "CastTimeReal": 1.716,
-      "PowerIndex": 10186,
-      "PowerSetID": 3538,
+      "PowerIndex": 10184,
+      "PowerSetID": 3535,
       "StaticIndex": 3411,
       "NGroupMembership": [],
       "FullName": "Villain_Pets.Shield_Charge_AoE2.Shield_Charge_AoE2",
@@ -87,8 +87,8 @@
       "AoEModifier": 4.0
     },
     {
-      "PowerIndex": 10187,
-      "PowerSetID": 3538,
+      "PowerIndex": 10185,
+      "PowerSetID": 3535,
       "PowerSetIndex": 1,
       "StaticIndex": 4115,
       "NGroupMembership": [],
@@ -187,7 +187,6 @@
           "Reward": "",
           "EffectId": "Damage",
           "Special": "",
-          "nID": 1,
           "EffectType": 3,
           "DamageType": 1,
           "Summon": "",
@@ -222,7 +221,6 @@
           "Reward": "",
           "EffectId": "InherentTaunt",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -261,7 +259,6 @@
           "Reward": "",
           "EffectId": "InherentTaunt",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -297,7 +294,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -332,7 +328,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",

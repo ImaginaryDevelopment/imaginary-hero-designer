@@ -9,7 +9,7 @@
   "SetType": 10,
   "DisplayName": "Technology Endurance",
   "nArchetype": -1,
-  "nID": 2513,
+  "nID": 2514,
   "SubName": "Cybernetics (Technology)",
   "ATClass": "",
   "UIDTrunkSet": "",
@@ -22,7 +22,7 @@
   "Powers": [
     {
       "PowerIndex": 2792,
-      "PowerSetID": 2513,
+      "PowerSetID": 2514,
       "StaticIndex": 8628,
       "NGroupMembership": [],
       "FullName": "Boosts.Technology_Recovery.Technology_Recovery",
@@ -116,7 +116,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 9,
           "ETModifies": 26,
           "Summon": "",
