@@ -37,15 +37,3 @@ https://twitter.com/midsreborn
    * [Wine](https://www.winehq.org/)  
    * [Winetricks](https://github.com/Winetricks/winetricks)  
    * .NET 4.7.2 "Install with Winetricks"    
-
-## Releases/Downloads
-
-**_Lastest Release Binaries: 2.6.0.2 - Released on 2019-07-31_**
-
-[Click Once Installer](https://github.com/ImaginaryDevelopment/imaginary-hero-designer/tree/Release2.6.0.2)
-
-[Setup Installer](https://midsreborn.com/download/MRB_Setup.exe)
-
-**_Latest Update 2.6.0.3 - Released on 2019-08-06_**
-
-Download via the applications built in update feature.
