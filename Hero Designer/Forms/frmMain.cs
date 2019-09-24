@@ -4775,6 +4775,12 @@ namespace Hero_Designer
                 return;
             }
 
+            if (!MidsContext.Config.CheckedStats.Any())
+            {
+                ShowConfigError("Stat Boxes");
+                return;
+            }
+
             exportDiscordInProgress = true;
             try
             {

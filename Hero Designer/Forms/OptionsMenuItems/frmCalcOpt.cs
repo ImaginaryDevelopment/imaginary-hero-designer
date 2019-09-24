@@ -68,7 +68,7 @@ namespace Hero_Designer
         void btnOK_Click(object sender, EventArgs e)
         {
             var cCount = groupBox21.Controls.OfType<CheckBox>().Count(c => c.Checked);
-            if (cCount < 3 || cCount > 6)
+            if ((cCount > 0 && cCount < 3) || cCount > 6)
             {
                 MessageBox.Show(@"Incorrect amount of stats selected, please go back and make sure you have 3 to 6 stats selected.",
                     @"Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
