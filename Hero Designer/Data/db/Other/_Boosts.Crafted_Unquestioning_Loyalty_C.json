@@ -120,6 +120,7 @@
           "Reward": "",
           "EffectId": "Endurance",
           "Special": "",
+          "nID": 1,
           "EffectType": 9,
           "ETModifies": 8,
           "Summon": "",

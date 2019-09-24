@@ -120,6 +120,7 @@
           "Reward": "",
           "EffectId": "Run",
           "Special": "",
+          "nID": 1,
           "EffectType": 9,
           "ETModifies": 32,
           "Summon": "",
