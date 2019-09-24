@@ -120,6 +120,7 @@
           "Reward": "",
           "EffectId": "ToHitDebuff",
           "Special": "",
+          "nID": 1,
           "EffectType": 9,
           "ETModifies": 40,
           "Summon": "",

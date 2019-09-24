@@ -115,6 +115,7 @@
           "Reward": "",
           "EffectId": "Heal",
           "Special": "",
+          "nID": 1,
           "EffectType": 13,
           "Summon": "",
           "nSummon": -1,

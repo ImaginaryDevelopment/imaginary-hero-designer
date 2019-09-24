@@ -119,6 +119,7 @@
           "Reward": "Set_Bonus.Set_Bonus.Essence_Transfer",
           "EffectId": "Boost",
           "Special": "",
+          "nID": 1,
           "EffectType": 12,
           "Summon": "Set_Bonus.Set_Bonus.Essence_Transfer",
           "nSummon": 7752,

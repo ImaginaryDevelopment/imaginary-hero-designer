@@ -86,11 +86,11 @@
             -1
           ],
           [
-            8466,
+            8467,
             -1
           ],
           [
-            8467,
+            8466,
             -1
           ],
           [
@@ -175,6 +175,7 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
+          "nID": 1,
           "EffectType": 25,
           "Summon": "",
           "nSummon": -1,

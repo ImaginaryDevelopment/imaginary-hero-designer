@@ -122,6 +122,7 @@
           "Reward": "",
           "EffectId": "TempDamage",
           "Special": "",
+          "nID": 1,
           "EffectType": 3,
           "DamageType": 8,
           "Summon": "",
