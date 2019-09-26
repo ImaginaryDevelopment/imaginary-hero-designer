@@ -1340,8 +1340,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.3676,
-          "MagPercent": 23.3676,
+          "Mag": 18.6939011,
+          "MagPercent": 18.6939011,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -1375,8 +1375,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 23.3676,
-          "MagPercent": 23.3676,
+          "Mag": 18.6939011,
+          "MagPercent": 18.6939011,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -2783,8 +2783,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.7892,
-          "MagPercent": 7.7892,
+          "Mag": 6.23130035,
+          "MagPercent": 6.23130035,
           "Duration": 0.75,
           "BaseProbability": 1.0,
           "Reward": "",
@@ -2850,8 +2850,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 7.7892,
-          "MagPercent": 7.7892,
+          "Mag": 6.23130035,
+          "MagPercent": 6.23130035,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",

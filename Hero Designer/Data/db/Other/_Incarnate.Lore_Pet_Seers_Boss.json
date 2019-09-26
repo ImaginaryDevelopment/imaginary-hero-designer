@@ -84,8 +84,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.5784,
-          "MagPercent": 15.5784,
+          "Mag": 12.4626007,
+          "MagPercent": 12.4626007,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",
@@ -118,8 +118,8 @@
         {
           "MagnitudeExpression": "",
           "Probability": 1.0,
-          "Mag": 15.5784,
-          "MagPercent": 15.5784,
+          "Mag": 12.4626007,
+          "MagPercent": 12.4626007,
           "BaseProbability": 1.0,
           "Reward": "",
           "EffectId": "Knockback",

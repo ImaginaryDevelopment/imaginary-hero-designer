@@ -2679,7 +2679,15 @@ namespace Hero_Designer
                 if (s2.Index[index] <= -1 || !pBase.Effects[s2.Index[index]].DisplayPercentage)
                     continue;
                 s2.Value[index] *= 100f;
-                s2.ReSum();
+                if (pBase.Effects[s2.Index[index]].EffectType == Enums.eEffectType.Absorb)
+                {
+                    //Fixes the Absorb display to correctly show the percentage
+                    s2.Sum = float.Parse(s2.Sum.ToString("P", CultureInfo.InvariantCulture).Replace("%",""));
+                }
+                else
+                {
+                    s2.ReSum();
+                }
                 break;
             }
 
@@ -4047,7 +4055,7 @@ namespace Hero_Designer
                 Enums.ShortFX[] shortFxArray2 = Power.SplitFX(ref EnhSFX, ref pEnh);
                 int num1 = shortFxArray1.Length - 1;
                 for (int index = 0; index <= num1; ++index)
-                {
+                { 
                     if (!shortFxArray1[index].Present)
                         continue;
                     string Suffix = string.Empty;
